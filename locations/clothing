@@ -109,7 +109,45 @@ if $ARGS[0] = 'view_clothing_list':
 	!! ARGS 1 - action type (wardrobe, sell, resize, store, unwanted)
 	!! ARGS 2 - Shop name (kats, moncheri, gm, fashionista, sexshop, exhibitshop, dolls, sports)
 
-	if $ARGS[1] ! 'sell' :'<center><table border=1><TH><a href="exec:gt ''clothing'', ''view_clothing_list'', ''wardrobe'', ''<<$ARGS[2]>>''">Organise available clothing</a></TH><TH><a href="exec:gt ''clothing'', ''view_clothing_list'', ''store'', ''<<$ARGS[2]>>''">View stored clothing list</a></TH><TH><a href="exec:gt ''clothing'', ''view_clothing_list'', ''unwanted'', ''<<$ARGS[2]>>''">View unwanted clothing list</a></TH><TH><a href="exec:gt ''clothing_QV'', ''list''">Pick something to wear</a></TH></center>'
+	if $ARGS[2] = 'gm':
+		'<center><b><font color="maroon">Wardrobe list - Viewing clothes from G&M</font></b></center>'
+		'<center><img src="images/locations/city/citycenter/mall/GM.png"></center>'
+	elseif $ARGS[2] = 'kats':
+		'<center><b><font color="maroon">Wardrobe list - Viewing clothes from PussyKats</font></b></center>'
+		'<center><img src="images/locations/city/citycenter/mall/pussycat.png"></center>'
+	elseif $ARGS[2] = 'fashionista':
+		'<center><b><font color="maroon">Wardrobe list - Viewing clothes from Fashionista</font></b></center>'
+		'<center><img src="images/locations/city/citycenter/mall/fashionistat.png"></center>'
+	elseif $ARGS[2] = 'moncheri':
+		'<center><b><font color="maroon">Wardrobe list - Viewing clothes from Mon Cheri</font></b></center>'
+		'<center><img src="images/locations/city/citycenter/mall/moncheri.png"></center>'
+	elseif $ARGS[2] = 'sexshop':
+		'<center><b><font color="maroon">Wardrobe list - Viewing clothes from the sex shop</font></b></center>'
+		'<center><img src="images/locations/city/citycenter/sexshop/shop_name.png"></center>'
+	elseif $ARGS[2] = 'exhibitshop':
+		'<center><b><font color="maroon">Wardrobe list - Viewing clothes from the Exhibitionist shop</font></b></center>'
+		'<center><img src="images/locations/oldtown/exhibitshop/shop_name.png"></center>'
+	elseif $ARGS[2] = 'dolls':
+		'<center><b><font color="maroon">Wardrobe list - Viewing clothes from Patchwork Dolls</font></b></center>'
+		'<center><img src="images/locations/city/island/dolls.png"></center>'
+	elseif $ARGS[2] = 'sports':
+		'<center><b><font color="maroon">Wardrobe list - Viewing sportswear from Danilovich</font></b></center>'
+		'<center><img src="images/locations/city/citycenter/mall/sports.png"></center>'
+	else
+		'<center><b><font color="maroon">Wardrobe list - click on a shop name to view clothes from that shop</font></b></center>'
+	end
+	*nl
+	*nl
+
+	if $ARGS[1] ! 'sell':
+		$clothing_header = '<center><table border=1>'
+		if $ARGS[1] ! 'wardrobe': $clothing_header += '<TH><a href="exec:gt ''clothing'', ''view_clothing_list'', ''wardrobe'', ''<<$ARGS[2]>>''">Switch to wardrobe list</a></TH>'
+		if $ARGS[1] ! 'store': $clothing_header += '<TH><a href="exec:gt ''clothing'', ''view_clothing_list'', ''store'', ''<<$ARGS[2]>>''">Switch to stored clothing list</a></TH>'
+		if $ARGS[1] ! 'unwanted': $clothing_header += '<TH><a href="exec:gt ''clothing'', ''view_clothing_list'', ''unwanted'', ''<<$ARGS[2]>>''">Switch to unwanted clothing list</a></TH>'
+		$clothing_header += '<TH><a href="exec:gt ''clothing_QV'', ''list''">Switch to icons</a></TH></center>'
+
+		$clothing_header
+	end
 
 	if $ARGS[1] = 'wardrobe':
 		cloc = 0
@@ -136,14 +174,6 @@ if $ARGS[0] = 'view_clothing_list':
 		if ARRSIZE('exercise') > 0:'<center><a href="exec:gt ''clothing'', ''view_clothing_list'', ''<<$ARGS[1]>>'', ''sports''"><img src="images/locations/city/citycenter/mall/sports.png"></a></center>'
 
 	else
-		if $ARGS[2] = 'gm': '<center><img src="images/locations/city/citycenter/mall/GM.png"></center>'
-		if $ARGS[2] = 'kats': '<center><img src="images/locations/city/citycenter/mall/pussycat.png"></center>'
-		if $ARGS[2] = 'fashionista': '<center><img src="images/locations/city/citycenter/mall/fashionistat.png"></center>'
-		if $ARGS[2] = 'moncheri': '<center><img src="images/locations/city/citycenter/mall/moncheri.png"></center>'
-		if $ARGS[2] = 'sexshop': '<center><img src="images/locations/city/citycenter/sexshop/shop_name.png"></center>'
-		if $ARGS[2] = 'exhibitshop': '<center><img src="images/locations/oldtown/exhibitshop/shop_name.png"></center>'
-		if $ARGS[2] = 'dolls': '<center><img src="images/locations/city/island/dolls.png"></center>'
-		if $ARGS[2] = 'sports': '<center><img src="images/locations/city/citycenter/mall/sports.png"></center>'
 
 
 		$bgcolor='#f3f4ee'
@@ -763,84 +793,6 @@ end
 
 if $ARGS[0] = 'wear_last_worn':
 	gs 'clothing', 'wear', $lastwornclothingtype, lastwornclothingnumber
-end
-
-if $ARGS[0] = 'default':
-	gs 'stat'
-	if ARRSIZE('defclothingnumber') = 0:
-		'You have no default outfits set.'
-	else
-		i = 0
-		:loopdefclothing
-		'<<$def_clothing_name[i]>> <a href="exec:gs ''clothing'', ''default_entry_wear'', <<i>>">Wear this default outfit</a> <a href="exec:gs ''clothing'', ''default_entry_delete'', <<i>>">Delete this default outfit</a>'
-		i += 1
-		if i < ARRSIZE('defclothingnumber'):jump 'loopdefclothing'
-	end
-	act 'Return': gt 'wardrobe'
-end
-
-if $ARGS[0] = 'default_entry_wear':
-	default_entry = ARGS[1]
-	gs 'clothing', 'wear', $defclothingtype[default_entry], defclothingnumber[default_entry]
-	gs 'bras', 'wear', $defbratype[default_entry], defbranumber[default_entry]
-	gs 'panties', 'wear', $defpantytype[default_entry], defpantynumber[default_entry]
-	gs 'shoes', 'wear', $defshoetype[default_entry], defshoenumber[default_entry]
-	$currentpursetype = $defpursetype[default_entry]
-	currentpursenumber = defpursenumber[default_entry]
-	defaultcoat = defcoat[default_entry]
-	killvar 'default_entry'
-	gs 'stat'
-end
-
-if $ARGS[0] = 'default_set':
-	gs 'stat'
-	if ARRSIZE('defclothingnumber') ! 0:
-		i = 0
-		:loopdefclothing_set
-		'<<$def_clothing_name[i]>> <a href="exec:gt ''clothing'', ''default_entry_set'', <<i>>">Overwrite this</a>'
-		i += 1
-		if i < ARRSIZE('defclothingnumber'):jump 'loopdefclothing_set'
-	end
-	act 'Add as new default': gt 'clothing', 'default_entry_set', ARRSIZE('defclothingnumber')
-	act 'Return': gt 'wardrobe'
-end
-
-if $ARGS[0] = 'default_entry_set':
-	gs 'stat'
-	i = ARGS[1]
-	$defclothingtype[i] = $clothingworntype
-	defclothingnumber[i] = clothingwornnumber
-	$defbratype[i] = $braworntype
-	defbranumber[i] = brawornnumber
-	$defpantytype[i] = $pantyworntype
-	defpantynumber[i] = pantywornnumber
-	$defshoetype[i] = $shoeworntype
-	defshoenumber[i] = shoewornnumber
-	$defpursetype[i] = $currentpursetype
-	defpursenumber[i] = currentpursenumber
-	defcoat[i] = defaultcoat
-
-	$def_clothing_name[i] = input ('Enter name for for this outfit (Leave blank for default)')
-	if $def_clothing_name[i] = '': $def_clothing_name[i] = 'default <<i>>'
-	gt 'clothing', 'default_set'
-end
-
-if $ARGS[0] = 'default_entry_delete':
-	gs 'stat'
-	i = ARGS[1]
-	killvar 'defclothingtype', i
-	killvar 'defclothingnumber', i
-	killvar 'defbratype', i
-	killvar 'defbranumber', i
-	killvar 'defpantytype', i
-	killvar 'defpantynumber', i
-	killvar 'defshoetype', i
-	killvar 'defshoenumber', i
-	killvar 'defpursetype', i
-	killvar 'defpursenumber', i
-	killvar 'defcoat', i
-	killvar 'def_clothing_name', i
-	gt 'clothing', 'default_set'
 end
 
 --- clothing ---------------------------------
