@@ -91,8 +91,8 @@ if $ARGS[0] = 'sale':
 	'You go to a popular website where people can post advertisements for free. You could post an advertisement here.'
 	if obkvsdam >= 1 and home_owned[1] = 2: 'You placed an advertisement to rent out your apartment. You should probably check every once in a while to see if anyone responded.'
 
-	if obkvsdam = 0 and housrA = 1:
-		act 'Rent out your apartment':obkvsdam = 1 & gt 'Komp', 'sale'
+	if obkvsdam = 0 and home_owned[1] = 2:
+		act 'Rent out your city residential apartment':obkvsdam = 1 & gt 'Komp', 'sale'
 	elseif obkvsdam > 0:
 		act 'Check if you got any replies':
 			cla
@@ -328,10 +328,10 @@ if $ARGS[0] = 'znak':
 
 			act 'Leave this website':gt 'Komp', 'brows'
 		end
-	elseif housrA = 0:
+	elseif home_cur ! 1 and home_cur ! 3 and home_cur ! 4 and home_cur ! 5:
 		pcs_willpwr += rand(5, 10)
 		pcs_mood += rand(5, 10)
-		'You spend time looking at the various profiles, but it won''t let you register unless you have your own home.'
+		'You spend time looking at the various profiles, but it won''t let you register unless you have your own home and it is set as your current home.'
 		'Still, some of the pictures were quite raunchy and the more desperate profiles were really funny.'
 	else
 		if pcs_lover < 3:

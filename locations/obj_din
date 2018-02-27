@@ -133,11 +133,11 @@ if $ARGS[0] = 'cur_home':
 	pl' <a href="exec:gs ''obj_din'', ''descrip''">Return to main description</a>'
 	nl
 !!This is correct it just looks wrong
-	if home_owned[1] = 1:pl 'Set current home as <a href="exec:home_cur = 1 & $home_name = ''City residential apartment'' & gs ''obj_din'', ''cur_home''">City residential apartment</a>'
+	if home_owned[1] > 0:pl 'Set current home as <a href="exec:home_cur = 1 & $home_name = ''City residential apartment'' & gs ''obj_din'', ''cur_home''">City residential apartment</a>'
 	if home_owned[2] = 1:pl 'Set current home as <a href="exec:home_cur = 2 & $home_name = ''Parent''''s home in Pavlovsk'' & gs ''obj_din'', ''cur_home''">Parent''s home in Pavlovsk</a>'
-	if home_owned[3] = 1:pl 'Set current home as <a href="exec:home_cur = 3 & $home_name = ''My cottage in the cooperative farm'' & gs ''obj_din'', ''cur_home''">My cottage in the cooperative farm</a>'
+	if home_owned[3] > 0:pl 'Set current home as <a href="exec:home_cur = 3 & $home_name = ''My cottage in the cooperative farm'' & gs ''obj_din'', ''cur_home''">My cottage in the cooperative farm</a>'
 	if home_owned[4] = 1:pl 'Set current home as <a href="exec:home_cur = 4 & $home_name = ''Old town apartment'' & gs ''obj_din'', ''cur_home''">Old town apartment</a>'
-	if home_owned[5] = 1:pl 'Set current home as <a href="exec:home_cur = 5 & $home_name = ''My mansion'' & gs ''obj_din'', ''cur_home''">My mansion</a>'
+	if home_owned[5] > 2:pl 'Set current home as <a href="exec:home_cur = 5 & $home_name = ''My mansion'' & gs ''obj_din'', ''cur_home''">My mansion</a>'
 	if home_owned[6] = 1:pl 'Set current home as <a href="exec:home_cur = 6 & $home_name = ''My hotel room in Pavlovsk'' & gs ''obj_din'', ''cur_home''">My hotel room in Pavlovsk</a>'
 	if home_owned[7] = 1:pl 'Set current home as <a href="exec:home_cur = 7 & $home_name = ''Tanya''''s house'' & gs ''obj_din'', ''cur_home''">Tanya''s house</a>'
 	if home_owned[8] = 1:pl 'Set current home as <a href="exec:home_cur = 8 & $home_name = ''Niko''''s apartment'' & gs ''obj_din'', ''cur_home''">Niko''s apartment</a>'

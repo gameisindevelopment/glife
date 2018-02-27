@@ -33,12 +33,12 @@ if $ARGS[0] = 'buy':
 		if karta + bankDebtLimit >= 2000000:act 'Buy the city residential apartment': gt 'agentned', 'buy_cityres'
 	end
 
-	if dachaest = 0:
+	if home_owned[3] = 0:
 		'There is a holiday cottage with an adjacent allotment in the village, for 75 thousand <b>₽</b>.'
 		if karta + bankDebtLimit >= 75000:act 'Buy the cottage in the village': gt 'agentned','buy_dacha'
 	end
 
-	if placeMansion = 0:
+	if home_owned[5] = 0:
 		'There is a plot in the suburbs with planning permission for a mansion for 1.5 million <b>₽</b>.'
 		if karta + bankDebtLimit >= 1500000:act 'Buy the plot in the suburbs': gt 'agentned','buy_Mansion'
 	end
@@ -123,7 +123,7 @@ if $ARGS[0] = 'rent_pushkin':
 		*clr
 		minut += 30
 		money -= 6000
-		housr = 2
+		home_owned[4] = 1
 		BuyHous = 2
 		ArendHouseSL += 30
 		gs'stat'
@@ -165,7 +165,7 @@ if $ARGS[0] = 'buy_dacha':
 	*clr
 	minut += 30
 	karta -= 75000
-	dachaest = 1
+	home_owned[3] = 1
 	etoexhib = 0
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
@@ -180,7 +180,7 @@ if $ARGS[0] = 'buy_Mansion':
 	*clr
 	minut += 30
 	karta -= 1500000
-	placeMansion = 1
+	home_owned[5] = 1
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo_paperwork.jpg"></center>'

@@ -18,10 +18,10 @@ if $ARGS[0]='start':
 	    act 'BDSM-club':gt'BDSM_Club','start'
     end
 
-	if placeMansion = 0:
+	if home_owned[5] = 0:
 		'There is a vacant piece of land for sale where a large house could be constructed.'
 		act 'Visit the land for sale': gt 'youplace'
-	elseif placeMansion < 3:
+	elseif home_owned[5] < 3:
 		'You mansion is partially built near here.'
 		act 'Visit your mansion': gt 'youplace'
 	else

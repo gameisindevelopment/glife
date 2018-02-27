@@ -93,7 +93,6 @@ if $ARGS[0] = 'SGStart':
 	pcs_makeup = 1
 
 	money = 2000
-	housrA = 0
 	pcs_grades = 75
 	prezikProver = 3
 	brothersawpirsF = 0

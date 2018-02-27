@@ -4,7 +4,7 @@ $brodila = {
 	sexpartkno = 0
 	if home_owned[1] > 0:
 		gt'korr','start'
-	elseif housr = 2:    
+	elseif home_owned[4] = 1:    
 		gt'korr2x','start'
 	else
 		gt'street', 'start'
@@ -14,7 +14,7 @@ $brodila = {
 $brodilr = {
 	if StoryLine = 1 and ParHomeBlock = 0:
 		gt 'pavResidential'
-    elseif housr = 2:
+    elseif home_owned[4] = 1:
         gt'liames'
     else
         gt'street','start'
@@ -24,7 +24,7 @@ $brodilr = {
 $brodilk = {
     if home_owned[1] > 0:
         gt'kuhr','start'
-    elseif housr = 2:
+    elseif home_owned[4] = 1:
         gt'kuhr2x','start'
     else
 		gt'street', 'start'
@@ -34,7 +34,7 @@ $brodilk = {
 $brodils = {
     if home_owned[1] > 0:
         gt'sitr','start'
-    elseif housr = 2:
+    elseif home_owned[4] = 1:
         gt'sitr2x','start'
 	elseif StoryLine = 1 and ParHomeBlock = 0:
 		gt 'sitrPar'

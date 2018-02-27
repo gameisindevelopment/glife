@@ -5,9 +5,9 @@ clr
 gs 'stat'
 '<center><h4>Your land lot</h4></center>'
 
-if placeMansion < 2:'<center><img <<$set_imgh>> src="images/locations/city/suburb/mansion/yzemelniy.jpg"></center>'
-if placeMansion = 2:'<center><img <<$set_imgh>> src="images/locations/city/suburb/mansion/ystart.jpg"></center>'
-if placeMansion = 3:'<center><img <<$set_imgh>> src="images/locations/city/suburb/mansion/yosobnak.jpg"></center>'
+if home_owned[5] < 2:'<center><img <<$set_imgh>> src="images/locations/city/suburb/mansion/yzemelniy.jpg"></center>'
+if home_owned[5] = 2:'<center><img <<$set_imgh>> src="images/locations/city/suburb/mansion/ystart.jpg"></center>'
+if home_owned[5] = 3:'<center><img <<$set_imgh>> src="images/locations/city/suburb/mansion/yosobnak.jpg"></center>'
 
 ''
 
@@ -20,13 +20,13 @@ act 'Visit the suburbs':minut += 5 & gt 'psiklin', 'start'
 
 if bassMansion = 1:'<a href="exec:gt ''ybass''">Go to the pool</a>.'
 if banaMansion >= 1:'<a href="exec:gt ''yban''">Go to the sauna</a>.'
-if placeMansion = 3:'<a href="exec:gt ''ymans''">Walk inside the mansion</a>.'
+if home_owned[5] = 3:'<a href="exec:gt ''ymans''">Walk inside the mansion</a>.'
 
-if karta + bankDebtLimit >= 1500000 and placeMansion = 0:
+if karta + bankDebtLimit >= 1500000 and home_owned[5] = 0:
 	act 'Buy the land lot for a mansion (1,500,000)':
 		cls
 		karta -= 1500000
-		placeMansion = 1
+		home_owned[5] = 1
 		minut += 5
 		gs 'stat'
 		'You have bought the land lot. You can finally build your own dream mansion.'
@@ -35,11 +35,11 @@ if karta + bankDebtLimit >= 1500000 and placeMansion = 0:
 	end
 end
 
-if karta + bankDebtLimit >= 500000 and placeMansion = 1:
+if karta + bankDebtLimit >= 500000 and home_owned[5] = 1:
 	act 'Pay for running utilies and the building foundation (500,000 <b>₽</b>)':
 		cls
 		karta -= 500000
-		placeMansion = 2
+		home_owned[5] = 2
 		minut += 5
 		gs 'stat'
 		'You''ve paid for the utilities. You now have running water, sewage, electric power, and telephone lines. There''s even a foundation built on the land lot.'
@@ -48,11 +48,11 @@ if karta + bankDebtLimit >= 500000 and placeMansion = 1:
 	end
 end
 
-if karta + bankDebtLimit >= 1500000 and placeMansion = 2:
+if karta + bankDebtLimit >= 1500000 and home_owned[5] = 2:
 	act 'Pay for the finishing touches on the mansion (1,500,000 <b>₽</b>)':
 		cls
 		karta -= 1500000
-		placeMansion = 3
+		home_owned[5] = 3
 		minut += 5
 		gs 'stat'
 		'You''ve paid for the construction of the mansion.'
@@ -61,7 +61,7 @@ if karta + bankDebtLimit >= 1500000 and placeMansion = 2:
 	end
 end
 
-if karta + bankDebtLimit >= 500000 and placeMansion = 3 and ymanrem[3] = 0:
+if karta + bankDebtLimit >= 500000 and home_owned[5] = 3 and ymanrem[3] = 0:
 	act 'Pay for the construction of the rooms (500,000 <b>₽</b>)':
 		cls
 		karta -= 500000
@@ -74,7 +74,7 @@ if karta + bankDebtLimit >= 500000 and placeMansion = 3 and ymanrem[3] = 0:
 	end
 end
 
-if placeMansion => 2:
+if home_owned[5] => 2:
 	if karta + bankDebtLimit >= 800000 and banaMansion = 0:
 		act 'Pay for the construction of the sauna (800,000 <b>₽</b>)':
 			cls
@@ -101,7 +101,7 @@ if placeMansion => 2:
 		end
 	end
 end
-if placeMansion = 3:
+if home_owned[5] = 3:
 	if karta + bankDebtLimit >= 250000 and ymanrem[3] = 1:
 		act 'Pay for the renovations of the main hall (250,000 <b>₽</b>)':
 			cls

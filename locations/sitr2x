@@ -13,7 +13,6 @@ $loc = 'sitr2x'
 
 clr
 minut = minut + 1
-housrA = 1
 elektro = elektro + 1
 gs'stat'
 

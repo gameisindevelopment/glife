@@ -195,7 +195,7 @@ if $ARGS[0] = 'salon':
 				end
 			end
 
-			if placeMansion > 0 and cardrive ! 18:
+			if home_owned[5] > 0 and cardrive ! 18:
 				act 'Go to your mansion':
 					cla
 
