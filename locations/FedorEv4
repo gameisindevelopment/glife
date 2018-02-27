@@ -3032,7 +3032,7 @@ if $ARGS[0] =  'Fedor Livingroom':
 		act 'Talk about what happened with Dimka':gt 'FedorEv4', 'Dimka Aftermath'
 	end
 
-	if ParHomeBlock = 1 and FedorShelter = 0:act 'Ask about moving in':gt 'FedorEv4', 'Fedor Shelter'
+	if home_owned[2] = 0 and FedorShelter = 0:act 'Ask about moving in':gt 'FedorEv4', 'Fedor Shelter'
 
 	act 'Chat':gt 'FedorEv4', 'Fedor Livingroom Chat'
 
@@ -3091,7 +3091,7 @@ if $ARGS[0] =  'Fedor Kitchen':
 		act 'Talk about what happened with Dimka':gt 'FedorEv4', 'Dimka Aftermath'
 	end
 
-	if ParHomeBlock = 1 and FedorShelter = 0:act 'Ask about moving in':gt 'FedorEv4', 'Fedor Shelter'
+	if home_owned[2] = 0 and FedorShelter = 0:act 'Ask about moving in':gt 'FedorEv4', 'Fedor Shelter'
 
 	act 'Chat':gt 'FedorEv4', 'Fedor Kitchen Chat'
 
@@ -3126,7 +3126,7 @@ if $ARGS[0] =  'Fedor Bedroom':
 		'Fedor reaches over, then begins, gently rubbing your vagina, "Your body is so perfect, <<$pcs_firstname>>."'
 	end
 
-	if ParHomeBlock = 1 and FedorShelter = 0:act 'Ask about moving in':gt 'FedorEv4', 'Fedor Shelter'
+	if home_owned[2] = 0 and FedorShelter = 0:act 'Ask about moving in':gt 'FedorEv4', 'Fedor Shelter'
 
 	if FedorLove = 0 and strelaQW = -1:
 		act 'Find out what''s bothering him':gt 'FedorEv4', 'Love Talk Strela'
@@ -3180,7 +3180,7 @@ if $ARGS[0] =  'Fedor Bedroom 2':
 		'Fedor reaches over, then begins gently squeezing your breasts, "You have great tits, <<$pcs_firstname>>."'
 	end
 
-	if ParHomeBlock = 1 and FedorShelter = 0:act 'Ask about moving in':gt 'FedorEv4', 'Fedor Shelter'
+	if home_owned[2] = 0 and FedorShelter = 0:act 'Ask about moving in':gt 'FedorEv4', 'Fedor Shelter'
 
 	act 'Sure':gt 'FedorEv4', 'Fedor Bedroom Chat 2'
 

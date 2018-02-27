@@ -82,6 +82,11 @@ if ARRSIZE('school_static_num') < 62: gs 'gschool_lessons', 'npc_data'
 
 if housr = 1: home_owned[1] = 1
 if BuyHous = 1: home_owned[1] = 2
+home_owned[5] = placeMansion
+home_owned[3] = dachaest
+killvar 'placemansion'
+killvar 'dachaest'
+if storyline = 1 and ParHomeBlock = 0:home_owned[2] = 1
 
 --- loadg ---------------------------------
 

@@ -1169,7 +1169,7 @@ if $ARGS[0] = 'etaj_2':
 	end
 	'<<$etaj2_smoke_rnd>>'
 	'<<$pod_ev_rnd>>'
-	if ParHomeBlock = 0 and storyline = 1:
+	if home_owned[2] = 1:
 		act '<font color = maroon>Your apartment</font>':gt 'korrPar'
 	end
 	act 'Apartment 7: Uncle Misha':

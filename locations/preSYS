@@ -92,6 +92,7 @@ if $ARGS[0] = 'SGStart':
 	pcs_leghair = 12
 	pcs_makeup = 1
 
+	home_owned[2] = 1
 	money = 2000
 	pcs_grades = 75
 	prezikProver = 3

@@ -12,7 +12,7 @@ $brodila = {
 }
 
 $brodilr = {
-	if StoryLine = 1 and ParHomeBlock = 0:
+	if StoryLine = 1 and home_owned[2] = 1:
 		gt 'pavResidential'
     elseif home_owned[4] = 1:
         gt'liames'
@@ -36,7 +36,7 @@ $brodils = {
         gt'sitr','start'
     elseif home_owned[4] = 1:
         gt'sitr2x','start'
-	elseif StoryLine = 1 and ParHomeBlock = 0:
+	elseif StoryLine = 1 and home_owned[2] = 1:
 		gt 'sitrPar'
 	else
 		gt'street', 'start'

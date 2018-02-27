@@ -1143,7 +1143,7 @@ elseif tanwork = 1:
 	$streetev_home = 'Tanya''s apartment'
 elseif student > 0:
 	$streetev_home = 'your dorm'
-elseif ParHomeBlock = 0 and storyline = 1:
+elseif home_owned[2] = 1:
 	$streetev_home = 'outside your apartment block'
 else
 	$streetev_home = 'the train station'

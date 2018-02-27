@@ -59,7 +59,7 @@ elseif $ARGS[0] = 'pavResidential':
 	streetev_hijack = 2
 	streetev_bf = 50
 	streetev_mistmeet = 15
-	if ParHomeBlock = 0 and storyline = 1:
+	if home_owned[2] = 1:
 		streetev_home = 1
 		$streetev_home = 'outside your apartment block'
 	end

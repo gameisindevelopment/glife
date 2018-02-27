@@ -192,7 +192,7 @@ if $ARGS[0] = 'start':
 		end
 	end
 	
-	if money >= 3000 and popugai2 = 0 and storyline = 1 and ParHomeBlock ! 1 :
+	if money >= 3000 and popugai2 = 0 and home_owned[2] = 1 :
 		act 'Buy a parrot for your parent''s apartment (3000 <b>₽</b>)':
 			cla
 			*clr
