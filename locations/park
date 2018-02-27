@@ -76,7 +76,7 @@ if $ARGS[0] = 'start':
 		act 'Have some food in the cafe (0:30)': gt 'ParkKafe', 'food'
 	end
 
-	if housr = 0 and tanwork = 0 and student = 0:
+	if home_owned[1] = 0 and tanwork = 0 and student = 0:
 		!nowhere to live in city
 		if hour >= 20 or hour < 6 :
 			'It''s quite dark now, and you have no where to stay. Maybe you should try to sleep on a bench?'

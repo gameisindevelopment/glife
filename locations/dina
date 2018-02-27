@@ -2,7 +2,7 @@
 
 $brodila = {
 	sexpartkno = 0
-	if housr = 1:
+	if home_owned[1] > 0:
 		gt'korr','start'
 	elseif housr = 2:    
 		gt'korr2x','start'
@@ -22,7 +22,7 @@ $brodilr = {
 }
 
 $brodilk = {
-    if housr = 1:
+    if home_owned[1] > 0:
         gt'kuhr','start'
     elseif housr = 2:
         gt'kuhr2x','start'
@@ -32,7 +32,7 @@ $brodilk = {
 }
 
 $brodils = {
-    if housr = 1:
+    if home_owned[1] > 0:
         gt'sitr','start'
     elseif housr = 2:
         gt'sitr2x','start'

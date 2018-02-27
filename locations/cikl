@@ -68,8 +68,8 @@ ringA = 0
 ringB = 0
 ringC = 0
 
-if BuyHous = 2 and ArendHouseSL <= 0: ArendHouseSL = 0 & BuyHous = 0 & housr = 0
-if BuyHous = 2 and ArendHouseSL > 0: ArendHouseSL -= 1
+if home_owned[1] = 1 and ArendHouseSL <= 0: ArendHouseSL = 0 & home_owned[1] = 0
+if home_owned[1] = 1: ArendHouseSL -= 1
 
 !!Appearance Age
 vidageday -= 1
@@ -1075,9 +1075,9 @@ if day = 25:
 	end
 
 	if stipuha = 1 and stipuhaday = 0:stipuhaday = 1 & karta += 1200 & '<b><font color="green">You have received 1,200 <b>₽</b> scholarship.</font></b>'
-	if housr = 1 and haday = 0 and BuyHous = 0:haday = 1 & money -= 3000 & '<b><font color="red">You paid 3,000 <b>₽</b> for your apartment.</font></b>'
+	if home_owned[1] = 1 and haday = 0 and BuyHous = 0:haday = 1 & money -= 3000 & '<b><font color="red">You paid 3,000 <b>₽</b> for your apartment.</font></b>'
 
-	if housr = 1 and electroday = 0:
+	if home_owned[1] > 0 and electroday = 0:
 		electroday = 1
 		if elektro >= 800:elektro = 800 + rand(0, 100)
 
@@ -1085,16 +1085,16 @@ if day = 25:
 		'<b><font color="red">You paid <<elektro>> for electricity.</font></b>'
 	end
 
-	if housr = 1 and kabel > 0 and kabelday = 0:kabelday = 1 & money -= 300 & '<b><font color="red">You have paid 300 <b>₽</b> for cable TV.</font></b>'
+	if home_owned[1] > 0 and kabel > 0 and kabelday = 0:kabelday = 1 & money -= 300 & '<b><font color="red">You have paid 300 <b>₽</b> for cable TV.</font></b>'
 end
 
 if day ! 25:
 	if paydayHusb = 1:paydayHusb = 0
 	if workKafe = 1 and paydayKafe = 1:paydayKafe = 0
 	if workSec = 1 and paydaySec = 1:paydaySec = 0
-	if housr = 1 and haday = 1 and BuyHous = 0:haday = 0
-	if housr = 1 and electroday = 1:electroday = 0
-	if housr = 1 and kabel > 0 and kabelday = 1:kabelday = 0
+	if home_owned[1] = 1 and haday = 1:haday = 0
+	if home_owned[1] > 0 and electroday = 1:electroday = 0
+	if home_owned[1] > 0 and kabel > 0 and kabelday = 1:kabelday = 0
 	if stipuhaday = 1:stipuhaday = 0
 	if nopaytanwork = 1:nopaytanwork = 0
 	if nopaypoly = 1:nopaypoly = 0
@@ -1102,8 +1102,8 @@ if day ! 25:
 	if paydaybistrosec = 1:paydaybistrosec = 0
 end
 
-if sdaday = day and sdamonth = month and housr = 0:
-	housr = 1
+if sdaday = day and sdamonth = month and home_owned[1] = 0:
+	home_owned[1] = 2
 	'<b><font color="red">Your tenants have moved out and your apartment is now vacant.</font></b>'
 	!msg 'Your tenants have moved out and your apartment is now vacant.'
 end

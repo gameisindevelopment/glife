@@ -1,7 +1,7 @@
 # bedr
 CLOSE ALL
 
-if housr ! 1:gt'street'
+if home_owned[1] = 0:gt'street'
 $metkaM = ''
 $locM = 'bedr'
 $metka = ''

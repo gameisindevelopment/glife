@@ -39,7 +39,7 @@ gs'street_event','street', 'extras'
 
 if opusk > 0 or gnewQW = 5:
 	if rand(0,9) = 0:gt 'gopnew', 'start5'
-	if housr > 0:'Near the entrance to where you live there is something written on the wall. It says:<b>"<<$pcs_nickname>> from apartment 69 is a cheap slut!"</b>'
+	if home_owned[1] > 0:'Near the entrance to where you live there is something written on the wall. It says:<b>"<<$pcs_nickname>> from apartment 69 is a cheap slut!"</b>'
 end
 
 clr
@@ -67,7 +67,7 @@ if car > 0 and cardrive = 1:
 	'In the parking lot is <a href="exec:GS ''carF'', ''start''">your <<$car>></a>.'
 end
 
-if housr = 1:
+if home_owned[1] > 0:
 	act '<b>GO HOME</b>':
 		gorand = rand(0, 100)
 
