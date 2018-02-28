@@ -128,7 +128,7 @@ $d_bag = {
 			pl 'You have <<iif(preziktype = 2, prezikcount, prezikcount+prezik)>> normal condoms left, and <<iif(preziktype = 2, prezik+preziksabo, preziksabo)>> sabotaged <a href="exec:dynamic $din_Switch_Condom_Menu"><b>condoms left in the purse.</b></a>'
 		elseif preziktype < 2 and preziksabo = 0:
 			pl 'You have <<prezik+prezikcount>> <a href="exec:dynamic $din_Switch_Condom_Menu"><b>condoms left in the purse.</b></a>'
-		ebd
+		end
 		*nl
 	else
 		pl 'You are out of condoms.'

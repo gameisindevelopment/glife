@@ -32,7 +32,7 @@ if $ARGS[0] = 'start':
 	''
 	'(At first you thought the warning was only health department boiler-plate. However, no sooner do you finish thinking that then you noticed a nurse pushing a cart of freshly sterilized coat hangers down the hallway and begin to wonder how competent this facility really is in terms of women''s health...)'
 	''
-	'Near the entrance there is an advertisement for cosmetic surgery with directions to the surgeon's office.'
+	'Near the entrance there is an advertisement for cosmetic surgery with directions to the surgeon''s office.'
 
 	if workhosp = 1 and hour >= 8 and hour <= 9 and week < 6:act 'Exit to replace':gt 'poli', 'beginwork'
 
