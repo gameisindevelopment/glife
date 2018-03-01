@@ -1368,7 +1368,7 @@ else
 	if rand_vision = 0:$pcdesc_visionrandom = 'lashes'
 	if rand_vision = 1:$pcdesc_visionrandom = 'eyelashes'
 	$pcdesc_vision = 'lashes'
-	$pcdesc_visionwordy = '<<$$pcdesc_lasheswordy>> lashes'
+	$pcdesc_visionwordy = '<<$pcdesc_lasheswordy>> lashes'
 	$glass = ''
 	glassvnesh = 0
 end
