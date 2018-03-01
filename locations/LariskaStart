@@ -192,7 +192,7 @@ if $ARGS[0] = 'end':
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/19.jpg"></center>'
 			'You are leaving the club when you see Lina coming to you.'
-			'"<<$pcs_name>>, wait! Help me, please, to tidy up the equipment in the storage room, the trainer ordered me to do it, but the bulb burned out there. You will hold just the flashlight, and I do the rest!"'
+			'"<<$pcs_nickname>>, wait! Help me, please, to tidy up the equipment in the storage room, the trainer ordered me to do it, but the bulb burned out there. You will hold just the flashlight, and I do the rest!"'
 			'"Uhm, I''m sorry, Lina, but I must go home." You reply making a hint to Ivan.'
 			'"So let''s do it, I''ll move it and you will hold the flashlight." Ivan breaks in on your conversation.'
 			'"That''s okay, you don''t have to, I do it myself." Lina replies quickly and walks away.'

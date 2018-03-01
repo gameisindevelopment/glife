@@ -467,7 +467,7 @@ if $ARGS[0] = 'events':
 			*clr & cla
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/bathroom/boysbathroom.jpg"></center>'
-			'Your heart is pounding as you let them guide you along. You know perfectly well that they won''t let you go now, no matter what you say. When you arrive at the men''s restroom, one of the Gopniks stays by the door to keep watch while the others shove you in. The walls are covered in all sorts of crude text. A lot of it involves you. Across the entire wall, a large text reads "<<$name>> <<$surname>> = <$$gnikname>>".'
+			'Your heart is pounding as you let them guide you along. You know perfectly well that they won''t let you go now, no matter what you say. When you arrive at the men''s restroom, one of the Gopniks stays by the door to keep watch while the others shove you in. The walls are covered in all sorts of crude text. A lot of it involves you. Across the entire wall, a large text reads "<<$pcs_firstname>> <<$pcs_lastname>> = <$gnikname>>".'
 			*nl
 			'Vitek quickly grabs you by your hair, snarling in your your face, "You know why you''re here, slut. Now get down and get to work."'
 
@@ -485,7 +485,7 @@ if $ARGS[0] = 'events':
 				*nl
 				'A few minutes later, Vitek is about to cum and tells you, "Good job, cocksucker. I''m going to drop my load in your mouth now and when I do, you ''re going to swallow it all and lick me clean. If you spill anything, you''re licking it up from the floor. Got that?" You nod up at him and as soon as his cum hits your tongue, you diligently swallow his load, making sure not to let a single drop escape. When you''re sure he''s finished, you lick and suck his slowly softening dick clean, before tucking it back into his pants for him.'
 				*nl
-				'"That was great, <<$name>>, I see you''ve certainly earned your reputation. We''ll definitely be doing this more often, maybe next time I''ll make sure the other boys can have a turn as well. We''ll come find you when we want you. Understood?"'
+				'"That was great, <<$pcs_firstname>>, I see you''ve certainly earned your reputation. We''ll definitely be doing this more often, maybe next time I''ll make sure the other boys can have a turn as well. We''ll come find you when we want you. Understood?"'
 				*nl
 				'You''re not looking forward to the prospect, but not knowing what else to do you just nod. After the guys leave the bathroom you quickly have a drink, trying to wash the nasty taste of his cum out of your mouth.'
 				act 'Continue': gt 'gschool_lessons', 'short_break'
@@ -731,7 +731,7 @@ if $ARGS[0] = 'bjs':
 				act 'Continue': gt 'gschool_lunch', 'break'
 			end
 		else
-			'During the break, you are approached by some of local Gopniks in your school, "<<$name>>, I hear you''re an amazing cocksucker. I think you should show us. Come on, let''s go to a restroom and you can show us your skills."'
+			'During the break, you are approached by some of local Gopniks in your school, "<<$pcs_firstname>>, I hear you''re an amazing cocksucker. I think you should show us. Come on, let''s go to a restroom and you can show us your skills."'
 			*nl
 			'They put their hands around your arms and begin to guide you to the restrooms. Knowing you can''t take all of them on you follow along meekly, hoping for some miracle to save you.'
 
@@ -739,7 +739,7 @@ if $ARGS[0] = 'bjs':
 				*clr & cla
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/bathroom/boysbathroom.jpg"></center>'
-				'Your heart is pounding as you let them guide you along. You know perfectly well that they won''t let you go now, no matter what you say. When you arrive at the men''s restroom, one of the Gopniks stays by the door to keep watch while the others shove you in. The walls are covered in all sorts of crude text. A lot of it involves you. Across the entire wall, a large text reads "<<$name>> <<$surname>> = <$$gnikname>>".'
+				'Your heart is pounding as you let them guide you along. You know perfectly well that they won''t let you go now, no matter what you say. When you arrive at the men''s restroom, one of the Gopniks stays by the door to keep watch while the others shove you in. The walls are covered in all sorts of crude text. A lot of it involves you. Across the entire wall, a large text reads "<<$pcs_firstname>> <<$pcs_lastname>> = <$gnikname>>".'
 				*nl
 				'Vitek quickly grabs you by your hair, snarling in your your face, "You know why you''re here, slut. Now get down and get to work."'
 
@@ -760,7 +760,7 @@ if $ARGS[0] = 'bjs':
 					*nl
 					'A few minutes later, Vitek is about to cum and tells you, "Good job, cocksucker. I''m going to drop my load in your mouth now and when I do, you ''re going to swallow it all and lick me clean. If you spill anything, you''re licking it up from the floor. Got that?" You nod up at him and as soon as his cum hits your tongue, you diligently swallow his load, making sure not to let a single drop escape. When you''re sure he''s finished, you lick and suck his slowly softening dick clean, before tucking it back into his pants for him.'
 					*nl
-					'"That was great, <<$name>>, I see you''ve certainly earned your reputation. We''ll definitely be doing this more often, maybe next time I''ll make sure the other boys can have a turn as well. We''ll come find you when we want you. Understood?"'
+					'"That was great, <<$pcs_firstname>>, I see you''ve certainly earned your reputation. We''ll definitely be doing this more often, maybe next time I''ll make sure the other boys can have a turn as well. We''ll come find you when we want you. Understood?"'
 					*nl
 					'You''re not looking forward to the prospect, but not knowing what else to do you just nod. After the guys leave the bathroom you quickly have a drink, trying to wash the nasty taste of his cum out of your mouth.'
 					act 'Continue': gt 'gschool_lessons', 'short_break'
