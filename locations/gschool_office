@@ -190,8 +190,6 @@ if $ARGS[0] = 'spanked':
 !!if not wearing panties.
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/principal/bare.jpg"></center>'
 			'Once you walk over to her, Principal <<$npc_lastname[''134'']>> bends you over. With you standing like that, she pulls up your skirt and when she see''s your bare ass she pauses. "Where are your panties?"'
-			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/principal/bare.jpg"></center>'
-			'Once you walk over to her, Principal <<$npc_lastname[''134'']>> bends you over. With you standing like that, she pulls up your skirt, and when she see''s your bare ass, she pauses. "Where are your panties?"'
 			act 'Feign innocence':
 				cls
 				gs 'pain', 7, 'asscheeks', 'spank'
