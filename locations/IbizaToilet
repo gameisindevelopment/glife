@@ -98,7 +98,7 @@ act 'Enter the bathroom':
 		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/toilet/bigcock.jpg"></center><br>'
 		'instinctively you let out a, "Fuck me!" as you''re genuinely impressed by his cock size which you have within 10 centimeters of your face.'
 		'"What are you waiting for? Come on, suck it, bitch! Help me relieve this tension I have in my balls!"'
-		'<<$OpenInnerThough>> «This cock is at least 29 centimeters and look how thick it is! It''s gigantic!»<<$CloseInnerThough>>'
+		'<<$OpenInnerThought>> «This cock is at least 29 centimeters and look how thick it is! It''s gigantic!»<<$CloseInnerThought>>'
 		
 		!2 acts available: No way! Leave me alone asshole! or Suck it!!
 			act 'No way! Leave alone asshole!':
@@ -126,14 +126,14 @@ act 'Enter the bathroom':
 			'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet6.mp4"></video></center><br>'
 			'You obey and quickly position yourself so you can suck and lick his balls until you completely fit them in your mouth. As you suck his balls you begin jerking him off with your free hand. You are baffled as you notice that your pussy is dripping wet.'
 			'"That''s enough playing with my balls bitch! If you can''t fit my cock in your mouth, I''ll need to relieve myself in one of the other holes instead! Since I''m a nice guy, I''ll let you choose! Ass or pussy?"'
-			'<<$OpenInnerThough>> «Oh my God! If this guy shoves his massive cock in my ass, I won''t be able to walk straight for days!<<$CloseInnerThough>> « you think to yourself. You have no other choice than...'					
+			'<<$OpenInnerThought>> «Oh my God! If this guy shoves his massive cock in my ass, I won''t be able to walk straight for days!<<$CloseInnerThought>> « you think to yourself. You have no other choice than...'					
 				act 'Pussy':
 					
 				'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/bicgcock2.mp4"></video></center><br>'
 				'"Good choice whore!" he tells you as he lays down on the floor, "I want you to ride me and don''t be afraid to go deep. I want to feel that I''m streching your inside..."'
 				'"Do you have a condom?" you ask him.'
 				'"Condom? No, where''s the fun in that... I like to fuck raw, there''s nothing better then the risk of having unprotected sex."'
-				'You hesitate for a bit as you fear you might get pregnant by an unknown man.<<$OpenInnerThough>> «I don''t think there''s a risk... I hope...  or is there? Have I taken my birth control pills? I can''t remember! No matter what I can''t let him put that massive thing in my ass, I would die if that ever happened...»<<$CloseInnerThough>>'
+				'You hesitate for a bit as you fear you might get pregnant by an unknown man.<<$OpenInnerThought>> «I don''t think there''s a risk... I hope...  or is there? Have I taken my birth control pills? I can''t remember! No matter what I can''t let him put that massive thing in my ass, I would die if that ever happened...»<<$CloseInnerThought>>'
 				*nl
 				'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet7.mp4"></video></center><br>'
 				'You slowly crouch feeling his tip at the entrance of your slit. As you lower yourself, you feel your pussy lips open themselves spontaneously, emitting a moist sound as his cock enters you...' 
@@ -152,7 +152,7 @@ act 'Enter the bathroom':
 					'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/pussyfilled.mp4"></video></center><br>'
 					'"Not bad! There is nothing that turnes me on more than a cream-filled bun! I''ve put a lot of yeast in the batter!" he jokes.'
 					'"I truly hope you end up with a little bastard!"' 
-					'<<$OpenInnerThough>> «Oh my God! I can''t get pregnant, as soon as he leaves I must run into the booth and push out as much sperm as I can.»<<$CloseInnerThough>>'
+					'<<$OpenInnerThought>> «Oh my God! I can''t get pregnant, as soon as he leaves I must run into the booth and push out as much sperm as I can.»<<$CloseInnerThought>>'
 
 						act 'Go back to the dance floor': gt 'restoreposition'
 					end
@@ -210,7 +210,7 @@ act 'Enter the bathroom':
 
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet12.jpg"></center><br>'
 	'You need to pee and you can''t hold it in anymore. You enter the nearest bathroom by the main dance floor and, as usual, there are many other Purple Girls waiting in line.'
-	'<<$OpenInnerThough>> «The line is really long, why did I accept that last drink, my bladder is about to burst... Maybe I should risk it and head inside the men''s bathroom or it might be better to wait in line...»<<$CloseInnerThough>>'
+	'<<$OpenInnerThought>> «The line is really long, why did I accept that last drink, my bladder is about to burst... Maybe I should risk it and head inside the men''s bathroom or it might be better to wait in line...»<<$CloseInnerThought>>'
 
 	!! Here 2 acts available: Wait… and Go into the men''s toilet…
 		act 'Wait in line':
@@ -236,8 +236,8 @@ act 'Enter the bathroom':
 			
 			'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/blowjob01.mp4"></video></center><br>'
 			'You quickly get on your knees and wrap your lips against his errect cock. As it enters your mouth you feel its warmth and get a taste of his pre-cum.'
-			'<<$OpenInnerThough>> «You know what, <<$pcs_nickname>>?<<$CloseInnerThough>> « you begin thinking to yourself.'
-			'<<$OpenInnerThough>> «I think you love sucking cocks! They are so warm... so hard... so powerful... Oh God, I''m enjoying this more than I thought I would!»<<$CloseInnerThough>>'
+			'<<$OpenInnerThought>> «You know what, <<$pcs_nickname>>?<<$CloseInnerThought>> « you begin thinking to yourself.'
+			'<<$OpenInnerThought>> «I think you love sucking cocks! They are so warm... so hard... so powerful... Oh God, I''m enjoying this more than I thought I would!»<<$CloseInnerThought>>'
 			'"Fuck me! You''re great at this!!!" he tells you, "I''ll have to immortalize with a few photos!"'
 			'The man picks up his cell phone and starts taking pictures of his cock in your mouth.'
 			'"I''ll share all these photos to my friends! Fuck, I''m so close whore! Keep it up, don''t slow down!! As you''ve behaved very well... I''ll let you decide where you want me to unload."'
@@ -252,7 +252,7 @@ act 'Enter the bathroom':
 				*nl
 				'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/f2.mp4"></video></center><br>'
 				'"God! I''m not done yet." he tells you as he keeps on cumming over your face.'
-				'<<$OpenInnerThough>> «What a relief! I managed to avoid him cumming inside me! Just look at the load! I would''ve ended pregnant if he came inside me.»<<$CloseInnerThough>>'
+				'<<$OpenInnerThought>> «What a relief! I managed to avoid him cumming inside me! Just look at the load! I would''ve ended pregnant if he came inside me.»<<$CloseInnerThought>>'
 				'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/f3.mp4"></video></center><br>'
 					act 'Go back to the dance floor': gt 'restoreposition'
       
@@ -278,10 +278,10 @@ act 'Enter the bathroom':
 				'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet14.mp4"></video></center><br>'
 				'The man grabs your one leg and lifts it to make room as he enters you from behind... as he penetrates you notice something''s off, he is fucking your ass! The pain is unbearable at the first thrusts but as the time passes you get more accustomed to his thrust making you even hornier and you start enjoying the pounding instead.'
 				$orgasm_or = 'yes'
-				$orgasm_txt = '<<$OpenInnerThough>> «Oh my God! Fuck, this cock feels so good! He''s making me orgasm! It must be those damn yellow pills. Oh my God!»<<$CloseInnerThough>>'
+				$orgasm_txt = '<<$OpenInnerThought>> «Oh my God! Fuck, this cock feels so good! He''s making me orgasm! It must be those damn yellow pills. Oh my God!»<<$CloseInnerThought>>'
 				'The man laughs as he notices you orgasming, "Didn''t even need to fuck you in the pussy to make you orgasm whore. Let''s try the other hole too..."'
 				'The man takes his cock out of your ass and immediately penterates your pussy. As he enters you, you let out a sigh as the contraction from the orgasm still hasn''t resided making your pussy tight. Not being able to contain himself, he finishes within seconds, filling your unprotected pussy with his cum...'
-				'<<$OpenInnerThough>> «Fuck! How many have been cumming inside of me! This is insane!<<$CloseInnerThough>> «”'
+				'<<$OpenInnerThought>> «Fuck! How many have been cumming inside of me! This is insane!<<$CloseInnerThought>> «”'
 				*nl
 				'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/cream3.mp4"></video></center><br>'
 					act 'Go back to the dance floor': gt 'restoreposition'
@@ -296,7 +296,7 @@ act 'Enter the bathroom':
 	!Add bonus to Mood.
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet12.jpg"></center><br>'
 	'You need to visit the bathroom and you need to do it now. You enter the nearest bathroom by the main dance floor and as usual there are many Purple Girls standing in line waiting to enter the bathroom.'
-	'<<$OpenInnerThough>> «The line is really long, why did I accept that last drink, my bladder is about to burst... Maybe I should risk it and head inside the men''s bathroom or it might be better to wait in line...»<<$CloseInnerThough>>'
+	'<<$OpenInnerThought>> «The line is really long, why did I accept that last drink, my bladder is about to burst... Maybe I should risk it and head inside the men''s bathroom or it might be better to wait in line...»<<$CloseInnerThought>>'
 	
 	!Here 2 acts available: Wait… and Go into the men''s toilet…
     act 'Wait':
@@ -314,7 +314,7 @@ act 'Enter the bathroom':
 		'"You can make it up to me. Come here... and get on your knees! Just like that... very well... now open your fucking mouth!" he yells as he begins to pee in your mouth.'
 		*nl
 		'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet15.mp4"></video></center><br>'
-		'<<$OpenInnerThough>> «This is really humiliating! I feel so filthy... just like a simple whore that''ll do anything her customers demand her to do... But is it really so bad?»<<$CloseInnerThough>>'	
+		'<<$OpenInnerThought>> «This is really humiliating! I feel so filthy... just like a simple whore that''ll do anything her customers demand her to do... But is it really so bad?»<<$CloseInnerThought>>'	
 		act 'Go back to the dance floor': gt 'restoreposition'
     end
 end
@@ -341,7 +341,7 @@ act 'Enter the bathroom':
 	*nl
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet18.jpg"></center><br>'
 	'You couldn''t hold it back any more, even if you wanted to! With a deep sigh, you spread your legs a little and continue to pee under his gaze. After a few seconds, he pulls out a camera and smiles: "Don''t worry, this''ll stay between you and me! You just look so sexy right now..."'
-	'<<$OpenInnerThough>> «There are some really weird people around here!»<<$CloseInnerThough>> You don''t even notice that your pussy is soaking wet by all the excitment.'
+	'<<$OpenInnerThought>> «There are some really weird people around here!»<<$CloseInnerThought>> You don''t even notice that your pussy is soaking wet by all the excitment.'
 		act 'Go back to the dance floor': gt 'restoreposition'
 end
 
@@ -412,9 +412,9 @@ act 'Enter the bathroom':
 	*nl
 	'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet25.mp4"></video></center><br>'
 	'As you''re in the booth peeing, you can still hear the loud moans from the Purple Girl being fucked by the customer. The combinations of the yellow pills and the moaning on the outside are leaving you extremely horny.'
-	'You sigh as your pussy is soaked and feel your nipples harden like chestnuts. <<$OpenInnerThough>> «Oh my God, my nipples are so sensitive right now! If I don''t take action right away, I''ll never be able to calm down.»<<$CloseInnerThough>>'
+	'You sigh as your pussy is soaked and feel your nipples harden like chestnuts. <<$OpenInnerThought>> «Oh my God, my nipples are so sensitive right now! If I don''t take action right away, I''ll never be able to calm down.»<<$CloseInnerThought>>'
 	'At the same time you hear the girl''s moans getting louder and that the customer is grunting in tune with her.'
-	'<<$OpenInnerThough>> «I''m sure he''s cumming inside her...<<$CloseInnerThough>> « you think to yourself, <<$OpenInnerThough>> «Fuck! They are enjoying themselves and here am I all alone and horny. I should get out of the booth and immediately search for a boothion who will fuck me like the slut I am!»<<$CloseInnerThough>>'
+	'<<$OpenInnerThought>> «I''m sure he''s cumming inside her...<<$CloseInnerThought>> « you think to yourself, <<$OpenInnerThought>> «Fuck! They are enjoying themselves and here am I all alone and horny. I should get out of the booth and immediately search for a boothion who will fuck me like the slut I am!»<<$CloseInnerThought>>'
 	'As you leave the booth you see the happy fuck buddies leaving the bathroom at the same time there''s someone else entering...'
   
 	act 'Leave the bathroom':
@@ -440,11 +440,11 @@ act 'Enter the bathroom':
 		'As soon as he penetrates you, an orgasm overwhelms you while your vaginal walls begin having strong contractions that squeeze his cock so hard that you feel his cock twitching ready to explode.'
 		'"Oh shit, I''m going to cum in your filthy pussy, whore!" he manages to grunt.'
 		'Without stopping you continue bouncing up and down, "I don''t care, fill my pussy with your seed..." you beg him, "Please cum inside me, I need to feel your sperm inside me!" you shout and plead. You don''t have to wait for long to receive the reward as after just a few moments you feel a warmth filling your pussy.'
-		'<<$OpenInnerThough>> «I''m such a dirty whore.»<<$CloseInnerThough>>'
+		'<<$OpenInnerThought>> «I''m such a dirty whore.»<<$CloseInnerThought>>'
 		'The thought of a stranger cumming into your fertile teenage pussy is sending you over the top as you orgasm once again over his cock while your tight pussy walls press out every little drop from his twitching cock.'
 		*nl
 		'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/cream4.mp4"></video></center><br>'
-		'<<$OpenInnerThough>> «I think I''m starting to become a cum addict! I don''t care if they cum in my mouth, in my pussy or in my ass, I just want to get filled every time.»<<$CloseInnerThough>> you think to yourself while you''re freshining up so you can go back to the dance floor.'
+		'<<$OpenInnerThought>> «I think I''m starting to become a cum addict! I don''t care if they cum in my mouth, in my pussy or in my ass, I just want to get filled every time.»<<$CloseInnerThought>> you think to yourself while you''re freshining up so you can go back to the dance floor.'
 			act 'Go back to the dance floor': gt 'restoreposition'
 	end
 end
@@ -472,16 +472,16 @@ act 'Enter the bathroom':
 		*nl
 		'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/cumaddict02.mp4"></video></center><br>'
 		'"You are really the best! One of the most impressive whores on this ship. I''m finally convinced that the cruise was worth it, 40.000€ for 3 days."' 
-		'<<$OpenInnerThough>> «Is he serious? 40.000€ for a ticket? What the fuck! There must be at least 300 customers and about 150 Purple Girls... if they pay the girls...»<<$CloseInnerThough>>'
-		'<<$OpenInnerThough>> «50,000 [rubles] for seven days... and they pick up two rounds of customers per trip... they are earning 16,500,000€ per trip! They''re making bank thanks to the girls...»<<$CloseInnerThough>>'
-		'<<$OpenInnerThough>> «And that''s without counting the extra outings that I know they charge separately...»<<$CloseInnerThough>>'
+		'<<$OpenInnerThought>> «Is he serious? 40.000€ for a ticket? What the fuck! There must be at least 300 customers and about 150 Purple Girls... if they pay the girls...»<<$CloseInnerThought>>'
+		'<<$OpenInnerThought>> «50,000 [rubles] for seven days... and they pick up two rounds of customers per trip... they are earning 16,500,000€ per trip! They''re making bank thanks to the girls...»<<$CloseInnerThought>>'
+		'<<$OpenInnerThought>> «And that''s without counting the extra outings that I know they charge separately...»<<$CloseInnerThought>>'
 		'"I''m ready for another round, this time I want you feel your inside, whore!" You are still amazed by the numbers and not responding as the customer shoves you into a booth...'
 			
 		act 'Fuck him, you have no choice':
 			!Add decrease aroused --
 			'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet26.mp4"></video></center><br>'
 			'The customer puts on a condom and places himself on the toilet. While you, still stunned by the discovery, mechanically begin riding him...'
-			'<<$OpenInnerThough>> «Sure, I''m a whore, yes... but the bare minimum I will take home is 50,000 [rubles]. I will be 50,000 rubles richer... and I''ve had quite the fun!»<<$CloseInnerThough>>'
+			'<<$OpenInnerThought>> «Sure, I''m a whore, yes... but the bare minimum I will take home is 50,000 [rubles]. I will be 50,000 rubles richer... and I''ve had quite the fun!»<<$CloseInnerThought>>'
 			'Snapping back, you begin to speed up as you tighten your grip on his cock as you ask him, "Do you enjoy my moist pussy?"'
 			'"Yes, it''s one of the best I''ve had up to now!" he answers.'
 			'"No, no, no..." you reply, "It''s not one of the best. It is the best pussy on this whole cruise. And this will be... Aaaaaah... the best fuck you will have!" you scream out while having an orgasm.'
@@ -499,8 +499,8 @@ act 'Enter the bathroom':
 	*nl
 	'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/toilet/toilet27.mp4"></video></center><br>'
 	'You take a quick look around before entering and you see that it is empty. You enter and are disappointed to see that in this bathroom, there are no booths only urinals.'
-	'<<$OpenInnerThough>> «If they can so can I!»<<$CloseInnerThough>> You undress from the waist down, raise one leg and start peeing. The yellow pills are keeping you aroused that your hand automatically start rubbing your clitoris.'
-	'<<$OpenInnerThough>> «I''m so horny, right now! I''m going to climax!<<$CloseInnerThough>> « You scream as you orgasm. You try your hardest to quickly clean up and as soon as you''re done you head back to the dance floor.'
+	'<<$OpenInnerThought>> «If they can so can I!»<<$CloseInnerThought>> You undress from the waist down, raise one leg and start peeing. The yellow pills are keeping you aroused that your hand automatically start rubbing your clitoris.'
+	'<<$OpenInnerThought>> «I''m so horny, right now! I''m going to climax!<<$CloseInnerThought>> « You scream as you orgasm. You try your hardest to quickly clean up and as soon as you''re done you head back to the dance floor.'
 		
 		act 'Go back to the dance floor': gt 'restoreposition'
 end

@@ -23,7 +23,7 @@ if $ARGS[0] = 'start':
 	end
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/club11.jpg"></center>'
 	*nl 
-	'Erik is standing in front of you. Checking him out while trying not to be too obvious, you think to yourself, <<$OpenInnerThough>> «What a handsome man.»<<$CloseInnerThough>>'
+	'Erik is standing in front of you. Checking him out while trying not to be too obvious, you think to yourself, <<$OpenInnerThought>> «What a handsome man.»<<$CloseInnerThought>>'
 	'He is truly quite attractive and, thinking about it, you realize that you probably like him a little more than is good for you... though it does turn you on to think that you would probably do anything he might ask of you. Like, <i>anything</i>. He notices you''re attention and comes closer; your legs tremble and your knees feel a little weak.'
 	*nl
 	'<<$OpenMaleVoice>>"Hi <<$pcs_nickname>>! How are you doing? You look like you''re having fun. So listen, I''ve got something to tell you. You see... '
@@ -47,7 +47,7 @@ if $ARGS[0] = 'start':
 		act 'Perhaps':
 			*clr & cla
 			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/erick02.jpg"></center>'
-			'<<$OpenMaleVoice>>"I knew I had the right girl!. Come on, follow me."<<$CloseMaleVoice>> Eric sits down on a comfortable coach and pours himself a generous glass of Scotch. <<$OpenInnerThough>>"Wow! Not only is he handsome, he has such refined tastes too! Hmm not to mention such beautiful blue eyes as well!"<<$CloseInnerThough>> You think while he pours you a glass of whiskey too.' 
+			'<<$OpenMaleVoice>>"I knew I had the right girl!. Come on, follow me."<<$CloseMaleVoice>> Eric sits down on a comfortable coach and pours himself a generous glass of Scotch. <<$OpenInnerThought>>"Wow! Not only is he handsome, he has such refined tastes too! Hmm not to mention such beautiful blue eyes as well!"<<$CloseInnerThought>> You think while he pours you a glass of whiskey too.' 
 			*nl
 			'<<$OpenMaleVoice>>"I have many informants, with eyes and ears everywhere. They always let me know when they notice someone with such potential."<<$CloseMaleVoice>> Erik continues, opening his eyes wide as he passes you the glass, <<$OpenMaleVoice>>"You see <<$pcs_nickname>>, I''m not one to judge you for how you''ve been acting. There''s nothing wrong with enjoying sex, or even having as much sex as you can... but if you add a bit of money to it, you can enjoy it even better. When you add <b>a lot</b> of money well, that''s way better."<<$CloseMaleVoice>>'
 			act 'Tell me more':
@@ -61,7 +61,7 @@ if $ARGS[0] = 'start':
 					'<<$OpenPCVoice>>"Ibiza?! Mediterranean sea?! A trip to Spain!! How long?"<<$ClosePCVoice>>'
 					'<<$OpenMaleVoice>>"One week, that''s exactly seven days. You''ll only be working as a dancer and as a waitress, serving drinks to the clients on the yacht; if you want to do something extra,"<<$CloseMaleVoice>> he winks at you, seeing your eyes widen in understanding. <<$OpenMaleVoice>>"Ah-ha, I see you understand."<<$CloseMaleVoice>> Eric adds, sipping a shot of whiskey from his glass <<$OpenMaleVoice>>"It''s up to you, of course!"<<$CloseMaleVoice>>'
 					*nl
-					'<<$OpenInnerThough>>"I think that could be an opportunity to learn about new lands and cultures." He is so handsome. You cannot resist him. His chin is perfect and his fingernails are even manicured! Wow!! <<$CloseInnerThough>> <<$OpenMaleVoice>>"You get to keep any tips the clients give you and in addition, I''l pay you 50000 rubles for the trip. I''ll give you 25000 rubles now and after the trip I''ll pay you the rest. Are you interested?"<<$CloseMaleVoice>> <<$OpenInnerThough>>"50000 rubles what the fuck! That is a lot of money! And the tips I could earn from people this rich!" <<$CloseInnerThough>>'
+					'<<$OpenInnerThought>>"I think that could be an opportunity to learn about new lands and cultures." He is so handsome. You cannot resist him. His chin is perfect and his fingernails are even manicured! Wow!! <<$CloseInnerThought>> <<$OpenMaleVoice>>"You get to keep any tips the clients give you and in addition, I''l pay you 50000 rubles for the trip. I''ll give you 25000 rubles now and after the trip I''ll pay you the rest. Are you interested?"<<$CloseMaleVoice>> <<$OpenInnerThought>>"50000 rubles what the fuck! That is a lot of money! And the tips I could earn from people this rich!" <<$CloseInnerThought>>'
 					act 'Agree':
 						cla
 						*nl
@@ -73,7 +73,7 @@ if $ARGS[0] = 'start':
 							*nl
 							'Eric finishes his scotch and gets up from the chair. <<$OpenMaleVoice>>"Alright, next Saturday you must come here, to the club. A car will be waiting to take you to the airport. When you land in Ibiza a member of the crew will meet you and take you to the ship. All clear?"<<$CloseMaleVoice>>'
 							'<<$OpenPCVoice>>"Yes, all clear. Wow Eric, thank you so much! I''m so happy you''re giving me an opportunity like this!"<<$ClosePCVoice>>'
-							'<<$OpenMaleVoice>>"You are welcome <<$pcs_nickname>>, I hope you enjoy every second. And, I''m sure you''re going to make us both a lot of money,"<<$CloseMaleVoice>> Eric adds, looking you from head to to toe and giving you a sweeping smile. <<$OpenMaleVoice>>"Remember, you have to be here, next Saturday. Don''t fail me now, I''m counting on you!<<$CloseMaleVoice>>" <<$OpenInnerThough>>I can''t fail Eric! I will do my best to make him proud of me. Oh my gosh, what a handsome man! I love him!<<$CloseInnerThough>>'
+							'<<$OpenMaleVoice>>"You are welcome <<$pcs_nickname>>, I hope you enjoy every second. And, I''m sure you''re going to make us both a lot of money,"<<$CloseMaleVoice>> Eric adds, looking you from head to to toe and giving you a sweeping smile. <<$OpenMaleVoice>>"Remember, you have to be here, next Saturday. Don''t fail me now, I''m counting on you!<<$CloseMaleVoice>>" <<$OpenInnerThought>>I can''t fail Eric! I will do my best to make him proud of me. Oh my gosh, what a handsome man! I love him!<<$CloseInnerThought>>'
 							act 'Leave Eric': gt 'club', 'inside' 
 							!!Finish start event Ibiza trip. Then the event will begin the next Saturday. Relation with Eric +5
 						end
@@ -109,7 +109,7 @@ if $ARGS[0] = 'another time':
 		act 'Yes':
 			*nl & cla
 			'<<$OpenPCVoice>>"Yes of course Eric!! Wow Eric, thank you so much! I''m so happy you''re giving me an opportunity like this, I''ll be seeing you next Saturday then!"<<$ClosePCVoice>>'
-			'<<$OpenMaleVoice>>"Don''t fail me now, I''m counting on you!"<<$CloseMaleVoice>> <<$OpenInnerThough>>I can''t fail Eric! I will do my best to make him proud of me. Oh what a handsome man! I love him!<<$CloseInnerThough>>'
+			'<<$OpenMaleVoice>>"Don''t fail me now, I''m counting on you!"<<$CloseMaleVoice>> <<$OpenInnerThought>>I can''t fail Eric! I will do my best to make him proud of me. Oh what a handsome man! I love him!<<$CloseInnerThought>>'
 			act 'Leave Eric': gt 'club', 'inside'
 			!!Finish start event Ibiza trip. Then the event will begin the next Saturday. Relation with Eric +5
 		end
@@ -120,7 +120,7 @@ if $ARGS[0] = 'First Day':
 !!	gs 'IbizaStart', 'fonts'
 
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/erick03.jpg"></center>'
-	'You''ve just got the Nightclub in your sights when you observe one of the porters at the entrance suddenly call something over the radio. Just as you arrive at the entrance Eric walks out, puts his arm around your shoulders and says: <<$OpenMaleVoice>>"Hi <<$pcs_nickname>>! You arrived just in time."<<$CloseMaleVoice>> <<$OpenInnerThough>>"Wow!! I like this man more and more"<<$CloseInnerThough>> you think, biting your lip slightly. <<$OpenMaleVoice>>"You see the Bently over there? My personal driver, Marco, is waiting for you there. He''ll be the one to take you to my plane and then for you it''s off to Ibiza! I imagine that suitcase has everything you need? Good good, well, I wish you good trip then. I will see you in Ibiza on Wednesday and until then I hope you''ll do everything you can to keep the customers happy. Remember, <i>everything</i> you can do to keep them happy. Do you understand me <<$pcs_nickname>>? Can I place my trust in you for this?"<<$CloseMaleVoice>>'
+	'You''ve just got the Nightclub in your sights when you observe one of the porters at the entrance suddenly call something over the radio. Just as you arrive at the entrance Eric walks out, puts his arm around your shoulders and says: <<$OpenMaleVoice>>"Hi <<$pcs_nickname>>! You arrived just in time."<<$CloseMaleVoice>> <<$OpenInnerThought>>"Wow!! I like this man more and more"<<$CloseInnerThought>> you think, biting your lip slightly. <<$OpenMaleVoice>>"You see the Bently over there? My personal driver, Marco, is waiting for you there. He''ll be the one to take you to my plane and then for you it''s off to Ibiza! I imagine that suitcase has everything you need? Good good, well, I wish you good trip then. I will see you in Ibiza on Wednesday and until then I hope you''ll do everything you can to keep the customers happy. Remember, <i>everything</i> you can do to keep them happy. Do you understand me <<$pcs_nickname>>? Can I place my trust in you for this?"<<$CloseMaleVoice>>'
 	!!Relation with Eric +5
 	act 'Yes':
 		*clr & cla
@@ -154,13 +154,13 @@ if $ARGS[0] = 'First Day':
 						'You get out of the car and walk towards the plane with Marco. He seems quite friendly, this might be a good time to ask him some questions. <<$OpenPCVoice>>"Marco, have you known Eric a long time?"<<$ClosePCVoice>> You ask him as you board the plane.'
 						'<<$OpenMaleVoice>>"Yeah, well, I''ve been working for him for five years now. He''s been very good to me. Once you gain his trust and make sure that you do as you''re told, he makes sure that you never have to worry about money again. On the other hand though... well, lets just say I recommend that you make sure to do everything that is expected of you."<<$CloseMaleVoice>>'
 						'<<$OpenPCVoice>>"And what am I expected to do?"<<$ClosePCVoice>> you ask him'
-						'<<$OpenMaleVoice>>"That depends, but as I understand it you''re going to replace Alexandra. She will be going to Marbella in a couple of days, I think, I''m not really sure."<<$CloseMaleVoice>> As the plane starts turning onto the runway for take-off, Marco goes silent. <<$OpenInnerThough>>"Wow, this is a man of few words, not really chatty at all! It looks like I''ll have to <i>drag</i> what I want to know out of this guy,"<<$CloseInnerThough>> You think, starting to get a little nervous. Marco, sitting across from you, starts looking you up and down appreciatively. Your skirt is sitting a little higher than normal and you can see his gaze fix to your exposed, naked crotch. He gives a slight smile and a small sigh as he asks: <<$OpenMaleVoice>>"Are you going to be dancer or waitress?"<<$CloseMaleVoice>>'
+						'<<$OpenMaleVoice>>"That depends, but as I understand it you''re going to replace Alexandra. She will be going to Marbella in a couple of days, I think, I''m not really sure."<<$CloseMaleVoice>> As the plane starts turning onto the runway for take-off, Marco goes silent. <<$OpenInnerThought>>"Wow, this is a man of few words, not really chatty at all! It looks like I''ll have to <i>drag</i> what I want to know out of this guy,"<<$CloseInnerThought>> You think, starting to get a little nervous. Marco, sitting across from you, starts looking you up and down appreciatively. Your skirt is sitting a little higher than normal and you can see his gaze fix to your exposed, naked crotch. He gives a slight smile and a small sigh as he asks: <<$OpenMaleVoice>>"Are you going to be dancer or waitress?"<<$CloseMaleVoice>>'
 						act '"Yes, both, I think"':
 							*clr & cla
 							'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/jetflight.mp4"></video></center>'
 							*nl
 							'<<$OpenMaleVoice>>"Well in that case, then I pity you. Where you''re going now is a bit of an extreme atmosphere. Everyone you''re going to meet there is screwed up. You''ll find a lot of alcohol, drugs and all manner of debauchery, perversions and fantasies present. These people have more money than you or I can dream of and they choose that money on whatever interests them at the time. When they wan''t something, they just have to ask to receive, and if you don''t give them what they ask for... well, you''ll be in a lot of trouble. People like them, they don''t give a shit about people like you and me."<<$CloseMaleVoice>>'
-							'<<$OpenPCVoice>>"If they are really that bad, and if you hate them so much; why don''t you just quit your job?"<<$ClosePCVoice>> <<$OpenInnerThough>>"Oh my God! It looks like he seriously can''t stand Eric''s clients...such a furious expression,"<<$CloseInnerThough>> you think to yourself.'
+							'<<$OpenPCVoice>>"If they are really that bad, and if you hate them so much; why don''t you just quit your job?"<<$ClosePCVoice>> <<$OpenInnerThought>>"Oh my God! It looks like he seriously can''t stand Eric''s clients...such a furious expression,"<<$CloseInnerThought>> you think to yourself.'
 							*nl
 							'<<$OpenMaleVoice>>"For the same reason you brought that beautiful face of yours onto this plane, money! A lot of money!! Except, unlike you I''m not putting my body up for sale."<<$CloseMaleVoice>>'
 							'<<$OpenPCVoice>>"I''m not here to sell myself like some whore!"<<$ClosePCVoice>> You yell, outraged.'
@@ -188,7 +188,7 @@ if $ARGS[0] = 'First Day':
 									*nl
 									'<<$OpenFemaleVoice>>"Yeah! It''s a nickname, his real name is actually Carlo Santorini. They say that he has serious connections with the Sicilian Mafia but all I really know is that he owns a few oil wells in Saudi Arabia."<<$CloseFemaleVoice>>'
 									'<<$OpenPCVoice>>"Oil wells? How is it that an Italian is the owner of oil in the Middle East?"<<$ClosePCVoice>> you ask'
-									'<<$OpenFemaleVoice>>"Good question <<$pcs_nickname>>!! Well, the truth is that he won them playing poker with an Arab prince long ago."<<$CloseFemaleVoice>> <<$OpenInnerThough>>"What the fuck!!"<<$CloseInnerThough>> you think, <<$OpenFemaleVoice>>"Are you surprised?"<<$CloseFemaleVoice>> - she answers with a gorgeous smile'
+									'<<$OpenFemaleVoice>>"Good question <<$pcs_nickname>>!! Well, the truth is that he won them playing poker with an Arab prince long ago."<<$CloseFemaleVoice>> <<$OpenInnerThought>>"What the fuck!!"<<$CloseInnerThought>> you think, <<$OpenFemaleVoice>>"Are you surprised?"<<$CloseFemaleVoice>> - she answers with a gorgeous smile'
 									'<<$OpenPCVoice>>"And why do they call him Goldfinger?"<<$ClosePCVoice>> you ask.'
 									*nl
 									'<<$OpenFemaleVoice>>"Ha, ha, ha, ha!!"<<$CloseFemaleVoice>> Mailin begins to laugh <<$OpenFemaleVoice>>"He has so much money that he even has a gold Lamborghini!"<<$CloseFemaleVoice>>'
@@ -248,7 +248,7 @@ if $ARGS[0] = 'First Day':
 																	act 'Encourage him a little':
 																		*clr & cla
 																		'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/encouragestrip.mp4"></video></center>'
-																		'You approach him, confident in your body. You know that he knows you''ve danced at the strip clubs and the report surely shows something about your reputation. He smiles and nods pleased, "I like my little whores to know who owns them while they''re here". he says <<$OpenInnerThough>>"Whore... did he say whore? I am an erotic dancer not a whore... I mean, I like sex but I''m not a whore"<<$CloseInnerThough>> you think to yourself'
+																		'You approach him, confident in your body. You know that he knows you''ve danced at the strip clubs and the report surely shows something about your reputation. He smiles and nods pleased, "I like my little whores to know who owns them while they''re here". he says <<$OpenInnerThought>>"Whore... did he say whore? I am an erotic dancer not a whore... I mean, I like sex but I''m not a whore"<<$CloseInnerThought>> you think to yourself'
 																		act 'Show him what you''re worth':gt 'IbizaStart','Show him what you are worth'
 																	end
 																	act 'Thanks a lot':
@@ -259,7 +259,7 @@ if $ARGS[0] = 'First Day':
 																		act 'Continue':
 																			*clr & cla
 																			'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/titpinch.mp4"></video></center>'
-																			'<<$OpenMaleVoice>>"Sorry? ... We''ll see."<<$CloseMaleVoice>> he says, reaching over to pinch your nipples <<$OpenMaleVoice>>"Show me a little bit more now, just for me. Be a good whore and show me what your body can do."<<$CloseMaleVoice>> <<$OpenInnerThough>>"Whore... did he say whore? I am an erotic dancer not a whore... I mean, I like sex but I''m not a whore"<<$CloseInnerThough>> you think to yourself'
+																			'<<$OpenMaleVoice>>"Sorry? ... We''ll see."<<$CloseMaleVoice>> he says, reaching over to pinch your nipples <<$OpenMaleVoice>>"Show me a little bit more now, just for me. Be a good whore and show me what your body can do."<<$CloseMaleVoice>> <<$OpenInnerThought>>"Whore... did he say whore? I am an erotic dancer not a whore... I mean, I like sex but I''m not a whore"<<$CloseInnerThought>> you think to yourself'
 																			act 'Show him what you''re worth':gt 'IbizaStart','Show him what you are worth'
 																		end
 																	end
@@ -298,7 +298,7 @@ if $ARGS[0] = 'Show him what you are worth':
 		act 'You get it':
 			*clr & cla
 			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day1/a3.jpg"></center>'
-			'You sprinkle some water on your legs. The water goes down to your crotch and wets your pussy, a pussy you notice with lips inflamed by excitement; Santorini sees the lower lips of your vulva. <<$OpenInnerThough>>Damn, I think I''m getting hot!<<$CloseInnerThough>>'
+			'You sprinkle some water on your legs. The water goes down to your crotch and wets your pussy, a pussy you notice with lips inflamed by excitement; Santorini sees the lower lips of your vulva. <<$OpenInnerThought>>Damn, I think I''m getting hot!<<$CloseInnerThought>>'
 			'<<$OpenMaleVoice>>"Show me how flexible you are!"<<$CloseMaleVoice>> Santorini says, speaking for the first time since you started.'
 			act 'Simply obey':
 				*clr & cla
@@ -311,7 +311,7 @@ if $ARGS[0] = 'Show him what you are worth':
 					act 'Go':
 						*clr & cla
 						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day1/a6.jpg"></center>'
-						'You put your back to the desk and support your elbows on it. You start to squat again, but you are so wet, your hips start to spasm ad you start to hump like a huge invisible cock was fucking you. You feel a vacuum in your lower abdomen and you know, by all means, that you could cum if you let it go on. <<$OpenInnerThough>>Oh my God! I am going to fucking erupt like a volcano!<<$CloseInnerThough>> you think. You need to go further, to find your pleasure, so you go back to your chair'
+						'You put your back to the desk and support your elbows on it. You start to squat again, but you are so wet, your hips start to spasm ad you start to hump like a huge invisible cock was fucking you. You feel a vacuum in your lower abdomen and you know, by all means, that you could cum if you let it go on. <<$OpenInnerThought>>Oh my God! I am going to fucking erupt like a volcano!<<$CloseInnerThought>> you think. You need to go further, to find your pleasure, so you go back to your chair'
 						act 'You need to go on.':
 							*clr & cla
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day1/a6.jpg"></center>'
@@ -351,11 +351,11 @@ if $ARGS[0] = 'Show him what you are worth':
 															*clr & cla
 															'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/b7.mp4"></video></center>'
 															'But just as you are about to put your fingers up inside you, you open your eyes and there is Mr. Santorini standing right in front of you. With a broad smile that illuminates his face he says: <<$OpenMaleVoice>>"Enough! I''m hungry get up and come with me"<<$CloseMaleVoice>>'
-															'<<$OpenInnerThough>>"Oh fuck this can''t be happening to me! Fuck I''m as hot as a bitch in heat and I was almost at my orgasm! Shit!<<$CloseInnerThough>> you think'
+															'<<$OpenInnerThought>>"Oh fuck this can''t be happening to me! Fuck I''m as hot as a bitch in heat and I was almost at my orgasm! Shit!<<$CloseInnerThought>> you think'
 															act 'Stop':
 																*clr & cla
 																'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day1/angry.jpg"></center>'
-																'You feel terrible. You have been denied the orgasm and the sensation that you have in your whole body is of complete sexual necessity. You are encouraged by thinking that maybe Mr. Santorini wants to fuck you. He said, "I''m hungry..." <<$OpenInnerThough>>"Maybe he meant he is hungry for a woman. Well, here I am! I''ll let him do anything he wants, as long as he turn off this heat that''s driving me crazy! Oh my God!! I need a cock now! In my mouth, in my ass, in my pussy I don''t care where but I need a cock now!<<$CloseInnerThough>> you think very frustrated'
+																'You feel terrible. You have been denied the orgasm and the sensation that you have in your whole body is of complete sexual necessity. You are encouraged by thinking that maybe Mr. Santorini wants to fuck you. He said, "I''m hungry..." <<$OpenInnerThought>>"Maybe he meant he is hungry for a woman. Well, here I am! I''ll let him do anything he wants, as long as he turn off this heat that''s driving me crazy! Oh my God!! I need a cock now! In my mouth, in my ass, in my pussy I don''t care where but I need a cock now!<<$CloseInnerThought>> you think very frustrated'
 																act 'Follow him':
 																	*clr & cla
 																	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day1/hungry1.jpg"></center>'
@@ -391,24 +391,24 @@ if $ARGS[0] = 'after lunch':
 	'Later he orders you to take a shower, and then he and other three girls ride in one of their cars in the direction of Ibiza''s marina. There you can see why Mr. Santorini has the nickname "Goldfinger" ... in his crotch you can see the outline of... A 9mm gold pistol! Apparently, the yacht where you are going to work is 8 km from the coast, and you have to embark on a speedboat that will take you to it. Just when you think the speedboat is going to jet off, Mr. Santorini stops everything to speak with a young man wearing a very colourful shirt. It seems to you that they have a very close relationship and that he is, probably, younger than you. They talk for at least 20 minutes, you look over at them occasionally while chatting with the other girls.'
 	*nl
 	'They tell you that the young man is his nephew. But you still feel the wetness below as the wind rushes past your naked vagina, and you think of nothing more than masturbating as soon as you get to your cabin on the boat. Suddenly Mr. Santorini approaches you with the young man in the coloured t-shirt and says: <<$OpenMaleVoice>>"Bitch, my nephew says he likes you and would like to get to know you a bit more intimately"<<$CloseMaleVoice>>'
-	'<<$OpenInnerThough>>"Oh yeah?"<<$CloseInnerThough>> You answer <<$OpenPCVoice>>"And how intimately would he like to know me?"<<$ClosePCVoice>>'
-	'<<$OpenMaleVoice>>"Extremely"<<$CloseMaleVoice>> he replies, while his nephew looks to you with lust in his eyes. <<$OpenInnerThough>>"My pussy is hot and wet"<<$CloseInnerThough>> you think in this moment <<$OpenMaleVoice>>"I want you to fuck him and drain his balls completely. You hear me <<$pcs_nickname>>? Leave the condom full of his sperm. Ok?"<<$CloseMaleVoice>>'
+	'<<$OpenInnerThought>>"Oh yeah?"<<$CloseInnerThought>> You answer <<$OpenPCVoice>>"And how intimately would he like to know me?"<<$ClosePCVoice>>'
+	'<<$OpenMaleVoice>>"Extremely"<<$CloseMaleVoice>> he replies, while his nephew looks to you with lust in his eyes. <<$OpenInnerThought>>"My pussy is hot and wet"<<$CloseInnerThought>> you think in this moment <<$OpenMaleVoice>>"I want you to fuck him and drain his balls completely. You hear me <<$pcs_nickname>>? Leave the condom full of his sperm. Ok?"<<$CloseMaleVoice>>'
 	act 'Ok, mister Santorini':
 		*clr & cla
 		'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/santorininephew2.mp4"></video></center>'
 		'You believe in that moment that the kid can be the person you need to calm the furore that torments your belly. You take him by the hand and lead him back to the car. You strip completely while your male companion drops his trousers leaving his gaudy coloured shirt on. You straddle him immediately, his cock slipping up your twat with no resistance as your dripping juices cover his dick. You start riding him slowly at first but you quickly increase your speed, humping yourself down at a wild pace. You feel the hardness of the young cock, wrapped in the latex of the condom, stretching your wet vagina; pleasure starting to build yet again, at the bottom of your pussy. Your hips don''t stop as your bouncing gets faster and you lose control.'
 		*nl
-		'The kid starts moaning loudly, touching your tits and grabbing at your ass-cheeks, helping you fuck yourself harder on his young cock. Suddenly, you realize that another black car is parked right next to yours and someone is watching you from inside. You look more carefully and you realize who it is. Marco. You keep fucking the boy while you look at Marco through the window. The kid begins to groan and tremble, filling the condom with the load of cum stored in his nuts. <<$OpenInnerThough>>Don''t cum yet, wait!<<$CloseInnerThough>> <<$OpenPCVoice>>"Wait, no! Come on, fuck me a bit more, please!"<<$ClosePCVoice>> You yell at him, wanting to slow down to keep him from cumming a little longer, but just before you can reach orgasm, you feel the boy''s cock deflate and lose its vigour... unable to give you the release you so desperately need.'
+		'The kid starts moaning loudly, touching your tits and grabbing at your ass-cheeks, helping you fuck yourself harder on his young cock. Suddenly, you realize that another black car is parked right next to yours and someone is watching you from inside. You look more carefully and you realize who it is. Marco. You keep fucking the boy while you look at Marco through the window. The kid begins to groan and tremble, filling the condom with the load of cum stored in his nuts. <<$OpenInnerThought>>Don''t cum yet, wait!<<$CloseInnerThought>> <<$OpenPCVoice>>"Wait, no! Come on, fuck me a bit more, please!"<<$ClosePCVoice>> You yell at him, wanting to slow down to keep him from cumming a little longer, but just before you can reach orgasm, you feel the boy''s cock deflate and lose its vigour... unable to give you the release you so desperately need.'
 		act 'Shit!!':
 			*clr & cla
 			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day1/santorininephew3.jpg"></center>'
-			'<<$OpenInnerThough>>Fuck this kid has left me half-done! He is an asshole!<<$CloseInnerThough>> You think annoyed <<$OpenInnerThough>>I''m hotter now than before.<<$CloseInnerThough>>'
+			'<<$OpenInnerThought>>Fuck this kid has left me half-done! He is an asshole!<<$CloseInnerThought>> You think annoyed <<$OpenInnerThought>>I''m hotter now than before.<<$CloseInnerThought>>'
 			'<<$OpenMaleVoice>>"Fucking bitch! You''re the hottest slut I''ve ever fucked! You''ve emptied my balls! What a woman!"<<$CloseMaleVoice>> He tells you to get out the car. <<$OpenMaleVoice>>"By the way slut, you need to eat something?"<<$CloseMaleVoice>> He says, pointing at the cum filled condom still wrapped around his cock. 
 			<<$OpenMaleVoice>>"It''s up to you! Just look, it''s completely full it''s and all yours."<<$CloseMaleVoice>>'
 			act 'You swallow':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day1/condomswallow.jpg"></center>'
-				'You obey his instruction and you take the condom off his cock, put it to your open mouth and swallow your all his cum. <<$OpenInnerThough>>"Oh my God! I think I''m turning into a semen addict"<<$CloseInnerThough>> <<$OpenMaleVoice>>"Fuck, what a whore!"<<$CloseMaleVoice>> he shouts, <<$OpenMaleVoice>>"Get out the car bitch!"<<$CloseMaleVoice>>'
+				'You obey his instruction and you take the condom off his cock, put it to your open mouth and swallow your all his cum. <<$OpenInnerThought>>"Oh my God! I think I''m turning into a semen addict"<<$CloseInnerThought>> <<$OpenMaleVoice>>"Fuck, what a whore!"<<$CloseMaleVoice>> he shouts, <<$OpenMaleVoice>>"Get out the car bitch!"<<$CloseMaleVoice>>'
 				act 'Get out': gt 'IbizaStart', 'get out of car'
 			end
 			act 'No way':
@@ -435,7 +435,7 @@ if $ARGS[0] = 'get out of car':
 	'<<$OpenPCVoice>>"Excuse me?"<<$ClosePCVoice>> you answer, <<$OpenPCVoice>>"I''m sorry Mr. Santorini I don''t understand what you''re trying to say."<<$ClosePCVoice>>'
 	'<<$OpenMaleVoice>>"Cars, like people,"<<$CloseMaleVoice>> Santorini continues, <<$OpenMaleVoice>>"have souls, have feelings, and have... needs. I love cars, I love them more than people and I feel that my car needs to relieve some its tension."<<$CloseMaleVoice>>'
 	'<<$OpenPCVoice>>"Sorry but... I still don''t understand Mr. Santorini,"<<$ClosePCVoice>> you reply'
-	'<<$OpenMaleVoice>>"Damn this bimbo stupid!"<<$CloseMaleVoice>> they both laugh out loud, <<$OpenMaleVoice>>"What I''m trying to make you understand, <<$pcs_nickname>>, is that you are a whore, one of many I have here. My car needs a whore now... I want you to fuck it."<<$CloseMaleVoice>> <<$OpenInnerThough>>Oh my God! How is it possible that this is happening to me?<<$CloseInnerThough>> - you think - <<$OpenInnerThough>>This guy is totally psycho, but I have to obey or I don''t know what will happen to me!<<$CloseInnerThough>>'
+	'<<$OpenMaleVoice>>"Damn this bimbo stupid!"<<$CloseMaleVoice>> they both laugh out loud, <<$OpenMaleVoice>>"What I''m trying to make you understand, <<$pcs_nickname>>, is that you are a whore, one of many I have here. My car needs a whore now... I want you to fuck it."<<$CloseMaleVoice>> <<$OpenInnerThought>>Oh my God! How is it possible that this is happening to me?<<$CloseInnerThought>> - you think - <<$OpenInnerThought>>This guy is totally psycho, but I have to obey or I don''t know what will happen to me!<<$CloseInnerThought>>'
 	act 'Your best option is to do it!':
 		*clr & cla
 		'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/bitlips.mp4"></video></center>'
@@ -443,7 +443,7 @@ if $ARGS[0] = 'get out of car':
 		act 'Go back to the car':
 			*clr & cla
 			'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/c1.mp4"></video></center>'
-			'You stand at the door of Santorini''s car for a moment. A few steps away Marco is still watching you. Your breathing is a bit shaky and you wonder: <<$OpenInnerThough>>"How the hell can I fuck a car?"<<$CloseInnerThough>> Suddenly you get the idea and open the car door. You crawl over seat, heading for the car''s gearlever.'
+			'You stand at the door of Santorini''s car for a moment. A few steps away Marco is still watching you. Your breathing is a bit shaky and you wonder: <<$OpenInnerThought>>"How the hell can I fuck a car?"<<$CloseInnerThought>> Suddenly you get the idea and open the car door. You crawl over seat, heading for the car''s gearlever.'
 			act 'Continue':
 				*clr & cla
 				'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/c2.mp4"></video></center>'
@@ -451,7 +451,7 @@ if $ARGS[0] = 'get out of car':
 				act 'Treat the lever like a cock':
 					*clr & cla
 					'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/c3.mp4"></video></center>'
-					'<<$OpenInnerThough>>"Oh <<$pcs_nickname>>! Please keep going!" Imagine that the stick-shift is a dick-shift, just another yummy cock and everything will be fine - you think giving yourself the courage to continue<<$CloseInnerThough>> You go straight to it and you start licking it, looking over at Santorini and his nephew.'
+					'<<$OpenInnerThought>>"Oh <<$pcs_nickname>>! Please keep going!" Imagine that the stick-shift is a dick-shift, just another yummy cock and everything will be fine - you think giving yourself the courage to continue<<$CloseInnerThought>> You go straight to it and you start licking it, looking over at Santorini and his nephew.'
 					act 'Blow it':
 						*clr & cla
 						'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day1/c4.mp4"></video></center>'
@@ -532,7 +532,7 @@ if $ARGS[0] = 'cfonts':
 !!	$OpenFemaleVoice = '<font size="3" color="maroon" face="Times" ><i>'
 !!	$OpenPCVoice = '<font size="3" color="purple" face="Times" ><i>'
 !!	$OpenNPCVoice = '<font size="3" color="olive" face="Times" ><i>'
-!!	$OpenInnerThough = '<font size="2" color="fuchsia" face="Times" ><i>'
+!!	$OpenInnerThought = '<font size="2" color="fuchsia" face="Times" ><i>'
 
 	$OpenMaleVoice = '<font color="navy">'
 	$CloseMaleVoice = '</font>'
@@ -543,8 +543,8 @@ if $ARGS[0] = 'cfonts':
 	$OpenNPC1Voice = '<font color="olive">'
 	$OpenNPC2Voice = '<font color="teal">'
 	$CloseNPCVoice = '</font>'
-	$OpenInnerThough = '<font size="2" color="pink"><i>'
-	$CloseInnerThough = '</font></i>'
+	$OpenInnerThought = '<font size="2" color="pink"><i>'
+	$CloseInnerThought = '</font></i>'
 	
 	*clr
 	*nl
@@ -555,7 +555,7 @@ if $ARGS[0] = 'cfonts':
 	'<<$OpenPCVoice>>"PC voice"<<$ClosePCVoice>>'
 	'<<$OpenNPC1Voice>>"NPC1 voice"<<$CloseNPCVoice>>'
 	'<<$OpenNPC2Voice>>"NPC2 voice"<<$CloseNPCVoice>>'
-	'<<$OpenInnerThough>>"Inner Though"<<$CloseInnerThough>>'
+	'<<$OpenInnerThought>>"Inner Thought"<<$CloseInnerThought>>'
 
 end
 
@@ -564,7 +564,7 @@ if $ARGS[0] = 'bwfonts':
 !!	$OpenFemaleVoice = '<font size="3" color="maroon" face="Times" ><i>'
 !!	$OpenPCVoice = '<font size="3" color="purple" face="Times" ><i>'
 !!	$OpenNPCVoice = '<font size="3" color="olive" face="Times" ><i>'
-!!	$OpenInnerThough = '<font size="2" color="fuchsia" face="Times" ><i>'
+!!	$OpenInnerThought = '<font size="2" color="fuchsia" face="Times" ><i>'
 
 	$OpenMaleVoice = ''
 	$CloseMaleVoice = ''
@@ -575,8 +575,8 @@ if $ARGS[0] = 'bwfonts':
 	$OpenNPC1Voice = ''
 	$OpenNPC2Voice = ''
 	$CloseNPCVoice = ''
-	$OpenInnerThough = '<font size="3" color="fuchsia"><i>'
-	$CloseInnerThough = '</font></i>'
+	$OpenInnerThought = '<font size="3" color="fuchsia"><i>'
+	$CloseInnerThought = '</font></i>'
 	
 	*clr
 	*nl
@@ -587,7 +587,7 @@ if $ARGS[0] = 'bwfonts':
 	'<<$OpenPCVoice>>"PC voice"<<$ClosePCVoice>>'
 	'<<$OpenNPC1Voice>>"NPC1 voice"<<$CloseNPCVoice>>'
 	'<<$OpenNPC2Voice>>"NPC2 voice"<<$CloseNPCVoice>>'
-	'<<$OpenInnerThough>>"Inner Though"<<$CloseInnerThough>>'
+	'<<$OpenInnerThought>>"Inner Thought"<<$CloseInnerThought>>'
 
 end
 !! if $ARGS[0] = 'day two': 

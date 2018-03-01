@@ -20,7 +20,7 @@ if $ARGS[0] = 'day five':
 		'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day5/hall2.mp4"></video></center><br>'
 !orgasm
 		'The excitment is too much and you feel your pussy juices flowing down your thighs.'
-		'<<$OpenInnerThough>> «I can''t take it anymore. I must relieve myself!»<<$CloseInnerThough>> You drop down on the floor, spreading your legs and begin to masturbate again until you reach a new orgasm. You do not care if anyone sees you.' 
+		'<<$OpenInnerThought>> «I can''t take it anymore. I must relieve myself!»<<$CloseInnerThought>> You drop down on the floor, spreading your legs and begin to masturbate again until you reach a new orgasm. You do not care if anyone sees you.' 
 
 		act 'Go to work':
 			*clr & cla
@@ -70,7 +70,7 @@ if $ARGS[0] = 'day five':
 						'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day5/dildofuck.mp4"></video></center><br>'
 						!orgasm
 						'You grab hold of the dildo and inspect it for a while...'
-						'<<$OpenInnerThough>> «I am feeling very horny right now. But how many times have I been fucked today? It must''ve been at least four, five times, maybe six? Add the two times I''ve masturbated before work... and I''m still not satisfied! They''ve really broken me in with those pills...»<<$CloseInnerThough>> as you unconsciously begin touching your hard nipples.'
+						'<<$OpenInnerThought>> «I am feeling very horny right now. But how many times have I been fucked today? It must''ve been at least four, five times, maybe six? Add the two times I''ve masturbated before work... and I''m still not satisfied! They''ve really broken me in with those pills...»<<$CloseInnerThought>> as you unconsciously begin touching your hard nipples.'
 						'Not hesitating you lead the dildo towards your clit, playing with it for a while and then insert it inside you as you let out a little gasp as your pussy walls engulf it. It doesn''t take long before you''re build up the speed and you shout as you orgasm... You clean quickly clean yourself up and head over to the car where Christian is waiting.'
 						
 						act 'Go to speedboat':
@@ -330,7 +330,7 @@ if $ARGS[0] = 'Yazev':
 																'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day5/d5aevent13.mp4"></video></center><br>'
 																!orgasm and vaginal pain
 																'An hour later you''re still going strong but you feel your pussy getting very sore and you ask if you may change the hole being used.' 
-																'<<$OpenInnerThough>> «If this keeps up I will die... The machine completely different, it doesn''t get tired for fucking me...»<<$CloseInnerThough>> you think to yourself as you begin to plead, <<$OpenPCVoice>>"Ple-please... My pussy... oooohh... I''m really sore... oooooh... Please... Can we switch the hole?"<<$ClosePCVoice>>'
+																'<<$OpenInnerThought>> «If this keeps up I will die... The machine completely different, it doesn''t get tired for fucking me...»<<$CloseInnerThought>> you think to yourself as you begin to plead, <<$OpenPCVoice>>"Ple-please... My pussy... oooohh... I''m really sore... oooooh... Please... Can we switch the hole?"<<$ClosePCVoice>>'
 																'About twenty seconds later the machine slows down until it completely stops. You turn around and get back on all fours, leading the shaft to your ass instead.'
 																'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day5/d5aevent14.mp4"></video></center><br>'
 																*nl

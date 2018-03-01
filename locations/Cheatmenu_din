@@ -1511,9 +1511,9 @@ $cheatmenu['display'] = {
 	nl
 	pl '<center><B>Font Settings</B></center>'
 	pl
-	pl'<center><a href="exec:gs ''shortgs'',''fonts'', ''$cheatmenu[''''display'''']'',''$OpenInnerThough'',''$CloseInnerThough'' "> Set the style for Inner Thoughts </a></center>'
+	pl'<center><a href="exec:gs ''shortgs'',''fonts'', ''$cheatmenu[''''display'''']'',''$OpenInnerThought'',''$CloseInnerThought'' "> Set the style for Inner Thoughts </a></center>'
 	pl
-	pl $OpenInnerThough+'Oh my god, what will the neighbours think of us?'+$CloseInnerThough
+	pl $OpenInnerThought+'Oh my god, what will the neighbours think of us?'+$CloseInnerThought
 	nl
 	pl'<center> <a href="exec:dynamic $cheatmenu[''theme'']"><b>Phone Theme Menu</b></a></center>'
 

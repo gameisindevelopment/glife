@@ -8,7 +8,7 @@
 
 if $ARGS[0] = 'day two':
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/cabin.jpg"></center><br>'
-	'Yesterday was hard. You think about what happened and your whole body trembles as you remember it. Santorini scares you and you know that he is a dangerous person, very dangerous. You could never have imagined that Erick had a partner like that, but he has him and he''s the greatest despot you''ve ever known. <<$OpenInnerThough>>«Before I leave the cabin, I''d better take a shower. I wonder what awaits me today?»<<$CloseInnerThough>> – you think worried- You look at the purple bracelet on your wrist ... <<$OpenInnerThough>> «This color ... What does it mean? Well, anyway <<$pcs_nickname>>,  you''ve come here to make money, right? Well, work it, baby! »<<$CloseInnerThough>> You encourage yourself'
+	'Yesterday was hard. You think about what happened and your whole body trembles as you remember it. Santorini scares you and you know that he is a dangerous person, very dangerous. You could never have imagined that Erick had a partner like that, but he has him and he''s the greatest despot you''ve ever known. <<$OpenInnerThought>>«Before I leave the cabin, I''d better take a shower. I wonder what awaits me today?»<<$CloseInnerThought>> – you think worried- You look at the purple bracelet on your wrist ... <<$OpenInnerThought>> «This color ... What does it mean? Well, anyway <<$pcs_nickname>>,  you''ve come here to make money, right? Well, work it, baby! »<<$CloseInnerThought>> You encourage yourself'
 
 	act 'Continue':
 		*clr & cla
@@ -29,7 +29,7 @@ if $ARGS[0] = 'day two':
 			'<<$OpenFemaleVoice>>"Yes, you will dance, you will serve drinks, you will encourage the customers and you will fuck with them if they ask for it."<<$CloseFemaleVoice>>'
 			'<<$OpenPCVoice>>"WHAT!!!???"<<$ClosePCVoice>> you answer terrified <<$OpenPCVoice>>"I''m not a whore, I''m a professional dancer."<<$ClosePCVoice>>'
 			'<<$OpenFemaleVoice>>"Well, if you want to call it that ... anyway, the color of the bracelet you wear will mean for VIP customers that they can request any kind of services, <<$pcs_nickname>>. Do you understand? And that means having sex."<<$CloseFemaleVoice>>'
-			'<<$OpenInnerThough>> «Oh my God! Have they marked me like a whore? How could I have been so stupid thinking that I will only have to dance and serve drinks? »<<$CloseInnerThough>>'
+			'<<$OpenInnerThought>> «Oh my God! Have they marked me like a whore? How could I have been so stupid thinking that I will only have to dance and serve drinks? »<<$CloseInnerThought>>'
 			'<<$OpenFemalevoice>>"Oh Come on! Don''t worry, if you it right you can earn a lot of money!!! Now the ship goes to port to pick up customers. We have time to talk for a while. Are you coming to the deck?"<<$CloseFemaleVoice>>'
 
 			act 'Yes… ':
@@ -42,11 +42,11 @@ if $ARGS[0] = 'day two':
 				'<<$OpenFemaleVoice>>You should never accept money from a client. If they give you anything else, that is all for you and you can exchange it for money when you finish your trip.<<$CloseFemaleVoice>>'
 				'<<$OpenPCVoice>>Yeah I know…<<$ClosePCVoice>> -You respond- <<$OpenPCVoice>>but the colors?<<$ClosePCVoice>>'
 				'<<$OpenFemaleVoice>>The yellow bracelets are for the employees who are dedicated mainly to serving drinks. They can refuse any request from a client but if the girl accepts they should tell someone from the security so they can read the code and later pay her for the services. The staff who wears purple bracelets, like you, dance with customers, have fun as they cheer them up and sometimes, they can serve drinks and also, you know ... fuck them if they ask. Oh, come on <<$pcs_firstname>>! It’s not a bad deal! Don''t put that face! Surely you''ll have a good time ... also if you are here I am sure that you are very open with sex, am I wrong?<<$CloseFemaleVoice>>'
-				'<<$OpenInnerThough>> «Oh my God! I''m trapped.»<<$CloseInnerThough>>'
+				'<<$OpenInnerThought>> «Oh my God! I''m trapped.»<<$CloseInnerThought>>'
 				'<<$OpenFemaleVoice>>"If you need to cheer up or fix your mood you can also go to someone from security and they''ll give you some cocaine. They will read your code and they will give you the drug but if you abuse it, you can do things with them you could regret it in the future. You understand that, don''t you?"<<$CloseFemaleVoice>>'
 				'<<OpenPCVoice>>"More or less"<<$ClosePCVoice>> you answer.'
 				'<<$OpenFemaleVoice>>"I was able to see on one occasion how a customer was taken by a ''Purple Girl'' to a room that was completely covered in cocaine and do it with a dog."<<$CloseFemaleVoice>>'
-				'<<$OpenInnerThough>>«What a fuck! With a dog!? Oh my God!»<<$CloseInnerThough>>'
+				'<<$OpenInnerThought>>«What a fuck! With a dog!? Oh my God!»<<$CloseInnerThought>>'
 				'<<$OpenPCVoice>>"Wait… wait a moment Alexandra… Do you say that girl fucked with a dog?<<$ClosePCVoice>>'
 				'<<$OpenFemaleVoice>>"As you have heard"<<$CloseFemaleVoice>> Alexandra says <<$OpenFemaleVoice>>"The fool didn''t know that they were going it as the pay is the same, it''s flat rate, except for the gifts they give you and if they see you too hooked up on coke they will not give you anything. You must rest too."<<$CloseFemaleVoice>> She says to you. <<$OpenFemaleVoice>>"Let''s go to the pool for a while?"<<$CloseFemaleVoice>>'
 				act 'Yes, let''s go... ': 
@@ -55,7 +55,7 @@ if $ARGS[0] = 'day two':
 					'<<$OpenFemaleVoice>>"By the way, you have to know also that the security guards will give you, occasionally, a yellow pill."<<$CloseFemaleVoice>>'
 					'<<$OpenPCVoice>>"A yellow pill you say? And what do you get those yellow pills for?"<<$ClosePCVoice>> You ask Alexa.'
 					'<<$OpenFemaleVoice>>"I''m not sure but I think it''s some kind of aphrodisiac because shortly after I took it I was hotter than a bitch in heat.'
-					'<<$OpenInnerThough>> «Oh my God! As if I was not a hot enough girl to begin with!»<<$CloseInnerThough>>  You think about her last words.'
+					'<<$OpenInnerThought>> «Oh my God! As if I was not a hot enough girl to begin with!»<<$CloseInnerThought>>  You think about her last words.'
 					'<<$OpenPCVoice>>"And the white bracelets?"<<$ClosePCVoice>>'
 					'<<$OpenFemaleVoice>>"The girl with a white one will have everything paid. Usually they accompany someone very powerful and no one should approach them. Customers know it."<<$CloseFemaleVoice>>'
 					'<<$OpenPCVoice>>"And you? What color will you be wearing? I don''t see you wearing any right now."<<$ClosePCVoice>> You say to her.'
@@ -66,7 +66,7 @@ if $ARGS[0] = 'day two':
 					act 'A Breeder? What the fuck is that?':
 						*clr & cla
 						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day2/alexandra5.jpg"></center><br>' 
-						'You eat something and Alexandra takes an iced coffee from a nearby bar and takes some time to answer your question. <<$OpenFemaleVoice>>"You see ... this is hard to say for one of us, right?, for a woman. The point of A Breeder, as it sounds, is to make a girl get pregnant."<<$CloseFemaleVoice>> <<$OpenInnerThough>> « What the fuck!! »<<$CloseInnerThough>> – You think to yourself with your eyes wide open. <<$OpenPCVoice>>"WHA… WHAT?"<<$ClosePCVoice>> <<$OpenFemaleVoice>>"Yeah, <<$pcs_firstname>>, A Breeder is just that. A girl stays for at least a month without birth control. They check it out and you go out for the next two weeks in a room or to be permanently with a group of men who during those two week are fucking you whenever they want and especially in a daily session that is recorded on video and usually transmitted on the Internet in which the whole group of men fucks you silly. The main rule of A Breeder is that they all have to cum inside your vagina with the only goal: impregnation. There are bets on line about which man will make the girl pregnant. Later a genetic test will determinate who is the father and this way, they can pay their bets."<<$CloseFemaleVoice>>'
+						'You eat something and Alexandra takes an iced coffee from a nearby bar and takes some time to answer your question. <<$OpenFemaleVoice>>"You see ... this is hard to say for one of us, right?, for a woman. The point of A Breeder, as it sounds, is to make a girl get pregnant."<<$CloseFemaleVoice>> <<$OpenInnerThought>> « What the fuck!! »<<$CloseInnerThought>> – You think to yourself with your eyes wide open. <<$OpenPCVoice>>"WHA… WHAT?"<<$ClosePCVoice>> <<$OpenFemaleVoice>>"Yeah, <<$pcs_firstname>>, A Breeder is just that. A girl stays for at least a month without birth control. They check it out and you go out for the next two weeks in a room or to be permanently with a group of men who during those two week are fucking you whenever they want and especially in a daily session that is recorded on video and usually transmitted on the Internet in which the whole group of men fucks you silly. The main rule of A Breeder is that they all have to cum inside your vagina with the only goal: impregnation. There are bets on line about which man will make the girl pregnant. Later a genetic test will determinate who is the father and this way, they can pay their bets."<<$CloseFemaleVoice>>'
 						'<<$OpenPCVoice>>"Oh my God! And you''re going to do that?"<<$ClosePCVoice>> You asked her in shock.'
 						'<<$OpenFemaleVoice>>"Do you know how much they''re going to pay me for doing this? I can easily buy an apartment and I can even to buy a used car, beside,  there could be some chance that none would achieve the goal, right? It is a big risk but the money is also a lot. The money of a lifetime of hard work earned in two weeks… And the truth is, <<$pcs_firstname>>,  I don''t know if it''s because I haven''t fucked for almost a month or it''s because of the damn yellow pills... I''m super horny. It''s almost time, I''m going to put something on, we''re approaching the marine and I''ll have to sing for new customers. You should fix yourself up too. Take a shower and put something nice on. I''ll see you soon!"<<$CloseFemaleVoice>>'
 						!! Add decrease Level Hungry
@@ -85,7 +85,7 @@ if $ARGS[0] = 'day two':
 								'<center><img <<$set_imgh>> src="Images/locations/city/citycenter/nightclub/trip01/security/christian1.jpg"></center><br>'
 !!Theres a new sound file for when they knock on the door, right? Could it be included?
 								'It seems that someone is knocking on the door. You see that in front of the door there is an attractive security guard.'
-								'<<$OpenInnerThough>> «What a smell! He smells great! What perfume will does he use?»<<$CloseInnerThough>>'
+								'<<$OpenInnerThought>> «What a smell! He smells great! What perfume will does he use?»<<$CloseInnerThought>>'
 								'<<$OpenMaleVoice>>"Hello"<<$CloseMaleVoice>> He tells you. <<$OpenMaleVoice>>"My name is Christian. Mr. Santorini has tasked me with coming here and checking on you from time to time. You are the new girl, right?"<<$CloseMaleVoice>>'
 								'<<$OpenPCVoice>>"Yes, I came yesterday."<<$ClosePCVoice>> You reply him'
 								'<<$OpenMaleVoice>>"Are you a Purple Girl?"<<$CloseMaleVoice>> He asks seeing your purple bracelet on your wrist.'
@@ -110,7 +110,7 @@ if $ARGS[0] = 'day two':
 									act 'Take the pills': 
 										*clr & cla
 										'<center><img <<$set_imgh>> src="Images/locations/city/citycenter/nightclub/trip01/security/1pills.jpg"></center><br>'
-										'You take the pills remembering what Alexandra had told you a about this and what she thought they were. <<$OpenInnerThough>> « Aphrodisiacs! What nonsense! »<<$CloseInnerThough>> Now I have to go, new customers are embarking. Go up the deck and... do what you have to do!'
+										'You take the pills remembering what Alexandra had told you a about this and what she thought they were. <<$OpenInnerThought>> « Aphrodisiacs! What nonsense! »<<$CloseInnerThought>> Now I have to go, new customers are embarking. Go up the deck and... do what you have to do!'
 
 										act 'Go to the deck': gt 'IbizaDay2', 'deck'
 									end
@@ -132,14 +132,14 @@ if $ARGS[0] = 'deck':
 	act 'Listen':
 		*clr & cla
 		'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/alexandra6.jpg"></center><br>'
-		'You stay for a while listening to Alexandra sing while you have a beer. Curiously you see that the crowd chants a lot every time Alexa moves. You realize the motive... She doesn''t wear any panties and every time she moves she shows her pussy! Suddenly you feel a slight choke in your chest, some sort of anxiety that you can''t really identify at that moment. <<$OpenInnerThough>> « I think seeing Alexa with her pussy in the air is making me horny »<<$CloseInnerThough>> You think. <<$OpenInnerThough>> « I have to go to the dance floor and start doing what they''ve paid me to do »<<$CloseInnerThough>>'
+		'You stay for a while listening to Alexandra sing while you have a beer. Curiously you see that the crowd chants a lot every time Alexa moves. You realize the motive... She doesn''t wear any panties and every time she moves she shows her pussy! Suddenly you feel a slight choke in your chest, some sort of anxiety that you can''t really identify at that moment. <<$OpenInnerThought>> « I think seeing Alexa with her pussy in the air is making me horny »<<$CloseInnerThought>> You think. <<$OpenInnerThought>> « I have to go to the dance floor and start doing what they''ve paid me to do »<<$CloseInnerThought>>'
 
 		act 'Go to a nearby dance floor': 
 !!Take a note! During this event it must play the music called day2.mp3	
 !!music/day2.mp3
 			*clr & cla
 			'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/dance1.mp4"></video></center>'
-			'Disco music is playing. You begin to dance watching other dancers do the same. <<$OpenInnerThough>> « Wow! That blonde doesn''t move badly at all! »<<$CloseInnerThough>> You think. You feel your nipples are gradually becoming harder and more sensitive. The slight rubbing of the cloth on them excites you quite a bit...But you know that you can''t stop and that you should continue dancing and heating up the atmosphere with your dancing skills.'
+			'Disco music is playing. You begin to dance watching other dancers do the same. <<$OpenInnerThought>> « Wow! That blonde doesn''t move badly at all! »<<$CloseInnerThought>> You think. You feel your nipples are gradually becoming harder and more sensitive. The slight rubbing of the cloth on them excites you quite a bit...But you know that you can''t stop and that you should continue dancing and heating up the atmosphere with your dancing skills.'
 
 			act 'Keep dancing':
 				*clr & cla
@@ -199,7 +199,7 @@ if $ARGS[0] = 'deck':
 											wait 750 & '<font color = #FF00FF size = 5>Bitch</font>'
 											wait 750 & '<font color = #FF00FF size = 6>Bitch</font>'
 											wait 750 & 'The chorus of the song says it all ... I just like to call you my bitch!'
-											'<<$OpenInnerThough>> « Bitch! Am I a whore? I like sex; I like being fucked by a good stallion that fills my pussy with his warm cream; I like do it with multiple men at the same and I like to be paid for it... Yes, I''m a bitch, I''m a whore »<<$CloseInnerThough>> – You think while reaching your climax'
+											'<<$OpenInnerThought>> « Bitch! Am I a whore? I like sex; I like being fucked by a good stallion that fills my pussy with his warm cream; I like do it with multiple men at the same and I like to be paid for it... Yes, I''m a bitch, I''m a whore »<<$CloseInnerThought>> – You think while reaching your climax'
 											
 											act 'Continue':
 												*clr & cla
@@ -314,7 +314,7 @@ if $ARGS[0] = 'marina':
 											'<<$OpenNPC2Voice>>"What are you saying?"<<$CloseNPCVoice>> interrupt Tonelli <<$OpenNPC2Voice>>"I don''t understand anything."<<$CloseNPCVoice>>'
 											'<<$OpenNPC1Voice>>"My friend, what I''m saying is that <<$pcs_firstname>> is a hen."<<$CloseNPCVoice>>'
 											'<<$OpenMaleVoice>>"Tell us <<$pcs_firstname>>, tell us what you are."<<$CloseMaleVoice>> Santorini ask you'
-											'<<$OpenPCVoice>>I… I "<<$ClosePCVoice>> <<$OpenInnerThough>> «Oh my God these boiled eggs are making me very horny… How they move inside me! This is a torture! »<<$CloseInnerThough>> You think hesitating what must be your answer'
+											'<<$OpenPCVoice>>I… I "<<$ClosePCVoice>> <<$OpenInnerThought>> «Oh my God these boiled eggs are making me very horny… How they move inside me! This is a torture! »<<$CloseInnerThought>> You think hesitating what must be your answer'
 											'<<$OpenPCVoice>>"I… I am a hen."<<$ClosePCVoice>>'
 											'<<$OpenMaleVoice>>"That’s right! You are a hen… My hen! And tell us <<$pcs_firstname>>, what do the hens do?"<<$CloseMaleVoice>>'
 											'<<$OpenPCVoice>>"Hens lay eggs."<<$ClosePCVoice>> You answer ashamed.'
@@ -324,11 +324,11 @@ if $ARGS[0] = 'marina':
 												*clr & cla
 												'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/layingpussy.mp4"></video></center>'
 												'<<$OpenMaleVoice>>"Very good hen. Now get to laying eggs!"<<$CloseMaleVoice>> Santorini says'
-												'You get on a table; open your legs and try to get the eggs out of your pussy. <<$OpenInnerThough>> «Oh my God! It''s like if they were stuck!»<<$CloseInnerThough>> You think'
+												'You get on a table; open your legs and try to get the eggs out of your pussy. <<$OpenInnerThought>> «Oh my God! It''s like if they were stuck!»<<$CloseInnerThought>> You think'
 												'<<$OpenMaleVoice>>"Come on hen! You can lay eggs!"<<$CloseMaleVoice>> Santorini says laughing.'
 												'<<$OpenNPC2Voice>>"I still don''t understand Carlo…"<<$CloseNPCVoice>>'
 												'<<$OpenNPC1Voice>>"Quiet Giacomo, quiet… you will soon understand."<<$CloseNPCVoice>>'
-												'You sit there, by your side.  <<$OpenInnerThough>> «I think maybe if I move...»<<$CloseInnerThough>>' 
+												'You sit there, by your side.  <<$OpenInnerThought>> «I think maybe if I move...»<<$CloseInnerThought>>' 
 												'<<$OpenNPC2Voice>>"Wow! Fantastic!"<<$CloseNPCVoice>> Shout Tonelli <<$OpenNPC2Voice>>"It''s incredible!"<<$CloseNPCVoice>>'
 												'<<$OpenNPC1Voice>>"I knew you would like it!"<<$CloseNPCVoice>> Santorini says to Tonelli <<$OpenNPC1Voice>>"She is my particular hen."<<$CloseNPCVoice>>'
 												'<<$OpenNPC2Voice>>"Fantastic! She lays two eggs! I wonder if she can put any more."<<$CloseNPCVoice>> Tonelli says to Santorini.'
@@ -345,14 +345,14 @@ if $ARGS[0] = 'marina':
 													act 'Continue':
 														*clr & cla 
 														'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/thinking.jpg"></center><br>'
-														'Well what now… <<$OpenInnerThough>> «If I insert the eggs in my pussy I can only put two ... or maybe three, more would be impossible but if I put them in the ass...»<<$CloseInnerThough>> You think. You get on all fours and little by little you start putting some egss in your ass. When you think that it may already be enough to surprise those two perverts you get up. You feel completely full. You take a bowl and go back to where they are.'
+														'Well what now… <<$OpenInnerThought>> «If I insert the eggs in my pussy I can only put two ... or maybe three, more would be impossible but if I put them in the ass...»<<$CloseInnerThought>> You think. You get on all fours and little by little you start putting some egss in your ass. When you think that it may already be enough to surprise those two perverts you get up. You feel completely full. You take a bowl and go back to where they are.'
 														
 														act 'Go back ':
 															*clr & cla
 															'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/layingass.mp4"></video></center>'
 															'<<$OpenPCVoice>>"Mr. Santorini, your hen is ready lay more eggs"<<$ClosePCVoice>> You say to him.'
 															'<<$OpenMaleVoice>>"Ok, we want to see you lay some eggs for us. Come on!"<<$CloseMaleVoice>>'
-															'You leave the bowl on the floor and you get on all fours.<<$OpenInnerThough>> «Oh my God!»<<$CloseInnerThough>>'
+															'You leave the bowl on the floor and you get on all fours.<<$OpenInnerThought>> «Oh my God!»<<$CloseInnerThought>>'
 															'<<$OpenNPC2Voice>>"One! And from the ass even! Incredible!"<<$CloseNPCVoice>>'
 															Wait 750 & '<<$OpenNPC2Voice>>"Two"<<$CloseNPCVoice>>'
 															Wait 750 & '<<$OpenNPC2Voice>>"Three…"<<$CloseNPCVoice>>'
@@ -386,7 +386,7 @@ if $ARGS[0] = 'return':
 	'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/driver5.jpg"></center><br>'
 	'Some time later you''re waiting for the speedboat in the marina.'
 	'<<$OpenMaleVoice>>"You took more time than I expected. All good? Has it been hard?"<<$CloseMaleVoice>> Marco asks you.'
-	'<<$OpenPCVoice>>"Hard? no, not really... maybe a bit humiliating."<<$ClosePCVoice>> <<$OpenInnerThough>> «…but a bit exciting too. I''m hornier than ever! I feel my pussy completely soaked! »<<$CloseInnerThough>>. You think.'
+	'<<$OpenPCVoice>>"Hard? no, not really... maybe a bit humiliating."<<$ClosePCVoice>> <<$OpenInnerThought>> «…but a bit exciting too. I''m hornier than ever! I feel my pussy completely soaked! »<<$CloseInnerThought>>. You think.'
 	'<<$OpenMaleVoice>>"I''m sorry, maybe you should have thought better coming here."<<$CloseMaleVoice>>'
 	'<<$OpenPCVoice>>"I need the money Marco; it''s one more way to survive."<<$ClosePCVoice>>'
 	'<<$OpenMaleVoice>>"Maybe I can offer you another way to survive, <<$pcs_firstname>>."CMV He says.'
@@ -418,7 +418,7 @@ if $ARGS[0] = 'return':
 		act 'Take the pill':
 			*clr & cla
 			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/security/1pills.jpg"></center><br>'
-			'<<$OpenInnerThough>> « How many pills do you intend to take? A few hours ago two of them and now another. How strange! »<<$CloseInnerThough>>'
+			'<<$OpenInnerThought>> « How many pills do you intend to take? A few hours ago two of them and now another. How strange! »<<$CloseInnerThought>>'
 			
 			act 'Go to VIP lounge ':
 				*clr & cla
@@ -436,7 +436,7 @@ if $ARGS[0] = 'return':
 					act 'Go to toilet ':
 						*clr & cla
 						'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/dripping1.jpg"></center><br>'
-						'You splash some water on the back of your neck and wet your wrists with the cool water, but your anxiety doesn''t stop; You enter a stall and take a sit on the toilet and think...<<$OpenInnerThough>> « Good heavens! I''m wetter than a snail! Oh my God! I was already horny coming back from the Santorini''s mansion but I didn''t think I was so much. Fuck! Are these yellow pills really that effective? I must be strong… Must endure! »<<$CloseInnerThough>>'
+						'You splash some water on the back of your neck and wet your wrists with the cool water, but your anxiety doesn''t stop; You enter a stall and take a sit on the toilet and think...<<$OpenInnerThought>> « Good heavens! I''m wetter than a snail! Oh my God! I was already horny coming back from the Santorini''s mansion but I didn''t think I was so much. Fuck! Are these yellow pills really that effective? I must be strong… Must endure! »<<$CloseInnerThought>>'
 						
 						act 'Go back to WIP lounge ':
 							*clr & cla
@@ -446,7 +446,7 @@ if $ARGS[0] = 'return':
 							act 'Continue':
 								*clr & cla
 								'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/d2event4.jpg"></center><br>'
-								'Soon after, they all begin to show their breasts. Another girl pulls up your top, revealing your beautiful [TITS]. You look at your chest and you find that your nipples are completely swollen. You start rubbing one of them with one of your fingers and a ray of pleasure runs through your body connecting your pussy and your brain directly. You feel your breast full and sensitive. <<$OpenInnerThough>> « My God, what is happening to me? »<<$CloseInnerThough>>'
+								'Soon after, they all begin to show their breasts. Another girl pulls up your top, revealing your beautiful [TITS]. You look at your chest and you find that your nipples are completely swollen. You start rubbing one of them with one of your fingers and a ray of pleasure runs through your body connecting your pussy and your brain directly. You feel your breast full and sensitive. <<$OpenInnerThought>> « My God, what is happening to me? »<<$CloseInnerThought>>'
 								
 								act 'Continue working ':
 									*clr & cla
@@ -456,7 +456,7 @@ if $ARGS[0] = 'return':
 									act 'Continue':
 										*clr & cla
 										'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/purplesexcited.mp4"></video></center>'
-										'At the same time you notice how other girls, with the purple bracelet placed on their wrists just like you, are being fondled by all the customers.<<$OpenInnerThough>> « They are Purple Girls, they are whores! I''m a Purple Girl like them...  I''m here not because I''m a dancer ... I''m here because I''m a whore! »<<$CloseInnerThough>>You feel your pussy dripping on the ground. You think that a lot of the blame is because of the yellow pills, but right now, you do not care.You see a client is pulling his dick out of his pants. <<$OpenInnerThough>> «  I''m a whore. I am here to serve and satisfy customers, come on <<$pcs_nickname>>, serve him! »<<$CloseInnerThough>>'
+										'At the same time you notice how other girls, with the purple bracelet placed on their wrists just like you, are being fondled by all the customers.<<$OpenInnerThought>> « They are Purple Girls, they are whores! I''m a Purple Girl like them...  I''m here not because I''m a dancer ... I''m here because I''m a whore! »<<$CloseInnerThought>>You feel your pussy dripping on the ground. You think that a lot of the blame is because of the yellow pills, but right now, you do not care.You see a client is pulling his dick out of his pants. <<$OpenInnerThought>> «  I''m a whore. I am here to serve and satisfy customers, come on <<$pcs_nickname>>, serve him! »<<$CloseInnerThought>>'
 										
 										act 'Suck his cock ':
 											*clr & cla
@@ -481,7 +481,7 @@ if $ARGS[0] = 'return':
 														act 'Do it!':
 															*clr & cla
 															'<center><video autoplay loop src="images/locations/city/citycenter/nightclub/trip01/day2/d2event9.jpg"></center><br>'
-															'But he also tells the other Purple Girls around you to do the same and get on the couch. Now the client has at his disposal four whores; four pussies ready to be fucked; four asses prepared to be violated. Putting you in a row, the client is inserting his cock in the hole that pleases him going from one to another according to his wishes.When your turn arrives the fluids of your companions are mixed with yours. You feel how his cock stretches your pussy that wraps it like a glove, but shortly after he takes it out of your hungry pussy so he can fuck another Purple Girl. Suddenly you realize that he is fucking you without a condom.  But right now you do not care about anything. You just want to feel the hardness of his cock inside you again. <<$OpenInnerThough>> « Beg to him fuck you again <<$pcs_nickname>>! Come on beg him! You need his cock! Beg him! »<<$CloseInnerThough>> -Your inner voice tells you- '
+															'But he also tells the other Purple Girls around you to do the same and get on the couch. Now the client has at his disposal four whores; four pussies ready to be fucked; four asses prepared to be violated. Putting you in a row, the client is inserting his cock in the hole that pleases him going from one to another according to his wishes.When your turn arrives the fluids of your companions are mixed with yours. You feel how his cock stretches your pussy that wraps it like a glove, but shortly after he takes it out of your hungry pussy so he can fuck another Purple Girl. Suddenly you realize that he is fucking you without a condom.  But right now you do not care about anything. You just want to feel the hardness of his cock inside you again. <<$OpenInnerThought>> « Beg to him fuck you again <<$pcs_nickname>>! Come on beg him! You need his cock! Beg him! »<<$CloseInnerThought>> -Your inner voice tells you- '
 															
 															act 'Beg to him fuck you!':
 																*clr & cla
