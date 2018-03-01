@@ -5,8 +5,8 @@ if $ARGS[0] = 'day seven':
 	!Here must be a bedroom and bathroom (dynamics complete- shoes and dresses available, bed and shower)
 	!fully rested and full mood 
 	'You wake up happy and well-rested. You know that your contract ends today and you''ll finally be able to return home. You think about yesterday and ponder how you''ll be able to return to normal after all the stuff that happened.'
-	'<<$OpenInnerThough>> «I can''t believe that I''ve become this simple whore, I could''ve never imagined that I would sink this low. Yes it''s true that I''m getting well compensated but was it really worth putting up with all the depraved stuff...»<<$CloseInnerThough>>'
-	'You step out of the bed and head over to the bathroom to take a shower and prepare for the last day. <<$OpenInnerThough>> «The whole trip has been exhausting and I haven''t even been able to do any turism. Next time... But what if they propose for me to return, would I return?»<<$CloseInnerThough>>'
+	'<<$OpenInnerThought>> «I can''t believe that I''ve become this simple whore, I could''ve never imagined that I would sink this low. Yes it''s true that I''m getting well compensated but was it really worth putting up with all the depraved stuff...»<<$CloseInnerThought>>'
+	'You step out of the bed and head over to the bathroom to take a shower and prepare for the last day. <<$OpenInnerThought>> «The whole trip has been exhausting and I haven''t even been able to do any turism. Next time... But what if they propose for me to return, would I return?»<<$CloseInnerThought>>'
 	!When the player has taken the shower the following text will appear:
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/security/christian6.jpg"></center><br>'
 	'<<$OpenMaleVoice>>"Good morning <<$pcs_firstname>>! Did you have a pleasant night?"<<$CloseMaleVoice>> a smirking Christian asks.'

@@ -5,7 +5,7 @@ if $ARGS[0] = 'day four':
 
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day4/dripping06.jpg"></center><br>'
 	'You wake up feeling a bit rested, but you can''t shake off the feeling if the visitor was only a dream or not. As you move around in the bed you notice a suspicious and sticky fluid on the sheets. You examine it by smelling it and giving it a little taste.' 
-	'<<$OpenInnerThough>> «That''s definitely sperm...! Well, I did serve a lot of clients yesterday, so it''s no surprise that there''s still sperm leaking out... But why do my sheets smell of men perfume? I better go and take a shower and put on make-up me before I head out.»<<$CloseInnerThough>>'
+	'<<$OpenInnerThought>> «That''s definitely sperm...! Well, I did serve a lot of clients yesterday, so it''s no surprise that there''s still sperm leaking out... But why do my sheets smell of men perfume? I better go and take a shower and put on make-up me before I head out.»<<$CloseInnerThought>>'
 
 	!Here must be a bedroom and bathroom (dynamics complete- shoes and dresses available, bed and shower). When the player has showered it will appear the following act. 
 	act 'Open the door':
@@ -183,7 +183,7 @@ if $ARGS[0] = 'day four':
 																	'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day4/d4aevent13.mp4"></video></center><br>'
 																	'You''re really tired and know it will take some time to build up to an orgasm. Instead, you decide to use your vaginal muscles to milk the client so he cums as soon as possible. As you do that the client cums within seconds and you feel a powerful sperm stream filling your womb.'
 																	'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day4/overflowing.mp4"></video></center><br>'
-																	'<<$OpenInnerThough>> «If this continues on, I''ll leave this ship pregnant...»<<$CloseInnerThough>> you think to yourself. As you walk away you see the other girls encouraged by your professional performance and are dutifully serving the clients...' 
+																	'<<$OpenInnerThought>> «If this continues on, I''ll leave this ship pregnant...»<<$CloseInnerThought>> you think to yourself. As you walk away you see the other girls encouraged by your professional performance and are dutifully serving the clients...' 
 																	'You walk by Christian as he tells that you can return to your cabin to rest...'
 !!stop music/dis5.mp3
 																	act 'Wait':

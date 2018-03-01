@@ -8,7 +8,7 @@
 if $ARGS[0] = 'day three':
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/cabin.jpg"></center><br>'
 	'A new day dawns. You feel rested but can''t shake the feeling that you''re here because of your beauty; simply belonging to a dance troupe named Purple Girls, that''s actually a front for a prostitution ring.'
-	'<<$OpenInnerThough>> «I should take a shower and do my makeup before I head out.»<<$CloseInnerThough>>'
+	'<<$OpenInnerThought>> «I should take a shower and do my makeup before I head out.»<<$CloseInnerThought>>'
 
 !!Here must be a bedroom and bathroom (dynamics complete- shoes and dresses available, bed and shower) 
 !!When the player has showered, dressed and make up it will appear the following act. 
@@ -67,7 +67,7 @@ if $ARGS[0] = 'day three':
 	!remove panties somehow
 						'You take a few steps as you walk away from the car. All of a sudden you stop and feel your soaked panties. You quickly decide that the best action is to take them off before entering the client''s house.'
 						'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day3/dripping01.mp4"></video></center>'
-						'<<$OpenInnerThough>> «How can I be this horny? Nobody has even touched me and... It''s those damn yellow pilis! I can''t believe how effective they are! Damn those bastards... they make sure their whores are horny enough to do anything.»<<$CloseInnerThough>>'
+						'<<$OpenInnerThought>> «How can I be this horny? Nobody has even touched me and... It''s those damn yellow pilis! I can''t believe how effective they are! Damn those bastards... they make sure their whores are horny enough to do anything.»<<$CloseInnerThought>>'
 
 						act 'Ring the bell':
 							*clr & cla
@@ -80,7 +80,7 @@ if $ARGS[0] = 'day three':
 							'<<$OpenMaleVoice>>"Your breast are a bit too big for that bra..."<<$CloseMaleVoice>> he says with a grin on his face.'
 							'<<$OpenPCVoice>>"If only it was one size bigger it would have been perfect."<<$ClosePCVoice>> you answer him.' 
 							'<<$OpenMaleVoice>>"Not at all, actually I like them being revealed like that. On second thought, take it off! I want you to turn me, show me your naked body."<<$CloseMaleVoice>>' 
-							'<<$OpenInnerThough>> « Well, I think my work is about to begin.»<<$CloseInnerThough>> you think to yourself. You start taking off your red lingerie little by little, sensually moving while slowly caressing your body, noticing that the clients bulge is steadly growing.'
+							'<<$OpenInnerThought>> « Well, I think my work is about to begin.»<<$CloseInnerThought>> you think to yourself. You start taking off your red lingerie little by little, sensually moving while slowly caressing your body, noticing that the clients bulge is steadly growing.'
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day3/d3aevent2.jpg"></center><br>'
 							'You crouch down completely naked and play with your breasts looking intensively into his eyes.'
 	
@@ -90,7 +90,7 @@ if $ARGS[0] = 'day three':
 								'You go down on all fours. Your boobs are perfectly shown off between the arms and you see the client begin fondiling himself through the pants.'
 								'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day3/d3aevent4.jpg"></center><br>'
 								'You turn around and kneel to show off your naked ass; you slap it several times looking him as the bulge gets bigger and bigger.' 
-								'<<$OpenInnerThough>> «He seems to enjoy this... Might as well continue on...»<<$CloseInnerThough>> you think to yourself.'
+								'<<$OpenInnerThought>> «He seems to enjoy this... Might as well continue on...»<<$CloseInnerThought>> you think to yourself.'
 
 								act 'More…':
 									*clr & cla
@@ -160,7 +160,7 @@ if $ARGS[0] = 'day three':
 																	'You make sure that the customer is satisfied with the footjob as you continue rubbing his cock with your feet.'
 																	
 																	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day3/d3aevent11.jpg"></center><br>'
-																	'<<$OpenInnerThough>> « Oh my God! I''m getting hornier by just rubbing my feet! Behave <<$pcs_nickname>>, you must be professional and do what the customer wants. Keep concentrating on pleasing him with the footjob...»<<$CloseInnerThough>>' 
+																	'<<$OpenInnerThought>> « Oh my God! I''m getting hornier by just rubbing my feet! Behave <<$pcs_nickname>>, you must be professional and do what the customer wants. Keep concentrating on pleasing him with the footjob...»<<$CloseInnerThought>>' 
 																	'After a while you notice that the client''s cock begins to tremble and he shouts to present your feet as he wants to cum on them.'
 																	
 																	act 'Give me your feet!':
@@ -220,7 +220,7 @@ if $ARGS[0] = 'Marco':
 			'<<$OpenMaleVoice>>"Listen to me, <<$pcs_firstname>>! We can''t access the locations you can. I can''t get near the boat nor can I enter the Tonelli and Santorini mansions. Ivanovich will visit tomorrow to meet with his partners and we''re certain that Yazev won''t be far away from here."<<$CloseMaleVoice>>' 
 			'<<$OpenPCVoice>>"But... I''m just a whore working for them. I don''t have any access to anything!"<<$ClosePCVoice>> Marco looks desperately at you pleading for your help. Deciding you want to help out, you take a deep breath, asking him, <<$OpenPCVoice>>"What do you need me to do?"<<$ClosePCVoice>>' 
 			'<<$OpenMaleVoice>>"We only need you to keep your eyes and ears open, the information you provide us will be of vital importance in order to dismantle the whole network."<<$CloseMaleVoice>>' 
-			'<<$OpenInnerThough>> «Oh my God! How did I end up in such a messed up situation?»<<$CloseInnerThough>>'
+			'<<$OpenInnerThought>> «Oh my God! How did I end up in such a messed up situation?»<<$CloseInnerThought>>'
 			*nl
 			'<<$OpenMaleVoice>>"So what do you say <<$pcs_firstname>>? Will you help us?"<<$CloseMaleVoice>> Marco asks as the car stops near the speedboat that will take you to the cruise ship.' 
 			'Remembering that you need to be careful and that they''re maybe only testing you ask, <<$OpenPCVoice>>"What do I gain from all this?"<<$ClosePCVoice>>' 
@@ -259,7 +259,7 @@ if $ARGS[0] = 'Marco':
 					
 					act 'Put the pills inside your pussy':
 						*clr & cla
-						'<<$OpenInnerThough>> «This piece of shit is really making me do this... I have no other choice but to obey him. I''m going to be such a hot mess when the pills kick in!»<<$CloseInnerThough>>'
+						'<<$OpenInnerThought>> «This piece of shit is really making me do this... I have no other choice but to obey him. I''m going to be such a hot mess when the pills kick in!»<<$CloseInnerThought>>'
 						'<<$OpenMaleVoice>>"Do you want me to insert them?"<<$CloseMaleVoice>> he lewdly asks.' 
 						'<<$OpenPCVoice>>"No thanks."<<$ClosePCVoice>> you coldly answer, <<$OpenPCVoice>>"I can do it by myself..."<<$ClosePCVoice>>'
 						'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day3/pussypills.mp4"></video></center>'
@@ -295,7 +295,7 @@ if $ARGS[0] = 'Marco':
 								'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/cabin.jpg"></center><br>'
 								'You head over to your cabin. You''re exhausted and need a rest or you will likely fall ill. As you''re undressing, you realize that your pussy is still dripping wet. The yellow pills are still very effective.'
 								'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day3/dripping03.mp4"></video></center>'
-								'<<$OpenInnerThough>> «The wetness doesn''t stop...»<<$CloseInnerThough>> you think as you see drops fall down your tighs, creating a small puddle. All of a sudden someone knocks on the door and you walk over to open it, completely naked.'
+								'<<$OpenInnerThought>> «The wetness doesn''t stop...»<<$CloseInnerThought>> you think as you see drops fall down your tighs, creating a small puddle. All of a sudden someone knocks on the door and you walk over to open it, completely naked.'
 								
 								act 'Open the door':
 									*clr & cla
@@ -310,13 +310,13 @@ if $ARGS[0] = 'Marco':
 									'Christian starts grinning, telling you, <<$OpenMaleVoice>>"It''s not the pills you stupid whore... It''s you, your pussy''s hungry for cock that it''s dripping wet all the time!"<<$CloseMaleVoice>>' 
 									'<<$OpenPCVoice>>"You''re right," you say dejected, "I''ll just finish up and head to the VIP lounge."<<$ClosePCVoice>>' 
 									'<<$OpenMaleVoice>>"Too late now whore, turn around and spread those pussy lips!"<<$CloseMaleVoice>> Christian commands.' 
-									'<<$OpenInnerThough>> «What is he up to now?»<<$CloseInnerThough>>'
+									'<<$OpenInnerThought>> «What is he up to now?»<<$CloseInnerThought>>'
 									
 									act 'Turn around':
 										*clr & cla
 										'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day3/dripping05.mp4"></video></center>'
 										'<<$OpenMaleVoice>>"Look at that! You''re wet like a snails tracks. It''s really dripping out of you. Seems like the pills are much more effective if they are applied vaginally. I''ll be sure to tell Mr. Santorini this."<<$CloseMaleVoice>>' 
-										'<<$OpenInnerThough>> «Am I just a lab rat for them?»<<$CloseInnerThough>>'
+										'<<$OpenInnerThought>> «Am I just a lab rat for them?»<<$CloseInnerThought>>'
 										'<<$OpenMaleVoice>>"Before you head over to the VIP lounge, you have my permission to finger yourself."<<$CloseMaleVoice>> he tells you.'
 										'<<$OpenPCVoice>>"You want to see me touching my pussy?"<<$ClosePCVoice>> you ask him.'
 										*nl
@@ -336,7 +336,7 @@ if $ARGS[0] = 'Marco':
 											
 											'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day3/d3bevent2.mp4"></video></center>'
 											'As you move seductivly you raise the dress, teasing the clients. Every single of them can see your little silver panties.'
-											'<<$OpenInnerThough>> «There''s no doubt I''ll get fucked by several clients... Just look at their lusting eyes. I hope they''ll be fast, I really want to rest in my cabin.»<<$CloseInnerThough>>'  
+											'<<$OpenInnerThought>> «There''s no doubt I''ll get fucked by several clients... Just look at their lusting eyes. I hope they''ll be fast, I really want to rest in my cabin.»<<$CloseInnerThought>>'  
 											
 											act 'Tempts customers':
 												*clr & cla
@@ -369,11 +369,11 @@ if $ARGS[0] = 'Marco':
 															'The next client doesn''t ease up the pace. He''s powerfully thrusting into your vagina as you reach another orgasm that partially satisfies your inflamed vulva.'
 															'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day3/d3bevent9.jpg"></center><br>'
 															'The next client commands you to drop down on your knees and begins relentlessly pounding your pussy.'
-															'<<$OpenInnerThough>> «I can feel how his tip is pushing the others clients sperm deeper inside me!»<<$CloseInnerThough>>'
+															'<<$OpenInnerThought>> «I can feel how his tip is pushing the others clients sperm deeper inside me!»<<$CloseInnerThought>>'
 															
 															'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/day3/d3bevent10.jpg"></center><br>'
 															'The next client lifts your leg and pounds you so hard that the other clients sperm begins to trickle down his cock. Your pussy walls are shaking by the pounding, stimulating the clients cock even more, pleasuring the both of you.' 
-															'<<$OpenInnerThough>> «Fuck, my dirty pussy is milking his cock! I want his hot cum in my pussy! I need his cum!»<<$CloseInnerThough>>'
+															'<<$OpenInnerThought>> «Fuck, my dirty pussy is milking his cock! I want his hot cum in my pussy! I need his cum!»<<$CloseInnerThought>>'
 															
 															act 'Following!':
 																*clr & cla
@@ -381,7 +381,7 @@ if $ARGS[0] = 'Marco':
 																
 	  !orgasm
 																'After a few minutes you feel his cock twitching as he cums inside you. The sperm is getting mixed with the other clients in the depths of your fertile belly.' 
-																'<<$OpenInnerThough>> «Oh my God! This will end in they knocking me up!»<<$CloseInnerThough>> you think to yourself as you reach another climax.'
+																'<<$OpenInnerThought>> «Oh my God! This will end in they knocking me up!»<<$CloseInnerThought>> you think to yourself as you reach another climax.'
 																
 																'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day3/d3bevent11.mp4"></video></center>'
 																'One after another the clients continue to use you as they empty their nutsacks. As of now you''re full and your vagina is a sperm bucket. The clients are treating you like an inflatable doll whose only objective is to satisfy the sexual instincts of the clients. You are the center of the attention. The rest of the Purple Girls are obeserving you and are staying away as far as possible. Finally you reach your limit and desperately scream if anyone can help you out.'
@@ -399,7 +399,7 @@ if $ARGS[0] = 'Marco':
 																	'As it all settles down you feel your pussy completely overflowing with sperm...'
 																	
 !if on birth control
-																	'<<$OpenInnerThough>> «I don''t know if my birth control pills will be able to stop so much semen... I''m on the pills, right?»<<$CloseInnerThough>> you hesitate, <<$OpenInnerThough>> «I can''t really worry about that now, I should head back to my cabin and rest.»<<$CloseInnerThough>>'
+																	'<<$OpenInnerThought>> «I don''t know if my birth control pills will be able to stop so much semen... I''m on the pills, right?»<<$CloseInnerThought>> you hesitate, <<$OpenInnerThought>> «I can''t really worry about that now, I should head back to my cabin and rest.»<<$CloseInnerThought>>'
 																	
 																	act 'Go to the cabin':
 																		*clr & cla
@@ -410,7 +410,7 @@ if $ARGS[0] = 'Marco':
 !if entering the bathroom
 																		'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day3/overflowing3.mp4"></video></center>'
 																		'You go to the bathroom to relieve yourself before heading to bed. While you''re pissing some sperm splatter falls from your bulging pussy on the toilet.'
-																		'<<$OpenInnerThough>> «Fuck! Those bastards have completely filled me up!»<<$CloseInnerThough>> you think to yourself, <<$OpenInnerThough>> «I can''t deal with this anymore, I must sleep...»<<$CloseInnerThough>>'
+																		'<<$OpenInnerThought>> «Fuck! Those bastards have completely filled me up!»<<$CloseInnerThought>> you think to yourself, <<$OpenInnerThought>> «I can''t deal with this anymore, I must sleep...»<<$CloseInnerThought>>'
 !The next sequences are a dream of the player. These must be treated like a dream of the player (bed2 )
 																		'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day3/dsleep7.mp4"></video></center>'
 																		'You are awoken by a thud, someone has entered your cabin. Your sense a sweet and masculine perfume that envelops the environment. That someone separates your legs but you''re too exhausted that you can''t even fight back...'

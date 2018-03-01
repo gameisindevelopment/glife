@@ -9,7 +9,7 @@ if $ARGS[0] = 'day six':
 	*nl
 	'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/day6/dripping10.mp4"></video></center><br>'
 	'Notice that your pussy is dripping wet, an urge of excitment comes over you. Your clitoris is pulsating and the typical need to have sex is overcoming you...' 
-	'<<$OpenInnerThough>> «I need to take a shower... I need to cool down. How can I still be this horny?»<<$CloseInnerThough>>'
+	'<<$OpenInnerThought>> «I need to take a shower... I need to cool down. How can I still be this horny?»<<$CloseInnerThought>>'
 	!When the player has taken the shower the following text will appear
 	'As you step out of the shower the feeling hasn''t resided and by now you''re getting desperate...'
 	*nl
