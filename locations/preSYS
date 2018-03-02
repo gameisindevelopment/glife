@@ -129,21 +129,10 @@ if $ARGS[0] = 'SGStart':
 
 	act 'Re-enter name/s': gt 'preSYS', 'SGStart'
 	act 'Continue':
-		cls
-		'<center><img <<$set_imgh>> src="images/pre/sys/altstart1.jpg"></center>'
-		'Please select how long you have left in school.'
-		act 'You have one year of school remaining. (age 16 or 17)':
-			birthyear = 2000
-			yearlefttemp = 1
-			schoool_year = 2000
-			gt 'preSYS', 'SGStart2'
-		end
-		act 'You have two years of school remaining. (age 15 or 16)':
-			birthyear = 2001
-			yearlefttemp = 2
-			schoool_year = 2001
-			gt 'preSYS', 'SGStart2'
-		end
+		birthyear = 2000
+		yearlefttemp = 1
+		schoool_year = 2000
+		gt 'preSYS', 'SGStart2'
 	end
 end
 
