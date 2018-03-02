@@ -674,7 +674,7 @@ if $ARGS[0] = 'preg':
 			$childtype[nextbaby-1] = 'identical twin'
 		end
 	end
-	PregChem += 1
+	PregChem += (1+pregspeedcheat)
 	temprand = rand(-400,800)
 	temprand -= (babyembryo-1)*588
 	if PregChem > 6573 + temprand and preg ! 2:
