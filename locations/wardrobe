@@ -111,7 +111,7 @@ if $ARGS[0] = 'default':
 	else
 		i = 0
 		:loopdefclothing
-		'<<$def_clothing_name[i]>> <a href="exec:gs ''clothing'', ''default_entry_wear'', <<i>>">Wear this default outfit</a> <a href="exec:gs ''clothing'', ''default_entry_delete'', <<i>>">Delete this default outfit</a>'
+		'<<$def_clothing_name[i]>> <a href="exec:gs ''wardrobe'', ''default_entry_wear'', <<i>>">Wear this default outfit</a> <a href="exec:gs ''wardrobe'', ''default_entry_delete'', <<i>>">Delete this default outfit</a>'
 		i += 1
 		if i < ARRSIZE('defclothingnumber'):jump 'loopdefclothing'
 	end
