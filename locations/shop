@@ -573,12 +573,12 @@ if $shoplocation = 'tech':
 		''
 	end	
 	*pl '<center><table align="center" width=80%>' 
-	*P FUNC ('$single_stock_item', 1, 'Scondhand Small CRT TV', 5000, 'TV', $CURLOC, '', iif(housr > 0, 0, 1), 'You need your own home')
-	*P FUNC ('$single_stock_item', 2, 'Large Plasma TV', 35000, 'TV', $CURLOC, '', iif(housr > 0, 0, 1), 'You need your own home')
+	*P FUNC ('$single_stock_item', 1, 'Scondhand Small CRT TV', 5000, 'TV', $CURLOC, '', iif(home_owned[1] > 0 or home_owned[3] > 0 or home_owned[4] = 1 or home_owned[5] > 2, 0, 1), 'You need your own home')
+	*P FUNC ('$single_stock_item', 2, 'Large Plasma TV', 35000, 'TV', $CURLOC, '', iif(home_owned[1] > 0 or home_owned[3] > 0 or home_owned[4] = 1 or home_owned[5] > 2, 0, 1), 'You need your own home')
 	*P FUNC ('$single_stock_item', 1, 'Computer', 25000, 'komp', $CURLOC)
 	*p FUNC ('$single_stock_item', 1, 'Computer game Dead Sunset', 500, 'GameCD2', $CURLOC, '', iif(komp > 0, 0, 1), 'You need a computer')
-	*P FUNC ('$single_stock_item', 1, 'Dishwasher', 50000, 'posudomashina', $CURLOC, '', iif(housr > 0, 0, 1), 'You need your own home')
-	*P FUNC ('$single_stock_item', 1, 'Washing machine', 50000, 'stiralka', $CURLOC, '', iif(housr > 0, 0, 1), 'You need your own home')
+	*P FUNC ('$single_stock_item', 1, 'Dishwasher', 50000, 'posudomashina', $CURLOC, '', iif(home_owned[1] > 0 or home_owned[3] > 0 or home_owned[4] = 1 or home_owned[5] > 2, 0, 1), 'You need your own home')
+	*P FUNC ('$single_stock_item', 1, 'Washing machine', 50000, 'stiralka', $CURLOC, '', iif(home_owned[1] > 0 or home_owned[3] > 0 or home_owned[4] = 1 or home_owned[5] > 2, 0, 1), 'You need your own home')
 	*P FUNC ('$single_stock_item', 1, 'Camera', 10000, 'zenit', $CURLOC) 
 	*P FUNC ('$single_stock_item', 1, 'Mini camera disguised as a cigarette pack', 40000, 'minifoto', $CURLOC)
 	*P FUNC ('$single_stock_item', 1, 'Webcam', 10000, 'webcamera', $CURLOC, '', iif((npc_rel['A11']>=30 and webcamera = 0) or (camwhore = 1 and webcamera = 0), 0, 1), 'You have no use this')
