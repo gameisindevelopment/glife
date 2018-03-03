@@ -641,7 +641,7 @@ if $ARGS[0] = 'Disco Chat':
 			act 'Step away':gt 'gdkin'
 		end
 		
-	elseif NikoPayback = 3:
+	else
 		act 'Walk away':gt 'gdkin'		
 	end	
 end
