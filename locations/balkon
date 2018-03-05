@@ -47,7 +47,13 @@ if $ARGS[0] = 'start':
 	end
 
 	act 'Approach the railing':gt 'balkon2', 'niz'
-	act 'Return to the living room':dynamic $brodils
+	act 'Return to the living room':
+		if $loc = 'sitr': 
+			gt 'sitr'
+		else
+			gt 'sitr2x'
+		end
+	end
 end
 
 --- balkon ---------------------------------
