@@ -23,7 +23,7 @@ if $args[0] = '':
 	clr
 	gs 'stat'
 	'<center><b><font color="maroon">Cottage</font></b></center>'
-	if dachaest = 2:
+	if home_owned[3] = 2:
 		'<center><img <<$set_imgh>> src="images/locations/suburban/cottage/dacharoom2.jpg"></center>'
 	else
 		'<center><img <<$set_imgh>> src="images/locations/suburban/cottage/dacharoom1.jpg"></center>'
@@ -53,7 +53,7 @@ if $args[0] = 'dachakit':
 	clr
 	gs 'stat'
 	'<center><b><font color="maroon">Cottage Kitchen</font></b></center>'
-	if dachaest = 2:
+	if home_owned[3] = 2:
 		'<center><img <<$set_imgh>> src="images/locations/suburban/cottage/dachakit2.jpg"></center>'
 	else
 		'<center><img <<$set_imgh>> src="images/locations/suburban/cottage/dachakit1.jpg"></center>'
@@ -112,7 +112,7 @@ if $args[0] = 'dachavann':
 	clr
 	gs 'stat'
 	'<center><b><font color="maroon">Cottage Bathroom</font></b></center>'
-	if dachaest = 2:
+	if home_owned[3] = 2:
 		'<center><img <<$set_imgh>> src="images/locations/suburban/cottage/dachavan2.jpg"></center>'
 	else
 		'<center><img <<$set_imgh>> src="images/locations/suburban/cottage/dachavan1.jpg"></center>'

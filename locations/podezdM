@@ -120,7 +120,7 @@ end
 if $ARGS[0] = 'kiosk2':
 	cla
 	*clr
-	if housr = 1:
+	if home_owned[1] > 0:
 		'<<$loverdesc[lover_number]>> drinks his beer and wraps his arm around you. "<<$pcs_nickname>> why don''t we go back to your place?"'
 		act 'Invite him in':gt 'sexm', 'start'
 		act 'Turn him down':gt 'podezdM', 'Walk'
@@ -147,7 +147,7 @@ if $ARGS[0] = 'Walk':
 		'You push against him, hard, and finally manage to push him off you, making him stumble back a step. He seems confused that you pushed him away. "What the fuck?! Don''t think you can treat me like you please, I''m not as easy as you think!" With that, you turn and walk away.'
 		act 'I have to go, maybe I''ll call you later':dynamic $go_home
 	end
-	if housr = 1:
+	if home_owned[1] > 0:
 		act 'Kiss':
 			cla
 			'You return his kiss and rub the crotch of his pants. "Why don''t we head over to my place?." you ask him.'

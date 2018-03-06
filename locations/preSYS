@@ -92,8 +92,8 @@ if $ARGS[0] = 'SGStart':
 	pcs_leghair = 12
 	pcs_makeup = 1
 
+	home_owned[2] = 1
 	money = 2000
-	housrA = 0
 	pcs_grades = 75
 	prezikProver = 3
 	brothersawpirsF = 0
@@ -129,21 +129,10 @@ if $ARGS[0] = 'SGStart':
 
 	act 'Re-enter name/s': gt 'preSYS', 'SGStart'
 	act 'Continue':
-		cls
-		'<center><img <<$set_imgh>> src="images/pre/sys/altstart1.jpg"></center>'
-		'Please select how long you have left in school.'
-		act 'You have one year of school remaining. (age 16 or 17)':
-			birthyear = 2000
-			yearlefttemp = 1
-			schoool_year = 2000
-			gt 'preSYS', 'SGStart2'
-		end
-		act 'You have two years of school remaining. (age 15 or 16)':
-			birthyear = 2001
-			yearlefttemp = 2
-			schoool_year = 2001
-			gt 'preSYS', 'SGStart2'
-		end
+		birthyear = 2000
+		yearlefttemp = 1
+		schoool_year = 2000
+		gt 'preSYS', 'SGStart2'
 	end
 end
 
@@ -281,6 +270,9 @@ if $ARGS[0] = 'charselect':
 				kosmetica = 10
 				shampoo = 20
 				stanok = 10
+				swimwear[58] = 1
+				swimwearH[58] = 60
+				swimwearB[58] = pcs_hips
 				if player_avatar = 0:
 					pcs_hairlng = 300
 					pcs_eyesize = 3

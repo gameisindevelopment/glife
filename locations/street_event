@@ -10,7 +10,7 @@
 		streetev_bf=90
 		shantpopala: 100% if shantpopala>0
 2. home-related events: check if player live here (workDolgDay, vladimirday, pcs_magik >= 1 and mainQW = 0, hour = meethour).
-[street]: housr=1 for korr
+[street]: home_owned[1] > 0 for korr
 [down]:tanwork = 1 for house, student > 0 for dorm
 [Nord]:none for now. use (train station) as position, if no home in city.
 Known issue: boyfriend/vladimir may wait you in both place, if you rent house in [street] and study in university/work in Tanya
@@ -29,7 +29,7 @@ if $ARGS[0] = 'street':
 	streetev_hijack = 2
 	streetev_bf = 50
 	streetev_mistmeet = 15
-	if housr = 1:
+	if home_owned[1] > 0:
 		streetev_home = 1
 		$streetev_home = 'near the entrance to your apartment block'
 	end
@@ -49,7 +49,7 @@ elseif $ARGS[0] = 'Nord':
 	streetev_hijack = 1
 	streetev_bf = 30
 	streetev_mistmeet = 5
-	if housr = 0 and tanwork = 0 and student = 0:
+	if home_owned[1] = 0 and tanwork = 0 and student = 0:
 		streetev_home = 0
 		$streetev_home = 'by the train station'
 	end
@@ -59,7 +59,7 @@ elseif $ARGS[0] = 'pavResidential':
 	streetev_hijack = 2
 	streetev_bf = 50
 	streetev_mistmeet = 15
-	if ParHomeBlock = 0 and storyline = 1:
+	if home_owned[2] = 1:
 		streetev_home = 1
 		$streetev_home = 'outside your apartment block'
 	end
@@ -69,7 +69,7 @@ elseif $ARGS[0] = 'pavCommercial':
 	streetev_hijack = 6
 	streetev_bf = 90
 	streetev_mistmeet = 20
-	if housr = 0 and tanwork = 0 and student = 0:
+	if home_owned[1] = 0 and tanwork = 0 and student = 0:
 		streetev_home = 0
 		$streetev_home = 'on the high street'
 	end
@@ -738,7 +738,7 @@ if $ARGS[1] = 'main':
 					'You stop and listen to her play several songs, she really is pretty good. You wonder why she is playing on the street, perhaps the old adage about starving artist applies to musicians as well.'
 					act 'Leave':gt $loc
 					if money > 50:
-						act 'Give him money':
+						act 'Give her money':
 							cla
 							*clr
 							minut += 5

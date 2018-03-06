@@ -554,10 +554,13 @@ if $ARGS[0] = 'modrel':
 end
 
 if $ARGS[0] = 'modrel_fam':
-	act 'Stepfather: <<npc_rel[''A28'']>>': gs 'preSYS2','setval2' & npc_rel['A28'] = nstat  & gt 'preSYS2','modrel_fam'
-	act 'Mother: <<npc_rel[''A29'']>>': gs 'preSYS2','setval2' & npc_rel['A29'] = nstat & gt 'preSYS2','modrel_fam'
-	act 'Sister: <<npc_rel[''A33'']>>': gs 'preSYS2','setval2' & npc_rel['A33'] = nstat & gt 'preSYS2','modrel_fam'
-	act 'Brother: <<npc_rel[''A34'']>>': gs 'preSYS2','setval2' & npc_rel['A34'] = nstat & gt 'preSYS2','modrel_fam'
+	'<center><b>Family relationship levels</b></center>'
+	'<center><table><TH></TH><TH>Set to zero</TH><TH>Minus 10</TH><TH>Minus 5</TH><TH>Plus 5</TH><TH>Plus 10</TH><TH>Set to 100</TH>'
+	'<TR><TD>Stepfather: <<npc_rel[''A28'']>></TD><TD><a href="exec:npc_rel[''A28''] = 0 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] -= 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] -= 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] += 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] += 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] = 100 & gt ''preSYS2'', ''setval2''">zero</a></TD>'
+	'<TR><TD>Mother: <<npc_rel[''A29'']>></TD><TD><a href="exec:npc_rel[''A29''] = 0 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] -= 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] -= 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] += 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] += 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] = 100 & gt ''preSYS2'', ''setval2''">zero</a></TD>'
+	'<TR><TD>Sister: <<npc_rel[''A33'']>></TD><TD><a href="exec:npc_rel[''A33''] = 0 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] -= 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] -= 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] += 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] += 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] = 100 & gt ''preSYS2'', ''setval2''">zero</a></TD>'
+	'<TR><TD>Brother: <<npc_rel[''A34'']>></TD><TD><a href="exec:npc_rel[''A34''] = 0 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] -= 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] -= 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] += 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] += 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] = 100 & gt ''preSYS2'', ''setval2''">zero</a></TD>'
+	'</table></center>'
 	act 'Return': gt 'preSYS2','modrel'
 end
 
@@ -626,22 +629,22 @@ if $ARGS[0] = 'modrel_ner':
 end
 
 if $ARGS[0] = 'modrel_gop':
-	act '<<$npc_firstname[''A9'']>> <<$npc_lastname[''A9'']>>: <<npc_rel[''A9'']>>' : gs 'preSYS2','setval2' & npc_rel['A9'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A10'']>> <<$npc_lastname[''A10'']>>: <<npc_rel[''A10'']>>' : gs 'preSYS2','setval2' & npc_rel['A10'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A11'']>> <<$npc_lastname[''A11'']>>: <<npc_rel[''A11'']>>' : gs 'preSYS2','setval2' & npc_rel['A11'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A20'']>> <<$npc_lastname[''A20'']>>: <<npc_rel[''A20'']>>' : gs 'preSYS2','setval2' & npc_rel['A20'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A21'']>> <<$npc_lastname[''A21'']>>: <<npc_rel[''A21'']>>' : gs 'preSYS2','setval2' & npc_rel['A21'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A24'']>> <<$npc_lastname[''A24'']>>: <<npc_rel[''A24'']>>' : gs 'preSYS2','setval2' & npc_rel['A24'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A154'']>> <<$npc_lastname[''A154'']>>: <<npc_rel[''A154'']>>' : gs 'preSYS2','setval2' & npc_rel['A154'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A155'']>> <<$npc_lastname[''A155'']>>: <<npc_rel[''A155'']>>' : gs 'preSYS2','setval2' & npc_rel['A155'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A156'']>> <<$npc_lastname[''A156'']>>: <<npc_rel[''A156'']>>' : gs 'preSYS2','setval2' & npc_rel['A156'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A157'']>> <<$npc_lastname[''A157'']>>: <<npc_rel[''A157'']>>' : gs 'preSYS2','setval2' & npc_rel['A157'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A158'']>> <<$npc_lastname[''A158'']>>: <<npc_rel[''A158'']>>' : gs 'preSYS2','setval2' & npc_rel['A158'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A143'']>> <<$npc_lastname[''A143'']>>: <<npc_rel[''A143'']>>' : gs 'preSYS2','setval2' & npc_rel['A143'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A144'']>> <<$npc_lastname[''A144'']>>: <<npc_rel[''A144'']>>' : gs 'preSYS2','setval2' & npc_rel['A144'] = nstat & gt 'preSYS2','modrel_ner'
-	act '<<$npc_firstname[''A145'']>> <<$npc_lastname[''A145'']>>: <<npc_rel[''A145'']>>' : gs 'preSYS2','setval2' & npc_rel['A145'] = nstat & gt 'preSYS2','modrel_ner'
-	act 'Boys only': gs 'preSYS2','setval2' & gs 'preSYS2', 'pol_grup_set', 0, 4, nstat & gt 'preSYS2','modrel_ner'
-	act 'Girls only': gs 'preSYS2','setval2' & gs 'preSYS2', 'pol_grup_set', 1, 4, nstat & gt 'preSYS2','modrel_ner'
+	act '<<$npc_firstname[''A9'']>> <<$npc_lastname[''A9'']>>: <<npc_rel[''A9'']>>' : gs 'preSYS2','setval2' & npc_rel['A9'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A10'']>> <<$npc_lastname[''A10'']>>: <<npc_rel[''A10'']>>' : gs 'preSYS2','setval2' & npc_rel['A10'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A11'']>> <<$npc_lastname[''A11'']>>: <<npc_rel[''A11'']>>' : gs 'preSYS2','setval2' & npc_rel['A11'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A20'']>> <<$npc_lastname[''A20'']>>: <<npc_rel[''A20'']>>' : gs 'preSYS2','setval2' & npc_rel['A20'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A21'']>> <<$npc_lastname[''A21'']>>: <<npc_rel[''A21'']>>' : gs 'preSYS2','setval2' & npc_rel['A21'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A24'']>> <<$npc_lastname[''A24'']>>: <<npc_rel[''A24'']>>' : gs 'preSYS2','setval2' & npc_rel['A24'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A154'']>> <<$npc_lastname[''A154'']>>: <<npc_rel[''A154'']>>' : gs 'preSYS2','setval2' & npc_rel['A154'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A155'']>> <<$npc_lastname[''A155'']>>: <<npc_rel[''A155'']>>' : gs 'preSYS2','setval2' & npc_rel['A155'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A156'']>> <<$npc_lastname[''A156'']>>: <<npc_rel[''A156'']>>' : gs 'preSYS2','setval2' & npc_rel['A156'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A157'']>> <<$npc_lastname[''A157'']>>: <<npc_rel[''A157'']>>' : gs 'preSYS2','setval2' & npc_rel['A157'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A158'']>> <<$npc_lastname[''A158'']>>: <<npc_rel[''A158'']>>' : gs 'preSYS2','setval2' & npc_rel['A158'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A143'']>> <<$npc_lastname[''A143'']>>: <<npc_rel[''A143'']>>' : gs 'preSYS2','setval2' & npc_rel['A143'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A144'']>> <<$npc_lastname[''A144'']>>: <<npc_rel[''A144'']>>' : gs 'preSYS2','setval2' & npc_rel['A144'] = nstat & gt 'preSYS2','modrel_gop'
+	act '<<$npc_firstname[''A145'']>> <<$npc_lastname[''A145'']>>: <<npc_rel[''A145'']>>' : gs 'preSYS2','setval2' & npc_rel['A145'] = nstat & gt 'preSYS2','modrel_gop'
+	act 'Boys only': gs 'preSYS2','setval2' & gs 'preSYS2', 'pol_grup_set', 0, 4, nstat & gt 'preSYS2','modrel_gop'
+	act 'Girls only': gs 'preSYS2','setval2' & gs 'preSYS2', 'pol_grup_set', 1, 4, nstat & gt 'preSYS2','modrel_gop'
 	act 'Return': gt 'preSYS2','modrel'
 end
 

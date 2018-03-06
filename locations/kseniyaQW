@@ -103,7 +103,7 @@ if $ARGS[0] = 'event3':
 	'<center><b><font color="maroon">Kseniya</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/shared/park/kseniya/flash.jpg"></center>'
 	'As before you find Kseniya near the edge of the park exposing herself. She gives you that same look you just can''t place.'
-	'"Hi, <<$firstname>>. It''s your turn, are you up for this?"'
+	'"Hi, <<$pcs_firstname>>. It''s your turn, are you up for this?"'
 
 	act 'No, sorry':
 		cla

@@ -182,13 +182,6 @@ end
 if $ARGS[0] = 'fin':
 	cla
 	gt $loc, $metka
-
-	
-	!!if housr = 1 and housrA = 1:
-	!!	housrA = 0
-	!!	gt 'bedr'
-	!!end
-	
 end
 
 --- budilnik ---------------------------------

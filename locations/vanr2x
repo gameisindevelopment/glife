@@ -13,7 +13,6 @@ $location_type = 'bathroom'
 
 clr
 minut = minut + 1
-housrA = 1
 elektro = elektro + 1
 gs'stat'
 

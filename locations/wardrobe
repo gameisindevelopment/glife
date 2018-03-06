@@ -111,7 +111,7 @@ if $ARGS[0] = 'default':
 	else
 		i = 0
 		:loopdefclothing
-		'<<$def_clothing_name[i]>> <a href="exec:gs ''clothing'', ''default_entry_wear'', <<i>>">Wear this default outfit</a> <a href="exec:gs ''clothing'', ''default_entry_delete'', <<i>>">Delete this default outfit</a>'
+		'<<$def_clothing_name[i]>> <a href="exec:gs ''wardrobe'', ''default_entry_wear'', <<i>>">Wear this default outfit</a> <a href="exec:gs ''wardrobe'', ''default_entry_delete'', <<i>>">Delete this default outfit</a>'
 		i += 1
 		if i < ARRSIZE('defclothingnumber'):jump 'loopdefclothing'
 	end
@@ -134,42 +134,30 @@ if $ARGS[0] = 'default_entry_wear':
 		else
 			gs 'clothing', 'wear', $defclothingtype[default_entry], defclothingnumber[default_entry]
 		end
-	else
-		gs 'clothing', 'wear', $defclothingtype[default_entry], defclothingnumber[default_entry]
 	end
+	gs 'clothing', 'wear', $defclothingtype[default_entry], defclothingnumber[default_entry]
 
-	if dyneval('RESULT = <<$defbratype[default_entry]>>[<<defbranumber[default_entry]>>]') = 0:
-		$defbratype[default_entry] = 'none' & defbranumber[default_entry] = 0
-	else
-		gs 'bras', 'wear', $defbratype[default_entry], defbranumber[default_entry]
-	end
+	if dyneval('RESULT = <<$defbratype[default_entry]>>_bras[<<defbranumber[default_entry]>>]') = 0: $defbratype[default_entry] = 'none' & defbranumber[default_entry] = 0
+	gs 'bras', 'wear', $defbratype[default_entry], defbranumber[default_entry]
 
-	if dyneval('RESULT = <<$defpantytype[default_entry]>>[<<defpantynumber[default_entry]>>]') = 0:
-		$defpantytype[default_entry] = 'none' & defpantynumber[default_entry] = 0
-	else
-		gs 'panties', 'wear', $defpantytype[default_entry], defpantynumber[default_entry]
-	end
+	if dyneval('RESULT = <<$defpantytype[default_entry]>>_panties[<<defpantynumber[default_entry]>>]') = 0: $defpantytype[default_entry] = 'none' & defpantynumber[default_entry] = 0
+	gs 'panties', 'wear', $defpantytype[default_entry], defpantynumber[default_entry]
 
-	if dyneval('RESULT = <<$defshoetype[default_entry]>>[<<defshoenumber[default_entry]>>]') = 0:
-		$defshoetype[default_entry] = 'none' & defshoenumber[default_entry] = 0
-	else
-		gs 'shoes', 'wear', $defshoetype[default_entry], defshoenumber[default_entry]
-	end
+	if dyneval('RESULT = s<<$defshoetype[default_entry]>>[<<defshoenumber[default_entry]>>]') = 0: $defshoetype[default_entry] = 'none' & defshoenumber[default_entry] = 0
+	gs 'shoes', 'wear', $defshoetype[default_entry], defshoenumber[default_entry]
 
-	if dyneval('RESULT = <<$defpursetype[default_entry]>>[<<defpursenumber[default_entry]>>]') = 0:
+	if dyneval('RESULT = <<$defpursetype[default_entry]>>_purses[<<defpursenumber[default_entry]>>]') = 0:
 		$defpursetype[default_entry] = 'none' & defpursenumber[default_entry]
 	end
 	$currentpursetype = $defpursetype[default_entry]
 	currentpursenumber = defpursenumber[default_entry]
 	if $currentpursetype = 'none':
 		bag = 0
-		if menu_option = 1:dynamic $menu_addoldmenu
-		if menu_option = 0:gs 'obj_din', 'new'
 	else
 		bag = 1
-		if menu_option = 1:dynamic $menu_addoldmenu
-		if menu_option = 0:gs 'obj_din', 'new'
 	end
+	if menu_option = 1:dynamic $menu_addoldmenu
+	if menu_option = 0:gs 'obj_din', 'new'
 
 	if dyneval('RESULT = coat[<<defcoat[default_entry]>>]') = 0: defcoat[default_entry] = 0
 	defaultcoat = defcoat[default_entry]
@@ -183,7 +171,7 @@ if $ARGS[0] = 'default_set':
 	if ARRSIZE('defclothingnumber') ! 0:
 		i = 0
 		:loopdefclothing_set
-		'<<$def_clothing_name[i]>> <a href="exec:gt ''clothing'', ''default_entry_set'', <<i>>">Overwrite this</a>'
+		'<<$def_clothing_name[i]>> <a href="exec:gs ''wardrobe'', ''default_entry_set'', <<i>>">Overwrite this</a>'
 		i += 1
 		if i < ARRSIZE('defclothingnumber'):jump 'loopdefclothing_set'
 	end

@@ -658,7 +658,7 @@ if $ARGS[0] = 'girls':
 		'"Hmm I wonder what he does there."'
 	elseif chat_rand = 32:
 		'You overhear some of the girls gossip with each other. "Who of the boys in the class do you think is the most feminine?" asks one of them. "I don''t really know, I haven''t really thought about it." the other one answers. "Don''t be a drag, you have to pick one." she keeps on pushing. The other girl thinks for a moment and finally answers "I would say Igor, sometime he acts really strange and not like a real man." "You''re right, I haven''t really been thinking about it but I''ve heard he sits down while peeing just like a girl." The two girls laugh and continue gossiping as you move away from them.'
-	elseif chat_rand = 33:
+	elseif chat_rand = 33 and igor_DimaNos > 1:
 !!this one needs a trigger so it only shows up if the Igor story has progressed to Dimka going on a date with Igor
 		'"Have you seen the girl Dimka has been seen with lately?" asks one girl. "Yeah, I saw them holding hands in the town, they''re quite cute together." adds another one. "But don''t you think she looks kind of manly?" asks a third girl. "What do you mean?" the other two ask. "Well, just look at her physique, she''s either working out a lot or there is something else wrong with her." she answers. "Now that you mention it, she does look a bit butch." one of the girls quickly replies. You are laughing to yourself as you move away from them thinking if they only knew...'
 	else

@@ -386,23 +386,47 @@ if $ARGS[0] = 'start':
 				! 'In your hands <<dildohand>>five inch dildo'
 				if vgape <= 0:
 					act 'Use the dildo on your pussy':
-						cls
-						selfplaytime += 15
-						if husband > 0 and housrA = 1 and husbandrink ! 10 and $loc = 'bedr': gt 'husbsex','husb_mastr_vtor'
-						
-						dick = dildohand
+						if pcs_vag = 0 and dildohand >= 20:
+							'Are you sure? Doing so will most likely break your hymen.'
+							act 'Yes, do it':
+								cls
+								selfplaytime += 15
+								if husband > 0 and housrA = 1 and husbandrink ! 10 and $loc = 'bedr': gt 'husbsex','husb_mastr_vtor'
+								
+								dick = dildohand
 
-						!!if $loc = 'bedrPar':'<center><img <<$set_imgh>> src="images/shared/sex/mast/dildo.jpg"></center>'
-						if $loc = 'vanrPar':
-							'<center><img <<$set_imgh>> src="images/shared/sex/mast/dildovann.jpg"></center>'
+								!!if $loc = 'bedrPar':'<center><img <<$set_imgh>> src="images/shared/sex/mast/dildo.jpg"></center>'
+								if $loc = 'vanrPar':
+									'<center><img <<$set_imgh>> src="images/shared/sex/mast/dildovann.jpg"></center>'
+								else
+									'<center><img <<$set_imgh>> src="images/shared/sex/mast/dildo.jpg"></center>'
+								end
+
+								gs 'dinsex2', 'd_vag_sex_dildo', 15
+								gs 'stat'
+
+								act 'Stop using the dildo':gt 'selfplay', 'start'
+							end
+							act 'On second thoughts, no': gt 'selfplay', 'start'
 						else
-							'<center><img <<$set_imgh>> src="images/shared/sex/mast/dildo.jpg"></center>'
+							cls
+							selfplaytime += 15
+							if husband > 0 and housrA = 1 and husbandrink ! 10 and $loc = 'bedr': gt 'husbsex','husb_mastr_vtor'
+							
+							dick = dildohand
+
+							!!if $loc = 'bedrPar':'<center><img <<$set_imgh>> src="images/shared/sex/mast/dildo.jpg"></center>'
+							if $loc = 'vanrPar':
+								'<center><img <<$set_imgh>> src="images/shared/sex/mast/dildovann.jpg"></center>'
+							else
+								'<center><img <<$set_imgh>> src="images/shared/sex/mast/dildo.jpg"></center>'
+							end
+
+							gs 'dinsex2', 'd_vag_sex_dildo', 15
+							gs 'stat'
+
+							act 'Stop using the dildo':gt 'selfplay', 'start'
 						end
-
-						gs 'dinsex2', 'd_vag_sex_dildo', 15
-						gs 'stat'
-
-						act 'Stop using the dildo':gt 'selfplay', 'start'
 					end
 				end
 

@@ -12,7 +12,7 @@ if $ARGS[0] = 'start':
 	'<center><img <<$set_imgh>> src="images/shared/sex/pet/petting1.jpg"></center>'
 
 	if harakBoy = 0:
-		'<<$boydesc>> hugs you and gently caress your breasts.'
+		'<<$boydesc>> hugs you and gently caresses your breasts.'
 
 		act 'Order him to lick you':gt 'BDsex', 'kuni'
 		act 'Stroke his cock':gt 'BDsex', 'hj'
@@ -293,7 +293,7 @@ if $ARGS[0] = 'hj':
 			act 'Take by mouth':gt 'BDsex', 'minet'
 			act 'Lie on your back and spread your legs ':gt 'BDsex', 'sex'
 		elseif harakBoy = 1:
-			'<<$boydesc>> groans, "<<$pcs_nickname>> take in the mouth or let me fuck you!"'
+			'<<$boydesc>> groans, "<<$pcs_nickname>> take my cock in your mouth or let me fuck you!"'
 
 			act 'Take by mouth':gt 'BDsex', 'minet'
 			act 'Lie on your back and spread her legs ':gt 'BDsex', 'sex'
@@ -375,7 +375,7 @@ if $ARGS[0] = 'minet':
 
 			act 'Lie on your back and spread your legs ':gt 'BDsex', 'sex'
 		elseif harakBoy = 1:
-			'<<$boydesc>> groans, "<<$pcs_nickname>> take it in the mouth or let me fuck you!"'
+			'<<$boydesc>> groans, "<<$pcs_nickname>> take my cock in your mouth or let me fuck you!"'
 
 			act 'Lie on your back and spread your legs ':gt 'BDsex', 'sex'
 		else
@@ -631,13 +631,13 @@ if $ARGS[0] = 'org':
 		if orgazm = 0:
 			pcs_mood -= 15
 			pcs_willpwr -= 15
-			'You groan in pain when <<$boydesc>> enters you, tears flowing from your eyes as a you endure the feeling of driving a red-hot rod between your legs. You cry and moan while his strong <<dick>> centimeter dick fucks your pussy.'
+			'You groan in pain when <<$boydesc>> enters you, tears flowing from your eyes as you endure the feeling of having a red-hot rod between your legs. You cry and moan while his strong <<dick>> centimeter dick fucks your pussy.'
 			gs 'arousal', 'vaginal', 15, 'sub'
 			gs 'stat'
 		elseif orgazm = 1:
 			pcs_mood -= 10
 			pcs_willpwr -= 10
-			'You bite your lip in pain when <<$boydesc>> enters you, a twinge of pain between your legs. Frowning, you moan in in pain while his strong <<dick>> centimeter dick fucks your pussy.'
+			'You bite your lip in pain when <<$boydesc>> enters you, a twinge of pain between your legs. Frowning, you moan in pain while his strong <<dick>> centimeter dick fucks your pussy.'
 			gs 'arousal', 'vaginal', 15, 'sub'
 			gs 'stat'
 		elseif orgazm = 2:
@@ -756,19 +756,19 @@ if $ARGS[0] = 'autobj':
 	elseif harakBoy = 2:
 		if pcs_makeup > 1:pcs_makeup = 0
 		pcs_hairbsh = 0
-		'<<$boydesc>> grabs your hair and begins to fuck your mouth roughly, each thrust is strikes against your throat as tears flow from your eyes.'
+		'<<$boydesc>> grabs your hair and begins to fuck your mouth roughly, each thrust strikes against the back of your throat as tears flow from your eyes.'
 		gs 'arousal', 'bj', 5, 'sub', 'rough'
 		gs 'stat'
 	end
 
 	pcs_horny += pcs_throat + SUB - pcs_dom
-	'Hard and hot cock slides into your wet mouth, filling it completely. Your lips are locked tightly around his dick in a lovers embrace.'
+	'His hard and hot cock slides into your wet mouth, filling it completely. Your lips are locked tightly around his dick in a lovers embrace.'
 
 	if pcs_horny >= 100:
 		pcs_mood += 15
 		pcs_willpwr += 15
 
-		'As you suck the dick before you, a fire smoulders between your legs, building into a conflagration of orgasm. you moan around the cock in your mouth, never once slowing your pace.'
+		'As you suck the dick before you, a fire smolders between your legs, building into a conflagration of orgasm. you moan around the cock in your mouth, never once slowing your pace.'
 		gs 'arousal', 'bj', 5, 'sub'
 		$orgasm_or = 'yes'
 		gs 'stat'
@@ -794,7 +794,7 @@ if $ARGS[0] = 'an':
 	if pcs_ass < 10:'You groan in pain as his third finger invades your ass.' else 'You feel your asshole stretch to accommodate his third finger.'
 	'<<$boydesc>> abruptly pulls his fingers out of your ass and you feel his hard cock rest against your hole.'
 
-	if pcs_ass + lubonus < dick:'You scream and bite your lip at the sharp pain when the <<dick>> member centimetre enters your ass.'
+	if pcs_ass + lubonus < dick:'You scream and bite your lip at the sharp pain when the <<dick>> member centimeter enters your ass.'
 	if pcs_ass + lubonus >= dick:'You groan and a satisfying fullness spreads through you as the <<dick>> member centimeter dick forces its way into your ass.'
 	'<<$boydesc>> stops his assault for a moment, giving your ass time to adapt to the cock invading it before he starts you again, this time even more insistent.'
 	gs 'arousal', 'anal', 20, 'sub'
@@ -812,7 +812,7 @@ if $ARGS[0] = 'an':
 end
 
 if $ARGS[0] = 'ancum':
-	'Finally <<$boydesc>> grabs your tight ass and drives home, hilting his dick in your aching ass and slapping our pussy with his balls as he comes.'
+	'Finally <<$boydesc>> grabs your tight ass and drives home, hilting his dick in your aching ass and slapping your pussy with his balls as he cums.'
 	spafinloc = 3
 	sexvolume = 20
 	sexpartkno = 1

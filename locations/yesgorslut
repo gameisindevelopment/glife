@@ -80,11 +80,11 @@ if pav_slut > 50:
 				!!Cats
 				'You try to talk with Vitek, but he immediately cuts you off: "I don''t talk to sluts, <<$pcs_nickname>>. Fuck off."'
 			elseif numnpc ! 9:
-				'<<$npc_firstname[$static_num]>> laughs at you when you try to talk to him: "Haha, what''s wrong <<$gnickname>>? Looking for more cocks to suck?"'
+				'<<$npc_firstname[$static_num]>> laughs at you when you try to talk to him: "Haha, what''s wrong <<$gnikname>>? Looking for more cocks to suck?"'
 			end
 		elseif npcPol[numnpc] > 0:
 			!!Girl
-			'<<$npc_firstname[$static_num]>>''s face contorts in disgust: "Yuck, <<$gnickname>>! Fuck off!"'
+			'<<$npc_firstname[$static_num]>>''s face contorts in disgust: "Yuck, <<$gnikname>>! Fuck off!"'
 		end
 	end
 end

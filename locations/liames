@@ -28,7 +28,7 @@ if hour >= 8 and hour <= 20:'A small <a href="exec:GT ''larek'',''start''">shop<
 if hour >= 10 and hour <= 22: 'A <a href="exec:GT ''liamelkafe'',''start''">tiny cafe</a> displays a street sign outside its door.'
 if hour >= 8 and hour <= 17 and exhibitionQW > 3:'The <a href="exec:GT ''exhibitionistshop'',''start''">exhibitionist shop</a> is just down a small side street from here.'
 
-if housr = 2:
+if home_owned[4] = 1:
     act '<b>Go home</b>':gt'korr2x'
 end
 
@@ -49,7 +49,7 @@ act 'Kill some time looking at the shops':
 	act 'Consult a watch':gt curloc
 end
 
-if housr = 2 and hour = meethour:
+if home_owned[4] = 1 and hour = meethour:
 	if svidanie[0] = 1:'<b>Near the entrance you expect <a href="exec:lover_number = 0 & GT ''lover_meet'',''start''"><<$loverdesc[0]>></a></b>'
 	if svidanie[1] = 1:'<b>Near the entrance you expect <a href="exec:lover_number = 1 & GT ''lover_meet'',''start''"><<$loverdesc[1]>></a></b>'
 	if svidanie[2] = 1:'<b>Near the entrance you expect <a href="exec:lover_number = 2 & GT ''lover_meet'',''start''"><<$loverdesc[2]>></a></b>'

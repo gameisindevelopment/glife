@@ -1511,9 +1511,9 @@ $cheatmenu['display'] = {
 	nl
 	pl '<center><B>Font Settings</B></center>'
 	pl
-	pl'<center><a href="exec:gs ''shortgs'',''fonts'', ''$cheatmenu[''''display'''']'',''$OpenInnerThough'',''$CloseInnerThough'' "> Set the style for Inner Thoughts </a></center>'
+	pl'<center><a href="exec:gs ''shortgs'',''fonts'', ''$cheatmenu[''''display'''']'',''$OpenInnerThought'',''$CloseInnerThought'' "> Set the style for Inner Thoughts </a></center>'
 	pl
-	pl $OpenInnerThough+'Oh my god, what will the neighbours think of us?'+$CloseInnerThough
+	pl $OpenInnerThought+'Oh my god, what will the neighbours think of us?'+$CloseInnerThought
 	nl
 	pl'<center> <a href="exec:dynamic $cheatmenu[''theme'']"><b>Phone Theme Menu</b></a></center>'
 
@@ -1864,6 +1864,28 @@ $cheatmenu = {
 	nl
 	pl'<a href="exec:dynamic $cheatmenu[''vartracker'']"><b>Variable tracker</b></a>'
 	nl
+	
+		nl
+	pl'<a href="exec: gt ''IbizaStart'',''cfonts''"><b>Set color fonts</b></a>'
+	pl'<a href="exec: gt ''IbizaStart'',''bwfonts''"><b>Set black fonts</b></a>'
+	nl
+	pl'<a href="exec: gt ''IbizaStart'',''start''"><b>Ibiza start</b></a>'
+	nl
+	pl'<a href="exec: gt ''IbizaStart'',''First Day''"><b>Saturday - go to Ibiza</b></a>'
+	nl
+	pl'<a href="exec: gt ''IbizaDay2'',''day two''"><b>Sunday</b></a>'
+	nl
+	pl'<a href="exec: gt ''IbizaDay3'',''day three''"><b>Monday</b></a>'
+	nl
+	pl'<a href="exec: gt ''IbizaDay4'',''day four''"><b>Tuesday</b></a>'
+	nl
+	pl'<a href="exec: gt ''IbizaDay5'',''day five''"><b>Wednesday</b></a>'
+	nl
+	pl'<a href="exec: gt ''IbizaDay6'',''day six''"><b>Thursday</b></a>'
+	nl
+	pl'<a href="exec: gt ''IbizaDay7'',''day seven''"><b>Friday</b></a>'
+	nl
+
 }
 
 $cheatmenu['vartracker'] = {

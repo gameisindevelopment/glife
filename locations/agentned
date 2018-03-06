@@ -16,7 +16,7 @@ if $ARGS[0] = 'start':
 	'"Please note, that all transactions of purchases and sales are made exclusively through your bank account."'
 	''
 	if ArendHouseSL > 0:'You have <B><<ArendHouseSL>> days</B> rental.' 
-	if BuyHous = 1 and housr = 1:'<a href="exec:GT ''agentned'',''sell''">Sell apartment</a> for 1 million. <b>₽</b>.'
+	if home_owned[1] = 2:'<a href="exec:GT ''agentned'',''sell''">Sell apartment</a> for 1 million. <b>₽</b>.'
 
 	act 'View rentals': gt 'agentned', 'rent'
 	act 'View properties for sale': gt 'agentned', 'buy'
@@ -25,17 +25,20 @@ if $ARGS[0] = 'start':
 end
 
 if $ARGS[0] = 'buy':
-	if BuyHous < 1:
+	if home_owned[1] = 0:
 		'There is an apartment in the city residential area available for 2 million <b>₽</b>.'
+		if karta + bankDebtLimit >= 2000000:act 'Buy the city residential apartment': gt 'agentned', 'buy_cityres'
+	elseif home_owned[1] = 1:
+		'You could buy your current rental apartment for 2 million <b>₽</b>.'
 		if karta + bankDebtLimit >= 2000000:act 'Buy the city residential apartment': gt 'agentned', 'buy_cityres'
 	end
 
-	if dachaest = 0:
+	if home_owned[3] = 0:
 		'There is a holiday cottage with an adjacent allotment in the village, for 75 thousand <b>₽</b>.'
 		if karta + bankDebtLimit >= 75000:act 'Buy the cottage in the village': gt 'agentned','buy_dacha'
 	end
 
-	if placeMansion = 0:
+	if home_owned[5] = 0:
 		'There is a plot in the suburbs with planning permission for a mansion for 1.5 million <b>₽</b>.'
 		if karta + bankDebtLimit >= 1500000:act 'Buy the plot in the suburbs': gt 'agentned','buy_Mansion'
 	end
@@ -48,7 +51,7 @@ if $ARGS[0] = 'sell':
 	*clr
 	minut += 30
 	karta += 1000000
-	housr = 0
+	home_owned[1] = 0
 	BuyHous = 0
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
@@ -62,10 +65,10 @@ if $ARGS[0] = 'rent':
 	if ArendHouseSL ! 0:
 		'You already have a rental home with us'
 	else
-		if BuyHous ! 1: 'There is an apartment in the residential area available'
+		if home_owned[1] = 0: 'There is an apartment in the residential area available'
 		'There is an apartment in the old town available'
 
-		if BuyHous ! 1 and money >= 6000: act 'View the city residential apartment details': gt 'agentned', 'rent_cityres'
+		if home_owned[1] = 0 and money >= 6000: act 'View the city residential apartment details': gt 'agentned', 'rent_cityres'
 		if money >= 6000: act 'View the apartment in the Old Town details': gt 'agentned', 'rent_pushkin'
 	end
 
@@ -84,7 +87,7 @@ if $ARGS[0] = 'rent_cityres':
 		cls
 		minut += 30
 		money -= 6000
-		housr = 1
+		home_owned[1] = 1
 		BuyHous = 2
 		ArendHouseSL += 30
 		gs'stat'
@@ -120,7 +123,7 @@ if $ARGS[0] = 'rent_pushkin':
 		*clr
 		minut += 30
 		money -= 6000
-		housr = 2
+		home_owned[4] = 1
 		BuyHous = 2
 		ArendHouseSL += 30
 		gs'stat'
@@ -148,8 +151,7 @@ if $ARGS[0] = 'buy_cityres':
 	*clr
 	minut += 30
 	karta -= 2000000
-	housr = 1
-	BuyHous = 1
+	home_owned[1] = 2
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo_paperwork.jpg"></center>'
@@ -163,7 +165,7 @@ if $ARGS[0] = 'buy_dacha':
 	*clr
 	minut += 30
 	karta -= 75000
-	dachaest = 1
+	home_owned[3] = 1
 	etoexhib = 0
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
@@ -178,7 +180,7 @@ if $ARGS[0] = 'buy_Mansion':
 	*clr
 	minut += 30
 	karta -= 1500000
-	placeMansion = 1
+	home_owned[5] = 1
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo_paperwork.jpg"></center>'

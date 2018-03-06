@@ -51,7 +51,7 @@ if $ARGS[0] = 'brows':
 
 		act 'Check out an interior design website (1:00)':gt 'Komp', 'remont'
 
-		if housr = 1 and husband = 0:act 'Rent your apartment out':gt 'Komp', 'sale'
+		if home_owned[1] = 1 and husband = 0:act 'Rent your apartment out':gt 'Komp', 'sale'
 
 		act 'Search for porn (1:00)':gt 'Komp', 'porno'
 		act 'Browse a dating website (1:00)':gt 'Komp', 'znak'
@@ -89,10 +89,10 @@ if $ARGS[0] = 'sale':
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/komp.jpg"></center>'
 	'You go to a popular website where people can post advertisements for free. You could post an advertisement here.'
-	if obkvsdam >= 1 and housr ! 0: 'You placed an advertisement to rent out your apartment. You should probably check every once in a while to see if anyone responded.'
+	if obkvsdam >= 1 and home_owned[1] = 2: 'You placed an advertisement to rent out your apartment. You should probably check every once in a while to see if anyone responded.'
 
-	if obkvsdam = 0 and housrA = 1:
-		act 'Rent out your apartment':obkvsdam = 1 & gt 'Komp', 'sale'
+	if obkvsdam = 0 and home_owned[1] = 2:
+		act 'Rent out your city residential apartment':obkvsdam = 1 & gt 'Komp', 'sale'
 	elseif obkvsdam > 0:
 		act 'Check if you got any replies':
 			cla
@@ -110,7 +110,7 @@ if $ARGS[0] = 'sale':
 					sdamonth = month + 1
 					if sdamonth > 12:sdamonth = 1
 					if sdaday > monthsEnd[sdamonth]:sdaday = monthsEnd[sdamonth]
-					housr = 0
+					home_owned[1] = 0
 					karta += predsumm
 					gt 'Komp', 'start'
 				end
@@ -134,7 +134,7 @@ if $ARGS[0] = 'remont':
 	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/komp.jpg"></center>'
 	'You''re currently browsing the website of a local interior designer. They claim they can remodel houses so fast, it''s done by the time you leave the computer! Surely a joke...'
 
-	if housr = 1:
+	if home_owned[1] = 1:
 		if rembedr = 0:
 			act 'Have them redesign your bedroom (50,000 <b>₽</b>)':
 				cla
@@ -328,10 +328,10 @@ if $ARGS[0] = 'znak':
 
 			act 'Leave this website':gt 'Komp', 'brows'
 		end
-	elseif housrA = 0:
+	elseif home_cur ! 1 and home_cur ! 3 and home_cur ! 4 and home_cur ! 5:
 		pcs_willpwr += rand(5, 10)
 		pcs_mood += rand(5, 10)
-		'You spend time looking at the various profiles, but it won''t let you register unless you have your own home.'
+		'You spend time looking at the various profiles, but it won''t let you register unless you have your own home and it is set as your current home.'
 		'Still, some of the pictures were quite raunchy and the more desperate profiles were really funny.'
 	else
 		if pcs_lover < 3:
@@ -618,11 +618,11 @@ if $ARGS[0] = 'agent':
 	'They have apartments available in the residential district. Renting one would cost you 6000 <b>₽</b> for 30 days.'
 	''
 	if ArendHouseSL > 0:'You have <B><<ArendHouseSL>> days</B> remaining on the rental of your apartment.'
-	if karta + bankDebtLimit >= 6000 and BuyHous ! 1:
+	if karta + bankDebtLimit >= 6000 and home_owned[1] ! 1:
 		act 'Rent an apartment online':
 			cla
 			karta -= 6000
-			housr = 1
+			home_owned[1] = 1
 			BuyHous = 2
 			ArendHouseSL += 30
 			'After a very simple procedure, you can now call an apartment in the residential district home for another 30 days. You have <B><<ArendHouseSL>> days</B> remaining on the rental of your apartment.'

@@ -25,16 +25,16 @@ if $ARGS[0] = 'start':
 	'Psychotherapist available'
 	'STD testing - 1,000 <b>₽</b>.'
 	''
-	'For hospital admissions arrive Monday, prior to 10th of the month.'
+	'For hospital admissions, arrive Monday before the 10th of the month.'
 	''
-	'Abortion at the woman''s request can be made up to 84th day of pregnancy - 20,000 <b>₽</b>.'
-	'Be warned, improperly performed abortions can by dangerous to your health. There is a risk of complications and the possibility of damage to your uterus.'
+	'An abortion at the woman''s request can be performed up to 84th day of pregnancy - 20,000 <b>₽</b>.'
+	'Be warned, improperly performed abortions can be dangerous to your health. There is a risk of complications and the possibility of damage to your uterus.'
 	''
-	'(At first you thought the warning was only health department boiler-plate. However, no sooner do you finish thinking that then you noticed a nurse pushing a cart of freshly sterlized coat hangers down the hallway and begin to wonder how competent this facility really is in terms of women''s health...)'
+	'(At first you thought the warning was only health department boiler-plate. However, no sooner do you finish thinking that then you noticed a nurse pushing a cart of freshly sterilized coat hangers down the hallway and begin to wonder how competent this facility really is in terms of women''s health...)'
 	''
-	'Near the entrance is an advertisement for cosmetic surgeon and directions to his office.'
+	'Near the entrance there is an advertisement for cosmetic surgery with directions to the surgeon''s office.'
 
-	if workhosp = 1 and hour >= 8 and hour <= 9 and week < 6:act 'Get dressed for work':gt 'poli', 'beginwork'
+	if workhosp = 1 and hour >= 8 and hour <= 9 and week < 6:act 'Exit to replace':gt 'poli', 'beginwork'
 
 	act 'Leave Clinic':gt 'street'
 	act 'See cosmetic surgeon':gt 'poli','cosmetic1'
@@ -96,7 +96,7 @@ if $ARGS[0] = 'start':
 			if pain['clitoris'] > 0:pain['clitoris'] -= rand(7,13)
 			if pain['urethra'] > 0:pain['urethra'] -= rand(7,13)
 			if pain['cervix'] > 0:pain['cervix'] -= rand(7,13)
-			'You receive a combined painkiller, steroid and vitamin shot which not only helps the pain but speeds your recovery too permanently reducing your current pain.'
+			'You receive a combined painkiller, steroid and vitamin shot which not only helps the pain but speeds your recovery too, permanently reducing your current pain.'
 
 			if hosprand = 0:gt 'poli', '0'
 			if hosprand = 1:gt 'poli', '1'
@@ -116,7 +116,7 @@ if $ARGS[0] = 'start':
 			if hosprand = 0:gt 'poli', '0'
 			if hosprand = 1:gt 'poli', '1'
 			if hosprand = 2:gt 'poli', '2'
-			'You lie down on the therapists couch and tell him all about his troubles. You immediately feel much better, your therapist seems to be in a state of shock.'
+			'You lie down on the therapists couch and tell him all about your troubles. You immediately feel much better, but your therapist seems to be in a state of shock.'
 
 			act 'Leave':gt 'poli', 'start'
 		end
@@ -210,7 +210,7 @@ if $ARGS[0] = 'start':
 			cnt = 0
 			if kid > 0:minut += rand(300,660) else minut += rand(120,480)
 			'<center><img <<$set_imgh>> src="images/locations/shared/clinic/birthing.jpg"></center>'
-			'You lay on the bed and your feet are put in stirups.'
+			'You lay on the bed and your feet are put in stirrups.'
 			'Your contractions get closer and closer, and after some time (and a lot of swearing) you finally give birth.'
 			:multikidloop
 				minut += rand(30,90)
@@ -278,7 +278,7 @@ if $ARGS[0] = 'start':
 			ninelrand = rand(0, 2)
 
 			if ninelrand = 0:
-				'At the reception desk you are told that Dr. Ninel is in his office.'
+				'At the reception desk you are told that Dr. Ninel is in her office.'
 
 				act 'Go to Ninel':gt 'poli', 'ninel3'
 			elseif ninelrand = 1:
@@ -354,11 +354,11 @@ if $ARGS[0] = 'start':
 			if pcs_ass <= 15:
 				'The doctor examines your anus and says, "Well, slightly distended, but no abnormalities."'
 			elseif pcs_ass > 15 and pcs_ass <= 25:
-				'The doctor examines your anus and says, "You have a stretched anus and sphincter. I would recomend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
+				'The doctor examines your anus and says, "You have a stretched anus and sphincter. I would recommend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
 			elseif pcs_ass > 25 and pcs_ass <= 35:
-				'The doctor examines your anus and says, "You have a greatly distended anus, most likely your sphincter is not able to close fully. I would recomend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
+				'The doctor examines your anus and says, "You have a greatly distended anus, most likely your sphincter is not able to close fully. I would recommend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
 			elseif pcs_ass > 35:
-				'The doctor examines your anus and says, "Oh my God! I have never in all my years seen a case such as this! You''ll have to be careful not to cough, or your guts will fall out. I would recomend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
+				'The doctor examines your anus and says, "Oh my God! In all my years, I have never seen a case such as this! You''ll have to be careful not to cough, or your guts will fall out. I would recommend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
 			end
 
 			if money >= 1000 and pcs_ass > 15 and proktologday ! daystart:
@@ -401,7 +401,7 @@ if $ARGS[0] = 'start':
 		act 'Go to the optometrist':
 			cls
 			gs 'stat'
-			'The Optometrist examines your eyes and says that he can preform laser eye surgery for 60,000 <b>₽</b>. Of course, reading books can cause your eyesight to deteriorate again.'
+			'The Optometrist examines your eyes and says that he can perform laser eye surgery for 60,000 <b>₽</b>. Of course, reading books can cause your eyesight to deteriorate again.'
 
 			if glass = 1:'The doctor adds, there is also the option to buy glasses for 8,000 <b>₽</b>.'
 
@@ -596,18 +596,18 @@ if $ARGS[0] = 'stdcheck':
 						cla
 						*clr
 						'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/gy93cr29.jpg"></center>'
-						'While you lying on an examination table you notice in the corner of the ceiling a hiden camera.'
+						'While you''re lying on an examination tablem you notice there is a hidden camera in the corner of the ceiling.'
 						act 'Rebel':
 							cla
 							*clr
 							'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/bg28qy97.jpg"></center>'
 							'The doctor, unfazed, speaks in a calm voice as he apologizes and says, "You have two options to solve this issue."'
-							'"Give me 10000 <b>₽</b> and it will will be deleted, like this never happened."'
-							'"I pay you a 3000 <b>₽</b> fee."'
+							'"Give me 10000 <b>₽</b> and it will be deleted, like this never happened."'
+							'"I''ll pay you a 3000 <b>₽</b> fee."'
 							'"Lie down, think it over, but do not take too long now."'
 							act 'Pay him':gt 'poli', 'ven1'
 							act 'Take the money':gt 'poli', 'ven2'
-							act 'Threatened to report him':
+							act 'Threaten to report him':
 								cla
 								*clr
 								'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/bg28qy97.jpg"></center>'
@@ -635,7 +635,7 @@ if $ARGS[0] = 'stdcheck':
 						end
 
 						if SifacOnce = 1:
-							'You have syphilis. The cure for this disease is very expensive. However, this deadly disease can now be surpressed with drug therapy, but you''l never be free from it.'
+							'You have syphilis. The cure for this disease is very expensive. However, this deadly disease can now be suppressed with drug therapy, but you''ll never be free from it.'
 
 							if Sifilis < 15:
 								'Your syphilis is in the inactive stage. Therefore, nothing more can be done currently.'
@@ -719,7 +719,7 @@ if $ARGS[0] = 'drPP':
 		$ImageNeededPlacholder
 		!! WD: IMAGE NEEDED ~ '<center><img src="images/system/image_needed.png"></center>'
 
-		if drPP = 0:'At the desk sits a timely, old bald man. "My name is Peter, I am your local doctor. What seems to be the problem?" He says, while adjusting his glasses."'
+		if drPP = 0:'At the desk sits a timely, old bald man. "My name is Peter, I am your local doctor. What seems to be the problem?" he says, while adjusting his glasses."'
 		if drPP = 1:'Peter is sitting at his desk. He smiles at you and says, "Hello, are you unwell?"'
 
 		drPP = 1
@@ -744,7 +744,7 @@ if $ARGS[0] = 'drPP':
 					gs 'stat'
 					'The doctor quickly examines you, and establishes that you are suffering from toxic shock from a spent condom in your body.'
 					'"I removed it as soon as I found it. If you were feeling sick, it should slowly subside."'
-					'You thank the Doctor.'
+					'You thank the doctor.'
 
 					act 'Go home':gt 'street'
 				end
@@ -754,7 +754,7 @@ if $ARGS[0] = 'drPP':
 				cla
 				*clr
 				minut += 5
-				'"Well, Doctor, I think it''s a cold, blocked nose, sore throat and a cough."'
+				'"Well, Doctor, I think it''s a cold, I have a blocked nose, sore throat and a cough."'
 				'"Do you have a temperature?'
 				'"Yes, a little hot."'
 				'"Well, let''s take a look at you."'
@@ -765,7 +765,7 @@ if $ARGS[0] = 'drPP':
 					! WD: Correct Image path ~ "images/locations/shared/apartment/event/sick/ninel03"
 					'<center><img <<$set_imgh>> src="images/locations/shared/apartment/event/sick/ninel03.jpg"></center>'
 					'The doctor listens to your lungs, looks down your throat and sticks a thermometer in your mouth. 60 seconds later, he removes the thermometer and says,'
-					'"Don''t worry is just a common cold. Buy small pills in the drugstore, have a couple of days bed rest and everything will be alright. Make sure to keep warm."'
+					'"Don''t worry is just a common cold. Buy small pills in the drugstore, have a couple days of bed rest and everything will be alright. Make sure to keep warm."'
 					'You thank the Doctor.'
 
 					act 'Go home':gt 'street'
@@ -781,14 +781,14 @@ if $ARGS[0] = 'ninel':
 	*clr
 	minut += rand(3, 15)
 	gs 'stat'
-	'You sit in the corridor with coughing and sick old women, waiting for your appointment.'
+	'You sit in the corridor with sick old women who are coughing, waiting for your appointment.'
 	'Finally, it''s your turn.'
 
 	act 'See the doctor':
 		cla
 		*clr
 
-		if ninelmet = 0:'At the desk sits a pretty young girl in a light robe. Robe unbuttoned so that it does not hide her small but beautiful breasts. "Hello My name is Ninel Pavlovna, I replaces your local therapist - she said, scrutinizing you."'
+		if ninelmet = 0:'A pretty young girl, in a light robe, sits at the desk. The robe is unbuttoned so that it does not hide her small but beautiful breasts. "Hello My name is Ninel Pavlovna, I am replacing your local physician" she said, scrutinizing you.'
 		if ninelmet = 1:'Ninel is sitting at her desk. She smiles at you and says, "Hello, dear."'
 
 		if pcs_horny < 30:
@@ -799,7 +799,7 @@ if $ARGS[0] = 'ninel':
 				minut += 5
 				'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam00.jpg"></center>'
 				'"Good afternoon. What are the symptoms?"'
-				'"Well, Doctor, I think it''s a cold, blocked nose, sore throat and a cough."'
+				'"Well, Doctor, I think it''s a cold, I have a blocked nose, sore throat and a cough."'
 				'"Do you have a temperature?'
 				'"Yes, a little hot."'
 				'"I''ll need to examine you. Undress.'
@@ -810,7 +810,7 @@ if $ARGS[0] = 'ninel':
 					minut += 20
 					'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam01.jpg"></center>'
 					'The doctor listens to your lungs, looks down your throat and sticks a thermometer in your mouth. 60 seconds later, she removes the thermometer and says,'
-					'"Don''t worry is just a common cold. Buy small pills in the drugstore, have a couple of days bed rest and everything will be alright. Make sure to keep warm."'
+					'"Don''t worry is just a common cold. Buy small pills in the drugstore, have a couple days of bed rest and everything will be alright. Make sure to keep warm."'
 					'You thank the Doctor.'
 
 					act 'Go home':gt 'street'
@@ -822,7 +822,7 @@ if $ARGS[0] = 'ninel':
 				*clr
 				'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam10.jpg"></center>'
 				'"Good afternoon. What are the symptoms?"'
-				'"Well, Doctor, I think it''s a cold, blocked nose, sore throat and a cough."'
+				'"Well, Doctor, I think it''s a cold, I have a blocked nose, sore throat and a cough."'
 				'"Do you have a temperature?'
 				'"Yes, I''m very hot."'
 				'"Undress. Fully."'
@@ -853,7 +853,7 @@ if $ARGS[0] = 'ninel':
 							cla
 							*clr
 							'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam14.jpg"></center>'
-							'You open your mouth and the doctor examines your throat. did she stick her tongue out at you?'
+							'You open your mouth and the doctor examines your throat. Did she stick her tongue out at you?'
 							'"OK. Now let''s take your temperature. Sit on the couch and spread your legs.'
 							'"Why?"'
 							'"I need to measure rectally as your throat is inflamed.'
@@ -868,7 +868,7 @@ if $ARGS[0] = 'ninel':
 								'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam15.jpg"></center>'
 								'The doctor arranges your position on the couch, much to your embarrassment. She smears lubricant between your legs and gently sticks a thermometer into your ass. It really does not hurt, in fact it''s even pleasant.'
 								'The doctor begins to slowly move the thermometer back and forth in your ass and with her other hand appears to stroke your pussy. Thanks to her dextrous fingers her touch is so gentle you aren''t sure.'
-								'Either way you are getting more excited. Your nipples harden, your pussy is making the doctors hand wet...'
+								'Either way you are getting more excited. Your nipples harden, your pussy is making the doctor''s hand wet...'
 
 								gs 'arousal', 'vaginal_finger', 10, 'sub'
 								gs 'arousal', 'anal_dildo', 10, 'sub'
@@ -882,9 +882,9 @@ if $ARGS[0] = 'ninel':
 									gs 'stat'
 									'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam16.jpg"></center>'
 									'The doctor takes the thermometer out of your ass and begins to openly caress your pussy.'
-									'You are confused and horrified by her behavior, but she she is so gentle, and you are so excited that you simply can not resist.'
+									'You are confused and horrified by her behavior, but she is so gentle, and you are so excited that you simply can not resist.'
 									'You just about stutter, "Doctor, what are you doing? What''s going on?"'
-									'"There it is! I knew immediately that you were one of us, and therefore I can use his power quietly."'
+									'"There it is! I knew immediately that you were one of us, and therefore I can use this power quietly."'
 									'"So you''re a magician, too?"'
 									'"Yes, my special magic is tantric. Heard of it?"'
 									'"No, I''ve never heard of..."'
@@ -892,7 +892,7 @@ if $ARGS[0] = 'ninel':
 									'"So ..?"'
 									'"Basically, if we have sex, I can heal you. So, can I heal you?"'
 									'"Depends what you want in return."'
-									'"Nothing. Well no exactly nothing, you see my gift has a pretty big drawback I can only have orgasms when I conjure."'
+									'"Nothing. Well, not exactly nothing, you see my gift has a pretty big drawback: I can only have orgasms when I conjure."'
 									'"Then of course I agree."'
 									'"Good, kneel on the couch.'
 
@@ -903,7 +903,7 @@ if $ARGS[0] = 'ninel':
 										cla
 										*clr
 										'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam17.jpg"></center>'
-										'You kneel down and facing away from Ninel. She takes off her robe, revealing her stockings then you gasp as you see her strapon.'
+										'You kneel down and face away from Ninel. She takes off her robe, revealing her stockings then you gasp as you see her strapon.'
 										'Dr. Ninel lubes the dildo and with your pussy already well lubricated she grins,'
 										'"Well, baby, it''s curing time!'
 
@@ -915,9 +915,9 @@ if $ARGS[0] = 'ninel':
 											pcs_horny = 100
 											gs 'stat'
 											'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam18.jpg"></center>'
-											'With unnatural strengh shes drives the dildo into your pussy.'
-											'You gasp in surprise at the rough treatment, how can somone with such soft hands...Suddenly she finds a perfect stroke and the initial pain turns to pleasure.'
-											'Doctor keeps fuck you confidently, moaning with every jolt she seems to be enjoying it as much as you, and you are ecstatic. The unusual situation and Ninels skill quickly led you to your peak.'
+											'With unnatural strength shes drives the dildo into your pussy.'
+											'You gasp in surprise at the rough treatment, how can someone with such soft hands...Suddenly she finds a perfect stroke and the initial pain turns to pleasure.'
+											'Doctor keeps fucking you confidently, moaning with every jolt she seems to be enjoying it as much as you, and you are ecstatic. The unusual situation and Ninel''s skill quickly brings you to your peak.'
 
 											gs 'arousal', 'vaginal_strap', 10, 'sub', 'lesbian'
 											gs 'stat'
@@ -926,8 +926,8 @@ if $ARGS[0] = 'ninel':
 												cla
 												*clr
 												'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam19.jpg"></center>'
-												'"I''m going to come!", You shout. "Please, please, please!"'
-												'Ninel rolls onto the couch, pulling you with her. You find yourself on top and start frantically jumping up and down on the artificial penis, screaming and grinding in almost unbearable pleasure.'
+												'"I''m going to cum!", You shout. "Please, please, please!"'
+												'Ninel rolls onto the couch, pulling you with her. You find yourself on top and start jumping up and down frantically on the artificial penis, screaming and grinding in almost unbearable pleasure.'
 												'A few more movements, you cum, screaming and twitching in an incredibly long orgasm.'
 												'"Now it''s my turn. Come on, girl."'
 
@@ -950,7 +950,7 @@ if $ARGS[0] = 'ninel':
 													pcs_mood = 100
 													gs 'stat'
 													'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam19a.jpg"></center>'
-													'Ninel removes the strapon and you press your face to her soaking wet pussy. It doesn''t take long for you efforts to bring Ninel to orgzazm. She screams and digs her nails into her own knees as your face is covered by her squirting orgasm.'
+													'Ninel removes the strapon and you press your face to her soaking wet pussy. It doesn''t take long for your efforts to bring Ninel to orgasm. She screams and digs her nails into her own knees as your face is covered by her squirting orgasm.'
 
 													gs 'arousal', 'cuni_give', 10, 'sub', 'lesbian'
 													gs 'stat'
@@ -959,11 +959,11 @@ if $ARGS[0] = 'ninel':
 														cla
 														*clr
 														'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam11.jpg"></center>'
-														'With trembling hands, you start pull on your panties. Ninel already slipped her robe back on, only her flushed face betraying her apparent innocence.'
+														'With trembling hands, you start to pull on your panties. Ninel already slipped her robe back on, only her flushed face betraying her apparent innocence.'
 														'"So...how do you feel?"'
 														'"Ooh...Just perfect," you answer and only then realize how right you are. The sickness has disappeared, you are fully healthy and in good spirits. Even your mood has improved.'
-														'"Well, you see. It''s magic, baby. Mm-m ... You''re especially ful of it, I don''t normaly get so much pleasure. If you get sick again please come and see me or phone me."'
-														'"If you like, we could spead sometime together, look for me in the clinic."'
+														'"Well, you see. It''s magic, baby. Mm-m ... You''re especially full of it, I don''t normally get so much pleasure. If you get sick again, please come and see me or phone me."'
+														'"If you like, we could spend some time together, look for me in the clinic."'
 														'You promise to be sure to find her, clean up and leave.'
 
 														gs 'arousal', 'end'
@@ -995,9 +995,9 @@ if $ARGS[0] = 'ninel2':
 		*clr
 		'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam00.jpg"></center>'
 		'Ninel looks up from some medical notes, knowing you she smiles,'
-		'"Hi, <<$pcs_nickname>>. Again ill?"'
+		'"Hi, <<$pcs_nickname>>. Are you sick again?"'
 		'Coughing, you respond, "Yeah. Shall we?'
-		'"Sure baby. Undress, I need to examine you first."'
+		'"Sure, baby. Undress, I need to examine you first."'
 		'"Why? You''re a magician..."'
 		'"Silly. How can you know so little about magic. I have to know what I''m treating, or I''m just as likely to do more harm than good, magic has a very focused effect."'
 		'"In that case..."'
@@ -1026,7 +1026,7 @@ if $ARGS[0] = 'ninel2':
 					gs 'stat'
 					'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam04.jpg"></center>'
 					'You assume the position and Ninel starts fucking your ass with her thermometer. You get excited, your pussy engorges, and begins to get moist. You moan softly'
-					'"Oh, does baby like it? Come on let''s see how much."'
+					'"Oh, does baby like it? Come on, let''s see how much."'
 
 					gs 'arousal', 'foreplay', 10, 'sub', 'lesbian'
 					gs 'stat'
@@ -1052,8 +1052,8 @@ if $ARGS[0] = 'ninel2':
 							minut += 15
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam05.jpg"></center>'
-							'Overcome with passion, Ninel quickly takes off her robe, picks up her strapon from a draw in her desk and brings it to your lips.'
-							'You eagerly suck it, while Ninels skilled fingers play with your clit, causing warm waves of pleasure to run through your body.'
+							'Overcome with passion, Ninel quickly takes off her robe, picks up her strapon from a drawer in her desk and brings it to your lips.'
+							'You eagerly suck it, while Ninel''s skilled fingers play with your clit, causing warm waves of pleasure to run through your body.'
 							'"Fuck me! Now!" You shout. Ninel grins, continuing to tease your clitoris with her hand.'
 							'"Ask nicely."'
 							'"Fuck me. I mean, please fuck me.'
@@ -1069,9 +1069,9 @@ if $ARGS[0] = 'ninel2':
 								*clr
 								'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam07.jpg"></center>'
 								'"Please, please! Fuck me! Do with me what you want with me Dr. Ninel, I''m all yours! Just, please do it soon!'
-								'Ninel puts on the strapon and aggressively drives it home, your bosom blazes with lust. You cry out and lift your feet up, trying to take as much of the phalus as possible.'
+								'Ninel puts on the strapon and aggressively drives it home, your bosom blazes with lust. You cry out and lift your feet up, trying to take as much of the phallus as possible.'
 								'Ninel fucks you faster, moaning and groaning with every jolt, and you moan and clearly struggle.'
-								'"On your knees! Turn around!" Orders your doctor.'
+								'"On your knees! Turn around!" orders your doctor.'
 
 								gs 'arousal', 'vaginal_strap', 20, 'sub', 'lesbian', 'rough'
 								gs 'stat'
@@ -1090,7 +1090,7 @@ if $ARGS[0] = 'ninel2':
 									'Moaning with excitement you get on your knees and lift your ass to Ninel, to make it easier for her, but she is in no hurry.'
 									'"Come on, take me! Please, I''m almost there!"'
 									'However, Ninel orders, "Beg, you need to convince me!'
-									'"Please, please, please!" You shout. "Fuck me, Doc! I want to come! Yes - I''m a whore, your little girl, but please, please, let me finish!"'
+									'"Please, please, please!" You shout. "Fuck me, Doc! I want to cum! Yes - I''m a whore, your little girl, but please, please, let me finish!"'
 									'The strapon sticks into your inflamed vagina and Ninel goes at it like a jackhammer. Quickly you explode in a wild orgasm. You scream in agony and ecstasy.'
 									'Your knees buckle and you fall to the floor shuddering in the throes of sensual release. Ninel just watches as your orgasm seems to last forever...'
 									'Finally you end and immediately Ninel commands,'
@@ -1104,9 +1104,9 @@ if $ARGS[0] = 'ninel2':
 										cla
 										*clr
 										'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam09.jpg"></center>'
-										'She helps you up, then pushes you backwards on to the couch. Removing the strapon Ninel climbs over you and sits on your face.'
+										'She helps you up, then pushes you backwards on to the couch. Removing the strapon, Ninel climbs over you and sits on your face.'
 										'You diligently use your tongue and lips to serve her wide-open pussy and swollen clit. She is screaming and sobbing, rubbing her crotch all across your face, until she finally cums.'
-										'She cums with a long, yelling, shaking fever and abundantly fills your face with her juices.'
+										'She cums with a long, yelling, shaking fervor and abundantly fills your face with her juices.'
 
 										gs 'arousal', 'cuni_give', 10, 'sub', 'lesbian'
 										gs 'stat'
@@ -1147,7 +1147,7 @@ if $ARGS[0] = 'ninel3':
 		'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam10.jpg"></center>'
 		'Ninel looks up from some medical notes, knowing you she smiles,'
 		'"Hi, <<$pcs_nickname>>. Again ill?"'
-		'"Oh, Doctor. My pussy is burning, and leaking juices. Perhaps she is seriously ill.'
+		'"Oh, Doctor. My pussy is burning, and leaking juices. Perhaps I am seriously ill.'
 		'"My poor child. Whatever are we going to do?'
 
 		act 'Tear off your clothes':
@@ -1165,8 +1165,8 @@ if $ARGS[0] = 'ninel3':
 				cla
 				*clr
 				'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/polsex02.jpg"></center>'
-				'Remembering that Ninel loves you to beg her to fuck you, you do not even need to pretend the desire is literally burnt into you. You beg and plead.'
-				'Ninel finally heeds the request. She rudely puts you on your knees and begins to drive the strapon firmly into your inflamed vagina. You let out screams with each push. Your legs are weakening.'
+				'Remembering that Ninel loves to hear you beg her to fuck you, you do not even need to pretend the desire is literally burnt into you. You beg and plead.'
+				'Ninel finally heeds your request. She rudely puts you on your knees and begins to drive the strapon firmly into your inflamed vagina. You let out screams with each push. Your legs are weakening.'
 
 				gs 'arousal', 'vaginal_strap', 10, 'sub', 'lesbian'
 				gs 'stat'
@@ -1222,7 +1222,7 @@ if $ARGS[0] = 'glavdoc':
 		'"All details and assignments handled by personnel department. So, do you want the job?"'
 	else
 		'You step into the office of the chief of staff.'
-		'The dorcor looks up at you from his paperwork, then smiles.'
+		'The doctor looks up at you from his paperwork, then smiles.'
 		'"Ah, Ms. <<$pcs_lastname>>, nice to see you! Can I help you with something?"'
 	end
 
@@ -1248,7 +1248,7 @@ if $ARGS[0] = 'beginwork':
 	*clr
 	'<center><b><font color="maroon">Clinic</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/hospital.jpg"></center>'
-	'You have changed into your work clothes.'
+	'You have replaced the clinic.'
 
 	act 'Start work':
 		smena += 1
@@ -1320,7 +1320,7 @@ if $ARGS[0] = '2':
 		cla
 		*clr
 		'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/hospsex4.jpg"></center>'
-		'As you walk in, the doctor runs out, and the startled nurse just glares at you. After a moment in her eyes light up and she removes her robe, comes over to you and with one hand grabs your ass as the other reaches up your top to your breast.'
+		'As you walk in, the doctor runs out, and the startled nurse just glares at you. After a moment, her eyes light up and she removes her robe, comes over to you and with one hand grabs your ass as the other reaches up your top to your breast.'
 
 		act 'Leave':gt 'poli', 'start'
 
@@ -1341,7 +1341,7 @@ if $ARGS[0] = '2':
 				cla
 				*clr
 				'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/hospsex6.jpg"></center>'
-				'You lay her on the couch and sink your lips into her pussy, the smell of her sex drives you crazy, you could not put her down and lick her pussy to put your tongue inside her pussy and ass, in this state you are found by the returning doctor.'
+				'You lay her on the couch and sink your lips into her pussy, the smell of her sex drives you crazy, you could not help but to lick her pussy. You are found in this state by the returning doctor.'
 
 				gs 'arousal', 'cuni_give', 10, 'lesbian', 'group'
 				gs 'stat'
@@ -1357,7 +1357,7 @@ if $ARGS[0] = 'cosmetic1':
 
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmetic1.jpg"></center>'
 
-	'You are greeted by a nurse that explains what procedures are available.'
+	'You are greeted by a nurse who explains what procedures are available.'
 	''
 	'Electrolysis will remove your body hair and stop it from growing.'
 	'Fillable breast implants allow you to fill them after the surgery. We stock silicone you use to fill them.'
@@ -1465,7 +1465,7 @@ if $ARGS[0] = 'lipPlus':
 	gs 'body_shape', 'basebeautycalc', 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up procedure is complete.'
+	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1478,7 +1478,7 @@ if $ARGS[0] = 'lipMin':
 	gs 'body_shape', 'basebeautycalc', 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up procedure is complete.'
+	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1491,7 +1491,7 @@ if $ARGS[0] = 'eyePlus':
 	gs 'body_shape', 'basebeautycalc', 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up procedure is complete.'
+	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1504,7 +1504,7 @@ if $ARGS[0] = 'eyeMin':
 	gs 'body_shape', 'basebeautycalc', 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up procedure is complete.'
+	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1518,7 +1518,7 @@ if $ARGS[0] = 'lyposuction':
 	gs 'body_shape', 'softreset'
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up procedure is complete.'
+	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1530,7 +1530,7 @@ if $ARGS[0] = 'bImplantA':
 	money -= 150000
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up procedure is complete.'
+	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
