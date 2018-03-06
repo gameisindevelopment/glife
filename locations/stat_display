@@ -770,6 +770,9 @@ if arrsize('sparrvol') > 0:
 	killvar 'j'
 end
 
+!!Clearing cum location array before positive entries are applied below
+killvar 'cumloc'
+
 i = 0
 :cumlocloop
 	if i = 0: 
@@ -827,9 +830,10 @@ i = 0
 		$txtloc = 'the gusset of your panties</a>'
 	end
 	
-	j = 0		
+	j = 0
 	:ageloop
 		if cumvolume['<<i>>:<<j>>'] > 0:
+			!!Cum locations set for checking npc reactions
 			cumloc[i] = 1
 			!!amount setting
 			if cumvolume['<<i>>:<<j>>'] > 250:
