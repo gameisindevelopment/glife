@@ -554,12 +554,22 @@ if $ARGS[0] = 'modrel':
 end
 
 if $ARGS[0] = 'modrel_fam':
+	if npc_rel['A28'] < 0: npc_rel['A28'] = 0
+	if npc_rel['A29'] < 0: npc_rel['A29'] = 0
+	if npc_rel['A33'] < 0: npc_rel['A33'] = 0
+	if npc_rel['A34'] < 0: npc_rel['A34'] = 0
+	if npc_rel['A28'] > 100: npc_rel['A28'] = 100
+	if npc_rel['A29'] > 100: npc_rel['A29'] = 100
+	if npc_rel['A33'] > 100: npc_rel['A33'] = 100
+	if npc_rel['A34'] > 100: npc_rel['A34'] = 100
 	'<center><b>Family relationship levels</b></center>'
-	'<center><table><TH></TH><TH>Set to zero</TH><TH>Minus 10</TH><TH>Minus 5</TH><TH>Plus 5</TH><TH>Plus 10</TH><TH>Set to 100</TH>'
-	'<TR><TD>Stepfather: <<npc_rel[''A28'']>></TD><TD><a href="exec:npc_rel[''A28''] = 0 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] -= 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] -= 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] += 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] += 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] = 100 & gt ''preSYS2'', ''setval2''">zero</a></TD>'
-	'<TR><TD>Mother: <<npc_rel[''A29'']>></TD><TD><a href="exec:npc_rel[''A29''] = 0 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] -= 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] -= 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] += 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] += 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] = 100 & gt ''preSYS2'', ''setval2''">zero</a></TD>'
-	'<TR><TD>Sister: <<npc_rel[''A33'']>></TD><TD><a href="exec:npc_rel[''A33''] = 0 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] -= 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] -= 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] += 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] += 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] = 100 & gt ''preSYS2'', ''setval2''">zero</a></TD>'
-	'<TR><TD>Brother: <<npc_rel[''A34'']>></TD><TD><a href="exec:npc_rel[''A34''] = 0 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] -= 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] -= 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] += 5 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] += 10 & gt ''preSYS2'', ''setval2''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] = 100 & gt ''preSYS2'', ''setval2''">zero</a></TD>'
+	*nl
+	*nl
+	'<center><table border=5 cellspacing=10 cellpadding=15><TH></TH><TH>Set to zero</TH><TH>Minus 10</TH><TH>Minus 5</TH><TH>Plus 5</TH><TH>Plus 10</TH><TH>Set to 100</TH>'
+	'<TR><TD>Stepfather: <<npc_rel[''A28'']>></TD><TD><a href="exec:npc_rel[''A28''] = 0 & gt ''preSYS2'', ''modrel_fam''">zero</a></TD><TD><a href="exec:npc_rel[''A28''] -= 10 & gt ''preSYS2'', ''modrel_fam''">minus 10</a></TD><TD><a href="exec:npc_rel[''A28''] -= 5 & gt ''preSYS2'', ''modrel_fam''">minus 5</a></TD><TD><a href="exec:npc_rel[''A28''] += 5 & gt ''preSYS2'', ''modrel_fam''">plus 5</a></TD><TD><a href="exec:npc_rel[''A28''] += 10 & gt ''preSYS2'', ''modrel_fam''">plus 10</a></TD><TD><a href="exec:npc_rel[''A28''] = 100 & gt ''preSYS2'', ''modrel_fam''">100</a></TD>'
+	'<TR><TD>Mother: <<npc_rel[''A29'']>></TD><TD><a href="exec:npc_rel[''A29''] = 0 & gt ''preSYS2'', ''modrel_fam''">zero</a></TD><TD><a href="exec:npc_rel[''A29''] -= 10 & gt ''preSYS2'', ''modrel_fam''">minus 10</a></TD><TD><a href="exec:npc_rel[''A29''] -= 5 & gt ''preSYS2'', ''modrel_fam''">minus 5</a></TD><TD><a href="exec:npc_rel[''A29''] += 5 & gt ''preSYS2'', ''modrel_fam''">plus 5</a></TD><TD><a href="exec:npc_rel[''A29''] += 10 & gt ''preSYS2'', ''modrel_fam''">plus 10</a></TD><TD><a href="exec:npc_rel[''A29''] = 100 & gt ''preSYS2'', ''modrel_fam''">100</a></TD>'
+	'<TR><TD>Sister: <<npc_rel[''A33'']>></TD><TD><a href="exec:npc_rel[''A33''] = 0 & gt ''preSYS2'', ''modrel_fam''">zero</a></TD><TD><a href="exec:npc_rel[''A33''] -= 10 & gt ''preSYS2'', ''modrel_fam''">minus 10</a></TD><TD><a href="exec:npc_rel[''A33''] -= 5 & gt ''preSYS2'', ''modrel_fam''">minus 5</a></TD><TD><a href="exec:npc_rel[''A33''] += 5 & gt ''preSYS2'', ''modrel_fam''">plus 5</a></TD><TD><a href="exec:npc_rel[''A33''] += 10 & gt ''preSYS2'', ''modrel_fam''">plus 10</a></TD><TD><a href="exec:npc_rel[''A33''] = 100 & gt ''preSYS2'', ''modrel_fam''">100</a></TD>'
+	'<TR><TD>Brother: <<npc_rel[''A34'']>></TD><TD><a href="exec:npc_rel[''A34''] = 0 & gt ''preSYS2'', ''modrel_fam''">zero</a></TD><TD><a href="exec:npc_rel[''A34''] -= 10 & gt ''preSYS2'', ''modrel_fam''">minus 10</a></TD><TD><a href="exec:npc_rel[''A34''] -= 5 & gt ''preSYS2'', ''modrel_fam''">minus 5</a></TD><TD><a href="exec:npc_rel[''A34''] += 5 & gt ''preSYS2'', ''modrel_fam''">plus 5</a></TD><TD><a href="exec:npc_rel[''A34''] += 10 & gt ''preSYS2'', ''modrel_fam''">plus 10</a></TD><TD><a href="exec:npc_rel[''A34''] = 100 & gt ''preSYS2'', ''modrel_fam''">100</a></TD>'
 	'</table></center>'
 	act 'Return': gt 'preSYS2','modrel'
 end
