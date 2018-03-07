@@ -1,59 +1,62 @@
 # kinosvid
-minut += 60
-kisvrand = 0
-pcs_mood += 10
-gs 'stat'
-'<center><b>Cinema</b></center>'
-'<center><img <<$set_imgh>> src="images/characters/city/boyfriend/sex/event/cinema/0.jpg"></center>'
-'You and <<$telsob>> buy your tickets, drinks, and popcorn. With some playful flirting, you settle into your seats ready to watch the movie.'
 
-act 'Watch the movie':
-	if $telsob = 'Alla':
-		alla += 1
-		if alla >= 20:
-			kisvrand = rand(0, 10)
+if $ARGS[0] = '':
+	minut += 60
+	kisvrand = 0
+	pcs_mood += 10
+	gs 'stat'
+	'<center><b>Cinema</b></center>'
+	'<center><img <<$set_imgh>> src="images/characters/city/boyfriend/sex/event/cinema/0.jpg"></center>'
+	'You and <<$telsob>> buy your tickets, drinks, and popcorn. With some playful flirting, you settle into your seats ready to watch the movie.'
 
-			if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
-			if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
-			if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
-		else
-			gt 'kinosvid', '3'
-		end
-	elseif $telsob = 'Masha':
-		masha += 1
+	act 'Watch the movie':
+		if $telsob = 'Alla':
+			alla += 1
+			if alla >= 20:
+				kisvrand = rand(0, 10)
 
-		if masha >= 20:
-			kisvrand = rand(0, 10)
+				if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
+				if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
+				if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
+			else
+				gt 'kinosvid', '3'
+			end
+		elseif $telsob = 'Masha':
+			masha += 1
 
-			if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
-			if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
-			if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
-		else
-			gt 'kinosvid', '3'
-		end
-	elseif $telsob = 'Kate':
-		npc_rel['A219'] += 1
+			if masha >= 20:
+				kisvrand = rand(0, 10)
 
-		if npc_rel['A219'] >= 20:
-			kisvrand = rand(0, 10)
+				if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
+				if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
+				if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
+			else
+				gt 'kinosvid', '3'
+			end
+		elseif $telsob = 'Kate':
+			npc_rel['A219'] += 1
 
-			if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
-			if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
-			if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
-		else
-			gt 'kinosvid', '3'
-		end
-	elseif $telsob = $loverdesc[lover_number]:
-		!! date with girlfriend	
-		loverrelation[lover_number] += 1
-		
-		if loverrelation[lover_number] >= 20:
-			kisvrand = rand(0, 10)
-			if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
-			if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
-			if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
-		else
-			gt 'kinosvid', '3'
+			if npc_rel['A219'] >= 20:
+				kisvrand = rand(0, 10)
+
+				if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
+				if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
+				if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
+			else
+				gt 'kinosvid', '3'
+			end
+		elseif $telsob = $loverdesc[lover_number]:
+			!! date with girlfriend	
+			loverrelation[lover_number] += 1
+			
+			if loverrelation[lover_number] >= 20:
+				kisvrand = rand(0, 10)
+				if kisvrand > 0 and kisvrand < 3:gt 'kinosvid', '1'
+				if kisvrand > 2 and kisvrand < 5:gt 'kinosvid', '2'
+				if kisvrand = 0 or kisvrand > 4:gt 'kinosvid', '3'
+			else
+				gt 'kinosvid', '3'
+			end
 		end
 	end
 end
