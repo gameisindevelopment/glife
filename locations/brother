@@ -841,7 +841,7 @@ if $ARGS[0] = 'brotherSexEnd':
 
 			gs 'stat'
 
-			'Kolka catches his breath, then says, "Nice one <<$pcs_nickname>>, good job, just remember this is our little secret!", He continues to go about his business.'
+			'Kolka catches his breath, then says, "Nice one <<$pcs_nickname>>, good job. Just remember this is our little secret!" He continues to go about his business.'
 			act 'Leave': gt 'sitrPar'
 		elseif $loc = 'sitrPar':
 			minut += 15
@@ -851,7 +851,7 @@ if $ARGS[0] = 'brotherSexEnd':
 			'Kolka catches his breath, then says, "Nice one <<$pcs_nickname>>, you''re well trained. Now don''t tell anyone!", and falls asleep.'
 			act 'Leave': gt 'sitrPar'
 		else
-			'Kolka says, "Nice one <<$pcs_nickname>>, you''re well trained, Now don''t tell anyone!", and leaves.'
+			'Kolka says, "Nice one <<$pcs_nickname>>, you''re well trained. Now don''t tell anyone!", and leaves.'
 
 			act 'Continue':gt $loc, $metka
 		end
@@ -861,14 +861,14 @@ if $ARGS[0] = 'brotherSexEnd':
 
 			gs 'stat'
 
-			'Kolka catches his breath, then says, "Many thanks, <<$pcs_nickname>>, You helped me a lot", He continues to go about his business.'
+			'Kolka catches his breath, then says, "Many thanks, <<$pcs_nickname>>, you helped me a lot." He continues to go about his business.'
 			act 'Leave': gt 'sitrPar'
 		elseif $loc = 'sitrPar':
 			minut += 15
 
 			gs 'stat'
 
-			'Kolka catches his breath, then says, "Thank you, <<$pcs_nickname>>, You saved me , now I can finally sleep.", and goes to sleep.'
+			'Kolka catches his breath, then says, "Thank you, <<$pcs_nickname>>, you saved me. Now I can finally sleep.", and goes to sleep.'
 			act 'Leave': gt 'sitrPar'
 		else
 			'Kolka says, "Thanks for everything, Sis. Well, I''m off.", and leaves.'
