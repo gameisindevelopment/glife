@@ -33,29 +33,29 @@ if $ARGS[0] = 'start':
 		cls
 		minut += 5
 		gs'stat'
-		'You followed Lariska, but when you turned behind the corner, somebody caught you by your sides and pushed you against the wall.'
+		'You follow Lariska, but when you turn behind the corner, somebody catches you by your sides and pushes you against the wall.'
 		act 'Do nothing':
 			cls
 			minut += 5
 			pcs_horny += 10
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_1.jpg"></center>'
-			'You quickly recovered and now you could see that it is Lariska Gruzdeva who is pushing you against the wall. Her face was so close to yours, so you started blushing and becoming aroused.'
-			'Then, the penny dropped that she was not excited, but frightened. She was shuddering with fear and she was looking all around fearfully that somebody spotted you.'
-			'Her nose was touching your face, as she was turning her head from one side to other. You couldn''t help, but you wanted to hug and calm her. You were touching her gently and put your arms on her shoulders and asked:'
-			' "Lariska, what happened? How can I help you?"'
+			'You quickly recover and now you can see that it is Lariska Gruzdeva who is pushing you against the wall. Her face is so close to yours, so you start blushing and become aroused.'
+			'Then, the penny dropped that she is not excited, but frightened. She is shuddering with fear and she is looking all around fearfully that somebody spotted you.'
+			'Her nose is touching your face, as she is turning her head from one side to other. You can''t help it, but you want to hug and calm her. You are touching her gently and put your arms on her shoulders and ask:'
+			'"Lariska, what happened? How can I help you?"'
 			act 'Soothe her':
 				cls
 				minut += 5
 				gs'stat'
 				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_3.jpg"></center>'
-				'"<<$pcs_nickname>> ..." Lariska said and paused.'
-				'You hugged her tighter and stroked on her back gently. "What Lariska?"'
-				'"Lariska had calmed down a little, she took a deep breath and started talking quickly:'
+				'"<<$pcs_nickname>> ..." Lariska says and pauses.'
+				'You hug her tighter and stroke on her back gently. "What, Lariska?"'
+				'After calming down a little, Lariska takes a deep breath and starts talking quickly:'
 				'"<<$pcs_nickname>>, you are in danger! Zvereva wants to set junkies on you .. "'
-				'You were totally numb now. "What junkies?"'
-				'"Well, she gave blow job not only the trainer, but she also blew the junkies, who are selling drugs here. She also bought some super steroids and she wants to contaminate you with them! Tomorrow after the section, they want to catch and rape you!"'
-				'As soon as she said it, she ran away.'
+				'You are totally numb now. "What junkies?"'
+				'"Well, she gave blow jobs not only the trainer, but she also blew the junkies, who are selling drugs here. She also bought some super steroids and she wants to contaminate you with them! Tomorrow after the section, they want to catch and rape you!"'
+				'As soon as she said it, she runs away.'
 				lariskaHelp = 1
 				
 				if kotovLoveQW > 0:
@@ -126,8 +126,8 @@ if $ARGS[0] = 'start':
 				minut += 5
 				gs'stat'
 				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_2.jpg"></center>'
-				'You grabbed the enemy''s hands, pinned him to the wall and hit his stomach with all your might. A cry of pain flew from your opponent''s mouth.'
-				act 'See the enemy':
+				'You grab the enemy''s hands, pin him to the wall and hit his stomach with all your might. A cry of pain flies from your opponent''s mouth.'
+				act 'Look at the enemy':
 					cls
 					minut += 5
 					gs'stat'
@@ -142,9 +142,9 @@ if $ARGS[0] = 'start':
 
 					if npc_rel[$static_num] < 20:'You have a bad relationship.'
 					''
-					'Right away you hit the stomach, you realized that it is Lariska, who is standing in front of you. She had tears in her eyes. You unclinched her immediately. As soon as you did, Lariska yelled in your face:'
-					'"Idiot, I wanted to help you!" and she pushed you back and ran away.'
-					'You had stood still five minutes in perplexity and thought about that you should apologize at school tomorrow, before you finally got off and went home.'
+					'Right after you hit the stomach, you realize that it is Lariska, who is standing in front of you. She has tears in her eyes. You unclinch her immediately. As soon as you do, Lariska yells in your face:'
+					'"Idiot, I wanted to help you!" and she pushes you back and runs away.'
+					'You had stood still five minutes in perplexity and thought about that you should apologize at school tomorrow, before you finally get off and go home.'
 					lariskaHelp = -1
 
 					act 'Leave':gt'gdk'
@@ -275,13 +275,13 @@ if $ARGS[0] = 'end':
 	elseif 	FyodorZverHelp = 1:
 		'<center><b><h4><font color=#00ffe4><<"Avelina [Lina] Starov">></font></h4></b></center>'
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/19.jpg"></center>'
-		'_ You leave the club then see Lina approaching you.'
-		'- <<$pcs_nickname>>, wait! Help me please, I need to move inventory in the storeroom but the light blew out. Can you please help me move it while I go and get a flashlight?'
-		'- "Erm, forgive me Lina but I have to go home." you then give Fedor a nod.'
-		'- "C''mon <<$pcs_nickname>>, I just need your help for a few minutes. I can move the heavy stuff." Lariska pouts.'
-		'_ "Sorry but we can''t help you." Fedor says as he grabs onto your arm then pulls you away toward the street.'
-		'- Lina with a disappointed look on her face, turns and walks away.'
-		'- You turn to Fedor and say, "Thank you Fyodor. I knew that I could count on you." Fedor gives you a kiss on the forehead then walks you home."'
+		'You leave the club then see Lina approaching you.'
+		'"<<$pcs_nickname>>, wait! Help me please, I need to move inventory in the storeroom but the light blew out. Can you please help me move it while I go and get a flashlight?"'
+		'"Erm, forgive me Lina but I have to go home." you then give Fedor a nod.'
+		'"C''mon <<$pcs_nickname>>, I just need your help for a few minutes. I can move the heavy stuff." Lariska pouts.'
+		'"Sorry but we can''t help you." Fedor says as he grabs your arm then pulls you away toward the street.'
+		'Lina, with a disappointed look on her face, turns and walks away.'
+		'You turn to Fedor and say, "Thank you Fedor. I knew that I could count on you." Fedor gives you a kiss on the forehead then walks you home."'
 		*nl
 		'<center><b><h4><font color="blue"><<"Fyodor [Fedor] Kozlov">></font></h4></b></center>'
 		if fedorKozlovQW < -10:
@@ -293,8 +293,8 @@ if $ARGS[0] = 'end':
 		act 'Leave':gt 'korrPar'
 	else
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/19.jpg"></center>'
-		'You leave the club and see, that you are Lina.'
-		'- <<$pcs_nickname>>, wait! Help me please remove equipment in the pantry, and that the coach made, and there bulb burns out! You just Flashlight Support, I rest myself!'
+		'You leave the club and see Lina.'
+		'"<<$pcs_nickname>>, wait! Help me please, I need to move inventory in the storeroom but the light blew out. Can you please help me move it while I go and get a flashlight?"'
 		act 'Help':
 			if KotovZverHelp = 1:
 				numnpc = 9
@@ -302,35 +302,35 @@ if $ARGS[0] = 'end':
 				minut += 5
 				gs'stat'
 				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_4.jpg"></center>'
-				'- Okay! Why no. - You said and followed Lina.'
-				'You went into a dark room and heard, as the door closed behind you, and you knocked to the floor and obviously began to undress.'
-				'The noise of heavy blows on the door, two strokes and the door falls on you and the guy that was sitting on top, You crushed the door and the guy can not move, and the sounds around the fight. From-Man hands in your mouth on you slowly choke and lose consciousness, through you hear a faint voice Kotova «Light hold!»'
+				'"Okay, why not." You say and follow Lina.'
+				'You go into a dark room and hear the door close behind you. You get knocked to the floor and feel hands pulling your clothes, trying to undress you. You are trying to resist, but you only accomplish that hands move to your throat, strangling you until your consciousness fades.'
+				'Suddenly you hear the noise of heavy blows on the door, after two strokes the door falls on you and the guy that was sitting on top. You are pinned under the door and can not move, but you hear the sounds of a fight around you. After a while it gets silent, and like through a haze you hear a faint voice from Kotova "Turn on the light!"'
 				act 'Recover':
 					cls
 					minut += 40
 					gs'stat'
 					'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_kotov_end.jpg"></center>'
-					'You open your eyes and see the worried face Kotova:'
-					'- You''re like okay?'
-					'- Yes, thank you saved me.'
-					'- Something like managed! Thanks to Prokhorov, he saw you and told where to look! Narkoshi we broke bones, and Starov and Zverev we rein, do not worry.'
+					'You open your eyes and see the worried face of Kotova:'
+					'"You''re, like, okay?"'
+					'"Yes, thank you, saved me!"'
+					'"Looks like we came just in time! Thanks to Prokhorov, he saw you and told me where to look! Narkoshi we broke bones, and Starov and Zverev we detain, so do not worry."'
 
 					act 'Keep silent':LinaSlut = 1 & gt'kotovSex'
-					act 'Lina certainly not the, it has advised Zvereva, pity it!':gt'kotovSex'
+					act 'Don''t be too harsh with Lina, Zvereva is the driving force!':gt'kotovSex'
 				end
 			else
 				cls
 				minut += 5
 				gs'stat'
 				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_4.jpg"></center>'
-				'- Okay! Why no. - You said and followed Lina.'
-				'You went into a dark room and heard, as the door closed behind you, and you knocked to the floor and obviously began to undress. You are trying to resist, but you pour, that-then in the mouth and consciousness fades.'
+				'"Okay, why not." You say and follow Lina.'
+				'You go into a dark room and hear the door close behind you. You get knocked to the floor and feel hands pulling your clothes, trying to undress you. You are trying to resist, but you only accomplish that hands move to your throat, strangling you until your consciousness fades.'
 				act 'Recover':
 					cls
 					minut += 15
 					gs'stat'
 					'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_5.jpg"></center>'
-					'You like plasticine, You bend and so, to put an end to cancer with all lapaya, that sticks out and thrusting his hands in all holes, and you do not care at all, Only in my head where-then «Run, I have to run away». Meanwhile, the boys began to fuck you.'
+					'Like plasticine, you try to bend and wriggle out of the grip, but when your hip sticks out, you feel hands thrusting in your holes. You do not care at all, the only thought in your head is "run, I have to run away". Meanwhile, the boys begin to fuck you...'
 					act 'Further':
 						cls
 						pcs_horny += 10
