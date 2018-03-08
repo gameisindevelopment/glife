@@ -351,8 +351,8 @@ if $ARGS[0] = 'boys':
 		'"Miss Orlov is so fucking hot, I totally want to bang her."'
 		'"Get in line, she is hotter than any of the girls in school."'
 	elseif chat_rand = 12:
-		'Miss Volkov is kinda hot, I mean for someone almost as old as my mom.'
-		'"I hear yea, she is a total MILF.'
+		'"Miss Volkov is kinda hot, I mean for someone almost as old as my mom."'
+		'"I hear ya, she is a total MILF."'
 	elseif chat_rand = 13:
 		'"Did you see the picture of Katja kissing another girl?"'
 		'"Katja''s a lesbian? And no let me see the picture." sharing the image on phone. "Who''s she kissing?"'
