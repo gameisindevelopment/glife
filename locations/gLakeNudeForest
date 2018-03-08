@@ -37,7 +37,7 @@ if temper >= 20 and month >= 5 and month <= 9 and hour >= 6 and hour <= 20:
 		end
 	end
 end
-act'To go to the beach': gt 'gLakeNude'
+act'Go to the beach': gt 'gLakeNude'
 
 --- gLakeNudeForest ---------------------------------
 
