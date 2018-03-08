@@ -1,68 +1,71 @@
 # kazinosvid
-minut += 60
-kisvrand = 0
-pcs_mood += 10
-gs 'stat'
-'<center><b>Cinema</b></center>'
-'<center><img <<$set_imgh>> src="images/characters/city/boyfriend/sex/event/cards/0.jpg"></center>'
-'You sit down with <<$telsob>> to have some drinks, and play some cards.'
 
-act 'Play':
-	if $telsob = 'Alla':
-		alla += 1
+if $ARGS[0] = '':
+	minut += 60
+	kisvrand = 0
+	pcs_mood += 10
+	gs 'stat'
+	'<center><b>Cinema</b></center>'
+	'<center><img <<$set_imgh>> src="images/characters/city/boyfriend/sex/event/cards/0.jpg"></center>'
+	'You sit down with <<$telsob>> to have some drinks, and play some cards.'
 
-		if alla >= 20:
-			kisvrand = rand(0, 8)
-			if kisvrand < 2:
-				gt 'kazinosvid', '1'
-			elseif kisvrand < 4:
-				gt 'kazinosvid', '2'
+	act 'Play':
+		if $telsob = 'Alla':
+			alla += 1
+
+			if alla >= 20:
+				kisvrand = rand(0, 8)
+				if kisvrand < 2:
+					gt 'kazinosvid', '1'
+				elseif kisvrand < 4:
+					gt 'kazinosvid', '2'
+				else
+					gt 'kazinosvid', '3'
+				end
 			else
 				gt 'kazinosvid', '3'
 			end
-		else
-			gt 'kazinosvid', '3'
-		end
-	elseif $telsob = 'Masha':
-		masha += 1
+		elseif $telsob = 'Masha':
+			masha += 1
 
-		if masha >= 20:
-			kisvrand = rand(0, 8)
-			if kisvrand < 2:
-				gt 'kazinosvid', '1'
-			elseif kisvrand < 4:
-				gt 'kazinosvid', '2'
+			if masha >= 20:
+				kisvrand = rand(0, 8)
+				if kisvrand < 2:
+					gt 'kazinosvid', '1'
+				elseif kisvrand < 4:
+					gt 'kazinosvid', '2'
+				else
+					gt 'kazinosvid', '3'
+				end
 			else
 				gt 'kazinosvid', '3'
 			end
-		else
-			gt 'kazinosvid', '3'
-		end
-	elseif $telsob = 'Kate':
-		npc_rel['A219'] += 1
-		if npc_rel['A219'] >= 20:
-			kisvrand = rand(0, 8)
-			if kisvrand < 2:
-				gt 'kazinosvid', '1'
-			elseif kisvrand < 4:
-				gt 'kazinosvid', '2'
+		elseif $telsob = 'Kate':
+			npc_rel['A219'] += 1
+			if npc_rel['A219'] >= 20:
+				kisvrand = rand(0, 8)
+				if kisvrand < 2:
+					gt 'kazinosvid', '1'
+				elseif kisvrand < 4:
+					gt 'kazinosvid', '2'
+				else
+					gt 'kazinosvid', '3'
+				end
 			else
 				gt 'kazinosvid', '3'
 			end
-		else
-			gt 'kazinosvid', '3'
-		end
-	elseif $telsob = $loverdesc[lover_number]:
-		!! date with girlfriend	
-		loverrelation[lover_number] += 1
-		
-		if loverrelation[lover_number] >= 20:
-			kisvrand = rand(0, 8)
-			if kisvrand > 0 and kisvrand < 3:gt 'kazinosvid', '1'
-			if kisvrand > 2 and kisvrand < 5:gt 'kazinosvid', '2'
-			if kisvrand = 0 or kisvrand > 4:gt 'kazinosvid', '3'
-		else
-			gt 'kazinosvid', '3'
+		elseif $telsob = $loverdesc[lover_number]:
+			!! date with girlfriend	
+			loverrelation[lover_number] += 1
+			
+			if loverrelation[lover_number] >= 20:
+				kisvrand = rand(0, 8)
+				if kisvrand > 0 and kisvrand < 3:gt 'kazinosvid', '1'
+				if kisvrand > 2 and kisvrand < 5:gt 'kazinosvid', '2'
+				if kisvrand = 0 or kisvrand > 4:gt 'kazinosvid', '3'
+			else
+				gt 'kazinosvid', '3'
+			end
 		end
 	end
 end
