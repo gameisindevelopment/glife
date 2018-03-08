@@ -506,7 +506,7 @@ if $ARGS[0] ! 'end' and $ARGS[0] ! 'checks' and $ARGS[0] ! 'count' and $ARGS[0] 
 
 	orgasm_buildup += stim['total']
 
-	if $orgasm_or ! 'no':
+	if $orgasm_or ! 'no' and $ARGS[0] ! 'flashlite' and $ARGS[0] ! 'flash':
 		if $orgasm_or = 'yes' or $orgasm_or = 'custom':
 			gs 'orgasm', $ARGS[0]
 		elseif orgasm_buildup >= 100 and stim['total'] > 10 and rand(1,100) <= 20:
