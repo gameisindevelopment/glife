@@ -319,6 +319,7 @@ if $ARGS[0] = 'charselect':
 				pcs_compskl = 40
 				pcs_comphckng = 20
 				pcs_ttgmng = 30
+				internet = 20
 				npc_rel['A152'] += 10
 				npc_rel['A153'] += 10
 				npc_rel['A142'] += 15
