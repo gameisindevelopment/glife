@@ -86,7 +86,7 @@ if $ARGS[0] = 'in':
 	end
 	if hour = 19 and minut <= 40:
 		cla
-		'Lariska looked at her watch and said, "It''s time to go to the sports club.'
+		'Lariska looks at her watch and says, "It''s time to go to the sports club."'
 		act 'Go with Lariska':lariskaTrain += 1 & minut += 20 & gt 'gdksport', 'start'
 		act 'Say goodbye and go home':gt'pavResidential'
 		exit
@@ -104,10 +104,10 @@ if $ARGS[0] = 'in':
 
 				if week < 6 and doorpeek = 0:
 					doorlocked = 1
-					'On your way back from the kitchen, you noticed that the room next to the toilet was closed, curiosity took over and you tried to open it but it is locked.'
+					'On your way back from the kitchen, you notice that the room next to the toilet is closed, curiosity takes over and you try to open it but it is locked.'
 					act 'Return to Lariska''s room':gt 'LariskaHome','in'
 				elseif week < 6 and doorpeek ! 0:
-					'On your way back from the kitchen, you noticed that the room with the BDSM stuff was closed, you tried to open it but it is locked again.'
+					'On your way back from the kitchen, you notice that the room with the BDSM stuff is closed, you try to open it but it is locked again.'
 					act 'Return to Lariska''s room':gt 'LariskaHome','in'
 				elseif week >= 6:
 					lariskaRand = rand(1,100)
@@ -115,18 +115,18 @@ if $ARGS[0] = 'in':
 					'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/home_2.jpg"></center>'
 					if doorlocked = 1 or lariskaBDSM > 0:
 						doorlocked = 0
-						'On your way back from the kitchen, you noticed that the room next to the toilet was closed, curiosity took over and you tried to open it. You opened the door and you saw a room full of what appears to be BDSM accessories and toys.'
+						'On your way back from the kitchen, you notice that the room next to the toilet is closed, curiosity takes over and you try to open it. You open the door and you see a room full of what appears to be BDSM accessories and toys.'
 					elseif lariskaRand <= 10 and lariskaBDSM < 10:
-						'You opened the door and you saw that the room was full of what appeared to be BDSM accessories and toys. In the center of the room stands Lariska''s mother, Anna Igorevna, in a suit of leather. she is doing something with a rope. You quietly close the door hoping she didn''t notice you.'
+						'You open the door and you see that the room is full of what appears to be BDSM accessories and toys. In the center of the room stands Lariska''s mother, Anna Igorevna, in a suit of leather. She is doing something with a rope. You quietly close the door, hoping she didn''t notice you.'
 						lariskaBDSM += 1
 					elseif lariskaRand >= 90 and lariskaBDSM < 10:
-						'You opened the door and you saw that the room was full of what appeared to be BDSM accessories and toys. In the center of the room stands Lariska''s mother, Anna Igorevna, in a suit of leather. she is doing something with a rope. She obviously notices you and smiles. You quickly shut the door.'
+						'You open the door and you see that the room is full of what appears to be BDSM accessories and toys. In the center of the room stands Lariska''s mother, Anna Igorevna, in a suit of leather. She is doing something with a rope. She obviously notices you and smiles. You quickly shut the door.'
 						lariskaBDSM += 1
 					elseif lariskaRand <= 10 and lariskaBDSM >= 10:
-						'You opened the door to the room full of BDSM accessories and toys. In the center of the room stands Anna Igorevna in a suit of leather, she is doing something with a rope. She invites you to have fun.'
+						'You open the door to the room full of BDSM accessories and toys. In the center of the room stands Anna Igorevna in a suit of leather, she is doing something with a rope. She invites you to have fun.'
 						lariskaBDSM += 1
 					else
-						'You opened the door to the room full of BDSM accessories and toys. Anna Igorevna is no there so you close the door.'
+						'You open the door to the room full of BDSM accessories and toys. Anna Igorevna is not there so you close the door.'
 					end
 
 					act 'Return to Lariska''s room':gt 'LariskaHome','in'
@@ -149,8 +149,8 @@ if $ARGS[0] = 'in':
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/13.jpg"></center>'
 			'You decided to talk to Lariska about joining the professional volleyball team.'
-			'"Lariska, you are an excellent volleyball player. Coach Mikheil Nikolayevich has a professional team, why don''t you ask to join it?" you asked your friend.'
-			'"Well, I guess I''m afraid he''ll tell me I''m not good enough. I''ve seen him tell other good players they aren''t good enough to play for him.'
+			'"Lariska, you are an excellent volleyball player. Coach Mikheil Nikolayevich has a professional team, why don''t you ask to join it?" you ask your friend.'
+			'"Well, I guess I''m afraid he''ll tell me I''m not good enough. I''ve seen him tell other good players they aren''t good enough to play for him."'
 			if pcs_vball < 100:
 				act 'Drop the subject':gt 'LariskaHome','in'
 				act 'Tell you that you''ll go with her for support.':lariskaTrenerTalk = 1 & minut += 15 & gt 'Voltrener', 'start'
