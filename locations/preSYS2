@@ -51,7 +51,7 @@ if $ARGS[0] = 'modapp':
 	if genbsize = 17:
 		'Above average - Currently set'
 	else
-		'<a href="exec:genbsize = 17 & gt ''preSYS2'',''modapp''">Very small</a>'
+		'<a href="exec:genbsize = 17 & gt ''preSYS2'',''modapp''">Above average</a>'
 	end
 
 	if genbsize = 22:
