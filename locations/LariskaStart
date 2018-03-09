@@ -246,7 +246,7 @@ if $ARGS[0] = 'end':
 							gs'stat'
 
 							'<center><img <<$set_imgh>> src="images/shared/sex/grab/cock2.jpg"></center>'
-							'You shoved your hand deeper into Ivan''s pants and your fingers are touching his big hard cock.'
+							'You shove your hand deeper into Ivan''s pants and your fingers are touching his big hard cock.'
 
 							act 'Masturbate':
 								cls
@@ -259,7 +259,7 @@ if $ARGS[0] = 'end':
 								if rand1>=1:'<center><video autoplay loop src="images/shared/sex/cum/handjob/hand0,'+rand(0,1)+'.mp4"></video></center>'
 								spafinloc = 13
 								gs 'cum_manage'
-								'You pull out his hard cock from his pants and grasp it firmly with your hand. You are kissing Ivan passionately and pumping his cock up and down simultaneously. Finally, Ivan gives a groan of pleasure  you can see streams of his semen gushing out of his cock.'
+								'You pull out his hard cock from his pants and grasp it firmly with your hand. You are kissing Ivan passionately and pumping his cock up and down simultaneously. Finally, Ivan gives a groan of pleasure and you can see streams of his semen gushing out of his cock.'
 								
 								act 'Go home':gt'korrPar'
 							end
@@ -278,7 +278,7 @@ if $ARGS[0] = 'end':
 		'You leave the club then see Lina approaching you.'
 		'"<<$pcs_nickname>>, wait! Help me please, I need to move inventory in the storeroom but the light blew out. Can you please help me move it while I go and get a flashlight?"'
 		'"Erm, forgive me Lina but I have to go home." you then give Fedor a nod.'
-		'"C''mon <<$pcs_nickname>>, I just need your help for a few minutes. I can move the heavy stuff." Lariska pouts.'
+		'"C''mon <<$pcs_nickname>>, I just need your help for a few minutes. I can move the heavy stuff." Lina pouts.'
 		'"Sorry but we can''t help you." Fedor says as he grabs your arm then pulls you away toward the street.'
 		'Lina, with a disappointed look on her face, turns and walks away.'
 		'You turn to Fedor and say, "Thank you Fedor. I knew that I could count on you." Fedor gives you a kiss on the forehead then walks you home."'
@@ -316,7 +316,7 @@ if $ARGS[0] = 'end':
 					'"Looks like we came just in time! Thanks to Prokhorov, he saw you and told me where to look! Narkoshi we broke bones, and Starov and Zverev we detain, so do not worry."'
 
 					act 'Keep silent':LinaSlut = 1 & gt'kotovSex'
-					act 'Don''t be too harsh with Lina, Zvereva is the driving force!':gt'kotovSex'
+					act 'Don''t be too harsh with Lina, Zvereva had this planned!':gt'kotovSex'
 				end
 			else
 				cls
@@ -337,7 +337,7 @@ if $ARGS[0] = 'end':
 						minut += 5
 						gs'stat'
 						'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_6.jpg"></center>'
-						'You put cancer and pat your body, you flow like a waterfall. Smile on your face, and you all know though, but can not do anything. In my head, only one thought «Save!»'
+						'While being fucked doggy style, your arousal gets the better of you. "If I can''t resist, I might as well enjoy it", you think, smiling.'
 						act 'Further':
 							cls
 							pcs_horny += 10
@@ -345,9 +345,9 @@ if $ARGS[0] = 'end':
 							gs'stat'
 							'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_7.jpg"></center>'
 							if stat['bj'] >= 100:
-								$start_text = 'you purely on the machine begins to suck, surely, If you are sleeping and your mouth stuck dick you would like is usually sucked.'
+								$start_text = 'Still not entirely aware of your situation, you automatically start sucking the dick poking in your face.'
 							else
-								$start_text = 'you unconscious and the guy just starts to fuck you in the throat.'
+								$start_text = 'You''re still not entirely aware of your situation, but you feel the dick being slammed down your throat.'
 							end
 							stat['bj'] += 1
 							stat['vaginal'] += 1
@@ -359,15 +359,15 @@ if $ARGS[0] = 'end':
 							gang += 1
 							pcs_vag += 1
 							pcs_throat += 1
-							'So you went to one at the rear, you feel, as your pussy takes a 28 centimeter giant, from your mouth breaks moan of pleasure, in my head, only one thought «Save!», a smile on your face! The second has decompresses the fingers of your mouth and inserts his penis, <<$start_text>>'
+							'After some shuffling as the guys switch positions, you feel a 28 centimeter giant stretching your pussy. The intense feeling makes you moan with pleasure. Another guy forces your mouth open and inserts his penis. <<$start_text>>'
 							act 'Further':
 								cls
 								pcs_horny += 10
 								minut += 5
 								gs'stat'
 								'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_8.jpg"></center>'
-								'Finally you feel, the guys are ready to be discharged.'
-								'You put in the center of the room and you see smiling stupidly they play their trunks.'
+								'Finally you feel the guys are ready to discharge.'
+								'You are put in the center of the room and you stupidly smile at them playing with their trunks.'
 								act 'Watch':
 									cls
 									pcs_horny += 10
@@ -388,23 +388,23 @@ if $ARGS[0] = 'end':
 									gs 'cum_manage'
 									gs'stat'
 									'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_9.jpg"></center>'
-									'They began to finish pouring your face and warm tart sperm! Discharge they start to beat you huyami lips, gradually penetrating into his mouth and clearing them from the remnants of sperm.'
+									'They finish, pouring your face with warm sperm! They slap their dicks against your lips, gradually penetrating into your mouth and clearing them from the remnants of cum.'
 									act 'Further':
 										cls
 										pcs_horny += 10
 										minut += 5
 										gs'stat'
 										'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_10.jpg"></center>'
-										'- Can umoem this whore? - You heard through a veil.'
-										'- And let''s!'
-										'And your face hit the stream of urine'
+										'"Should we wash this whore?" You hear, like through a veil.'
+										'"Yeah, let''s do it!"'
+										'And your face gets hit by streams of urine'
 										act 'Further':
 											cls
 											minut += 5
 											gs'stat'
 											'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_11.jpg"></center>'
-											'- What went slut! - You have bare arms and where-the lead, Suddenly you realize, that you are in the middle of the club and everyone is looking at you.'
-											'- Dance slut - with these words, you are thrust into the center of the crowd. Your consciousness fades.'
+											'"What a slut!" You let yourself be led by your arms, and suddenly you realize, that you are in the middle of the club and everyone is looking at you.'
+											'"Dance, slut!" with these words, you are thrust into the center of the crowd. Finally, your consciousness fades.'
 											pav_sex += 30
 											act 'Wake':
 												cls
@@ -437,7 +437,7 @@ if $ARGS[0] = 'end':
 												vgape = 2
 												gs'stat'
 												'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/lariska/sex/fight/start_end.jpg"></center>'
-												'You woke up covered in semen and a bottle, sticking out of the pussy, and your entire body covered with writing obscene graffiti. The whole body hurts, and holes to whine like glowing rod shoved all night.'
+												'You wake up covered in semen and with a bottle sticking out of your pussy. Your entire body is covered with obscene graffiti. Your whole body hurts, and your holes feel like glowing rods were shoved in all night.'
 
 												act 'Leave':gt'pavResidential'
 											end
@@ -462,8 +462,8 @@ if $ARGS[0] = 'IvanHelp_down':
 		gs'stat'
 
 		'<center><img <<$set_imgh>> src="images/shared/sex/cock/cock3.jpg"></center>'
-		'Did you get a member of Ivan''s pants'
-		act 'Take in the mouth':
+		'You pull Ivan''s member out of his pants'
+		act 'Take it in the mouth':
 			cls
 			minut += 5
 			pcs_horny += 10
@@ -477,13 +477,13 @@ if $ARGS[0] = 'IvanHelp_down':
 			if rand1<5:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/community/disco/sex/boybj3.jpg"></center>'
 			if rand1>=5 and rand1<30:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/park/sex/publ0,0.jpg"></center>'
 			if rand1>=30:'<center><video autoplay loop src="images/locations/pavlovsk/park/sex/publ0,0.mp4"></video></center>'
-			'You sat down on his haunches and began to suck Ivan.'
+			'You sit down on his haunches and begin to suck Ivan.'
 
 			dynamic $dinrandswallow
 
-			act 'Going home':gt'korrPar'
+			act 'Go home':gt'korrPar'
 		end
-		act 'Give':gt 'LariskaStart', 'IvanHelp_sex'
+		act 'Sex':gt 'LariskaStart', 'IvanHelp_sex'
 	end
 end
 
@@ -501,12 +501,12 @@ if $ARGS[0] = 'IvanHelp_sex':
 	if rand1<5:'<center><img <<$set_imgh>> src="images/shared/sex/public/boysex.jpg"></center>'
 	if rand1>=5 and rand1<30:'<center><video autoplay loop src="images/shared/sex/public/publ1,'+rand(0,2)+'.mp4"></video></center>'
 	if rand1>=30:'<center><img <<$set_imgh>> src="images/shared/sex/public/publ1,'+rand(0,6)+'.jpg"></center>'
-	'You bent down and framed mooning guy.'
+	'You bend down and have him fuck you from behind.'
 	dynamic $sexstart
 	dynamic $sexstart2
 	dynamic $sexcum
 
-	act 'Going home':gt'korrPar'
+	act 'Go home':gt'korrPar'
 end
 
 
