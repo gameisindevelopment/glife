@@ -482,7 +482,7 @@ if $ARGS[0] = 'sleepsexcum':
 	if protect ! 1:
 		!!Unprotected sex
 
-		if rand(0, 100) > pcs_horny:
+		if rand(0, 100) < pcs_horny:
 			!!Inside
 			sexpartkno = 1
 			gs 'cum_manage'
@@ -995,7 +995,7 @@ if $ARGS[0] = 'brother_voyeur_ev4':
 		'"Erm.. yeah."'
 
 		act'Further':gt 'brother','brother_voyeur_ev5'
-	elseif npc_QW['A34'] >= 4:
+	elseif npc_QW['A34'] > 4:
 		'You check whether the door is closed to the hall, then silently and quickly removed your clothes and sit down on the chair next to the sofa, you slightly cover your breasts with your hands hands:'
 		'"They say repetition is the mother of learning." Your brother says.'
 		'"Something like that" you smile as you reply.'
@@ -1642,4 +1642,5 @@ if $ARGS[0] = 'brotherknows8':
 end	
 
 --- brother ---------------------------------
+
 
