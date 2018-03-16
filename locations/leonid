@@ -638,7 +638,7 @@ end
 		gs 'arousal', 'foreplay', durr
 		leoHorny += rand (60, 80)
 		leoComfort -= rand (40, 60)
-		'<center><video autoplay loop src="images/characters/pavlovsk/resident/leonid/sex/massageerotic'+rand(1,2)+'.mp4"></video></center>'
+		'<center><video autoplay loop src="images/characters/pavlovsk/resident/leonid/massageerotic'+rand(1,2)+'.mp4"></video></center>'
 		'<<$bName>> lies down on a table. You strip down your clothes and give him errotic massage using oil.'
 		'First his back, then you move to his front. He seems to enjoy it..'
 		act 'End the massage end get back to work':gt 'leonid', 'office'
