@@ -70,12 +70,13 @@ if $ARGS[0] = 'dressing room':
 	elseif tanznak = 2:
 		cls
 		tanznak = 3
-		gs 'underwear', 'remove'
-		gs 'clothing', 'strip'
+		gs 'underwear', 'wear'
+		gs 'panties', 'dispose'
+		gs 'clothing', 'wear_last_worn'
 		npc_rel['A218'] += 5
 		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/gym/razd4.jpg"></center>'
 		'"You can at least tell me your name, maniac, seeing as you did not even have the decency to do so before you raped me." The girl says, catching her breath.'
-		'"I am the <<$pcs_nickname>>, and how can I rape someone so keen?" You ask trying to find your panties.'
+		'"I am <<$pcs_nickname>>, and how can I rape someone so keen?" You ask trying to find your panties.'
 		'"Looking for this?" asks the girl twirling your panties on her finger. "I''m Tanya, and you seduced me, I have never been with a girl before, and with very good reason. I live here with my parents, if you want to come for a visit."'
 		'"Okay that would be nice, can I have my briefs?" you say holding out your hand.'
 		'"Nope, no return, there must be something of a momento from my first girl." With these words, Tanya slips your panties in her pocket and leaves.'
@@ -194,6 +195,8 @@ if $ARGS[0] = 'fitgirl':
 					act 'Take advantage of the confusion':
 						cla
 						*clr
+						gs 'underwear', 'remove'
+						gs 'clothing', 'strip'
 						gs 'stat'
 						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/gym/razd2.jpg"></center>'
 						'While she is trying to understand what is happening you pull up her shirt and begin fondling her nipples with your tongue, and then her hand strokes your ass.'
@@ -215,6 +218,8 @@ if $ARGS[0] = 'fitgirl':
 						elseif pcs_apprnc >= 120:
 							cla
 							*clr
+							gs 'underwear', 'remove'
+							gs 'clothing', 'strip'
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/gym/razd3.jpg"></center>'
 							'The girl presses up to you even stronger and kisses your lips.'
 
