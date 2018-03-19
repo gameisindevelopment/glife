@@ -201,7 +201,7 @@ if $ARGS[0] = 'pirsgub':
 	:looplip_pir
 		*p '<a href="exec:gt ''pirsingsalon'', ''lip_pir'', <<i>>"><img src="images/pc/body/piercings/b<<i>>.jpg" 	height="250" /></a>'
 		i += 1
-	if i <= 6:jump 'looplip_pir'
+	if i <= 7:jump 'looplip_pir'
 
 	act 'Return':gt 'pirsingsalon', 'start'
 end
@@ -734,7 +734,7 @@ if $ARGS[0] = 'belly':
 		:looptatbelly
 		*p '<a href="exec:n = <<n>> & gt ''pirsingsalon'', ''belly_get''"><img src="images/pc/body/tattoos/belly/tatblly<<n>>.jpg" height="250" /></a>'
 		n += 1
-		if n <= 20:jump 'looptatbelly'
+		if n <= 21:jump 'looptatbelly'
 		*nl
 
 	else
@@ -1070,7 +1070,7 @@ if $ARGS[0] = 'pubic':
 		:looptatvag
 		*p '<a href="exec:n = <<n>> & gt ''pirsingsalon'', ''vag_get''"><img src="images/pc/body/tattoos/pubic/tatvag<<n>>.jpg" height="250" /></a>'
 		n += 1
-		if n <= 46:jump 'looptatvag'
+		if n <= 47:jump 'looptatvag'
 		*nl
 
 	else
