@@ -32,7 +32,7 @@ end
 
 act 'Go to the reception desk':gt 'Maria1'
 act 'Go to the lift':gt 'elevator'
-act 'Back to the hall':gt 'hall'
+act 'Leave':gt 'down'
 
 --- hotel ---------------------------------
 
