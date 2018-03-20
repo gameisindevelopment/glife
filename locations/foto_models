@@ -30,50 +30,52 @@ if $ARGS[0] = 'mari_1':
 			'	"I''ve been working for this agency for about a year. Ever since I moved to the city really."'
 			'	Something piques an interest in you as Mari mentions she''s from out of town, "If you don''t mind me asking where do you come from?"'
 			'	"Oh, just some place called Gadyukino. You''ve probably never heard of it. It''s a small village outside the city. Too small too be honest, same boring ins and outs every day. I wanted more excitement in my life! More than a simple farm girl would ever have. So I moved here."'
-
-			act '"You''re from Gadyukino?"':
-				cla
-				*clr
-				'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/4a.jpg"></center>'
-				'	"You''re from Gadyukino?" you exclaim. "My grandparents live in Gadyukino! I''m from Pavlovsky right down the road!"'
-				'	Her face breaks out into a smile as you say that.'
-				'	"Well fancy that! Maybe we''re long lost cousins or something!"'
-				act 'Talk about Gadyukino':
+			
+			if storyline = 1:
+				act '"You''re from Gadyukino?"':
 					cla
 					*clr
-					'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/1.jpg"></center>'
-					'	You spend the next few minutes talking about your home towns until a photographer comes up and says, "Alright Mari, it''s time to start."'
-					'	"Okay Vasin."'
-					'	She hurriedly gets up and starts double checking her clothing and hair before giving you a quick wave and smile, whispering to you, "It was nice to meet you <<$pcs_firstname>>! I hope we''ll get to talk more later!"'
-					'	You wave your farewells back and get off the set.'
-					mari = 2
-					act 'Watch her work':
+					'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/4a.jpg"></center>'
+					'	"You''re from Gadyukino?" you exclaim. "My grandparents live in Gadyukino! I''m from Pavlovsky right down the road!"'
+					'	Her face breaks out into a smile as you say that.'
+					'	"Well fancy that! Maybe we''re long lost cousins or something!"'
+					act 'Talk about Gadyukino':
 						cla
 						*clr
-						'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/5.jpg"></center>'
-						'	You stick around for a while watching Mari as the photographer gives her instructions and she poses accordingly.'
-						act '...':
+						'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/1.jpg"></center>'
+						'	You spend the next few minutes talking about your home towns until a photographer comes up and says, "Alright Mari, it''s time to start."'
+						'	"Okay Vasin."'
+						'	She hurriedly gets up and starts double checking her clothing and hair before giving you a quick wave and smile, whispering to you, "It was nice to meet you <<$pcs_firstname>>! I hope we''ll get to talk more later!"'
+						'	You wave your farewells back and get off the set.'
+						mari = 2
+						act 'Watch her work':
 							cla
 							*clr
-							'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/6.jpg"></center>'
-							'	You watch her drop her skirt on the photographer''s command, revealing her lack of underwear and a neat triangle of pubic hair.'
+							'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/5.jpg"></center>'
+							'	You stick around for a while watching Mari as the photographer gives her instructions and she poses accordingly.'
 							act '...':
 								cla
 								*clr
-								'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/7.jpg"></center>'
-								'	You watch her pull off her top next with a smile and a laugh and you realize that she''s genuinely happy right now.' 
-								act'...':
+								'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/6.jpg"></center>'
+								'	You watch her drop her skirt on the photographer''s command, revealing her lack of underwear and a neat triangle of pubic hair.'
+								act '...':
 									cla
 									*clr
-									'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/8.jpg"></center>'
-									'	She seems to really love being a model.'
-									act 'Leave':gt 'foto','studio'
+									'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/7.jpg"></center>'
+									'	You watch her pull off her top next with a smile and a laugh and you realize that she''s genuinely happy right now.' 
+									act'...':
+										cla
+										*clr
+										'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/8.jpg"></center>'
+										'	She seems to really love being a model.'
+										act 'Leave':gt 'foto','studio'
+									end
 								end
 							end
 						end
-					end
 
-					act 'Leave':gt 'foto','studio'
+						act 'Leave':gt 'foto','studio'
+					end
 				end
 			end
 			
