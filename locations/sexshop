@@ -38,7 +38,7 @@ if $ARGS[0] = 'start':
 		cla
 		ghnow = 0
 		minut += 5
-		gt 'down'
+		gt 'Nord', 'redlight'
 	end
 
 	if SUB >= 100 and analplug = 1 and dildo = 1 and pcs_apprnc > 104 and Peter = 0:
@@ -57,7 +57,7 @@ if $ARGS[0] = 'start':
 					cla
 					ghnow = 0
 					minut += 5
-					gt 'down'
+					gt 'Nord', 'redlight'
 				end
 			end
 		end
