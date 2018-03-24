@@ -176,7 +176,7 @@ if $ARGS[0] = 'modite_cos':
 end
 
 if $ARGS[0] = 'modite_pha':
-	$metka = 'modite_cos'
+	$metka = 'modite_pha'
 	'<center><b>Pharmaceutical items</b></center>'
 	*nl
 	*nl
@@ -198,7 +198,7 @@ if $ARGS[0] = 'modite_pha':
 end
 
 if $ARGS[0] = 'modite_mis':
-	$metka = 'modite_cos'
+	$metka = 'modite_mis'
 	'<center><b>Misc items</b></center>'
 	*nl
 	*nl
@@ -373,33 +373,32 @@ if $ARGS[0] = 'modgrup':
 end
 
 if $ARGS[0] = 'modatt':
+	$metka = 'modatt'
+	'<center><b>Attributes</b></center>'
+	*nl
+	*nl
+	'<center><table border=0 cellspacing=0 cellpadding=25  bgcolor=#808080><TH></TH><TH>Set to zero</TH><TH>Minus 10</TH><TH>Minus 5</TH><TH>Plus 5</TH><TH>Plus 10</TH><TH>Set to 100</TH>'
 	if pcs_dom >= 0 and sub = 0: 
-		act 'Dominance (<<pcs_dom>>/100)': gs 'preSYS2','setval2' & pcs_dom = nstat & gt 'preSYS2','modatt'
+		gs 'preSYS2', 'modrel_setup2', 'pcs_dom', 'Dominance'
 	elseif sub >= 0 and pcs_dom = 0:
-		act 'Submissiveness (<<sub>>/100)': gs 'preSYS2','setval2' & sub = nstat & gt 'preSYS2','modatt'
-	elseif pcs_dom < 0:
-		sub = pcs_dom * -1
-		pcs_dom = 0
-		gt 'preSYS2','modatt'
-	elseif sub < 0:
-		pcs_dom = sub * -1 
-		sub = 0
-		gt 'preSYS2','modatt'
+		gs 'preSYS2', 'modrel_setup2', 'sub', 'Submissiveness'
 	end
-	act 'Strength (<<pcs_stren>>/100)': gs 'preSYS2','setval' & pcs_stren = nstat & gt 'preSYS2','modatt'
-	act 'Agility (<<pcs_agil>>/100)': gs 'preSYS2','setval' & pcs_agil = nstat & gt 'preSYS2','modatt'
-	act 'Endurance (<<pcs_vital>>/100)':  gs 'preSYS2','setval' & pcs_vital = nstat & gt 'preSYS2','modatt'
-	act 'Intelligence (<<pcs_intel>>/100)':  gs 'preSYS2','setval' & pcs_intel = nstat & gt 'preSYS2','modatt'
-	act 'Spirit (<<pcs_sprt>>/100)':  gs 'preSYS2','setval' & pcs_sprt = nstat & gt 'preSYS2','modatt'
-	act 'Mental Agility (<<pcs_react>>/100)':  gs 'preSYS2','setval' & pcs_react = nstat & gt 'preSYS2','modatt'
-	act 'Charisma (<<pcs_chrsm>>/100)':  gs 'preSYS2','setval' & pcs_chrsm = nstat & gt 'preSYS2','modatt'
-	act 'Perception (<<pcs_prcptn>>/100)':  gs 'preSYS2','setval' & pcs_prcptn = nstat & gt 'preSYS2','modatt'
-	if MagikDostup = 0:
-		act 'Magic (<<pcs_magik >>/100)':  gs 'preSYS2','setval' & pcs_magik  = nstat & gt 'preSYS2','modatt'
-	end
-	act 'Grades (<<pcs_grades>>/100)': gs 'preSYS2','setval3' & pcs_grades = nstat & gt 'preSYS2','modatt'
-	act 'Exhibitionism (<<pcs_exhibition>>/100)': gs 'preSYS2','setval3' & pcs_exhibition = nstat & gt 'preSYS2','modatt'
-	act 'Heels (<<pcs_heels>>/100)':  gs 'preSYS2','setval3' & pcs_heels = nstat & gt 'preSYS2','modatt'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_stren', 'Strength'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_agil', 'Agility'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_vital', 'Endurance'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_intel', 'Intelligence'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_sprt', 'Spirit'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_react', 'Mental Agility'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_chrsm', 'Charisma'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_prcptn', 'Perception'
+	if MagikDostup = 0: gs 'preSYS2', 'modrel_setup2', 'pcs_magik', 'Magic'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_grades', 'Grades'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_exhibition', 'Exhibitionism'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_heels', 'Heels'
+	'</table></center>'
+	nl
+	'Note: Exhibitionism will reset to 50 maximum if set high once the game starts.'
+
 	act 'Return': gt'preSYS2','start'
 end
 
