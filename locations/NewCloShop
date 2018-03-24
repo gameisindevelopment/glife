@@ -93,7 +93,7 @@ if $ARGS[0] = 'panties':
 	:loopfashionista_panties
 		if fashionista_panties[i] = 0:*p '<a href="exec: i = <<i>> & gt ''NewCloShop'', ''panties2''"><img src="images/pc/panties/fashionista/<<i>>.jpg" 	height="150" /></a> '
 		i += 1
-	if i <= 70:jump 'loopfashionista_panties'
+	if i <= 71:jump 'loopfashionista_panties'
 end
 
 if $ARGS[0] = 'panties2':
