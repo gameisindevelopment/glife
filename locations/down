@@ -23,6 +23,8 @@ tanhouse1 = 0
 obMir = 0
 houseob = 0
 borMir = 0
+!!sets return location when visiting the bank or post office
+bankloc = 1
 gs 'stat'
 
 !call random events from [street_events], and display them before show location.

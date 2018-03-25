@@ -28,6 +28,8 @@ cla
 litltown = 1
 alkoblock = 0
 boynumBlock = 0
+!!sets the return location for bank and post office
+bankloc = 0
 
 !call random events from [street_events], and display them before show location.
 if streetevent_hour + 2 < hour:gt'street_event','pavCommercial', 'main'
@@ -109,8 +111,8 @@ end
 if hour >= 8 and hour <= 17:'The local <a href="exec: minut += 3 & gt ''barbershop'', ''start''">barbershop</a> is within walking distance, merely a few minutes away.'
 if hour >= 7 and hour <= 18:'Pavlovsk has a <a href="exec:minut += 15 & gt ''etoexhib'', ''pos20''">vocational school</a>, where young adults can learn a trade.'
 if hour >= 8 and hour <= 20:'There is a big chain <a href="exec:gt ''shop'', ''start''">supermarket</a> nearby.'
-if week < 6 and hour >= 9 and hour <= 18:'You can see the most important <a href="exec:bankloc = 0 & gt ''bank'', ''start''">Bank</a> in the city from here.'
-if (week < 6 and hour >= 9 and hour <= 16) or (week = 6 and hour >= 9 and hour <= 13):'The local <a href="exec:minut += 3 & bankloc = 0 & gt ''postoffice'', ''start''">post office</a> branch is open.'
+if week < 6 and hour >= 9 and hour <= 18:'You can see the most important <a href="exec:gt ''bank'', ''start''">Bank</a> in the city from here.'
+if (week < 6 and hour >= 9 and hour <= 16) or (week = 6 and hour >= 9 and hour <= 13):'The local <a href="exec:minut += 3 & gt ''postoffice'', ''start''">post office</a> branch is open.'
 
 'A <a href="exec:minut += 15 & gt ''Gshveyfab'', ''start''">garment factory</a> named Paris Commune is situated in the industrial area on the outskirts of town, close to the highway.'
 
