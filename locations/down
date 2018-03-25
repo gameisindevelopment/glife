@@ -196,7 +196,7 @@ else
 	$desc_txt4 = '<a href="exec:msg ''The post office is closed and will reopen at 9:00''">post office</a>'
 end
 if hour >= 8 and hour <= 18:
-	$desc_txt5 = '<a href="exec:gt ''office'', ''start''">National Library of Russia</a>'
+	$desc_txt5 = '<a href="exec:gt ''downlibrary''">National Library of Russia</a>'
 else
 	$desc_txt5 = '<a href="exec:msg ''The National Library of Russia is closed and will reopen at 8:00''">National Library of Russia</a>'
 end

@@ -339,7 +339,7 @@ if $ARGS[0] = 'car':
 		end
 	end
 
-	act 'Return': gt 'autotraidF', 'car'
+	act 'Return': gt 'autotraidF', 'start'
 end
 
 --- autotraidF ---------------------------------
