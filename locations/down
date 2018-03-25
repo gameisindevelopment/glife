@@ -45,6 +45,7 @@ else
 		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down_night.jpg"></center>'
 	end
 end
+*nl
 
 'Day or night the city center is alive and bustling. Whether You''re looking to shop, hit the gym or get some cheap food, you''ll find it hard not to have your needs satisfied.'
 *nl
