@@ -34,8 +34,8 @@ end
 
 '<b><center><font size="4">Pussy-Cats</font></center></b>'
 '<center><img <<$set_imgh>> src="images/locations/city/citycenter/mall/cats/young_shop.jpg"></center>'
-'A Small shop clothing for young people. Mostly pretty bold outfits for emancipated young people with attractive bodies.'
-'Manager works weekdays from 09:00 to 18:00.'
+'The latest pop song by whoever is popular at the moment is playing through the small store. The interior is decorated in bright colors and bold designs, and the floor is packed with stands and tables displaying clothes with a more daring style. Looking around at all the advertisements with attractive yet emancipated models, you''ll either leave here seduced into buying something or with lower self-esteem.'
+'As you were entering, you noticed a for hire sign with a note scribbled onto it that reads, "<b>Manager works weekdays from 09:00 to 18:00; Applicants should speak to store manager weekdays BEFORE 14:30!</b>"'
 
 if young_shop_work = 0:
 	'There is a sign in the window offering work: "Applicants to speak to store manager weekdays before 14:30."'

@@ -7,14 +7,15 @@ if (hour >= 18 and (week ! 5 or young_shop_salary = 0)) or hour > 18:
 end
 
 if young_shop_work = 0:
-	'You knock on the door and open it. Inside, you see the stores manager sitting at a table reading some papers.'
+'<center><img <<$set_imgh>> src="images\locations\city\citycenter\mall\cats\manager_andrew.jpg"></center>'
+'You knock on the door and someone calls you in from the other side. When you enter, you''re greeted by the sight of a sour-faced older man reading papers at his desk. When he sees you, his expression hardens. "Surprised to see an old man managing a clothing store for teenage girls?" he grunts. You didn''t even say anything yet, but he doesn''t seem to care. "Yeah, I get that a lot..." he adds under his breath before sighing and looking back to his papers. "What do you need?"'
 
-	act 'Talk about work':
-		cla
+	act 'Mention the for hire sign'
 		minut += 5
-		'The manager tells me that the store needs a female consultant to work in the evening. The salary is low but stable.'
-		'You''ll start working the next day after your employment is finalised.'
-		'<b>Details:</b> You will start work between 14:30 and 15:00 and work for 2hrs 15mins, Monday through Friday. The salary is 800 <b>₽</b> per day. Your salary will be paid out every Friday in accordance with hours worked. If you miss work three times in total, you will be fired.'
+		cla
+		'He barely glances your way as he shuffles some papers around. "Oh yeah, I forgot about that...well, the job is still open. I need an extra worker around the store and it needs to be a female," he says before suddenly dropping the papers and looking at you accusingly. "And before you start with that gender equality crap, I had a male worker here and all they cared about was getting in the pants of lady customers rather than their wallets. I''m saving myself from another headache...<i>hopefully</i>."'
+		'You''re at a loss of words, this wasn''t how you imagined the interview to go, but your silence goes unnoticed as the store manager continues to talk. "The salary is 800 ₽ a day, it''s low but it''s stable work, alright? Trust me, no one is fighting you for the chance to work here but don''t think that means you can slack off here. Miss work three times and you''re fired, no questions. The shifts are short, you need to get here between 14:30 and 15:00 and you''ll work for a little over two hours every day, Monday through Friday."'
+		'He seems to have found what he was looking for, which is the employment documents you''ll need to sign to start work here. He holds them out to you, "So, are you interested?"'
 
 		act 'Don''t take the job':gt 'young_shop'
 
