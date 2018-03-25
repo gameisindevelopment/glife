@@ -36,6 +36,18 @@ if $ARGS[0] = 'start':
 		gt 'sportshop', 'swim'
 	end
 
+	act 'View sports bras':
+		cla
+		minut += 5
+		gt 'sportshop', 'bras'
+	end
+
+	act 'View sports panties':
+		cla
+		minut += 5
+		gt 'sportshop', 'panties'
+	end
+
 	if skak = 0 and money >= 500:
 		act 'Buy skipping rope (500 <b>₽</b>)':
 			cla
@@ -143,6 +155,70 @@ if $ARGS[0] = 'swim':
 		end
 		i += 4
 	if i <= 135:jump 'loopswim'
+end
+
+if $ARGS[0] = 'panties':
+	$metka = 'panties'
+	$loc = 'sportShop'
+	cls
+	gs'stat'
+
+	act 'Return':
+		cla
+		minut += 5
+		gt 'sportShop', 'start'
+	end
+
+	i = 1
+
+	:loopsport_panties
+		if sport_panties[i] = 0:*p '<a href="exec: i = <<i>> & gt ''sportShop'', ''panties2''"><img src="images/pc/panties/sport/<<i>>.jpg" 	height="150" /></a> '
+		i += 1
+	if i <= 8:jump 'loopsport_panties'
+end
+
+if $ARGS[0] = 'panties2':
+	cla
+	
+	if sport_panties[i] ! 0:
+		msg 'You already own these panties.'
+		gt 'sportShop', 'panties'
+	end
+
+	gt 'panties', 'view_panty_item', 'shop', 'sport',i, 1000
+
+end
+
+if $ARGS[0] = 'bras':
+	$metka = 'bras'
+	$loc = 'sportShop'
+	cls
+	gs'stat'
+
+	act 'Return':
+		cla
+		minut += 5
+		gt 'sportShop', 'start'
+	end
+
+	i = 1
+
+	:loopsport_bras
+		if sport_bras[i] = 0:*p '<a href="exec: i = <<i>> & gt ''sportShop'', ''bras2''"><img src="images/pc/bras/sport/<<i>>.jpg" 	height="150" /></a> '
+		i += 1
+	if i <= 8:jump 'loopsport_bras'
+end
+
+if $ARGS[0] = 'bras2':
+	cla
+	
+	if sexshop_bras[i] ! 0:
+		msg 'You already own this bra.'
+		gt 'sportShop', 'bras'
+	end
+
+	gt 'bras', 'view_bra_item', 'shop', 'sport',i, 1000
+
 end
 
 if $ARGS[0] = 'swim1': gt 'clothing', 'view_clothing_item', 'shop', 'swimwear',i, 4000
