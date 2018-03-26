@@ -12,6 +12,8 @@ if $ARGS[0] = 'the_beginning':
 		cla
 		minut += 15
 		gs 'stat'
+		horand = rand(1, 100)
+		gbrand = rand(1, 100)
 		'Arthur goes to a table, puts the bottle of vodka on it and invites you to sit on a chair.'
 		'You drink together with the owner, he tells you about a few funny adventures he has had. He keeps refilling your glass and encouraging you to keep drinking.'
         'Not wanting to be rude and you are having fun, you keep drinking. Once you start to feel the effects of the booze, he pulls you close to him and gives you a big long hug. Then he begins to fondle your breasts, with one hand, while the other squeezes your ass.'
@@ -25,7 +27,6 @@ if $ARGS[0] = 'the_beginning':
 			spafinloc = 4
 			gs 'cum_manage'
 			gs 'boyStat', 'A73'
-			horand = rand(1, 100)
 			'<center><img <<$set_imgh>> src="images/shared/sex/vag/doggy/rinsex.jpg"></center>'
 			'You are relaxed and start hugging your host in response. Once you return his hug, he starts undresses you'
 			'Once he has taken all your clothes off, he lays you down on your stomach. Then spreads your legs a little and your buttocks, until he has a clear view and easy access to your pussy.'
@@ -130,7 +131,6 @@ if $ARGS[0] = 'the_beginning':
 			gs 'cum_manage'
 			'<center><img <<$set_imgh>> src="images/shared/sex/blowjob/deep4.jpg"></center>'
 			'You kneel down before Artur. He takes out his <<dick>>cm <<$dick_girth>> cock, you take it in your mouth and start sucking him, he lets you guide the action and do all the work, only occasionally thrust himself down your throat making you gag.'
-			horand = rand(1, 100)
 
 			if horand > pcs_horny:
 				$orgasm_or = 'no'
@@ -142,8 +142,6 @@ if $ARGS[0] = 'the_beginning':
 				gs 'arousal', 'bj', 10, 'sub', 'rough', 'deepthroat'
 				gs 'stat'
 			end
-
-			gbrand = rand(1, 100)
 
 			if gbrand < 95 and palevorin = 0:
 				money += 2000
