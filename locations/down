@@ -201,14 +201,15 @@ else
 	$desc_txt5 = '<a href="exec:msg ''The National Library of Russia is closed and will reopen at 8:00''">National Library of Russia</a>'
 end
 'Next door is the <<$desc_txt1>> followed by a <<$desc_txt2>> and <<$desc_txt3>> and the 5-star <a href="exec:gt ''hotel''">Hotel Indigo</a> for your housing needs. Lastly, the local <<$desc_txt4>> and <<$desc_txt5>> can be found at the end of the road.'
+*nl
 
 if Enable_tablemap = 0:
-	if npc_rel['A218'] > 0 and tanwork = 0 and hour >= 16 and hour <= 21 and tanday ! daystart:'<a href="exec:gt ''tanapartment''">Apartment where Tanya lives</a>'
-	if tanwork = 1:'<a href="exec:gt ''tanhouse''">Tanyas</a> apartment'
-	if izoldaQW >= 1:'<a href="exec:gt ''qwIzoldaApp''">Isoldes</a> apartment'
-	if mainQW >= 1:'<a href="exec:gt ''lab'', ''start''">Tatiana''s</a> secret hideout'
-	if yaq = 1:'<a href="exec:gt ''yarik'', ''start''">Yaroslavs</a> apartment'
-	if peter > 0:'<a href="exec:gt ''peterroom'', ''start_door''">Peters</a> apartment'
+	if npc_rel['A218'] > 0 and tanwork = 0 and hour >= 16 and hour <= 21 and tanday ! daystart:'<a href="exec:gt ''tanapartment''">Apartment where Tanya lives</a>.'
+	if tanwork = 1:'<a href="exec:gt ''tanhouse''">Tanyas</a> apartment where you work as a live in maid.'
+	if izoldaQW >= 1:'Your friend <a href="exec:gt ''qwIzoldaApp''">Isolde''s</a> apartment.'
+	if mainQW >= 1:'<a href="exec:gt ''lab'', ''start''">Tatiana''s</a> secret hideout.'
+	if yaq = 1:'<a href="exec:gt ''yarik'', ''start''">Yaroslav</a> from the office''s apartment.'
+	if peter > 0:'<a href="exec:gt ''peterroom'', ''start_door''">Peter</a> the sexshop owner''s apartment.'
 else
 	st_count=0 & $show_table=''
 	if npc_rel['A218'] > 0 and tanwork = 0 and hour >= 16 and hour <= 21 and tanday ! daystart:gs'show_table','<a href="exec:gt ''tanapartment''">Apartment</a> where Tanya lives','3'
