@@ -162,12 +162,12 @@ else
 end
 'At night the only place open here is <<$desc_txt3>>.'
 *nl
-if (week < 6 and hour >= 9 and hour <= 16) or (week = 6 and hour >= 9 and hour <= 13):
+if (week < 6 and hour >= 8 and hour <= 16) or (week = 6 and hour >= 8 and hour <= 13):
 	$desc_txt1 = '<a href="exec:gt ''office'', ''start''">Titran-Express</a>'
 elseif (week = 5 or week = 6) and hour > 16:
-	$desc_txt1 = '<a href="exec:msg ''Titran-Express is closed and will reopen at 9:00 on Monday''">Titran-Express</a>'
+	$desc_txt1 = '<a href="exec:msg ''Titran-Express is closed and will reopen at 8:00 on Monday''">Titran-Express</a>'
 else
-	$desc_txt1 = '<a href="exec:msg ''Titran-Express is closed and will reopen at 9:00''">Titran-Express</a>'
+	$desc_txt1 = '<a href="exec:msg ''Titran-Express is closed and will reopen at 8:00''">Titran-Express</a>'
 end
 'Across the street is considered the business area. The large skyscraper there serves as the base of operations for <<$desc_txt1>>, an engineering company.'
 *nl
