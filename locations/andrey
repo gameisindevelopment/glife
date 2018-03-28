@@ -10,7 +10,7 @@ if young_shop_work = 0:
 '<center><img <<$set_imgh>> src="images\locations\city\citycenter\mall\cats\manager_andrew.jpg"></center>'
 'You knock on the door and someone calls you in from the other side. When you enter, you''re greeted by the sight of a sour-faced older man reading papers at his desk. When he sees you, his expression hardens. "Surprised to see an old man managing a clothing store for teenage girls?" he grunts. You didn''t even say anything yet, but he doesn''t seem to care. "Yeah, I get that a lot..." he adds under his breath before sighing and looking back to his papers. "What do you need?"'
 
-	act 'Mention the for hire sign'
+	act 'Mention the for hire sign':
 		minut += 5
 		cla
 		'He barely glances your way as he shuffles some papers around. "Oh yeah, I forgot about that...well, the job is still open. I need an extra worker around the store and it needs to be a female," he says before suddenly dropping the papers and looking at you accusingly. "And before you start with that gender equality crap, I had a male worker here and all they cared about was getting in the pants of lady customers rather than their wallets. I''m saving myself from another headache...<i>hopefully</i>."'
