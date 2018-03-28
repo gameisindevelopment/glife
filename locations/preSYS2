@@ -413,55 +413,93 @@ if $ARGS[0] = 'modskl':
 end
 
 if $ARGS[0] = 'modskl_men':
-	if MagikDostup = 0: 
-		act 'Spell Casting (<<pcs_splcstng>>/100)': gs 'preSYS2','setval' & pcs_splcstng = nstat & gt 'preSYS2','modskl_men'
-	end
-	act 'People Skills (<<pcs_humint>>/100)': gs 'preSYS2','setval' & pcs_humint = nstat & gt 'preSYS2','modskl_men'
-	act 'Persuasion (<<pcs_persuas>>/100)': gs 'preSYS2','setval' & pcs_persuas = nstat & gt 'preSYS2','modskl_men'
-	act 'Observation (<<pcs_observ>>/100)': gs 'preSYS2','setval' & pcs_observ = nstat & gt 'preSYS2','modskl_men'
+	$metka = 'modskl_men'
+	'<center><b>Mental Skills</b></center>'
+	*nl
+	*nl
+	'<center><table border=0 cellspacing=0 cellpadding=25  bgcolor=#808080><TH></TH><TH>Set to zero</TH><TH>Minus 10</TH><TH>Minus 5</TH><TH>Plus 5</TH><TH>Plus 10</TH><TH>Set to 100</TH>'
+	if MagikDostup = 0: gs 'preSYS2', 'modrel_setup2', 'pcs_splcstng', 'Spell Casting'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_humint', 'People skills'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_persuas', 'Persuasion'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_observ', 'Observation'
+	'</table></center>'
+	nl
+
 	act 'Return': gt 'preSYS2','modskl'
 end
 
 if $ARGS[0] = 'modskl_spo':
-	act 'Jabs (<<pcs_jab>>/100)': gs 'preSYS2','setval' & pcs_jab = nstat & gt 'preSYS2','modskl_spo'
-	act 'Power Strikes (<<pcs_punch>>/100)': gs 'preSYS2','setval' & pcs_punch = nstat & gt 'preSYS2','modskl_spo'
-	act 'Kicks (<<pcs_kick>>/100)': gs 'preSYS2','setval' & pcs_kick = nstat & gt 'preSYS2','modskl_spo'
-	act 'Defence (<<pcs_def>>/100)': gs 'preSYS2','setval' & pcs_def = nstat & gt 'preSYS2','modskl_spo'
-	act 'Running (<<pcs_run>>/100)': gs 'preSYS2','setval' & pcs_run = nstat  & gt 'preSYS2','modskl_spo'
-	act 'Volleyball (<<pcs_vball>>/100)': gs 'preSYS2','setval' & pcs_vball = nstat & gt 'preSYS2','modskl_spo'
-	act 'Football (<<pcs_ftball>>/100)': gs 'preSYS2','setval' & pcs_ftball = nstat & gt 'preSYS2','modskl_spo'
-	act 'Wrestling (<<pcs_wrstlng>>/100)': gs 'preSYS2','setval' & pcs_wrstlng = nstat & gt 'preSYS2','modskl_spo'
-	act 'Marskmanship (<<pcs_shoot>>/100)': gs 'preSYS2','setval' & pcs_shoot = nstat & gt 'preSYS2','modskl_spo'
-	act 'Chess (<<pcs_chess>>/100)': gs 'preSYS2','setval' & pcs_chess = nstat  & gt 'preSYS2','modskl_spo'
-	act 'Ice Skating (<<pcs_icesktng>>/100)': gs 'preSYS2','setval' & pcs_icesktng = nstat & gt 'preSYS2','modskl_spo'
-	act 'Gaming (<<pcs_ttgmng>>/100)': gs 'preSYS2','setval' & pcs_ttgmng = nstat & gt 'preSYS2','modskl_spo'
+	$metka = 'modskl_spo'
+	'<center><b>Sport Skills</b></center>'
+	*nl
+	*nl
+	'<center><table border=0 cellspacing=0 cellpadding=25  bgcolor=#808080><TH></TH><TH>Set to zero</TH><TH>Minus 10</TH><TH>Minus 5</TH><TH>Plus 5</TH><TH>Plus 10</TH><TH>Set to 100</TH>'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_jab', 'Jabs'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_punch', 'Power Strikes'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_kick', 'Kicks'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_def', 'Defence'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_run', 'Running'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_vball', 'Volleyball'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_ftball', 'Football'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_wrstlng', 'Wrestling'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_shoot', 'Marskmanship'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_chess', 'Chess'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_icesktng', 'Ice Skating'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_ttgmng', 'Gaming'
+	'</table></center>'
+	nl
+
 	act 'Return': gt 'preSYS2','modskl'
 end
 
 if $ARGS[0] = 'modskl_bea':
-	act 'Makeup Skills (<<pcs_makupskl>>/100)': gs 'preSYS2','setval' & pcs_makupskl = nstat & gt 'preSYS2','modskl_bea'
-	act 'Modern Dancing (<<pcs_danc>>/100)': gs 'preSYS2','setval' & pcs_danc = nstat & gt 'preSYS2','modskl_bea'
-	act 'Erotic Dancing (<<pcs_dancero>>/100)': gs 'preSYS2','setval' & pcs_dancero = nstat & gt 'preSYS2','modskl_bea'
-	act 'Pole Dancing (<<pcs_dancpol>>/100)': gs 'preSYS2','setval' & pcs_dancpol = nstat & gt 'preSYS2','modskl_bea'
-	act 'Modelling (<<pcs_mdlng>>/100)': gs 'preSYS2','setval' & pcs_mdlng = nstat & gt 'preSYS2','modskl_bea'
+	$metka = 'modskl_bea'
+	'<center><b>Beauty skills</b></center>'
+	*nl
+	*nl
+	'<center><table border=0 cellspacing=0 cellpadding=25  bgcolor=#808080><TH></TH><TH>Set to zero</TH><TH>Minus 10</TH><TH>Minus 5</TH><TH>Plus 5</TH><TH>Plus 10</TH><TH>Set to 100</TH>'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_makupskl', 'Makeup Skills'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_danc', 'Modern Dancing'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_dancero', 'Erotic Dancing'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_dancpol', 'Pole Dancing'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_mdlng', 'Modelling'
+	'</table></center>'
+	nl
+
 	act 'Return': gt 'preSYS2','modskl'
 end
 
 if $ARGS[0] = 'modskl_art':
-	act 'Singing (<<pcs_vokal>>/100)': gs 'preSYS2','setval' & pcs_vokal = nstat & gt 'preSYS2','modskl_art'
-	act 'Instrumental Music (<<pcs_instrmusic>>/100)': gs 'preSYS2','setval' & pcs_instrmusic = nstat & gt 'preSYS2','modskl_art'
-	act 'Photography (<<pcs_photoskl>>/100)': gs 'preSYS2','setval' & pcs_photoskl = nstat & gt 'preSYS2','modskl_art'
-	act 'Artistic Skills (<<pcs_artskl>>/100)': gs 'preSYS2','setval' & pcs_artskl = nstat & gt 'preSYS2','modskl_art'
+	$metka = 'modskl_art'
+	'<center><b>Artistic Skills</b></center>'
+	*nl
+	*nl
+	'<center><table border=0 cellspacing=0 cellpadding=25  bgcolor=#808080><TH></TH><TH>Set to zero</TH><TH>Minus 10</TH><TH>Minus 5</TH><TH>Plus 5</TH><TH>Plus 10</TH><TH>Set to 100</TH>'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_vokal', 'Singing'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_instrmusic', 'Instrumental Music'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_photoskl', 'Photography'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_artskl', 'Artistic Skills'
+	'</table></center>'
+	nl
+
 	act 'Return': gt 'preSYS2','modskl'
 end
 
 if $ARGS[0] = 'modskl_job':
-	act 'Computer Skills (<<pcs_compskl>>/100)': gs 'preSYS2','setval' & pcs_compskl = nstat & gt 'preSYS2','modskl_job'
-	act 'Hacking (<<pcs_comphckng>>/100)': gs 'preSYS2','setval' & pcs_comphckng = nstat & gt 'preSYS2','modskl_job'
-	act 'Handy-work (<<pcs_hndiwrk>>/100)': gs 'preSYS2','setval' & pcs_hndiwrk = nstat & gt 'preSYS2','modskl_job'
-	act 'Tailoring (<<pcs_sewng>>/100)': gs 'preSYS2','setval' & pcs_sewng = nstat & gt 'preSYS2','modskl_job'
-	act 'Serving (<<pcs_servng>>/100)': gs 'preSYS2','setval' & pcs_servng = nstat & gt 'preSYS2','modskl_job'
-	act 'Medicine (<<pcs_medcn>>/100)': gs 'preSYS2','setval' & pcs_medcn = nstat & gt 'preSYS2','modskl_job'
+	$metka = 'modskl_job'
+	'<center><b>Job Skills</b></center>'
+	*nl
+	*nl
+	'<center><table border=0 cellspacing=0 cellpadding=25  bgcolor=#808080><TH></TH><TH>Set to zero</TH><TH>Minus 10</TH><TH>Minus 5</TH><TH>Plus 5</TH><TH>Plus 10</TH><TH>Set to 100</TH>'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_compskl', 'Computer Skills'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_comphckng', 'Hacking'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_hndiwrk', 'Handy-work'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_sewng', 'Tailoring'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_servng', 'Serving'
+	gs 'preSYS2', 'modrel_setup2', 'pcs_medcn', 'Medicine'
+	'</table></center>'
+	nl
+
 	act 'Return': gt 'preSYS2','modskl'
 end
 
