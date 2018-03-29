@@ -212,7 +212,7 @@ end
 if $ARGS[0] = 'bras2':
 	cla
 	
-	if sexshop_bras[i] ! 0:
+	if sport_bras[i] ! 0:
 		msg 'You already own this bra.'
 		gt 'sportShop', 'bras'
 	end
