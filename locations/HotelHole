@@ -431,7 +431,7 @@ if $ARGS[0] = 'PregBDSM' :
 		' '
 		'<<$boydesc>> approaches you and starts caressing your swollen belly and breasts.'
 		' '
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/sex/pregBDSM1.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/pregBDSM1.jpg"></center>'
 		''
 		'Suddenly he takes your arms and attaches your leather bracelets to a chain hanging above your head.'
 		'"<<$pitfs>>Wait a minute, no one said anything about being tied up.<<$pitfe>>" You think as panic begins to creep into your mind.'
@@ -466,7 +466,7 @@ if $ARGS[0] = 'PregBDSM' :
 				sub = sub + 5 - pcs_dom
 				pcs_dom = 0
 			end
-			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/sex/pregBDSM2.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/pregBDSM2.jpg"></center>'
 			'<<$boydesc>> releases your cuffs from the chain and you immediately collapse onto your knees, the forced suspension being the only thing keeping you standing. He takes his <<dick>> cm dick and pushes it against your lips.'
 			'"Now start working, you fat cow!" He demands.'
 			'You open your mouth, slide your lips over the cock and start sucking halfheartedly, exhausted from your previous predicament, but thankful to be doing something you''re more familiar with.'
@@ -491,14 +491,14 @@ if $ARGS[0] = 'PregBDSM' :
 			'"This is the piggy''s new toilet! Show me how house-broken you are or I will beat you senseless!" The customer explains, raising the whip for you to see it.'
 			'His threat is enough to get you moving. "<<$pitfs>>Ok, this should be easy enough, With this kid pushing against my bladder I always need to piss anyway. Maybe the sicko will finally be satisfied after this.<<$pitfe>>"'
 			' '
-			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/sex/pregBDSM3.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/pregBDSM3.jpg"></center>'
 			' '
 			'You carefully squat over the bowl, cradling your belly with one hand. You relax your bladder and feel a torrent of piss begin streaming out of you. For the first time since this all started you feel a bit of relief. "Geez, I guess I really had to go." You think as the stream comes to an end, leaving the bowl nearly filled to the brim. Your cheeks flush in embarrassment of this strange man watching you pee.'
 			'"That''s a good doggy" <<$boydesc>> laughs.'
 			act 'Continue':
 				*clr & cla
 				gs 'stat'
-				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/sex/pregBDSM5.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/pregBDSM5.jpg"></center>'
 				' '
 				'" Oh but what is that? You spilled some." <<$boydesc>> suddenly grabs a fistful of your hair and pushes your head towards the bowl.'
 				'"<<$pitfs>>No no no, not that! Anything but that!<<$pitfe>>"'
@@ -517,7 +517,7 @@ if $ARGS[0] = 'PregBDSM' :
 					gs 'stat'
 					'"<<$pitfs>>Ok baby, I am doing this for you.<<$pitfe>>" You think as you place a hand on your hefty belly and stop resisting.'
 					' '
-					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/sex/pregBDSM6.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/pregBDSM6.jpg"></center>'
 					' '
 					'<<$boydesc>> pushes your head into the bowl and you start lapping at the disgusting liquid. The sour taste seems to permeate every orifice of your head, stinging with its hot, tart bouquet. Your stomach seizes as you feel the gag reflex try to kick in, but you force it away and continue licking and slurping at your waste.'
 					'"So, my little piss slut, how does it taste?" The deviant asshole inquires, mock interest evident in his tone.'
@@ -525,7 +525,7 @@ if $ARGS[0] = 'PregBDSM' :
 					'"It tastes great sir, thank you for this sir." You lie submissively, telling him what he wants to hear.'
 					'"Great! I knew a disgusting pig slut like you would enjoy it. Now for you final reward."'
 					' '
-					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/sex/pregBDSM4.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/pregBDSM4.jpg"></center>'
 					' '
 					'The client pushes you on the ground and slides his dick back into your mouth. He starts furiously fucking your face, showing no concern for your comfort.'
 					'Your throat aches from the abuse, and you are ashamed but thankful to have the taste of cock in your mouth once again. Anything to help dull the awful urine taste is welcome at this point.'
