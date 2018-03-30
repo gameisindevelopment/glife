@@ -1,4 +1,5 @@
 # sportShop
+
 if $ARGS[0] = 'start':
     $location_type = 'public_indoors'
 	cla
@@ -17,6 +18,8 @@ if $ARGS[0] = 'start':
 	end
 	'<center><b><font color="maroon">Danilovich sporting goods</font></b></center>'
 	'<center><img src="images/locations/city/citycenter/mall/sportshop/sportshop.jpg"></center>'
+	*nl
+	'As soon as you enter, an energetic song with a thumping baseline fills your eardrums, making you feeling pumped and awake. The store is sleek and professional, the walls and floors advertising all different kinds of sporting equipment and attire. The room is filled with beautifully fit people shopping, their bodies varying from big and muscular to lean and trim. If they don''t inspire you to want to work out, the posters advertising past and present famous athletes is motivating as hell.'
 
 	act 'Leave':
 		cla
