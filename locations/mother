@@ -260,7 +260,7 @@ if $ARGS[0] = '':
 			'Your mother looks at you through teary eyes, stricken with sadness. "You are such a fool, <<$pcs_nickname>>! Getting an abortion... what if you can''t have any more children? Do you think you''ll be young and healthy forever? You''re going to regret this, I just know it..."'
 		end
 
-		if momslut = 1 and watchedmomborislav = 1:
+		if momslut = 1:
 			act 'Tell her you saw her fucking her boss':
 				cls
 				minut += 5
