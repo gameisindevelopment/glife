@@ -35,8 +35,10 @@ if mother_go = 1 and hour = 16:
 
 			if momslut >= 1:
 				'You carefully climb on top of the boxes, and stand on your toes to reach the small window. It gives you a view into the back room of the cafe. Through the window you see your mother on her knees, giving the cafe owner a blowjob. She''s very enthusiastic about it, and alternates between sucking his dick and licking his balls. Then she begins to deepthroat him, sliding his dick further and further down her mouth until his balls rest on her chin.'
+				watchedmomborislav = 1
 			elseif momslut=0:
 				momslut = 1
+				watchedmomborislav = 1
 				'You carefully climb on top of the boxes, and stand on your toes to reach the small window. It gives you a view into the back room of the cafe. Through the window you see a woman on her knees, giving the cafe owner a blowjob. She''s very enthusiastic about it, and alternates between sucking his dick and licking his balls. Then she begins to deepthroat him, sliding his dick further and further down her mouth until his balls rest on her chin. When you look closer, you realize... that''s your mother!'
 			end
 
