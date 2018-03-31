@@ -61,7 +61,7 @@ if $ARGS[0] = 'dressing room':
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/gym/razd.jpg"></center>'
 	'Classifieds'
 	'Recruiting girls for local track team, the winners will receive cash prizes.'
-	'Attention, visitors to the sports section must wear suitable clothing.'
+	'Attention, visitors to the sports section must wear sports outfits and shoes when using the facilities.'
 	! WD: Uninitialised ~ 'razdrand'
 	! if razdrand = 0 and tanznak = 0 and tanday ! daystart:
 	if tanznak = 0 and tanday ! daystart:
@@ -106,18 +106,10 @@ if $ARGS[0] = 'dressing room':
 		gt 'mirror', 'start'
 	end
 
-	act 'Change clothes':
+	act 'Change outfit':
 		cla
-		gt 'clothing_QV', 'gym'
+		gt 'wardrobe', 'start'
 	end
-
-	act 'Change shoes':
-		cla
-		gt 'shoes', 'gym'
-	end
-
-	if $clothingworntype ! $regularwornclothingtype or $regularwornclothingtype ! '': gs 'clothing_QV', 'gym2'
-	if $shoeworntype ! $regularwornshoetype or $regularwornshoetype ! '': gs 'clothing_QV', 'gym2'
 
 	if abonement > 0 and $clothingworntype = 'exercise' and $shoeworntype = 'trainers' and pcs_stam >= 40:
 		act 'Go to the gym':
