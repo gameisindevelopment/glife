@@ -635,6 +635,9 @@ if $ARGS[0] = 'get_sport_clothes_exercise_bonus':
 	if $clothingworntype = 'exercise':
 		sport_clothes_exercise_bonus = sport_clothes_exercise_bonus + 1
 	end
+	if $shoeworntype = 'trainers':
+		sport_clothes_exercise_bonus = sport_clothes_exercise_bonus + 1
+	end
 end
 --- exercise ---------------------------------
 
