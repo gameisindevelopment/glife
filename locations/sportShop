@@ -165,6 +165,8 @@ if $ARGS[0] = 'swim':
 	if i <= 135:jump 'loopswim'
 end
 
+if $ARGS[0] = 'swim1': gt 'clothing', 'view_clothing_item', 'shop', 'swimwear',i, 4000
+
 if $ARGS[0] = 'panties':
 	$metka = 'panties'
 	$loc = 'sportShop'
@@ -249,9 +251,7 @@ if $ARGS[0] = 'trainers':
 end
 
 
-if $ARGS[0] = 'training_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'trainers',i, 2500
-
-if $ARGS[0] = 'swim1': gt 'clothing', 'view_clothing_item', 'shop', 'swimwear',i, 4000
+if $ARGS[0] = 'training_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'trainers',i, 4000
 
 --- sportShop ---------------------------------
 
