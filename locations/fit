@@ -129,6 +129,11 @@ if $ARGS[0] = 'dressing room':
 				cla
 				gt 'danceclass'
 			end
+
+			act 'Go to a crossfit workout': 
+				cla
+				gt 'crossfit_sever_box', 'box'
+			end
 		end
 
 		if begsec = 0:
