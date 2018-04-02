@@ -18,7 +18,7 @@ if $ARGS[0] = 'start':
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/gym/fit.jpg"></center>'
 	'This modern and well staffed fitness center provides all the latest equipment and trainers to help you make the most of them.'
 	*nl
-	'Buy subscription for 30 classes (3,000 <b>₽</b>)'
+	'Buy subscription for 30 classes (3,000 <b>₽</b>), pool use is free to members.'
 	'You must wear sportswear for all classes.'
 
 	if abonement > 0:'Subscription is valid for <<abonement>> more classes.'
@@ -28,13 +28,13 @@ if $ARGS[0] = 'start':
 		minut += 5
 		gt 'down'
 	end
-
+	
 	if money >= 3000:
 		act 'Buy a subscription (3,000 <b>₽</b>)':
 			cla
 			money -= 3000
 			abonement += 30
-			'You bought a subscription for 30 lessons'
+			'You bought a subscription for 30 lessons, including free use of the pool.'
 
 			act 'Move away from cashier':gt 'fit', 'start'
 		end
@@ -45,6 +45,8 @@ if $ARGS[0] = 'start':
 			cla
 			gt 'fit', 'dressing room'
 		end
+	else
+		act 'Use the pool (100 <b>₽</b>)': gt 'fit', 'dressing room'
 	end
 end
 
@@ -111,32 +113,40 @@ if $ARGS[0] = 'dressing room':
 		gt 'wardrobe', 'start'
 	end
 
-	if abonement > 0 and $clothingworntype = 'exercise' and $shoeworntype = 'trainers' and pcs_stam >= 40:
-		act 'Go to the gym':
-			cla
-			gt 'fit', 'gym'
-		end
-
-		act 'Go to the dance studio': 
-			cla
-			gt 'danceclass'
-		end
+	if $clothingworntype = 'swimwear':
+		act 'Use the pool': gt 'bass', 'start'
+	else
+		act 'Change into swimwear': gt 'changingroom', 'view_swim_list'
 	end
 
-	if begsec = 0:
-		act 'Join track team':
-			cla
-			*clr
-			minut += 5
-			begsec = 1
-			'You signed up for the track team.'
+	if abonement > 0:
+		if $clothingworntype = 'exercise' and $shoeworntype = 'trainers' and pcs_stam >= 40:
+			act 'Go to the gym':
+				cla
+				gt 'fit', 'gym'
+			end
 
-			act 'Leave':gt 'fit', 'dressing room'
+			act 'Go to the dance studio': 
+				cla
+				gt 'danceclass'
+			end
 		end
-	elseif $clothingworntype = 'exercise' and $shoeworntype = 'trainers' and pcs_stam >= 40:
-		act 'Go to team practice':gt 'beg', 'start'
-		if week = 6 and pcs_run >= 20 and run_comp_day ! daystart:
-			act '<b>Enter competition race</b>':run_comp_day = daystart & gt 'beg1', 'start'
+
+		if begsec = 0:
+			act 'Join track team':
+				cla
+				*clr
+				minut += 5
+				begsec = 1
+				'You signed up for the track team.'
+
+				act 'Leave':gt 'fit', 'dressing room'
+			end
+		elseif $clothingworntype = 'exercise' and $shoeworntype = 'trainers' and pcs_stam >= 40:
+			act 'Go to team practice':gt 'beg', 'start'
+			if week = 6 and pcs_run >= 20 and run_comp_day ! daystart:
+				act '<b>Enter competition race</b>':run_comp_day = daystart & gt 'beg1', 'start'
+			end
 		end
 	end
 

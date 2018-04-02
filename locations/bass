@@ -1,4 +1,5 @@
 # bass
+
 if $ARGS[0] = 'start':
 	CLOSE ALL
 	$metka = $ARGS[0]
@@ -18,36 +19,17 @@ if $ARGS[0] = 'start':
 	end
 	'<center><b><font color="maroon">Pool</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/pool/bass.jpg"></center>'
-	'The fee to enter the pool costs 100 <b>₽</b>, you must have a swimsuit.'
+	'You must wear a swimsuit in the pool.'
 
-	act 'Use changing room':gt 'changingroom', 'view_swim_list'
+	if db >= 1 and Goraday ! daystart:act 'Search ZHoru':Goraday = daystart & gt 'klofdomhouse', 'ev42'
 
-	if $clothingworntype = 'swimwear':
-		if db >= 1 and Goraday ! daystart:act 'Search ZHoru':Goraday = daystart & gt 'klofdomhouse', 'ev42'
-
-		if money >= 100:
-			act 'Pay the entrance fee (100 <b>₽</b>)':
-				cla
-				minut += 5
-				money -= 100
-				gt 'bass', 'a'
-			end
-		end
+	act 'Swim':
+		cla
+		minut += 5
+		gt 'bass', 'a'
 	end
-	act'Leave':
-		if $clothingworntype = 'swimwear':
-			cla
-			'You need to get dressed in regular clothing first.'
-			act'Return':gt 'bass', 'start'
-		elseif $clothingworntype = 'nude':
-			cla
-			'You need to get dressed before leaving.'
-			act'Return':gt 'bass', 'start'
-		else
-			minut += 5
-			gt 'down'
-		end
-	end
+
+	act'Return to dressing room': gt 'fit', 'dressing room'
 end
 
 if $ARGS[0] = 'a':
