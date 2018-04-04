@@ -134,7 +134,7 @@ if $ARGS[0] = 'remont':
 	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/komp.jpg"></center>'
 	'You''re currently browsing the website of a local interior designer. They claim they can remodel houses so fast, it''s done by the time you leave the computer! Surely a joke...'
 
-	if home_owned[1] = 1:
+	if home_owned[1] > 0:
 		if rembedr = 0:
 			act 'Have them redesign your bedroom (50,000 <b>₽</b>)':
 				cla
