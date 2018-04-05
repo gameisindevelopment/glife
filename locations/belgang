@@ -160,7 +160,7 @@ elseif $ARGS[0] = 'payday':
 			belfirstweek = 0
 			'Vadim Bely steps out, along with several of his henchmen. He gives you a smile that you know is 100% fake and behaves amicably while he says: "Long time no see, <<$pcs_nickname>>! Remember next sunday you need to start paying us," he says.'
 		else
-			'Vadim Bely steps out, along with several of his henchmen. He gives you a smile that you know is 100% fake and behaves amicably while he says: "Long time no see, <<$pcs_nickname>>! You are doing good, <<$pcs_nickname>>. If you keep paying early, this will work out for the both of us," he says.' 
+			'Vadim Bely steps out, along with several of his henchmen. He gives you a smile that you know is 100% fake and behaves amicably while he says: "Long time no see, <<$pcs_nickname>>! You are doing good. If you keep paying early, this will work out for the both of us," he says.' 
 		end
 
 		act 'Continue':

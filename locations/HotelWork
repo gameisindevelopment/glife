@@ -118,7 +118,7 @@ if $ARGS[0] = 'firsthotelprosevent':
 	threesometojoin = 2
 	'"Ok girl let me introduce myself first. My name is Varsonofy Panteleimonovich Krestovozdvizhensky."'
 	'"But you can call me Pavlin. And what may I call you?"'
-	' "My name is <<$pcs_firstname>>," you answer.'
+	'"My name is <<$pcs_firstname>>," you answer.'
 	'"Welcome to my humble abode Miss <<$pcs_firstname>>. Let me introduce you to my good friend, Mr. Black."'
 	'You look in the direction he gestures and see another person. A big black dude sitting on a couch, already stroking his cock through his pants. His thick muscles evident through his fitted clothing.'
 	'"Why hello there honey, are you here to entertain us tonight?" The black man asks in a deep, husky voice.'
@@ -130,8 +130,8 @@ if $ARGS[0] = 'firsthotelprosevent':
 	' '
 	'"Shit! That thing is massive!" You think, a twinge of fear and excitement rising in your chest.'
 	'After sucking Pavlin to full erection, you focus on the next task at hand. You continue stroking the lengthy white dick with one hand as you reach for the big black cock with the other. You can''t help but be amazed by the weight of it as you guide it into your awaiting mouth. You try to fit as much of it in as you can, only to realize it''s a futile effort as your lips stretch around the thick member.'
-	
-	' ''"Fuck, I didn''t even know i had jaw muscles," you say, letting the fat cock fall from your lips as the soreness begins to overwhelm your jaw.'
+	' '
+	'"Fuck, I didn''t even know i had jaw muscles," you say, letting the fat cock fall from your lips as the soreness begins to overwhelm your jaw.'
 	'The two men laugh it off and tell you to keep sucking.'
 	' '
 	'For a few more minutes you switch from one cock to the other, occasionally trying to take both of them in your mouth at the same time.'
@@ -287,7 +287,7 @@ if $ARGS[0] = 'maid':
 
 						act 'Enter the room':gt 'HotelWork','firsthotelprosevent'	
 					else
-						' " Y.. Y.. yes I have." You say with a quivering voice."I need that money back, please! I''ll do anything you ask!" You beg and drop your eyes to the floor in submission.'
+						'"Y.. Y.. yes I have." You say with a quivering voice. "I need that money back, please! I''ll do anything you ask!" You beg and drop your eyes to the floor in submission.'
 						''
 						'"Just bring that tight ass in here and have some fun with us. I promise you''ll get what you''re after." The devious look on his face gives you second thoughts, but you enter the room anyways, feeling completely out of options.'
 						prosmoneyhot = 2

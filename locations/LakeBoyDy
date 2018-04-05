@@ -141,7 +141,7 @@ if $ARGS[0] = 'slap':
 					'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/fedor/fedorev/strela/vadimbely.jpg"></center>'
 					'You''ve given up trying to be tough a while ago, and by now you are crying your eyes out. Thick tears roll down your cheeks as you beg him: "Please sir, I''m begging you! I can give you money... please just let me go! Please!"'
 					'Still that menacing voice: "Really, <<$pcs_nickname>>? I like money. Let''s see what you have to offer". He takes your wallet and counts your money, and then nods at the other guy. He pushes your wrist further behind your back, hurting you even more while the fat man pretends to be insulted: "Are you fucking kidding me? Are you seriously offering me this petty change?"'
-					'You don''t know what to say, and just sit there sobbing quietly. He continues: "This won''t do at all. Your debt to me will be <<belgangPay>> <b>₽</b>. If you prefer using your body to pay off your debt... you''d have to fuck us <<belgangPay/1000>> times and we''re even."'
+					'You don''t know what to say, and just sit there sobbing quietly. He continues: "This won''t do at all. Your debt to me will be <<belgangPay>> <b>₽</b>.'
 					'He slaps you in the face, while his friend still has your arm twisted behind your back. "Did you hear me, girl? I said <<belgangPay>> fucking <b>₽</b>."'
 					act'Agree to pay him':
 						cls
