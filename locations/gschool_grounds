@@ -291,7 +291,7 @@ if $ARGS[0] = 'sports':
 
 	act 'Leave the sports field':gt 'gschool_grounds', 'main'
 
-	if schoolrunday ! daystart and $clothingworntype = 'exercise':
+	if schoolrunday ! daystart and $clothingworntype = 'exercise' and $shoeworntype = 'trainers':
 		act 'Go for a run (1 hour)':
 			*clr & cla
 			minut += 60
