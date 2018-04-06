@@ -19,6 +19,7 @@ if mira = 0:
 		act 'Get dressed':
 			gs 'clothing', 'wear_last_worn'
 			gs 'underwear', 'wear'
+			gt 'Gadbana'
 		end
 	end
 
@@ -61,7 +62,12 @@ if mira = 0:
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/village/par.jpg"></center>'
 					'You strip, sit down and relax. After a proper banya session, you pick up a bucket filled with cold water and pour it over yourself and head over to the shower. You feel like a completely new person.'
 
-					act 'Go outside':gt 'Gaddvor'
+					act 'Get dressed':
+						gs 'clothing', 'wear_last_worn'
+						gs 'underwear', 'wear'
+						gt 'Gadbana'
+					end
+					act 'Go outside': gt 'Gaddvor'
 				end
 			end
 		else
