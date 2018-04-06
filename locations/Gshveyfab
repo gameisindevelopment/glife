@@ -78,11 +78,12 @@ CLOSE ALL
 	''
 	if workFabrika = 0 and age => 16 and age < 18:'You could apply for a <a href="exec:minut += 15 & GT ''Gshveyfab'', ''job_start''">part-time job</a> here.'
 	if work = 0 and workFabrika = 0 and age => 18:'You could apply for a <a href="exec:minut += 15 & GT ''Gshveyfab'', ''job_start''">job</a> here.'
-	if workFabrika = 1 and week => 1 and week <= 5 and hour = 8 or workFabrika = 1 and week => 1 and week <= 5 and hour = 16 and age => 16 and age < 18:
+	
+	if workFabrika = 1 and week => 1 and week <= 5 and hour >= 8 and hour < 9 and age >= 18:
 		'You can start your shift now.'
 		act 'Start shift': gt'Gshveyfab','job'
 	end
-	if workFabrika = 1 and week => 1 and week <= 5 and hour = 8 or workFabrika = 1 and week => 1 and week <= 5 and hour = 16 and age => 18: 
+	if workFabrika = 1 and week => 1 and week <= 5 and hour >= 16 and hour < 17 and age >= 16 and age < 18:
 		'You can start your shift now.'
 		act 'Start shift': gt'Gshveyfab','job'
 	end
@@ -103,7 +104,7 @@ if $ARGS[0] = 'job_start':
 	''
 	'You go to the factory foreman, Stepan Sergeyevich, and ask for a job.'
 	if age => 16 and age < 18 and workFabrika = 0:
-		'"Sure, have a seat," he says. "Now, the work is difficult and meticulous, but doesn''t require any special knowledge. You should catch on pretty quick. Since you are not an adult yet, you can only work half-time, for half-pay, which comes to 200 rubles per shift. Once you become an adult, we can transfer you to full-time. Naturally, as this is a state-recognized company, we do require all the appropriate documentation. The main shift is on weekdays from 8:00 to 16:00, but you will be working the second shift, from 16:00 to 20:00. And if you miss more than three days of work in a single month, you will be fired. You will be paid at the end of the month, and quitting or getting fired before then will forfeit any pay not yet received. So, is that okay?"'
+		'"Sure, have a seat," he says. "Now, the work is difficult and meticulous, but doesn''t require any special knowledge. You should catch on pretty quick. Since you are not an adult yet, you can only work half-time, and the pay is 100 <b>₽</b> per hour. Once you become an adult, we can transfer you to full-time. Naturally, as this is a state-recognized company, we do require all the appropriate documentation. The main shift is on weekdays from 8:00 to 16:00, but you will be working the second shift, from 16:00 to 20:00. And if you miss more than three days of work in a single month, you will be fired. You will be paid at the end of the month and quitting or getting fired before then will forfeit any pay not yet received. So, is that okay?"'
 			act 'Take the job':
 				cla
 				work = 1
@@ -116,7 +117,7 @@ if $ARGS[0] = 'job_start':
 				act 'Leave':gt'Gshveyfab', 'enter'
 			end	
 	elseif age => 18 and workFabrika = 0:
-		'"Sure, have a seat," he says. "Now, the work is difficult and meticulous, but doesn''t require any special knowledge. You should catch on pretty quick. Naturally, as this is a state-recognized company, we do require all the appropriate documentation. The main shift is on weekdays from 8:00 to 16:00, and the pay is 400 rubles per shift. And if you miss more than three days of work in a single month, you will be fired. You will be paid at the end of the month, and quitting or getting fired before then will forfeit any pay not yet received. So, is that okay?"'
+		'"Sure, have a seat," he says. "Now, the work is difficult and meticulous, but doesn''t require any special knowledge. You should catch on pretty quick. Naturally, as this is a state-recognized company, we do require all the appropriate documentation. The main shift is on weekdays from 8:00 to 16:00, and the pay is 100 <b>₽</b> per hour. And if you miss more than three days of work in a single month, you will be fired. You will be paid at the end of the month, and quitting or getting fired before then will forfeit any pay not yet received. So, is that okay?"'
 			act 'Take the job':
 				cla
 				work = 1
@@ -138,12 +139,12 @@ if $ARGS[0] = 'job':
 	FabrikaProgul -= 1
 	if FabrikaProgul < 0: FabrikaProgul = 0
 	if age => 16 and age < 18:
-		smenaFabrika += 1
-		hour = 20
+		minut += 240
+		smenaFabrika += 1		
 	end 
 	if age => 18: 
+		minut += 480
 		smenaFabrika += 2
-		hour = 16
 	end 
 	gs'stat'
 	'<center><B>TEXTILE FACTORY, "PARIS COMMUNE"</B></center>'
