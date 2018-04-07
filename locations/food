@@ -1,11 +1,12 @@
 # food
-!{Snacks: +20 pcs_energy,+6 fat
-Fast Food: +70 pcs_energy, +12 fat (hamburgers, fried food, like the downtown diner)
-Small Meal: +40 pcs_energy, +3 fat (soup and sandwiches, cafe light lunches, etc)
-Medium Meal and Hotel Food: +60 pcs_energy, +6 fat (home cooked dinners and room service equivalent)
-Large Meal: +100 pcs_energy, +12 fat (steak dinners, new years party dinner, etc)
-Bagged Lunch: +30 pcs_energy, +3 fat (sandwich, cold leftovers, etc)
-Health Meal: +50 pcs_energy, +1 fat (Diet food, Salads, rice cakes with peanut butter)
+!{
+Snacks: +20 pcs_energy, +5 water, +6 fat
+Fast Food: +70 pcs_energy, +20 water, +12 fat (hamburgers, fried food, like the downtown diner)
+Small Meal: +40 pcs_energy, +10 water, +3 fat (soup and sandwiches, cafe light lunches, etc)
+Medium Meal and Hotel Food: +60 pcs_energy, +15 water, +6 fat (home cooked dinners and room service equivalent)
+Large Meal: +100 pcs_energy, +25 water, +12 fat (steak dinners, new years party dinner, etc)
+Bagged Lunch: +30 pcs_energy, +10 water, +3 fat (sandwich, cold leftovers, etc)
+Health Meal: +50 pcs_energy, +15 water, +1 fat (Diet food, Salads, rice cakes with peanut butter)
 }
 
 if $ARGS[0] = 'snack':
@@ -17,6 +18,7 @@ if $ARGS[0] = 'snack':
 	pcs_mood += 20
 	fat += 6
 	pcs_energy += 20
+	water  += 5
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -34,6 +36,7 @@ if $ARGS[0] = 'f_food':
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 70
+	water  += 20
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -52,6 +55,7 @@ if $ARGS[0] = 's_meal':
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 40
+	water  += 10
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -70,6 +74,7 @@ if $ARGS[0] = 'm_meal':
 	pcs_health += 10
 	fat += 6
 	pcs_energy += 60
+	water  += 15
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -89,6 +94,7 @@ if $ARGS[0] = 'l_meal':
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 100
+	water  += 25
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -108,6 +114,7 @@ if $ARGS[0] = 'bag_lunch':
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 30
+	water  += 10
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -127,6 +134,7 @@ if $ARGS[0] = 'h_food':
 	fat += 6
 	money -= 100
 	pcs_energy += 60
+	water  += 15
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -146,6 +154,7 @@ if $ARGS[0] = 'h_meal':
 	pcs_health += 20
 	fat += 1
 	pcs_energy += 50
+	water  += 15
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -168,6 +177,18 @@ if $ARGS[0] = 'aftermeal':
 		$mtxt = ' while you no longer feel like you are starving, you are still quite hungry - in fact, you could probably eat the same amount again and still have room for dessert.'
 	else
 		$mtxt = ' did nothing to appease your hunger, in fact, it only amde you want more.'
+	end
+
+	if water > 100:
+		$mtxt = ' you drank too much and now you feel bloated.'
+	elseif water >= 80:
+		$mtxt = ' it was sufficant to quench your thirst.'
+	elseif water >= 60:
+		$mtxt = ' while you are no longer thirsty, but you could go another round.'
+	elseif water >= 40:
+		$mtxt = ' while your mouth is no longer dry, you want another drink.'
+	else
+		$mtxt = ' did nothing to satisfy your thirst; you should probably have some more.'
 	end
 end
 
