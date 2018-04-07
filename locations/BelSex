@@ -384,7 +384,6 @@ if $ARGS[0] = 'shower':
 		cls
 		dynamic $showerdin
 		minut += 15
-		slutty += 1
 		pav_prostitute += 1
 		pcs_horny = pcs_horny + 1
 		pcs_hairbsh = 1
