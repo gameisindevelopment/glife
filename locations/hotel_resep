@@ -312,7 +312,6 @@ if $ARGS[0] = 'pavgenpros':
 	gs 'arousal', 'vaginal', 30
 	gs 'arousal', 'end'
 	guy += 1
-	slutty += 1
 	pav_prostitute += 2
 	pcs_vag += 1
 	pcs_throat += 1
