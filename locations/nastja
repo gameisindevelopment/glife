@@ -501,6 +501,7 @@ if $ARGS[0] = 'pos24':
 	*clr
 	minut += 120
 	pcs_energy = 10
+	water = 20
 	pcs_mood += 10
 	pcs_willpwr = pcs_willpwr + 10
 	alko += 2
@@ -528,6 +529,7 @@ if $ARGS[0] = 'pos25':
 	*clr
 	minut += 60
 	pcs_energy += 80
+	water += 40
 	money -= 100
 	gs 'stat'
 
@@ -613,6 +615,7 @@ if $ARGS[0] = 'pos30':
 	*clr
 	minut += 90
 	pcs_energy += 80
+	water += 40
 	gs 'stat'
 
 	'<center><img <<$set_imgh>> src="images/characters/city/anastasia/towel.jpg"></center>'

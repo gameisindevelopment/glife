@@ -185,6 +185,7 @@ if $ARGS[0] = 'bar:order:vodka':
 	minut += durr
 	alko += 2
 	pcs_energy += 5
+	water -= 2
 	gs 'stat'
 	act 'Continue':gt 'brothel', 'bar'
 end
@@ -199,6 +200,7 @@ if $ARGS[0] = 'bar:order:beer':
 	minut += durr
 	alko += 1
 	pcs_energy += 5
+	water -= 1
 	gs 'stat'
 	act 'Continue':gt 'brothel', 'bar'
 end
@@ -212,6 +214,7 @@ if $ARGS[0] = 'bar:order:water':
 	durr = 10
 	minut += durr
 	pcs_energy += 2
+	water += 20
 	alko -= 1
 	gs 'stat'
 	act 'Continue':gt 'brothel', 'bar'

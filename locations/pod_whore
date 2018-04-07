@@ -673,6 +673,7 @@ if $ARGS[0] = 'hide':
 		gs 'cum_call','face',$boy,0,'','',10
 		gs 'cum_call','mouth',$boy,0,'','',30
 		if pcs_energy >= 15: pcs_energy -= 4
+		if water >= 20: water -= 6
 		pcs_hairbsh = 0
 		minut += rand(2,5)
 		money += total_money
@@ -894,6 +895,7 @@ if $ARGS[0] = 'hide':
 					gs 'cum_call','mouth',$boy[2],0,'','',20
 					gs 'cum_call','breasts',$boy[2],0,'','',10
 					if pcs_energy >= 15: pcs_energy -= 8
+					if water >= 20: water -= 10
 					pcs_hairbsh = 0
 					minut += rand(3,7)
 					money += total_money
@@ -974,6 +976,7 @@ if $ARGS[0] = 'hide':
 							gs 'cum_call','face',$boy[1],0,'','',10
 							gs 'cum_call','mouth',$boy[1],0,'','',30
 							if pcs_energy >= 15: pcs_energy -= 8
+							if water >= 20: water -= 10
 							pcs_hairbsh = 0
 							minut += rand(3,7)
 							money += total_money

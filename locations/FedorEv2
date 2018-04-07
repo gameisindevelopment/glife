@@ -167,6 +167,7 @@ if $ARGS[0] = 'Cinema':
 			pcs_mood += 20
 			pcs_willpwr += 20
 			pcs_energy += 20
+			water += 5
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0				
@@ -191,6 +192,7 @@ if $ARGS[0] = 'Cinema':
 			pcs_willpwr += 20
 			fat += 1
 			pcs_energy += 30
+			water += 5
 			cumspclnt = 2	
 			gs 'cum_cleanup'
 			pcs_breath = 0				
@@ -330,6 +332,7 @@ if $ARGS[0] = 'Home':
 			pcs_willpwr += 40
 			fat += 2
 			pcs_energy += 90
+			water += 60
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0				

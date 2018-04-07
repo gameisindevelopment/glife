@@ -1006,6 +1006,7 @@ if $ARGS[0] = 'start':
 		cls
 		minut += 15
 		pcs_energy = pcs_energy + 20
+		water = water + 10
 		fat += 1
 		frost = 0
 		pcs_health = pcs_health + 10

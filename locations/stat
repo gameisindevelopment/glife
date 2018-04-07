@@ -66,6 +66,7 @@ end
 if cheatNosweat = 1 and pcs_sweat > 0: pcs_sweat = 0
 if cheatNoEat = 1:
 	if pcs_energy < 35: pcs_energy = 35
+	if water < 35: water = 35
 end
 if cheatBandit = 1 and npc_horny['A66'] < 19: npc_horny['A66'] = 19
 if CheatNoSleep = 1 and pcs_sleep < 35: pcs_sleep = 35
@@ -388,16 +389,20 @@ if minut >= 60:
 	if insleep = 1:
 		if amphHigh > 0:
 			pcs_energy -= (4 / amphetamineBonus + succublvl/2)
+			water -= (4 / amphetamineBonus + succublvl/2)
 		else
 			pcs_energy -= (4 * amphetamineBonus + succublvl/2)
+			water -= (4 * amphetamineBonus + succublvl/2)
 		end
 		pcs_stam += stammax / 10
 		pcs_sleep -= 4
 	else
 		if amphHigh > 0:
 			pcs_energy -= (8 / amphetamineBonus + succublvl)
+			water -= (8 / amphetamineBonus + succublvl)
 		else
 			pcs_energy -= (8 * amphetamineBonus + succublvl)
+			water -= (8 * amphetamineBonus + succublvl)
 		end
 		pcs_stam += stammax / 20
 		pcs_sleep -= 4
@@ -699,6 +704,7 @@ else
 			if pcs_horny < 100: pcs_horny += succublvl
 			if succhungry > 0:
 				pcs_energy -= succhungry * succublvl
+				water -= succhungry * succublvl
 				pcs_sleep -= succhungry * succublvl
 			end
 			cumres_idx = arrpos('sparrloc',12)
@@ -940,6 +946,16 @@ elseif pcs_energy >= 8:
 	$pcs_energy = '<font color="brown">You are hungry.</font>'
 else
 	$pcs_energy = '<font color="red">You are very hungry.</font>'
+end
+
+if water >= 80:
+	$water = '<font color="green">You couldn''t drink one more sip.</font>'
+elseif water >= 40:
+	$water = '<font color="blue">You''re not really thirsty, but a small drink would be very welcome.</font>'
+elseif water >= 8:
+	$water = '<font color="brown">You are thirsty.</font>'
+else
+	$water = '<font color="red">You are very thirsty.</font>'
 end
 
 if pcs_sleep >= 80:

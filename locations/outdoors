@@ -345,6 +345,7 @@ if $ARGS[0] = 'main':
 					if temper < -20:frost += 2
 					if temper < -30:frost += 5
 					if pcs_energy < 20:frost += 1
+					if water < 20:frost += 1
 					if $pantyworntype = 'none':frost += 1
 					if pcs_sweat > 20:frost += 1
 				elseif temper < -10 and defaultcoat_warmth = 1:
@@ -354,11 +355,13 @@ if $ARGS[0] = 'main':
 						frost += 1
 					end
 					if pcs_energy < 20:frost += 1
+					if water < 20:frost += 1
 					if $pantyworntype = 'none':frost += 1
 					if pcs_sweat > 20:frost += 1
 				elseif temper < -20 and defaultcoat_warmth = 2:
 					frost += 1
 					if pcs_energy < 20:frost += 1
+					if water < 20:frost += 1
 					if pcs_sweat > 20:frost += 1
 				elseif temper < -30 and defaultcoat_warmth = 3:
 					frost += 1

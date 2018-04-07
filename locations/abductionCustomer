@@ -1009,10 +1009,12 @@ if $ARGS[0] = 'abdCustomer-cumMouth':
 		'His <<$cumType>> amount of cum fills your gullet and drips down into your stomach.'
 		'You feel as if you just ate a bunch of biscuits.'
 		pcs_energy += 50
+		water += 40
 	elseif cumVol => 5:
 		'You are being pumped like a water bag. His <<$cumType>> amount of jizz fills your stomach and gullet.'
 		'Today you probably won''t need another meal..'
 		pcs_energy += 100
+		water += 90
 	else
 		'The customer shoots his <<$cumType>> amount of cum inside your mouth and down your gullet.'
 	end
