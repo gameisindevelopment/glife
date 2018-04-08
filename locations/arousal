@@ -10,7 +10,7 @@ All acts are from Sveta''s perspective and in cases of both giving and receiving
 ARGS[1] for time taken in minutes - it is use partly for arousal calculation and partly for moving time ahead. If you want to calculate just the arousal and do not move time (simultaneous stimulation), use negative value.
 $ARGS[2] can be used for passing the name of boys dick variable .. 'dick' is default, which belong to $boy, else can be passed 'dick1' .. 'dick4' or 'dick[i]' along the boys parameters activation 
 $ARGS[2] - [8] Are optional but can be upto 7 fetishes involved in the act and can be any of the following:
-'maso' 'bound' 'beast' 'exhibitionism' 'rough' 'prostitution' 'dom' 'sub' 'incest' 'feet' 'lesbian' 'group' 'gangbang' 'humiliation' 'deepthroat' 'unknown' 'gloryhole' 'rape' 'sexfuta'
+'maso' 'bound' 'beast' 'exhibitionism' 'rough' 'prostitution' 'dom' 'sub' 'incest' 'feet' 'lesbian' 'group' 'gangbang' 'humiliation' 'deepthroat' 'unknown' 'gloryhole' 'rape' 'futa'
 Format to use: gs 'arousal', 'act', 'duration', 'fetish', 'fetish', 'fetish', 'fetish', 'fetish', 'fetish', 'fetish'
 eg: gs 'arousal', 'trib', 10, 'bound', 'sub'
 In this case lesbianism is automatically added, much as feet would be applied to 'footjob'
@@ -516,14 +516,14 @@ if $ARGS[0] ! 'end' and $ARGS[0] ! 'checks' and $ARGS[0] ! 'count' and $ARGS[0] 
 			else
 				stim['rape'] = 1
 			end	
-		elseif $ARGS[i] = 'sexfuta':
-			stim['kink'] += sexfuta['exp']
-			stim['pref'] += sexfuta['pref']
+		elseif $ARGS[i] = 'futa':
+			stim['kink'] += futa['exp']
+			stim['pref'] += futa['pref']
 			stim['kinkno'] += 1
 			if temp_unaware = 1:
-				stim['hidden_sexfuta'] = 1
+				stim['hidden_futa'] = 1
 			else
-				stim['sexfuta'] = 1
+				stim['futa'] = 1
 			end		
 		end
 
@@ -617,8 +617,8 @@ if $ARGS[0] = 'end':
 	if stim['hidden_gloryhole'] = 1: hidden_gloryhole += 1
 	if stim['rape'] = 1: rape += 1
 	if stim['hidden_rape'] = 1: hidden_rape += 1
-	if stim['sexfuta'] = 1: sexfuta += 1
-	if stim['hidden_sexfuta'] = 1: hidden_sexfuta += 1
+	if stim['futa'] = 1: futa += 1
+	if stim['hidden_futa'] = 1: hidden_futa += 1
 	if stim['prostitution'] = 1: slutty += 1
 	if stim['hidden_prostitution'] = 1: hidden_slutty += 1
 	
@@ -651,8 +651,8 @@ if $ARGS[0] = 'end':
 	gs 'arousal', 'checks', 'hidden_gloryhole'
 	gs 'arousal', 'checks', 'rape'
 	gs 'arousal', 'checks', 'hidden_rape'
-	gs 'arousal', 'checks', 'sexfuta'
-	gs 'arousal', 'checks', 'hidden_sexfuta'
+	gs 'arousal', 'checks', 'futa'
+	gs 'arousal', 'checks', 'hidden_futa'
 	
 	stim['event'] = 0
 

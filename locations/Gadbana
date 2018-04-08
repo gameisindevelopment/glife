@@ -19,6 +19,7 @@ if mira = 0:
 		act 'Get dressed':
 			gs 'clothing', 'wear_last_worn'
 			gs 'underwear', 'wear'
+			gt 'Gadbana'
 		end
 	end
 
@@ -61,7 +62,12 @@ if mira = 0:
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/village/par.jpg"></center>'
 					'You strip, sit down and relax. After a proper banya session, you pick up a bucket filled with cold water and pour it over yourself and head over to the shower. You feel like a completely new person.'
 
-					act 'Go outside':gt 'Gaddvor'
+					act 'Get dressed':
+						gs 'clothing', 'wear_last_worn'
+						gs 'underwear', 'wear'
+						gt 'Gadbana'
+					end
+					act 'Go outside': gt 'Gaddvor'
 				end
 			end
 		else
@@ -71,28 +77,23 @@ if mira = 0:
 		'The banya is not used at the weekend, it is usually ready to use from 19:00 during the week.'
 	end
 
-	if canpar = 0:
-		act 'Wash (1:00)':
-			cls
-			dynamic $showerdin
-			minut += 60
-			pcs_hairbsh = 0
-			pcs_makeup = 1
-			
+	act 'Wash your body (0:25)':
+		cls
+		minut += 25
+		dynamic $showerdin
 
-			if frost > 0:frost = 0
+		if frost > 0:frost = 0
 
-			gs 'stat'
-			'<center><img <<$set_imgh>> src="images/locations/gadukino/village/mit.jpg"></center>'
-			'You lather your body washcloth and start scrubbing your body. You rinse off the soap and start to lather the hair with the shampoo. After rising off the shampoo you are completely clean.'
-			
-			act 'Leave':gt $loc, $metka
-		end
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/gadukino/village/mit.jpg"></center>'
+		'You lather your body washcloth and start scrubbing your body. You rinse off the soap and start to lather the hair with the shampoo. After rising off the shampoo you are completely clean.'
+		
+		act 'Leave':gt $loc, $metka
 	end
 
 	dynamic $bteeth
+	gs 'din_van', 'prvt_pee'
 	dynamic $tampon
-	dynamic $quickwash
 	dynamic $wearpan
 	dynamic $basin
 

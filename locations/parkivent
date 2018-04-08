@@ -566,7 +566,7 @@ if $ARGS[0] = '6a':
 			act 'Go on...':
 				cla & *clr
 				minut += 5
-				count ['bj'] += 1
+				count['bj'] += 1
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/city/centralpark/sex/event/rape/5.jpg"></center>'
 				'Even though you hate to admit it, you feel quite turned on and are moan more loudly by now.'
@@ -787,7 +787,7 @@ if $ARGS[0] = '9':
 end
 
 if $ARGS[0] = 'run':
-	if $clothingworntype = 'exercise' and hour > 5 and hour < 22 and daybegskver ! daystart:
+	if $clothingworntype = 'exercise' and $shoeworntype = 'trainers' and hour > 5 and hour < 22 and daybegskver ! daystart:
 		act 'Go for a run in the park (1:00)':
 			cls
 			gs 'exercise', 'tier1', 60, 'run_exp'

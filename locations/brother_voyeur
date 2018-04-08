@@ -1088,7 +1088,7 @@ if $ARGS[0] = 'homework':
 			'As you explain the material, Kolka suddenly began to slowly stroke your leg with his hand. You freeze in surprise, not knowing what to do.'
 			act'Ignore and continue':
 				cla
-				npc_QW['A34'] = 3
+				if npc_QW['A34'] < 3: npc_QW['A34'] = 3
 				npc_rel['A34'] += 2
 				pcs_horny += RAND(5,10)
 				'You decide to continue to do homework, trying not to pay attention to Kolka''s hand on your leg. He realizes that you don''t mind so he continues to stroke higher up your leg.'

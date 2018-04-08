@@ -6,14 +6,13 @@ $location_type = 'public_outdoors'
 if $ARGS[0] = 'start':
 	cla
 	*clr
-	minut += 10
 	gs'stat'
 	
 	'<center><B>TEXTILE FACTORY, "PARIS COMMUNE"</B></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/factory/gshveyfab.jpg"></center>'
 	'The local textile factory; one of the few corporate enterprises in Pavlovsk. It makes clothing for G&M Store, which has a branch next door. Open from 8:00-20:00 Monday - Friday.'
-	if hour => 8 and hour =< 20 and week => 1 and week <= 5:
-		'The <a href="exec:minut += 15 & GT ''Gshveyfab'', ''enter''">entrance</a> sits behind a security checkpoint.'
+	if hour >= 8 and hour <= 20 and week >= 1 and week <= 5:
+		'The <a href="exec:minut += 5 & GT ''Gshveyfab'', ''enter''">entrance</a> sits behind a security checkpoint.'
 	elseif hour < 8 or hour > 20 or week > 5:
 		'The factory is currently closed.' 
 		'Hours M-F:'
@@ -31,6 +30,8 @@ if $ARGS[0] = 'start':
 		act 'Go to the tailor':
 			cla
 			*clr
+			minut += 5
+			gs'stat'
 			'An elderly man is inspecting finished garments fresh from the factory floor, he pulls his glasses down a little and looking over the top of them walks up to the desk.'
 			
 			'"Hello there, come to get some clothes adjusted? It''ll cost you 500 <b>₽</b> per item."'
@@ -48,26 +49,25 @@ if $ARGS[0] = 'start':
 						'You undress and give the clothes you need adjusting to the tailor, it is fifteen minutes until your clothes are ready. you redress.'
 					end
 
-					act 'Leave':gt 'Gshveyfab', 'start'
+					act 'Leave': minut += 5 & gt 'Gshveyfab', 'start'
 				end
 
 				act 'Take in different clothes':gt 'clothing', 'view_clothing_list', 'resize'
 				act 'Take in all the clothes':gt 'portnoi2'
 			end
-			act 'Leave':gt 'Gshveyfab', 'start'
+			act 'Leave': minut += 5 & gt 'Gshveyfab', 'start'
 	
 		end
 	end
 
-	act 'Go to the residential area':gt'pavResidential'
-	act 'Go to the high street':gt'pavCommercial'
+	act 'Go to the residential area': minut += 15 & gt 'pavResidential'  
+	act 'Go to the high street': minut += 15 & gt 'pavCommercial'
 end
 
 if $ARGS[0] = 'enter':
 CLOSE ALL
 	cla
 	*clr
-	minut += 2
 	gs'stat'
 	'<center><B>TEXTILE FACTORY, "PARIS COMMUNE"</B></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/factory/gshveyfab.jpg" ></center>'
@@ -76,36 +76,53 @@ CLOSE ALL
 	'First shift - 8:00 to 16:00.'
 	'Second shift - 16:00 to 20:00.'
 	''
-	if workFabrika = 0 and age => 16 and age < 18:'You could apply for a <a href="exec:minut += 15 & GT ''Gshveyfab'', ''job_start''">part-time job</a> here.'
-	if work = 0 and workFabrika = 0 and age => 18:'You could apply for a <a href="exec:minut += 15 & GT ''Gshveyfab'', ''job_start''">job</a> here.'
-	if workFabrika = 1 and week => 1 and week <= 5 and hour = 8 or workFabrika = 1 and week => 1 and week <= 5 and hour = 16 and age => 16 and age < 18:
+	if workFabrika = 0 and age >= 16 and age < 18:'You could apply for a <a href="exec:minut += 15 & GT ''Gshveyfab'', ''job_start''">part-time job</a> here.'
+	if work = 0 and workFabrika = 0 and age >= 18:'You could apply for a <a href="exec:minut += 15 & GT ''Gshveyfab'', ''job_start''">job</a> here.'
+	
+	if workFabrika = 1 and week >= 1 and week <= 5 and hour >= 8 and hour < 9 and age >= 18:
 		'You can start your shift now.'
 		act 'Start shift': gt'Gshveyfab','job'
 	end
-	if workFabrika = 1 and week => 1 and week <= 5 and hour = 8 or workFabrika = 1 and week => 1 and week <= 5 and hour = 16 and age => 18: 
+	if workFabrika = 1 and week >= 1 and week <= 5 and hour >= 16 and hour < 17 and age >= 16 and age < 18:
 		'You can start your shift now.'
 		act 'Start shift': gt'Gshveyfab','job'
 	end
 	if workFabrika = 1:
-		'You can quit your job, but doing so will forfeit any pay not yet received.'
-		act 'Quit job':workFabrika = 0 & work = 0 & gt 'Gshveyfab','enter'
+		'You can quit your job, but early processing of your payment will cost you the wage of one shift.'
+		act 'Quit job': 
+			if age >= 16 and age < 18:
+				smenaFabrika -= 1
+			elseif age >= 18:
+				smenaFabrika -= 2
+			end
+			if smenaFabrika < 0:
+				smenaFabrika = 0
+			end
+			pay = smenaFabrika * 400
+			karta += pay
+			smenaFabrika = 0
+			workFabrika = 0 
+			work = 0
+			minut += 5
+			gt 'Gshveyfab','enter'
+		end
 	end
-	act '<B>Leave</B>':gt'Gshveyfab','start'
+	act 'Leave': minut += 5 & gt 'Gshveyfab', 'start'
 end
 
 if $ARGS[0] = 'job_start':
 	cla
 	*clr
-	minut += 2
 	gs'stat'
 	'<center><B>FOREMAN''S OFFICE</B></center>'
 	'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/stepan/nachalnik.jpg" ></center>'
 	''
 	'You go to the factory foreman, Stepan Sergeyevich, and ask for a job.'
-	if age => 16 and age < 18 and workFabrika = 0:
-		'"Sure, have a seat," he says. "Now, the work is difficult and meticulous, but doesn''t require any special knowledge. You should catch on pretty quick. Since you are not an adult yet, you can only work half-time, for half-pay, which comes to 200 rubles per shift. Once you become an adult, we can transfer you to full-time. Naturally, as this is a state-recognized company, we do require all the appropriate documentation. The main shift is on weekdays from 8:00 to 16:00, but you will be working the second shift, from 16:00 to 20:00. And if you miss more than three days of work in a single month, you will be fired. You will be paid at the end of the month, and quitting or getting fired before then will forfeit any pay not yet received. So, is that okay?"'
+	if age >= 16 and age < 18 and workFabrika = 0:
+		'"Sure, have a seat," he says. "Now, the work is difficult and meticulous, but doesn''t require any special knowledge. You should catch on pretty quick. Since you are not an adult yet, you can only work half-time, and the pay is 100 <b>₽</b> per hour. Once you become an adult, we can transfer you to full-time. Naturally, as this is a state-recognized company, we do require all the appropriate documentation. The main shift is on weekdays from 8:00 to 16:00, but you will be working the second shift, from 16:00 to 20:00. And if you miss more than three days of work in a single month, you will be fired. You will be paid at the end of the month and getting fired before then will forfeit any pay not yet received. So, is that okay?"'
 			act 'Take the job':
 				cla
+				minut += 10
 				work = 1
 				workFabrika = 1
 				smenaFabrika = 0
@@ -115,10 +132,11 @@ if $ARGS[0] = 'job_start':
 
 				act 'Leave':gt'Gshveyfab', 'enter'
 			end	
-	elseif age => 18 and workFabrika = 0:
-		'"Sure, have a seat," he says. "Now, the work is difficult and meticulous, but doesn''t require any special knowledge. You should catch on pretty quick. Naturally, as this is a state-recognized company, we do require all the appropriate documentation. The main shift is on weekdays from 8:00 to 16:00, and the pay is 400 rubles per shift. And if you miss more than three days of work in a single month, you will be fired. You will be paid at the end of the month, and quitting or getting fired before then will forfeit any pay not yet received. So, is that okay?"'
+	elseif age >= 18 and workFabrika = 0:
+		'"Sure, have a seat," he says. "Now, the work is difficult and meticulous, but doesn''t require any special knowledge. You should catch on pretty quick. Naturally, as this is a state-recognized company, we do require all the appropriate documentation. The main shift is on weekdays from 8:00 to 16:00, and the pay is 100 <b>₽</b> per hour. And if you miss more than three days of work in a single month, you will be fired. You will be paid at the end of the month, and getting fired before then will forfeit any pay not yet received. So, is that okay?"'
 			act 'Take the job':
 				cla
+				minut += 10
 				work = 1
 				workFabrika = 1
 				smenaFabrika = 0
@@ -137,13 +155,13 @@ if $ARGS[0] = 'job':
 	*clr
 	FabrikaProgul -= 1
 	if FabrikaProgul < 0: FabrikaProgul = 0
-	if age => 16 and age < 18:
-		smenaFabrika += 1
-		hour = 20
+	if age >= 16 and age < 18:
+		minut += 240
+		smenaFabrika += 1		
 	end 
-	if age => 18: 
+	if age >= 18: 
+		minut += 480
 		smenaFabrika += 2
-		hour = 16
 	end 
 	gs'stat'
 	'<center><B>TEXTILE FACTORY, "PARIS COMMUNE"</B></center>'
@@ -151,8 +169,7 @@ if $ARGS[0] = 'job':
 	''
 	'You work through your shift at the factory.'
 
-	act 'Go to the residential area':gt'pavResidential'
-	act 'Go to the high street':gt'pavCommercial'
+	act 'Leave': minut += 5 & gt 'Gshveyfab', 'start'
 end
 
 --- Gshveyfab ---------------------------------
