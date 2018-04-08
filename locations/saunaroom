@@ -26,7 +26,7 @@ if workDolg > 0:
 		pcs_health += 30
 		pcs_mood += 30
 		pcs_energy += 60
-		water += 60
+		pcs_hydra += 60
 		fat += 3
 		frost = 0
 		gs 'stat'
@@ -43,12 +43,12 @@ if workDolg > 0:
 	end
 end
 
-if water < 80:
+if pcs_hydra < 80:
 	act 'Drink':
 		cla
 		minut += 5
 
-		water = 100
+		pcs_hydra = 100
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0

@@ -540,7 +540,7 @@ if $ARGS[0] = 'gang_sex_room_ev1_2':
 											gs 'cum_call', 'mouth', $boy[1],1
 											gs 'cum_call', 'stomach', $boy[2],1
 											pcs_energy -= 8
-											water -= 16
+											pcs_hydra -= 16
 											pcs_sleep -= 8
 											gs 'arousal', 'end'
 											gs 'stat'

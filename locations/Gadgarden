@@ -116,7 +116,7 @@ if $ARGS[0] = 'strawberry':
 			strawberriesday = daystart
 			minut += 60
 			pcs_mood += 10
-			water += 40
+			pcs_hydra += 40
 			pcs_energy += 15
 			pcs_willpwr += willpowermax/10
 			cumspclnt = 2 & gs 'cum_cleanup' & pcs_breath = 0
@@ -178,7 +178,7 @@ if $ARGS[0] = 'fruit_garden':
 			fruitday = daystart
 			minut += 60
 			pcs_mood += 10
-			water += 20
+			pcs_hydra += 20
 			pcs_energy += 30
 			pcs_willpwr += willpowermax/10
 			cumspclnt = 2 & gs 'cum_cleanup' & pcs_breath = 0

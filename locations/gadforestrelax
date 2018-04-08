@@ -169,7 +169,7 @@ if bilberry > 0:
 	    *clr
 	    minut += 30
 	    pcs_energy += 15
-	    water += 40
+	    pcs_hydra += 40
 	    bilberry -= 1
 	    pcs_willpwr += 5
 	    pcs_health += 5

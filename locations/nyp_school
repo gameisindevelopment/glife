@@ -22,7 +22,7 @@ if $ARGS[0] = 'start':
 		minut += 30
 		fat += 3
 		pcs_energy += 40
-		water += 60
+		pcs_hydra += 60
 		gs 'stat'
 		if music_on = 1:
 			$track_loop = 'sound/newyear.mp3'

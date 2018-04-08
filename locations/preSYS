@@ -62,7 +62,7 @@ if $ARGS[0] = 'SGStart':
 	salo = 80
 	dick = 0
 	pcs_energy = 60
-	water = 60
+	pcs_hydra = 60
 	pcs_sleep = 70
 !!	Stats
 	pcs_stren = 30

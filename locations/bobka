@@ -260,7 +260,7 @@ if $ARGS[0] = 'peeswallow':
 	cls
 	minut += 5
 	money += 100
-	water += 10
+	pcs_hydra += 10
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0

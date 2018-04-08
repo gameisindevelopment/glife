@@ -340,7 +340,7 @@ if $ARGS[0] = 'marcus_event':
 					gs 'cum_cleanup'
 					pcs_breath = 0
 					pcs_energy += 40
-					water += 40
+					pcs_hydra += 40
 					gs 'stat'
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/lunch/lunch.jpg"></center>'
 					'"Sure, I would love to have lunch with you!" With that, the two of you walk to the cafeteria together. He buys you both lunch, you find a table and sit together while you eat and talk for the rest lunch period.'

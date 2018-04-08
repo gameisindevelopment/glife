@@ -71,7 +71,7 @@ end
 !!!!!!!!!!!!!!!!!!!!!
 
 if pcs_sleep > 100: pcs_sleep = 100
-if water > 100: water = 100
+!if pcs_hydra > 100: pcs_hydra = 100 !do I want to be overfilled with water?
 
 
 !!----------------image Extra messages, start--------------------------
@@ -190,13 +190,13 @@ if ETOmenu = 1:
 	$stat_msg += '<BR><b><<$pcs_health>></b>'
 	$stat_msg += '<BR><b><<$pcs_willpwr>></b>'
 	$stat_msg += '<BR><b><<$pcs_energy>></b>'
-	$stat_msg += '<BR><b><<$water>></b>'
+	$stat_msg += '<BR><b><<$pcs_hydra>></b>'
 	$stat_msg += '<BR><b><<$pcs_sleep>></b>'
 elseif Enable_scalepic = 2:
 $st_temp='rgb(<<(16777216 + fcolor) mod 256>>,<<(16777216 + fcolor)/256 mod 256>>,<<(16777216 + fcolor)/65536>>)'
 $stat_msg += '<p><font color="<<$st_temp>>"><TABLE width="300" cellpadding="1" cellspacing="0"><TR><TD width="85%">'+FUNC('indiktab', '2', pcs_horny, pcs_horny)+'</TD><TD> Arousal</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '2', pain['total'], pain['total'])+'</TD><TD> Pain</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_health * 100 / healthmax, pcs_health)+'</TD><TD> Health</TD></TR>'
 if MagikDostup = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_manna * 100 / mannamax, pcs_manna)+'</TD><TD> Manna</TD></TR>'
-$stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_willpwr * 100 / willpowermax, pcs_willpwr)+'</TD><TD> Willpower</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_stam * 100 / stammax, pcs_stam)+'</TD><TD> Stamina</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_mood, pcs_mood)+'</TD><TD> Mood</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_energy, pcs_energy)+'</TD><TD> Hunger</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', water, water)+'</TD><TD> Thirst</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_sleep, pcs_sleep)+'</TD><TD> Sleep</TD></TR></TABLE></font></p>'
+$stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_willpwr * 100 / willpowermax, pcs_willpwr)+'</TD><TD> Willpower</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_stam * 100 / stammax, pcs_stam)+'</TD><TD> Stamina</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_mood, pcs_mood)+'</TD><TD> Mood</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_energy, pcs_energy)+'</TD><TD> Hunger</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_hydra, pcs_hydra)+'</TD><TD> Thirst</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_sleep, pcs_sleep)+'</TD><TD> Sleep</TD></TR></TABLE></font></p>'
 else
 	gs 'indik', '2', pcs_horny, pcs_horny
 	$stat_msg += '<BR><<$ind>> Arousal'
@@ -224,7 +224,7 @@ else
 	gs 'indik', '1', pcs_energy, pcs_energy
 	$stat_msg += '<BR><<$ind>> Hunger'
 
-	gs 'indik', '1', water, water
+	gs 'indik', '1', pcs_hydra, pcs_hydra
 	$stat_msg += '<BR><<$ind>> Thirst'
 
 	gs 'indik', '1', pcs_sleep, pcs_sleep
@@ -547,7 +547,7 @@ if bcream_used = 1:$stat_msg += '<BR><font color = #DB7093>Your breasts are feel
 if aphrodisiac_timer > 0:$stat_msg += '<BR><font color = #DB7093>You are feeling hot and every move causes your groin to tingle.</font>'
 
 if pcs_energy < 5:
-	$stat_msg += '<BR><font color="red">You feel faint from hunger, if you don''t have something to eat very soon, you will pass out.</font>'
+	$stat_msg += '<BR><font color="red"><b>You feel faint from hunger, if you don''t have something to eat very soon, you will pass out.</b></font>'
 elseif pcs_energy < 10:
 	$stat_msg += '<BR><font color="red">You are starving, you really need to have something to eat.</font>'
 elseif pcs_energy < 20:
@@ -556,18 +556,18 @@ elseif pcs_energy < 30:
 	$stat_msg += '<BR>You feel peckish and your thoughts sometimes drift towards food.'
 end
 
-if water < 5:
-	$stat_msg += '<BR><font color="red">You feel light-headed, if you don''t have something to drink very soon, you will pass out.</font>'
-elseif water < 10:
+if pcs_hydra < 5:
+	$stat_msg += '<BR><font color="red"><b>You feel light-headed, if you don''t have something to drink very soon, you will pass out.</b></font>'
+elseif pcs_hydra < 10:
 	$stat_msg += '<BR><font color="red">You are dehydrated, you really need to have something to drink.</font>'
-elseif water < 20:
+elseif pcs_hydra < 20:
 	$stat_msg += '<BR>You are thirsty and your dry throat is irritating and distracting you.'
-elseif water < 30:
+elseif pcs_hydra < 30:
 	$stat_msg += '<BR>You feel a little thirsty and your mouth is a little dry.'
 end
 
 if pcs_sleep < 5:
-	$stat_msg += '<BR><font color="red">You can''t keep your eyes open, if you don''t go to bed now, you will fall asleep right here.</font>'
+	$stat_msg += '<BR><font color="red"><b>You can''t keep your eyes open, if you don''t go to bed now, you will fall asleep right here.</b></font>'
 elseif pcs_sleep < 10:
 	$stat_msg += '<BR><font color="red">You are exhausted, you really need to go to bed soon.</font>'
 elseif pcs_sleep < 20:

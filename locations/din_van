@@ -687,7 +687,7 @@ if $ARGS[0] = 'private':
 				cla
 				pain['killer'] += 1
 				painkiller -= 1
-				water += 20
+				pcs_hydra += 20
 				gs 'stat'
 
 				*nl

@@ -87,7 +87,7 @@ elseif StasKafe = 0:
 			minut += 60
 			pcs_horny += 15
 			pcs_energy += 60
-			water += 60
+			pcs_hydra += 60
 			fat += 4
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/kafe.jpg"></center>'

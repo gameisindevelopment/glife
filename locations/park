@@ -309,7 +309,7 @@ if $ARGS[0] = 'luna':
 				pcs_health += 10
 				pcs_mood += 20
 				fat += 1
-				water += 40
+				pcs_hydra += 40
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0

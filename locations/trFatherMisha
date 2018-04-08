@@ -115,8 +115,8 @@ if $ARGS[0] = '':
 			else
 				pcs_energy += 80
 			end
-			if water < 80:
-				water += 80
+			if pcs_hydra < 80:
+				pcs_hydra += 80
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0
@@ -376,8 +376,8 @@ if $ARGS[0] = '':
 				else
 					pcs_energy += 80
 				end
-				if water < 80:
-					water += 80
+				if pcs_hydra < 80:
+					pcs_hydra += 80
 					cumspclnt = 2
 					gs 'cum_cleanup'
 					pcs_breath = 0
@@ -416,8 +416,8 @@ if $ARGS[0] = '':
 			else
 				pcs_energy += 80
 			end
-			if water < 80:
-				water += 80
+			if pcs_hydra < 80:
+				pcs_hydra += 80
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0

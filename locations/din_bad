@@ -159,7 +159,7 @@ $d_bag = {
     end
     
 	if lubri > 0:pl'There''s a tube of lubricant in your purse, enough for <<lubri>> applications.'
-	if bottle > 0:pl 'There''s a bottle of water in your purse. <a href="exec:bottle = 0 & water = 100 & cumspclnt = 2 & gs ''cum_cleanup'' & gs ''stat''"><b>Drink</b></a>'
+	if bottle > 0:pl 'There''s a bottle of water in your purse. <a href="exec:bottle = 0 & pcs_hydra = 100 & cumspclnt = 2 & gs ''cum_cleanup'' & gs ''stat''"><b>Drink</b></a>'
 	if buterbrod > 0:pl 'There''s a sandwich in your purse. <a href="exec:buterbrod = 0 & pcs_energy += 20 & cumspclnt = 2 & gs ''cum_cleanup'' & fat += 1 & gs ''stat''"><b>Eat</b></a>'
 	if wine = 1 and alkowine = 0:pl'There''s a bottle of <a href="exec:dynamic $dinalkowin1">wine</a> in your purse.'
 	if wine = 1 and alkowine = 1:pl'There''s a half-bottle of <a href="exec:dynamic $dinalkowin2">wine</a> in your purse.'
@@ -178,10 +178,10 @@ $d_bag = {
 
 $dinalkowin1 = {
     alkowine = 1
-	if water <= 90:
-		water = 100
+	if pcs_hydra <= 90:
+		pcs_hydra = 100
 	else
-		water += 10
+		pcs_hydra += 10
 	end
     if pcs_intel  > 5 : intel_deg -= 1
     alko += 5
@@ -195,10 +195,10 @@ $dinalkowin1 = {
 
 $dinalkowin2 = {
     alkowine = 0
-	if water <= 90:
-		water = 100
+	if pcs_hydra <= 90:
+		pcs_hydra = 100
 	else
-		water += 10
+		pcs_hydra += 10
 	end
     wine = 0
     if pcs_intel > 5: intel_deg -= 1

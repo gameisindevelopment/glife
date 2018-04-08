@@ -288,7 +288,7 @@ if $ARGS[0] = 'work':
 								*clr&cla
 								minut += 60
 								pcs_horny += 15
-								water = 100
+								pcs_hydra = 100
 								pcs_energy = 100
 								fat += 4
 								gs 'stat'

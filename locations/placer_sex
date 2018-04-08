@@ -1412,7 +1412,7 @@ if $args[0] = 'breakfast':
 			minut += 30
 			fat += 3
 			pcs_energy += 15
-			water += 15
+			pcs_hydra += 15
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/park/sex/placer_sex39.jpg"></center>'
 			'Everyone gathers at the table, and you have to admit: his omelettes are fantastic. The guys occasionally glance over your body while you eat... you never did put on more clothes and are still sitting in your underwear. You feel comfortable around them though, and your lack of clothes doesn''t bother you at all. They don''t make any further moves on you, but ask if you want to stay around a while longer.'

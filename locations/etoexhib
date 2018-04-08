@@ -193,10 +193,10 @@ if $ARGS[0] = 'pos6':
 	'Spring water.'
 
 	act 'Have a drink':
-		if water >= 20:
+		if pcs_hydra >= 20:
 			'You are not thirsty.'
-		elseif water < 20:
-			water += 20
+		elseif pcs_hydra < 20:
+			pcs_hydra += 20
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
@@ -228,7 +228,7 @@ if $ARGS[0] = 'pos7':
 			gs 'stat'
 			fat += 1
 			pcs_energy += 40
-			water += 40
+			pcs_hydra += 40
 			'You gladly drank some goat''s milk.'
 
 			act 'Leave':gt 'dachi'

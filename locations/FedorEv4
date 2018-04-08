@@ -629,7 +629,7 @@ if $ARGS[0] =  'Popcorn':
 	pcs_mood += 20
 	fat += 1
 	pcs_energy += 30
-	water += 10
+	pcs_hydra += 10
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -667,7 +667,7 @@ if $ARGS[0] =  'Snacks':
 	pcs_willpwr += 20
 	pcs_mood += 20
 	pcs_energy += 20
-	water += 20
+	pcs_hydra += 20
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -2671,7 +2671,7 @@ if $ARGS[0] =  'Fridge':
 		pcs_willpwr += 10
 		pcs_mood += 20
 		pcs_energy += 20
-		water += 5
+		pcs_hydra += 5
 		cumspclnt = 2
 		gs'stat'
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/fedor/fedorev2/home/livingroom/munch1.jpg"></center>'
@@ -2683,7 +2683,7 @@ if $ARGS[0] =  'Fridge':
 		cls
 		minut += 15
 		pcs_health += 10
-		water += 10
+		pcs_hydra += 10
 		pcs_mood += 20
 		fat += 2
 		pcs_energy += 60
@@ -2981,7 +2981,7 @@ if $ARGS[0] =  'Dinner':
 	pcs_willpwr += 20
 	pcs_mood += 20
 	pcs_energy += 70
-	water += 60
+	pcs_hydra += 60
 	fat += 2
 	cumspclnt = 2
 	minut += 20
@@ -3081,7 +3081,7 @@ if $ARGS[0] =  'Fedor Kitchen':
 			pcs_mood += 20
 			fat += 1
 			pcs_energy += 60
-			water += 40
+			pcs_hydra += 40
 			cumspclnt = 2
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/fedor/fedorev2/home/kitchen/eating2.jpg"></center>'

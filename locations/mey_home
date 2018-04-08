@@ -189,7 +189,7 @@ if $ARGS[0] = '1':
 			pcs_health += 30
 			pcs_mood += 30
 			pcs_energy += 15
-			water += 30
+			pcs_hydra += 30
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
@@ -240,8 +240,8 @@ if $ARGS[0] = '1':
 				lekarday = daystart
 				lekarstvo -= 1
 				sick -= sick * 20 / 100
-				if water < 50 : water += 30 else water +=15
-				if water > 100: water = 100
+				if pcs_hydra < 50 : pcs_hydra += 30 else pcs_hydra +=15
+				if pcs_hydra > 100: pcs_hydra = 100
 
 				'<center><img <<$set_imgh>> src="images/locations/shared/apartment/event/sick/lekr<<picrand>>.jpg"></center>'
 				'You swallow the pill, and shortly after you feel a bit better.'

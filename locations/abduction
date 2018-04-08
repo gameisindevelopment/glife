@@ -491,7 +491,7 @@ if $ARGS[0] = 'abdEscapeWindow3':
 	'You decide to...'
 	nroad = 12
 	minut += 180
-	water -= 50
+	pcs_hydra -= 50
 	gs 'stat'
 
 	painkiller = painkiller_bak
@@ -527,7 +527,7 @@ if $ARGS[0] = 'abdFood':
 		pcs_health += 30
 		pcs_mood += 10
 		pcs_energy += 50
-		water -= 25
+		pcs_hydra -= 25
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
@@ -547,7 +547,7 @@ if $ARGS[0] = 'abdFood':
 		pranik -= 1
 		pcs_health += 30
 		pcs_mood += 10
-		water += 100
+		pcs_hydra += 100
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		gs 'stat'
@@ -572,8 +572,8 @@ if $ARGS[0] = 'abdFood':
 				vitaminday = daystart
 				vitamin -= 1
 				frost = 0
-				if water < 50 : water += 30 else water +=15
-				if water > 100: water = 100
+				if pcs_hydra < 50 : pcs_hydra += 30 else pcs_hydra +=15
+				if pcs_hydra > 100: pcs_hydra = 100
 
 				if KandidozOnce = 1:Kandidoz -= 2
 				if GerpesOnce = 1:Gerpes -= 2

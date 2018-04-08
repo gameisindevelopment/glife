@@ -164,7 +164,7 @@ if $ARGS[0] = 'Cupcake Time':
 	pcs_willpwr += 25	
 	pcs_mood += 25
 	pcs_energy += 40
-	water += 40
+	pcs_hydra += 40
 	fat += 2
 	cumspclnt = 2		
 	gs'stat'

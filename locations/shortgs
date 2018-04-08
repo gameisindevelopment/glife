@@ -14,7 +14,7 @@ if $ARGS[0] = 'smoker':
 	pcs_breath = 0
 	pcs_mood += 100
 	wipo += 100
-	water -= 5
+	pcs_hydra -= 5
 	if pcs_energy < 80: pcs_energy += 4
 	gs '$menu_obnovit'
 end &!--- smoker ---
