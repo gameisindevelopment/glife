@@ -147,7 +147,7 @@ $shower = {
 		gt $loc, $metka
 	end
 
-	gs 'din_van', 'pvt_pee'
+	gs 'din_van', 'prvt_pee'
 }
 
 $bath = {
@@ -672,10 +672,10 @@ if $ARGS[0] = 'private':
     elseif shampoo = 0 and $loc = 'tanvanr':
     	shampoo = 1
 		'You can use Tanyas shampoo.'
-		gs 'din_van', 'pvt_pee'
+		gs 'din_van', 'prvt_pee'
     else
     	'<font color="red">You''ve run out of shampoo and will have to buy some more before you can wash yourself.</font>'
-		gs 'din_van', 'pvt_pee'
+		gs 'din_van', 'prvt_pee'
     end
 
 	if painkiller > 0:
