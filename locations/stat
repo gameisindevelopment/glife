@@ -66,6 +66,8 @@ end
 if cheatNosweat = 1 and pcs_sweat > 0: pcs_sweat = 0
 if cheatNoEat = 1:
 	if pcs_energy < 35: pcs_energy = 35
+end
+if cheatNoDrink = 1:
 	if water < 35: water = 35
 end
 if cheatBandit = 1 and npc_horny['A66'] < 19: npc_horny['A66'] = 19
@@ -844,6 +846,12 @@ if pcs_energy < 0:
 	end
 end
 
+if water < 0:
+	water = 1
+	health -= 10
+	willpower -= 1
+end
+
 if pcs_mood <= 0:
 	pcs_mood = 1
 	pcs_health -= 5
@@ -949,9 +957,9 @@ else
 end
 
 if water >= 80:
-	$water = '<font color="green">You couldn''t drink one more sip.</font>'
+	$water = '<font color="green">You are not thirsty at all.</font>'
 elseif water >= 40:
-	$water = '<font color="blue">You''re not really thirsty, but a small drink would be very welcome.</font>'
+	$water = '<font color="blue">You are slightly thirsty.</font>'
 elseif water >= 8:
 	$water = '<font color="brown">You are thirsty.</font>'
 else

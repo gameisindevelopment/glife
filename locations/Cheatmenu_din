@@ -71,6 +71,17 @@ $cheatmenu['noEat'] = {
 	end
 }
 
+$cheatmenu['noDrink'] = {
+	if cheatNoDrink = 0:
+		cheatNoDrink = 1
+		dynamic $cheatmenu['permanent']
+		exit
+	elseif cheatNoDrink = 1:
+		cheatNoDrink = 0
+		dynamic $cheatmenu['permanent']
+	end
+}
+
 $cheatmenu['noSleep'] = {
 	if cheatNoSleep = 0:
 		cheatNoSleep = 1
@@ -263,6 +274,8 @@ $cheatmenu['permanent'] = {
 	if cheatNosweat = 1:$cheatNosweat = '<b>ON</b>'
 	if cheatNoEat = 0:$cheatNoEat = 'OFF'
 	if cheatNoEat = 1:$cheatNoEat = '<b>ON</b>'
+	if cheatNoDrink = 0:$cheatNoDrink = 'OFF'
+	if cheatNoDrink = 1:$cheatNoDrink = '<b>ON</b>'
 	if cheatNoSleep = 0:$cheatNoSleep = 'OFF'
 	if cheatNoSleep = 1:$cheatNoSleep = '<b>ON</b>'
 	if cheatNoFat = 0:$cheatNoFat = 'OFF'
@@ -290,7 +303,8 @@ $cheatmenu['permanent'] = {
 	pl'Always do an enema: <a href="exec:dynamic $cheatmenu[''enema'']"><<$cheatKlisma>></a>'
 	pl'Cosmetics never smeared: <a href="exec:dynamic $cheatmenu[''nomakeup'']"><<$cheatNomakeup>></a>'
 	pl'Never sweat: <a href="exec:dynamic $cheatmenu[''nosweat'']"><<$cheatNosweat>></a>'
-	pl'Never eat or drink: <a href="exec:dynamic $cheatmenu[''noEat'']"><<$cheatNoEat>></a>'
+	pl'Never eat: <a href="exec:dynamic $cheatmenu[''noEat'']"><<$cheatNoEat>></a>'
+	pl'Never drink: <a href="exec:dynamic $cheatmenu[''noDrink'']"><<$cheatNoDrink>></a>'
 	pl'Never sleep: <a href="exec:dynamic $cheatmenu[''noSleep'']"><<$cheatNoSleep>></a>'
 	pl'Never lose or gain weight: <a href="exec:dynamic $cheatmenu[''noFat'']"><<$cheatNoFat>></a>'
 	pl'Disable STDs: <a href="exec:dynamic $cheatmenu[''health'']"><<$cheatHealth>></a>'
