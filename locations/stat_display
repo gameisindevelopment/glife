@@ -71,6 +71,7 @@ end
 !!!!!!!!!!!!!!!!!!!!!
 
 if pcs_sleep > 100: pcs_sleep = 100
+if water > 100: water = 100
 
 
 !!----------------image Extra messages, start--------------------------
@@ -556,13 +557,13 @@ elseif pcs_energy < 30:
 end
 
 if water < 5:
-	$stat_msg += '<BR><font color="red">You are dying of thirst, if you don't drink soon, you could die.</font>'
+	$stat_msg += '<BR><font color="red">You feel light-headed, if you don''t have something to drink very soon, you will pass out.</font>'
 elseif water < 10:
 	$stat_msg += '<BR><font color="red">You are dehydrated, you really need to have something to drink.</font>'
 elseif water < 20:
-	$stat_msg += '<BR>You are so thirsty you struggle to concentrate.'
+	$stat_msg += '<BR>You are thirsty and your dry throat is irritating and distracting you.'
 elseif water < 30:
-	$stat_msg += '<BR>You feel thirsty and and wouldn't mind a drink. water.'
+	$stat_msg += '<BR>You feel a little thirsty and your mouth is a little dry.'
 end
 
 if pcs_sleep < 5:
