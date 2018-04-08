@@ -92,7 +92,7 @@ if mira = 0:
 	end
 
 	dynamic $bteeth
-	gs 'din_van', 'pvt_pee'
+	gs 'din_van', 'prvt_pee'
 	dynamic $tampon
 	dynamic $wearpan
 	dynamic $basin
