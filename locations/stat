@@ -846,7 +846,7 @@ if pcs_energy < 0:
 	end
 end
 
-if water < 0:
+if water <= 0:
 	water = 1
 	health -= 10
 	willpower -= 1

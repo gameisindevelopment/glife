@@ -53,13 +53,17 @@ act 'Have a snack (0:05)':gs 'food', 'snack'
 act 'Have a cup of tea (0:05)':
 	cls
 	minut += 5
-	water += 80
-	cumspclnt = 2
-	gs 'cum_cleanup'
-	pcs_breath = 0
-	pcs_mood += rand(3, 6)
-	'You make a refreshing cup of tea and everything seems a little better.'
-
+	if water >= 100:
+		'You don''t need any more tea.'
+	else
+		water += 80
+		cumspclnt = 2
+		gs 'cum_cleanup'
+		pcs_breath = 0
+		pcs_mood += rand(3, 6)
+		'You make a refreshing cup of tea and everything seems a little better.'
+	end
+	
 	gs 'stat'
 
 	act 'Get up from the table':gt $loc, $metka

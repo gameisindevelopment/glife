@@ -1,11 +1,11 @@
 # food
-!{Snacks: +20 pcs_energy,+6 fat
-Fast Food: +70 pcs_energy, +12 fat (hamburgers, fried food, like the downtown diner)
-Small Meal: +40 pcs_energy, +3 fat (soup and sandwiches, cafe light lunches, etc)
-Medium Meal and Hotel Food: +60 pcs_energy, +6 fat (home cooked dinners and room service equivalent)
-Large Meal: +100 pcs_energy, +12 fat (steak dinners, new years party dinner, etc)
-Bagged Lunch: +30 pcs_energy, +3 fat (sandwich, cold leftovers, etc)
-Health Meal: +50 pcs_energy, +1 fat (Diet food, Salads, rice cakes with peanut butter)
+!{Snacks: +20 pcs_energy/thirst,+6 fat
+Fast Food: +70 pcs_energy/thirst, +12 fat (hamburgers, fried food, like the downtown diner)
+Small Meal: +40 pcs_energy/thirst, +3 fat (soup and sandwiches, cafe light lunches, etc)
+Medium Meal and Hotel Food: +60 pcs_energy/thirst, +6 fat (home cooked dinners and room service equivalent)
+Large Meal: +100 pcs_energy/thirst, +12 fat (steak dinners, new years party dinner, etc)
+Bagged Lunch: +30 pcs_energy/ +40 water, +3 fat (sandwich, cold leftovers, etc)
+Health Meal: +50 pcs_energy/thirst, +1 fat (Diet food, Salads, rice cakes with peanut butter)
 }
 
 if $ARGS[0] = 'snack':
@@ -17,6 +17,7 @@ if $ARGS[0] = 'snack':
 	pcs_mood += 20
 	fat += 6
 	pcs_energy += 20
+	water += 20
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -34,6 +35,7 @@ if $ARGS[0] = 'f_food':
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 70
+	water += 70
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -52,6 +54,7 @@ if $ARGS[0] = 's_meal':
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 40
+	water += 40
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -70,6 +73,7 @@ if $ARGS[0] = 'm_meal':
 	pcs_health += 10
 	fat += 6
 	pcs_energy += 60
+	water += 60
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -89,6 +93,7 @@ if $ARGS[0] = 'l_meal':
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 100
+	water += 100
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -108,6 +113,7 @@ if $ARGS[0] = 'bag_lunch':
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 30
+	water += 40
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -127,6 +133,7 @@ if $ARGS[0] = 'h_food':
 	fat += 6
 	money -= 100
 	pcs_energy += 60
+	water += 60
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -146,6 +153,7 @@ if $ARGS[0] = 'h_meal':
 	pcs_health += 20
 	fat += 1
 	pcs_energy += 50
+	water += 50
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
