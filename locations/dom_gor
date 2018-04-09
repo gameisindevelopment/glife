@@ -42,7 +42,7 @@ if $clothingworntype = 'exercise' and teachlevel > 20 and parkrunday ! daystart 
 				*clr
 				beguch += 1
 				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hostel/stop.jpg"></center>'
-				'You 're running with one of your pupils'', sometimes stopping and chatting with ease.'
+				'You''re running with one of your pupils'', sometimes stopping and chatting with ease.'
 				'Pupil: "Miss <<$pcs_lastname>>, you are so beautiful, and we are all very fond of you!" You: "Hmm, thank you!"'
 
 				act 'Complete run':gt 'gskver'
