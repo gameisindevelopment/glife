@@ -1,11 +1,11 @@
 # food
-!{Snacks: +20 pcs_energy/pcs_hydra,+6 fat
-Fast Food: +70 pcs_energy/pcs_hydra, +12 fat (hamburgers, fried food, like the downtown diner)
-Small Meal: +40 pcs_energy/pcs_hydra, +3 fat (soup and sandwiches, cafe light lunches, etc)
-Medium Meal and Hotel Food: +60 pcs_energy/pcs_hydra, +6 fat (home cooked dinners and room service equivalent)
-Large Meal: +100 pcs_energy/pcs_hydra, +12 fat (steak dinners, new years party dinner, etc)
-Bagged Lunch: +30 pcs_energy/ +40 pcs_hydra, +3 fat (sandwich, cold leftovers, etc)
-Health Meal: +50 pcs_energy/pcs_hydra, +1 fat (Diet food, Salads, rice cakes with peanut butter)
+!{Snacks: +20 pcs_energy +10 pcs_hydra,+6 fat
+Fast Food: +70 pcs_energy +35 pcs_hydra, +12 fat (hamburgers, fried food, like the downtown diner)
+Small Meal: +40 pcs_energy +20 pcs_hydra, +3 fat (soup and sandwiches, cafe light lunches, etc)
+Medium Meal and Hotel Food: +60 pcs_energy +30 pcs_hydra, +6 fat (home cooked dinners and room service equivalent)
+Large Meal: +100 pcs_energy +50 pcs_hydra, +12 fat (steak dinners, new years party dinner, etc)
+Bagged Lunch: +30 pcs_energy +15 pcs_hydra, +3 fat (sandwich, cold leftovers, etc)
+Health Meal: +50 pcs_energy +25 pcs_hydra, +1 fat (Diet food, Salads, rice cakes with peanut butter)
 }
 
 if $ARGS[0] = 'snack':
@@ -17,7 +17,7 @@ if $ARGS[0] = 'snack':
 	pcs_mood += 20
 	fat += 6
 	pcs_energy += 20
-	pcs_hydra += 20
+	pcs_hydra += 10
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -35,7 +35,7 @@ if $ARGS[0] = 'f_food':
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 70
-	pcs_hydra += 70
+	pcs_hydra += 35
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -54,7 +54,7 @@ if $ARGS[0] = 's_meal':
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 40
-	pcs_hydra += 40
+	pcs_hydra += 20
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -73,7 +73,7 @@ if $ARGS[0] = 'm_meal':
 	pcs_health += 10
 	fat += 6
 	pcs_energy += 60
-	pcs_hydra += 60
+	pcs_hydra += 30
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -93,7 +93,7 @@ if $ARGS[0] = 'l_meal':
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 100
-	pcs_hydra += 100
+	pcs_hydra += 50
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -113,7 +113,7 @@ if $ARGS[0] = 'bag_lunch':
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 30
-	pcs_hydra += 40
+	pcs_hydra += 15
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -133,7 +133,7 @@ if $ARGS[0] = 'h_food':
 	fat += 6
 	money -= 100
 	pcs_energy += 60
-	pcs_hydra += 60
+	pcs_hydra += 30
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -153,7 +153,7 @@ if $ARGS[0] = 'h_meal':
 	pcs_health += 20
 	fat += 1
 	pcs_energy += 50
-	pcs_hydra += 50
+	pcs_hydra += 25
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0

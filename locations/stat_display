@@ -71,7 +71,7 @@ end
 !!!!!!!!!!!!!!!!!!!!!
 
 if pcs_sleep > 100: pcs_sleep = 100
-!if pcs_hydra > 100: pcs_hydra = 100 !do I want to be overfilled with water?
+if pcs_hydra > 100: pcs_hydra = 100
 
 
 !!----------------image Extra messages, start--------------------------
@@ -196,7 +196,7 @@ elseif Enable_scalepic = 2:
 $st_temp='rgb(<<(16777216 + fcolor) mod 256>>,<<(16777216 + fcolor)/256 mod 256>>,<<(16777216 + fcolor)/65536>>)'
 $stat_msg += '<p><font color="<<$st_temp>>"><TABLE width="300" cellpadding="1" cellspacing="0"><TR><TD width="85%">'+FUNC('indiktab', '2', pcs_horny, pcs_horny)+'</TD><TD> Arousal</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '2', pain['total'], pain['total'])+'</TD><TD> Pain</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_health * 100 / healthmax, pcs_health)+'</TD><TD> Health</TD></TR>'
 if MagikDostup = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_manna * 100 / mannamax, pcs_manna)+'</TD><TD> Manna</TD></TR>'
-$stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_willpwr * 100 / willpowermax, pcs_willpwr)+'</TD><TD> Willpower</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_stam * 100 / stammax, pcs_stam)+'</TD><TD> Stamina</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_mood, pcs_mood)+'</TD><TD> Mood</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_energy, pcs_energy)+'</TD><TD> Hunger</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_hydra, pcs_hydra)+'</TD><TD> Thirst</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_sleep, pcs_sleep)+'</TD><TD> Sleep</TD></TR></TABLE></font></p>'
+$stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_willpwr * 100 / willpowermax, pcs_willpwr)+'</TD><TD> Willpower</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_stam * 100 / stammax, pcs_stam)+'</TD><TD> Stamina</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_mood, pcs_mood)+'</TD><TD> Mood</TD></TR> if cheatNoEat = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_energy, pcs_energy)+'</TD><TD> Hunger</TD></TR>' if cheatNoDrink = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_hydra, pcs_hydra)+'</TD><TD> Thirst</TD></TR>'<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_sleep, pcs_sleep)+'</TD><TD> Sleep</TD></TR></TABLE></font></p>'
 else
 	gs 'indik', '2', pcs_horny, pcs_horny
 	$stat_msg += '<BR><<$ind>> Arousal'
@@ -221,11 +221,15 @@ else
 	gs 'indik', '1', pcs_mood, pcs_mood
 	$stat_msg += '<BR><<$ind>> Mood'
 
-	gs 'indik', '1', pcs_energy, pcs_energy
-	$stat_msg += '<BR><<$ind>> Hunger'
+	if cheatNoEat = 0:
+		gs 'indik', '1', pcs_energy, pcs_energy
+		$stat_msg += '<BR><<$ind>> Hunger'
+	end
 
-	gs 'indik', '1', pcs_hydra, pcs_hydra
-	$stat_msg += '<BR><<$ind>> Thirst'
+	if cheatNoDrink = 0:
+		gs 'indik', '1', pcs_hydra, pcs_hydra
+		$stat_msg += '<BR><<$ind>> Thirst'
+	end
 
 	gs 'indik', '1', pcs_sleep, pcs_sleep
 	$stat_msg += '<BR><<$ind>> Sleep'

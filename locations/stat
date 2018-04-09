@@ -391,20 +391,20 @@ if minut >= 60:
 	if insleep = 1:
 		if amphHigh > 0:
 			pcs_energy -= (4 / amphetamineBonus + succublvl/2)
-			pcs_hydra -= (4 / amphetamineBonus + succublvl/2)
+			pcs_hydra -= (8 / amphetamineBonus + succublvl/2)
 		else
 			pcs_energy -= (4 * amphetamineBonus + succublvl/2)
-			pcs_hydra -= (4 * amphetamineBonus + succublvl/2)
+			pcs_hydra -= (8 * amphetamineBonus + succublvl/2)
 		end
 		pcs_stam += stammax / 10
 		pcs_sleep -= 4
 	else
 		if amphHigh > 0:
 			pcs_energy -= (8 / amphetamineBonus + succublvl)
-			pcs_hydra -= (8 / amphetamineBonus + succublvl)
+			pcs_hydra -= (16 / amphetamineBonus + succublvl)
 		else
 			pcs_energy -= (8 * amphetamineBonus + succublvl)
-			pcs_hydra -= (8 * amphetamineBonus + succublvl)
+			pcs_hydra -= (16 * amphetamineBonus + succublvl)
 		end
 		pcs_stam += stammax / 20
 		pcs_sleep -= 4
