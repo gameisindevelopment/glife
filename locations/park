@@ -249,8 +249,8 @@ if $ARGS[0] = 'exit':
 	cla
 	act 'Cancel': gt 'park', 'start'
 	act 'Go to the highway near the park':gt 'park', 'whore'
-	act 'Go to the Residential Area':minut += 20 & gt 'street'
-	act 'Go to the City center':minut += 45 & gt 'down'
+	act 'Go to the residential area':minut += 20 & gt 'street'
+	act 'Go to the city center':minut += 45 & gt 'down'
 	act 'Go to the city industrial region':minut += 60 & gt 'Nord'
 end
 
