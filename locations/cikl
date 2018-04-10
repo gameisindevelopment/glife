@@ -100,9 +100,9 @@ if husbandMark = 1 and husband <= 10:
 end
 
 if katjaPreg = 0 and month >= 2:
-	if schoool_year = 2001 and year > 2016:
+	if school_year = 2001 and year > 2016:
 		katjaPreg = 1
-	elseif schoool_year = 2000 and year > 2017:
+	elseif school_year = 2000 and year > 2017:
 		katjaPreg = 1
 	end
 end
@@ -1135,9 +1135,9 @@ if storyline = 1:
 
 !!missed graduation
 	if month = 5 and day = 26:
-		if schoool_year = 2001 and year = 2018 and kanikuli ! 7:
+		if school_year = 2001 and year = 2018 and kanikuli ! 7:
 			grad_miss = daystart + 1
-		elseif schoool_year = 2000 and year = 2017 and kanikuli ! 7:
+		elseif school_year = 2000 and year = 2017 and kanikuli ! 7:
 			grad_miss = daystart + 1
 		end
 	end
@@ -1174,7 +1174,7 @@ if storyline = 1:
 				end
 			end
 		elseif month = 5:
-			if ( (schoool_year = 2000 and year = 2017) or (schoool_year = 2001 and year = 2018) ) and day >= 19 and day <= 25:
+			if ( (school_year = 2000 and year = 2017) or (school_year = 2001 and year = 2018) ) and day >= 19 and day <= 25:
 				if day = 25: 
 					kanikuli = 6
 					$holyday = '<b>Your graduation is today. Be there by 8:00.</b>'
