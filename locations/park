@@ -249,8 +249,8 @@ if $ARGS[0] = 'exit':
 	cla
 	act 'Cancel': gt 'park', 'start'
 	act 'Go to the highway near the park':gt 'park', 'whore'
-	act 'Go to the Residential Area':minut += 20 & gt 'street'
-	act 'Go to the City center':minut += 45 & gt 'down'
+	act 'Go to the residential area':minut += 20 & gt 'street'
+	act 'Go to the city center':minut += 45 & gt 'down'
 	act 'Go to the city industrial region':minut += 60 & gt 'Nord'
 end
 
@@ -309,7 +309,7 @@ if $ARGS[0] = 'luna':
 				pcs_health += 10
 				pcs_mood += 20
 				fat += 1
-				water += 40
+				pcs_hydra += 40
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0
