@@ -1,10 +1,11 @@
 # beverage
-!{Water (wat_bev): +5 pcs_energy, +25 pcs_hydra (kiosk, diner, gym, supermarket, gas station)
-Kvass (kva_bev): +5 pcs_energy, +15 pcs_hydra (kiosk, diner, gym, supermarket, gas station)
+!{
+Water (wat_bev): +5 pcs_energy, +50 pcs_hydra (kiosk, diner, gym, supermarket, gas station)
+Kvass (kva_bev): +5 pcs_energy, +35 pcs_hydra (kiosk, diner, gym, supermarket, gas station)
 Vodka (vod_bev): +5 pcs_energy, -5 pcs_hydra (restaurant, party, bar, supermarket)
 Wine (win_bev): +5 pcs_energy, -5 pcs_hydra (restaurant, party, bar, supermarket)
 Beer (bee_bev): +5 pcs_energy, +5 pcs_hydra (restaurant, party, bar, supermarket)
-}
+}!
 
 if $ARGS[0] = 'kva_bev':
 	cla

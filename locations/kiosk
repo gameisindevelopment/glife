@@ -132,7 +132,7 @@ if $kioskloc = 'counter':
 	gs 'stat'
 	
 	'<center><img WIDTH = 800 HEIGHT = 500 src="images/locations/city/shared/kiosk/kiosk123.jpg"></center>'
-	'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/ruch.jpg"></center>'
+	'<center><img WIDTH = 245 HEIGHT = 56 src="images/locations/city/shared/kiosk/ruch.jpg"></center>'
 	if $message ! '':
 		'<center>'+$message+'</center>'
 		killvar '$message'
@@ -150,16 +150,17 @@ if $kioskloc = 'counter':
 	*P FUNC ('$single_stock_item', 1, 'Fitness magazine', 50, 'fitmag', 'kiosk')
 	'</table></center>'
 	*pl
-	if money >= 50:
-			act 'Eat snack (50 <b>₽</b>)':
-				money -= 50
-				gs 'food', 'snack'
-			end   
+		if money >= 50:
+			act 'Buy snack (0:05) (50 <b>₽</b>)':money -= 50 & gs 'food', 'snack' & gt 'kiosk'
+		end   
+	
+		if money >= 50:
+			act 'Buy water (0:05) (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'wat_bev' & gt 'kiosk'
 		end
-		
-	act 'Leave':minut += 5 & gt $loc
-
 	act 'View phone themes': $kioskloc = 'themes' & gt 'kiosk'
+	
+	act 'Leave':minut += 5 & gt $loc
+	
 end
 
 if $kioskloc = 'themes':
@@ -167,7 +168,7 @@ if $kioskloc = 'themes':
 	gs 'stat'
 	
 	'<center><img WIDTH = 800 HEIGHT = 500 src="images/locations/city/shared/kiosk/kiosk123.jpg"></center>'
-	'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/ruch.jpg"></center>'
+	'<center><img WIDTH = 245 HEIGHT = 56 src="images/locations/city/shared/kiosk/ruch.jpg"></center>'
 	'All themes cost 500 <b>₽</b>'
 
 	i = 1
