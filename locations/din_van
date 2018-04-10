@@ -1097,7 +1097,7 @@ if $ARGS[0] = 'prvt_pee':
 	act 'Go pee':
 		*clr
 		cla
-		'<center><img <<$set_imgh>> src="images/pc/pee-private/' + rand(1,19) + '.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/pc/pee/pee-private/' + rand(1,19) + '.jpg"></center>'
 		!!Get random pee-private picture
 		rand_pee = rand(0,7)
 		if rand_pee = 0:
@@ -1174,7 +1174,7 @@ if $ARGS[0] = 'pblc_pee':
 	act 'Go pee':
 		*clr
 		cla
-		'<center><img <<$set_imgh>> src="images/pc/pee-public/' + rand(1,19) + '.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/pc/pee/pee-public/' + rand(1,19) + '.jpg"></center>'
 		rand_pee = rand(0,7)
 		if rand_pee = 0:
 			'Settling into the toilet seat you pull out your phone and begin checking for messages and doing other things to occupy the time until the stream slows to a trickle and finally stops.'
@@ -1186,7 +1186,7 @@ if $ARGS[0] = 'pblc_pee':
 			'Immediately up entering the restroom, your nostrils are assaulted by the most heinous stench. Knowing that you have no other option, you try to suppress your gags as you sit in a stall and do your business.'
 		elseif rand_pee = 4:
 			*clr
-			'<center><img <<$set_imgh>> src="images/pc/pee-public/Hovercraft' + rand(1,2) + '.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/pc/pee/pee-public/Hovercraft' + rand(1,2) + '.jpg"></center>'
 			'You enter the stall and groan in disgust at the sight of the gross facilities. Realizing that you have no choice, you decided to "hovercraft" it. Instead of sitting down on the filthy seat, you hover your ass above the bowl before letting go of the pee you''d been holding, not caring if all of the stream gets into the toilet or elsewhere.'
 		else
 			!!Graffiti trigger text
