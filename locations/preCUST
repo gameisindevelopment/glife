@@ -192,7 +192,7 @@ if $ARGS[0] = 'Done':
 			birthyear = year - age
 			birthmonth = 4
 			birthday = 1
-			schoool_year = 1998
+			school_year = 1998
 		end
 
 !!		Body
@@ -250,7 +250,7 @@ if $ARGS[0] = 'Done':
 			birthyear = year - age
 			birthmonth = 4
 			birthday = 1
-			schoool_year = 1998
+			school_year = 1998
 		end
 
 !!		Body
@@ -294,7 +294,7 @@ if $ARGS[0] = 'Done':
 		shampoo = 20
 		tampon = 15
 		pcs_energy = 100
-		pcs_hydra = 100
+		water = 100
 		pcs_sleep = 100
 
 !!		Starting Option Adjustments

@@ -129,7 +129,7 @@ if $ARGS[0] = 'SGStart':
 	act 'Continue':
 		birthyear = 2000
 		yearlefttemp = 1
-		schoool_year = 2000
+		school_year = 2000
 		gt 'preSYS', 'SGStart2'
 	end
 end
