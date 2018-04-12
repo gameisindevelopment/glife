@@ -193,9 +193,9 @@ if $ARGS[0] = 'pos6':
 	'Spring water.'
 
 	act 'Have a drink':
-		if pcs_hydra >= 20:
+		if pcs_hydra >= 90:
 			'You are not thirsty.'
-		elseif pcs_hydra < 20:
+		elseif pcs_hydra < 90:
 			pcs_hydra += 20
 			cumspclnt = 2
 			gs 'cum_cleanup'

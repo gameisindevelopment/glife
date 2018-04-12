@@ -25,7 +25,7 @@ if workDolg > 0:
 		workDolg += 50
 		pcs_health += 30
 		pcs_mood += 30
-		pcs_energy += 60
+		pcs_energy += 20
 		pcs_hydra += 60
 		fat += 3
 		frost = 0

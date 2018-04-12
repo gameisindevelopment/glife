@@ -71,8 +71,8 @@ end
 !!!!!!!!!!!!!!!!!!!!!
 
 if pcs_sleep > 100: pcs_sleep = 100
-if pcs_hydra > 100: pcs_hydra = 100
-
+if pcs_hydra > 100: hydratemp = (pcs_hydra - 100) & pcs_hydra = (100 + hydratemp) & killvar 'hydratemp'
+if pcs_hydra > 200: pcs_hydra = 200
 
 !!----------------image Extra messages, start--------------------------
 $stat_imgtool_msg=''

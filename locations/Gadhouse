@@ -277,7 +277,7 @@ if $ARGS[0] = 'Main':
 			pranik -= 1
 			pcs_health += 30
 			pcs_mood += 20
-			pcs_energy += 20
+			pcs_energy += 80
 			pcs_hydra += 20
 			cumspclnt = 2
 			gs 'cum_cleanup'
