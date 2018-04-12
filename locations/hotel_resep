@@ -313,8 +313,6 @@ if $ARGS[0] = 'pavgenpros':
 	gs 'arousal', 'end'
 	guy += 1
 	pav_prostitute += 2
-	pcs_vag += 1
-	pcs_throat += 1
 	if npc_rel['A217'] = 15:
 		act'Continue':
 		cls
