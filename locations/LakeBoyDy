@@ -242,7 +242,7 @@ if $ARGS[0] = 'slap':
 						gs'stat'
 						
 						'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/fedor/fedorev/strela/vadimbely.jpg"></center>'
-						'You sob and cry, begging the criminals for mercy: "Please sir, I''m just a schoolgirl! I can''t raise that kind of money each week!"'
+						'You sob and cry, begging the criminals for mercy: "Please sir, I''m just a schoolgirl! I can''t raise that kind of money!"'
 						'The bald guy looks at you indifferently and yawns: "That''s really not my problem, <<$pcs_nickname>>. But you know what, I''ll get you started."'
 						'He pulls down his trunks, revealing his flaccid cock. His associate grabs you by the hair and pushes your head down towards the fat man''s groin: "You want some money, bitch? Go ahead... !"'
 
