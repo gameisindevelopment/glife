@@ -192,7 +192,7 @@ if $ARGS[0] = 'pos6':
 	'<center><img <<$set_imgh>> src="images/locations/suburban/rodnik.jpg"></center>'
 	'Spring water.'
 
-	act 'Have a drink':
+	act 'Drink from the spring':
 		if pcs_hydra >= 90:
 			'You are not thirsty.'
 		elseif pcs_hydra < 90:

@@ -24,11 +24,11 @@ if $ARGS[0] = 'start':
 	act 'Sit down at a table':
 		cla
 		if money >= 100:
-			act 'Eat (100 <b>₽</b>)':money -= 100 & gs 'food', 'm_meal'
-				if money >= 60:
-					act 'Kvass (60 <b>₽</b>)':money -= 60 & gs 'beverage', 'kva_bev'
-					if money >= 50:
-						act 'Water (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'wat_bev'
+			act 'Eat a meal (0:30) (100 <b>₽</b>)':money -= 100 & gs 'food', 'm_meal'
+				if money >= 50:
+					act 'Have a cup of coffee (0:05) (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'cof_bev'
+					if money >= 4:
+						act 'Have a glass of water (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'wat_bev'
 						if rand(1, 10) > 5:
 							gs 'boy'
 							'A man comes over to your table <<$boybody>> <<$boybod>> <<$boyface>> introducing himself as <<$boydesc>>.'

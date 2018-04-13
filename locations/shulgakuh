@@ -83,6 +83,7 @@ if $ARGS[0] = 'holodil':
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
+			pcs_hydra += 5
 			beer_day = daystart
 			beer_count -= 1
 			gs 'stat'
@@ -101,6 +102,7 @@ if $ARGS[0] = 'holodil':
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
+			pcs_hydra -= 10
 			vodka_day = daystart
 			vodka_count -= 1
 			gs 'stat'

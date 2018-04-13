@@ -13,6 +13,7 @@ if $ARGS[0] = '':
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
+		pcs_hydra -= 5
 		minut += 15
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/sonia/0.jpg"></center>'

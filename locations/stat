@@ -63,15 +63,18 @@ if cheatKlisma = 1:klismaday = daystart & klismaday1 = 1
 if cheatNomakeup = 1:
 	if pcs_makeup = 0: pcs_makeup = 1
 end
-if cheatNosweat = 1 and pcs_sweat > 0: pcs_sweat = 0
+if cheatNoSweat = 1 and pcs_sweat > 0: pcs_sweat = 0
 if cheatNoEat = 1:
 	if pcs_energy < 35: pcs_energy = 35
 end
 if cheatNoDrink = 1:
 	if pcs_hydra < 35: pcs_hydra = 35
 end
+if cheatNoSleep = 1:
+	if pcs_sleep < 35: pcs_sleep = 35
+end
+
 if cheatBandit = 1 and npc_horny['A66'] < 19: npc_horny['A66'] = 19
-if CheatNoSleep = 1 and pcs_sleep < 35: pcs_sleep = 35
 
 if alko > 0 and frost > 0:frost = 0
 if StrongNarkota >= 20:

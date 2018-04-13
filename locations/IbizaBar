@@ -16,6 +16,7 @@ if $ARGS[0]='buffetbar1':
 	minut += 10
 	alko += 5
 	pcs_energy += 10
+	pcs_hydra -= 10
 	gs 'stat'
 	act 'Leave the bar': gt 'restoreposition'
 end
@@ -26,7 +27,7 @@ if $ARGS[0]='buffetbar2':
 	*clr
 	minut += 10
 	pcs_energy += 10
-		pcs_hydra += 10
+	pcs_hydra += 10
 	gs 'stat'
 
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/buffetbar/bar2.jpg"></center><br>'
@@ -42,7 +43,7 @@ if $ARGS[0]='buffetbar3':
 	minut += 10
 	alko += 5
 	pcs_energy += 10
-		pcs_hydra += 10
+	pcs_hydra += 10
 	gs 'stat'
 	
 	'<center><video autoplay src="images/locations/city/citycenter/nightclub/trip01/buffetbar/bar3.mp4"></video></center><br>'
@@ -59,7 +60,7 @@ if $ARGS[0]='buffetbar4':
 	minut += 10
 	alko += 5
 	pcs_energy += 10
-		pcs_hydra += 10
+	pcs_hydra += 10
 	gs 'stat'
 
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/trip01/buffetbar/bar4.jpg"></center><br>'

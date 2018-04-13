@@ -1924,6 +1924,7 @@ if $ARGS[0] = 'BDSMEV':
 		act 'In the kitchen...':
 			cla
 			*clr
+			pcs_hydra -=10
 			gs'stat'
 
 			'<center><img <<$set_imgh>> src="images/locations/city/suburb/bdsm_club/hosjaika.jpg"></center>'

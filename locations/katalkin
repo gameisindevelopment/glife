@@ -165,7 +165,7 @@ elseif hour >= 22:
 				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/katalkin/katalkin.jpg"></center>'
 				'You join the officers at the table, who clearly have been drinking for a while already. They immediately pour you a glass of vodka and have a swig from their own.'
 
-				act 'Drink the vodka':alko += 2 & minut += 5 & gt 'katalkinAlko'
+				act 'Drink the vodka':pcs_hydra -= 10 & alko += 2 & minut += 5 & gt 'katalkinAlko'
 			end
 		end
 	elseif katalkinSexOnce = 0:

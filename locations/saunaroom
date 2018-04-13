@@ -47,7 +47,6 @@ if pcs_hydra < 80:
 	act 'Drink':
 		cla
 		minut += 5
-
 		pcs_hydra = 100
 		cumspclnt = 2
 		gs 'cum_cleanup'

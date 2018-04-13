@@ -933,6 +933,7 @@ if $ARGS[0] = 'hanterstable':
 		act 'Drink vodka':
 			*clr & cla
 			minut += 1
+			pcs_hydra -= 10
 			alko +=4
 			gs 'stat'
 
@@ -946,7 +947,7 @@ if $ARGS[0] = 'hanterstable':
 			minut += 15
 			alko +=2
 			fat += 1
-			pcs_hydra += 20
+			pcs_hydra += 10
 			gs 'stat'
 
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/shulginhome/kuh/beer2.jpg"></center>'

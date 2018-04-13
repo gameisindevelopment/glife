@@ -128,6 +128,7 @@ elseif apmeet = 2:
 			act 'Swallow his urine':
 				cls
 				minut += 10
+				pcs_hydra += 20
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/artem/sex/meet3_4.jpg"></center>'
 				'After you swallow his urine, the boys continue where they left off. Your hands are tied in front of you, you still can''t see, and you have no choice than to helplessly allow the boys to fuck your throat in turns. They''re still using the vegetable oil to keep your throat slick.'
@@ -139,6 +140,7 @@ elseif apmeet = 2:
 					minut += 10
 					stat['bj'] += 2
 					pcs_throat += 2
+					pcs_hydra += 20
 					spafinloc = 12
 					gs 'cum_manage'
 					if npcSex[2] = 0:npcSex[2] = 1 & guy += 1

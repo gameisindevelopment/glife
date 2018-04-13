@@ -56,14 +56,14 @@ if $ARGS[0] = '':
 	end
 
 	if hour >= 16:
-		if money >= 5:
+		if money >= 50:
 			act 'Order a beer (5 <b>₽</b>)':
 				cla
 				*clr
 				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 				'You go to the counter, sit down on one of the stools and, when the bartender notices you, ask: "Hey, could you bring me a beer?"'
 				if knowMartin = 1:
-					money -= 5
+					money -= 50
 					minut += 15
 					alko += 2
 					MartinRand = RAND(1,7)
@@ -105,7 +105,7 @@ if $ARGS[0] = '':
 					
 				elseif fakepassport = 1 or age >= 18:
 					knowMartin = 1
-					money -= 5
+					money -= 50
 					minut += 15
 					alko += 2
 					*nl
@@ -133,14 +133,14 @@ if $ARGS[0] = '':
 			end
 		end
 
-		if money >= 5:
+		if money >= 50:
 			act 'Order a shot of vodka (5 <b>₽</b>)':
 				cla
 				*clr
 				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 				'You go to the counter, sit down on one of the stools and, when the bartender notices you, ask: "Can I have a shot of vodka?"'
 				if knowMartin = 1:
-					money -= 5
+					money -= 50
 					minut += 5
 					alko += 2
 					MartinRand = RAND(1,7)
@@ -175,13 +175,13 @@ if $ARGS[0] = '':
 						'"Sure, <<$pcs_firstname>>, coming right up", Martin says, pours a shot and hands it to you.'
 						'"Thanks, Martin", you say and give him a friendly smile before he returns to what he was doing.'
 						'You slam back the vodka, enjoying the burning sensation it leaves in your throat, and spend a few minutes looking around the bar and letting your mind drift aimlessly as the alcohol takes effect.'
-						act 'Finish up': gt 'qwBarPolet'
+						act 'Finish up': pcs_hydra -= 10 & gt 'qwBarPolet'
 								
 					end
 					
 				elseif fakepassport = 1 or age >= 18:
 					knowMartin = 1
-					money -= 5
+					money -= 50
 					minut += 5
 					alko += 2
 					*nl
@@ -210,6 +210,10 @@ if $ARGS[0] = '':
 		end
 
 		act 'Go to the toilet': gt 'qwBarPoletToilet'
+	end
+	
+	if money >= 40:
+		act 'Drink some water (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'wat_bev'
 	end
 !! 'Look around the bar' action to find people to interact with/who will invite her to a drink?
 

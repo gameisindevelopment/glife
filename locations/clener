@@ -75,6 +75,7 @@ if $ARGS[0] = 'start':
 
 					act 'Have a drink':
 						cla
+						pcs_hydra -= 10
 						'You drink the shitty vodka and it burns your throat. Your throat is on fire and you quickly grab some cheese to help soothe it. Sasha casually downs the glass and doesn''t even blink. "Ah, good one."'
 						'While you are leaning over to eat the sausage, you feel a light touch as the guard pats you on the buttocks.'
 
@@ -82,6 +83,7 @@ if $ARGS[0] = 'start':
 							cla
 							minut += 15
 							pcs_horny += 10
+							pcs_hydra -= 10
 							gs 'stat'
 							'You smile and Sasha pours more vodka, not stopping his caressing of your buttocks.'
 
@@ -151,6 +153,7 @@ if $ARGS[0] = 'start':
 
 					act 'Have a drink':
 						cla
+						pcs_hydra -= 10
 						'You drink the shitty vodka and it burns your throat. Your throat is on fire and you quickly grab some cheese to help soothe it. Sasha casually downs the glass and doesn''t even blink. "Ah, good one."'
 						'While you are leaning over to eat the sausage, you feel a light touch as the guard pats you on the buttocks.'
 
@@ -169,6 +172,7 @@ if $ARGS[0] = 'start':
 
 						act 'Pretend not to notice':
 							cla
+							pcs_hydra -= 10
 							minut += 15
 							pcs_horny += 15 + SUB
 							gs 'stat'

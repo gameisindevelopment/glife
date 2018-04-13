@@ -80,10 +80,10 @@ act 'Drink':
 	cla
 	minut += 5
 
-	if pcs_hydra >= 20:
+	if pcs_hydra >= 100:
 		'You are not thirsty.'
-	elseif pcs_hydra < 20:
-		pcs_hydra += 20
+	elseif pcs_hydra < 80:
+		pcs_hydra += 30
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0

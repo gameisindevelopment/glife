@@ -69,14 +69,11 @@ else
 			end
 		end
 
-		act 'Have a meal at the cafe':
-			gs 'food', 'm_meal'
+		act 'Have a meal at the cafe (0:30)':gs 'food', 'm_meal'
 
-			if money >= 60:
-				act 'Kvass (60 <b>₽</b>)':money -= 60 & gs 'beverage', 'kva_bev'
+		act 'Have some coffee (0:05)':gs 'beverage', 'cof_bev'
 
-				if money >= 50:
-					act 'Water (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'wat_bev'
+		act 'Have some water (0:05)':gs 'beverage', 'wat_bev'
 			
 					razvrand = rand(1, 10)
 
@@ -92,8 +89,6 @@ else
 
 						act 'Agree to go ''drink tea'' with uncle Misha':gs 'boyStat', 'A54' & sexpartkno = 1 & gt 'gevent', '1-1'
 					end
-				end
-			end
 			act 'Get up from the table':gt 'gkafe'
 		end
 		if StoryLine = 1 and SchoolAtestat = 0:

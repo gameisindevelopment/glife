@@ -63,17 +63,17 @@ if $ARGS[0] = 'main':
 		'The diner has a single <a href="exec:gt ''laketoilet'', ''main''">toilet</a> available, for both males and females.'
 
 		if money >= 75:
-			act 'Have a meal (75 <b>₽</b>)':
+			act 'Order a meal (0:30) (75 <b>₽</b>)':
 				money -= 75
 				gs 'food', 'm_meal'
 			end
 			
-			if money >= 60:
-				act 'Kvass (60 <b>₽</b>)':money -= 60 & gs 'beverage', 'kva_bev'
+			if money >= 40:
+				act 'Order some coffee (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'cof_bev'
 			end
 
-			if money >= 50:
-				act 'Water (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'wat_bev'
+			if money >= 40:
+				act 'Order some water (0:05) (30 <b>₽</b>)':money -= 30 & gs 'beverage', 'wat_bev'
 			end
 		end
 	end

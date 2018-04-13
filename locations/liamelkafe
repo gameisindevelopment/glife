@@ -36,12 +36,12 @@ if $ARGS[0] = 'food':
 	if stallionQ = 0: StallionQ = 1
 end
 
-	if money >= 60:
-		act 'Kvass (60 <b>₽</b>)':money -= 60 & gs 'beverage', 'kva_bev'
+	if money >= 20:
+		act 'Order a cup of coffee (0:05) (20 <b>₽</b>)':money -= 20 & gs 'beverage', 'cof_bev'
 	end
 
-	if money >= 50:
-		act 'Water (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'wat_bev'
+	if money >= 10:
+		act 'Order a glass of water (0:05) (10 <b>₽</b>)':money -= 10 & gs 'beverage', 'wat_bev'
 	end
 
 --- liamelkafe ---------------------------------

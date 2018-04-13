@@ -352,6 +352,7 @@ if $ARGS[0] = 'holodil':
 			*clr & cla
 			minut += 1
 			cumspclnt = 2
+			pcs_hydra += 20
 			gs 'cum_cleanup'
 			pcs_breath = 0
 			kvass_day = daystart
@@ -366,6 +367,7 @@ if $ARGS[0] = 'holodil':
 					*clr
 					minut += 1
 					cumspclnt = 2
+					pcs_hydra += 20
 					gs 'cum_cleanup'
 					pcs_breath = 0
 					kvass_day = daystart

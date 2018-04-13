@@ -157,6 +157,7 @@ if $ARGS[0] = '2':
 		act 'Drink the vodka':
 			cls
 			alko += 5
+			pcs_hydra -= 10
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/shared/postoffice/sex/postevent2-4.jpg"></center>'
 			'"Maybe a few sips to take the edge off," you mutter, but she pours a mug full and hands it to you. "Cheers!" she grins, and takes a swig straight from the bottle before putting it away.'
@@ -176,6 +177,7 @@ if $ARGS[0] = '2':
 			act 'Drink the vodka':
 				cls
 				alko += 5
+				pcs_hydra -= 10
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/shared/postoffice/sex/postevent2-4.jpg"></center>'
 				'"Maybe a few sips to take the edge off," you mutter, but she completely fills the mug and hands it to you. "Cheers!" she grins, and takes a swig straight from the bottle before putting it away.'
@@ -208,6 +210,7 @@ if $ARGS[0] = '2':
 			act 'Ask for the vodka':
 				cls
 				alko += 5
+				pcs_hydra -= 10
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/shared/postoffice/sex/postevent2-4.jpg"></center>'
 				'"Maybe some vodka to take the edge off isn''t such a bad idea after all," you mutter, and she pours a mug full and hands it to you. "Cheers!" she grins, and takes a swig straight from the bottle before putting it away.'

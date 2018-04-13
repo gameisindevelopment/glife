@@ -16,6 +16,7 @@ if $ARGS[0] = '':
 			minut += 30
 			izoldaday = daystart
 			izoldaQW += 1
+			pcs_hydra -=10
 			gs 'stat'
 
 			if izoldaQW < 5:

@@ -185,7 +185,7 @@ if $ARGS[0] = 'bar:order:vodka':
 	minut += durr
 	alko += 2
 	pcs_energy += 5
-	pcs_hydra -= 2
+	pcs_hydra -= 10
 	gs 'stat'
 	act 'Continue':gt 'brothel', 'bar'
 end
@@ -214,7 +214,7 @@ if $ARGS[0] = 'bar:order:water':
 	durr = 10
 	minut += durr
 	pcs_energy += 2
-	pcs_hydra += 20
+	pcs_hydra += 40
 	alko -= 1
 	gs 'stat'
 	act 'Continue':gt 'brothel', 'bar'
@@ -539,6 +539,7 @@ if $ARGS[0] = 'brothel:section1:girlroom':
 	*nl
 	'-------------------------------------------------------------------------------------'
 	*nl
+	act 'Have a glass of water (0:05)':gs 'beverage', 'wat_bev'
 	act 'Change your clothes':gt 'wardrobe', 'start'	
 	act 'Look in the mirror': gt 'mirror', 'start'
     act 'Have a shower':

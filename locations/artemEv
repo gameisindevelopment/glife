@@ -583,6 +583,7 @@ if $ARGS[0] = 'learn':
 			minut += 5
 			pcs_horny += 10
 			alko += 4
+			pcs_hydra -= 10
 			gs 'stat'
 
 			act 'See what happens next':

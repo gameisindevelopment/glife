@@ -12,6 +12,7 @@ if $ARGS[0] = '':
 	act'Drink the vodka':
 		cls
 		alko += 6
+		pcs_hydra -= 10
 		frost = 0
 		gs'stat'
 		'You drink the vodka as you were told, and feel a shiver run down your spine. Your throat burns when you swallow it, but soon after a pleasant warmth spreads throughout your body. A few minutes later, you feel absolutely hammered.'
