@@ -203,7 +203,7 @@ elseif $ARGS[0] = 'payday':
 				if belgangPayWeek > belgangPay:
 					belgangPayWeek = belgangPay
 				end
-				'He frowns, abruptly cutting you off. You can see the disapproval in his eyes when you glance up. "That is very unfortunate, <<$pcs_nickname>>," he says. "You can pay me next week, but I expected 2000 <b>₽</b> extra."'
+				'He frowns, abruptly cutting you off. You can see the disapproval in his eyes when you glance up. "That is very unfortunate, <<$pcs_nickname>>," he says. "You can pay me next week, but I expect 2000 <b>₽</b> extra."'
 				if belgangProstitute = 0:
 					belgangProstitute = 1
 					'"And don''t worry, <<$pcs_nickname>>. I''ll give you some opportunities to help you pay down your debts," he says with a dangerous smile.'
@@ -228,7 +228,7 @@ elseif $ARGS[0] = 'payday':
 				if belgangPayWeek > belgangPay:
 					belgangPayWeek = belgangPay
 				end
-				'He frowns, abruptly cutting you off. You can see the disapproval in his eyes when you glance up. "That is the last time, <<$pcs_nickname>>," he says. "You can pay me next week, but I expected 5000 <b>₽</b> extra.'
+				'He frowns, abruptly cutting you off. You can see the disapproval in his eyes when you glance up. "That is the last time, <<$pcs_nickname>>," he says. "You can pay me next week, but I expect 5000 <b>₽</b> extra.'
 				if slutty >= 20 and SaunaWhore = 0:
 					SaunaWhore = 1
 					'"But since you are such an obedient whore, <<$pcs_nickname>>, I''ll help you out. If you need more money, go to the sauna in the city and tell them Mr. Bely sends you. There you will have plenty of opportunities to use your ''talents''."'
