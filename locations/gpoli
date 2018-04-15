@@ -208,7 +208,7 @@ if $ARGS[0] = '':
 
 	if hour >= 6 and hour <= 21:
 		if tabletkishot < 5 and money >= 1000:
-			act 'Get a birth control shot':
+			act 'Get a birth control shot (1,000 <b>₽</b>)':
 				cls
 				minut += 15
 				tabletkishot = rand(84,91)
@@ -347,7 +347,7 @@ if $ARGS[0] = '':
 			end
 		end
 
-		if (pav_slut >= 150 or guy > 10 or unprotfilm or whoreQW > 1 or bordelslutty > 0 or cumcondslip_aware > 0) and gynodaystart ! daystart:
+		if (pav_slut >= 150 or guy > 10 or unprotfilm or whoreQW > 1 or bordelslutty > 0 or cumcondslip_aware > 0) or lastmens >= 35 and gynodaystart ! daystart:
 			act 'Visit your gynaecologist (1,000 <b>₽</b>)':
 				cls
 				gynodaystart = daystart
