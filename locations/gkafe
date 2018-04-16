@@ -68,28 +68,21 @@ else
 				'The bar owner <a href="exec:GT ''motherkafeboss''">Borislav</a> is currently taking orders in the bar. Most people call him Slava.'
 			end
 		end
-
-		act 'Have a meal at the cafe (0:30)':gs 'food', 'm_meal'
-
-		act 'Have some coffee (0:05)':gs 'beverage', 'cof_bev'
-
-		act 'Have some water (0:05)':gs 'beverage', 'wat_bev'
 			
-					razvrand = rand(1, 10)
+			razvrand = rand(1, 10)
 
-					! WD: Allpw event to trigger even after talking to mum about fucking her boss
-					if razvrand > 7 and hour > 16 and hour < 20 and age < 18 and dyadyamishaevent = 0 and momslut >= 1:
-						''
-						'A male figure walks closely by your table. You look up and recognize uncle Misha, your neighbor. He stops and recognizes you as well, and sits down with you. He gives you a friendly smile as he says: "Oh, <<$pcs_nickname>>, hello. Listen, me and your stepfather were working late in the garage yesterday, and went for a nightcap at my place when we were finished. When your stepfather left, he accidentally left some of his tools behind. I''m fairly sure he needs them again today, and I could use a hand bringing them back to the garage. Could you help me out? I''ll give you money so you can get some ice cream for your troubles."'
+			! WD: Allpw event to trigger even after talking to mum about fucking her boss
+			if razvrand > 7 and hour > 16 and hour < 20 and age < 18 and dyadyamishaevent = 0 and momslut >= 1:
+				''
+				'A male figure walks closely by your table. You look up and recognize uncle Misha, your neighbor. He stops and recognizes you as well, and sits down with you. He gives you a friendly smile as he says: "Oh, <<$pcs_nickname>>, hello. Listen, me and your stepfather were working late in the garage yesterday, and went for a nightcap at my place when we were finished. When your stepfather left, he accidentally left some of his tools behind. I''m fairly sure he needs them again today, and I could use a hand bringing them back to the garage. Could you help me out? I''ll give you money so you can get some ice cream for your troubles."'
 
-						act 'Agree to help uncle Misha':gs 'boyStat', 'A54' & sexpartkno = 1 & gt 'gevent', '1'
-					elseif razvrand > 7 and hour > 16 and hour < 20 and dyadyamishaevent = 1 and dmishaday ! daystart:
-						''
-						'Suddenly, a man slides in the seat next to you while you eat your meal. You look up and see it''s uncle Misha. He has a greedy look in his eyes, the kind that is already stripping you naked in his thoughts. His eyes are fixated on your boobs as he says: "Hey, <<$pcs_nickname>>. Would you like to join me for some tea at my place? We can have a bit of fun just like last time, and you can earn some more money..."'
+				act 'Agree to help uncle Misha':gs 'boyStat', 'A54' & sexpartkno = 1 & gt 'gevent', '1'
+			elseif razvrand > 7 and hour > 16 and hour < 20 and dyadyamishaevent = 1 and dmishaday ! daystart:
+				''
+				'Suddenly, a man slides in the seat next to you while you eat your meal. You look up and see it''s uncle Misha. He has a greedy look in his eyes, the kind that is already stripping you naked in his thoughts. His eyes are fixated on your boobs as he says: "Hey, <<$pcs_nickname>>. Would you like to join me for some tea at my place? We can have a bit of fun just like last time, and you can earn some more money..."'
 
-						act 'Agree to go ''drink tea'' with uncle Misha':gs 'boyStat', 'A54' & sexpartkno = 1 & gt 'gevent', '1-1'
-					end
-			act 'Get up from the table':gt 'gkafe'
+				act 'Agree to go ''drink tea'' with uncle Misha':gs 'boyStat', 'A54' & sexpartkno = 1 & gt 'gevent', '1-1'
+			end
 		end
 		if StoryLine = 1 and SchoolAtestat = 0:
 			if (sunWeather = 0 or temper <= 0) and (hour >= 18 and hour < 20 and week < 6) or (week >= 6 and hour >= 9 and hour < 20):
@@ -102,6 +95,11 @@ else
 		'The cafe is closed right now, it''s usually open between 8:00 and 20:00.'
 	end
 end
+	if hour >= 8 and hour <= 19:
+		act 'Have a meal at the cafe (0:30)':gs 'food', 'm_meal'
+		act 'Have some coffee (0:05)':gs 'beverage', 'bev_cof'
+		act 'Have some water (0:05)':gs 'beverage', 'bev_wat'
+	end
 
 act 'Leave':gt 'vokzalG'
 

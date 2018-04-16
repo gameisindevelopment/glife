@@ -69,11 +69,11 @@ if $ARGS[0] = 'main':
 			end
 			
 			if money >= 40:
-				act 'Order some coffee (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'cof_bev'
+				act 'Order some coffee (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'bev_cof'
 			end
 
 			if money >= 40:
-				act 'Order some water (0:05) (30 <b>₽</b>)':money -= 30 & gs 'beverage', 'wat_bev'
+				act 'Order some water (0:05) (30 <b>₽</b>)':money -= 30 & gs 'beverage', 'bev_wat'
 			end
 		end
 	end

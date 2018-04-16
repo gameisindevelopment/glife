@@ -539,7 +539,7 @@ if $ARGS[0] = 'brothel:section1:girlroom':
 	*nl
 	'-------------------------------------------------------------------------------------'
 	*nl
-	act 'Have a glass of water (0:05)':gs 'beverage', 'wat_bev'
+	act 'Have a glass of water (0:05)':gs 'beverage', 'bev_wat'
 	act 'Change your clothes':gt 'wardrobe', 'start'	
 	act 'Look in the mirror': gt 'mirror', 'start'
     act 'Have a shower':

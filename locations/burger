@@ -31,15 +31,14 @@ if $ARGS[0] = 'start':
 	end
 
 	if money >= 100:
-		act 'Eat a meal (0:30) (100 <b>₽</b>)':money -= 100 & gs 'food', 'f_food'
-	end
-	if money >= 50:
-		act 'Drink some coffee (0:05) (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'cof_bev'
-	end
-	if money >= 40:
-		act 'Drink some water (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'wat_bev'
+		act 'Eat a meal (100 <b>₽</b>) (0:30)':money -= 100 & gs 'food', 'f_food'
 	end
 	
+	!act 'Order drinks (0:15)':gs 'beverage', 'drinks' # Still working on the damn table..
+	
+		act 'Order Coffee (50 <b>₽</b>) (0:30)':money -= 50 & gs 'beverage', 'bev_cof'
+		act 'Order Water (40 <b>₽</b>) (0:30)':money -= 40 & gs 'beverage', 'bev_wat'
+		
 	if IvanPodstavaQW = 2:
 		act 'Go into the office to Anatoly Borisovich':gt 'burger', 'office'
 	end

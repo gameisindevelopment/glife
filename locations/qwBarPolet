@@ -57,7 +57,7 @@ if $ARGS[0] = '':
 
 	if hour >= 16:
 		if money >= 50:
-			act 'Order a beer (5 <b>₽</b>)':
+			act 'Order a beer (50 <b>₽</b>)':
 				cla
 				*clr
 				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
@@ -134,7 +134,7 @@ if $ARGS[0] = '':
 		end
 
 		if money >= 50:
-			act 'Order a shot of vodka (5 <b>₽</b>)':
+			act 'Order a shot of vodka (50 <b>₽</b>)':
 				cla
 				*clr
 				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
@@ -213,7 +213,7 @@ if $ARGS[0] = '':
 	end
 	
 	if money >= 40:
-		act 'Drink some water (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'wat_bev'
+		act 'Drink some water (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'bev_wat'
 	end
 !! 'Look around the bar' action to find people to interact with/who will invite her to a drink?
 

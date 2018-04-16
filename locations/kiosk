@@ -2,7 +2,6 @@
 
 !!WD:"SUB >= 15" for act - Will need balancing / playtesting
 if $ARGS[0] = 'start':
-	$kioskloc = ''
 	if hour >= 14 and hour <= 16:
 		cls
 		gs 'stat'
@@ -10,7 +9,7 @@ if $ARGS[0] = 'start':
 		'It is currently very busy and looks like you''ll have to wait to get to the counter.'
 		act 'Wait in line (20 Minutes)':
 			minut += 20
-			$kioskloc = 'counter' & gt 'kiosk'
+			gt 'kiosk', 'counter'
 		end
 
 		act 'Leave':gt $loc
@@ -29,7 +28,7 @@ if $ARGS[0] = 'start':
 				gs 'arousal', 'end'
 				gs 'stat'
 				
-				act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+				act 'Go to the counter': gt 'kiosk', 'counter'
 			end
 		end
 
@@ -51,7 +50,7 @@ if $ARGS[0] = 'start':
 				gs 'arousal', 'end'
 				gs 'stat'
 				
-				act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+				act 'Go to the counter': gt 'kiosk', 'counter'
 			end
 		end
 
@@ -68,7 +67,7 @@ if $ARGS[0] = 'start':
 				gs 'arousal', 'end'
 				gs 'stat'
 				
-				act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+				act 'Go to the counter': gt 'kiosk', 'counter'
 			end
 		end
 
@@ -97,7 +96,7 @@ if $ARGS[0] = 'start':
 						gs 'arousal', 'end'
 						gs 'stat'
 						
-						act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+						act 'Go to the counter': gt 'kiosk', 'counter'
 					end
 
 					act 'Cum on your mouth':
@@ -110,7 +109,7 @@ if $ARGS[0] = 'start':
 						gs 'arousal', 'end'
 						gs 'stat'
 						
-						act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+						act 'Go to the counter': gt 'kiosk', 'counter'
 					end
 				else
 					'<center><video autoplay loop src="images/locations/shared/postoffice/punch.mp4"></video></center>'	
@@ -123,11 +122,11 @@ if $ARGS[0] = 'start':
 			end
 		end
 	else
-		$kioskloc = 'counter' & gt 'kiosk'
+		gt 'kiosk', 'counter'
 	end
 end
 
-if $kioskloc = 'counter':
+if $ARGS[0] = 'counter':
 	cls
 	gs 'stat'
 	
@@ -139,6 +138,7 @@ if $kioskloc = 'counter':
 	else
 		''
 	end	
+	
 	*pl '<center><table align="center" width=80%>' 
 	*pl '<center><table align="center">'
 	*P FUNC ('$stock_item', 20, 'Cigarettes', 50, 'siga', 'kiosk')
@@ -151,17 +151,17 @@ if $kioskloc = 'counter':
 	'</table></center>'
 	*pl
 	
-	act 'Buy a snack (0:05) (50 <b>₽</b>)':money -= 50 & gs 'food', 'snack' & gt 'kiosk'
+	act 'Buy a snack (50 <b>₽</b>) (0:05)':money -= 50 & gs 'food', 'snack'
+
+	act 'Buy some water (50 <b>₽</b>) (0:05)':money -= 50 & gs 'beverage', 'bev_wat'
 	
-	act 'Buy some water (0:05) (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'wat_bev' & gt 'kiosk'
+	act 'View phone themes': gt 'kiosk', 'themes'
 	
-	act 'View phone themes': $kioskloc = 'themes' & gt 'kiosk'
-	
-	act 'Leave':minut += 5 & gt $loc
+	act 'Leave (0:05)': gt $loc
 	
 end
 
-if $kioskloc = 'themes':
+if $ARGS[0] =  'themes':
 	cls
 	gs 'stat'
 	
@@ -175,7 +175,7 @@ if $kioskloc = 'themes':
 	i += 1
 	if i < 13: jump 'phonethemeloop'
 
-	act 'Return': $kioskloc = 'counter' & gt 'kiosk'
+	act 'Return': gt 'kiosk', 'counter'
 end
 
 --- kiosk ---------------------------------

@@ -18,7 +18,11 @@ if $ARGS[0] = 'snack':
 	pcs_mood += 20
 	fat += 6
 	pcs_energy += 20
-	pcs_hydra += 20
+	if pcs_hydra >= 100:
+		pcs_hydra += 10
+	else
+		pcs_hydra += 20
+	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -36,7 +40,11 @@ if $ARGS[0] = 'f_food':
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 70
-	pcs_hydra += 70
+	if pcs_hydra >= 100:
+		pcs_hydra += 35
+	else
+		pcs_hydra += 70
+	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -55,7 +63,11 @@ if $ARGS[0] = 's_meal':
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 40
-	pcs_hydra += 40
+	if pcs_hydra >= 100:
+		pcs_hydra += 20
+	else
+		pcs_hydra += 40
+	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -74,7 +86,11 @@ if $ARGS[0] = 'm_meal':
 	pcs_health += 10
 	fat += 6
 	pcs_energy += 60
-	pcs_hydra += 60
+	if pcs_hydra >= 100:
+		pcs_hydra += 30
+	else
+		pcs_hydra += 60
+	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -94,7 +110,11 @@ if $ARGS[0] = 'l_meal':
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 100
-	pcs_hydra += 100
+	if pcs_hydra >= 100:
+		pcs_hydra += 50
+	else
+		pcs_hydra += 100
+	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -114,7 +134,11 @@ if $ARGS[0] = 'bag_lunch':
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 30
-	pcs_hydra += 30
+	if pcs_hydra >= 100:
+		pcs_hydra += 15
+	else
+		pcs_hydra += 30
+	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -134,7 +158,11 @@ if $ARGS[0] = 'h_food':
 	fat += 6
 	money -= 100
 	pcs_energy += 60
-	pcs_hydra += 60
+	if pcs_hydra >= 100:
+		pcs_hydra += 30
+	else
+		pcs_hydra += 60
+	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -154,7 +182,11 @@ if $ARGS[0] = 'h_meal':
 	pcs_health += 20
 	fat += 1
 	pcs_energy += 50
-	pcs_hydra += 50
+	if pcs_hydra >= 100:
+		pcs_hydra += 25
+	else
+		pcs_hydra += 50
+	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0

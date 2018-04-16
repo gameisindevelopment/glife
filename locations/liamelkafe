@@ -37,11 +37,11 @@ if $ARGS[0] = 'food':
 end
 
 	if money >= 20:
-		act 'Order a cup of coffee (0:05) (20 <b>₽</b>)':money -= 20 & gs 'beverage', 'cof_bev'
+		act 'Order a cup of coffee (0:05) (20 <b>₽</b>)':money -= 20 & gs 'beverage', 'bev_cof'
 	end
 
 	if money >= 10:
-		act 'Order a glass of water (0:05) (10 <b>₽</b>)':money -= 10 & gs 'beverage', 'wat_bev'
+		act 'Order a glass of water (0:05) (10 <b>₽</b>)':money -= 10 & gs 'beverage', 'bev_wat'
 	end
 
 --- liamelkafe ---------------------------------

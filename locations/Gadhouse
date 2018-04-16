@@ -247,7 +247,7 @@ if $ARGS[0] = 'Main':
 
 	act 'Have a snack (0:05)':gs 'food', 'snack'
 	
-	act 'Drink some water (0:05)':gs 'beverage', 'wat_bev'
+	act 'Drink some water (0:05)':gs 'beverage', 'bev_wat'
 
 	act 'Have a cup of tea (0:05)':
 		*clr & cla

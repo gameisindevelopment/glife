@@ -198,7 +198,7 @@ elseif Enable_scalepic = 2:
 	$stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_willpwr * 100 / willpowermax, pcs_willpwr)+'</TD><TD> Willpower</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_stam * 100 / stammax, pcs_stam)+'</TD><TD> Stamina</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_mood, pcs_mood)+'</TD><TD> Mood</TD></TR>'
 	if cheatNoEat = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_energy, pcs_energy)+'</TD><TD> Hunger</TD></TR>'
 	if cheatNoDrink = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_hydra, pcs_hydra)+'</TD><TD> Thirst</TD></TR>'
-	if cheatNoSleep = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_sleep, pcs_sleep)+'</TD><TD> Sleep</TD>'/TR>'</TABLE></font></p>'
+	if cheatNoSleep = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_sleep, pcs_sleep)+'</TD><TD> Sleep</TD></TR></TABLE></font></p>'
 else
 	gs 'indik', '2', pcs_horny, pcs_horny
 	$stat_msg += '<BR><<$ind>> Arousal'
