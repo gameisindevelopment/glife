@@ -60,7 +60,6 @@ if $ARGS[0] = 'bev_kva':
 	gs 'beverage', 'afterdrink'
 	'<center><img <<$set_imgh>> src="images/shared/food/kvass.jpg"></center>'
 	'You enjoy a drink of kvass, and<<$mtxt>>'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end
@@ -83,7 +82,6 @@ if $ARGS[0] = 'bev_wat':
 	gs 'beverage', 'afterdrink'
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderwater.jpg"></center>'
 	'You enjoy a drink of water, and<<$mtxt>>'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end
@@ -107,7 +105,6 @@ if $ARGS[0] = 'bev_cof':
 	gs 'beverage', 'afterdrink'
 	'<center><img <<$set_imgh>> src="images/shared/food/raf.jpg"></center>'
 	'You enjoy a hot coffee, and<<$mtxt>>'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end
@@ -130,7 +127,6 @@ if $ARGS[0] = 'bev_vod':
 	gs 'beverage'
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barordervodka.jpg"></center>'
 	'You drink some vodka.'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end
@@ -153,7 +149,6 @@ if $ARGS[0] = 'bev_win':
 	gs 'beverage'
 	'<center><img <<$set_imgh>> src="images/shared/food/alkowin.jpg"></center>'
 	'You drink some wine.'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end
@@ -176,7 +171,6 @@ if $ARGS[0] = 'bev_bee':
 	gs 'beverage'
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderbeer.jpg"></center>'
 	'You drink some beer.'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end
