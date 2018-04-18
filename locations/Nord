@@ -124,7 +124,9 @@ if $ARGS[0] = 'redlight':
 	'A shop for <a href="exec:gt ''sexshop'', ''start''">sex toys</a> is open for perverts from all around the city.'
 	if bordel > 0 and hour >= 20 or bordel > 0 and hour <= 3:'Inside the courtyard is the entrance to the <a href="exec:gt ''bordel''">brothel</a>.'
 
-	act 'Wait':
+	act 'Return to the industrial area': gt 'Nord'
+	
+		act 'Wait':
 		cla
 		waiting = input ("How long would you like to wait? (Not more than 120 minutes)")
 
@@ -134,10 +136,8 @@ if $ARGS[0] = 'redlight':
 			minut += waiting
 		end
 
-		act 'Take a look at the clock':gt curloc
+		act 'Take a look at the clock': gt 'Nord', 'redlight'
 	end
-
-	act 'Return to the industrial area': gt 'Nord'
 end
 
 
