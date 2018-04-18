@@ -775,7 +775,7 @@ end
 if $ARGS[0] = 'gpRoom':
 	minut += 2
 	'<center><h3><font color=#<<$gp_font>>><<$gp_name>>''s room</font></h3></center>'
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/gp/room.jpg"></center
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/gp/room.jpg"></center>'
 	'Messy room. Clothes everywhere.'
 
 	if hour >= gp_wakes and hour < gp_leaves:
