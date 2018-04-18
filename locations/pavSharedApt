@@ -133,45 +133,46 @@ if $ARGS[0] = 'update':
 
 	gs 'stat'
 
-	if debg = 0:
-		'<a href="exec:debg=1">DEBUG</a>'
-	elseif debg = 1:
-		'<a href="exec:debg=0">DEBUG</a>'
-		$nd_name+' relation: '+nd_rel
-		!$gp_name+' relation: '+gp_rel
-		!$sp_name+' relation: '+sp_rel
-		'rentLeft: '+rentLeft
-		'weekNum: '+weekNum
-		'rentWeekNum: '+rentWeekNum
-		'servitudeLvl: '+servitudeLvl
-		'servicePaid: '+servicePaid
-		'cashPaid: '+cashPaid
-		'step: '+step
-		'subStep: '+subStep
-		'gp_mood: '+gp_mood
-		'gp_cumVol: '+gp_cumVol
-		'gp_cumVag: '+gp_cumVag
-		'gp_cumAnal: '+gp_cumAnal
-		'gp_cumSwall: '+gp_cumSwall
-		'nd_cumVol: '+nd_cumVol
-		'nd_cumMax: '+nd_cumMax
-		'nd_horny: '+nd_horny
-		'gp_horny: '+gp_horny
-		'sp_horny: '+sp_horny
-		''
-		nd_served = 0
-		nd_mood = 2
-		gp_served = 0
-		gp_mood = 2
-		sp_mood = 2
-		sp_served = 0
-	end
+	! if debg = 0:
+		! '<a href="exec:debg=1">DEBUG</a>'
+	! elseif debg = 1:
+		! '<a href="exec:debg=0">DEBUG</a>'
+		! $nd_name+' relation: '+nd_rel
+		! !$gp_name+' relation: '+gp_rel
+		! !$sp_name+' relation: '+sp_rel
+		! 'rentLeft: '+rentLeft
+		! 'weekNum: '+weekNum
+		! 'rentWeekNum: '+rentWeekNum
+		! 'servitudeLvl: '+servitudeLvl
+		! 'servicePaid: '+servicePaid
+		! 'cashPaid: '+cashPaid
+		! 'step: '+step
+		! 'subStep: '+subStep
+		! 'gp_mood: '+gp_mood
+		! 'gp_cumVol: '+gp_cumVol
+		! 'gp_cumVag: '+gp_cumVag
+		! 'gp_cumAnal: '+gp_cumAnal
+		! 'gp_cumSwall: '+gp_cumSwall
+		! 'nd_cumVol: '+nd_cumVol
+		! 'nd_cumMax: '+nd_cumMax
+		! 'nd_horny: '+nd_horny
+		! 'gp_horny: '+gp_horny
+		! 'sp_horny: '+sp_horny
+		! ''
+		! nd_served = 0
+		! nd_mood = 2
+		! gp_served = 0
+		! gp_mood = 2
+		! sp_mood = 2
+		! sp_served = 0
+	! end
 end
 
 ! apt house entry hallway
 if $ARGS[0] = 'hallway':
 	minut += 2
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptHallway.jpg"></left>'
+	'<center><h3>old apartment building</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptHallway.jpg"></center>'
 	''
 	'An old, common russian apartment house, lacking lots of years of repairs and maintenance.'
 	'The entry doors are left unlocked and even if they werent, they look like fall apart any moment.'
@@ -190,7 +191,7 @@ end
 ! accomodation advert
 if $ARGS[0] = 'advert':
 	minut += 2
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/board.jpg"></left>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/board.jpg"></center>'
 	''
 	'Three young people offer a spare room in a shared apartment in this house.'
 	'If you are interested, come see us in the apartment No 3.' 
@@ -200,7 +201,7 @@ end
 
 ! door No 3
 if $ARGS[0] = 'doorNo3':
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptNo3Door.jpg"></left>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptNo3Door.jpg"></center>'
 	''
 	'You stand before the entry door to apartment No 3.'
 	if pavSharedAptEnabled = 1:
@@ -244,8 +245,8 @@ if $ARGS[0] = 'start':
 	! do this every time
 	rentLeft = rentWeekly - servicePaid - cashPaid
 
-	'<h3>Hallway</h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/hallway.jpg"></left>'
+	'<center><h3>Hallway</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/hallway.jpg"></center>'
 	'It is week number '+weekNum+'.'
 	
 	if weekNum < rentWeekNum:
@@ -299,7 +300,7 @@ if $ARGS[0] = 'start':
 		''
 		'<b>You cannot leave the apartment naked.</b>'
 	else
-		act 'Leave':gt 'pavResidential'
+		act 'Leave':gt 'pavSharedApt', 'hallway'
 	end
 end
 
@@ -337,14 +338,14 @@ end
 if $ARGS[0] = 'intro':
 	gs 'pavSharedApt', 'update'
 	if step > 0:	
-		'<left><img border="5" bordercolor="<<$sp_font>>" height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/gp/gp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/nd/nd.jpg"></left>'
+		'<center><img border="5" bordercolor="<<$sp_font>>" height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/gp/gp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/nd/nd.jpg"></center>'
 		''
 	end
 
 	if step = 0:
 		minut += 2
 		step = 1
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
 		''
 		'The door are opened by a young, nice looking athletic man.'
 		'<font color=#<<$sp_font>>>"Hi sweetie! What do you need?"</font>'
@@ -458,8 +459,8 @@ if $ARGS[0] = 'list':
 	$metka = 'list'
 	minut += 2
 	$goBack = $metka
-	'<h3><<$pcs_firstname>>''s pricelist</h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/list.jpg"></left>'
+	'<center><h3><<$pcs_firstname>>''s pricelist</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/list.jpg"></center>'
 	''
 	'The basic weekly rent is <<rentWeekly>> rubles.'
 	'It is possible to pay it in cash, or offer services instead. The prices are folllowing:'
@@ -501,8 +502,8 @@ if $ARGS[0] = 'bathroom':
 	$location_type = 'bathroom'
 	$metka = 'bathroom'
 
-	'<h3>Bathroom</h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></left>'
+	'<center><h3>Bathroom</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>
 	'Modest bathroom, containing all that young people need for their daily life.'
 
 	gs 'din_van', 'private'
@@ -513,8 +514,8 @@ if $ARGS[0] = 'kitchen':
 	minut += 2
 	$metka = 'kitchen'
 	gs 'kit_din'
-	'<h3>Kitchen</h3>'
-	'<left><img <<$set_imgh>> src="images/locations/oldtown/apartment/kuhr2x.jpg"></left>'
+	'<center><h3>Kitchen</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/oldtown/apartment/kuhr2x.jpg"></center>'
 	'It is a modest kitchen but has all that is needed.'
 
 	! dishes
@@ -605,7 +606,7 @@ if $ARGS[0] = 'pcsRoom':
 	$locclass = 'bedr'
 	gs 'pavSharedApt', 'update'
 
-	'<h3><<$pcs_firstname>>''s bedroom</h3>'
+	'<center><h3><<$pcs_firstname>>''s bedroom</h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/bedr.jpg"></center>'
 	'A tight, little room with a <a href="exec:gt ''bed'', ''start''">double bed</a> and an <a href="exec:gt ''budilnik'', ''start''">alarm clock</a>.' 
 	'An old wooden <a href="exec:gt ''wardrobe'', ''start''">wardrobe</a> (where you can <a href="exec:gt ''clothing'', ''view_clothing_list'', ''wardrobe''">organize your clothes</a>) stands near the door to the corridor, on top of it there''s a <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcase</a> you can store some clothes in. The windows are closed with faded, heavy curtains.'
@@ -751,8 +752,8 @@ end
 
 if $ARGS[0] = 'ndRoom':
 	minut += 2
-	'<h3><font color=#<<$nd_font>>><<$nd_name>>''s room</font></h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/nd/room.jpg"></left>'
+	'<center><h3><font color=#<<$nd_font>>><<$nd_name>>''s room</font></h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/nd/room.jpg"></center
 	'The room is surprisingly not as messy as one would expect, given that <<$nd_name>> is an IT guy.'
 	'There is one large window with bed bellow it, but the whole room is dominated by a large table with several computers and monitors.'
 	'Looking at it one would say that this must be a den of a hacker.'
@@ -773,8 +774,8 @@ end
 
 if $ARGS[0] = 'gpRoom':
 	minut += 2
-	'<h3><font color=#<<$gp_font>>><<$gp_name>>''s room</font></h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/gp/room.jpg"></left>'
+	'<center><h3><font color=#<<$gp_font>>><<$gp_name>>''s room</font></h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/gp/room.jpg"></center
 	'Messy room. Clothes everywhere.'
 
 	if hour >= gp_wakes and hour < gp_leaves:
@@ -794,8 +795,8 @@ end
 
 if $ARGS[0] = 'spRoom':
 	minut += 2
-	'<h3><font color=#<<$sp_font>>><<$sp_name>>''s room</font></h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/room.jpg"></left>'
+	'<center><h3><font color=#<<$sp_font>>><<$sp_name>>''s room</font></h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/room.jpg"></center>'
 	'Tidy room full of sporting stuff like dresses, equipment and trophys. On the walls hang several posters of famous sport guys.'
 	
 	if hour >= sp_wakes and hour < sp_leaves:
