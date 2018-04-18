@@ -344,7 +344,7 @@ if ARGS[0] = 3:
 					'Not knowing what else to do right now, you head to class.'
 					act 'Continue': gt 'gschool_lessons', 'short_break'
 				end	
-            elseif grupTipe[0] = 5:
+            else
 			    dimaTrain = 0
 				!!if outcast!!
 				'"I heard that weird girl, <<$pcs_firstname>>, lets boys do what ever they want to her no matter how degrading. She has no self respect."'
