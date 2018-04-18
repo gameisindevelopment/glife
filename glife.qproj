@@ -204,7 +204,6 @@
       <Location name="street"/>
       <Location name="pharmacy"/>
       <Location name="clener"/>
-      <Location name="dima"/>
       <Location name="dinsexgivi"/>
       <Location name="IrinaRoom"/>
       <Location name="kafe"/>
@@ -376,12 +375,10 @@
       <Location name="lena"/>
     </Folder>
     <Folder name="Dima Nosov">
-      <Location name="dimaRudeEv"/>
+      <Location name="dimaEv"/>
       <Location name="dimaHome"/>
       <Location name="dimaRevenge"/>
-      <Location name="dimaGoHome2"/>
       <Location name="dinnpc"/>
-      <Location name="DimkaWarning"/>
       <Location name="krutishi"/>
     </Folder>
     <Folder name="Artem Chebotarev">
