@@ -89,7 +89,7 @@ else
 				'You see your classmates <a href="exec:minut += 3 & gt ''gopskver''">Vitek, Dan and Vasily</a> sitting at a table in the far corner, drinking beer.'
 			end
 		end
-	else
+	elseif hour <= 8 and hour >= 20:
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
 		'A small cafe, attached to the train station. It looks rather shabby.'
 		'The cafe is closed right now, it''s usually open between 8:00 and 20:00.'

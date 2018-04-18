@@ -1,6 +1,8 @@
 # ParkKafe
 
 if $ARGS[0] = 'start':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	$location_type = 'public_indoors'
 	'<center><img <<$set_imgh>> src="images/locations/city/centralpark/parkcafe.jpg"></center>'
 	

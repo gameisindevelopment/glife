@@ -169,9 +169,9 @@ if $ARGS[0] = 'bar:order':
 		if hotelWhore = 1:
 			act 'A special drink. The Blue Blooded Russian.':gt 'brothel','bar:order:password'
 		end
-		act 'A vodka':gt 'brothel','bar:order:vodka'
-		act 'A beer':gt 'brothel','bar:order:beer'
-		act 'Just glass of water':gt 'brothel','bar:order:water'
+		act 'A vodka (50 <b>₽</b>) (0:05)':gt 'brothel','bar:order:vodka'
+		act 'A beer (50 <b>₽</b>) (0:05)':gt 'brothel','bar:order:beer'
+		act 'Just glass of water (20 <b>₽</b>) (0:05)':gt 'brothel','bar:order:water'
 	end
 end
 	
@@ -540,6 +540,7 @@ if $ARGS[0] = 'brothel:section1:girlroom':
 	'-------------------------------------------------------------------------------------'
 	*nl
 	act 'Have a glass of water (0:05)':gs 'beverage', 'bev_wat'
+	act 'Have a snack (0:05)': gs 'food', 'snack'
 	act 'Change your clothes':gt 'wardrobe', 'start'	
 	act 'Look in the mirror': gt 'mirror', 'start'
     act 'Have a shower':
