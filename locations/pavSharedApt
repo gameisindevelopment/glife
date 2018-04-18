@@ -133,39 +133,39 @@ if $ARGS[0] = 'update':
 
 	gs 'stat'
 
-	if debg = 0:
-		'<a href="exec:debg=1">DEBUG</a>'
-	elseif debg = 1:
-		'<a href="exec:debg=0">DEBUG</a>'
-		$nd_name+' relation: '+nd_rel
-		!$gp_name+' relation: '+gp_rel
-		!$sp_name+' relation: '+sp_rel
-		'rentLeft: '+rentLeft
-		'weekNum: '+weekNum
-		'rentWeekNum: '+rentWeekNum
-		'servitudeLvl: '+servitudeLvl
-		'servicePaid: '+servicePaid
-		'cashPaid: '+cashPaid
-		'step: '+step
-		'subStep: '+subStep
-		'gp_mood: '+gp_mood
-		'gp_cumVol: '+gp_cumVol
-		'gp_cumVag: '+gp_cumVag
-		'gp_cumAnal: '+gp_cumAnal
-		'gp_cumSwall: '+gp_cumSwall
-		'nd_cumVol: '+nd_cumVol
-		'nd_cumMax: '+nd_cumMax
-		'nd_horny: '+nd_horny
-		'gp_horny: '+gp_horny
-		'sp_horny: '+sp_horny
-		''
-		nd_served = 0
-		nd_mood = 2
-		gp_served = 0
-		gp_mood = 2
-		sp_mood = 2
-		sp_served = 0
-	end
+	! if debg = 0:
+		! '<a href="exec:debg=1">DEBUG</a>'
+	! elseif debg = 1:
+		! '<a href="exec:debg=0">DEBUG</a>'
+		! $nd_name+' relation: '+nd_rel
+		! !$gp_name+' relation: '+gp_rel
+		! !$sp_name+' relation: '+sp_rel
+		! 'rentLeft: '+rentLeft
+		! 'weekNum: '+weekNum
+		! 'rentWeekNum: '+rentWeekNum
+		! 'servitudeLvl: '+servitudeLvl
+		! 'servicePaid: '+servicePaid
+		! 'cashPaid: '+cashPaid
+		! 'step: '+step
+		! 'subStep: '+subStep
+		! 'gp_mood: '+gp_mood
+		! 'gp_cumVol: '+gp_cumVol
+		! 'gp_cumVag: '+gp_cumVag
+		! 'gp_cumAnal: '+gp_cumAnal
+		! 'gp_cumSwall: '+gp_cumSwall
+		! 'nd_cumVol: '+nd_cumVol
+		! 'nd_cumMax: '+nd_cumMax
+		! 'nd_horny: '+nd_horny
+		! 'gp_horny: '+gp_horny
+		! 'sp_horny: '+sp_horny
+		! ''
+		! nd_served = 0
+		! nd_mood = 2
+		! gp_served = 0
+		! gp_mood = 2
+		! sp_mood = 2
+		! sp_served = 0
+	! end
 end
 
 ! apt house entry hallway
