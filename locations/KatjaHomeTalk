@@ -129,7 +129,7 @@ if $ARGS[0] = '':
 				gs 'stat'
 				'<center><b><font color="maroon"><<$npc_firstname[''A14'']>> <<$npc_lastname[''A14'']>></font></b></center>'
 				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/14.jpg"></center>'
-	!			if flag_KissEV > 3:
+	!			if flag_KissEV >= 3:
 	!				Act 'To continue the dispute':
 	!					cla
 	!					'- Well will continue our dispute, - asked you '
