@@ -19,20 +19,20 @@ end
 'The cafe is closed right now, it''s usually open between 8:00 and 20:00.'
 
 if mother_go = 1 and hour = 16:
-	cls
+	*clr & cla
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
 	'A small cafe, attached to the train station. It looks rather shabby.'
 	'The door is currently locked, and the sign on the door says "Closed". That''s strange, the cafe is supposed to be open at this time.'
 
 	act 'Walk around the cafe':
-		cls
+		*clr
 		minut += 15
 		gs 'stat'
 		'Being locked outside of the cafe, you walk around it to try and figure out why it is closed. Suddenly, you hear weak voices through the wall. It sounds like some poor woman is screaming! You quickly look around and notice a stack of old crates. If you stand on it, you think you can reach a small window and see what is happening inside.'
 
 		act 'Leave, it''s probably none of your business':gt 'vokzalG'
 		act 'Get up there and peek through the window':
-			cls
+			*clr & cla
 			minut += 5
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/mom/event/momslut.jpg"></center>'
@@ -47,7 +47,7 @@ if mother_go = 1 and hour = 16:
 			act 'Leave, you don''t want to see this':gt 'vokzalG'
 
 			act 'Keep looking':
-				cls
+				*clr & cla
 				minut += 5
 				mother_go = 0
 				gs 'stat'
@@ -60,7 +60,7 @@ if mother_go = 1 and hour = 16:
 	end
 else
 	if hour >= 8 and hour <= 19:
-		cls
+		*clr & cla
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe2.jpg"></center>'
 		'A small cafe, attached to the train station. It looks rather shabby.'
 

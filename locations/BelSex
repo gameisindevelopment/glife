@@ -422,7 +422,6 @@ if $ARGS[0] = 'shower':
 			gs 'stat'
 			
 			act 'Leave': gt 'pavResidential'
-			end
 		end
 	end
 end
