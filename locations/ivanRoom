@@ -1,4 +1,5 @@
 # ivanRoom
+
 if StoryLine = 0 or altQS = 1:
 	clr
 	minut += 5
@@ -14,7 +15,7 @@ if StoryLine = 0 or altQS = 1:
 	end
 	'<center><b><font color="maroon">Apartment manager Ivan</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/shared/apartment/podezdhr.jpg"></center>'
-	'Apartment door Ivan steel, with good locks.'
+	'Ivan''s apartment door made of steel with good locks.'
 
 	act 'Leave':
 		cla
@@ -23,7 +24,7 @@ if StoryLine = 0 or altQS = 1:
 	end
 
 	if poverKAR = 1:
-		'You came to the door behind you and Ivan heard a rustling. You turned and saw Juugo. He walked up to you and said, "Ivan the apartment. You to take this camera and shoot. Now we''ll get him."'
+		'As you approach the door you hear a faint rustling behind you. You turn and see Juugo. He walks up to you and said, "This is Ivan''s apartment. You to take this camera and film. Now we''ll get him."'
 
 		act 'Come on we''ll get this monster':
 			cls
@@ -32,20 +33,20 @@ if StoryLine = 0 or altQS = 1:
 			minut += 15
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/city/industrial/apartment/gun.jpg"></center>'
-			'Juugo went to the door, you notice a tattoo on his face woke up and came to life, covering his skin black lines. Line broke and you saw like Juugo fists began to increase. He growled and punched the door. The door slammed bent. Juugo hand grabbed the door and opened it, pulling out the lock. Juugo with a roar broke into the apartment. You ran into the apartment after Juugo and saw Ivan left the room holding a gun. Ivan shot and Juugo twitched, then Ivan shot again and again. Juugo fell to the floor. Ivan ran out of ammo and he began frantically reloading the gun.'
+			'As Juugo approaches to the door, you notice the tattoos on his face move seemingly having a life of their own, you notice them growing and twisting covering his face in black designs. As the designs settle on his face you notice his fists have increased in size and appear as if they are made of stone. With a  growl he launches a rock hard fist at the door bending the steel door inwards. Grabbing one of the exposed edges of the now damaged door Juugo tears the door from its frame and off it''s hinges. You run into the apartment after Juugo and see Ivan standing in the room holding a gun. Ivan fired a shot and Juugo twitched, then Ivan fired again and again. Juugo fell to the floor. The gun empty Ivan began frantically reloading the gun.'
 
 			if pcs_dom > 0:
 				act 'Embed Ivan':
 					cls
 					gs 'stat'
 					!!'<center><img <<$set_imgh>> src="images/locations/city/industrial/apartment/gun.jpg"></center>'
-					'You ran to Ivan with a plan to kick him while he reloads the gun. Ivan suddenly jumped back into the room and slammed the door in your face. The inertia you bumped into the door. Immediately slammed a shot and splinters flew out the door, but the bullet did not accidentally hurt you and shrieking flew past. Behind you heard what that movement and as you saw in the hallway on his feet gets Juugo, tightened his wounds. Even the bullet hole in his forehead became rapidly tightened. Pokryvatsya body became black and what is a scab on his head grew horns. Juugo shouted furiously "NOW YOU DIE!" and rushed to the wooden door behind which hid Ivan turning it into pieces and flinging you aside. You saw that Ivan lying on the floor in blood and without movement, the gun fell from his hand weakened. Juugo with a triumphant cry rushed to Ivan and became powerful blows beat the motionless body. You have seen how just a second Juugo turned his head to a bloody pulp Ivan. Juugo but did not stop there and you feel like it''s going to force, concentrating in his hand. The air smelled of ozone and there was a nasty, thin squeal. You understand that now Juugo hit than it is very powerful.'
+					'You ran at Ivan attempting to kick him while he reloads the gun. Ivan suddenly jumped back into a bedroom and slams the door in your face.  Your inertia carries you into the solid interior door and you rebound off of it just as another shot explodes thru the door splintering the wood and narrowly misses hitting you. As you push yourself up from the floor you see Juugo, the black designs swirling all over his exposed skin, he growls low and dangerous in his chest and you see the bullet wounds expelling the bullets from his body and closing right before your eyes. His body almost totally black now with the magical tattos you see horns sprout from his forehead. Juugo shouts furiously "NOW YOU DIE!" and charges at the wooden door that Ivan is hiding behind, lowering his head and shoulders for the impact he doesn''t even slow as he crashes through the solid wood sending splinters and shards flying inward into the room. You follow close behind entering the room and skidding to a halt. Ivan has been thrown backwards and to the ground, he''s bleeding badly from several areas with many wooden spikes impaling his body in various parts.  No sign of his gun he must have dropped it when the door exploded on him. Juugo still iin a rage falls upon the prone body and with an inhuman roar begins to pummel the unconscious man. Small lightning bolts arc through the body as Juugo continues to pound the body quickly reducing Ivan to little more then pulp.'
 
 					act 'Run':
 						cls
 						gs 'stat'
 						!!'<center><img <<$set_imgh>> src="images/locations/city/industrial/apartment/gun.jpg"></center>'
-						'You turned and ran out of the apartment. Rear hit powerful explosion shook the house, ringing in your ears and you fell on the floor. Looking around you realize that Ivan apartment collapsed, sticking out of the doorway chip concrete slab in the air spinning dust, ears ringing.'
+						'You turn and run out of the apartment at seeing Juugo fall. Just as you near the entrance you hear and feel a powerful explosion shake the house, hit from behind by the force your flung out the front door.  With ears ringing and aches and pains all over you look around and realize that Ivan''s apartment has collapsed, bits of wood and concrete litter the area around where you were thrown.'
 
 						act 'Run away from the entrance':gt 'nord'
 					end
@@ -56,13 +57,13 @@ if StoryLine = 0 or altQS = 1:
 				cls
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/city/industrial/apartment/gun.jpg"></center>'
-				'You froze in horror and looked at Ivan and Juugo. Juugo was lying in blood, his head was a decent bullet hole from which flowed bloody mess. Ivan quickly reloaded and sent it to you. Juugo suddenly rolled over on the floor and you have seen how his wounds tightened. Body is covered with black and what that crust. Ivan started and pointing the gun at Juugo shot at it. Bullets whistled hit the wall deflects off the body Juugo. Juugo finally turned into what that monster with horns and jumped to his feet angrily screamed "NOW YOU DIE!" Ivan began to retreat, trying to reload the gun. Juugo lightning jumped him and hit Ivan zashvyrnuv him like a rag doll in the room. You saw that Ivan lying on the floor in blood and without movement, the gun fell from his hand weakened. Juugo with a triumphant cry rushed to Ivan and became powerful blows beat the motionless body. You have seen how just a second Juugo turned his head to a bloody pulp Ivan. Juugo but did not stop there and you feel like it''s going to force, concentrating in his hand. The air smelled of ozone and there was a nasty, thin squeal. You understand that now Juugo hit than it is very powerful.'
+				'Your frozen in horror as you take in the scene. Juugo is lying in a pool of his own blood, numerous bullet wounds cover his chest and one hole in his forehead. Ivan has reloaded and is now pointing the gun at you. Juugo suddenly rolls over on the floor and you watch as his wounds expell the bullets and close before your eyes. The black designs on his face now cover most of his body swirling and thickening as he heals. In a panic Ivan begins to fire more rounds at Juugo, as if his body has hardened to stone the rounds are now bouncing off his body ricocheting off his body and swirling back towards Ivan. Juugo''s transformation complete a black skinned horned monster stands in front of Ivan now. "NOW YOU DIE!" he roars.  Ivan tries to back away from the creature reloading his weapon again. Juugo quick as lightning jumped on him and hit Ivan so hard it through him across the room like a rag doll. You cross the room to Ivan''s broken bleeding body, you kick the gun away from Ivan''s hand where it had fallen from his limp hand. Juugo with a triumphant cry rushed to Ivan and became pummeling Ivan''s head small arcs of lightning pass into the body as Juugo''s fists turn the head to pulp. You lay your hand caefully on Juugo''s powerful shoulder calming him and stopping the carnage.'
 
 				act 'Run':
 					cls
 					gs 'stat'
 					!!'<center><img <<$set_imgh>> src="images/locations/city/industrial/apartment/gun.jpg"></center>'
-					'You turned and ran out of the apartment. Rear hit powerful explosion shook the house, ringing in your ears and you fell on the floor. Looking around you realize that Ivan apartment collapsed, sticking out of the doorway chip concrete slab in the air spinning dust, ears ringing.'
+					'You turn and run out of the apartment at seeing Juugo fall. Just as you near the entrance you hear and feel a powerful explosion shake the house, hit from behind by the force your flung out the front door.  With ears ringing and aches and pains all over you look around and realize that Ivan''s apartment has collapsed, bits of wood and concrete litter the area around where you were thrown.'
 
 					act 'Run away from the entrance':gt 'nord'
 				end
@@ -71,14 +72,14 @@ if StoryLine = 0 or altQS = 1:
 	end
 
 	if softKAR = 1:
-		'You came to kavrtire Ivan Tatiana and see there. She adjusted her glasses and told you. "Ivan is now in her apartment."'
+		'You arrive at Ivan''s apartment, you see Tatiana is already there. She adjusts her glasses and says. "Ivan is in his apartment."'
 
 		act 'What''s the plan?':
 			cls
 			pcs_horny = 0
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-			'Tatiana began to explain, "I can impose on you a temporary spell. Ivan did not recognize you. We seduce him, this means I have enough to smell it and immediately vozbudishsya. Main us to control myself. Then when he is ready he will offer drink, Hems him the means that would unleash his tongue. write his confession on camera. And the hat. "'
+			'Tatiana began to explain, "I can cast a temporary spell on you. Ivan will not recognize you. We can seduce him, and get him talking and maybe have a few drinks.  Then when he''s in our power we get him to write out a confession. "'
 
 			act 'Let''s get down':
 				cls
@@ -86,7 +87,7 @@ if StoryLine = 0 or altQS = 1:
 				pcs_horny += 10
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-				'Tatiana something probomotala and touched your face with his hand. She removed his hand and said, "Everything you do not know Ivan, here hold this bottle. Here strong aphrodisiac that works when his sniffing. Beware, we are not immune to it." Tatiana gave you bubble and you sprinkled a little front door, trying not to inhale the aroma. Tatiana rang the bell at the door and the door opened. Ivan appeared on the threshold, he looked a little bewildered at you. Tatiana smiled sweetly Ivan "We life of social surveys, can we ask you a few questions?" Ivan aside gesture inviting you to go to the apartment.'
+				'Tatiana speaks the words to the spell softly and touches your face with her hand. She removes her hand and says, "Here hold this bottle. It''s a strong aphrodisiac that works by inhaling the fumes. Becareful because it will effect us as well." Tatiana gave you a signal and sprinkle a little on the frame of the front door, trying not to inhale the aroma. Tatiana rang the bell and you wait for Ivan to answer. Ivan opens the door and stands in the threshold, he looking a t you little bewildered. Tatiana smiles sweetly at Ivan "Hello we are conducting a survey, can we ask you a few questions? And maybe show you a few products" Ivan stands aside and gestures you into the apartment.'
 
 				act 'Enter the apartment':
 					cls
@@ -94,7 +95,7 @@ if StoryLine = 0 or altQS = 1:
 					pcs_horny += 50
 					gs 'stat'
 					'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-					'Together with Tatiana you entered the apartment and went to Ivan in his living room. The room was clean and cozy. Ivan invited you to sit on the sofa and sat down in front of you. Tatiana began to ask questions about sex Ivan. Ivan looked surprisingly calm for a man fell under the aphrodisiac. You tried not to breathe and still feel its impact. Tatiana elbow and pushed you to your eyes showed vial.'
+					'Together with Tatiana you entered the apartment and follow Ivan into his living room. The room was clean and cozy. Ivan invited you to sit on the sofa and sat down in a chair in front of you. Tatiana began to ask questions about his sex life and desires. Ivan looked surprisingly calm despite the aphrodisiacs effects. You tried not to breathe it in, but you can still feel its impact. Tatiana elbows you and remembering your posing as salespeople you display the vial as if its the latest greatest product.'
 
 					act 'Splash secretly':
 						cls
@@ -102,7 +103,7 @@ if StoryLine = 0 or altQS = 1:
 						pcs_horny += 25
 						gs 'stat'
 					'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-					'While distracted Tatiana Ivan showing him her cleavage, you secretly still gushed aphrodisiac in the air and feel like themselves became excited. Tatiana all alluring and seductive talked with Ivan trying to seduce him, you even noticed her cheeks were flushed. But Ivan reacted Leavee calmly at what is happening and you barely noticed as he was interested, but did not notice any signs of arousal. Meanwhile Tatiana again poked you in the ribs.'
+					'Tatiana distracts Ivan leaning forward displaying her cleavage, as she does this you discretely splash the  aphrodisiac around the area, as the scent rises you feel the effects and begin to get aroused. Tatiana being all alluring and seductive continues to talk with Ivan trying to seduce him, you notice her cheeks are flushed. But Ivan doesn''t seem to be reacting to the aphrodisiac, his calmy sitting there listening to her seemly not even interested in the show shes putting on. Tatiana again pokes you in the ribs.'
 
 						act 'Splash again':
 							cls
@@ -110,14 +111,14 @@ if StoryLine = 0 or altQS = 1:
 							pcs_horny += 25
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-							'Tatiana got up from the sofa and turning his back to Ivan leaned over and began fumbling in his bag seductively curving. Ivan looked curiously at the bottom Tatiana and quietly looked away. You gushed again and felt like your pussy swelled and began to demand attention. Tatiana meanwhile sat on the sofa. It was evident that an aphrodisiac and it acted. She reddened lips, cheeks reddened and she frantically clutched his feet. Ivan looked at you with interest, but again, no sign of the beyond excitement showed. Tatiana broke down and snatched you from the hands of the bubble. She stood up and asked Ivan to smell perfume, and tell her what he thinks of them. Ivan smiled at it and said, "Sorry, I have a cold. Leavee odors do not feel." Tatiana helplessly sat on the couch all her cunning plan with magic and alchemy collapsed on the banal cold.'
+							'Tatiana got up from the sofa, turns around and kneels beside the couch rummaging thru her bag seductively arching her back. Ivan stared at her ass for a few seconds then calmy looks away. You splash some more again and feel the effects as your pussy gets wet swollen youwiggle a little in your seat as your pussy starts to demand attention. Tatiana resumes her seat on the sofa. It was evident that an aphrodisiac is working on her as well. She licks lips, and is breathing a bit harder, her cheeks and neck are flushed and she fidgets in her seat as if trying to scratch an itch. Ivan looks at you both with interest, but again, no sign of arousal shows. Tatiana takes the vial from your hand, stands and approaches Ivan asking him to smell this perfume.  Ivan smiled at her and said, "Sorry, I seem to be coming down with something my nose is rather stuffed right now I can''t smell a thing. Tatiana helplessly sits on the couch again all her cunning plans with magic and alchemy collapseing in front of her due to a cold.'
 
 							act 'Suggest a drink':
 								cls
 								minut += 5
 								gs 'stat'
 								'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-								'You are offered a drink to Ivan. He chuckled, "Girls, I do not know what you''re up here, but no. Themselves think two unfamiliar girl, come to my house, asking me stupid questions, entice, offer a drink, you can klofelinschitsy? Podolete me something else, and I pass out ? " Tatiana noticeably flustered realizing that her plan raspolzsya at the seams. Ivan got up from the couch and invited you to leave the apartment. Tatiana tried to take something else. But Ivan was already up and you see off Vym nothing left to do but to proceed to the exit.'
+								'After a short conversation where Tatiana asked quite a few very personal questions of Ivan, all the while displaying her cleavage, you take your que and ask if Ivan would like to have a drink with you and Tatiana. He chuckled, "Girls, I do not know what you''re up to here, but I think this is over." You start to protest but he cuts you off. ""No. Two good looking but strange girls, come to my house, asking me stupid questions, trying to entice me, then you want to drink, then what, I pass out?  Then you rob my house as I sleep?" Tatiana is noticeably flustered realizing that her plan has unravelled at the seams. Ivan gets up from the couch and asks you to leave the apartment. Tatiana tries to think of something else but Ivan is already holding the door open for you have nothing left to do but to leave.'
 
 								act 'Leave the apartment':
 									cls
@@ -125,7 +126,7 @@ if StoryLine = 0 or altQS = 1:
 									softKAR = 0
 									gs 'stat'
 									'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-									'Together with Tatiana you left the apartment and Ivan closed the door behind you. Tatiana angrily slammed fist into his palm. "The devil. Well, who would have thought? Okay, I ran. Disassemble itself."'
+									'Together with Tatiana you leave the apartment and Ivan closes the door behind you. Tatiana angrily slammed her fist into palm. "Well damn it to hell that was a complete failure and a huge waste of time."'
 
 									act 'Go out of the house':gt 'nord'
 								end
@@ -136,7 +137,7 @@ if StoryLine = 0 or altQS = 1:
 								minut += 5
 								gs 'stat'
 								'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome.jpg"></center>'
-								'You helplessly silent, but Tatiana was found first. "Runny nose? I know the perfect remedy for a cold." Tatiana came to Ivan and put her hand on his nose began to massage his. Eyes on Ivan became clear that nasmortk began to pass and he began to feel an aphrodisiac. Ivan grabbed Tatiana and drew her to him. She tried resisting, but very powerful aphrodisiac, and she lashed out at Ivan began to kiss him. Second hand Ivan attracted you to her. You feel powerful excitement of the situation.'
+								'You fall silent trying to think of something else, but Tatiana spoke before you could think. "Stuffy nose? I know the perfect remedy for a cold." Tatiana approached Ivan and put her hand on his face beginning to massage his face and around his nose. Looking at his eyes you could tell that some of the scent was penetrating into his sinus cavity and he was starting to feel some effect from the aphrodisiac. Ivan grabbed Tatiana and drew her to him. She tried resisting, but the very powerful effects of the aphrodisiac, caught her as well and she began to kiss him. Ivan waved you over to them as they kissed and under the effects you comply and embrace them both. The effects and the scene before you really turn you on'
 
 								act '...':
 									cls
@@ -144,7 +145,7 @@ if StoryLine = 0 or altQS = 1:
 									softKAR = 2
 									gs 'stat'
 									'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome1.jpg"></center>'
-									'Tatiana kissing Ivan began to unbutton his pants. Finally hard cock Ivan was on the loose. Tatiana leaned to the penis and began to suck. Ivan dug its lips in your lips and began to kiss you under the greedy smack Tatiana. Ivan took your head in his hands and sent it to his groin.'
+									'As Tatiana is kissing Ivan she reaches down and unbuttons his pants. Finally springing his hard cock to your view. Tatiana drops to her knees in front of Ivan and takes his penis into her mouth and began to suck. Ivan locks you his grip kissing you hard and passionately on the lips as Tatiana greedily sucks his cock. Ivan grabs your hair and forces you to your knees before him as well.'
 
 									act 'Suck a cock together with Tatiana':
 										cls
@@ -155,8 +156,7 @@ if StoryLine = 0 or altQS = 1:
 										gang += 1
 										gs 'stat'
 										'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome2.jpg"></center>'
-										'Exhausted from morbid craving you moaning along with Tatiana, suck dick, vylizyvyete balls. You greedily bites his lips into a hard and hot flesh Crimson member, trying to suck in his mouth as much as possible.'
-
+										'Kneeling beside Tatiana you happily share Ivan''s cock between you. One sucking his cock while the other tongues his balls.  Then changing positions so you can both share him between kissing each other around his cock.'
 										gs 'arousal', 'bj', 5, 'group'
 										gs 'stat'
 										
@@ -166,13 +166,13 @@ if StoryLine = 0 or altQS = 1:
 
 											gs 'stat'
 											'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome3.jpg"></center>'
-											'Tatiana Ivan dropped onto his back and tearing on the go with their clothes jumped on top of his cock. While Tatiana furiously rides a member Ivan you caress his testicles and stroking ass Tatiana.'
+											'Tatiana pulls Ivan down onto his back and tearing off her clothes jumps on to his cock. While Tatiana furiously rides his dick, you caress his balls and stroke Tatiana''s back and ass.'
 
-											act 'Sit pussy on Ivan''s face':
+											act 'Sit on Ivan''s face':
 												cls
 												gs 'stat'
 												'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome4.jpg"></center>'
-												'While Tatiana skips out on a limb you walked Ivan and transferred through the leg by placing his head in front of her pussy on his face. Ivan began to lick your pussy, incredible bliss enveloped you. Ivan after a while you took off your face and put Tatiana back.'
+												'While Tatiana continues to ride his dick, you expose your pussy and sit down on Ivan''s face. Ivan begins to lick your pussy, incredible bliss envelopes you. After several minutes and several small orgasms you climb off Ivan''s face pushing Tatiana off Ivan. You push her down on the floor next to Ivan and lower yourself onto her.'
 
 												gs 'arousal', 'cuni', 5, 'group'
 												gs 'stat'
@@ -182,7 +182,7 @@ if StoryLine = 0 or altQS = 1:
 													pcs_vag += 1
 													gs 'stat'
 													'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome5.jpg"></center>'
-													'You started to lick pussy Tatiana and felt as something solid Bound you expiring juices pussy. When a hard cock parted the folds of your pussy, you suffocated from surging feelings for you. Do you dizzy and took possession of the whole body bliss, you suddenly gripped the present orgasm shuddering convulsions, you heard their cry as if the part of the body and felt Tatiana under you also began to shudder from orgasm. Ivan groaned and pulled his penis out of you, he grabbed you with Tatiana and put you in front of him on his knees.'
+													'You lower your face to Tatiana''s pussy and begin licking her as her tongue licks furiously at your clit. Your extremely turned on when a hard cock parts the folds of your pussy and fills you up from behind, your overwhelmed from the feeling of being penetrated as your clit is worked out from below.  You give your all to Tatiana licking her pussy fast and hard as Ivan pounds into you from behind.  In no time your begin to shudder with convulsions as a huge orgasm spikes through your body, you hear Tatiana cry out with you as she hugs your body close her own orgasm roaring through her.  The two of you feel as one being and your both moaning loudly and with that Ivan roars and buries himself deep inside you shooting his hot semen into your quivering pussy. For one moment the three of you spasm together then Ivan pulls out of you and slides his dick into Tatiana''s mouth shooting the last bit of his sperm into her mouth, as he falls back away from you you feel Tatiana licking the sperm from your pussy.'
 
 													$orgasm_or = 'yes'
 													gs 'arousal', 'cuni_give', 5, 'group'
@@ -197,7 +197,7 @@ if StoryLine = 0 or altQS = 1:
 														cumface += 1
 														gs 'stat'
 														'<center><img <<$set_imgh>> src="images/shared/sex/group/cum/threesome6.jpg"></center>'
-														'You knelt together with Tatiana and Ivan began to masturbate his penis in front of your faces. Suddenly flew out of his cock and hot jet of sperm hit on your faces. Member of some more time flying jet of sperm fall on your face with Tatiana. But Ivan finally dried out and helplessly sat on the couch trying to catch my breath. Tatiana whispered to you, cameras ready.'
+														'You knelt together with Tatiana as Ivan begins to jerk off in front of your faces. Suddenly Ivan clenches up and cum flies out of his cock and hot jet of sperm hits you both in the face. Ivan finally dried out, retreats to the couch trying to catch his breath. You take a few minutes to lick the cum off of each others faces. Tatiana whispers to you, cameras ready.'
 
 														act 'Cooking chamber':
 															cls
@@ -207,7 +207,7 @@ if StoryLine = 0 or altQS = 1:
 															cumface = 0
 															gs 'stat'
 															'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-															'You secretly prepared a camera sending it out of her purse at Ivan and included it. Tatiana meanwhile handed him a glass of water, Ivan thirsty drank water and Tatiana asked him. Tell me how you stole from his boss. Ivan grinned "Elementary, I lost in the casino and I urgently need money. I knew this old asshole lie in the safe money on bribes. This slut did not give me a dishwasher. And I was born a brilliant plan. Naboltal that I fool her take the manager. Yeah, how did the manager. And Imagine this fool fell for such nonsense. I gave her the keys that stole. arose where the camera will not see me, and sent it to the cleaning lady pridurochnuyu take money. She brought them to me, "said Tatiana "And where is the money?" Ivan said sadly "long ringing. Know, holy card debt." Tatiana grinned, "it''s done. Ivan And you go to sleep." Ivan immediately snoring on the couch. Tatiana turned to you. "Yes, I almost screwed up because of his cold. Good lesson for you. Everything can not go according to plan. Thought I had to paralyze him, but I have since tried once. Paralyzed object choked when I poila. Hardly its pumping. Okay, let''s go faster. umoemsya''s just. " You just quickly washed up in the bathroom, along with Tatiana, flush sperm. She obviously avoiding your eyes and you will be worth on the street, she immediately began to say goodbye to you.'
+															'You secretly prepared a camera filming through a hole in her purse at Ivan. Tatiana meanwhile handed him a glass of water, thirsty Ivan drank the water as Tatiana asked him. Tell me how you stole from his boss. Ivan grinned "Elementary, I lost big time at the casino and I urgently needed the money. I knew this old asshole kept his bribe money in the safe. And he really liked the dumb slut dishwasher. And I came up with a brilliant plan. I convinced her to distract the manger. He would have done anything she asked he was so hot for her. I convinced her to get the keys for me and stood where the cameras could not see me and took what I wanted.  Then I had the cleaning woman take the money out and return it to me outside of work for a small cut. "And where is the money now?" Ivan said sadly "It''s all gone I paid off my casino debt and some other bills." Tatiana grinned, "It''s done Ivan you go to sleep." Ivan was immediately snoring on the couch. Tatiana turned to you. "That was close we almost screwed up because of his cold. Good lesson for you. Everything can not go according to plan. Thought I would have to paralyze him, but I have tried that once. Paralyzed object can choke if your not careful. Okay, let''s get out of here we got what we need." You quickly wash up in the bathroom with Tatiana, washing the left over sperm from each others faces and chests. She smiles at you while looking into yours and gets the last of the sperm off your chin and together you return to the street.'
 
 															gs 'arousal', 'end'
 															gs 'stat'
@@ -242,61 +242,62 @@ else
 	end
 	'<center><b><font color = maroon>Apartment manager Ivan</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/shared/apartment/podezdhr.jpg"></center>'
-	'The door to the apartment of Ivan iron, with good locks.'
+	'Ivan''s apartment door made of steel with good locks.'
 	act 'Logout':
 		cla
 		minut = minut + 5
 		gt'nord'
 	end
 	if softKAR = 1:
-		'You came to the apartment of Ivan and saw Tanya in unheard-of for her entourage. She straightened unusual for her glasses and, with a chuckle, told you. "Well, ready?"'
+		'You arrive at Ivan''s apartment, you see Tanya is already there. She adjusts her glasses and says. "Ivan is in his apartment. Well, ready?"'
 		act 'What plan?':
 			cls
 			pcs_horny = 0
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-			'Tanya started to explain "In your disguise Ivan won''t recognize you. We have to seduce him, for that I have the means, enough to smell it, and immediately instituted. The main thing we keep ourselves in the hands of. Then when he is ready to offer him a drink, Podillya it means, that would untie his tongue. We write down his confession on camera. And the hat."'
+			'Tanya started to explain "In your disguise Ivan won''t recognize you. We have to seduce him, for that I have the means,this aphrodisiac is  enough strong and he just has to smell it, and immediately he''ll be horny. The main thing we keep ourselves out of the vapor. Then when he is ready to offer him a drink, that shoul untie his tongue. We record his confession on camera. And thats it."'
 			act 'Let''s begin':
 				cls
 				minut += 5
 				pcs_horny += 10
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-				'Tanya said "Here, take this bottle. There is a strong aphrodisiac, which works when it sniffs. Carefully, We are also subject to it." Tanya gave you a bottle and you splashed a little in front of the door, trying not to inhale the aroma. Tanya pulled the bell at the door and the door opened. On the threshold appeared Ivan, He looked a little perplexed at you. Tanya smiled sweetly Ivan "We service of social surveys, Can we ask you a few questions?" Ivan aside gesture inviting you to go to the apartment.'
-				act 'Log in to the apartment':
+				'Tanya said "Here, take this bottle its the aphrodisiac. Carefull with that remember it will affect us as well." Tanya gives you the bottle and you splash a little on the frame of the door, trying not to inhale the aroma. Tanya rang the bell and waited a few minutes for him to answer it. On the threshold appeared Ivan, He looked a little perplexed at you. Tanya smiled sweetly Ivan "We conducting a social survey, Can we ask you a few questions?" Ivan stands aside inviting you to go to the apartment.'
+				act 'Go in to the apartment':
 					cls
 					minut += 5
 					pcs_horny += 50
 					gs 'stat'
 					'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-					'Together with Tanya you entered the apartment to Ivan and went into his living room. The room was clean and comfortable. Ivan asked you to sit down on the sofa and sat down in front of you. Tanya began to ask Ivan questions about sex. Ivan looked surprisingly calm for a man fell under the impact of an aphrodisiac. You tried not to breathe and still feel its effects. Tanya nudged you with his elbow and looked toward your bubble.'
+					'Together with Tanya you entered the apartment and followed Ivan into his living room. The room was clean and comfortable. Ivan asked you to sit down on the sofa and sat down in front of you in another chair. Tanya began to ask Ivan questions about sex. Ivan looked surprisingly calm for a man under the impact of an aphrodisiac. You tried not to breathe and could still feel its effects. Tanya nudged you with her elbow and looked toward your bottle.'
 					act 'Drizzle secretly':
 						cls
 						minut += 5
 						pcs_horny += 25
 						gs 'stat'
 						'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-						'While Tanya was distracting Ivan showing him your neckline, you still secretly streamed aphrodisiac in the air and felt themselves become excited. Tanya all the more tempting and seductive talked with Ivan trying to seduce him, you even noticed her cheeks flushed. But Ivan reacted rather calmly to what is happening, and you just saw how he became interested in, but we did not notice any signs of excitement. Meanwhile Tanya again, jabbing you with an elbow in the ribs.'
+						'While Tanya was distracting Ivan showing him your neckline, you still discretely spread the  aphrodisiac in the air and felt yourself become excited. Tanya all the more tempting and seductive talked with Ivan trying to seduce him, you even noticed her cheeks flushed. But Ivan reacted rather calmly to what is happening, he looked at you with interest but we did not notice any signs of excitement. Meanwhile Tanya again, jabbing you with an elbow in the ribs.'
 						act 'Splash again':
 							cls
 							minut += 5
 							pcs_horny += 25
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-							'Tanya got up from the sofa and turned back to Ivan bent down and started fumbling in his bag seductively curving. Ivan curiously looked at Tannin ass and calmly looked away to the side. You spurted again and felt, as your pussy swelled and began to demand the attention. Tanya meanwhile sat down on the sofa. It has been seen, aphrodisiac that she acted not. She flushed lips, reddened cheeks and she frantically clutched his legs. Ivan looked at you with interest, but again,, no signs of excitement did not show the beyond. Tanya broke down and grabbed the bottle from his hands. She stood up and asked Ivan to smell perfume, and tell her that he thought of them. Ivan smiled at it and said, "Sorry, I have a runny nose. Most scents can not feel." Tanya helplessly sat down on the sofa, all of her cunning plan collapsed due to banal rhinitis.'
+							'Tanya got up from the sofa and turned back to Ivan bent down and started fumbling in her bag seductively stretching. Ivan looked approvingly at Tanya''s ass and but calmly looked away after a casual viewing. You spread more of the aphrodisiac and felt more aroused, as your pussy swelled and began to get wet. Tanya meanwhile sat back down on the sofa. You could tell Tanya was being affected as well her face was flushed her breathing harder and she fidgeted in her seat as if trying to scratch an itch. Ivan looked at you with interest, but again, no signs of excitement. Tanya broke down and grabbed the bottle from your hands. She stood up and asked Ivan to smell her perfume, and tell her that he thought of it. Ivan smiled at it and said, "Sorry, I have a stuffy nose, I can''t smell a thing." Tanya helplessly sat down on the sofa, all of her cunning plan collapsed due to a stuffy nose.'
 							act 'Suggest drink':
 								cls
 								minut += 5
 								gs 'stat'
 								'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-								'You are offered a drink Ivan. He grinned "Girls, I do not know what you''re up here, but no. Think for yourself, two unknown girls, come to my house, ask me stupid questions, seduce, offered a drink, You can klofelinschitsy? Pour me what ever, I pass out?" Tanya visibly taken aback realizing, her plan raspolzsya at the seams. Ivan got up from the couch and asked you to leave the apartment. Tanya tried something else to do. But Ivan had already been set up to show the door, and you have nothing left to do, but to proceed to the exit.'
+								'After a short conversation where Tanya asked quite a few very personal questions of Ivan, all the while displaying her cleavage, you take your que and ask if Ivan would like to have a drink with you and Tanya. He chuckled, "Girls, I do not know what you''re up to here, but I think this is over." You start to protest but he cuts you off. ""No. Two good looking but strange girls, come to my house, asking me stupid questions, trying to entice me, then you want to drink, then what, I pass out?  Then you rob my house as I sleep? " Tanya is noticeably flustered realizing that her plan has unravelled at the seams. Ivan gets up from the couch and asks you to leave the apartment. Tanya tries to think of something else but Ivan is already holding the door open for you have nothing left to do but to leave.'
+
 								act 'Get out of the apartment':
 									cls
 									minut += 5
 									softKAR = 0
 									gs 'stat'
 									'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-									'Together with Tanya you left the apartment and Ivan closed the door behind you. Tanya in anger she slammed her fist against the palm of. "Devil. Who would have thought? Okay, I ran. Assort itself."'
+									'Together with Tanya you left the apartment and Ivan closed the door behind you. Tanya in anger she slammed her fist against the palm of her hand. "I can''t believe it all my plans defeated by a common cold"'
 									act 'Go out of the door':gt 'nord'
 								end
 							end
@@ -305,14 +306,15 @@ else
 								minut += 5
 								gs 'stat'
 								'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome.jpg"></center>'
-								'You perplexed silence, but Tanya was the first. "Cold? I know the perfect cure for the common cold." Tanya walked over to John and put his hand on his nose, starting his massage. In the eyes of Ivan it became clear, that runny nose was the place he started feeling aphrodisiac. Ivan grabbed Tanya and pulled her to him. She tried to resist, but very powerful aphrodisiac, and she pounced on Ivan began to kiss him. Second hand Ivan attracted you to your. You feel powerful excitement of the situation.'
+								'You fall silent trying to think of something else, but Tanya spoke before you could think. "Stuffy nose? I know the perfect remedy for a cold." Tanya approached Ivan and put her hand on his face beginning to massage his face and around his nose. Looking at his eyes you could tell that some of the scent was penetrating into his sinus cavity and he was starting to feel some effect from the aphrodisiac. Ivan grabbed Tanya and drew her to him. She tried resisting, but the very powerful effects of the aphrodisiac, caught her as well and she began to kiss him. Ivan waved you over to them as they kissed and under the effects you comply and embrace them both. The effects and the scene before you really turn you on'
 								act '...':
 									cls
 									minut += 5
 									softKAR = 2
 									gs 'stat'
 									'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome1.jpg"></center>'
-									'Tanya kissing Ivan began to unbutton his pants. Finally, a solid member Ivan was on the loose. Tanya leaned over to the cock and started sucking him off. Ivan dug his lips in your lips and you began to kiss, under the greedy Cocagne Thani. Ivan took your head in his hands and sent it to his groin.'
+									'As Tanya is kissing Ivan she reaches down and unbuttons his pants. Finally springing his hard cock to your view. Tanya drops to her knees in front of Ivan and takes his penis into her mouth and began to suck. Ivan locks you his grip kissing you hard and passionately on the lips as Tanya greedily sucks his cock. Ivan grabs your hair and forces you to your knees before him as well.'
+
 									act 'To suck cock together with Tanya':
 										cls
 										guy += 1
@@ -320,7 +322,8 @@ else
 										gang += 1
 										gs 'stat'
 										'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome2.jpg"></center>'
-										'Exhausted by a painful desire you groan, together with Tanya, suck cock and lick balls. You greedy bites his lips in a hard and hot flesh crimson member, trying to suck in your mouth as much as possible.'
+										'Kneeling beside Tanya you happily share Ivan''s cock between you. One sucking his cock while the other tongues his balls.  Then changing positions so you can both share him between kissing each other around his cock."'
+										gs 'arousal', 'bj', 5, 'group'
 										gs 'arousal', 'bj', 5, 'group'
 										gs 'stat'
 										act '...':
@@ -328,12 +331,12 @@ else
 											minut += 5
 											gs 'stat'
 											'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome3.jpg"></center>'
-											'Tanya dropped Ivan on his back and tearing off on the go with their clothes jumped on top of his cock. While she furiously riding a cock Ivana you caress his testicles and stroked her ass.'
-											act 'Take pussy on the face of Ivan':
+											'Tanya pulls Ivan down onto his back and tearing off her clothes jumps on to his cock. While Tanya furiously rides his dick, you caress his balls and stroke Tanya''s back and ass.'
+											act 'Sit on Ivan''s face':
 												cls
 												gs 'stat'
 												'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome4.jpg"></center>'
-												'While Tanya is riding on the dick you surpassed Ivan and threw over his head a foot placing her pussy in front of his face. Ivan began to lick your pussy, incredible bliss swept you. Ivan after a while, you took off your face and put Tanya on her back.'
+												'While Tanya continues to ride his dick, you expose your pussy and sit down on Ivan''s face. Ivan begins to lick your pussy, incredible bliss envelopes you. After several minutes and several small orgasms you climb off Ivan''s face pushing Tanya off Ivan. You push her down on the floor on her back next to Ivan and lower yourself onto her.'
 												gs 'arousal', 'cuni', 5, 'group'
 												gs 'stat'
 												act '69 Tanya':
@@ -341,7 +344,7 @@ else
 													pcs_vag += 1
 													gs 'stat'
 													'<center><img <<$set_imgh>> src="images/locations/city/industrial/aptmanagers/sex/threesome5.jpg"></center>'
-													'You started to lick the pussy Tanya and felt like something hard had hit you in the expiring juices pussy. When hard cock parted the folds of your pussy, You suffocated by surging feelings for you. You dizzy and body girth bliss, You suddenly covered under this orgasm, shuddering convulsions, you heard your scream as if from the outside and felt how the body Thani under you too began to shudder with orgasm. Ivan groaned and pulled his dick out of you, he grabbed both of you and set itself on her knees.'
+													'You lower your face to Tanya''s pussy and begin licking her as her tongue licks furiously at your clit. Your extremely turned on when a hard cock parts the folds of your pussy and fills you up from behind, your overwhelmed from the feeling of being penetrated as your clit is worked out from below.  You give your all to Tanya licking her pussy fast and hard as Ivan pounds into you from behind.  In no time your begin to shudder with convulsions as a huge orgasm spikes through your body, you hear Tanya cry out with you as she hugs your body close her own orgasm roaring through her.  The two of you feel as one being and your both moaning loudly and with that Ivan roars and buries himself deep inside you shooting his hot semen into your quivering pussy. For one moment the three of you spasm together then Ivan pulls out of you and slides his dick into Tanya''s mouth shooting the last bit of his sperm into her mouth, as he falls back away from you you feel Tanya licking the sperm from your pussy.'
 													$orgasm_or = 'yes'
 													gs 'arousal', 'cuni_give', 5, 'group'
 													gs 'arousal', 'vaginal', 5, 'group'
@@ -354,7 +357,7 @@ else
 														cumface += 1
 														gs 'stat'
 														'<center><img <<$set_imgh>> src="images/shared/sex/group/cum/threesome6.jpg"></center>'
-														'You knelt together with Tanya and Ivan began to wank his cock in front of your faces. Suddenly, his cock hot jet of sperm flew out and hit on your faces. From a member for some time flew jets of semen falling on your faces. But Ivan finally dried up and helplessly sat on the couch trying to catch my breath. Tanya whispered to you, Prepare the camera.'
+														'You knelt together with Tanya as Ivan begins to jerk off in front of your faces. Suddenly Ivan clenches up and cum flies out of his cock and hot jet of sperm hits you both in the face. Ivan finally dried out, retreats to the couch trying to catch his breath. You take a few minutes to lick the cum off of each others faces. Tanya whispers to you, get the camera ready.'
 														act 'Cooking chamber':
 															cls
 															softKAR = 10
@@ -362,7 +365,7 @@ else
 															cumface = 0
 															gs 'stat'
 															'<center><img <<$set_imgh>> src="images/pre/shared/karinpre.jpg"></center>'
-															'You secretly prepared the camera sending it from her purse at Ivan and including. Tanya meanwhile handed him a glass of water, Ivan thirsty drank water and Tanya asked. Tell us how you stole from his boss. Ivan grinned "Elementary! I lost to the casino and I urgently need money. I knew, that this old asshole lie in the safe money on bribes. This slut has not given me a dishwasher. And I was born a brilliant plan. I naboltal this fool will take it that the manager. Aha, how manager. And imagine this fool bought into this nonsense. I gave her the keys, who stole. I stood there, where I will not see the camera, and sent the cleaning lady take money pridurochnuyu. She brought them to me" Tanya asked  "And where is the money?" Ivan said sadly "Debts distributed. You know, holy card debt." Tanya grinned pretty, "it''s done. And you go to sleep Ivan." Ivan immediately started snoring on the couch. She turned to you. "Yes, I almost blew it because of his rhinitis. Okay, go from here soon. Here are just umoemsya." You quickly washed up in the bathroom together with Tanya, wash sperm. She obviously avoided your sight and you should be on the streets, She immediately began to say goodbye to you.'
+															'You secretly prepared a camera filming through a hole in her purse at Ivan. Tanya meanwhile handed him a glass of water after putting something into it,  thirsty Ivan drank the water as Tanya asked him. Tell me how you stole from his boss. Ivan grinned "Elementary, I lost big time at the casino and I urgently needed the money. I knew this old asshole kept his bribe money in the safe. And he really liked the dumb slut dishwasher. And I came up with a brilliant plan. I convinced her to distract the manger. He would have done anything she asked he was so hot for her. I convinced her to get the keys for me and stood where the cameras could not see me and took what i wanted.  Then I had the cleaning woman take the money out and return it to me outside of work for a small cut. "And where is the money now?" Ivan said sadly "It''s all gone I paid off my casino debt and some other bills." Tanya grinned, "it''s done Ivan, go to sleep." Ivan was immediately snoring on the couch. Tanya turned to you. "That was close we almost screwed up because of his cold. Good lesson for you. Everything can not go according to plan. Thought I would have to paralyze him, but I have tried that once. Paralyzed object can choke if your not careful. Okay, let''s get out of here we got what we need." You quickly wash up in the bathroom with Tanya, washing the left over sperm from each others faces and chests. She smiles at you while looking into yours and gets the last of the sperm off your chin and together you return to the street.'
 															gs 'arousal', 'end'
 															gs 'stat'
 															act 'Leave':gt'nord'
