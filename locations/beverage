@@ -7,39 +7,39 @@ Vodka (bev_vod): +5 pcs_energy, -5 pcs_hydra (restaurant, party, bar, supermarke
 Wine (bev_win): +5 pcs_energy, -5 pcs_hydra (restaurant, party, bar, supermarket)
 Beer (bev_bee): +5 pcs_energy, +5 pcs_hydra (restaurant, party, bar, supermarket)
 }!
-if $ARGS[0] = 'drinks':
-	*clr & cla
-	act 'Finish':gt $loc, $metka
-	killvar '$_drink'
-	$_drink['0,name'] = 'Kvass'
-	$_drink['0,price'] = 40
-	$_drink['0,loc'] = bev_kva
-	$_drink['1,name'] = 'Water'
-	$_drink['1,price'] = 50
-	$_drink['1,loc'] = bev_wat
-	$_drink['2,name'] = 'Coffee'
-	$_drink['2,price'] = 50
-	$_drink['2,loc'] = bev_cof
-	$_drink['3,name'] = 'Vodka'
-	$_drink['3,price'] = 50
-	$_drink['3,loc'] = bev_vod
-	$_drink['4,name'] = 'Wine'
-	$_drink['4,price'] = 60
-	$_drink['4,loc'] = bev_win
-	$_drink['5,name'] = 'Beer'
-	$_drink['5,price'] = 40
-	$_drink['5,loc'] = bev_bee
+! if $ARGS[0] = 'drinks':
+	! *clr & cla
+	! act 'Finish':gt $loc, $metka
+	! killvar '$_drink'
+	! $_drink['0,name'] = 'Kvass'
+	! $_drink['0,price'] = 40
+	! $_drink['0,loc'] = bev_kva
+	! $_drink['1,name'] = 'Water'
+	! $_drink['1,price'] = 50
+	! $_drink['1,loc'] = bev_wat
+	! $_drink['2,name'] = 'Coffee'
+	! $_drink['2,price'] = 50
+	! $_drink['2,loc'] = bev_cof
+	! $_drink['3,name'] = 'Vodka'
+	! $_drink['3,price'] = 50
+	! $_drink['3,loc'] = bev_vod
+	! $_drink['4,name'] = 'Wine'
+	! $_drink['4,price'] = 60
+	! $_drink['4,loc'] = bev_win
+	! $_drink['5,name'] = 'Beer'
+	! $_drink['5,price'] = 40
+	! $_drink['5,loc'] = bev_bee
 	
-	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
-	i = 0
-	:loopdrink
-	$_str += '<tr><td>'+$_drink['<<i>>,name']+'</td><td align=center>'+iif(money>=val($_drink['<<i>>,price']),'<a href="exec:money -= val($_drink['<<args[1]>>,price'])&gt''beverage'','$_drink['<<i>>,loc']', <<i>>">'+$_drink['<<i>>,price']+'</a>', $_drink['<<i>>,price'])+' ₽.</td></tr>'
-	i += 1
-	if i < (arrsize('$_drink')/4):jump 'loopdrink'
-	$_str += '</table></center>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/cafewaitress.jpg</center>','Your drinks order:<br>'+$_str
-	killvar '$_str'
-end
+	! $_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
+	! i = 0
+	! :loopdrink
+	! $_str += '<tr><td>'+$_drink['<<i>>,name']+'</td><td align=center>'+iif(money>=val($_drink['<<i>>,price']),'<a href="exec:money -= val($_drink['<<args[1]>>,price'])&gt''beverage'','$_drink['<<i>>,loc']', <<i>>">'+$_drink['<<i>>,price']+'</a>', $_drink['<<i>>,price'])+' ₽.</td></tr>'
+	! i += 1
+	! if i < (arrsize('$_drink')/4):jump 'loopdrink'
+	! $_str += '</table></center>'
+	! '<center><img <<$set_imgh>> src="images/locations/shared/cafewaitress.jpg</center>','Your drinks order:<br>'+$_str
+	! killvar '$_str'
+! end
 
 if $ARGS[0] = 'bev_kva':
 	cla

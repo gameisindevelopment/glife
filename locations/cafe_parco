@@ -14,6 +14,8 @@ if $args[0]= 'start':
 end
 
 if $args[0]= 'inner':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	'<img <<$set_imgh>> src="images/locations/pavlovsk/park/cafe/caffe_del_parco_in.jpg">'
 	
 	act 'Eat a meal (0:30) (100 <b>₽</b>)':money -= 100 & gs 'food', 'f_food'
