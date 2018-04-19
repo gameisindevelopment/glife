@@ -14,8 +14,12 @@ else
 	lcolor = rgb(106, 90, 205)
 end
 '<center><b><font color="maroon">Pavlovsk''s train station cafe</font></b></center>'
+'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
+'A small cafe, attached to the train station. It looks rather shabby.'
+'The cafe is closed right now, it''s usually open between 8:00 and 20:00.'
 
 if mother_go = 1 and hour = 16:
+	cls
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
 	'A small cafe, attached to the train station. It looks rather shabby.'
 	'The door is currently locked, and the sign on the door says "Closed". That''s strange, the cafe is supposed to be open at this time.'
@@ -56,6 +60,7 @@ if mother_go = 1 and hour = 16:
 	end
 else
 	if hour >= 8 and hour <= 19:
+		cls
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe2.jpg"></center>'
 		'A small cafe, attached to the train station. It looks rather shabby.'
 
@@ -94,10 +99,6 @@ else
 				'You see your classmates <a href="exec:minut += 3 & gt ''gopskver''">Vitek, Dan and Vasily</a> sitting at a table in the far corner, drinking beer.'
 			end
 		end
-	else
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
-		'A small cafe, attached to the train station. It looks rather shabby.'
-		'The cafe is closed right now, it''s usually open between 8:00 and 20:00.'
 	end
 end
 

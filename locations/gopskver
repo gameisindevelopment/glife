@@ -134,7 +134,7 @@ gs 'stat'
 
 gs 'dinsexFX'
 if $prevloc = 'gkafe':
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe3.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe2.jpg"></center>'
 else
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/park/skver.jpg"></center>'
 end
