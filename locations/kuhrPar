@@ -20,8 +20,6 @@ end
 
 $metka = $ARGS[0]
 $loc = $CURLOC
-$metka = $ARGS[0]
-$loc = $CURLOC
 clr
 minut += 1
 gs 'stat'
