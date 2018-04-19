@@ -707,7 +707,6 @@ elseif lactate = 1 and night_mode = 1:
 			$stat_msg += '<BR><font color = white>Your breasts tingle a little from the feeling of milk production.</font><BR>'
 		else
 			$stat_msg += '<BR><font color = white>Your breasts feel soft and empty.</font><BR>'
-				$stat_msg += '<BR><font color = white>Your breasts feel soft and empty.</font><BR>'
 	end
 end
 
