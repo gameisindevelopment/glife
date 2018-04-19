@@ -661,25 +661,22 @@ if lactate = 1 and night_mode = 0:
 			$stat_msg += '<BR><font color = black>Your breasts tingle a little from the feeling of milk production.</font><BR>'
 		else
 			$stat_msg += '<BR><font color = black>Your breasts feel soft and empty.</font><BR>'
-		end
 	end
-	elseif lactate = 1 and night_mode = 1:
-		if lactatemv >= lactatemm-1:
-				$stat_msg += '<BR><font color = white>Your breasts are so full they hurt and a little milk is constantly dribbling out.</font><BR>'
-			elseif lactatemv > lactatemm*9/10:
-				$stat_msg += '<BR><font color = white>Your breasts are firm and full, and starting to hurt from all the milk they contain.</font><BR>'
-			elseif lactatemv > lactatemm*3/4:
-				$stat_msg += '<BR><font color = white>Your breasts feel firm and heavy, full of milk.</font><BR>'
-			elseif lactatemv > lactatemm/2:
-				$stat_msg += '<BR><font color = white>Your breasts are heavy, a cargo of milk inside.</font><BR>'
-			elseif lactatemv > lactatemm/4:
-				$stat_msg += '<BR><font color = white>Your breasts feel a little heavy.</font><BR>'
-			elseif lactatemv > 0:
-				$stat_msg += '<BR><font color = white>Your breasts tingle a little from the feeling of milk production.</font><BR>'
-			else
-				$stat_msg += '<BR><font color = white>Your breasts feel soft and empty.</font><BR>'
-			end
-		end
+elseif lactate = 1 and night_mode = 1:
+	if lactatemv >= lactatemm-1:
+			$stat_msg += '<BR><font color = white>Your breasts are so full they hurt and a little milk is constantly dribbling out.</font><BR>'
+		elseif lactatemv > lactatemm*9/10:
+			$stat_msg += '<BR><font color = white>Your breasts are firm and full, and starting to hurt from all the milk they contain.</font><BR>'
+		elseif lactatemv > lactatemm*3/4:
+			$stat_msg += '<BR><font color = white>Your breasts feel firm and heavy, full of milk.</font><BR>'
+		elseif lactatemv > lactatemm/2:
+			$stat_msg += '<BR><font color = white>Your breasts are heavy, a cargo of milk inside.</font><BR>'
+		elseif lactatemv > lactatemm/4:
+			$stat_msg += '<BR><font color = white>Your breasts feel a little heavy.</font><BR>'
+		elseif lactatemv > 0:
+			$stat_msg += '<BR><font color = white>Your breasts tingle a little from the feeling of milk production.</font><BR>'
+		else
+			$stat_msg += '<BR><font color = white>Your breasts feel soft and empty.</font><BR>'
 	end
 end
 
