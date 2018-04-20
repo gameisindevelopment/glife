@@ -34,7 +34,10 @@ if $ARGS[0] = 'start':
 		act 'Eat a meal (100 <b>₽</b>) (0:30)':money -= 100 & gs 'food', 'f_food'
 	end
 	
-	!act 'Order drinks (0:15)':gs 'beverage', 'drinks' # Still working on the damn table..
+		act 'TEST - Order drinks (0:15)':gs 'beverage', 'drinks' 
+		!Still working on the damn table..
+		act 'TEST - Order food (0:30)':gs 'food', 'eats' 
+		!Still working on the damn table..
 	
 		act 'Order Coffee (50 <b>₽</b>) (0:30)':money -= 50 & gs 'beverage', 'bev_cof'
 		act 'Order Water (40 <b>₽</b>) (0:30)':money -= 40 & gs 'beverage', 'bev_wat'

@@ -16,7 +16,11 @@ if alko < 6:
 		alko += 2
 		cumspclnt = 2
 		gs 'cum_cleanup'
-		pcs_hydra -= 20
+		if pcs_hydra >= 100:
+			pcs_hydra -= 10
+		else
+			pcs_hydra -= 20
+		end
 		pcs_breath = 0
 		minut += 30
 		gt $curloc

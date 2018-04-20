@@ -205,7 +205,11 @@ if $ARGS[0] = 'grup':
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
-		pcs_hydra -= 10
+		if pcs_hydra >= 100:
+			pcs_hydra -= 5
+		else
+			pcs_hydra -= 10
+		end
 		gs 'stat'
 
 		if haraklover[lover_number] = 0:loverrelation[lover_number] += 1
@@ -223,7 +227,11 @@ if $ARGS[0] = 'grup':
 		pcs_breath = 0
 		fat += 1
 		pcs_mood += 10
-		pcs_hydra -= 10
+		if pcs_hydra >= 100:
+			pcs_hydra -= 5
+		else
+			pcs_hydra -= 10
+		end
 		pcs_willpwr += 10
 		gs 'stat'
 

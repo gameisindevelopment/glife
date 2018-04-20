@@ -491,7 +491,11 @@ if $ARGS[0] = 'abdEscapeWindow3':
 	'You decide to...'
 	nroad = 12
 	minut += 180
-	pcs_hydra -= 50
+	if pcs_hydra >= 100:
+		pcs_hydra -= 25
+	else
+		pcs_hydra -= 50
+	end
 	gs 'stat'
 
 	painkiller = painkiller_bak
@@ -527,7 +531,11 @@ if $ARGS[0] = 'abdFood':
 		pcs_health += 30
 		pcs_mood += 10
 		pcs_energy += 50
-		pcs_hydra -= 25
+		if pcs_hydra >= 100:
+			pcs_hydra -= 15
+		else
+			pcs_hydra -= 25
+		end
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0

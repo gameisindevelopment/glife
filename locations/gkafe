@@ -94,14 +94,14 @@ else
 				'You see your classmates <a href="exec:minut += 3 & gt ''gopskver''">Vitek, Dan and Vasily</a> sitting at a table in the far corner, drinking beer.'
 		end
 	end
-end
-if hour >= 8 and hour <= 19:
-	act 'Have a meal at the cafe (0:30)':gs 'food', 'm_meal'
-	act 'Have some coffee (0:05)':gs 'beverage', 'bev_cof'
-	act 'Have some water (0:05)':gs 'beverage', 'bev_wat'
+	if hour >= 8 and hour <= 19:
+		act 'Have a meal at the cafe (0:30)':gs 'food', 'm_meal'
+		act 'Have some coffee (0:05)':gs 'beverage', 'bev_cof'
+		act 'Have some water (0:05)':gs 'beverage', 'bev_wat'
+	end
+	act 'Leave':gt 'vokzalG'
 end
 
-act 'Leave':gt 'vokzalG'
 
 --- gkafe ---------------------------------
 

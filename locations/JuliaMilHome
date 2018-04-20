@@ -63,7 +63,11 @@ elseif lernHome = 0:
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0
-				pcs_hydra -=10
+				if pcs_hydra >= 100:
+					pcs_hydra -= 5
+				else
+					pcs_hydra -= 10
+				end
 				JulMilBestFrend += 1
 				pcs_horny += 10
 				gs 'stat'

@@ -251,7 +251,7 @@ if $ARGS[0] = 'start':
 	
 	if weekNum < rentWeekNum:
 		if rentLeft > 0:
-			'You have left '+rentLeft+' RUB of rent to pay for the next week.'
+			'You have left '+rentLeft+' <b>₽</b> of rent to pay for the next week.'
 			if servitudeLvl >= 1:
 				'You may still pay it in <a href="exec:gt ''pavSharedApt'', ''payCash''">cash</a>, if you want.'
 			else
@@ -308,7 +308,7 @@ if $ARGS[0] = 'payCash':
 	minut += 2
 	cash = rentLeft
 	if money >= cash:
-		'You have decided to pay the remainder of the weekly rent in cash. It makes '+cash+' RUB.'
+		'You have decided to pay the remainder of the weekly rent in cash. It makes '+cash+' <b>₽</b>.'
 		cashPaid += cash
 		money -= cash
 		rentPaid = 1
@@ -321,7 +321,7 @@ end
 
 if $ARGS[0] = 'payService':
 	minut += 1
-	'The amount '+price+' RUB was taken in account of your weekly rent.'
+	'The amount '+price+' <b>₽</b> was taken in account of your weekly rent.'
 	servicePaid += price
 	act 'Continue':gt 'pavSharedApt', 'start'
 end
@@ -511,11 +511,12 @@ if $ARGS[0] = 'bathroom':
 end
 
 if $ARGS[0] = 'kitchen':
+	*clr & cla
 	minut += 2
 	$metka = 'kitchen'
 	gs 'kit_din'
 	'<center><h3>Kitchen</h3></center>'
-	'<center><img <<$set_imgh>> src="images/locations/oldtown/apartment/kuhr2x.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/kuhrpar.jpg"></center>'
 	'It is a modest kitchen but has all that is needed.'
 
 	! dishes
@@ -536,14 +537,16 @@ if $ARGS[0] = 'kitchen':
 		if cltarelka = 0 or edahot > 0:$edagot = ''
 		if cltarelka > 0 and edahot = 0:
 			$edagot = '<a href="exec:dynamic $edagotd">Cook meal (0:30) for yourself</a>'
-			if eda >= 3:
-				'<a href="exec: gt ''pavSharedApt'', ''cookForGuys''">Cook meal (1:30) for the guys</a>'
-			end
+
 			'In the refrigerator there''s enough (your own) food for <b><<eda>></b> servings. <<$edagot>>'
 		end
 	end
 	if edahot > 0:'<a href="exec: dynamic $edahotd ">On the table is ready meal.</a>'
 
+	if eda >= 3:
+		'<a href="exec: gt ''pavSharedApt'', ''cookForGuys''">Cook meal (1:30) for the guys</a>'
+	end
+			
 	if pranik > 0:
 		if pranik = 1:
 			'You only have a couple of cookies for a snack.'

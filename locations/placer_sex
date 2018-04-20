@@ -131,7 +131,11 @@ if $args[0] = 'vodka':
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
-	pcs_hydra -= 10
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	*clr & cla
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/park/sex/placer_sex2.jpg"></center>'
 	'You accept the drink happily: "Sure, a drink would be nice! Thanks!"'
@@ -1430,7 +1434,11 @@ if $args[0] = 'stay':
 		hour = 23
 		minut = 0
 	end
-	pcs_hydra -= 10
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	gs'stat'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/park/sex/placer_sex29.jpg"></center>'
 	'The guys are happy that you decided to stay the night, and <<$boydesc2>> goes to another room to fetch a guitar. He''s fairly good at playing it, and you all happily sing along to the songs he''s plays. Afterwards, you all enjoy another glass of vodka while you exchange stories. Before you know it, it''s getting late.'

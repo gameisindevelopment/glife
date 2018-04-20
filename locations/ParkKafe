@@ -210,7 +210,11 @@ if $ARGS[0] = 'man':
 				gs 'npcgeneratec', 0, 'Respectable Man', rand(18,45)
 				gs 'boyStat', $npclastgenerated
 				dick = rand (12, 18)
-				pcs_hydra -= 10
+				if pcs_hydra >= 100:
+					pcs_hydra -= 5
+				else
+					pcs_hydra -= 10
+				end
 				silavag = 2
 
 				if saunasex = 0:saunasex = 1 & guy += 1

@@ -34,7 +34,11 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 					alko += 2
 					cumspclnt = 2
 					gs 'cum_cleanup'
-					pcs_hydra -= 10
+					if pcs_hydra >= 100:
+						pcs_hydra -= 5
+					else
+						pcs_hydra -= 10
+					end
 					pcs_breath = 0
 					gs 'stat'
 					'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/albina/drink_wine.jpg"></center>'
@@ -52,7 +56,11 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 						cumspclnt = 2
 						gs 'cum_cleanup'
 						pcs_breath = 0
-						pcs_hydra -= 10
+						if pcs_hydra >= 100:
+							pcs_hydra -= 5
+						else
+							pcs_hydra -= 10
+						end
 						gs 'stat'
 						'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/albina/drink_wine.jpg"></center>'
 						'You shake your head in amazement, "What are you talking about?"'
@@ -70,7 +78,11 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 							cumspclnt = 2
 							gs 'cum_cleanup'
 							pcs_breath = 0
-							pcs_hydra -= 10
+							if pcs_hydra >= 100:
+								pcs_hydra -= 5
+							else
+								pcs_hydra -= 10
+							end
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/albina/drink_wine.jpg"></center>'
 							'You asked Albina "How do you know your fathers businesses are bankrupt?"'
@@ -84,7 +96,11 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 								cumspclnt = 2
 								gs 'cum_cleanup'
 								pcs_breath = 0
-								pcs_hydra -= 10
+								if pcs_hydra >= 100:
+									pcs_hydra -= 5
+								else
+									pcs_hydra -= 10
+								end
 								gs 'stat'
 								'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/albina/drink_wine.jpg"></center>'
 								'You murmur "I''m not quite sure I understand everything."'
@@ -100,7 +116,11 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 									cumspclnt = 2
 									gs 'cum_cleanup'
 									pcs_breath = 0
-									pcs_hydra -= 10
+									if pcs_hydra >= 100:
+										pcs_hydra -= 5
+									else
+										pcs_hydra -= 10
+									end
 									gs 'stat'
 									'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/girl/albina/drink_wine.jpg"></center>'
 									'Once again you sit quietly for a while, sipping your wine.'

@@ -1,5 +1,4 @@
 # kiosk
-
 !!WD:"SUB >= 15" for act - Will need balancing / playtesting
 if $ARGS[0] = 'start':
 	if hour >= 14 and hour <= 16:
@@ -127,6 +126,8 @@ if $ARGS[0] = 'start':
 end
 
 if $ARGS[0] = 'counter':
+	$messdrink = 'beverage', 'afterdrink'
+	$messfood = 'beverage', 'afterdrink'
 	cls
 	gs 'stat'
 	
@@ -151,9 +152,48 @@ if $ARGS[0] = 'counter':
 	'</table></center>'
 	*pl
 	
-	act 'Buy a snack (50 <b>₽</b>) (0:05)':money -= 50 & gs 'food', 'snack'
+		act 'Buy a snack (50 <b>₽</b>) (0:05)':
+			cla
+			*clr
+			money -= 50
+			pcs_health += 10
+			pcs_mood += 20
+			fat += 6
+			pcs_energy += 20
+			if pcs_hydra >= 100:
+				pcs_hydra += 10
+			else
+				pcs_hydra += 20
+			end
+			cumspclnt = 2
+			pcs_breath = 0
+			gs 'cum_cleanup'
+			gs 'stat'
+			'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
+			'You enjoy a small tasty, but somewhat fattening, snack. It wasn''t very much food, and<<$mtxt>>'
+			act 'return': gt 'kiosk', 'start'
+		end
 
-	act 'Buy some water (50 <b>₽</b>) (0:05)':money -= 50 & gs 'beverage', 'bev_wat'
+		act 'Buy some water (50 <b>₽</b>) (0:05)':
+			*clr
+			cla
+			frost = 1
+			money -= 50
+			pcs_health += 5
+			pcs_energy += 4
+			if pcs_hydra >= 100:
+				pcs_hydra += 25
+			else
+				pcs_hydra += 50
+			end
+			cumspclnt = 2
+			gs 'cum_cleanup'
+			pcs_breath = 0
+			gs 'stat'
+			'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderwater.jpg"></center>'
+			'You enjoy a drink of water, and <<$mtxt>>'
+			act 'return': gt 'kiosk', 'start'
+		end
 	
 	act 'View phone themes': gt 'kiosk', 'themes'
 	

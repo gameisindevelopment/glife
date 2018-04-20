@@ -16,7 +16,11 @@ if $ARGS[0]='buffetbar1':
 	minut += 10
 	alko += 5
 	pcs_energy += 10
-	pcs_hydra -= 10
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	gs 'stat'
 	act 'Leave the bar': gt 'restoreposition'
 end

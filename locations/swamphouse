@@ -933,7 +933,11 @@ if $ARGS[0] = 'hanterstable':
 		act 'Drink vodka':
 			*clr & cla
 			minut += 1
-			pcs_hydra -= 10
+			if pcs_hydra >= 100:
+				pcs_hydra -= 5
+			else
+				pcs_hydra -= 10
+			end
 			alko +=4
 			gs 'stat'
 

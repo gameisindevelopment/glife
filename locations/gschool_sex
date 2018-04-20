@@ -301,7 +301,11 @@ if $ARGS[0] = 'Anush_private2':
 		*clr
 		cla
 		alko += 2
-		pcs_hydra -= 10
+		if pcs_hydra >= 100:
+			pcs_hydra -= 5
+		else
+			pcs_hydra -= 10
+		end
 !!should count as a couple of drink, as Sveta is of course encouraged to drink up and it is cheap but high proof vodka.
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/lunch/sex/adrink.jpg"></center>'
 		'You take a swig of the vodka from the bottle and you feel it burn your throat, it is the cheap stuff. The others offer encouragement and Anushka even tips the bottle back up once you start to lower it for a moment to make you drink a little more. Afterwards you pass the bottle to Anushka who takes the bottle and takes a much bigger swig before passing it back to the boys. "Hell yeah, this beats lunch or anything else about school any day." She adds.'

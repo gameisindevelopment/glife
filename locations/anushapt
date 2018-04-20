@@ -1389,7 +1389,11 @@ if $ARGS[0] = 'holodilnik':
 			minut += 1
 			alko +=2
 			cumspclnt = 2
-			pcs_hydra -= 10
+			if pcs_hydra >= 100:
+				pcs_hydra -= 5
+			else
+				pcs_hydra -= 10
+			end
 			gs 'cum_cleanup'
 			pcs_breath = 0
 			anushfood_day = daystart
@@ -1405,7 +1409,11 @@ if $ARGS[0] = 'holodilnik':
 					minut += 1
 					alko +=2
 					cumspclnt = 2
-					pcs_hydra -= 10
+					if pcs_hydra >= 100:
+						pcs_hydra -= 5
+					else
+						pcs_hydra -= 10
+					end
 					gs 'cum_cleanup'
 					pcs_breath = 0
 					anushvodka_count -= 1

@@ -24,7 +24,11 @@ if $ARGS[0] = '3':
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
-		pcs_hydra -= 10
+		if pcs_hydra >= 100:
+			pcs_hydra -= 5
+		else
+			pcs_hydra -= 10
+		end
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/newyear/drunk.jpg"></center>'
 		'You drink down the shot of vodka.'
@@ -56,7 +60,11 @@ if $ARGS[0] = '4':
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
-		pcs_hydra -= 10
+		if pcs_hydra >= 100:
+			pcs_hydra -= 5
+		else
+			pcs_hydra -= 10
+		end
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/newyear/drunk.jpg"></center>'
 		'You down the glass of vodka'
@@ -88,7 +96,11 @@ if $ARGS[0] = '5':
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
-		pcs_hydra -= 10
+		if pcs_hydra >= 100:
+			pcs_hydra -= 5
+		else
+			pcs_hydra -= 10
+		end
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/newyear/drunk.jpg"></center>'
 		'You drink down the shoot of vodka and feel it burn all the way down.'
@@ -120,7 +132,11 @@ if $ARGS[0] = '6':
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
-		pcs_hydra -= 10
+		if pcs_hydra >= 100:
+			pcs_hydra -= 5
+		else
+			pcs_hydra -= 10
+		end
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/newyear/drunk.jpg"></center>'
 		'You drink down the shoot of vodka and feel it burn all the way down.'
@@ -209,7 +225,11 @@ if $ARGS[0] = '7':
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
-			pcs_hydra -= 10
+			if pcs_hydra >= 100:
+				pcs_hydra -= 5
+			else
+				pcs_hydra -= 10
+			end
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/newyear/drunk.jpg"></center>'
 			'You down the shoot of vodka and feel its warmth in your chest.'

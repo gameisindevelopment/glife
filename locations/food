@@ -9,11 +9,46 @@ Bagged Lunch: +30 pcs_energy +30 pcs_hydra, +3 fat (sandwich, cold leftovers, et
 Health Meal: +50 pcs_energy +50 pcs_hydra, +1 fat (Diet food, Salads, rice cakes with peanut butter)
 }!
 
+if $ARGS[0] = 'eats':
+	*clr & cla
+	act 'Back': gt $loc, $metka
+	killvar '$_eat'
+	$_eat['0,name'] = 'Snack'
+	$_eat['0,price'] = 40
+	$_eat['0,type'] = snack
+	$_eat['1,name'] = 'Fast Food'
+	$_eat['1,price'] = 50
+	$_eat['1,type'] = f_food
+	$_eat['2,name'] = 'Small meal'
+	$_eat['2,price'] = 60
+	$_eat['2,type'] = s_meal
+	$_eat['3,name'] = 'Medium meal'
+	$_eat['3,price'] = 80
+	$_eat['3,type'] = m_meal
+	$_eat['4,name'] = 'Large meal'
+	$_eat['4,price'] = 100
+	$_eat['4,type'] = l_meal
+	$_eat['5,name'] = 'Health meal'
+	$_eat['5,price'] = 60
+	$_eat['5,type'] = h_meal
+	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
+	i = 0
+	:loopdrink
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'#202020','#303030')+'><td><font color=#FFFFFF><center>'+$_eat['<<i>>,name']+'</center></font></td><td align=center>'+iif(money>=val($_eat['<<i>>,price']),'<a href="exec:gt ''food'', ''$drink[''<<i>>,type'']'',<<i>>">'+$_eat['<<i>>,price']+'</a>',$_eat['<<i>>,price'])+' <b>₽</b>.</td></tr>'
+	i += 1
+	if i < (arrsize('$_eat')/4):jump 'loopdrink'
+	$_str += '</table></center>'
+	'<center><img <<$set_imgh>> src="images/locations/shared/date/cafewaitressfood.jpg"</center><br>'
+	'Your food order:<br><br>'+$_str
+	killvar '$_str'
+end
+
 if $ARGS[0] = 'snack':
 	cla
 	*clr
 	gs 'stat'
 	minut += 5
+	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	pcs_mood += 20
 	fat += 6
@@ -28,6 +63,7 @@ if $ARGS[0] = 'snack':
 	pcs_breath = 0
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You enjoy a small tasty, but somewhat fattening, snack. It wasn''t very much food, and<<$mtxt>>'
+	killvar '$_eat'
 	
 	act 'Return':gt $loc, $metka
 end
@@ -37,6 +73,7 @@ if $ARGS[0] = 'f_food':
 	*clr
 	frost = 0
 	minut += 20
+	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 70
@@ -51,6 +88,7 @@ if $ARGS[0] = 'f_food':
 	gs 'food', 'aftermeal'
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You happily eat some fast food. The portions are quite generous and<<$mtxt>>'
+	killvar '$_eat'
 	
 	act 'Finish':gt $loc, $metka
 end
@@ -60,6 +98,7 @@ if $ARGS[0] = 's_meal':
 	*clr
 	frost = 0
 	minut += 15
+	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 40
@@ -74,6 +113,7 @@ if $ARGS[0] = 's_meal':
 	gs 'food', 'aftermeal'
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You happily eat your meal. The portions are fairly small and<<$mtxt>>' 
+	killvar '$_eat'
 
 	act 'Finish':gt $loc, $metka
 end
@@ -83,6 +123,7 @@ if $ARGS[0] = 'm_meal':
 	*clr
 	frost = 0
 	minut += 25
+	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	fat += 6
 	pcs_energy += 60
@@ -98,6 +139,7 @@ if $ARGS[0] = 'm_meal':
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You thoroughly enjoy the nicely cooked meal. The portions were moderate and<<$mtxt>>'
 	'You accompany it with a mug of tea.'
+	killvar '$_eat'
 
 	act 'Finish':gt $loc, $metka
 end
@@ -107,6 +149,7 @@ if $ARGS[0] = 'l_meal':
 	*clr
 	frost = 0
 	minut += 30
+	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	fat += 12
 	pcs_energy += 100
@@ -122,6 +165,7 @@ if $ARGS[0] = 'l_meal':
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You are almost overwhelmed by the delicious meal laid before you and enjoy it immensely. The meal was simply colossal and<<$mtxt>>'
 	if plcooked = 1: killvar 'plcooked'
+	killvar '$_eat'
 	
 	act 'Finish':  gt $loc, $metka
 end
@@ -131,6 +175,7 @@ if $ARGS[0] = 'bag_lunch':
 	*clr
 	frost = 0
 	minut += 15
+	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	fat += 3
 	pcs_energy += 30
@@ -145,6 +190,7 @@ if $ARGS[0] = 'bag_lunch':
 	gs 'food', 'aftermeal'
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You eat the lunch you packed from home. There was nothing fancy about it and<<$mtxt>>'
+	killvar '$_eat'
 
 	act 'Finish':  gt $loc, $metka
 end
@@ -154,6 +200,7 @@ if $ARGS[0] = 'h_food':
 	*clr
 	frost = 0
 	minut += 25
+	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	fat += 6
 	money -= 100
@@ -170,6 +217,7 @@ if $ARGS[0] = 'h_food':
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/hotel/roomservice.jpg"></center>'
 	'The maid brings you a decent meal,<<$mtxt>>'
 	'You accompany it with a mug of tea.'
+	killvar '$_eat'
 
 	act 'Finish':gt $loc, $metka
 end
@@ -179,6 +227,7 @@ if $ARGS[0] = 'h_meal':
 	*clr
 	frost = 0
 	minute += 25
+	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 20
 	fat += 1
 	pcs_energy += 50
@@ -193,6 +242,7 @@ if $ARGS[0] = 'h_meal':
 	gs 'food', 'aftermeal'
 	'<center><img <<$set_imgh>> src="images/shared/food/eating-salad.jpg"></center>'
 	'You enjoy a crisp salad of fresh green and<<$mtxt>>'
+	killvar '$_eat'
 	
 	act 'Finish': gt $loc, $metka
 end

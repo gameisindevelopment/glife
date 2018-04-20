@@ -178,7 +178,11 @@ $d_bag = {
 
 $dinalkowin1 = {
     alkowine = 1
-	pcs_hydra -= 10
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
     if pcs_intel  > 5 : intel_deg -= 1
     alko += 5
 	cumspclnt = 2
@@ -191,7 +195,11 @@ $dinalkowin1 = {
 
 $dinalkowin2 = {
     alkowine = 0
-	pcs_hydra -= 10
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
     wine = 0
     if pcs_intel > 5: intel_deg -= 1
     alko += 5

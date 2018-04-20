@@ -145,7 +145,11 @@ if plact = 1:
 							cumspclnt = 2
 							gs 'cum_cleanup'
 							pcs_breath = 0
-							pcs_hydra -= 10
+							if pcs_hydra >= 100:
+								pcs_hydra -= 5
+							else
+								pcs_hydra -= 10
+							end
 							gs 'stat'
 							'You smile at the guys and propose a toast: "To meeting new friends!"'
 							'They happily toast with you. You eat some anchovies from a jar that someone brought, while you take sips of your vodka. It''s the cheap kind, and it doesn''t taste very good.'
@@ -161,7 +165,11 @@ if plact = 1:
 								cumspclnt = 2
 								gs 'cum_cleanup'
 								pcs_breath = 0
-								pcs_hydra -= 10
+								if pcs_hydra >= 100:
+									pcs_hydra -= 5
+								else
+									pcs_hydra -= 10
+								end
 								gs 'stat'
 								'You smile at them and bring the cup to your lips, slowly sipping it down. It still doesn''t taste very good, but you''re starting to care less as you become more and more drunk.'
 
@@ -223,7 +231,11 @@ if plact = 1:
 									cumspclnt = 2
 									gs 'cum_cleanup'
 									pcs_breath = 0
-									pcs_hydra -= 10
+									if pcs_hydra >= 100:
+										pcs_hydra -= 5
+									else
+										pcs_hydra -= 10
+									end
 									gs 'stat'
 									'As soon as you gulp down the vodka, the guys laugh and you feel several hands firmly grasping your shoulders, guiding you towards the dirty mattress. Several of the boys instantly reach for their pants, and you see their erect cocks clearly despite the dim light in the room.'
 

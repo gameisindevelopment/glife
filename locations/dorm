@@ -214,7 +214,11 @@ if $ARGS[0] = 'demarcusfuck':
 		cla
 		cls
 		minut += 120
-		pcs_hydra -=10
+		if pcs_hydra >= 100:
+			pcs_hydra -= 5
+		else
+			pcs_hydra -= 10
+		end
 		'He hands over a glass of wine which you happily accept. The two of you drink wine and talk for a moment and as you feel loose, he leans and begins to grope you by the chest.'
 		'As he notices you not resisting takes off your T-shirt, he begins sucking on your nipples and playing with your breasts, you feel yourself becoming very wet very quickly.'
 		if demarkus = 0:guy += 1 & demarkus = 1
