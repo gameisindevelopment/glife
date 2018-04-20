@@ -204,6 +204,7 @@
       <Location name="street"/>
       <Location name="pharmacy"/>
       <Location name="clener"/>
+      <Location name="dima"/>
       <Location name="dinsexgivi"/>
       <Location name="IrinaRoom"/>
       <Location name="kafe"/>
