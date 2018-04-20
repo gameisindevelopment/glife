@@ -3,10 +3,10 @@
 
 if $ARGS[0] = 'after_school':
 	if dimarudorient = 1: gt 'dimkaev', 'Dimka_room''dimka_chat'
-		gs 'stat'
-		'<center><b><font color="maroon"><<$npc_firstname[''A1'']>> <<$npc_lastname[''A1'']>></font></b></center>'
-		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/1.jpg"></center>'
-		'Dimka seeing you, walks up and says quietly, "Come here slut, we''re going to go have some fun at my place." Your cheeks redden at the gross nickname'
+	gs 'stat'
+	'<center><b><font color="maroon"><<$npc_firstname[''A1'']>> <<$npc_lastname[''A1'']>></font></b></center>'
+	'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/1.jpg"></center>'
+	'Dimka seeing you, walks up and says quietly, "Come here slut, we''re going to go have some fun at my place." Your cheeks redden at the gross nickname'
 !!can me make the above have a 1 in 5 chance of trigging even if the player doesn''t click Dimka''s name after school?
 	if fedorKozlovQW >= 10 and dimaFilm = 1 and FedorvsDimka = 1 or fedorKozlovQW = -15 and dimaFilm = 1 and FedorvsDimka = 1:
 		gt 'FedorMisc', 'Fedor Vs Dimka'
