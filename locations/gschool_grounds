@@ -213,9 +213,10 @@ if $ARGS[0] = 'main':
 
 			if katjaMeynoldday ! daystart and meynoldQW >= 2:'<a href="exec:minut += 15 & gt ''katjaEv''">Katja Meynold</a> is walking across the school courtyard, getting ready to go home.'
 			if DimaBeHomeOnce = 1 and DimaRudeBlock = 0:
-				'<a href="exec:minut += 15 & gt ''dimaGoHome2''">Dimka Nosov</a> is deep in thought, as he leans against a lamp post.'
+				'<a href="exec:minut += 15 & gt ''dimaHome'', ''home''">Dimka Nosov</a> is deep in thought, as he leans against a lamp post.'
 			elseif DimaRudeQW > 0 and dimarudeday ! daystart and DimaRudeBlock = 0:
-				'<a href="exec:minut += 15 & gt ''dimaRudeEv''">Dimka Nosov</a> is deep in thought, as he leans against a lamp post.'
+				if rand(0,4) = 0: gt 'dimaEv', 'after_school'
+				'<a href="exec:minut += 15 & gt ''dimaEv'', ''after_school''">Dimka Nosov</a> is deep in thought, as he leans against a lamp post.'
 			end
 			if IgorLoverQW > 0 and igorkruglovday ! daystart and IdorBlock = 0:'<a href="exec:minut += 15 & gt ''igorhome'', ''entrance''">Igor Kruglov</a> is talking to some of his friends on the courtyard.'
 			if fedorKozlovQW >= 10 and kotovVSkozlov = 1:
@@ -234,9 +235,10 @@ if $ARGS[0] = 'main':
 			if artemLernQW >= 1 and artemVitokQW ! 2:gs'show_table','<a href="exec:minut += 15 & gt ''artemEv'', ''start''">Artem Chebotarev</a>','5'
 			if katjaMeynoldday ! daystart and meynoldQW >= 2:gs'show_table','<a href="exec:minut += 15 & gt ''katjaEv''">Katja Meynold</a>','5'
 			if DimaBeHomeOnce = 1 and DimaRudeBlock = 0:
-				gs'show_table','<a href="exec:minut += 15 & gt ''dimaGoHome2''">Dimka Nosov</a>','5'
+				gs'show_table','<a href="exec:minut += 15 & gt ''dimaHome'', ''home''">Dimka Nosov</a>','5'
 			elseif DimaRudeQW > 0 and dimarudeday ! daystart and DimaRudeBlock = 0:
-				gs'show_table','<a href="exec:minut += 15 & gt ''dimaRudeEv''">Dimka Nosov</a>','5'
+				if rand(0,4) = 0: gt 'dimaEv', 'after_school'
+				gs'show_table','<a href="exec:minut += 15 & gt ''dimaEv'', ''after_school''">Dimka Nosov</a>','5'
 			end
 			if IgorLoverQW > 0 and igorkruglovday ! daystart and IdorBlock = 0:gs'show_table','<a href="exec:minut += 15 & gt ''igorhome'', ''entrance''">Igor Kruglov</a>','5'
 			if fedorKozlovQW >= 10 and kotovVSkozlov = 1:
