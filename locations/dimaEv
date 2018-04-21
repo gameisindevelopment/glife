@@ -63,25 +63,10 @@ if $ARGS[0] = 'after_school':
 		cls
 		minut += 15
 		gs 'stat'
-		'<center><h4><font color="maroon">Dimka''s Room</font></h4></center>'
-		'<center><img  src="images/locations/pavlovsk/resident/dimkahome/dimkaroom.jpg"></center>'
+		'<center><h4><font color="maroon">Dimka''s parent''s house</font></h4></center>'
+		'<center><img  src="images/locations/pavlovsk/resident/dimkahome/house.jpg"></center>'
 		'You go with Dimka to his parents home, a large two-story house with a manicured lawn and a large garden. The two of you walk and chat along the way, but he seems not really interested in small talk. Once there he leads you inside and up to his room.'
 		act 'Go to Dimka''s room':gt 'dimaHome', 'dimkaroom'
-			'The room is surprisingly clean and organized for a boys room. It is fairly tastefully decorated. Along one wall next to the bed is a wardrobe with mirrored doors, a small zebra pattern love seat sits along a wall near the bed. Next to the love seat is a mini fridge and just above that on a shelf is a stereo system. There is also a desk with a desktop computer setup on it and a laptop laying nearby as well. Everything in the room seems pretty expensive. When you get inside, he sits down on the love seat.'
-		act 'Talk to Dimka':gt 'dimaHome','dimka'
-		act 'Look around':
-			*clr
-			minut += 10
-			'<center><b><font color = maroon>Dimka''s parent''s room</font></b></center>'
-			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/bedroom.jpg"></center>'
-			if npc_rel['A1'] > 80:
-				'You continue talking and begin snooping around, opening drawers, and looking in the closet. Dimka has a lot of nice clothes, they are all neatly folded or hung up in his closet, somehow you doubt he is the one that takes care of his stuff. Maybe his family has somebody to clean?. In one of the drawers next to his bed is a small bag of white power, other than that, there doesn''t seem to be anything interesting about his room. When you stop, he look at you with an amused look in his face. "Are you satisfied?."'
-			else
-				'As you start to look around his room, Dimka says. "What the fuck do you think you are doing? It is pretty rude to just start snooping around someones stuff." You have to admit, you would feel it was rude if someone did it to your room too.'
-			end
-			act 'Talk to Dimka':gt 'dimaHome','dimka'
-			act 'Leave':gt 'dimaHome','hallway2'
-		end
 	end
 	act 'Leave':gs 'gschool_grounds', 'main'
 end
@@ -99,9 +84,9 @@ if $ARGS[0] = 'drugged':
 	'<center><b><font color="maroon"><<$npc_firstname[''A1'']>> <<$npc_lastname[''A1'']>></font></b></center>'
 	'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/1.jpg"></center>'
 	'You take several drinks as you talk with Dimka. Again he doesn''t seem to want to chat, and appear to be waiting for something. Then you start to feel funny. For a moment, you just feel numb, then you feel yourself get aroused, the heat coming from your pussy as it soaks itself, you gasp, it is almost too much to take, you desperately need someone to fuck you. "Oh, fuck". You don''t think this is normal, he must have laced it with something. You blink a few times trying to clear your head, but soon your thoughts grow murky.'
-	act 'continue':
+	act 'Continue':
 		cls
-		pcs_dom += 1,
+		pcs_dom += 1
 		minut += 5
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/dimka/sex/pre.jpg"></center>'
@@ -139,7 +124,7 @@ if $ARGS[0] = 'drugged':
 						'As your thoughts get more clear and begin to get cleaned up, it seems that he is checking something on his computer. As you are finishing dressing he smirks at you. "Now you''re mine, you little fucking slut. I own your ass, you got it!"'
 						'At first you think he might just be joking, but then you realize he is serious. "What are you talking about?"'
 						*nl
-						'An evil grin plays across his face. "I''m glad you asked." Then he picks up a remote and turn on the tv. And before you know it, you see Dimka an you on the tv, he has recorded all what have been happening. Who you have sucked him and drink his cum making a mess in the process. And all the while with a dopey smile in your face. You are shocked. Once he see that you understand he adds, "If you don''t do as I say and come by here once a week to see to my needs, I will make sure everyone in school and your house get this video"'
+						'An evil grin plays across his face. "I''m glad you asked." Then he picks up a remote and turn on the tv. And before you know it, you see Dimka an you on the tv, he has recorded all what have been happening. How you have sucked him and drank his cum making a mess in the process. And all the while with a dopey smile in your face. You are shocked. Once he see that you understand he adds, "If you don''t do as I say and come by here once a week to see to my needs, I will make sure everyone in school and your house get this video."'
 						'At his threat, your blood runs cold and your skin pale, you know what this would mean to your reputation, not counting how your mother would react.'
 						act 'Run out of his house': gt 'pavResidential'
 						act 'Plead':
@@ -153,7 +138,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 1:
 				act 'Further':
 					cls
@@ -190,7 +174,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 2:
 				act 'Further':
 					cls
@@ -233,7 +216,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 3:
 				act 'Further':
 					cls
@@ -276,7 +258,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 4:
 				act 'Further':
 					cls
@@ -318,7 +299,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 5:
 				act 'Further':
 					cls
@@ -357,7 +337,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 6:
 				act 'Further':
 					cls
@@ -461,7 +440,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 1:
 				act 'Further':
 					cls
@@ -498,7 +476,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 2:
 				act 'Further':
 					cls
@@ -541,7 +518,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 3:
 				act 'Further':
 					cls
@@ -584,7 +560,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 4:
 				act 'Further':
 					cls
@@ -626,7 +601,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 5:
 				act 'Further':
 					cls
@@ -665,7 +639,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 6:
 				act 'Further':
 					cls
@@ -722,7 +695,7 @@ if $ARGS[0] = 'blackmail':
 		'His hand on your throat tightens and you see spots in front of your eyes. Without warning, he lets go and throws you to the floor. As you lay there gasping for breath, he comes to stand over you. You recoil frightened.'
 		'"I missed you, <<$pcs_nickname>>, you need to come see me more often." Dimka says gently as he helps you to your feet, "Now let''s forget all this unpleasantness, shall we?"'
 		'You nod your agreement and Dimka is all smiles again, as he undresses you, you can''t stop shaking in fear.'
-		act 'Continue': gt 'dimaHome', 'dimkaplays'
+		act 'Continue': gt 'dimaEv', 'dimkaplays'
 	elseif dimkawarn >= 2:
 		cls
 		minut += 5
@@ -739,7 +712,7 @@ if $ARGS[0] = 'blackmail':
 	else
 		'The room is surprisingly clean and organized for a boys room. It is fairly tastefully decorated. Along one wall next to the bed is a wardrobe with mirrored doors, a small zebra pattern love seat sits along a wall near the bed. Next to the love seat is a mini fridge and just above that on a shelf is a stereo system. There is also a desk with a desktop computer setup on it and a laptop laying nearby as well. All in the room seems pretty expensive. Sitting at the desk is Dimka, he apparently heard you open the door as he turns to face you as you walk in.'
 		'As he sees you, an evil smile spreads across his face. "So good of you to join me. Now take off your clothes. Slut."'
-		act 'Continue': gt 'dimaHome', 'dimkaplays'
+		act 'Continue': gt 'dimaEv', 'dimkaplays'
 	end
 end
 
@@ -803,27 +776,27 @@ if $ARGS[0] = 'dimkaplays2':
 
 	dimadalrand = rand(0,10)
 	if dimadalrand = 0:
-		act 'Further':gt 'dimaHome', '0'
+		act 'Further':gt 'dimaEv', '0'
 	elseif dimadalrand = 1:
-		act 'Further':gt 'dimaHome', '1'
+		act 'Further':gt 'dimaEv', '1'
 	elseif dimadalrand = 2:
-		act 'Further':gt 'dimaHome', '2'
+		act 'Further':gt 'dimaEv', '2'
 	elseif dimadalrand = 3:
-		act 'Further':gt 'dimaHome', '3'
+		act 'Further':gt 'dimaEv', '3'
 	elseif dimadalrand = 4:
-		act 'Further':gt 'dimaHome', '4'
+		act 'Further':gt 'dimaEv', '4'
 	elseif dimadalrand = 5:
-		act 'Further':gt 'dimaHome', '5'
+		act 'Further':gt 'dimaEv', '5'
 	elseif dimadalrand = 6:
-		act 'Further':gt 'dimaHome', '6'
+		act 'Further':gt 'dimaEv', '6'
 	elseif dimadalrand = 7:
-		act 'Further':gt 'dimaHome', '7'
+		act 'Further':gt 'dimaEv', '7'
 	elseif dimadalrand = 8:
-		act 'Further':gt 'dimaHome', '8'
+		act 'Further':gt 'dimaEv', '8'
 	elseif dimadalrand = 9:
-		act 'Further':gt 'dimaHome', '9'
+		act 'Further':gt 'dimaEv', '9'
 	elseif dimadalrand = 10:
-		act 'Further':gt 'dimaHome', '10'
+		act 'Further':gt 'dimaEv', '10'
 	end
 end
 
