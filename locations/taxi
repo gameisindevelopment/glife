@@ -179,6 +179,7 @@ if $ARGS[0] = 'bj':
 	'He moans and leans back to give you more room to work. Some time later he grabs your hair with his hand and forces you head down, ramming his <<dick>>cm <<$dick_girth>> cock down your throat. "That''s a good little slut." This makes your eyes water and you gag, he doesn''t seem to care, as this causes you to almost uncontrollable slobbery.'
 	'Several minutes later, your throat begins to feel raw. He suddenly stops and holds your head still, his cock still in your mouth. "I''m cumming and you better swallow every drop of it bitch." His body spasms, almost at once you feel the spurts of cum blasting into your mouth, once he is done cumming her jerks your head away and pushes you away. You swallow his sperm like he told you as he puts his dick away.'
 	'Looking at you with irritation, "What the fuck are you still sitting there for, get in the fucking back." You quickly do as he says and he drives you to where you need to go.'
+	swallow += 1
 	gs 'arousal', 'bj', 5, 'sub', 'unknown', 'rough', 'deepthroat'
 	gs 'arousal', 'end'
 	gs 'stat'
@@ -201,6 +202,7 @@ if $ARGS[0] = 'anal':
 	'Then with a grunt he shoves his <<dick>>cm <<$dick_girth>> cock up your ass, pushing it balls deep in your ass. You grunt in pain and bite your lip nearly hard enough to draw blood, as he begins to furiously fuck you, obviously not caring if you are enjoying it or not.'
 	'As your asshole begins to loosen a bit and the ministrations of your fingers on your clit, turn you on, it begins to hurt less and feel better, as a slight moan of pleasure escapes your lips. For several minutes he pounds your ass, until he finally stops cock buried balls deep in your ass. He grunts as you feel the spurts of cum shooting deep into your ass.'
 	'With a final moan and spurt, he stands up. Pushing you back inside he slams the door and gets back in the drivers seat, starting the taxi up and then takes you to where you need to go.'
+	pcs_acp_known += 1
 	gs 'arousal', 'anal', 5, 'sub', 'unknown', 'rough'
 	gs 'arousal', 'end'
 	gs 'stat'

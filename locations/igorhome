@@ -100,7 +100,7 @@ if $ARGS[0] = 'bathroom':
 		act 'Get out of the shower': gt 'igorhome','bathroom'
 	end
 	dynamic $bath
-	dynamic $quickwash
+	gs 'din_van', 'prvt_pee'
 	dynamic $bteeth
     dynamic $tampon
     dynamic $basin
