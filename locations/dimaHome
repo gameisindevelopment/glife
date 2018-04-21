@@ -62,6 +62,7 @@ if $ARGS[0] = 'bathroom':
 	'<center><img  src="images/locations/pavlovsk/resident/dimkahome/halfbath.jpg"></center>'
 	'You enter a half bathroom with a large sink area and hardwood floors. The toilet sits along the far wall. It all looks very spotless. The main bathroom with the tub and shower must be upstairs, you assume.'
 	'You can do your hair and makeup in the <a href="exec:gt ''mirror'', ''start''">mirror</a> above the sink.'
+	gs 'din_van', 'prvt_pee'
 	act 'Leave the bathroom': gt 'dimaHome','hallway'
 end
 
@@ -180,6 +181,7 @@ if $ARGS[0] = 'bathroom2':
 			act 'Get dressed': gt 'dimaHome','bathroom2'
 		end
 	end
+	gs 'din_van', 'prvt_pee'
 	dynamic $bteeth
     dynamic $tampon
     dynamic $basin
@@ -269,6 +271,7 @@ if $ARGS[0] = 'dimkaparents':
 				act 'Get dressed': gt 'dimaHome','Go into master bath'
 			end
 		end
+		gs 'din_van', 'prvt_pee'
 		dynamic $bteeth
 		dynamic $tampon
 		dynamic $basin
