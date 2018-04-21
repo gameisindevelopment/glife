@@ -255,6 +255,7 @@ if $ARGS[0] = 'dimkaparents':
 				'You get out of the shower and dry off.' 
 				act 'Get dressed': gt 'dimaHome','Go into master bath'
 			end
+		end
 		act 'Take a bath':
 			cls
 			minut += 20

@@ -100,7 +100,7 @@ if $ARGS[0] = 'drugged':
 	'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/1.jpg"></center>'
 	'You take several drinks as you talk with Dimka. Again he doesn''t seem to want to chat, and appear to be waiting for something. Then you start to feel funny. For a moment, you just feel numb, then you feel yourself get aroused, the heat coming from your pussy as it soaks itself, you gasp, it is almost too much to take, you desperately need someone to fuck you. "Oh, fuck". You don''t think this is normal, he must have laced it with something. You blink a few times trying to clear your head, but soon your thoughts grow murky.'
 	act 'continue':
-		cls,
+		cls
 		pcs_dom += 1,
 		minut += 5
 		gs 'stat'
