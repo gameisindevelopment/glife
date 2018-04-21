@@ -695,7 +695,7 @@ if $ARGS[0] = 'blackmail':
 		'His hand on your throat tightens and you see spots in front of your eyes. Without warning, he lets go and throws you to the floor. As you lay there gasping for breath, he comes to stand over you. You recoil frightened.'
 		'"I missed you, <<$pcs_nickname>>, you need to come see me more often." Dimka says gently as he helps you to your feet, "Now let''s forget all this unpleasantness, shall we?"'
 		'You nod your agreement and Dimka is all smiles again, as he undresses you, you can''t stop shaking in fear.'
-		act 'Continue': gt 'dimaHome', 'dimkaplays'
+		act 'Continue': gt 'dimaEv', 'dimkaplays'
 	elseif dimkawarn >= 2:
 		cls
 		minut += 5
@@ -712,7 +712,7 @@ if $ARGS[0] = 'blackmail':
 	else
 		'The room is surprisingly clean and organized for a boys room. It is fairly tastefully decorated. Along one wall next to the bed is a wardrobe with mirrored doors, a small zebra pattern love seat sits along a wall near the bed. Next to the love seat is a mini fridge and just above that on a shelf is a stereo system. There is also a desk with a desktop computer setup on it and a laptop laying nearby as well. All in the room seems pretty expensive. Sitting at the desk is Dimka, he apparently heard you open the door as he turns to face you as you walk in.'
 		'As he sees you, an evil smile spreads across his face. "So good of you to join me. Now take off your clothes. Slut."'
-		act 'Continue': gt 'dimaHome', 'dimkaplays'
+		act 'Continue': gt 'dimaEv', 'dimkaplays'
 	end
 end
 
@@ -776,27 +776,27 @@ if $ARGS[0] = 'dimkaplays2':
 
 	dimadalrand = rand(0,10)
 	if dimadalrand = 0:
-		act 'Further':gt 'dimaHome', '0'
+		act 'Further':gt 'dimaEv', '0'
 	elseif dimadalrand = 1:
-		act 'Further':gt 'dimaHome', '1'
+		act 'Further':gt 'dimaEv', '1'
 	elseif dimadalrand = 2:
-		act 'Further':gt 'dimaHome', '2'
+		act 'Further':gt 'dimaEv', '2'
 	elseif dimadalrand = 3:
-		act 'Further':gt 'dimaHome', '3'
+		act 'Further':gt 'dimaEv', '3'
 	elseif dimadalrand = 4:
-		act 'Further':gt 'dimaHome', '4'
+		act 'Further':gt 'dimaEv', '4'
 	elseif dimadalrand = 5:
-		act 'Further':gt 'dimaHome', '5'
+		act 'Further':gt 'dimaEv', '5'
 	elseif dimadalrand = 6:
-		act 'Further':gt 'dimaHome', '6'
+		act 'Further':gt 'dimaEv', '6'
 	elseif dimadalrand = 7:
-		act 'Further':gt 'dimaHome', '7'
+		act 'Further':gt 'dimaEv', '7'
 	elseif dimadalrand = 8:
-		act 'Further':gt 'dimaHome', '8'
+		act 'Further':gt 'dimaEv', '8'
 	elseif dimadalrand = 9:
-		act 'Further':gt 'dimaHome', '9'
+		act 'Further':gt 'dimaEv', '9'
 	elseif dimadalrand = 10:
-		act 'Further':gt 'dimaHome', '10'
+		act 'Further':gt 'dimaEv', '10'
 	end
 end
 
