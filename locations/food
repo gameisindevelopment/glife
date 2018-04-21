@@ -13,26 +13,26 @@ if $ARGS[0] = 'eats':
 	killvar '$_eat'
 	$_eat['0,name'] = 'Snack'
 	$_eat['0,price'] = 40
-	$_eat['0,type'] = snack
+	$_eat['0,type'] = 'snack'
 	$_eat['1,name'] = 'Fast Food'
 	$_eat['1,price'] = 50
-	$_eat['1,type'] = f_food
+	$_eat['1,type'] = 'f_food'
 	$_eat['2,name'] = 'Small meal'
 	$_eat['2,price'] = 60
-	$_eat['2,type'] = s_meal
+	$_eat['2,type'] = 's_meal'
 	$_eat['3,name'] = 'Medium meal'
 	$_eat['3,price'] = 80
-	$_eat['3,type'] = m_meal
+	$_eat['3,type'] = 'm_meal'
 	$_eat['4,name'] = 'Large meal'
 	$_eat['4,price'] = 100
-	$_eat['4,type'] = l_meal
+	$_eat['4,type'] = 'l_meal'
 	$_eat['5,name'] = 'Health meal'
 	$_eat['5,price'] = 60
-	$_eat['5,type'] = h_meal
+	$_eat['5,type'] = 'h_meal'
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_eat
-	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'#202020','#303030')+'><td><font color=#FFFFFF><center>'+$_eat['<<i>>,name']+'</center></font></td><td align=center>'+iif(money >= val($_eat['<<i>>,price']),'<a href="exec:gt ''food'', ''$_eat[<<i>>,type]'',<<i>>">'+$_eat['<<i>>,price']+'</a>',$_eat['<<i>>,price'])+' ₽.</td></tr>'
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'#202020','#303030')+'><td height="30" width="75%" align="center"><font color="#FFFFFF">'+$_eat['<<i>>,name']+'</td><td height="30" width="15%" align="center">'+iif(money >= val($_eat['<<i>>,price']),'<a href="exec:gt ''food'', $_eat[''<<i>>,type''],<<i>>">'+$_eat['<<i>>,price']+'</a>',$_eat['<<i>>,price'])+' ₽.</td></tr>'
 	i += 1
 	if i < arrsize('$_eat')/3:jump 'loop_eat'
 	$_str += '</table></center></font>'

@@ -10,28 +10,28 @@ if $ARGS[0] = 'drinks':
 	*clr & cla
 	act 'Back': gt $loc, $metka
 	killvar '$_drink'
-	$_drink['0,name'] = 'Kvass'
-	$_drink['0,price'] = 40
-	$_drink['0,type'] = bev_kva
-	$_drink['1,name'] = 'Water'
-	$_drink['1,price'] = 50
-	$_drink['1,type'] = bev_wat
+	$_drink['0,name'] = 'Water'
+	$_drink['0,price'] = 20
+	$_drink['0,type'] = 'bev_wat'
+	$_drink['1,name'] = 'Kvass'
+	$_drink['1,price'] = 30
+	$_drink['1,type'] = 'bev_kva'
 	$_drink['2,name'] = 'Coffee'
-	$_drink['2,price'] = 50
-	$_drink['2,type'] = bev_cof
-	$_drink['3,name'] = 'Vodka'
+	$_drink['2,price'] = 40
+	$_drink['2,type'] = 'bev_cof'
+	$_drink['3,name'] = 'Beer'
 	$_drink['3,price'] = 50
-	$_drink['3,type'] = bev_vod
-	$_drink['4,name'] = 'Wine'
+	$_drink['3,type'] = 'bev_ber'
+	$_drink['4,name'] = 'Vodka'
 	$_drink['4,price'] = 60
-	$_drink['4,type'] = bev_win
-	$_drink['5,name'] = 'Beer'
-	$_drink['5,price'] = 40
-	$_drink['5,type'] = bev_bee
-	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
+	$_drink['4,type'] = 'bev_vod'
+	$_drink['5,name'] = 'Wine'
+	$_drink['5,price'] = 70
+	$_drink['5,type'] = 'bev_win'
+	$_str = '<table border="0" style="width:400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_drink
-	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'#202020','#303030')+'><td><font color=#FFFFFF><center>'+$_drink['<<i>>,name']+'</center></font></td><td align=center>'+iif(money >= val($_drink['<<i>>,price']),'<a href="exec:gt''beverage'',''$_drink[<<i>>,type]'' ,<<i>>">'+$_drink['<<i>>,price']+'</a>',$_drink['<<i>>,price'])+' ₽.</td></tr>'
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'#202020','#303030')+'><td height="30" width="75%" align="center"><font color="#FFFFFF">'+$_drink['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_drink['<<i>>,price']),'<a href="exec:gt''beverage'',$_drink[''<<i>>,type''] ,<<i>>">'+$_drink['<<i>>,price']+'</a>',$_drink['<<i>>,price'])+' ₽.</td></tr>'
 	i += 1
 	if i < arrsize('$_drink')/3:jump 'loop_drink'
 	$_str += '</table></center></font>'
