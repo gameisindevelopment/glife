@@ -44,8 +44,8 @@ if $ARGS[0] = 'hallway':
 	act 'Kitchen': gt 'dimaHome','kitchen'
 	act 'Bathroom': gt 'dimaHome','bathroom'
 	act 'Study': gt 'dimaHome','study'
-	act 'Up Stairs': gt 'dimaHome','hallway2'
 	act 'Basement': gt 'dimaHome','basement'
+	act 'Go upstairs': gt 'dimaHome','hallway2'
 	act 'Leave Dimka''s home': gt 'pavResidential'
 end
 
@@ -58,7 +58,7 @@ if $ARGS[0] = 'bathroom':
 	$locM = 'dimaHome'
 	gs 'stat'
 	$location_type = 'bathroom'
-	'<center><h4><font color="maroon">Bathroom</font></h4></center>'
+	'<center><h4><font color="maroon">Downstairs bathroom</font></h4></center>'
 	'<center><img  src="images/locations/pavlovsk/resident/dimkahome/halfbath.jpg"></center>'
 	'You enter a half bathroom with a large sink area and hardwood floors. The toilet sits along the far wall. It all looks very spotless. The main bathroom with the tub and shower must be upstairs, you assume.'
 	'You can do your hair and makeup in the <a href="exec:gt ''mirror'', ''start''">mirror</a> above the sink.'
@@ -134,8 +134,9 @@ if $ARGS[0] = 'hallway2':
 	act 'Parents Room': gt 'dimaHome','dimkaparents'
 	act 'Guest room': gt 'dimaHome','guest'
 	act 'Bathroom': gt 'dimaHome','bathroom2'
-	act 'Balcony': gt 'dimaHome','balcony'
-	act 'Down stairs': gt 'dimaHome','hallway'
+	!The balcony doesnt exist at the moment
+	!act 'Balcony': gt 'dimaHome','balcony'
+	act 'Go downstairs': gt 'dimaHome','hallway'
 end
 
 if $ARGS[0] = 'bathroom2':
@@ -147,7 +148,7 @@ if $ARGS[0] = 'bathroom2':
 	$locM = 'dimaHome'
 	gs 'stat'
 	$location_type = 'bathroom'
-	'<center><h4><font color="maroon">Bathroom</font></h4></center>'
+	'<center><h4><font color="maroon">Upstairs bathroom</font></h4></center>'
 	'<center><img  src="images/locations/pavlovsk/resident/dimkahome/bathroom.jpg"></center>'
 	'This restroom has a large sink area and tile floors. The toilet sits along the far wall. You also notice a walk-in shower and large bathtub. You imagine how luxurious it must feel to bathe in here.'
 	'You can do your hair and makeup in the <a href="exec:gt ''mirror'', ''start''">mirror</a> above the sink.'
@@ -166,7 +167,7 @@ if $ARGS[0] = 'bathroom2':
 			act 'Get dressed': gt 'dimaHome','bathroom2'
 		end
 	end
-	act 'You smile to yourself as you draw a bath in the impressive tub. You relish the feeling as you slowly glide into steamy water and relax.':
+	act 'You smile to yourself as you draw a bath in the impressive tub. You relish the feeling as you slowly glide into steamy water and relax':
 		cls
 		minut += 20
 		dynamic $bath
@@ -195,19 +196,18 @@ if $ARGS[0] = 'dimkaroom':
 		gt 'dimaEv','blackmail'
 	else
 		'Dimka''s room is surprisingly clean and organized for a boy, you think. The decorations are fairly tasteful and every object has an air of quality about it. Along one wall next to the bed is a wardrobe with mirrored doors, a small zebra pattern love seat sits along a wall near the bed. Next to the love seat is a mini fridge and just above that on a shelf is a high-end stereo system. There is also a fancy, masculine desk with a top-of-the-line computer setup on it and a laptop lying nearby as well. You can''t help but wonder how expensive it all is. Sitting at the desk is Dimka, he turns to face you as you enter the room.'
-		act 'Talk to Dimka':gt 'dimaHome','dimka'
+		act 'Talk to Dimka':gt 'dimaHome','dimka_chat'
 		act 'Look around':
 			*clr
 			minut += 10
-			'<center><b><font color = maroon>Dimka''s parent''s room</font></b></center>'
-			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/bedroom.jpg"></center>'
+			'<center><b><font color = maroon>Dimka''s room</font></b></center>'
+			'<center><img  src="images/locations/pavlovsk/resident/dimkahome/dimkaroom.jpg"></center>'
 			if npc_rel['A1'] >= 80:
 				'You snoop around, opening drawers, and looking in the closet. Dimka has a lot of nice clothes which are all neatly folded or hung up in his closest. Somehow you doubt he is the one that takes such care of his stuff and imagine his mother running about, maintaining appearances. In one of the drawers next to his bed you find a small bag of white power. Other than that, there doesn''t seem to be anything interesting about his room.'
 			else
 				'As you start to look around his room, Dimka says. "What the fuck do you think you''re doing? It''s pretty rude to go snooping around someone''s stuff." You cringe inwardly and give him an apologetic look. You know you''d react the same way if someone did it to your room too.'
 			end
-			act 'Talk to Dimka':gt 'dimaHome','dimka'
-			act 'Leave':gt 'dimaHome','hallway2'
+			act 'Talk to Dimka':gt 'dimaHome','dimka_chat'
 		end
 	end
 	act 'Leave Dimka''s room': gt 'dimaHome','hallway2'
@@ -224,11 +224,11 @@ if $ARGS[0] = 'dimkaparents':
 		*clr
 		minut += 10
 		'<center><b><font color = maroon>Dimka''s parent''s room</font></b></center>'
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/bedroom.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/parentsroom.jpg"></center>'
 		'You snoop around, opening drawers, and looking in the closet. Everything is perfectly in place and neatly arranged. You don''t find anything of interest, Dimka''s parents seem pretty boring, you think to yourself.'
 		act 'Leave':gt 'dimaHome','hallway2'
 	end
-	act 'Go into master bath':
+	act 'Go into master bathroom':
 		cls
 		minut += 1
 		$metka = 'bathroom'
@@ -237,7 +237,7 @@ if $ARGS[0] = 'dimkaparents':
 		$locM = 'dimaHome'
 		gs 'stat'
 		$location_type = 'bathroom'
-		'<center><h4><font color="maroon">Bathroom</font></h4></center>'
+		'<center><h4><font color="maroon">Master bathroom</font></h4></center>'
 		'<center><img  src="images/locations/pavlovsk/resident/dimkahome/masterbath.jpg"></center>'
 		'The master bathroom is a huge space with a large sink area and tile floors. The toilet sits along the far wall. You can''t help but feel impressed by the size of the walk-in shower and deep bathtub. It all looks very expensive.'
 		'You can do your hair and makeup in the <a href="exec:gt ''mirror'', ''start''">mirror</a> above the sink.'
@@ -306,7 +306,7 @@ if $ARGS[0] = 'basement':
 		minut += 1
 		'<center><h4><font color="maroon">Basement</font></h4></center>'
 		'<center><img  src="images/locations/pavlovsk/resident/dimkahome/basement.jpg"></center>'
-		'You walk over to the door and try it to open it. It won''t budge, the door is locked. You look around and don''t see a place for a key. Giving up you go back up stairs.'
+		'You walk over to the door and try it to open it. It won''t budge, the door is locked. You look around and don''t see a place for a key. Giving up you go back upstairs.'
 		act 'Go back upstairs': gt 'dimaHome','hallway'
 	end
 end
