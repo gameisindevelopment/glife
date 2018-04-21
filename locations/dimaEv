@@ -1,4 +1,4 @@
-# dimkaEv
+# dimaEv
 !!files that can be deleted dima, dimagohome2, dimahome, dimkawarning, dimaev, dimaRudeEV
 
 if $ARGS[0] = 'after_school':
@@ -1072,5 +1072,5 @@ if $ARGS[0] = 'Dimka_warning':
 	end
 end
 
---- dimkaEv ---------------------------------
+--- dimaEv ---------------------------------
 
