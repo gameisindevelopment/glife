@@ -617,7 +617,7 @@ if bimbolevel > 0:
 	elseif bimbowithdrawal = 1:
 		$bimbostatus = '<font color="green">You feel, like, kind of lame today.</font>'
 	elseif bimbowithdrawal < 4:
-		$bimbostatus = '<font color="black">You feel, like, totally lame today.</font>'
+		$bimbostatus = '<font color="grey">You feel, like, totally lame today.</font>'
 	elseif bimbowithdrawal < 6:
 		if pcs_mood > 50: pcs_mood -= 10
 		$bimbostatus = '<font color="red">You really feel, like, awful today.</font>'

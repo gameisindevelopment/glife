@@ -503,7 +503,7 @@ if $ARGS[0] = 'bathroom':
 	$metka = 'bathroom'
 
 	'<center><h3>Bathroom</h3></center>'
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
 	'Modest bathroom, containing all that young people need for their daily life.'
 
 	gs 'din_van', 'private'
@@ -753,7 +753,7 @@ end
 if $ARGS[0] = 'ndRoom':
 	minut += 2
 	'<center><h3><font color=#<<$nd_font>>><<$nd_name>>''s room</font></h3></center>'
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/nd/room.jpg"></center
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/nd/room.jpg"></center>'
 	'The room is surprisingly not as messy as one would expect, given that <<$nd_name>> is an IT guy.'
 	'There is one large window with bed bellow it, but the whole room is dominated by a large table with several computers and monitors.'
 	'Looking at it one would say that this must be a den of a hacker.'

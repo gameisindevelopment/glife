@@ -1,12 +1,12 @@
-# dimkaEv
+# dimaEv
 !!files that can be deleted dima, dimagohome2, dimahome, dimkawarning, dimaev, dimaRudeEV
 
 if $ARGS[0] = 'after_school':
-	if dimarudorient = 1: gt 'dimkaev', 'Dimka_room''dimka_chat'
-		gs 'stat'
-		'<center><b><font color="maroon"><<$npc_firstname[''A1'']>> <<$npc_lastname[''A1'']>></font></b></center>'
-		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/1.jpg"></center>'
-		'Dimka seeing you, walks up and says quietly, "Come here slut, we''re going to go have some fun at my place." Your cheeks redden at the gross nickname'
+	if dimarudorient = 1: gt 'dimaHome', 'dimkaroom'
+	gs 'stat'
+	'<center><b><font color="maroon"><<$npc_firstname[''A1'']>> <<$npc_lastname[''A1'']>></font></b></center>'
+	'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/1.jpg"></center>'
+	'Dimka seeing you, walks up and says quietly, "Come here slut, we''re going to go have some fun at my place." Your cheeks redden at the gross nickname'
 !!can me make the above have a 1 in 5 chance of trigging even if the player doesn''t click Dimka''s name after school?
 	if fedorKozlovQW >= 10 and dimaFilm = 1 and FedorvsDimka = 1 or fedorKozlovQW = -15 and dimaFilm = 1 and FedorvsDimka = 1:
 		gt 'FedorMisc', 'Fedor Vs Dimka'
@@ -20,7 +20,7 @@ if $ARGS[0] = 'after_school':
 			'<center><b><h4><font color="blue"><<"Fyodor [Fedor] Kozlov">></font></h4></b></center>'
 			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/fedor/fedorev/fedorangry.jpg"></center>'
 			'You say to Fedor "Fedor, I''m sorry, but I''m with Dimka." Fedor clenches his fist and he responds, "How could you use me like this? You..." then before you have a chance to respond, Fedor turns away and storms off. You want to say something, but the words stop in your troath. With a shit eating smile, Dimka take your hand and drag you away.'
-			act 'Go to Dimka''s room':gt 'dimkaev', 'Dimka_room'
+			act 'Go to Dimka''s room':gt 'dimaHome', 'dimkaroom'
 		end
 		act 'I''m with Fedor':
 			cls
@@ -66,20 +66,21 @@ if $ARGS[0] = 'after_school':
 		'<center><h4><font color="maroon">Dimka''s Room</font></h4></center>'
 		'<center><img  src="images/locations/pavlovsk/resident/dimkahome/dimkaroom.jpg"></center>'
 		'You go with Dimka to his parents home, a large two-story house with a manicured lawn and a large garden. The two of you walk and chat along the way, but he seems not really interested in small talk. Once there he leads you inside and up to his room.'
-		act 'Go to Dimka''s room':gt 'dimkahome', 'Dimka_room'
+		act 'Go to Dimka''s room':gt 'dimaHome', 'dimkaroom'
 			'The room is surprisingly clean and organized for a boys room. It is fairly tastefully decorated. Along one wall next to the bed is a wardrobe with mirrored doors, a small zebra pattern love seat sits along a wall near the bed. Next to the love seat is a mini fridge and just above that on a shelf is a stereo system. There is also a desk with a desktop computer setup on it and a laptop laying nearby as well. Everything in the room seems pretty expensive. When you get inside, he sits down on the love seat.'
-		act 'Talk to Dimka':gt 'dimkahome','dimka'
+		act 'Talk to Dimka':gt 'dimaHome','dimka'
 		act 'Look around':
 			*clr
 			minut += 10
 			'<center><b><font color = maroon>Dimka''s parent''s room</font></b></center>'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/bedroom.jpg"></center>'
-			!!if friendship is higher than 80 this you get this. 
+			if npc_rel['A1'] > 80:
 				'You continue talking and begin snooping around, opening drawers, and looking in the closet. Dimka has a lot of nice clothes, they are all neatly folded or hung up in his closet, somehow you doubt he is the one that takes care of his stuff. Maybe his family has somebody to clean?. In one of the drawers next to his bed is a small bag of white power, other than that, there doesn''t seem to be anything interesting about his room. When you stop, he look at you with an amused look in his face. "Are you satisfied?."'
 			else
 				'As you start to look around his room, Dimka says. "What the fuck do you think you are doing? It is pretty rude to just start snooping around someones stuff." You have to admit, you would feel it was rude if someone did it to your room too.'
-			act 'Talk to Dimka':gt 'dimkahome','dimka'
-			act 'Leave':gt 'dimkahome','hallway2'
+			end
+			act 'Talk to Dimka':gt 'dimaHome','dimka'
+			act 'Leave':gt 'dimaHome','hallway2'
 		end
 	end
 	act 'Leave':gs 'gschool_grounds', 'main'
@@ -99,7 +100,7 @@ if $ARGS[0] = 'drugged':
 	'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/1.jpg"></center>'
 	'You take several drinks as you talk with Dimka. Again he doesn''t seem to want to chat, and appear to be waiting for something. Then you start to feel funny. For a moment, you just feel numb, then you feel yourself get aroused, the heat coming from your pussy as it soaks itself, you gasp, it is almost too much to take, you desperately need someone to fuck you. "Oh, fuck". You don''t think this is normal, he must have laced it with something. You blink a few times trying to clear your head, but soon your thoughts grow murky.'
 	act 'continue':
-		cls,
+		cls
 		pcs_dom += 1,
 		minut += 5
 		gs 'stat'
@@ -734,7 +735,7 @@ if $ARGS[0] = 'blackmail':
 		'"You fucking whore!" he roars, standing quickly and flinging his chair halfway across the room, "You useless fucking whore. You think you can come prancing in here just like that and all is forgiven?"'
 		'You barely have time to register that he is moving before he grabs your lower jaw with bruising force. He spits in your face violently. "You..You..Fucking whore." he screams in your face.'
 		'You never felt the blow, but he must have hit you as you curl now on the floor into a ball. He grabs you by the hair and forces you into a chair.'
-		act 'Continue':gt 'dimkaev', 'dimkawarn'
+		act 'Continue':gt 'dimaEv', 'dimkawarn'
 	else
 		'The room is surprisingly clean and organized for a boys room. It is fairly tastefully decorated. Along one wall next to the bed is a wardrobe with mirrored doors, a small zebra pattern love seat sits along a wall near the bed. Next to the love seat is a mini fridge and just above that on a shelf is a stereo system. There is also a desk with a desktop computer setup on it and a laptop laying nearby as well. All in the room seems pretty expensive. Sitting at the desk is Dimka, he apparently heard you open the door as he turns to face you as you walk in.'
 		'As he sees you, an evil smile spreads across his face. "So good of you to join me. Now take off your clothes. Slut."'
@@ -783,7 +784,7 @@ if $ARGS[0] = 'dimkaplays':
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/shared/drugs/dur.jpg"></center>'
 		'You sniff up the dose of powder. For a moment, you just feel numb, then you feel yourself get aroused, the heat coming from your pussy as it soaks itself, you gasp, it is almost too much to take, you desperately need someone to fuck you. "Oh, fuck". You don''t think this is normal, he must have laced it with something. You blink a few times trying to clear your head, but soon your thoughts grow murky'
-		act 'Continue': gt 'dimkaev', 'dimkaplays2'
+		act 'Continue': gt 'dimaEv', 'dimkaplays2'
 	end
 	act 'Refuse':
 		cls
@@ -792,7 +793,7 @@ if $ARGS[0] = 'dimkaplays':
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/dimka/sex/pre.jpg"></center>'
 		'You refuse to use the powder. Dimka chuckles and puts it away. "Well, okay, but you''re missing something really cool." You sigh with relief, as seems that he doesn''t consider this an insult and look meekly at him. He unbuttons his pants and pulls out his member. "Come here, baby."'
-		act 'Continue': gt 'dimkaev', 'dimkaplays2'
+		act 'Continue': gt 'dimaEv', 'dimkaplays2'
 	end
 end
 
@@ -1072,5 +1073,5 @@ if $ARGS[0] = 'Dimka_warning':
 	end
 end
 
---- dimkaEv ---------------------------------
+--- dimaEv ---------------------------------
 
