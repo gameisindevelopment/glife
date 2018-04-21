@@ -29,7 +29,7 @@ if $ARGS[0] = '1':
 		end
 
 		exit
-	else if suchunt = 1:
+	elseif suchunt = 1:
 		cla
 		'From the shadow of the tree, a guy walks out...'
 		'He comes up to you, grabs you, and, through gritted teeth says, "Com''ear Bitch", dragging you into the bushes.'
@@ -749,7 +749,7 @@ if $ARGS[0] = '9':
 
 				act 'Complete walk':gt 'park', 'start'
 			end
-		else if boyonce[lover_number] = 1 and SUB > 0:
+		elseif boyonce[lover_number] = 1 and SUB > 0:
 			'<<$loverdesc[lover_number]>> is happy to see you, quickly grabbing you by the hand leading you into a more secluded area of the park.'
 
 			act 'Follow <<$loverdesc[lover_number]>>.':
@@ -759,7 +759,7 @@ if $ARGS[0] = '9':
 					gt 'parksvid'
 				end	
 			end
-		else if boyonce[lover_number] = 1 and pcs_dom > 0:
+		elseif boyonce[lover_number] = 1 and pcs_dom > 0:
 			'<<$loverdesc[lover_number]>> is happy to see you, quickly grabbing you by the hand, wanting to lead you to a secluded area of the park.'
 		
 			act 'Offer to sit on the bench':			
