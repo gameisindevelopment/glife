@@ -74,10 +74,11 @@ if $ARGS[0] = 'after_school':
 			minut += 10
 			'<center><b><font color = maroon>Dimka''s parent''s room</font></b></center>'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/bedroom.jpg"></center>'
-			!!if friendship is higher than 80 this you get this. 
+			if npc_rel['A1'] > 80:
 				'You continue talking and begin snooping around, opening drawers, and looking in the closet. Dimka has a lot of nice clothes, they are all neatly folded or hung up in his closet, somehow you doubt he is the one that takes care of his stuff. Maybe his family has somebody to clean?. In one of the drawers next to his bed is a small bag of white power, other than that, there doesn''t seem to be anything interesting about his room. When you stop, he look at you with an amused look in his face. "Are you satisfied?."'
 			else
 				'As you start to look around his room, Dimka says. "What the fuck do you think you are doing? It is pretty rude to just start snooping around someones stuff." You have to admit, you would feel it was rude if someone did it to your room too.'
+			end
 			act 'Talk to Dimka':gt 'dimaHome','dimka'
 			act 'Leave':gt 'dimaHome','hallway2'
 		end
