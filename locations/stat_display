@@ -473,12 +473,12 @@ if home_owned[1] = 1 and ArendHouseSL <= 0:
 	if money >= 6000 or stolmoney >= 6000 or money + stolmoney >= 6000 or karta + bankDebtLimit >= 6000:
 		$stat_msg += ' Renew with '
 		if money >= 6000:
-			$stat_msg += ' <a href="exec:money -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash</a>'
+			$stat_msg += ' <a href="exec:money -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash</a>'
 		elseif stolmoney >= 6000:
-			$stat_msg += ' <a href="exec:stolmoney -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from drawer</a>'
+			$stat_msg += ' <a href="exec:stolmoney -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from drawer</a>'
 		elseif money + stolmoney >= 6000:
 			!both < 6000, so money = money - 6000 + stolmoney
-			$stat_msg += ' <a href="exec:money -= 6000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from purse and drawer</a>'
+			$stat_msg += ' <a href="exec:money -= 6000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from purse and drawer</a>'
 		end
 		!from purse, drawer or both
 		if karta >= 6000: 
