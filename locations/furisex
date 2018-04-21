@@ -76,7 +76,7 @@ elseif furisex = 101:
 	'The driver casually steers his truck along the road and chats with colleagues over the board radio casually while you have his cock in your mouth, and gently strokes his hand through your hair when he can.'
 	'"Oh yea... I know it''s risky, but it''s so much better without a condom!" he groans, and you feel his sperm being squirted into your mouth mere seconds later. It has a rather tangy taste, but you can''t spit it out anywhere! You swallow it quickly, without giving it much thought.'
 	'"Nice timing!" the driver grins. "If you ever need another ride, come find me. That was the best head I''ve had in quite a while!"'
-
+	swallow += 1
 	gs 'arousal', 'bj', 15, 'sub'
 	gs 'arousal', 'end'
 	gs 'stat'
