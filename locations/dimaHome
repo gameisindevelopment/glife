@@ -680,6 +680,8 @@ if $ARGS[0] = 'dimka_chat':
 			'<center><img src="images/locations/pavlovsk/resident/dimkahome/talk.jpg"></center>'
 			'Your cheeks flush read as you suddenly feel put on the spot. That is not what you meant... but he is awfully cute and all the other girls would be so jealous. "I don''t know, maybe..." You trail off hoping he feels the same way.'
 			act 'Wait for his reply':
+				cla
+				*clr
 				'<center><h4><font color="maroon">Dimka''s Room</font></h4></center>'
 				'<center><img src="images/locations/pavlovsk/resident/dimkahome/cocaine.jpg"></center>'
 				'He looks you over for a moment before answering with a smirk. "Well any girl that wants to be my girl has to know how to party." With that said he leans over and digs in a drawer. As moves back you see him holding a bag of white power. He dangles it between his fingers, letting it sway back and forth enticingly. "Take a hit of this and prove you''re you know how to have fun."'
@@ -702,6 +704,8 @@ if $ARGS[0] = 'dimka_chat':
 						act 'Leave Dimka''s home': gt 'pavResidential'
 					end
 					act 'Ok':
+						cla
+						*clr
 						'<center><h4><font color="maroon">Dimka''s Room</font></h4></center>'
 						'<center><img src="images/locations/pavlovsk/resident/dimkahome/drink.jpg"></center>'
 						'He nods and turns to dig around in the mini fridge. Dimka pours two glasses half full with juice and then adds some vodka to them. His body is obscuring your view of the glasses as he prepares the drinks.'
@@ -746,6 +750,8 @@ if $ARGS[0] = 'dimka_chat':
 			'He interrupts you. "Hey it''s cool, I am not looking either. I just want to have some fun. So, how about you and I have some fun?"'
 			'Fun sounds all well and good, but what does he mean? "What kind of fun?" You ask him as you eye him suspiciously.'
 			act 'Wait for his reply':
+				cla
+				*clr
 				'<center><h4><font color="maroon">Dimka''s Room</font></h4></center>'
 				'<center><img src="images/locations/pavlovsk/resident/dimkahome/cocaine.jpg"></center>'
 				'He looks you over for a moment before he leans over and digs in a drawer. As moves back you see him holding a bag of white power. He dangles it between his fingers, letting it sway back and forth enticingly. "Take a hit of this and we can have some real fun."'
@@ -768,6 +774,8 @@ if $ARGS[0] = 'dimka_chat':
 						act 'Leave Dimka''s home': gt 'pavResidential'
 					end
 					act 'Ok':
+						cla
+						*clr
 						'<center><h4><font color="maroon">Dimka''s Room</font></h4></center>'
 						'<center><img src="images/locations/pavlovsk/resident/dimkahome/drink.jpg"></center>'
 						'He nods and turns to dig around in the mini fridge. Dimka pours two glasses half full with juice and then adds some vodka to them. His body is obscuring your view of the glasses as he prepares the drinks.'
@@ -911,7 +919,7 @@ if $ARGS[0] = 'dimka_chat':
 	act 'Stop talking': gt 'dimaHome','dimkaroom'
 end
 
-if $ARGS[0] = 'dimka_makeout2':
+if $ARGS[0] = 'dimka_makeout':
 	cla
 	*clr
 	'<center><h4><font color="maroon">Dimka''s Room</font></h4></center>'

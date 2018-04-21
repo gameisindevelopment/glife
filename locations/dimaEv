@@ -440,7 +440,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 1:
 				act 'Further':
 					cls
@@ -477,7 +476,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 2:
 				act 'Further':
 					cls
@@ -520,7 +518,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 3:
 				act 'Further':
 					cls
@@ -563,7 +560,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 4:
 				act 'Further':
 					cls
@@ -605,7 +601,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 5:
 				act 'Further':
 					cls
@@ -644,7 +639,6 @@ if $ARGS[0] = 'cocaine':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 6:
 				act 'Further':
 					cls
