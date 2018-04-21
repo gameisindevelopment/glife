@@ -14,6 +14,9 @@ else
 	lcolor = rgb(106, 90, 205)
 end
 '<center><b><font color="maroon">Pavlovsk''s train station cafe</font></b></center>'
+'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
+'A small cafe, attached to the train station. It looks rather shabby.'
+'The cafe is closed right now, it''s usually open between 8:00 and 20:00.'
 
 if mother_go = 1 and hour = 16:
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
@@ -21,36 +24,63 @@ if mother_go = 1 and hour = 16:
 	'The door is currently locked, and the sign on the door says "Closed". That''s strange, the cafe is supposed to be open at this time.'
 
 	act 'Walk around the cafe':
-		cls
+		*clr & cla
 		minut += 15
 		gs 'stat'
 		'Being locked outside of the cafe, you walk around it to try and figure out why it is closed. Suddenly, you hear weak voices through the wall. It sounds like some poor woman is screaming! You quickly look around and notice a stack of old crates. If you stand on it, you think you can reach a small window and see what is happening inside.'
-
+		
+		if pcafejob > 0:'You look at the status of the cafe and the current circumstances and think, <i>No... It can''t be...</i>'
 		act 'Leave, it''s probably none of your business':gt 'vokzalG'
-		act 'Get up there and peek through the window':
-			cls
-			minut += 5
-			gs 'stat'
-			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/mom/event/momslut.jpg"></center>'
-
-			if momslut >= 1:
-				'You carefully climb on top of the boxes, and stand on your toes to reach the small window. It gives you a view into the back room of the cafe. Through the window you see your mother on her knees, giving the cafe owner a blowjob. She''s very enthusiastic about it, and alternates between sucking his dick and licking his balls. Then she begins to deepthroat him, sliding his dick further and further down her mouth until his balls rest on her chin.'
-			elseif momslut=0:
-				momslut = 1
-				'You carefully climb on top of the boxes, and stand on your toes to reach the small window. It gives you a view into the back room of the cafe. Through the window you see a woman on her knees, giving the cafe owner a blowjob. She''s very enthusiastic about it, and alternates between sucking his dick and licking his balls. Then she begins to deepthroat him, sliding his dick further and further down her mouth until his balls rest on her chin. When you look closer, you realize... that''s your mother!'
-			end
-
-			act 'Leave, you don''t want to see this':gt 'vokzalG'
-
-			act 'Keep looking':
-				cls
+		
+		if pcafejob >0:
+			act 'Peek through the window and confirm your suspicions':
+				*clr & cla
 				minut += 5
-				mother_go = 0
 				gs 'stat'
-				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/mom/event/momslut2.jpg"></center>'
-				'The cafe owner abruptly pulls his groin away from your mother''s mouth, a string of saliva still attached to his dick as he roughly pulls your mother up by her shoulders and tells her to lean against the wall. You can''t hear them talking but he definitely seems to be in charge, and your mother is all too willing in following up his every demand. Your mother lewdly turns her back to him and gently wiggles her ass, and he immediately drove his cock in her pussy. His thrusting is fast and furious and you figure he doesn''t intend to stay here much longer, knowing he has to open the cafe again before too many people notice. Your mother is moaning loudly as she is getting her pussy roughly pounded by her boss, you can easily hear it despite the window between you and them. And sure enough, a few moments later he grabs her ass as his body spasms, dumping his load deep inside her. Your mother drops to her knees quickly without needing a prompt and cleans him up with her tongue, after which he pulls up his pants and goes to re-open the cafe. Your mother sits on the ground for a while to recuperate, licking her lips with a dreamy look in her eyes. You quickly get off the crates, before she sees you.'
+				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/mom/event/momslut.jpg"></center>'
+				
+				'You carefully climb on top of the boxes, and stand on your toes to reach the small window and you can''t believe what you''re seeing. Through the window you see your mother on her knees, giving Slava a blowjob! She''s very enthusiastic about it, and alternates between sucking his dick and licking his balls. Then she begins to deepthroat him, sliding his dick further and further down her mouth until his balls rest on her chin.'
+				act 'What the fuck!':
+					*clr & cla
+					minut += 5
+					mother_go = 0
+					gs 'stat'
+					'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/mom/event/momslut2.jpg"></center>'
+					'Slava abruptly pulls his groin away from your mother''s mouth, a string of saliva still attached to his dick as he roughly pulls your mother up by her shoulders and starts fucking her against the wall full force. His thrusting is fast and furious. Your mother is moaning loudly as she is getting her pussy roughly pounded by her boss. A few moments later he grabs her ass as his body spasms, dumping his load deep inside her. Your mother drops to her knees quickly without needing a prompt and cleans him up with her tongue, after which he pulls up his pants and goes to re-open the cafe. Your mother sits on the ground for a while to recuperate, licking her lips with a dreamy look in her eyes.'
+					*nl
+					'You get off the crates, torrents of emotions running through you.'
+					'<i>I thought we had a deal!</i>'
+					slavatalk = 2
+					act 'Go back to the train station':gt 'vokzalG'
+				end
+			end
+		
+		else
+			act 'Get up there and peek through the window':
+				*clr & cla
+				minut += 5
+				gs 'stat'
+				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/mom/event/momslut.jpg"></center>'
+				
+				if momslut >= 1:
+					'You carefully climb on top of the boxes, and stand on your toes to reach the small window. It gives you a view into the back room of the cafe. Through the window you see your mother on her knees, giving the cafe owner a blowjob. She''s very enthusiastic about it, and alternates between sucking his dick and licking his balls. Then she begins to deepthroat him, sliding his dick further and further down her mouth until his balls rest on her chin.'
+				elseif momslut=0:
+					momslut = 1
+					'You carefully climb on top of the boxes, and stand on your toes to reach the small window. It gives you a view into the back room of the cafe. Through the window you see a woman on her knees, giving the cafe owner a blowjob. She''s very enthusiastic about it, and alternates between sucking his dick and licking his balls. Then she begins to deepthroat him, sliding his dick further and further down her mouth until his balls rest on her chin. When you look closer, you realize... that''s your mother!'
+				end
 
-				act 'Go back to the train station':gt 'vokzalG'
+				act 'Leave, you don''t want to see this':gt 'vokzalG'
+
+				act 'Keep looking':
+					*clr & cla
+					minut += 5
+					mother_go = 0
+					gs 'stat'
+					'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/mom/event/momslut2.jpg"></center>'
+					'The cafe owner abruptly pulls his groin away from your mother''s mouth, a string of saliva still attached to his dick as he roughly pulls your mother up by her shoulders and tells her to lean against the wall. You can''t hear them talking but he definitely seems to be in charge, and your mother is all too willing in following up his every demand. Your mother lewdly turns her back to him and gently wiggles her ass, and he immediately drove his cock in her pussy. His thrusting is fast and furious and you figure he doesn''t intend to stay here much longer, knowing he has to open the cafe again before too many people notice. Your mother is moaning loudly as she is getting her pussy roughly pounded by her boss, you can easily hear it despite the window between you and them. And sure enough, a few moments later he grabs her ass as his body spasms, dumping his load deep inside her. Your mother drops to her knees quickly without needing a prompt and cleans him up with her tongue, after which he pulls up his pants and goes to re-open the cafe. Your mother sits on the ground for a while to recuperate, licking her lips with a dreamy look in her eyes. You quickly get off the crates, before she sees you.'
+
+					act 'Go back to the train station':gt 'vokzalG'
+				end
 			end
 		end
 	end
@@ -66,7 +96,11 @@ else
 				'Your <a href="exec:gt ''mother''">mother</a> is currently working at the cafe bar.'
 			else
 				'The bar owner <a href="exec:GT ''motherkafeboss''">Borislav</a> is currently taking orders in the bar. Most people call him Slava.'
+				if pcafejob = 2:act'Work a shift':gt'motherkafeboss','work_shift'
 			end
+		else
+			
+			
 		end
 
 		act 'Have a meal at the cafe':
@@ -94,10 +128,6 @@ else
 				'You see your classmates <a href="exec:minut += 3 & gt ''gopskver''">Vitek, Dan and Vasily</a> sitting at a table in the far corner, drinking beer.'
 			end
 		end
-	else
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
-		'A small cafe, attached to the train station. It looks rather shabby.'
-		'The cafe is closed right now, it''s usually open between 8:00 and 20:00.'
 	end
 end
 

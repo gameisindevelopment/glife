@@ -126,7 +126,7 @@ if $ARGS[0] = 'start':
 		'You are too tired to do any exercise. You need to rest and replenish your stamina.'
 	end
 	
-	if gsAboDance > 0 and albinaQWdance = 0 and pregTalkStarlets = 0:
+	if gsAboDance > 0 and albinaQWdance = 0 and pregTalkStarlets = 0 and $clothingworntype = 'exercise':
 			act 'Take a dance lesson, you have <<gsAboDance>> lessons remaining':gt 'gdksport', 'dance2'
 		end
 		if albinaQWdance > 0 and AlbinaBlokDance = 0 and ZvezdEnd = 0 and pregTalkStarlets = 0:
