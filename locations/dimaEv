@@ -63,25 +63,10 @@ if $ARGS[0] = 'after_school':
 		cls
 		minut += 15
 		gs 'stat'
-		'<center><h4><font color="maroon">Dimka''s Room</font></h4></center>'
-		'<center><img  src="images/locations/pavlovsk/resident/dimkahome/dimkaroom.jpg"></center>'
+		'<center><h4><font color="maroon">Dimka''s parent''s house</font></h4></center>'
+		'<center><img  src="images/locations/pavlovsk/resident/dimkahome/house.jpg"></center>'
 		'You go with Dimka to his parents home, a large two-story house with a manicured lawn and a large garden. The two of you walk and chat along the way, but he seems not really interested in small talk. Once there he leads you inside and up to his room.'
 		act 'Go to Dimka''s room':gt 'dimaHome', 'dimkaroom'
-			'The room is surprisingly clean and organized for a boys room. It is fairly tastefully decorated. Along one wall next to the bed is a wardrobe with mirrored doors, a small zebra pattern love seat sits along a wall near the bed. Next to the love seat is a mini fridge and just above that on a shelf is a stereo system. There is also a desk with a desktop computer setup on it and a laptop laying nearby as well. Everything in the room seems pretty expensive. When you get inside, he sits down on the love seat.'
-		act 'Talk to Dimka':gt 'dimaHome','dimka'
-		act 'Look around':
-			*clr
-			minut += 10
-			'<center><b><font color = maroon>Dimka''s parent''s room</font></b></center>'
-			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/dimkahome/bedroom.jpg"></center>'
-			if npc_rel['A1'] > 80:
-				'You continue talking and begin snooping around, opening drawers, and looking in the closet. Dimka has a lot of nice clothes, they are all neatly folded or hung up in his closet, somehow you doubt he is the one that takes care of his stuff. Maybe his family has somebody to clean?. In one of the drawers next to his bed is a small bag of white power, other than that, there doesn''t seem to be anything interesting about his room. When you stop, he look at you with an amused look in his face. "Are you satisfied?."'
-			else
-				'As you start to look around his room, Dimka says. "What the fuck do you think you are doing? It is pretty rude to just start snooping around someones stuff." You have to admit, you would feel it was rude if someone did it to your room too.'
-			end
-			act 'Talk to Dimka':gt 'dimaHome','dimka'
-			act 'Leave':gt 'dimaHome','hallway2'
-		end
 	end
 	act 'Leave':gs 'gschool_grounds', 'main'
 end
