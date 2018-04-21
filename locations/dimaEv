@@ -84,9 +84,9 @@ if $ARGS[0] = 'drugged':
 	'<center><b><font color="maroon"><<$npc_firstname[''A1'']>> <<$npc_lastname[''A1'']>></font></b></center>'
 	'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/1.jpg"></center>'
 	'You take several drinks as you talk with Dimka. Again he doesn''t seem to want to chat, and appear to be waiting for something. Then you start to feel funny. For a moment, you just feel numb, then you feel yourself get aroused, the heat coming from your pussy as it soaks itself, you gasp, it is almost too much to take, you desperately need someone to fuck you. "Oh, fuck". You don''t think this is normal, he must have laced it with something. You blink a few times trying to clear your head, but soon your thoughts grow murky.'
-	act 'continue':
+	act 'Continue':
 		cls
-		pcs_dom += 1,
+		pcs_dom += 1
 		minut += 5
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/dimka/sex/pre.jpg"></center>'
@@ -124,7 +124,7 @@ if $ARGS[0] = 'drugged':
 						'As your thoughts get more clear and begin to get cleaned up, it seems that he is checking something on his computer. As you are finishing dressing he smirks at you. "Now you''re mine, you little fucking slut. I own your ass, you got it!"'
 						'At first you think he might just be joking, but then you realize he is serious. "What are you talking about?"'
 						*nl
-						'An evil grin plays across his face. "I''m glad you asked." Then he picks up a remote and turn on the tv. And before you know it, you see Dimka an you on the tv, he has recorded all what have been happening. Who you have sucked him and drink his cum making a mess in the process. And all the while with a dopey smile in your face. You are shocked. Once he see that you understand he adds, "If you don''t do as I say and come by here once a week to see to my needs, I will make sure everyone in school and your house get this video"'
+						'An evil grin plays across his face. "I''m glad you asked." Then he picks up a remote and turn on the tv. And before you know it, you see Dimka an you on the tv, he has recorded all what have been happening. How you have sucked him and drank his cum making a mess in the process. And all the while with a dopey smile in your face. You are shocked. Once he see that you understand he adds, "If you don''t do as I say and come by here once a week to see to my needs, I will make sure everyone in school and your house get this video."'
 						'At his threat, your blood runs cold and your skin pale, you know what this would mean to your reputation, not counting how your mother would react.'
 						act 'Run out of his house': gt 'pavResidential'
 						act 'Plead':
@@ -138,7 +138,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 1:
 				act 'Further':
 					cls
@@ -175,7 +174,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 2:
 				act 'Further':
 					cls
@@ -218,7 +216,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 3:
 				act 'Further':
 					cls
@@ -261,7 +258,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 4:
 				act 'Further':
 					cls
@@ -303,7 +299,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 5:
 				act 'Further':
 					cls
@@ -342,7 +337,6 @@ if $ARGS[0] = 'drugged':
 						end
 					end
 				end
-			end
 			elseif dimadalrand = 6:
 				act 'Further':
 					cls
