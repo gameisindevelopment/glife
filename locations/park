@@ -211,14 +211,9 @@ if $ARGS[0] = 'start':
 		act 'Flash your tits':
 			if pcs_exhibition >= 50 and exhibitionQW = 0: gt 'kseniyaQW', 'event1'
 			cls
-			minut += 5
-			gs 'arousal', 'flash', 5
-			gs 'arousal', 'end'
 			exhibition_exp += rand(5,8)
+			gs 'events', 'flash_tits', 'outdoors', 5
 			gs 'stat'
-
-			'<center><img <<$set_imgh>> src="images/shared/sex/exhibitionism/flash_tits.jpg"></center>'
-			'You find an area far from where the children play in the park and flash your tits to some passers-by.'
 
 			act 'Continue': gt 'park', 'start'
 		end
@@ -228,17 +223,9 @@ if $ARGS[0] = 'start':
 		act 'Flash your pussy':
 			if pcs_exhibition >= 50 and exhibitionQW = 0: gt 'kseniyaQW', 'event1'
 			cls
-			gs 'arousal', 'flash', 10
-			gs 'arousal', 'end'
 			exhibition_exp += rand(9,12)
+			gs 'events', 'flash_pussy', 'outdoors', 5
 			gs 'stat'
-
-			if pcs_pubes >= 10:
-				'<center><img <<$set_imgh>> src="images/shared/sex/exhibitionism/flash_hairy.jpg"></center>'
-			else
-				'<center><img <<$set_imgh>> src="images/shared/sex/exhibitionism/flash_nohairy.jpg"></center>'
-			end
-			'You find an area far from where the children play in the park and flash your pussy to some passers-by.'
 
 			act 'Continue': gt 'park', 'start'
 		end
@@ -494,10 +481,9 @@ if $ARGS[0] = 'whore':
 		act 'Flash breasts':
 			cla
 			*clr
-			minut += 5
 			exhibition_exp += 2
-!!			'<center><img <<$set_imgh>> src="images/locations/city/centralpark/parkex.jpg"></center>'
-			'You flash your breasts at a random passing car. The thrill is quite exhilarating.'
+			gs 'events', 'flash_tits', 'outdoors', 5
+			gs 'stat'
 			act 'Go back to the park':gt 'park', 'start'
 		end
 	end

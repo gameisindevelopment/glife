@@ -1005,8 +1005,14 @@ if $ARGS[1] = 'main':
 						*clr
 						exhibition_exp += 3
 						'<<$streetev_title>>'
-						'<center><img <<$set_imgh>> src="images/shared/sex/exhibitionism/flash_tits.jpg"></center>'
-						'You grin at her as she flashes you and you lift your shirt flashing your tits back at her, which makes her laugh.'
+						if PCloSkirt > 0:
+							'<center><img <<$set_imgh>> src="images/pc/flashing/dress/outside/tits/' + rand(1,12) + '.jpg"></center>'
+							'You grin at her as she flashes you and you lift your shirt flashing your tits back at her, which makes her laugh.'
+						else
+							'<center><img <<$set_imgh>> src="images/pc/flashing/pants/outside/tits/' + rand(1,14) + '.jpg"></center>'
+							'You grin at her as she flashes you and you lift your shirt flashing your tits back at her, which makes her laugh.'
+						end
+						gs 'stat'
 						act 'Continue':gt $loc
 					end
 				end

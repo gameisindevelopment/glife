@@ -446,8 +446,8 @@ $pranik = {
 		pranik -= 1
 		pcs_health += 30
 		pcs_mood += 20
-		pcs_energy = 100
-		water = 100
+		pcs_energy += 20
+		water += 60
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
