@@ -116,7 +116,18 @@ if $ARGS[0] = 'remove':
 	killvar 'bodyPref', i
 	killvar 'makePref', i
 	killvar 'IQPref', i
-	
+
+	killvar '$loverXe', i
+	killvar '$loverXec', i
+	killvar '$loverXem', i
+	killvar '$loverXemc', i
+	killvar '$loverXyr', i
+	killvar '$loverXyrc', i
+	killvar '$loverXyrs', i
+	killvar '$loverXyrsc', i
+	killvar '$loverXemself', i
+	killvar '$loverXemselfc', i
+
 	killvar 'pcs_lovers', i
 	pcs_lover -=1
 end
