@@ -20,9 +20,10 @@ end
 
 if $ARGS[0] = 'food':
 	'<center><img <<$set_imgh>> src="images/locations/oldtown/cafe/larek.jpg" ></center>'
-	$loc = 'liamelkafe'
-	$metka = 'start'
-	gs 'food', 'm_meal'
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	act 'Order drinks':gs 'beverage_menu', 'diner'
+	act 'Order food':gs 'food_menu', 'diner'
 	if stallionQ = 2:
 		if FocH > FocH > (Foch_Max - 10): 
 			stallionQ = 3
@@ -34,15 +35,9 @@ if $ARGS[0] = 'food':
 	end
 	'The tiny cafe is wonderfully situated and you enjoy the beautiful scenery as you eat.'
 	if stallionQ = 0: StallionQ = 1
+	
+	act 'Leave the table':gt 'liamelkafe', 'start'
 end
-
-	if money >= 20:
-		act 'Order a cup of coffee (0:05) (20 <b>₽</b>)':money -= 20 & gs 'beverage', 'bev_cof'
-	end
-
-	if money >= 10:
-		act 'Order a glass of water (0:05) (10 <b>₽</b>)':money -= 10 & gs 'beverage', 'bev_wat'
-	end
 
 --- liamelkafe ---------------------------------
 

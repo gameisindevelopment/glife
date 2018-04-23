@@ -18,11 +18,8 @@ if $args[0]= 'inner':
 	$loc = $CURLOC
 	'<img <<$set_imgh>> src="images/locations/pavlovsk/park/cafe/caffe_del_parco_in.jpg">'
 	
-	act 'Eat a meal (0:30) (100 <b>₽</b>)':money -= 100 & gs 'food', 'f_food'
-	
-	act 'Drink some coffee (0:05) (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'bev_cof'
-	
-	act 'Drink some water (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'bev_wat'
+	act 'Order drinks':gs 'beverage_menu', 'diner'
+	act 'Order food':gs 'food_menu', 'diner'
 	
 	act 'Go back outside': gt 'gskver'
 	

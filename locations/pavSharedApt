@@ -34,7 +34,7 @@ if $ARGS[0] = 'update':
 	! average dick, hairy balls
 	! not paying attention to his own image and looks, wears glasses
 	$nd_name = 'Oleg'
-	$nd_font = '000099'
+	$nd_font = '55aaff'
 		!blue
 	nd_leaves = 9
 	nd_comes = 18

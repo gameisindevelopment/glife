@@ -62,11 +62,11 @@ if $ARGS[0] = 'zal':
 		act 'Eat (5,000 <b>₽</b>)':
 			cla
 			minut += 60
-			pcs_energy += 60
-			fat += 2
-			pcs_hydra = 100
+			pcs_energy = 200
+			fat += 12
+			pcs_hydra = 200
 			pcs_willpwr += 30
-			pcs_mood += 80
+			pcs_mood = 100
 			pcs_health += 20
 			money -= 5000
 			gs 'stat'
@@ -90,11 +90,11 @@ if $ARGS[0] = 'vip':
 		act 'Eat (5,000 <b>₽</b>)':
 			cla
 			minut += 60
-			pcs_energy += 60
-			fat += 2
-			pcs_hydra = 100
+			pcs_energy = 200
+			fat += 12
+			pcs_hydra = 200
 			pcs_willpwr += 30
-			pcs_mood += 80
+			pcs_mood = 100
 			pcs_health += 20
 			money -= 5000
 			gs 'stat'

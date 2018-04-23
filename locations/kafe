@@ -22,23 +22,16 @@ if $ARGS[0] = 'start':
 	!!act 'Agree':gt 'cafe3', 'wc'
 
 	act 'Sit down at a table':
-	cla
-	if money >= 100:
-		act 'Eat a meal (0:30) (100 <b>₽</b>)':money -= 100 & gs 'food', 'm_meal'
-			if money >= 50:
-				act 'Have a cup of coffee (0:05) (50 <b>₽</b>)':money -= 50 & gs 'beverage', 'bev_cof'
-				if money >= 4:
-					act 'Have a glass of water (0:05) (40 <b>₽</b>)':money -= 40 & gs 'beverage', 'bev_wat'
-					if rand(1, 10) > 5:
-						gs 'boy'
-						'A man comes over to your table <<$boybody>> <<$boybod>> <<$boyface>> introducing himself as <<$boydesc>>.'
-						xgt 'kafe', 'razvod'
-					end	
-				end
-			end	
-			act 'Get up from the table':gt 'kafe', 'start'
+		cla
+		act 'Order drinks':gs 'beverage_menu', 'diner'
+		act 'Order food':gs 'food_menu', 'diner'
+		if rand(1, 10) > 5:
+			gs 'boy'
+			'A man comes over to your table <<$boybody>> <<$boybod>> <<$boyface>> introducing himself as <<$boydesc>>.'
+			xgt 'kafe', 'razvod'
 		end
-	end	
+		act 'Get up from the table':gt 'kafe', 'start'
+	end		
 	act 'Leave':gt 'street'
 end
 
