@@ -315,7 +315,6 @@ if $ARGS[0] = 'Done':
 		eda = 0
 		poroshok = 0
 		shampoo = 0
-		sanpad = 20
 
 		hcolmotherremember = pcs_haircol
 		hcolfatherremember = pcs_haircol
