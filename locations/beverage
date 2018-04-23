@@ -1,49 +1,10 @@
 # beverage
-! Water (bev_wat): +5 pcs_energy, +50 pcs_hydra (restaurant, kiosk, diner, gym, supermarket, gas station)
-! Kvass (bev_kva): +5 pcs_energy, +35 pcs_hydra (diner, supermarket, gas station)
-! Coffee (bev_cof): +15 pcs_energy, +15 pcs_hydra (restaurant, cafe, diner)
-! Vodka (bev_vod): +5 pcs_energy, -5 pcs_hydra (restaurant, party, bar, supermarket)
-! Wine (bev_win): +5 pcs_energy, -5 pcs_hydra (restaurant, party, bar, supermarket)
-! Beer (bev_bee): +5 pcs_energy, +5 pcs_hydra (restaurant, party, bar, supermarket)
-
-if $ARGS[0] = 'drinks':
-	*clr & cla
-	act 'Back': gt $loc, $metka
-	killvar '$_drink'
-	$_drink['0,name'] = 'Water'
-	$_drink['0,price'] = 20
-	$_drink['0,type'] = 'bev_wat'
-	$_drink['1,name'] = 'Kvass'
-	$_drink['1,price'] = 30
-	$_drink['1,type'] = 'bev_kva'
-	$_drink['2,name'] = 'Coffee'
-	$_drink['2,price'] = 40
-	$_drink['2,type'] = 'bev_cof'
-	$_drink['3,name'] = 'Beer'
-	$_drink['3,price'] = 50
-	$_drink['3,type'] = 'bev_ber'
-	$_drink['4,name'] = 'Vodka'
-	$_drink['4,price'] = 60
-	$_drink['4,type'] = 'bev_vod'
-	$_drink['5,name'] = 'Wine'
-	$_drink['5,price'] = 70
-	$_drink['5,type'] = 'bev_win'
-	$_str = '<table border="0" style="width:400" cellpadding="0" cellspacing="1">'
-	i = 0
-	:loop_drink
-	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'#202020','#303030')+'><td height="30" width="75%" align="center"><font color="#FFFFFF">'+$_drink['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_drink['<<i>>,price']),'<a href="exec:gt''beverage'',$_drink[''<<i>>,type''] ,<<i>>">'+$_drink['<<i>>,price']+'</a>',$_drink['<<i>>,price'])+' ₽.</td></tr>'
-	i += 1
-	if i < arrsize('$_drink')/3:jump 'loop_drink'
-	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/cafewaitress.jpg"</center><br>'
-	'Your drinks order:<br><br>'+$_str
-	killvar '$_str'
-end
 
 if $ARGS[0] = 'bev_kva':
 	*clr & cla
 	frost = 1
 	minut += 5
+	fat += 2
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 5
 	pcs_mood += 15
@@ -57,10 +18,59 @@ if $ARGS[0] = 'bev_kva':
 	gs 'cum_cleanup'
 	pcs_breath = 0
 	gs 'beverage', 'afterdrink'
-	'<center><img <<$set_imgh>> src="images/shared/food/kvass.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/kvass.jpg"></center>'
 	'You enjoy a drink of kvass, and<<$mtxt>>'
 	gs 'stat'
-	killvar '$_drink'
+	
+	act 'Finish':gt $loc, $metka
+end
+
+if $ARGS[0] = 'bev_jui':
+	*clr & cla
+	frost = 1
+	minut += 5
+	fat += 3
+	money -= val($_drink['<<args[1]>>,price'])
+	pcs_health += 10
+	pcs_mood += 10
+	pcs_energy += 10
+	if pcs_hydra >= 100:
+		pcs_hydra += 15
+	else
+		pcs_hydra += 30
+	end
+	cumspclnt = 2
+	gs 'cum_cleanup'
+	pcs_breath = 0
+	gs 'beverage', 'afterdrink'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/kvass.jpg"></center>'
+	'You enjoy a refreshing juice, and<<$mtxt>>'
+	gs 'stat'
+	
+	act 'Finish':gt $loc, $metka
+end
+
+if $ARGS[0] = 'bev_mil':
+	*clr & cla
+	frost = 1
+	minut += 5
+	fat += 6
+	money -= val($_drink['<<args[1]>>,price'])
+	pcs_health += 5
+	pcs_mood += 10
+	pcs_energy += 8
+	if pcs_hydra >= 100:
+		pcs_hydra += 10
+	else
+		pcs_hydra += 25
+	end
+	cumspclnt = 2
+	gs 'cum_cleanup'
+	pcs_breath = 0
+	gs 'beverage', 'afterdrink'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/kvass.jpg"></center>'
+	'You enjoy an ice cold milkshake, and<<$mtxt>>'
+	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
 end
@@ -84,14 +94,13 @@ if $ARGS[0] = 'bev_wat':
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderwater.jpg"></center>'
 	'You enjoy a drink of water, and<<$mtxt>>'
 	gs 'stat'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end
 
 if $ARGS[0] = 'bev_cof':
 	*clr & cla
-	frost = 1
+	frost = 0
 	minut += 5
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 5
@@ -106,18 +115,42 @@ if $ARGS[0] = 'bev_cof':
 	gs 'cum_cleanup'
 	pcs_breath = 0
 	gs 'beverage', 'afterdrink'
-	'<center><img <<$set_imgh>> src="images/shared/food/raf.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/coffee.jpg"></center>'
 	'You enjoy a hot coffee, and<<$mtxt>>'
 	gs 'stat'
-	killvar '$_drink'
+	
+	act 'Finish':gt $loc, $metka
+end
+
+if $ARGS[0] = 'bev_tea':
+	*clr & cla
+	frost = 0
+	minut += 5
+	money -= val($_drink['<<args[1]>>,price'])
+	pcs_health += 5
+	pcs_mood += 20
+	pcs_energy += 10
+	if pcs_hydra >= 100:
+		pcs_hydra += 15
+	else
+		pcs_hydra += 25
+	end
+	cumspclnt = 2
+	gs 'cum_cleanup'
+	pcs_breath = 0
+	gs 'beverage', 'afterdrink'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/tea.jpg"></center>'
+	'You enjoy a relaxing cup of tea, and<<$mtxt>>'
+	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
 end
 
 if $ARGS[0] = 'bev_vod':
 	*clr & cla
-	frost = 1
+	frost = 0
 	minut += 5
+	fat += 8
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
 	pcs_energy -= 4
@@ -133,15 +166,15 @@ if $ARGS[0] = 'bev_vod':
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barordervodka.jpg"></center>'
 	'You drink some vodka.'
 	gs 'stat'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end
 
 if $ARGS[0] = 'bev_win':
 	*clr & cla
-	frost = 1
+	frost = 0
 	minut += 5
+	fat += 4
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
 	pcs_energy -= 4
@@ -154,18 +187,18 @@ if $ARGS[0] = 'bev_win':
 	gs 'cum_cleanup'
 	pcs_breath = 0
 	gs 'beverage'
-	'<center><img <<$set_imgh>> src="images/shared/food/alkowin.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/alkowin.jpg"></center>'
 	'You drink some wine.'
 	gs 'stat'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end
 
 if $ARGS[0] = 'bev_bee':
 	*clr & cla
-	frost = 1
+	frost = 0
 	minut += 5
+	fat += 3
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
 	pcs_energy -= 4
@@ -181,7 +214,6 @@ if $ARGS[0] = 'bev_bee':
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderbeer.jpg"></center>'
 	'You drink some beer.'
 	gs 'stat'
-	killvar '$_drink'
 	
 	act 'Finish':gt $loc, $metka
 end

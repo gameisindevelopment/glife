@@ -1,0 +1,50 @@
+#beverage_menu
+
+if night_mode = 1:
+	$fcolor1 = '#FFFFFF'
+	$bcolor1 = '#202020'
+	$bcolor2 = '#303030'
+else
+	$fcolor1 = '#000000'
+	$bcolor1 = '#FFFFFF'
+	$bcolor2 = '#e6f2ff'
+end
+
+if $ARGS[0] = 'diner':
+	*clr & cla
+	act 'Back': gt $loc, $metka
+	killvar '$_diner'
+	$_diner['0,name'] = 'Water'
+	$_diner['0,type'] = 'bev_wat'
+	$_diner['0,price'] = 15
+	$_diner['1,name'] = 'Tea'
+	$_diner['1,type'] = 'bev_tea'
+	$_diner['1,price'] = 50
+	$_diner['2,name'] = 'Coffee'
+	$_diner['2,type'] = 'bev_cof'
+	$_diner['2,price'] = 60
+	$_diner['3,name'] = 'Kvass'
+	$_diner['3,type'] = 'bev_kva'
+	$_diner['3,price'] = 25
+	$_diner['4,name'] = 'Milkshake'
+	$_diner['4,type'] = 'bev_Mil'
+	$_diner['4,price'] = 70
+	$_diner['5,name'] = 'Juice'
+	$_diner['5,type'] = 'bev_Jui'
+	$_diner['5,price'] = 55
+	$_str = '<table border="0" style="width:400" cellpadding="0" cellspacing="1">'
+	i = 0
+	:loop_drink
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_diner['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_diner['<<i>>,price']),'<a href="exec:gt''beverage'',$_diner[''<<i>>,type''] ,<<i>>">'+$_diner['<<i>>,price']+'</a>',$_diner['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
+	i += 1
+	if i < arrsize('$_diner')/3:jump 'loop_drink'
+	$_str += '</table></center></font>'
+	'<center><img <<$set_imgh>> src="images/locations/shared/date/cafewaitress.jpg"</center><br>'
+	'Your drinks order:<br><br>'+$_str
+	killvar '$_str'
+	killvar '$fcolor1'
+	killvar '$bcolor1'
+	killvar '$bcolor2'
+end
+
+--- beverage_menu ---------------------------------

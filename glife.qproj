@@ -667,6 +667,7 @@
       <Location name="bed1"/>
       <Location name="bed2"/>
       <Location name="beverage"/>
+      <Location name="beverage_menu"/>
       <Location name="dreams"/>
       <Location name="budilnik"/>
       <Location name="divan"/>
@@ -680,6 +681,7 @@
       <Location name="$phone_theme"/>
       <Location name="kit_din"/>
       <Location name="food"/>
+      <Location name="food_menu"/>
       <Location name="TV"/>
       <Location name="vann"/>
     </Folder>

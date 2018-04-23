@@ -30,8 +30,8 @@ if $ARGS[0] = 'start':
 		gt 'down'
 	end
 
-	act 'Order drinks (0:15)':gs 'beverage', 'drinks'
-	act 'Order food (0:30)':gs 'food', 'eats'
+	act 'Order drinks (0:15)':gs 'beverage_menu', 'diner'
+	act 'Order food (0:30)':gs 'food_menu', 'diner'
 		
 	if IvanPodstavaQW = 2:
 		act 'Go into the office to Anatoly Borisovich':gt 'burger', 'office'

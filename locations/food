@@ -7,38 +7,124 @@
 ! Bagged Lunch: +30 pcs_energy +30 pcs_hydra, +3 fat (sandwich, cold leftovers, etc)
 ! Health Meal: +50 pcs_energy +50 pcs_hydra, +1 fat (Diet food, Salads, rice cakes with peanut butter)
 
-if $ARGS[0] = 'eats':
+if $ARGS[0] = 'onring':
 	*clr & cla
-	act 'Back':gt $loc, $metka
+	frost = 0
+	minut += 30
+	money -= val($_eat['<<args[1]>>,price'])
+	pcs_health += 10
+	fat += 16
+	pcs_energy += 40
+	if pcs_hydra >= 100:
+		pcs_hydra -= 15
+	else
+		pcs_hydra -= 30
+	end
+	cumspclnt = 2
+	gs 'cum_cleanup'
+	pcs_breath = 0
+	gs 'food', 'aftermeal'
+	'<center><img <<$set_imgh>> src="images/shared/food/onionrings.jpg"></center>'
+	'You push yourself to eat the dry fatty onion rings. The portions are fairly small and<<$mtxt>>'
 	killvar '$_eat'
-	$_eat['0,name'] = 'Snack'
-	$_eat['0,price'] = 40
-	$_eat['0,type'] = 'snack'
-	$_eat['1,name'] = 'Fast Food'
-	$_eat['1,price'] = 50
-	$_eat['1,type'] = 'f_food'
-	$_eat['2,name'] = 'Small meal'
-	$_eat['2,price'] = 60
-	$_eat['2,type'] = 's_meal'
-	$_eat['3,name'] = 'Medium meal'
-	$_eat['3,price'] = 80
-	$_eat['3,type'] = 'm_meal'
-	$_eat['4,name'] = 'Large meal'
-	$_eat['4,price'] = 100
-	$_eat['4,type'] = 'l_meal'
-	$_eat['5,name'] = 'Health meal'
-	$_eat['5,price'] = 60
-	$_eat['5,type'] = 'h_meal'
-	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
-	i = 0
-	:loop_eat
-	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'#202020','#303030')+'><td height="30" width="75%" align="center"><font color="#FFFFFF">'+$_eat['<<i>>,name']+'</td><td height="30" width="15%" align="center">'+iif(money >= val($_eat['<<i>>,price']),'<a href="exec:gt ''food'', $_eat[''<<i>>,type''],<<i>>">'+$_eat['<<i>>,price']+'</a>',$_eat['<<i>>,price'])+' ₽.</td></tr>'
-	i += 1
-	if i < arrsize('$_eat')/3:jump 'loop_eat'
-	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/cafewaitressfood.jpg"</center><br>'
-	'Your food order:<br><br>'+$_str
-	killvar '$_str'
+	
+	act 'Finish':  gt $loc, $metka
+end
+
+if $ARGS[0] = 'vegburg':
+	*clr & cla
+	frost = 0
+	minut += 30
+	money -= val($_eat['<<args[1]>>,price'])
+	pcs_health += 10
+	fat += 8
+	pcs_energy += 60
+	if pcs_hydra >= 100:
+		pcs_hydra -= 10
+	else
+		pcs_hydra -= 20
+	end
+	cumspclnt = 2
+	gs 'cum_cleanup'
+	pcs_breath = 0
+	gs 'food', 'aftermeal'
+	'<center><img <<$set_imgh>> src="images/shared/food/vegieburger.jpg"></center>'
+	'You eat the delicious vegieburger. The portions are fairly small and<<$mtxt>>'
+	killvar '$_eat'
+	
+	act 'Finish':  gt $loc, $metka
+end
+
+if $ARGS[0] = 'turburg':
+	*clr & cla
+	frost = 0
+	minut += 30
+	money -= val($_eat['<<args[1]>>,price'])
+	pcs_health += 10
+	fat += 10
+	pcs_energy += 70
+	if pcs_hydra >= 100:
+		pcs_hydra -= 10
+	else
+		pcs_hydra -= 20
+	end
+	cumspclnt = 2
+	gs 'cum_cleanup'
+	pcs_breath = 0
+	gs 'food', 'aftermeal'
+	'<center><img <<$set_imgh>> src="images/shared/food/turkeyburger.jpg"></center>'
+	'You enjoy the turkey burger. The portions are fairly small and<<$mtxt>>'
+	killvar '$_eat'
+	
+	act 'Finish':  gt $loc, $metka
+end
+
+if $ARGS[0] = 'batfish':
+	*clr & cla
+	frost = 0
+	minut += 30
+	money -= val($_eat['<<args[1]>>,price'])
+	pcs_health += 10
+	fat += 11
+	pcs_energy += 90
+	if pcs_hydra >= 100:
+		pcs_hydra -= 10
+	else
+		pcs_hydra -= 20
+	end
+	cumspclnt = 2
+	gs 'cum_cleanup'
+	pcs_breath = 0
+	gs 'food', 'aftermeal'
+	'<center><img <<$set_imgh>> src="images/shared/food/batteredfish.jpg"></center>'
+	'You eat the fish, but it has little flavour. The portions were moderate and<<$mtxt>>'
+	killvar '$_eat'
+	
+	act 'Finish':  gt $loc, $metka
+end
+
+if $ARGS[0] = 'cheburg':
+	*clr & cla
+	frost = 0
+	minut += 30
+	money -= val($_eat['<<args[1]>>,price'])
+	pcs_health += 10
+	fat += 12
+	pcs_energy += 100
+	if pcs_hydra >= 100:
+		pcs_hydra -= 10
+	else
+		pcs_hydra -= 20
+	end
+	cumspclnt = 2
+	gs 'cum_cleanup'
+	pcs_breath = 0
+	gs 'food', 'aftermeal'
+	'<center><img <<$set_imgh>> src="images/shared/food/cheeseburger.jpg"></center>'
+	'You are a little sickened by the greasy looking cheeseburger and fries in front of you. The meal was simply colossal and<<$mtxt>>'
+	killvar '$_eat'
+	
+	act 'Finish':  gt $loc, $metka
 end
 
 if $ARGS[0] = 'snack':
