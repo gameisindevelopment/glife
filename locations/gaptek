@@ -48,7 +48,7 @@ if $ARGS[0] = 'start' or gaptek_loc = 1 or $message ! '':
 	*P FUNC ('$stock_item', 1, 'birth control pills', 500, 'tabletki', $CURLOC, $ARGS[0], StoryLine, 'Aunt will tell mom!')
 	*P FUNC ('$stock_item', 5, 'lubricant', 300, 'lubri', $CURLOC, $ARGS[0], StoryLine, 'Aunt will tell mom!')
 	*P FUNC ('$stock_item', 10, 'antibiotics', 500, 'lekarstvo', $CURLOC, $ARGS[0])
-	*P FUNC ('$stock_item', 20, 'vitamin drinks', 500, 'vitamin', $CURLOC, $ARGS[0])
+	*P FUNC ('$stock_item', 20, 'vitamins', 500, 'vitamin', $CURLOC, $ARGS[0])
 	*P FUNC ('$stock_item', 16, 'painkillers', 500, 'painkiller', $CURLOC, $ARGS[0])
 	*P FUNC ('$stock_item', 10, 'ointments for chafing', 600, 'mosolmaz', $CURLOC, $ARGS[0])
 	*P FUNC ('$stock_item', 25, 'lip balm', 100, 'lipbalm', $CURLOC, $ARGS[0])
