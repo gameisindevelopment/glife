@@ -722,6 +722,8 @@ if $ARGS[0] = 'pcsRoom':
 	end
 	dynamic $wearpan
 	dynamic $removepan
+	gs 'events', 'read_porn'
+	gs 'subkid'
 	if pcs_sleep <= 80:
 		if succubusQW = 2:
 			act 'Undress and go to sleep':
@@ -747,9 +749,6 @@ if $ARGS[0] = 'pcsRoom':
 		end
 	end
 	
-	gs 'events', 'read_porn'
-	gs 'subkid'
-
 	act 'Leave your room':gt 'pavSharedApt', 'start'
 end
 

@@ -19,11 +19,11 @@ if $ARGS[0] = 'start':
 end
 
 if $ARGS[0] = 'food':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
+	$metka = 'food'
+	$loc = 'liamelkafe'
 	'<center><img <<$set_imgh>> src="images/locations/oldtown/cafe/larek.jpg" ></center>'
-	act 'Order drinks':gs 'beverage_menu', 'diner'
 	act 'Order food':gs 'food_menu', 'diner'
+	act 'Order drinks':gs 'beverage_menu', 'diner'
 	if stallionQ = 2:
 		if FocH > FocH > (Foch_Max - 10): 
 			stallionQ = 3

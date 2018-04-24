@@ -143,8 +143,7 @@ if $ARGS[0] = 'bar:sit':
 	*nl
 	'You take a seat behind the bar, looking around at the few guests sitting around the dining room.'
 	'There''s nothing of importance, as far as you can see.'
-	durr = 15
-	minut += durr
+	minut += 15
 	gs 'stat'
 	act 'Continue':gt 'brothel', 'bar'
 end
@@ -171,8 +170,8 @@ if $ARGS[0] = 'bar:order':
 		if hotelWhore = 1:
 			act 'Order a Blue-blooded Russian.':gt 'brothel','bar:order:password'
 		end
-		act 'Order a drink': gs 'beverage_menu', 'pub'
 		act 'Order a snack': gs 'food_menu', 'pub'
+		act 'Order a drink': gs 'beverage_menu', 'pub'
 	end
 	act 'Continue':gt 'brothel', 'bar'
 end
