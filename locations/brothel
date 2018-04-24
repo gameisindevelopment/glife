@@ -143,8 +143,7 @@ if $ARGS[0] = 'bar:sit':
 	*nl
 	'You take a seat behind the bar, looking around at the few guests sitting around the dining room.'
 	'There''s nothing of importance, as far as you can see.'
-	durr = 15
-	minut += durr
+	minut += 15
 	gs 'stat'
 	act 'Continue':gt 'brothel', 'bar'
 end
@@ -181,8 +180,7 @@ if $ARGS[0] = 'bar:order:vodka':
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barordervodka.jpg"></center>'
 	*nl
 	'The vodka shot disappears in you like it was just a plain water. You are a true Russian girl, afterall.'
-	durr = 5
-	minut += durr
+	minut += 5
 	alko += 2
 	pcs_energy += 5
 	gs 'stat'
@@ -195,8 +193,7 @@ if $ARGS[0] = 'bar:order:beer':
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderbeer.jpg"></center>'
 	*nl
 	'You drink the beer, sip after sip, enjoying the fresh, mildly bitter taste. It is a regular Russian beer though, nothing like a legendary Czech Pilsner.'
-	durr = 10
-	minut += durr
+	minut += 10
 	alko += 1
 	pcs_energy += 5
 	gs 'stat'
@@ -209,8 +206,7 @@ if $ARGS[0] = 'bar:order:water':
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderwater.jpg"></center>'
 	*nl
 	'The barman hands you a glass of water, looking at you with a grim that looks like a suspision. Who would drink water at a bar, anyways?'
-	durr = 10
-	minut += durr
+	minut += 10
 	pcs_energy += 2
 	alko -= 1
 	gs 'stat'
