@@ -14,25 +14,39 @@ if $ARGS[0] = 'start':
 	'With its bright neon signs, pictures of flashy American muscle cars and pop-art, and a jukebox playing popular music ranging from the 50s to the 80s, The Roadhouse is something of a specialty diner, having been designed to have a retro, American feel. From the outside, the place doesn’t look very big, but in reality the diner is quite spacious, comfortably able to fit a well stocked bar, a moderately sized dinning area while also offering a handful of private booths tucked away in darker corners of the diner, and even boasting a dance floor with a small stage to play live music when available.'
 	'Sitting at one end of the bar, you see <a href="exec:gt ''kafe'', ''vlad''">the owner</a> of the diner, busy with paperwork.'
 	*nl
-	'They serve American style meals for 100 <b>₽</b>'
+	'They serve American style meals'
 	if QWdogReiq = 3 and week = 7 and hour >= 12:
 		act 'Sit down at the table and wait for a Margarita':gt 'kafe2', 'margo'
 	end
 
 	!!act 'Agree':gt 'cafe3', 'wc'
 
-	act 'Sit down at a table':
-		cla
-		act 'Order drinks':gs 'beverage_menu', 'cafe'
-		act 'Order food':gs 'food_menu', 'cafe'
-		if rand(1, 10) > 5:
-			gs 'boy'
-			'A man comes over to your table <<$boybody>> <<$boybod>> <<$boyface>> introducing himself as <<$boydesc>>.'
-			xgt 'kafe', 'razvod'
-		end
-		act 'Get up from the table':gt 'kafe', 'start'
-	end		
+	act 'Sit down at a table': gt 'kafe', 'table'
+	
 	act 'Leave':gt 'street'
+end
+
+if $ARGS[0] = 'table':
+	$metka = 'table'
+	$loc = 'kafe'
+	$location_type = 'public_indoors'
+	*clr & cla
+	gs 'stat'
+	'<center><b><font color="maroon">The Roadhouse</font></b></center>'
+	'<center><img <<$set_imgh>> src="images/locations/city/residential/cafe/kafe.jpg"></center>'
+	'With its bright neon signs, pictures of flashy American muscle cars and pop-art, and a jukebox playing popular music ranging from the 50s to the 80s, The Roadhouse is something of a specialty diner, having been designed to have a retro, American feel. From the outside, the place doesn’t look very big, but in reality the diner is quite spacious, comfortably able to fit a well stocked bar, a moderately sized dinning area while also offering a handful of private booths tucked away in darker corners of the diner, and even boasting a dance floor with a small stage to play live music when available.'
+	'Sitting at one end of the bar, you see <a href="exec:gt ''kafe'', ''vlad''">the owner</a> of the diner, busy with paperwork.'
+	*nl
+	'They serve American style meals'
+	act 'Order drinks':gs 'beverage_menu', 'diner'
+	act 'Order food':gs 'food_menu', 'diner'
+	if rand(1, 10) > 5:
+		gs 'boy'
+		'A man comes over to your table <<$boybody>> <<$boybod>> <<$boyface>> introducing himself as <<$boydesc>>.'
+		xgt 'kafe', 'razvod'
+	end
+	
+	act 'Get up from the table':gt 'kafe', 'start'
 end
 
 if $ARGS[0] = 'vlad':

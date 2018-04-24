@@ -8,9 +8,9 @@ if $ARGS[0] = 'start':
 	'You enter the restaurant and at the counter by the entrance, you see a well dressed man '
 	
 	! mennolds ev
-	if hour = 21 and minut < 30 and mey_vika['mey_vika_qw'] = 36:gt 'mey_tamara_events', 'wait_qw'
+	if hour = 21 and minut < 30 and mey_vika['mey_vika_qw'] = 36: gt 'mey_tamara_events', 'wait_qw'
 
-	if vladimirday = daystart and vladimirQW = 21 and hour = 20:gt 'qwmeet'
+	if vladimirday = daystart and vladimirQW = 21 and hour = 20: gt 'qwmeet'
 	
 	act 'Approach the maître d'' ': gt 'restoran', 'maitred'
 	act 'Leave the restaurant': minut += 10 & gt 'down'
@@ -28,18 +28,21 @@ if $ARGS[0] = 'maitred':
 		'The maître d'' politely informs you that customers must look presentable and wear formal clothing if they wish to dine here.'
 	end
 	
-	if money >= 5000:
+	if $clothingworntype = 'formal' and pcs_makeup > 1 and pcs_hairbsh = 1 and pcs_sweat < 20 and money >= 5000:
 		act 'Go to the VIP room (5,000 <b>₽</b>)':
 		*clr & cla
 		'<center><b><font color="maroon">Restaurant</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/expensiverest/maitredvip.jpg"></center>'
-		'The maître d'' informs you that there will be a VIP charge of 5000<b>₽</b>'
+		'The maître d'' informs you that there will be a VIP charge of 5000 <b>₽</b>'
 		act 'Follow the maître d'' ': money -= 5000 & gt 'restoran', 'vip' & 
-		act 'Change your mind':gt 'restoran', 'maitred'
+		act 'Change your mind': gt 'restoran', 'maitred'
 		end
 	end
-	act 'Go to the Common Room':gt 'restoran', 'zal'
-	act 'Back to the foyer': gt 'start'
+	
+	if $clothingworntype = 'formal' and pcs_makeup > 1 and pcs_hairbsh = 1 and pcs_sweat < 20:
+		act 'Go to the Common Room': gt 'restoran', 'zal'
+	end
+	act 'Back to the foyer': gt 'restoran', 'start'
 end
 
 if $ARGS[0] = 'zal':
@@ -61,10 +64,10 @@ if $ARGS[0] = 'zal':
 			cla
 			'She turns away'
 
-			act 'Leave':gt 'restoran', 'zal'
+			act 'Leave': gt 'restoran', 'zal'
 		end
 
-		act 'Smile at her':gt 'nastja', 'pos1'
+		act 'Smile at her': gt 'nastja', 'pos1'
 	end
 	act 'Be seated at a table': gt 'restoran', 'comtable'
 
@@ -84,30 +87,30 @@ if $ARGS[0] = 'vip':
 end
 
 if $ARGS[0] = 'comtable':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
+	$metka = 'comtable'
+	$loc = 'restoran'
 	minut += 5
 	*clr & cla
 	'<center><b><font color="maroon">Restaurant, Common Room</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/expensiverest/maitredseat.jpg"></center>'
 	'You are escorted to your seat by the maître d''. You sit and and prepare to order a wonderful meal in the busy restaurant.'
-	act 'Order drinks':gs 'beverage_menu', 'fancy'
-	act 'Order food':gs 'food_menu', 'fancy'
+	act 'Order drinks': gs 'beverage_menu', 'fancy'
+	act 'Order food': gs 'food_menu', 'fancy'
 	
-	act 'Get up from the table':gt 'restoran', 'zal'
+	act 'Get up from the table': gt 'restoran', 'zal'
 end
 
 if $ARGS[0] = 'viptable':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
+	$metka = 'viptable'
+	$loc = 'restoran'
 	*clr & cla
 	minut += 5
 	'<center><b><font color="maroon">Restaurant, VIP room</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/expensiverest/chefrecommends.jpg"></center>'
 	'You sit and prepare to order a wonderful meal, recommended by the chef. You''ll be dining with pleasure in the peaceful and luxurious VIP Room.'
-	act 'Order drinks':gs 'beverage_menu', 'fancy'
-	act 'Order food':gs 'food_menu', 'fancy'
+	act 'Order drinks': gs 'beverage_menu', 'fancy'
+	act 'Order food': gs 'food_menu', 'fancy'
 	
-	act 'Get up from the table':gt 'restoran', 'vip'
+	act 'Get up from the table': gt 'restoran', 'vip'
 end
 --- restoran ---------------------------------

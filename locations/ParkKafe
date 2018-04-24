@@ -1,6 +1,7 @@
 # ParkKafe
 
 if $ARGS[0] = 'start':
+	minut = +5
 	$metka = $ARGS[0]
 	$loc = $CURLOC
 	$location_type = 'public_indoors'

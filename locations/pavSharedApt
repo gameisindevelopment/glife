@@ -291,7 +291,7 @@ if $ARGS[0] = 'start':
 		''
 		'There are several closets for your <a href="exec:gt ''shoes'', ''select''">shoes</a> and a large tall <a href="exec:gt ''mirror'', ''start''">mirror</a>.'
 		if servitudeLvl >= 1:'A computer printed <a href="exec:gt ''pavSharedApt'', ''list''">list</a> hangs on the exit door.'
-		act '<<$pcs_firstname>>''s room':gt 'pavSharedApt', 'pcsRoom'
+		act 'Your room':gt 'pavSharedApt', 'pcsRoom'
 		act 'Bathroom':gt 'pavSharedApt', 'bathroom'
 		act 'Kitchen':gt 'pavSharedApt', 'kitchen'
 	end
@@ -546,6 +546,9 @@ if $ARGS[0] = 'kitchen':
 		'<a href="exec: gt ''pavSharedApt'', ''cookForGuys''">Cook meal (1:30) for the guys</a>'
 	end
 			
+	dynamic $edaD
+	dynamic $driwater
+	
 	if pranik > 0:
 		if pranik = 1:
 			'You only have a couple of cookies for a snack.'
@@ -555,11 +558,9 @@ if $ARGS[0] = 'kitchen':
 		dynamic $pranik
 	end
 
-	dynamic $edaD
 	dynamic $fatdel
-	dynamic $driwater
-	dynamic $lekarstvo
 	dynamic $vitamin
+	dynamic $lekarstvo
 
 	act 'Leave':gt 'pavSharedApt', 'start'
 end
@@ -719,6 +720,8 @@ if $ARGS[0] = 'pcsRoom':
 			end
 		end
 	end
+	dynamic $wearpan
+	dynamic $removepan
 	if pcs_sleep <= 80:
 		if succubusQW = 2:
 			act 'Undress and go to sleep':
@@ -743,9 +746,7 @@ if $ARGS[0] = 'pcsRoom':
 			end
 		end
 	end
-
-	dynamic $wearpan
-	dynamic $removepan
+	
 	gs 'events', 'read_porn'
 	gs 'subkid'
 

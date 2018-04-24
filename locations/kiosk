@@ -151,11 +151,11 @@ if $ARGS[0] = 'counter':
 			act 'return': gt 'kiosk', 'start'
 		end
 
-		act 'Buy some water (50 <b>₽</b>) (0:05)':
+		act 'Buy some water (20 <b>₽</b>) (0:05)':
 			*clr
 			cla
 			frost = 1
-			money -= 50
+			money -= 20
 			pcs_health += 5
 			pcs_energy += 4
 			if pcs_hydra >= 100:

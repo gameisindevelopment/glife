@@ -28,6 +28,7 @@ end
 if $ARGS[0] = 'bev_jui':
 	*clr & cla
 	frost = 1
+	alko -= 1
 	minut += 15
 	fat += 3
 	money -= val($_drink['<<args[1]>>,price'])
@@ -78,6 +79,7 @@ end
 if $ARGS[0] = 'bev_wat':
 	*clr & cla
 	frost = 1
+	alko -= 1
 	minut += 15
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 5
@@ -101,6 +103,7 @@ end
 if $ARGS[0] = 'bev_cof':
 	*clr & cla
 	frost = 0
+	alko -= 1
 	minut += 15
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 5
@@ -125,6 +128,7 @@ end
 if $ARGS[0] = 'bev_tea':
 	*clr & cla
 	frost = 0
+	alko -= 1
 	minut += 15
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 5
@@ -149,6 +153,7 @@ end
 if $ARGS[0] = 'bev_vod':
 	*clr & cla
 	frost = 0
+	alko += 2
 	minut += 15
 	fat += 8
 	money -= val($_drink['<<args[1]>>,price'])
@@ -162,9 +167,9 @@ if $ARGS[0] = 'bev_vod':
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
-	gs 'beverage'
+	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barordervodka.jpg"></center>'
-	'You drink some vodka.'
+	'The vodka shot disappears in you like it was just a plain water., and <<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -173,6 +178,7 @@ end
 if $ARGS[0] = 'bev_bla':
 	*clr & cla
 	frost = 0
+	alko += 2
 	minut += 15
 	fat += 8
 	money -= val($_drink['<<args[1]>>,price'])
@@ -186,9 +192,9 @@ if $ARGS[0] = 'bev_bla':
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
-	gs 'beverage'
+	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/blackrussian.jpg"></center>'
-	'You drink a Black Russian.'
+	'You drink a Black Russian, and <<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -197,6 +203,7 @@ end
 if $ARGS[0] = 'bev_sco':
 	*clr & cla
 	frost = 0
+	alko += 2
 	minut += 15
 	fat += 8
 	money -= val($_drink['<<args[1]>>,price'])
@@ -210,9 +217,9 @@ if $ARGS[0] = 'bev_sco':
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
-	gs 'beverage'
+	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/scotch.jpg"></center>'
-	'You drink scotch on the rocks.'
+	'You drink scotch on the rocks, and <<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -221,6 +228,7 @@ end
 if $ARGS[0] = 'bev_win':
 	*clr & cla
 	frost = 0
+	alko += 2
 	minut += 15
 	fat += 4
 	money -= val($_drink['<<args[1]>>,price'])
@@ -234,9 +242,9 @@ if $ARGS[0] = 'bev_win':
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
-	gs 'beverage'
+	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/redwine.jpg"></center>'
-	'You drink some red wine.'
+	'You drink some red wine, and <<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -245,6 +253,7 @@ end
 if $ARGS[0] = 'bev_mar':
 	*clr & cla
 	frost = 0
+	alko += 2
 	minut += 15
 	fat += 8
 	money -= val($_drink['<<args[1]>>,price'])
@@ -258,9 +267,9 @@ if $ARGS[0] = 'bev_mar':
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
-	gs 'beverage'
+	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/martini.jpg"></center>'
-	'You drink a vodka martini.'
+	'You drink a vodka martini, and <<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -269,6 +278,7 @@ end
 if $ARGS[0] = 'bev_cha':
 	*clr & cla
 	frost = 0
+	alko += 2
 	minut += 15
 	fat += 4
 	money -= val($_drink['<<args[1]>>,price'])
@@ -282,9 +292,9 @@ if $ARGS[0] = 'bev_cha':
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
-	gs 'beverage'
+	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/champagne.jpg"></center>'
-	'You drink some champagne.'
+	'You drink some champagne, and <<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -293,6 +303,7 @@ end
 if $ARGS[0] = 'bev_bee':
 	*clr & cla
 	frost = 0
+	alko += 1
 	minut += 15
 	fat += 3
 	money -= val($_drink['<<args[1]>>,price'])
@@ -306,12 +317,27 @@ if $ARGS[0] = 'bev_bee':
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
-	gs 'beverage'
+	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/darkbeer.jpg"></center>'
-	'You drink some beer.'
+	'You drink the beer, sip after sip, enjoying the fresh, mildly bitter taste, and <<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
+end
+
+if $ARGS[0] = 'afteralcohol':
+
+	if pcs_hydra < 100:
+		$mtxt = ' you feel bloated with a belly full of liquids.'
+	elseif pcs_hydra <= 80:
+		$mtxt = ' you should remember to drink some water so you don''t get dehydrated.'
+	elseif pcs_hydra <= 60:
+		$mtxt = ' the liquid from the alcohol is going straight through you.'
+	elseif pcs_hydra <= 40:
+		$mtxt = ' you definitely need to drink some water before you sleep, or you''ll have a hangover.'
+	else
+		$mtxt = ' you enjoyed that drink and could have some more.'
+	end
 end
 
 if $ARGS[0] = 'afterdrink':
