@@ -36,7 +36,7 @@ if $ARGS[0] = 'diner':
 	i += 1
 	if i < arrsize('$_diner')/3:jump 'loop_diner'
 	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/dinerwaitressfood.jpg"</center><br>'
+	'<center><img <<$set_imgh>> src="images/shared/food/dinerfood.jpg"</center><br>'
 	'Your food order:<br><br>'+$_str
 	killvar '$_str'
 	killvar '$fcolor1'
@@ -70,7 +70,7 @@ if $ARGS[0] = 'cafe':
 	i += 1
 	if i < arrsize('$_cafe')/3:jump 'loop_cafe'
 	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/cafewaitressfood.jpg"</center><br>'
+	'<center><img <<$set_imgh>> src="images/shared/food/cafefood.jpg"</center><br>'
 	'Your food order:<br><br>'+$_str
 	killvar '$_str'
 	killvar '$fcolor1'
@@ -104,7 +104,7 @@ if $ARGS[0] = 'fancy':
 	i += 1
 	if i < arrsize('$_fancy')/3:jump 'loop_fancy'
 	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/fancywaitressfood.jpg"</center><br>'
+	'<center><img <<$set_imgh>> src="images/shared/food/fancyfood.jpg"</center><br>'
 	'Your food order:<br><br>'+$_str
 	killvar '$_str'
 	killvar '$fcolor1'
@@ -117,7 +117,7 @@ if $ARGS[0] = 'pub':
 	act 'Back':gt $loc, $metka
 	killvar '$_pub'
 	$_pub['0,name'] = 'Toasted rye snacks'
-	$_pub['0,type'] = 'ryesnack'
+	$_pub['0,type'] = 'ryesna'
 	$_pub['0,price'] = 10
 	$_pub['1,name'] = 'Bowl of flavoured crisps'
 	$_pub['1,type'] = 'crisps'
@@ -127,9 +127,9 @@ if $ARGS[0] = 'pub':
 	:loop_pub
 	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_pub['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_pub['<<i>>,price']),'<a href="exec:gt ''food'', $_pub[''<<i>>,type''],<<i>>">'+$_pub['<<i>>,price']+'</a>',$_pub['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
 	i += 1
-	if i < arrsize('$_pub')/2:jump 'loop_pub'
+	if i < arrsize('$_pub')/3:jump 'loop_pub'
 	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/barwaitressdrinks.jpg"</center><br>'
+	'<center><img <<$set_imgh>> src="images/shared/food/barfood.jpg"</center><br>'
 	'Your food order:<br><br>'+$_str
 	killvar '$_str'
 	killvar '$fcolor1'

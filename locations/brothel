@@ -131,7 +131,7 @@ if $ARGS[0] = 'bar':
 		*nl
 		'<font color=#<<$red_font>>>You are wasted. Lying your head on the bar, barely keeping awake. The barman starts to be nervous, probably afraid of scaring away the regular guests.</font>'
 	end
-	act 'Order a drink':gt 'brothel', 'bar:order'
+	act 'Order something':gt 'brothel', 'bar:order'
 	act 'Just sit here':gt 'brothel', 'bar:sit'
 	act 'Leave the bar':gt 'brothel', 'lobby'
 end
@@ -150,6 +150,8 @@ if $ARGS[0] = 'bar:sit':
 end
 
 if $ARGS[0] = 'bar:order':
+	$loc = 'brothel'
+	$metka = 'bar:order'
 	abdCh = rand (0, 100)
 	'<h3>Hotel Bar</h3>'
 	'<h5>Ordering a drink</h5>'
@@ -167,64 +169,11 @@ if $ARGS[0] = 'bar:order':
 		act 'Continue':gt 'brothel', 'abducted'
 	else
 		if hotelWhore = 1:
-			act 'A special drink. The Blue Blooded Russian.':gt 'brothel','bar:order:password'
+			act 'Order a Blue-blooded Russian.':gt 'brothel','bar:order:password'
 		end
-		act 'A vodka (50 <b>₽</b>) (0:05)':gt 'brothel','bar:order:vodka'
-		act 'A beer (50 <b>₽</b>) (0:05)':gt 'brothel','bar:order:beer'
-		act 'Just glass of water (20 <b>₽</b>) (0:05)':gt 'brothel','bar:order:water'
+		act 'Order a drink': gs 'beverage_menu', 'pub'
+		act 'Order a snack': gs 'food_menu', 'pub'
 	end
-end
-	
-if $ARGS[0] = 'bar:order:vodka':
-	'<h3>Hotel Bar</h3>'
-	*nl
-	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barordervodka.jpg"></center>'
-	*nl
-	'The vodka shot disappears in you like it was just a plain water. You are a true Russian girl, afterall.'
-	durr = 5
-	minut += durr
-	alko += 2
-	pcs_energy += 5
-	if pcs_hydra >= 100:
-		pcs_hydra -= 5
-	else
-		pcs_hydra -= 10
-	end
-	gs 'stat'
-	act 'Continue':gt 'brothel', 'bar'
-end
-
-if $ARGS[0] = 'bar:order:beer':
-	'<h3>Hotel Bar</h3>'
-	*nl
-	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderbeer.jpg"></center>'
-	*nl
-	'You drink the beer, sip after sip, enjoying the fresh, mildly bitter taste. It is a regular Russian beer though, nothing like a legendary Czech Pilsner.'
-	durr = 10
-	minut += durr
-	alko += 1
-	pcs_energy += 5
-	if pcs_hydra >= 100:
-		pcs_hydra -= 5
-	else
-		pcs_hydra += 5
-	end
-	gs 'stat'
-	act 'Continue':gt 'brothel', 'bar'
-end
-
-if $ARGS[0] = 'bar:order:water':
-	'<h3>Hotel Bar</h3>'
-	*nl
-	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderwater.jpg"></center>'
-	*nl
-	'The barman hands you a glass of water, looking at you with a grim that looks like a suspision. Who would drink water at a bar, anyways?'
-	durr = 10
-	minut += durr
-	pcs_energy += 2
-	pcs_hydra += 40
-	alko -= 1
-	gs 'stat'
 	act 'Continue':gt 'brothel', 'bar'
 end
 

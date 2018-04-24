@@ -169,7 +169,7 @@ if $ARGS[0] = 'bev_vod':
 	pcs_breath = 0
 	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barordervodka.jpg"></center>'
-	'The vodka shot disappears in you like it was just a plain water., and <<$mtxt>>'
+	'The vodka shot disappears in you like it was just a plain water, and<<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -194,7 +194,7 @@ if $ARGS[0] = 'bev_bla':
 	pcs_breath = 0
 	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/blackrussian.jpg"></center>'
-	'You drink a Black Russian, and <<$mtxt>>'
+	'You drink a Black Russian, and<<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -219,7 +219,7 @@ if $ARGS[0] = 'bev_sco':
 	pcs_breath = 0
 	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/scotch.jpg"></center>'
-	'You drink scotch on the rocks, and <<$mtxt>>'
+	'You drink scotch on the rocks, and<<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -244,7 +244,7 @@ if $ARGS[0] = 'bev_win':
 	pcs_breath = 0
 	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/redwine.jpg"></center>'
-	'You drink some red wine, and <<$mtxt>>'
+	'You drink some red wine, and<<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -269,7 +269,7 @@ if $ARGS[0] = 'bev_mar':
 	pcs_breath = 0
 	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/martini.jpg"></center>'
-	'You drink a vodka martini, and <<$mtxt>>'
+	'You drink a vodka martini, and<<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -294,7 +294,7 @@ if $ARGS[0] = 'bev_cha':
 	pcs_breath = 0
 	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/champagne.jpg"></center>'
-	'You drink some champagne, and <<$mtxt>>'
+	'You drink some champagne, and<<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -319,7 +319,7 @@ if $ARGS[0] = 'bev_bee':
 	pcs_breath = 0
 	gs 'beverage', 'afteralcohol'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/darkbeer.jpg"></center>'
-	'You drink the beer, sip after sip, enjoying the fresh, mildly bitter taste, and <<$mtxt>>'
+	'You drink the beer, sip after sip, enjoying the fresh, mildly bitter taste, and<<$mtxt>>'
 	gs 'stat'
 	
 	act 'Finish':gt $loc, $metka
@@ -328,13 +328,13 @@ end
 if $ARGS[0] = 'afteralcohol':
 
 	if pcs_hydra < 100:
-		$mtxt = ' you feel bloated with a belly full of liquids.'
+		$mtxt = ' while you enjoy the alcohol, it won''t quench your thirst.'
 	elseif pcs_hydra <= 80:
 		$mtxt = ' you should remember to drink some water so you don''t get dehydrated.'
 	elseif pcs_hydra <= 60:
 		$mtxt = ' the liquid from the alcohol is going straight through you.'
 	elseif pcs_hydra <= 40:
-		$mtxt = ' you definitely need to drink some water before you sleep, or you''ll have a hangover.'
+		$mtxt = ' you definitely need to drink some water, or you''ll have a hangover.'
 	else
 		$mtxt = ' you enjoyed that drink and could have some more.'
 	end

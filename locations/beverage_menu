@@ -39,7 +39,7 @@ if $ARGS[0] = 'diner':
 	i += 1
 	if i < arrsize('$_diner')/3:jump 'loop_drink'
 	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/dinerwaitressdrinks.jpg"</center><br>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/dinerdrinks.jpg"</center><br>'
 	'Your drinks order:<br><br>'+$_str
 	killvar '$_str'
 	killvar '$fcolor1'
@@ -76,7 +76,7 @@ if $ARGS[0] = 'cafe':
 	i += 1
 	if i < arrsize('$_cafe')/3:jump 'loop_drink'
 	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/cafewaitress.jpg"</center><br>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/cafedrinks.jpg"</center><br>'
 	'Your drinks order:<br><br>'+$_str
 	killvar '$_str'
 	killvar '$fcolor1'
@@ -113,7 +113,7 @@ if $ARGS[0] = 'fancy':
 	i += 1
 	if i < arrsize('$_fancy')/3:jump 'loop_drink'
 	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/fancywaitressdrinks.jpg"</center><br>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/fancydrinks.jpg"</center><br>'
 	'Your drinks order:<br><br>'+$_str
 	killvar '$_str'
 	killvar '$fcolor1'
@@ -150,7 +150,7 @@ if $ARGS[0] = 'pub':
 	i += 1
 	if i < arrsize('$_pub')/3:jump 'loop_drink'
 	$_str += '</table></center></font>'
-	'<center><img <<$set_imgh>> src="images/locations/shared/date/barwaitressdrinks.jpg"</center><br>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/bardrinks.jpg"</center><br>'
 	'Your drinks order:<br><br>'+$_str
 	killvar '$_str'
 	killvar '$fcolor1'
