@@ -19,9 +19,9 @@ if $ARGS[0] = 'start':
 end
 
 if $ARGS[0] = 'food':
-	'<center><img <<$set_imgh>> src="images/locations/oldtown/cafe/larek.jpg" ></center>'
 	$metka = $ARGS[0]
 	$loc = $CURLOC
+	'<center><img <<$set_imgh>> src="images/locations/oldtown/cafe/larek.jpg" ></center>'
 	act 'Order drinks':gs 'beverage_menu', 'diner'
 	act 'Order food':gs 'food_menu', 'diner'
 	if stallionQ = 2:

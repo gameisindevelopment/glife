@@ -16,9 +16,9 @@ if $ARGS[0] = 'pirosh':
 	fat += 6
 	pcs_energy += 50
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -64,9 +64,9 @@ if $ARGS[0] = 'pozhar':
 	fat += 6
 	pcs_energy += 60
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -88,9 +88,9 @@ if $ARGS[0] = 'reuben':
 	fat += 12
 	pcs_energy += 100
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -112,9 +112,9 @@ if $ARGS[0] = 'blini':
 	fat += 8
 	pcs_energy += 40
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -136,9 +136,9 @@ if $ARGS[0] = 'varenfan':
 	fat += 10
 	pcs_energy += 80
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -159,9 +159,9 @@ if $ARGS[0] = 'salfan':
 	fat += 12
 	pcs_energy += 100
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -183,9 +183,9 @@ if $ARGS[0] = 'strofan':
 	fat += 6
 	pcs_energy += 80
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -231,9 +231,9 @@ if $ARGS[0] = 'blifan':
 	fat += 6
 	pcs_energy += 40
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -255,9 +255,9 @@ if $ARGS[0] = 'ryesna':
 	fat += 4
 	pcs_energy += 20
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -279,9 +279,9 @@ if $ARGS[0] = 'crisps':
 	fat += 16
 	pcs_energy += 20
 	if pcs_hydra >= 100:
-		pcs_hydra -= 15
+		pcs_hydra -= 10
 	else
-		pcs_hydra -= 30
+		pcs_hydra -= 20
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -303,9 +303,9 @@ if $ARGS[0] = 'onring':
 	fat += 16
 	pcs_energy += 40
 	if pcs_hydra >= 100:
-		pcs_hydra -= 15
+		pcs_hydra -= 10
 	else
-		pcs_hydra -= 30
+		pcs_hydra -= 20
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -327,9 +327,9 @@ if $ARGS[0] = 'vegburg':
 	fat += 8
 	pcs_energy += 60
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -351,9 +351,9 @@ if $ARGS[0] = 'turburg':
 	fat += 10
 	pcs_energy += 60
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -375,9 +375,9 @@ if $ARGS[0] = 'batfish':
 	fat += 11
 	pcs_energy += 80
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -399,9 +399,9 @@ if $ARGS[0] = 'cheburg':
 	fat += 12
 	pcs_energy += 100
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'

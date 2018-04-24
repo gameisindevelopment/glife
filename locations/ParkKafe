@@ -6,8 +6,8 @@ if $ARGS[0] = 'start':
 	$location_type = 'public_indoors'
 	'<center><img <<$set_imgh>> src="images/locations/city/centralpark/parkcafe.jpg"></center>'
 	
-	act 'Order drinks':gs 'beverage_menu', 'diner'
-	act 'Order food':gs 'food_menu', 'diner'
+	act 'Order drinks':gs 'beverage_menu', 'cafe'
+	act 'Order food':gs 'food_menu', 'cafe'
 	'Whilst sitting and eating in the summer cafe. You take a moment and enjoy the beautiful scenery.'
 
 	arand = rand(1, 7)

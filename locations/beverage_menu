@@ -90,7 +90,7 @@ if $ARGS[0] = 'fancy':
 	killvar '$_fancy'
 	$_fancy['0,name'] = 'Spring Water'
 	$_fancy['0,type'] = 'bev_wat'
-	$_fancy['0,price'] = 35
+	$_fancy['0,price'] = 45
 	$_fancy['1,name'] = 'Imported Tea'
 	$_fancy['1,type'] = 'bev_tea'
 	$_fancy['1,price'] = 70

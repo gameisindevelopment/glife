@@ -23,8 +23,8 @@ if $ARGS[0] = 'start':
 
 	act 'Sit down at a table':
 		cla
-		act 'Order drinks':gs 'beverage_menu', 'diner'
-		act 'Order food':gs 'food_menu', 'diner'
+		act 'Order drinks':gs 'beverage_menu', 'cafe'
+		act 'Order food':gs 'food_menu', 'cafe'
 		if rand(1, 10) > 5:
 			gs 'boy'
 			'A man comes over to your table <<$boybody>> <<$boybod>> <<$boyface>> introducing himself as <<$boydesc>>.'
