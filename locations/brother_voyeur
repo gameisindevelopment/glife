@@ -122,8 +122,9 @@ if $ARGS[0] = 'showertalk2':
 	if brothershowertalk > 5 and brothershowerlook >= 1:'	He nods enthusiastically, unable to hide his eager grin. "Well hurry up then!" you say with a smile to match his. "Quick! Before mom catches us!"'
 	if brothershowertalk > 5 and brothershowerlook < 1:'	He nods eagerly. You can''t help but smile at his resemblance to a begging puppy. "Well hurry up then!" you say. "Quick! Before mom catches you coming in!"'
 	npc_rel['A34'] += rand(2,3)
-	
-		act'. . .':
+
+	act'. . .':
+		if brothershowerlook < 1:
 			*clr & cla
 			if npc_rel['A34'] < 50:npc_rel['A34'] += rand(1,2)
 			'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brothertalk3.jpg"></center>'
@@ -325,9 +326,9 @@ if $ARGS[0] = 'showertalk2':
 					end
 				end
 			end
+		elseif brothershowerlook >= 1:
+			gt'brother_voyeur','brothershowerlook'
 		end
-	elseif brothershowerlook >= 1:
-		gt'brother_voyeur','brothershowerlook'
 	end
 end
 	
