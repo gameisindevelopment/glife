@@ -1397,7 +1397,7 @@ if $ARGS[0] = 'practicemodel':
 						mdlng_exp += 1
 						exhibition_exp += rand(1,4)
 						gs 'stat'
-						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/seethru1.jpg"></center><center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/seethru2.jpg"></center>'
+						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/seethru1.jpg"><img <<$set_imgh>> src="images/locations/city/citycenter/photo/seethru2.jpg"></center>'
 						'	In one way, this is better than actually showing your bare nipples. In another way, it''s worse because even though the fabric covers them, the thinness of it completely exposes your breasts. Every flash from the camera feels like it pierces through you, highlighting not your body but specifically your breasts, as if you were truly naked.'
 						act'. . .':
 							*clr & cla
@@ -2055,7 +2055,7 @@ if $ARGS[0] = 'nude_shoot':
 			city_modelling += rand(12,16)
 			exhibition_exp += rand(1,3)
 			gs 'stat'
-			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/seethru1.jpg"></center><center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/seethru2.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/seethru1.jpg"><img <<$set_imgh>> src="images/locations/city/citycenter/photo/seethru2.jpg"></center>'
 			'	You put on a transparent top and spend the next two hours in various poses for the photographer, a flash highlighting your breasts with every click of the camera.'
 			*nl
 			'	Finally having taken all his pictures, the photographer thanks you for your time, counts out your <<modelpayfin>> <b>₽</b>, and pays it to you.'
