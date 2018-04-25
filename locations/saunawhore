@@ -130,8 +130,7 @@ if $ARGS[0] = 'clientGate':
 		$ageType = 'a very old'
 	end
 
-	durr = 5
-	minut += durr
+	minut += 5
 
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/sauna/room.jpg"></center>'
 	'You lead the client into your room, closing the door behind him.'
@@ -324,8 +323,7 @@ if $ARGS[0] = 'fuckGateCondomNo':
 end
 
 if $ARGS[0] = 'fuckGateGo':
-	durr = 2
-	minut += durr
+	minut += 2
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/sauna/sex/lieonbedboth.jpg"></center>'
 	'You lie back on the bed in front of the client.'
 	'"How do you want me?" you ask him.'
@@ -402,8 +400,7 @@ end
 
 
 if $ARGS[0] = 'fuckRoughGate':
-	durr = 5
-	minut += durr
+	minut += 5
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/sauna/sex/bedoverpowered.jpg"></center>'
 	'The man is much stronger than you, and you are completely overpowered, entirely at his will.'
 	'He keeps your arms pinned painfully behind your back.'
