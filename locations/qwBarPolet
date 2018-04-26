@@ -11,7 +11,7 @@ else
 end
 
 if $ARGS[0] = '':
-	$metka = 'eventMan'
+	$metka = ''
 	$loc = 'qwBarPolet'
 	$location_type = 'public_indoors'
 	minut += 5
@@ -35,8 +35,6 @@ if $ARGS[0] = '':
 		! 'DrinkingRand: '+DrinkingRand
 	! end
 	
-	'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
-
 	!!	if hour >= 10:
 	!!		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 	!!		'As you enter, you see that about a dozen regular tables and stools take up most of the room. A bar counter, right in front of you, dominates the center of the establishment. At the far end of it, near a door leading to the toilet, the obligatory pool table rounds off the furniture.'
@@ -47,9 +45,8 @@ if $ARGS[0] = '':
 	!!		'He looks up when he hears you open the door and gives you a look somewhere between surprise, curiosity and intimidation, but then continues talking to a drunk guy who just started sobbing.'
 	!!		'It takes you only a moment to realize that women probably don''t come here often.'
 
-	if hour >= 16:
-		act 'Order food': gs 'food_menu', 'pub'
-		act 'Order drinks': gs 'beverage_menu', 'pub'
+	if hour >= 16 and hour < 21:
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'As you enter, you see that about a dozen regular tables and stools take up most of the room. A bar counter, right in front of you, dominates the center of the establishment. At the far end of it, near a door leading to the toilet, the obligatory pool table rounds off the furniture.'
 		'This place has a rowdy air about itself: The smell of spilled beer, schnaps, and a hint of vomit and blood are hard to miss, and some of the stools and billiard cues look like they''ve been used in fights before. It is obviously a worker pub and not trying to be anything fancier than that, but that gives it an odd charm and coziness of its own.'
@@ -59,21 +56,41 @@ if $ARGS[0] = '':
 		if knowMartin = 0:
 			'He, along with some of the regulars, shoot you a quick glance and you realize that young women are probably a rare sight around here. You spot a handful of women, spread out over all the occupied tables, but judging by how they are treated, most of the men they''re with seem to see them as "one of the guys".'
 		end
-
-	elseif hour >= 21:
 		act 'Order food': gs 'food_menu', 'pub'
-		act 'Order drinks': gs 'beverage_menu', 'pub'
+		act 'Order drinks':
+			$metka = 'eventMan'
+			$loc = 'qwBarPolet'
+			if alko < 7:
+				gt 'beverage_menu', 'pub'
+			else
+				gt 'qwBarPolet', 'eventMan'
+			end
+		end
+
+	elseif hour >= 21 and hour < 0:
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'As you enter, you see that about a dozen regular tables and stools take up most of the room. A bar counter, right in front of you, dominates the center of the establishment. At the far end of it, near a door leading to the toilet, the obligatory pool table rounds off the furniture.'
 		'This place has a rowdy air about itself: The smell of spilled beer, schnaps, and a hint of vomit and blood are hard to miss, and some of the stools and billiard cues look like they''ve been used in fights before. It is obviously a worker pub and not trying to be anything fancier than that, but that gives it an odd charm and coziness of its own.'
 		*nl
 		'Even though there aren''t too many people here, the place is fairly loud, most of the noise being produced by the two groups of young guys playing billiard; most of the men at the bar are quietly drinking though, talking among themselves.'
 		'The bartender, a burly man with a scarred face and more tattoos than you can count, pays little attention to you, absorbed in a conversation with two of his regulars.'
-		if knowMartin = 0:
+		if knowMartin >= 0:
 			'He, along with some of the regulars, shoot you a quick glance and you realize that young women are probably a rare sight around here. You spot a handful of women, spread out over all the occupied tables, but judging by how they are treated, most of the men they''re with seem to see them as "one of the guys".'
+		end
+		act 'Order food': gs 'food_menu', 'pub'
+		act 'Order drinks':
+			$metka = 'eventMan'
+			$loc = 'qwBarPolet'
+			if alko < 7:
+				gt 'beverage_menu', 'pub'
+			else
+				gt 'qwBarPolet', 'eventMan'
+			end
 		end
 		
 	elseif hour >= 0:
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'The bar is quickly emptying as its owner is telling the patrons that he''s closing for the night. After a while, only those who are too drunk to wake up on their own remain as the bartender starts closing up shop. Guess you had better head out, too.'
 	end
@@ -83,13 +100,14 @@ if $ARGS[0] = '':
 end	
 	
 if $ARGS[0] = 'eventMan':
+	MartinRand = rand(1,6)
 	if hour >= 16:
 		cla
 		*clr
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'You go to the counter, sit down on one of the stools and, when the bartender notices you, ask: "Hey, could you bring me a drink?"'
 		if knowMartin = 1:
-			MartinRand = rand(1,6)
 			
 			if alko >= 7:
 				*nl
@@ -98,9 +116,9 @@ if $ARGS[0] = 'eventMan':
 				'"You can barely stand-up straight, <<$pcs_firstname>>. And I sure as hell don''t want a young woman like yourself to pass out in my bar. Go home, or at least sober up a bit."'
 				'With that, he turns and walks off to serve somebody else. Looks like he won''t let you drink yourself into a coma.'
 				
+				!![if alko >= 7, Martin will not give you another drink (unless somebody else is ordering it?)]
+				
 				act 'Give up for now': gt 'qwBarPolet'
-
-			!![if alko >= 7, Martin will not give you another drink (unless somebody else is ordering it?)]
 
 			elseif MartinTalkDay = 0 and MartinTalkVar < 7:
 				MartinTalkDay = 1
@@ -307,11 +325,12 @@ end
 
 if $ARGS[0] = 'MartinTalk':
 	*clr
-	'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 	!!! ALWAYS ADJUST MartinTalkVar THRESHOLD THROUGHOUT LOCATION SO CONVERSATIONS CAN SHOW UP !!!
 
 	if MartinTalkVar = 0:
 		MartinTalkVar = 1
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'"Sure, <<$pcs_firstname>>, coming right up", Martin says and pours your drink.'
 		'"Thanks, Martin", you say and give him a friendly smile. "Do you mind if I ask you a question?"'
 		'He raises an eyebrow but shrugs. "Shoot."'
@@ -333,6 +352,8 @@ if $ARGS[0] = 'MartinTalk':
 
 	elseif MartinTalkVar = 1:
 		MartinTalkVar = 2
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'"Of course, <<$pcs_firstname>>," Martin says and hands you your poison of choice.'
 		'"Thanks, Martin", you say with a smile. You hesitate for just a moment, then say what''s on your mind, "can I ask you something?"'
 		'"You wanna know why I''m here in Russia, don''t you?"'
@@ -359,6 +380,8 @@ if $ARGS[0] = 'MartinTalk':
 
 	elseif MartinTalkVar = 2:
 		MartinTalkVar = 3
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'Martin nods and a few seconds later, a drink sits in front of you.'
 		'"Thank you."'
 		'A few moments pass in silence as he looks at you and you look back. You turn your head here and there but Martin keeps looking at you as if he was waiting for something.'
@@ -375,6 +398,8 @@ if $ARGS[0] = 'MartinTalk':
 
 	elseif MartinTalkVar = 3:
 		MartinTalkVar = 4
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'Martin wordlessly puts your usual drink in front of you, then examines you like he was seeing you for the first time.'
 		'"You''re skinny."'
 		'"Excuse me?" You are perplexed by his statement.'
@@ -393,6 +418,8 @@ if $ARGS[0] = 'MartinTalk':
 
 	elseif MartinTalkVar = 4:
 		MartinTalkVar = 5
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'"Sure, <<$pcs_firstname>>." Martin prepares a drink for you and puts it down in front of you.'
 		'You smile gratefully and take a gulp. Seeing that Martin sizing you up again, you decide to take the initiative before he starts a conversation as awkward as the last one: "So, uh... Are women in Colombia usually... thickset?"'
 		'"Thickset?"'
@@ -413,6 +440,8 @@ if $ARGS[0] = 'MartinTalk':
 
 	elseif MartinTalkVar = 5:
 		MartinTalkVar = 6
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'"Of course, <<$pcs_firstname>>," Martin says and prepares your poison of choice. "Here you go."'
 		'You give him a friendly smile. "Thanks."'
 		'"Just doing my job. Literally," he quips.'
@@ -440,6 +469,8 @@ if $ARGS[0] = 'MartinTalk':
 
 	elseif MartinTalkVar = 6:
 		MartinTalkVar = 7
+		'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 		'Martin gives you a nod and before you know it, your beverage sits in front of you. As you grab hold of the glass, the bartender gives you a long look. "So..."'
 		'"So...?"'
 		'"You''ve been drilling me with questions about my private life," he observes, "and yet you have revealed very little about yourself to me. So, this time, I will be doing a little pestering."'
