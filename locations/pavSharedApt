@@ -194,7 +194,7 @@ if $ARGS[0] = 'advert':
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/board.jpg"></center>'
 	''
 	'Three young people offer a spare room in a shared apartment in this house.'
-	'If you are interested, come see us in the apartment No 3.' 
+	'If you are interested, come see us in the apartment No 3.'
 	seenAd = 1
 	act 'Continue':gt 'pavSharedApt', 'hallway'
 end
@@ -209,7 +209,7 @@ if $ARGS[0] = 'doorNo3':
 	else
 		act 'Ring the bell':gt 'pavSharedApt', 'intro'
 	end
-	act 'Go back':gt 'pavSharedApt', 'hallway'	
+	act 'Go back':gt 'pavSharedApt', 'hallway'
 end
 
 ! apt hall
@@ -241,14 +241,14 @@ if $ARGS[0] = 'start':
 		sp_cleaned = 0
 		sp_cumVol += rand(5, 20)
 	end
-	
+
 	! do this every time
 	rentLeft = rentWeekly - servicePaid - cashPaid
 
 	'<center><h3>Hallway</h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/hallway.jpg"></center>'
 	'It is week number '+weekNum+'.'
-	
+
 	if weekNum < rentWeekNum:
 		if rentLeft > 0:
 			'You have left '+rentLeft+' <b>₽</b> of rent to pay for the next week.'
@@ -284,7 +284,7 @@ if $ARGS[0] = 'start':
 
 	if rentPaid = 1:
 		'A large apartment currently serves as a shared living. There are four rooms, one rented by you and three occupied by <a href="exec: gt ''pavShared_nd'', ''ndDick''"><font color=#<<$nd_font>>><<$nd_name>></font></a>, <a href="exec: gt ''pavShared_gp'', ''gpDick''"><font color=#<<$gp_font>>><<$gp_name>></font></a>, <a href="exec: gt ''pavShared_sp'', ''spDick''"><font color=#<<$sp_font>>><<$sp_name>></font></a>.'
-		'You stand in the hallway. ' 
+		'You stand in the hallway. '
 		''
 		'From the hallway several doors lead to <a href="exec:gt ''pavSharedApt'', ''ndRoom''"><<$nd_name>>''s</a>, <a href="exec:gt ''pavSharedApt'', ''gpRoom''"><<$gp_name>>''s</a> and <a href="exec:gt ''pavSharedApt'', ''spRoom''"><<$sp_name>>''s</a> rooms.'
 		'The last doors lead to the <a href="exec:gt ''pavSharedApt'', ''pcsRoom''">room</a> you have rented.'
@@ -295,7 +295,7 @@ if $ARGS[0] = 'start':
 		act 'Bathroom':gt 'pavSharedApt', 'bathroom'
 		act 'Kitchen':gt 'pavSharedApt', 'kitchen'
 	end
-	
+
 	if $clothingworntype = 'nude':
 		''
 		'<b>You cannot leave the apartment naked.</b>'
@@ -337,7 +337,7 @@ end
 
 if $ARGS[0] = 'intro':
 	gs 'pavSharedApt', 'update'
-	if step > 0:	
+	if step > 0:
 		'<center><img border="5" bordercolor="<<$sp_font>>" height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/gp/gp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/nd/nd.jpg"></center>'
 		''
 	end
@@ -536,8 +536,7 @@ if $ARGS[0] = 'kitchen':
 	if eda > 0:
 		if cltarelka = 0 or edahot > 0:$edagot = ''
 		if cltarelka > 0 and edahot = 0:$edagot = '<a href="exec:dynamic $edagotd">Cook meal (0:30) for yourself</a>'
-
-			'In the refrigerator there''s enough (your own) food for <b><<eda>></b> servings. <<$edagot>>'
+		'In the refrigerator there''s enough (your own) food for <b><<eda>></b> servings. <<$edagot>>'
 	end
 	if edahot > 0:'<a href="exec: dynamic $edahotd ">On the table is ready meal (0:30).</a>'
 	if edaD = 0 and eda = 0:'<b><font color="red">Yyou have nothing to eat, the refrigerator is empty!</font></b>'
@@ -549,7 +548,7 @@ if $ARGS[0] = 'kitchen':
 	act 'Have a snack (0:05)':gs 'food', 'snack'
 
 	act 'Drink some water (0:05)':gs 'beverage', 'bev_wat'
-	
+
 	act 'Have a cup of tea (0:05)':
 		cls
 		minut += 5
@@ -563,12 +562,12 @@ if $ARGS[0] = 'kitchen':
 			pcs_mood += rand(3, 6)
 			'You make a refreshing cup of tea and everything seems a little better.'
 		end
-		
+
 		gs 'stat'
 
-		act 'Get up from the table':gt $loc, $metka
+		act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
 	end
-	
+
 	if pranik > 0:
 		'You have <<pranik>> cookies.'
 
@@ -590,10 +589,10 @@ if $ARGS[0] = 'kitchen':
 			'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 			'You drank tea and enjoyed the cookies. You know they''re too sweet and can''t be good for your figure, but they taste so good!'
 
-			act 'Get up from the table':gt $curloc
+			act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
 		end
 	end
-	
+
 	if edaD > 0:
 		act 'Eat diet food (0:30)':
 			cla
@@ -624,10 +623,10 @@ if $ARGS[0] = 'kitchen':
 				'You have a cup of tea, quenching your thirst.'
 			end
 
-			act 'Get up from the table':gt $curloc
+			act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
 		end
 	end
-	
+
 	if fatdel > 0:
 		act 'Consume fat burners':
 			cla
@@ -639,9 +638,10 @@ if $ARGS[0] = 'kitchen':
 
 			'You throw the capsule of fat burners in a glass, add some water and drink it. You''re amazed at how fast the capsule works, feeling your body slim down almost immediately.'
 
-			act 'Get up from the table':gt $curloc
+			act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
 		end
 	end
+	
 	if lekarstvo > 0:
 		'You have <<lekarstvo>> tablet(s).'
 
@@ -659,12 +659,12 @@ if $ARGS[0] = 'kitchen':
 				'<center><img <<$set_imgh>> src="images/locations/shared/apartment/event/sick/lekr<<picrand>>.jpg"></center>'
 				'You swallow the pill, and shortly after you feel a bit better.'
 
-				act 'Continue':gt $curloc
+				act 'Continue':gt 'pavSharedApt', 'kitchen'
 			end
 		end
 	end
-	if vitamin > 0:
-	'You have <<vitamin>> vitamin pills.'
+	
+	if vitamin > 0:'You have <<vitamin>> vitamin pills.'
 
 	if vitaminday ! daystart:
 		act 'Take vitamins (0:05)':
@@ -686,7 +686,7 @@ if $ARGS[0] = 'kitchen':
 
 			'You take some vitamins to stay healthy.'
 
-			act 'Continue':gt $curloc
+			act 'Continue':gt 'pavSharedApt', 'kitchen'
 		end
 	end
 
@@ -711,21 +711,21 @@ if $ARGS[0] = 'cookForGuys':
 end
 
 if $ARGS[0] = 'cleanForGuys':
-    cla
-    *clr
-    minut += 60
-    suhbelo += dirtbelo
-    poroshok -= 3
-    dirtbelo = 0
-    pcs_mood -= 10
+	cla
+	*clr
+	minut += 60
+	suhbelo += dirtbelo
+	poroshok -= 3
+	dirtbelo = 0
+	pcs_mood -= 10
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/stir.jpg"></center>'
-	
-	price = price_clean 
+
+	price = price_clean
 	*nl
-    'You collect piles piles of dirty clothes around the room, carry them into the bathroom, put them in a basin and then pour washing powder on them. You wash them until they are finally clean.'
-    cumStainCh =  rand (0, 100)
-    if servitudeLvl = 2 and cumStainCh <= 50:'<i>You notice bedsheets with what seems as dried out cum. Probably remainder of one of yours "servings". Maybe it is really better to swallow everytime, you wonder?</i>'
+	'You collect piles piles of dirty clothes around the room, carry them into the bathroom, put them in a basin and then pour washing powder on them. You wash them until they are finally clean.'
+	cumStainCh =  rand (0, 100)
+	if servitudeLvl = 2 and cumStainCh <= 50:'<i>You notice bedsheets with what seems as dried out cum. Probably remainder of one of yours "servings". Maybe it is really better to swallow everytime, you wonder?</i>'
 
 	act 'Hang them to dry out and leave':gt 'pavSharedApt', 'payService'
 end
@@ -739,9 +739,9 @@ if $ARGS[0] = 'pcsRoom':
 
 	'<center><h3><<$pcs_firstname>>''s bedroom</h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/bedr.jpg"></center>'
-	'A tight, little room with a <a href="exec:gt ''bed'', ''start''">double bed</a> and an <a href="exec:gt ''budilnik'', ''start''">alarm clock</a>.' 
+	'A tight, little room with a <a href="exec:gt ''bed'', ''start''">double bed</a> and an <a href="exec:gt ''budilnik'', ''start''">alarm clock</a>.'
 	'An old wooden <a href="exec:gt ''wardrobe'', ''start''">wardrobe</a> (where you can <a href="exec:gt ''clothing'', ''view_clothing_list'', ''wardrobe''">organize your clothes</a>) stands near the door to the corridor, on top of it there''s a <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcase</a> you can store some clothes in. The windows are closed with faded, heavy curtains.'
-	
+
 	if budilnikOn = 0:
 		'Your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> is set for <<timer>> hours <<timerM>> minutes and currently turned <a href="exec: budilnikOn = 1 & GT ''pavSharedApt'',''pcsRoom''">off</a>.'
 	else
@@ -782,7 +782,7 @@ if $ARGS[0] = 'pcsRoom':
 	end
 
 	if tovarL > 0:'You currently have <<tovarL>> trinkets to sell at the station. The maximum you can carry with you is 30.'
-	
+
 	if vcard > 0:
 		act 'Look at your deck of vintage porn cards':card_deck = 0 & gt 'card'
 	end
@@ -876,7 +876,7 @@ if $ARGS[0] = 'pcsRoom':
 			end
 		end
 	end
-	
+
 	act 'Leave your room':gt 'pavSharedApt', 'start'
 end
 
@@ -928,7 +928,7 @@ if $ARGS[0] = 'spRoom':
 	'<center><h3><font color=#<<$sp_font>>><<$sp_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/room.jpg"></center>'
 	'Tidy room full of sporting stuff like dresses, equipment and trophys. On the walls hang several posters of famous sport guys.'
-	
+
 	if hour >= sp_wakes and hour < sp_leaves:
 		'<<$sp_name>> is already awake, packing his bags to leave.'
 		act 'Approach him': gt 'pavShared_sp', 'sp'
