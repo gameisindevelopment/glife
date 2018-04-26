@@ -523,18 +523,18 @@ if $ARGS[0] = 'abdFood':
 		'Suddenly you spot a loose chainlink on your leash. You try to manipulate it and you manage to free yourself from the wall.'
 		'<a href="exec:gt ''abduction'', ''abdEscape''">Go to the window</a>'
 	end
-	act 'Eat dried food (0:20)':
+	act 'Eat dried food (0:10)':
 		cla
 		*clr
 		minut += 20
 		pranik -= 1
 		pcs_health += 30
 		pcs_mood += 10
-		pcs_energy += 50
+		pcs_energy += 25
 		if pcs_hydra >= 100:
-			pcs_hydra -= 15
+			pcs_hydra -= 10
 		else
-			pcs_hydra -= 25
+			pcs_hydra -= 20
 		end
 		cumspclnt = 2
 		gs 'cum_cleanup'
@@ -555,7 +555,11 @@ if $ARGS[0] = 'abdFood':
 		pranik -= 1
 		pcs_health += 30
 		pcs_mood += 10
-		pcs_hydra += 100
+		if pcs_hydra >= 100:
+			pcs_hydra += 50
+		else
+			pcs_hydra += 100
+		end
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		gs 'stat'

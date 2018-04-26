@@ -16,6 +16,7 @@ temp = RAND(1,10)
 
 if temp <= 6:
 	'<center><b><font color="maroon">Bar "Rabotnik" - Toilet</font></b></center>'
+	'<center><img <<$set_imgh>> src="images/locations/shared/bathroom/publictoilet.jpg"></center>'
 	*nl
 	'You walk into the unisex toilet, bracing yourself for the absolute worst, but find it surprisingly clean, all things considered.' 
 	'The smell of urine is noticeable, but not overwhelming, and both the stalls and the floor look relatively hygienic (so do the urinals, but you''re not really in a position to make use of that insight).'

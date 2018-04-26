@@ -336,7 +336,7 @@ if $ARGS[0] = 'afteralcohol':
 	elseif pcs_hydra <= 40:
 		$mtxt = ' you definitely need to drink some water, or you''ll have a hangover.'
 	else
-		$mtxt = ' you enjoyed that drink and could have some more.'
+		$mtxt = ' you enjoyed that drink. Let''s have some more!'
 	end
 end
 

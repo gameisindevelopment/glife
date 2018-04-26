@@ -279,9 +279,9 @@ if $ARGS[0] = 'crisps':
 	fat += 16
 	pcs_energy += 20
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -303,9 +303,9 @@ if $ARGS[0] = 'onring':
 	fat += 16
 	pcs_energy += 40
 	if pcs_hydra >= 100:
-		pcs_hydra -= 10
+		pcs_hydra -= 5
 	else
-		pcs_hydra -= 20
+		pcs_hydra -= 10
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
