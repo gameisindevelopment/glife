@@ -141,7 +141,7 @@ if $ARGS[0] = 'start' or gaptek_loc = 1 or $message ! '':
 		if money >= 1870:
 			if gatabletkiday ! daystart and npc_QW['A29'] >= 2:
 				act 'Buy birth control pills (1870 <b>₽</b>) <<iif(tabletki > 0, ''[left:<b>'' + tabletki + ''</b>]'', '''')>>':
-!!Apostrope fix for notepad display' 
+!!Apostrope fix for notepad display''''
 					cla
 					*clr
 					portion = input ("How many packages do you want to buy?")
@@ -207,7 +207,7 @@ if $ARGS[0] = 'garden':
 	if npc_QW['A29'] >= 2: 'Lubricant - 145 ₽'
 	if money >= 500 and npc_QW['A29'] >= 2 and gaptekfirst = 1 and gaprezikday ! daystart:
 		act 'Buy condoms (500 <b>₽</b>) <<iif(prezik > 0, ''[left:<b>'' + prezik + ''</b>]'', '''')>>':
-!!Apostrope fix for notepad display' 
+!!Apostrope fix for notepad display'''' 
 			cla
 			*clr
 			portion = input("How many packages you want to buy? (One package contains 5 condoms)")
@@ -242,7 +242,7 @@ if $ARGS[0] = 'garden':
 
 	if money >= 530 and npc_QW['A29'] >= 2 and gaptekfirst = 1:
 		act 'Buy  pregnancy tests (530 <b>₽</b>) <<iif(pregtest > 0, ''[left:<b>'' + pregtest + ''</b>]'', '''')>>':
-!!Apostrope fix for notepad display' 
+!!Apostrope fix for notepad display'''' 
 			cla
 			*clr
 			portion = input("How many packages do you want to buy? (One package contains two testers)")
@@ -274,7 +274,7 @@ if $ARGS[0] = 'garden':
 	!! you can only buy lube here if your aunt arranged for it and you haven''t bought any today yet
 	if money >= 145 and galubri = 1 and npc_QW['A29'] >= 2 and gaptekfirst = 1 and galubriday ! daystart:
 		act 'Buy <b>lubricant</b> (145 <b>₽</b>) <<iif(lubri > 0, ''[left:<b>'' + lubri + ''</b>]'', '''')>>':
-!!Apostrope fix for notepad display' 
+!!Apostrope fix for notepad display'''' 
 			cla
 			*clr
 			portion = input ("How many tubes do you want to buy? (One tube lasts for 5 uses)")
