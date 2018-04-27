@@ -905,7 +905,7 @@ gs 'body'
 if pcs_health >= healthmax:
 	$pcs_health = '<font color="green">You are very healthy.</font>'
 elseif pcs_health >= healthmax * 75 / 100:
-	$pcs_health = '<font color="blue">You are healthy.</font>'
+	$pcs_health = '<font color=#0064FF>You are healthy.</font>'
 elseif pcs_health >= healthmax * 50 / 100:
 	$pcs_health = '<font color="brown">You are not healthy.</font>'
 elseif pcs_health >= healthmax * 25 / 100:
@@ -917,7 +917,7 @@ end
 if pcs_willpwr >= willpowermax:
 	$pcs_willpwr = '<font color="green">Your mind is clear.</font>'
 elseif pcs_willpwr >= willpowermax * 75 / 100:
-	$pcs_willpwr = '<font color="blue">You are mostly clear of mind.</font>'
+	$pcs_willpwr = '<font color=#0064FF>You are mostly clear of mind.</font>'
 elseif pcs_willpwr >= willpowermax * 50 / 100:
 	$pcs_willpwr = '<font color="brown">You are depressed.</font>'
 elseif pcs_willpwr >= willpowermax * 25 / 100:
@@ -938,7 +938,7 @@ end
 if pcs_mood >= 80:
 	$pcs_mood = '<font color="green">You are in a great mood.</font>'
 elseif pcs_mood >= 60:
-	$pcs_mood = '<font color="blue">You are in a good mood.</font>'
+	$pcs_mood = '<font color=#0064FF>You are in a good mood.</font>'
 elseif pcs_mood >= 40:
 	$pcs_mood = '<font color="brown">You are in an OK mood.</font>'
 elseif pcs_mood >= 20:
@@ -952,7 +952,7 @@ end
 if pcs_energy >= 80:
 	$pcs_energy = '<font color="green">You couldn''t eat one more bite.</font>'
 elseif pcs_energy >= 40:
-	$pcs_energy = '<font color="blue">You''re not really hungry, but a small snack would be very welcome.</font>'
+	$pcs_energy = '<font color=#0064FF>You''re not really hungry, but a small snack would be very welcome.</font>'
 elseif pcs_energy >= 8:
 	$pcs_energy = '<font color="brown">You are hungry.</font>'
 else
@@ -962,7 +962,7 @@ end
 if pcs_hydra >= 80:
 	$pcs_hydra = '<font color="green">You are not thirsty at all.</font>'
 elseif pcs_hydra >= 40:
-	$pcs_hydra = '<font color="blue">You are slightly thirsty.</font>'
+	$pcs_hydra = '<font color=#0064FF>You are slightly thirsty.</font>'
 elseif pcs_hydra >= 8:
 	$pcs_hydra = '<font color="brown">You are thirsty.</font>'
 else
@@ -972,7 +972,7 @@ end
 if pcs_sleep >= 80:
 	$pcs_sleep = '<font color="green">You are well rested.</font>'
 elseif pcs_sleep >= 40:
-	$pcs_sleep = '<font color="blue">You are slightly tired.</font>'
+	$pcs_sleep = '<font color=#0064FF>You are slightly tired.</font>'
 elseif pcs_sleep >= 8:
 	$pcs_sleep = '<font color="brown">You are tired.</font>'
 else

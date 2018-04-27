@@ -71,6 +71,23 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 			act 'Get up from the table': gt 'swamphouse', 'start'
 		end
 	end
+	if bilberry > 0:
+		act 'To eat berries':
+			cla
+			*clr
+			minut += 20
+			pcs_energy += 10
+			pcs_hydra += 20
+			bilberry -= 1
+			pcs_willpwr += 5
+			pcs_health += 5
+			pcs_mood += 10
+			gs 'stat'
+			'<center><img src="images/locations/gadukino/forest/bilberry.jpg"></center>'
+			'You ate a few berries.'
+			act 'Continue': gt 'swamphouse', 'start'
+		end
+	end
 	!re-arrange it, there should be no logic error now by illume
 	if $clothingworntype ! 'nude' or swamp_clothes = 1:
 		!have cloth, or rag on

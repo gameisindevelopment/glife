@@ -80,7 +80,11 @@ if pranik > 0:
 		pcs_health += 30
 		pcs_mood += 20
 		pcs_energy += 20
-		pcs_hydra += 60
+		if pcs_hydra >= 100:
+			pcs_hydra += 30
+		else
+			pcs_hydra += 60
+		end
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
@@ -117,7 +121,7 @@ if edaD > 0:
 		if pcs_hydra >= 80:
 			'You don''t need any more tea.'
 		else
-			pcs_hydra = 100
+			pcs_hydra += 100
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
@@ -133,6 +137,11 @@ if fatdel > 0:
 		cla
 		*clr
 		fatdel -= 1
+		if pcs_hydra >= 100:
+			pcs_hydra += 25
+		else
+			pcs_hydra += 50
+		end
 		salo -= 20
 		if salo < 11: salo = 11
 		gs 'body_shape', 'softreset'
@@ -154,8 +163,11 @@ if lekarstvo > 0:
 			lekarday = daystart
 			lekarstvo -= 1
 			sick -= sick * 20 / 100
-			if pcs_hydra < 50 : pcs_hydra += 30 else pcs_hydra +=15
-			if pcs_hydra > 100: pcs_hydra = 100
+			if pcs_hydra >= 100:
+				pcs_hydra += 25
+			else
+				pcs_hydra += 50
+			end
 			picrand = rand(1,9)
 			'<center><img <<$set_imgh>> src="images/locations/shared/apartment/event/sick/lekr<<picrand>>.jpg"></center>'
 			'You swallow the pill, and shortly after you feel a bit better.'
@@ -177,9 +189,11 @@ if vitamin > 0:
 			vitaminday = daystart
 			vitamin -= 1
 			frost = 0
-			if pcs_hydra < 50 : pcs_hydra += 30 else pcs_hydra +=15
-			if pcs_hydra > 100: pcs_hydra = 100
-
+			if pcs_hydra >= 100:
+				pcs_hydra += 25
+			else
+				pcs_hydra += 50
+			end
 			if KandidozOnce = 1:Kandidoz -= 2
 			if GerpesOnce = 1:Gerpes -= 2
 			if SifacOnce = 1 and Sifilis >= 10:Sifilis -= rand(0, 1)

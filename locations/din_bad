@@ -9,19 +9,19 @@ $mobile_check = {
 			$caller = 'Vladimir'
 			$callerid = 'images/characters/city/vladimir/001.jpg'
 			gs 'telefon','phone_ring'
-			pl'<center><a href="exec:gt ''qwloc'',''2''"><img src="images/system/phone/call_accept.png"></a>         <a href="exec:vladimirday = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
+			pl'<center><a href="exec:gt ''qwloc'',''2''"><img src="images/system/phone/call_accept.png"></a>		 <a href="exec:vladimirday = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
 		elseif vladimirQW = 25 and week = 6:
 			'<b><font color="red">Your phone is ringing</font></b>'
 			$caller = 'Vladimir'
 			$callerid = 'images/characters/city/vladimir/001.jpg'
 			gs 'telefon','phone_ring'
-			pl'<center><a href="exec:gt ''qwloc'',''3''"><img src="images/system/phone/call_accept.png"></a>         <a href="exec:vladimirday = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
+			pl'<center><a href="exec:gt ''qwloc'',''3''"><img src="images/system/phone/call_accept.png"></a>		 <a href="exec:vladimirday = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
 		elseif vladimirQW = 35 and week = 6:
 			'<b><font color="red">Your phone is ringing</font></b>'
 			$caller = 'Vladimir'
 			$callerid = 'images/characters/city/vladimir/001.jpg'
 			gs 'telefon','phone_ring'
-			pl'<center><a href="exec:gt ''qwloc'',''4''"><img src="images/system/phone/call_accept.png"></a>         <a href="exec:vladimirday = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
+			pl'<center><a href="exec:gt ''qwloc'',''4''"><img src="images/system/phone/call_accept.png"></a>		 <a href="exec:vladimirday = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
 		end
 	end
 
@@ -30,7 +30,7 @@ $mobile_check = {
 		$caller = 'Leonid Vostov'
 		$callerid = 'images/characters/pavlovsk/resident/leonid/leonidphone.jpg'
 		gs 'telefon','phone_ring'
-		pl'<center><a href="exec:gt ''leonid'', ''call''"><img src="images/system/phone/call_accept.png"></a>         <a href="exec:leonidSlaveDay = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
+		pl'<center><a href="exec:gt ''leonid'', ''call''"><img src="images/system/phone/call_accept.png"></a>		 <a href="exec:leonidSlaveDay = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
 	end
 
 	if QWdogreiqTimer = 0 and QWdogReiq = 2 and week = 7 and qwdogiventday ! daystart and hour >= 12:
@@ -48,7 +48,7 @@ $mobile_check = {
 		pl''
 		pl''
 		pl''
-		pl'<center><a href="exec:gt ''qwlocdog''"><img src="images/system/phone/call_accept.png"></a>              <a href="exec:qwdogiventday = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
+		pl'<center><a href="exec:gt ''qwlocdog''"><img src="images/system/phone/call_accept.png"></a>			  <a href="exec:qwdogiventday = daystart & gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
 	end
 
 	!! iterating all lovers
@@ -70,7 +70,7 @@ $mobile_check = {
 			$caller = '<<$loverdesc[lover_number]>>'
 			$callerid = 'images/characters/shared/'+lover_picture[lover_number]+'.jpg'
 			gs 'telefon','phone_ring'
-			pl'<center><a href="exec:gt ''telefon'', ''lover'', <<lover_number>>"><img src="images/system/phone/call_accept.png"></a>              <a href="exec:gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
+			pl'<center><a href="exec:gt ''telefon'', ''lover'', <<lover_number>>"><img src="images/system/phone/call_accept.png"></a>			  <a href="exec:gt $loc, $metka"><img src="images/system/phone/decline.png"></a></center>'
 		end
 	end
 	lover_number += 1
@@ -145,22 +145,22 @@ $d_bag = {
 	else
 		pl 'You are out of birth control pills.'
 	end
-    if mentats_have > 0:
-        pl'<a href="exec:dynamic $use_mentats & dynamic $d_bag"><b>Use a neurobooster pill in your purse.</b></a> There are <<mentats_have>> pills left. The warning label says not to take more than one per day.'
-    end
-    if steroid_have > 0:
-        pl'<a href="exec:dynamic $use_steroids & dynamic $d_bag"><b>Use steroids.</b></a> You have <<steroid_have>> steroids left in your purse.'
-    end
-    if bcream_have > 0:
-        pl'<a href="exec:dynamic $use_bcream & dynamic $d_bag"><b>Apply breast cream.</b></a> You have <<bcream_have>> cream left in your purse.'
-    end
-    if aphrodisiac_have > 0:
-        pl'<a href="exec:dynamic $use_aphrodisiac & dynamic $d_bag"><b>Chew aphrodisiac gum.</b></a> You have <<aphrodisiac_have>> gum left in your purse.'
-    end
-    
+	if mentats_have > 0:
+		pl'<a href="exec:dynamic $use_mentats & dynamic $d_bag"><b>Use a neurobooster pill in your purse.</b></a> There are <<mentats_have>> pills left. The warning label says not to take more than one per day.'
+	end
+	if steroid_have > 0:
+		pl'<a href="exec:dynamic $use_steroids & dynamic $d_bag"><b>Use steroids.</b></a> You have <<steroid_have>> steroids left in your purse.'
+	end
+	if bcream_have > 0:
+		pl'<a href="exec:dynamic $use_bcream & dynamic $d_bag"><b>Apply breast cream.</b></a> You have <<bcream_have>> cream left in your purse.'
+	end
+	if aphrodisiac_have > 0:
+		pl'<a href="exec:dynamic $use_aphrodisiac & dynamic $d_bag"><b>Chew aphrodisiac gum.</b></a> You have <<aphrodisiac_have>> gum left in your purse.'
+	end
+	
 	if lubri > 0:pl'There''s a tube of lubricant in your purse, enough for <<lubri>> applications.'
-	if bottle > 0:pl 'There''s a bottle of water in your purse. <a href="exec:bottle = 0 & pcs_hydra = 100 & cumspclnt = 2 & gs ''cum_cleanup'' & gs ''stat''"><b>Drink</b></a>'
-	if buterbrod > 0:pl 'There''s a sandwich in your purse. <a href="exec:buterbrod = 0 & pcs_energy += 20 & cumspclnt = 2 & gs ''cum_cleanup'' & fat += 1 & gs ''stat''"><b>Eat</b></a>'
+	if bottle > 0:pl 'There''s a bottle of water in your purse. <a href="exec:bottle = 0 & pcs_hydra += 100 & cumspclnt = 2 & gs ''cum_cleanup'' & gs ''stat''"><b>Drink</b></a>'
+	if buterbrod > 0:pl 'There''s a sandwich in your purse. <a href="exec:buterbrod = 0 & pcs_energy += 40 & cumspclnt = 2 & gs ''cum_cleanup'' & fat += 1 & gs ''stat''"><b>Eat</b></a>'
 	if wine = 1 and alkowine = 0:pl'There''s a bottle of <a href="exec:dynamic $dinalkowin1">wine</a> in your purse.'
 	if wine = 1 and alkowine = 1:pl'There''s a half-bottle of <a href="exec:dynamic $dinalkowin2">wine</a> in your purse.'
 	if foto = 1:pl'Your purse contains a strange photo'
@@ -177,38 +177,38 @@ $d_bag = {
 }
 
 $dinalkowin1 = {
-    alkowine = 1
+	alkowine = 1
 	if pcs_hydra >= 100:
 		pcs_hydra -= 5
 	else
 		pcs_hydra -= 10
 	end
-    if pcs_intel  > 5 : intel_deg -= 1
-    alko += 5
+	if pcs_intel  > 5 : intel_deg -= 1
+	alko += 5
 	cumspclnt = 2
 	gs 'cum_cleanup' 
 	pcs_breath = 0
-    gs'stat'
+	gs'stat'
 	'<center><img <<$set_imgh>> src="images/shared/food/alkowin.jpg"></center>'
-    'You take the wine bottle out of your purse and slowly drink half of it. You struggle quite a lot to put the cork back before being able to make it.'
+	'You take the wine bottle out of your purse and slowly drink half of it. You struggle quite a lot to put the cork back before being able to make it.'
 }
 
 $dinalkowin2 = {
-    alkowine = 0
+	alkowine = 0
 	if pcs_hydra >= 100:
 		pcs_hydra -= 5
 	else
 		pcs_hydra -= 10
 	end
-    wine = 0
-    if pcs_intel > 5: intel_deg -= 1
-    alko += 5
+	wine = 0
+	if pcs_intel > 5: intel_deg -= 1
+	alko += 5
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
-    gs'stat'
-    '<center><img <<$set_imgh>> src="images/shared/food/alkowin.jpg"></center>'
-    'You take out the remaining half wine bottle out of your purse, slowly drinking the rest of it. As you finish you throw the empty bottle away.'
+	gs'stat'
+	'<center><img <<$set_imgh>> src="images/shared/food/alkowin.jpg"></center>'
+	'You take out the remaining half wine bottle out of your purse, slowly drinking the rest of it. As you finish you throw the empty bottle away.'
 }
 
 $din_Switch_Condom_Menu = {
@@ -738,23 +738,23 @@ $d_pregmovement = {
 }
 
 $use_mentats = {
-    if mentats_dose < 3:
-        '<font color = green>You swallow the pill.</font>'
-        mentats_dose += 1
-        mentats_have -= 1
-    else
-        'You really shouldn''t take any more pills today.'
-    end
+	if mentats_dose < 3:
+		'<font color = green>You swallow the pill.</font>'
+		mentats_dose += 1
+		mentats_have -= 1
+	else
+		'You really shouldn''t take any more pills today.'
+	end
 }
 $use_steroids = {
-    if steroid_dose < 3:
-        '<font color = blue>You swallow the orange pill.</font>'
-        steroid_dose += 1
-        steroid_counter += 1
-        steroid_have -= 1
-    else
-        'You really shouldn''t take any more pills today.'
-    end
+	if steroid_dose < 3:
+		'<font color = blue>You swallow the orange pill.</font>'
+		steroid_dose += 1
+		steroid_counter += 1
+		steroid_have -= 1
+	else
+		'You really shouldn''t take any more pills today.'
+	end
 }
 
 $use_amphetamines = {
@@ -769,43 +769,43 @@ $use_amphetamines = {
 }
 
 $use_bcream = {
-    if bcream_used < 1:
-        '<font color = #DB7093>You smear the cream onto your breasts and rub it in.</font>'
-        bcream_used = 1
-        bcream_have -= 1
-    else
-        'Using any more cream won''t have any effect.'
-    end
+	if bcream_used < 1:
+		'<font color = #DB7093>You smear the cream onto your breasts and rub it in.</font>'
+		bcream_used = 1
+		bcream_have -= 1
+	else
+		'Using any more cream won''t have any effect.'
+	end
 }
 $use_aphrodisiac = {
-    if aphrodisiac_overdose = 1:
-        'You''ve had enough for today.'
-    elseif aphrodisiac_timer = 0:
-        '<font color = #DB7093>You take a gum and chew it. It tastes like strawberry, but is also kind of spicy.</font>'
-        aphrodisiac_have -= 1
-        aphrodisiac_timer += 8
-        pcs_horny = 80
-    elseif aphrodisiac_timer > 0 and aphrodisiac_timer <= 8:
-        '<font color = #DB7093>You take another gum and chew it. It makes your mouth feel kinda tingly.</font>'
-        aphrodisiac_have -= 1
-        aphrodisiac_timer += 8
-        pcs_horny = 100
-    elseif aphrodisiac_timer > 8 and min_arousal < 60:
-        '<font color = red><b>You take yet another gum and start chewing it. Suddenly you find yourself in grip of an intense orgasm!<br> It goes on and on and you sink to the ground and do your best to endure it.</b></font>'
-        aphrodisiac_have -= 1
-        orgasm += 1
-        min_arousal += 10
-        aphrodisiac_overdose = 1
-        if min_arousal = 10:'<font color = #DB7093>That was intense! You can still feel the tingles.</font>'
-        if min_arousal = 20:'<font color = #DB7093>You are really starting to enjoy these! Your crotch still feels kinda hot though.</font>'
-        if min_arousal = 30:'<font color = #DB7093>As you are trying to get back to your feet you notice that you are still horny. What is happening to you?</font>'
-        if min_arousal = 40:'<font color = #DB7093>You are certain of it. Every time those gums give you an orgasm they also increase your libido.</font>'
-        if min_arousal = 50:'<font color = #DB7093>You run a finger across your slit and shudder. You really should stop chewing these gums while you can still think of something other than sex.</font>'
-        if min_arousal = 60:'<font color = #DB7093>You are burning up. You feel like you could fuck anything and everything all day long.</font>'
-    else
-        '<font color = #DB7093>You chew another gum with trepidation, looking forward to more orgasms but nothing happens. Huh. Have you become immune?</font>'
-        aphrodisiac_have -= 1
-    end
+	if aphrodisiac_overdose = 1:
+		'You''ve had enough for today.'
+	elseif aphrodisiac_timer = 0:
+		'<font color = #DB7093>You take a gum and chew it. It tastes like strawberry, but is also kind of spicy.</font>'
+		aphrodisiac_have -= 1
+		aphrodisiac_timer += 8
+		pcs_horny = 80
+	elseif aphrodisiac_timer > 0 and aphrodisiac_timer <= 8:
+		'<font color = #DB7093>You take another gum and chew it. It makes your mouth feel kinda tingly.</font>'
+		aphrodisiac_have -= 1
+		aphrodisiac_timer += 8
+		pcs_horny = 100
+	elseif aphrodisiac_timer > 8 and min_arousal < 60:
+		'<font color = red><b>You take yet another gum and start chewing it. Suddenly you find yourself in grip of an intense orgasm!<br> It goes on and on and you sink to the ground and do your best to endure it.</b></font>'
+		aphrodisiac_have -= 1
+		orgasm += 1
+		min_arousal += 10
+		aphrodisiac_overdose = 1
+		if min_arousal = 10:'<font color = #DB7093>That was intense! You can still feel the tingles.</font>'
+		if min_arousal = 20:'<font color = #DB7093>You are really starting to enjoy these! Your crotch still feels kinda hot though.</font>'
+		if min_arousal = 30:'<font color = #DB7093>As you are trying to get back to your feet you notice that you are still horny. What is happening to you?</font>'
+		if min_arousal = 40:'<font color = #DB7093>You are certain of it. Every time those gums give you an orgasm they also increase your libido.</font>'
+		if min_arousal = 50:'<font color = #DB7093>You run a finger across your slit and shudder. You really should stop chewing these gums while you can still think of something other than sex.</font>'
+		if min_arousal = 60:'<font color = #DB7093>You are burning up. You feel like you could fuck anything and everything all day long.</font>'
+	else
+		'<font color = #DB7093>You chew another gum with trepidation, looking forward to more orgasms but nothing happens. Huh. Have you become immune?</font>'
+		aphrodisiac_have -= 1
+	end
 }
 
 if $ARGS[0] = 'takepill':

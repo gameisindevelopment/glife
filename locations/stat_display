@@ -629,13 +629,13 @@ if smoker >= 20:
 		end
 	else
 		if siga > 0:
-			$stat_msg += '<BR><a href="exec:gs ''shortgs'',''smoker''"><font color="blue"><b>You have <<siga>> cigarettes left.</b></font></a><BR>'
+			$stat_msg += '<BR><a href="exec:gs ''shortgs'',''smoker''"><font color=#0064FF><b>You have <<siga>> cigarettes left.</b></font></a><BR>'
 		else
-			$stat_msg += '<BR><font color="blue"><b>You feel like you should get some cigarettes.</b></font><BR>'
+			$stat_msg += '<BR><font color=#0064FF><b>You feel like you should get some cigarettes.</b></font><BR>'
 		end
 	end
 elseif siga > 0:
-	$stat_msg += '<BR><a href="exec:gs ''shortgs'',''smoker''"><font color = blue><b>You have <<siga>> cigarettes.</b></font></a><BR>'
+	$stat_msg += '<BR><a href="exec:gs ''shortgs'',''smoker''"><font color=#0064FF><b>You have <<siga>> cigarettes.</b></font></a><BR>'
 end
 
 if smokeHour = hour and smokeday = day and smokeminut >= minut:$stat_msg += '<BR><font color="green">You are smoking a cigarette.</font><BR>'
@@ -996,7 +996,7 @@ i = 0
 					end
 				end
 			end
-			if j <= 4 and trt_cumeater = 1 and $txtiscum = 'cum':$txtiscum = '<a href="exec:gs ''cum_manage'', ''cumeater'', <<i>>"><font color="blue">' + $txtiscum + '</font></a>'
+			if j <= 4 and trt_cumeater = 1 and $txtiscum = 'cum':$txtiscum = '<a href="exec:gs ''cum_manage'', ''cumeater'', <<i>>"><font color=#0064FF>' + $txtiscum + '</font></a>'
 			$txtiscum += ' from '
 			if i = 0 and j = 4 and vibratorIN = 0 and pcs_vag*10 < cumvolume['<<i>>:<<j>>'] and cumvolume['<<i>>:<<j>>'] >= 20:
 				if $pantyworntype ! 'none':
@@ -1088,7 +1088,7 @@ if $clothingworntype = 'nude':
 			elseif pcs_exhibition < 20:
 				$stat_msg += '<BR><b><font color = orange>You are completely naked, you''re not too comfortable with nudity but it is a little exciting.</font></b>'
 			elseif pcs_exhibition >= 90:
-				$stat_msg += '<BR><b><font color = blue>You are completely naked, which is far better than having to wear clothes.</font></b>'
+				$stat_msg += '<BR><b><font color=#0064FF>You are completely naked, which is far better than having to wear clothes.</font></b>'
 			else
 				$stat_msg += '<BR><b><font color = #FF00FF>You are completely naked. It''s exciting and you feel tingly inside.</font></b>'
 			end
@@ -1101,7 +1101,7 @@ elseif $pantyworntype = 'none' and $clothingworntype ! 'swimwear':
 		$stat_msg += '<BR><b><font color = #FF00FF>You like, totally forgot to put on any panties. You are such a bimbo.</font></b>'
 	elseif PCloSkirt > 3:
 		if pcs_exhibition > 50:
-			$stat_msg += '<BR><b><font color="blue">You feel liberated not wearing panties as your naked ass flashes from under your short skirt.</font></b>'
+			$stat_msg += '<BR><b><font color=#0064FF>You feel liberated not wearing panties as your naked ass flashes from under your short skirt.</font></b>'
 		else
 			$stat_msg += '<BR><b><font color="red">Your face is flushed with shame, you are not wearing panties and your naked ass flashes from under your short skirt.</font></b>'
 		end
