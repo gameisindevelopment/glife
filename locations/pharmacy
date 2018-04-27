@@ -63,13 +63,22 @@ if $ARGS[0] = 'shop' or $ARGS[0] = '':
 	*P FUNC ('$stock_item', 20, 'Sanitary napkins', 100, 'sanpad', $CURLOC, $ARGS[0])
 	*P FUNC ('$single_stock_item', 1, 'enema kit', 1250, 'klisma', $CURLOC, $ARGS[0])
 	*P FUNC ('$single_stock_item', 1, 'breast pump', 800, 'breastpump', $CURLOC, $ARGS[0])
-	*P FUNC ('$single_stock_item', 1, 'Cure for yeast infection', 1050, 'Cure for yeast infection', $CURLOC, $ARGS[0])
 !!added this from the pav pharmacy as it makes sense they sell this as well, but not sure the code is right, as it was not done the same way.
 	*P '</table></center>'
-
-	!!gs '$stock_item', 1, 'antifungal pills', 600, 'mosolmaz', $CURLOC
+	if KandidNapr = 1:'Cure for yeast infection - 1,050 <b>₽</b>'
 	*nl
+	if KandidNapr = 1:
+		act 'Buy tablets for your yeast infection (1,050 <b>₽</b>)':
+			cla
+			*clr
+			money -= 1050
+			Kandidoz = 0
+			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			'You put the money on the counter and immediately open the package and swallow the tablet. A while later, you feel better.'
 
+			act 'Move away from the counter':gt 'pharmacy', 'start'
+		end
+	end
 	act 'Leave': gt $loc, $metka
 end
 

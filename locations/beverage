@@ -10,9 +10,9 @@ if $ARGS[0] = 'bev_kva':
 	pcs_mood += 15
 	pcs_energy += 8
 	if pcs_hydra >= 100:
-		pcs_hydra += 25
+		pcs_hydra += 30
 	else
-		pcs_hydra += 50
+		pcs_hydra += 60
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -36,9 +36,9 @@ if $ARGS[0] = 'bev_jui':
 	pcs_mood += 10
 	pcs_energy += 10
 	if pcs_hydra >= 100:
-		pcs_hydra += 30
+		pcs_hydra += 40
 	else
-		pcs_hydra += 60
+		pcs_hydra += 80
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -61,9 +61,9 @@ if $ARGS[0] = 'bev_mil':
 	pcs_mood += 20
 	pcs_energy += 8
 	if pcs_hydra >= 100:
-		pcs_hydra += 35
+		pcs_hydra += 50
 	else
-		pcs_hydra += 70
+		pcs_hydra += 100
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -85,9 +85,9 @@ if $ARGS[0] = 'bev_wat':
 	pcs_health += 10
 	pcs_energy += 4
 	if pcs_hydra >= 100:
-		pcs_hydra += 50
+		pcs_hydra += 25
 	else
-		pcs_hydra += 100
+		pcs_hydra += 50
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
