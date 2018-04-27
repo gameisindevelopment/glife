@@ -10,9 +10,9 @@ if $ARGS[0] = 'bev_kva':
 	pcs_mood += 15
 	pcs_energy += 8
 	if pcs_hydra >= 100:
-		pcs_hydra += 30
+		pcs_hydra += 25
 	else
-		pcs_hydra += 60
+		pcs_hydra += 50
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -32,13 +32,13 @@ if $ARGS[0] = 'bev_jui':
 	minut += 15
 	fat += 3
 	money -= val($_drink['<<args[1]>>,price'])
-	pcs_health += 10
+	pcs_health += 8
 	pcs_mood += 10
 	pcs_energy += 10
 	if pcs_hydra >= 100:
-		pcs_hydra += 40
+		pcs_hydra += 30
 	else
-		pcs_hydra += 80
+		pcs_hydra += 60
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -58,7 +58,7 @@ if $ARGS[0] = 'bev_mil':
 	fat += 6
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 5
-	pcs_mood += 10
+	pcs_mood += 20
 	pcs_energy += 8
 	if pcs_hydra >= 100:
 		pcs_hydra += 35
@@ -82,7 +82,7 @@ if $ARGS[0] = 'bev_wat':
 	alko -= 1
 	minut += 15
 	money -= val($_drink['<<args[1]>>,price'])
-	pcs_health += 5
+	pcs_health += 10
 	pcs_energy += 4
 	if pcs_hydra >= 100:
 		pcs_hydra += 50
@@ -110,9 +110,9 @@ if $ARGS[0] = 'bev_cof':
 	pcs_mood += 20
 	pcs_energy += 15
 	if pcs_hydra >= 100:
-		pcs_hydra += 25
+		pcs_hydra += 20
 	else
-		pcs_hydra += 50
+		pcs_hydra += 40
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -131,13 +131,13 @@ if $ARGS[0] = 'bev_tea':
 	alko -= 1
 	minut += 15
 	money -= val($_drink['<<args[1]>>,price'])
-	pcs_health += 5
+	pcs_health += 10
 	pcs_mood += 20
 	pcs_energy += 10
 	if pcs_hydra >= 100:
-		pcs_hydra += 30
+		pcs_hydra += 25
 	else
-		pcs_hydra += 60
+		pcs_hydra += 50
 	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
@@ -158,6 +158,7 @@ if $ARGS[0] = 'bev_vod':
 	fat += 8
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
+	pcs_mood += 10
 	pcs_energy -= 4
 	if pcs_hydra >= 100:
 		pcs_hydra -= 5
@@ -178,12 +179,13 @@ end
 if $ARGS[0] = 'bev_bla':
 	*clr & cla
 	frost = 0
-	alko += 2
+	alko += 3
 	minut += 15
 	fat += 8
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
-	pcs_energy -= 4
+	pcs_mood += 15
+	pcs_energy += 5
 	if pcs_hydra >= 100:
 		pcs_hydra -= 5
 	else
@@ -205,9 +207,10 @@ if $ARGS[0] = 'bev_sco':
 	frost = 0
 	alko += 2
 	minut += 15
-	fat += 8
+	fat += 6
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
+	pcs_mood += 10
 	pcs_energy -= 4
 	if pcs_hydra >= 100:
 		pcs_hydra -= 5
@@ -233,6 +236,7 @@ if $ARGS[0] = 'bev_win':
 	fat += 4
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
+	pcs_mood += 15
 	pcs_energy -= 4
 	if pcs_hydra >= 100:
 		pcs_hydra -= 5
@@ -253,11 +257,12 @@ end
 if $ARGS[0] = 'bev_mar':
 	*clr & cla
 	frost = 0
-	alko += 2
+	alko += 3
 	minut += 15
 	fat += 8
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
+	pcs_mood += 20
 	pcs_energy -= 4
 	if pcs_hydra >= 100:
 		pcs_hydra -= 5
@@ -283,6 +288,7 @@ if $ARGS[0] = 'bev_cha':
 	fat += 4
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
+	pcs_mood += 20
 	pcs_energy -= 4
 	if pcs_hydra >= 100:
 		pcs_hydra -= 5
@@ -308,6 +314,7 @@ if $ARGS[0] = 'bev_bee':
 	fat += 3
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health -= 5
+	pcs_mood += 5
 	pcs_energy -= 4
 	if pcs_hydra >= 100:
 		pcs_hydra += 5
