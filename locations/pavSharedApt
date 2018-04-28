@@ -574,10 +574,12 @@ if $ARGS[0] = 'bathroom':
 	minut += 1
 	$location_type = 'bathroom'
 	$metka = 'bathroom'
+	$metkaM = 'bathroom'
+	$locM = 'pavSharedApt'
 
 	'<center><h3>Bathroom</h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
-	'Modest bathroom, containing all that young people need for their daily life.'
+	'Modest bathroom, containing all that young people need for their daily life, such as a Shower, toilet, <a href="exec:GT ''mirror'',''start''">mirror</a>, sink and even a bath tub.'
 
 	gs 'din_van', 'private'
 	act 'Leave':gt 'pavSharedApt', 'start'
