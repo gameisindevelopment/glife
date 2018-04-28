@@ -665,6 +665,7 @@ if $ARGS[0] = 'brother_shower_together':
 	if brother_shower_times > 2:
 		if pcs_horny >= 50:
 			act'Use the shower head on your pussy':
+				npc_rel['A34'] += 5
 				cla
 				*nl
 				'	"Hey, hand me the shower head will you?" you say to your brother.'
@@ -693,7 +694,9 @@ if $ARGS[0] = 'brother_shower_together':
 					end
 				end
 			end
+		end
 		act'Give him "shower head"':
+			npc_rel['A34'] += 5
 			if brotherbj < 1 and brotherfuck < 1:
 				'	"Hey Kolka, want to see something cool?"'
 				'	"Huh?" He asks, confused. "What is it?"'
@@ -728,13 +731,13 @@ end
 			
 			
 if $ARGS[0] = 'brother_wash':
+	npc_rel['A34'] += 5
 	cla & *clr
-	act'Wash each other (0:10)':gt
+	act'Wash each other (0:10)':
 		cla & *clr
 		minut += 10
 		pcs_horny += 20
 		brotherwash += 1
-
 		'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brotherwash.jpg"></center>'
 		'	You and Kolka spend some time lathering each other with soap and rubbing each other down, both of you appreciatively feeling each other''s bodies as you do so.'
 		if brotherwash > 5 or brotherSex > 0:'	Kolka even slips his hands between your legs and gives your pussy a good cleaning, paying special attention to your clit and causing you to squirm and and moan under his touch.'
@@ -1665,6 +1668,7 @@ end
 
 
 if $ARGS[0] = 'brother_shower_fuck_first':
+	npc_rel['A34'] += 20
 	gs 'boystat','A34'
 	cla & *clr
 	'<center><video src="images/characters/pavlovsk/resident/kolka/event/shower/broshower1.mp4"></center>'
@@ -1825,6 +1829,7 @@ if $ARGS[0] = 'brother_shower_fuck':
 	broshowerfuck = daystart
 	gs 'boystat','A34'
 	if brotherfuck < 1:gt'brother_voyeur','brother_shower_fuck_first'
+	npc_rel['A34'] += 10
 	gs 'arousal', 'vaginal', rand(5,10)
 	gs 'stat'
 	cla & *clr
@@ -2370,6 +2375,27 @@ if $ARGS[0] = 'shave':
 								end
 							end
 						end
+					end
+				end
+				if pcs_pubes > 3:
+					act'"Hmm, maybe you''re right"':
+						cla & *clr
+						pcs_pubes = 0
+						pcs_horny += 5
+						brothershave += 1
+						minut += 5
+						stanok -= 1
+						'<center><video src="images/shared/home/bathroom/shave.mp4"></center>'
+						if pcs_pubes < 11:'	"Hmm." You think to yourself for a moment. "Maybe you''re right after all," you say and start lathering up your crotch.'
+						if pcs_pubes < 11:'	Kolka stares at you intensely as you carefully remove the bits of stubble from around your pussy.'
+						if pcs_pubes > 10:'	"Hmm." You think to yourself for a moment. "Yeah, you''re right. Maybe it''s time to get rid of this bush," you say and start lathering up your crotch.'
+						if pcs_pubes > 10:'	Kolka stares at you intensely as you carefully remove the hair from around your pussy.'
+						'	"Enjoying the show?" you say teasingly. He doesn''t say anything except nod, not looking away for a second. You have to admit, it''s a little bit exciting having someone watch you do this. You might be enjoying this almost as much as your brother is.'
+						*nl
+						'	Once you''re finished you gently glide your hands over your freshly shaved pussy, enjoying the smooth feeling.'
+						if brothershave = 1:'	As you rinse the remains of the lather away, Kolka asks, "So this is what all the girls do when they need to shave?"'
+						if brothershave = 1:'	You laugh at the naiveté of his question. "Yes, yes we do. So be appreciative when a girl''s clean shaven for you! We put a lot of work into looking nice for boys. Or other girls," you wink.'
+						act'Dry off':gt'brother_voyeur','dryoff'
 					end
 				end
 			end
