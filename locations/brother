@@ -99,7 +99,7 @@ if $ARGS[0] = 'start':
 				'<<$pcs_nickname>>, Are you sure that is not a hand towel?'
 			elseif brotherSex >= 1:
 				'Your brother sarcastically comments on the small towel you are wearing:'
-				'Sister, are you wearing that for me?'
+				'"Are you wearing that for me sis?"'
 			end
 		elseif $clothingworntype = 'nude' and pcs_pubes > 10 and $pantyworntype = 'none':
 			'"You should have shaved," your brother comments, "it looks like you''re growing a forest."'
@@ -375,6 +375,7 @@ if $ARGS[0] = 'start':
 						sexpartkno = 1
 						gs 'cum_manage'
 						swallow += 1
+						brotherbj += 1
 						brotherSex += 1
 						brotherSexCount -= 1
 						brotherMorningSex = daystart
@@ -478,6 +479,7 @@ end
 
 if $ARGS[0] = 'sleepsexcum':
 	brotherSex += 1
+	brotherfuck += 1
 	minut += 15
 	if protect ! 1:
 		!!Unprotected sex
@@ -633,6 +635,7 @@ if $ARGS[0] = 'brotherSexStart':
 			cls
 			minut += 5
 			pcs_horny += 10
+			brotherfuck += 1
 			stat['bj'] += 1
 			gs 'stat'
 
@@ -660,10 +663,12 @@ if $ARGS[0] = 'brotherSexStart':
 
 				gs 'brother', 'brotherSexEnd'
 			end
+			
 			act 'Remove from your mouth':
 				cls
 				minut += 5
 				pcs_horny += 10
+				brotherfuck += 1
 				gs 'boyStat', 'A34'
 				spafinloc = 11
 				sexpartkno = 1
@@ -682,6 +687,7 @@ if $ARGS[0] = 'brotherSexStart':
 					cls
 					minut += 5
 					pcs_horny += 10
+					brotherfuck += 1
 					gs 'boyStat', 'A34'
 
 					gs 'stat'
@@ -702,6 +708,7 @@ if $ARGS[0] = 'brotherSexStart':
 					cls
 					minut += 5
 					pcs_horny += 10
+					brotherfuck += 1
 					gs 'boyStat', 'A34'
 
 					gs 'stat'
@@ -719,6 +726,7 @@ if $ARGS[0] = 'brotherSexStart':
 	end
 	if brotherSex > 6:
 		act 'Give yourself to your brother':
+			brotherfuck += 1
 			if brotherSex > 10: brotherSex = 10
 			cls
 			minut += 5
@@ -740,6 +748,7 @@ if $ARGS[0] = 'brotherSexStart':
 	end
 	if brotherSex >= 10:
 		act 'Offer your ass to your brother':
+			brotherfuck += 1
 			cls
 			minut += 5
 			pcs_horny += 10
@@ -917,6 +926,7 @@ if $ARGS[0] = 'brother_voyeur_ev3_2':
 	if pcs_vag < npc_dick['A34']: pcs_vag += 1
 	pcs_horny = 0
 	orgasm += 1
+	brotherfuck += 1
 	stat['vaginal'] += 1
 	pcs_mood += 15
 	pcs_willpwr += 15

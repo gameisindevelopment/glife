@@ -989,6 +989,9 @@ if $ARGS[0] = 'anastasia_chat':
 	if anastasiasex = 1:
 		act 'Ask for sex advice':gt 'foto_models','anastasiasex'
 	end
+!	if city_modelling > 100 and anastasiasex = 1 and anastasia_ask = 0:
+!		act'Ask Anastasia how to start selling yourself like she does':gt'foto_models','anastasia_ask'
+!	end
 end
 		
 if $ARGS[0] = 'anastasiasex':
@@ -1078,6 +1081,32 @@ if $ARGS[0] = 'anastasiasex':
 		end
 	end
 end
+
+!if $ARGS[0] = 'anastasia_ask':
+!	*clr & cla
+!	'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/1.jpg"></center>'
+!	'	"Hey, Anastasia, do you have a minute? I wanted to ask you about something important."'
+!	'	She smiles at you. "Of course dear, you can ask me anything. What''s this about?"'
+!	act'Change your mind':
+!		'	"Uhmm... You know what? It''s not actually that important right now. I''ll ask you about it later." You can tell that Anastasia still wants to know, especially after your initial prompting but doesn''t pressure you at all.'
+!		'	"That''s alright <<$pcs_firstname>>. Whenever you''re ready okay?"'
+!		act'. . .':gt'foto_models','anastasia_chat'
+!	end
+!	
+!	act'Ask her confidently':
+!		anastasia_ask = 1
+!		*clr & cla
+!		'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/face.jpg"></center>'
+!		'	"I want to know more about using my fame to make more money like you do. About using my fame to sell myself."'
+!		'	Her face lights up with a smile that looks like she''s delighted that you asked. "Yes! Of course <<$pcs_firstname>>! Ever since you broke the barrier into the studio''s top ten I''ve been waiting for you to take this next step! I''m <i>very</i> proud of you for doing it and so happy that you came to me to find out more!"'
+!		'	She leads you over to a nearby set and gestures for you to sit down across from her.'
+!		act'. . .':gt'anastasia_escort','ana_pro_talk':
+!	end
+!	
+!	act'Ask embarrassedly':
+!		anastasia_ask = 1
+!
+!end
 
 if $ARGS[0] = 'krystal1':
 	if krystal = 2:gt 'foto_models','krystal2'
