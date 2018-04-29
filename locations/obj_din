@@ -1851,6 +1851,7 @@ if $ARGS[0] = 'exit':
 	cla
 	if StoryLine = 1:act 'Go to Pavlovsk':gt 'pavResidential'
 	act 'Go to the street':gt 'street'
+	act 'Cancel':gt $loc
 end
 
 if $ARGS[0] = 'new':
@@ -1885,15 +1886,15 @@ if $ARGS[0] = 'old':
 	if bag > 0:addobj 'Purse'
 	addobj 'Notebook'
 	addobj 'Refresh'
-	addobj 'The new menu'
-	addobj 'Game Setting'
-	addobj 'Cheat menu'
-	addobj 'Emergency exit'
+	addobj 'Settings'
+	addobj 'Cheats'
 	if disable_autosave = 1:
-		addobj 'Enable autosave'
+		addobj '<font color = red><b>[</b></font>Autosave<font color = red><b>]</b></font>'
 	else
-		addobj 'Disable autosave'
+		addobj '<font color = green><b>[</b></font>Autosave<font color = green><b>]</b></font>'
 	end
+	addobj ''
+	addobj '<font color = red>Emergency</font>'
 end
 
 if $ARGS[0] = 'autosave':
@@ -1906,12 +1907,12 @@ if $ARGS[0] = 'autosave':
 	elseif oldobjmenu = 1:
 		if disable_autosave = 1:
 			disable_autosave = 0
-			delobj 'Enable autosave'
-			addobj 'Disable autosave'
+			delobj '[Autosave]'
+			addobj '[Autosave]'
 		else
 			disable_autosave = 1
-			delobj 'Disable autosave'
-			addobj 'Enable autosave'
+			delobj '[Autosave]'
+			addobj '[Autosave]'
 		end
 	end
 	gs'stat'

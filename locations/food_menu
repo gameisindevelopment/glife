@@ -32,7 +32,8 @@ if $ARGS[0] = 'diner':
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_diner
-	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_diner['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_diner['<<i>>,price']),'<a href="exec:gt ''food'', $_diner[''<<i>>,type''],<<i>>">'+$_diner['<<i>>,price']+'</a>',$_diner['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_diner['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_diner['<<i>>,price']),'<a href="exec:gt ''food'', $_diner[''<<i>>,type'']&
+	killvar ''$_diner'',<<i>>">'+$_diner['<<i>>,price']+'</a>',$_diner['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
 	i += 1
 	if i < arrsize('$_diner')/3:jump 'loop_diner'
 	$_str += '</table></center></font>'
@@ -66,7 +67,8 @@ if $ARGS[0] = 'cafe':
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_cafe
-	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_cafe['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_cafe['<<i>>,price']),'<a href="exec:gt ''food'', $_cafe[''<<i>>,type''],<<i>>">'+$_cafe['<<i>>,price']+'</a>',$_cafe['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_cafe['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_cafe['<<i>>,price']),'<a href="exec:gt ''food'', $_cafe[''<<i>>,type'']&
+	killvar ''$_cafe'',<<i>>">'+$_cafe['<<i>>,price']+'</a>',$_cafe['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
 	i += 1
 	if i < arrsize('$_cafe')/3:jump 'loop_cafe'
 	$_str += '</table></center></font>'
@@ -100,7 +102,8 @@ if $ARGS[0] = 'fancy':
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_fancy
-	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_fancy['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_fancy['<<i>>,price']),'<a href="exec:gt ''food'', $_fancy[''<<i>>,type''],<<i>>">'+$_fancy['<<i>>,price']+'</a>',$_fancy['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_fancy['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_fancy['<<i>>,price']),'<a href="exec:gt ''food'', $_fancy[''<<i>>,type'']&
+	killvar ''$_fancy'',<<i>>">'+$_fancy['<<i>>,price']+'</a>',$_fancy['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
 	i += 1
 	if i < arrsize('$_fancy')/3:jump 'loop_fancy'
 	$_str += '</table></center></font>'
@@ -125,7 +128,8 @@ if $ARGS[0] = 'pub':
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_pub
-	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_pub['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_pub['<<i>>,price']),'<a href="exec:gt ''food'', $_pub[''<<i>>,type''],<<i>>">'+$_pub['<<i>>,price']+'</a>',$_pub['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_pub['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_pub['<<i>>,price']),'<a href="exec:gt ''food'', $_pub[''<<i>>,type'']&
+	killvar ''$_pub'',<<i>>">'+$_pub['<<i>>,price']+'</a>',$_pub['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
 	i += 1
 	if i < arrsize('$_pub')/3:jump 'loop_pub'
 	$_str += '</table></center></font>'
