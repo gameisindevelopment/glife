@@ -15,6 +15,7 @@ if $ARGS[0] = '':
 	$loc = 'qwBarPolet'
 	$location_type = 'public_indoors'
 	minut += 5
+	alko_temp = alko
 	gs 'stat'
 	gs 'qwBarPolet', 'intro'
 	if MartinTalkDaystart ! daystart:
@@ -50,15 +51,28 @@ if $ARGS[0] = '':
 		if knowMartin = 1:
 			act 'Order food': gt 'food_menu', 'pub'
 			act 'Order drinks':
-				$metka = 'eventMan'
 				$loc = 'qwBarPolet'
+				$metka = 'eventMan'
 				if alko < 7:
 					gt 'beverage_menu', 'pub'
-				else
-					gt 'qwBarPolet', 'eventMan'
+				elseif alko >= 7:
+					cla
+					*clr
+					'<center><b><font color="maroon">Bar "Rabotnik"</font></b></center>'
+					'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
+					'You go to the counter, sit down on one of the stools and, when the bartender notices you, ask: "Hey, could you bring me a drink?"'
+					*nl
+					'Martin musters you. "I think you''ve had enough."'
+					'"I''m fine", you slur, "just gimme one."'
+					'"You can barely stand-up straight, <<$pcs_firstname>>. And I sure as hell don''t want a young woman like yourself to pass out in my bar. Go home, or at least sober up a bit."'
+					'With that, he turns and walks off to serve somebody else. Looks like he won''t let you drink yourself into a coma.'
+					
+					!![if alko >= 7, Martin will not give you another drink (unless somebody else is ordering it?)]
+					
+					act 'Give up for now': gt 'qwBarPolet'
 				end
 			end
-			
+
 		elseif fakepassport = 1 or age >= 18:
 			knowMartin = 1
 			*nl
@@ -86,7 +100,11 @@ if $ARGS[0] = '':
 	end
 
 	act 'Go to the toilet': gt 'qwBarPoletToilet'
-	act 'Leave':gt 'nord'
+	
+	act 'Leave':
+		killvar 'alko_temp'
+		gt 'nord' 
+	end
 end
 
 if $ARGS[0] = 'intro':
@@ -134,16 +152,8 @@ if $ARGS[0] = 'eventMan':
 	'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 	'You go to the counter, sit down on one of the stools and, when the bartender notices you, ask: "Hey, could you bring me a drink?"'
 
-	if alko >= 7:
-		*nl
-		'Martin musters you. "I think you''ve had enough."'
-		'"I''m fine", you slur, "just gimme one."'
-		'"You can barely stand-up straight, <<$pcs_firstname>>. And I sure as hell don''t want a young woman like yourself to pass out in my bar. Go home, or at least sober up a bit."'
-		'With that, he turns and walks off to serve somebody else. Looks like he won''t let you drink yourself into a coma.'
-		
-		!![if alko >= 7, Martin will not give you another drink (unless somebody else is ordering it?)]
-		
-		act 'Give up for now': gt 'qwBarPolet'
+	if alko = alko_temp:
+		gt 'qwBarPolet'
 
 	elseif MartinTalkDay = 0 and MartinTalkVar < 7:
 		MartinTalkDay = 1
