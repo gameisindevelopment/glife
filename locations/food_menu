@@ -16,19 +16,19 @@ if $ARGS[0] = 'diner':
 	killvar '$_diner'
 	$_diner['0,name'] = 'Onion Rings'
 	$_diner['0,type'] = 'onring'
-	$_diner['0,price'] = 40
+	$_diner['0,price'] = 80
 	$_diner['1,name'] = 'Vegie Burger'
 	$_diner['1,type'] = 'vegburg'
-	$_diner['1,price'] = 80
+	$_diner['1,price'] = 240
 	$_diner['2,name'] = 'Turkey Burger'
 	$_diner['2,type'] = 'turburg'
-	$_diner['2,price'] = 90
-	$_diner['3,name'] = 'Battered Fish'
+	$_diner['2,price'] = 260
+	$_diner['3,name'] = 'Battered Fish & Fries'
 	$_diner['3,type'] = 'batfish'
-	$_diner['3,price'] = 100
-	$_diner['4,name'] = 'Cheeseburger'
+	$_diner['3,price'] = 290
+	$_diner['4,name'] = 'Cheeseburger & Fries'
 	$_diner['4,type'] = 'cheburg'
-	$_diner['4,price'] = 120
+	$_diner['4,price'] = 310
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_diner
@@ -48,21 +48,21 @@ if $ARGS[0] = 'cafe':
 	*clr & cla
 	act 'Back':gt $loc, $metka
 	killvar '$_cafe'
-	$_cafe['0,name'] = 'Herring Blini'
-	$_cafe['0,type'] = 'blini'
-	$_cafe['0,price'] = 40
-	$_cafe['1,name'] = 'Vegatarian Piroshki'
-	$_cafe['1,type'] = 'pirosh'
-	$_cafe['1,price'] = 80
+	$_cafe['0,name'] = 'Vegatarian Piroshki'
+	$_cafe['0,type'] = 'pirosh'
+	$_cafe['0,price'] = 100
+	$_cafe['1,name'] = 'Herring Blini'
+	$_cafe['1,type'] = 'blini'
+	$_cafe['1,price'] = 190
 	$_cafe['2,name'] = 'Golubtsy'
 	$_cafe['2,type'] = 'golub'
-	$_cafe['2,price'] = 90
+	$_cafe['2,price'] = 210
 	$_cafe['3,name'] = 'Pozharsky Cutlets'
 	$_cafe['3,type'] = 'pozhar'
-	$_cafe['3,price'] = 100
+	$_cafe['3,price'] = 290
 	$_cafe['4,name'] = 'Rueben Sandwich'
 	$_cafe['4,type'] = 'reuben'
-	$_cafe['4,price'] = 120
+	$_cafe['4,price'] = 340
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_cafe
@@ -82,21 +82,21 @@ if $ARGS[0] = 'fancy':
 	*clr & cla
 	act 'Back':gt $loc, $metka
 	killvar '$_fancy'
-	$_fancy['0,name'] = 'Salmon Caviar Blini'
-	$_fancy['0,type'] = 'blifan'
-	$_fancy['0,price'] = 200
+	$_fancy['0,name'] = 'Vareniki with Potatoes'
+	$_fancy['0,type'] = 'varenfan'
+	$_fancy['0,price'] = 760
 	$_fancy['1,name'] = 'Borscht and French Baguette'
 	$_fancy['1,type'] = 'borfan'
-	$_fancy['1,price'] = 400
-	$_fancy['2,name'] = 'Vareniki with Potatoes'
-	$_fancy['2,type'] = 'varenfan'
-	$_fancy['2,price'] = 450
+	$_fancy['1,price'] = 900
+	$_fancy['2,name'] = 'Atlantic Salmon Steak'
+	$_fancy['2,type'] = 'salfan'
+	$_fancy['2,price'] = 1000
 	$_fancy['3,name'] = 'Beef & Mushroom Stroganoff'
 	$_fancy['3,type'] = 'strofan'
-	$_fancy['3,price'] = 500
-	$_fancy['4,name'] = 'Atlantic Salmon Steak'
-	$_fancy['4,type'] = 'salfan'
-	$_fancy['4,price'] = 600
+	$_fancy['3,price'] = 1200
+	$_fancy['4,name'] = 'Red Caviar Blinchiki'
+	$_fancy['4,type'] = 'blifan'
+	$_fancy['4,price'] = 1360
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_fancy
@@ -118,10 +118,10 @@ if $ARGS[0] = 'pub':
 	killvar '$_pub'
 	$_pub['0,name'] = 'Toasted rye snacks'
 	$_pub['0,type'] = 'ryesna'
-	$_pub['0,price'] = 10
+	$_pub['0,price'] = 30
 	$_pub['1,name'] = 'Bowl of flavoured crisps'
 	$_pub['1,type'] = 'crisps'
-	$_pub['1,price'] = 15
+	$_pub['1,price'] = 40
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_pub

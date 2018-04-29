@@ -278,7 +278,11 @@ if $ARGS[0] = 'Main':
 			pcs_health += 30
 			pcs_mood += 20
 			pcs_energy += 80
-			pcs_hydra += 20
+			if pcs_hydra >= 100:
+				pcs_hydra += 30
+			else
+				pcs_hydra += 60
+			end
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
@@ -312,10 +316,10 @@ if $ARGS[0] = 'Main':
 				'The diet meal is tasty, and you enjoy eating it.'
 			end
 
-			if pcs_hydra >= 80:
+			if pcs_hydra >= 100:
 				'You''re not thirsty.'
 			else
-				pcs_hydra = 100
+				pcs_hydra += 100
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0
@@ -339,9 +343,11 @@ if $ARGS[0] = 'Main':
 				lekarday = daystart
 				lekarstvo -= 1
 				sick -= sick * 20 / 100
-				if pcs_hydra < 50 : pcs_hydra += 30 else pcs_hydra +=15
-				if pcs_hydra > 100: pcs_hydra = 100
-
+				if pcs_hydra >= 100:
+					pcs_hydra += 25
+				else
+					pcs_hydra += 50
+				end
 				'<center><img <<$set_imgh>> src="images/locations/shared/apartment/event/sick/lekr<<picrand>>.jpg"></center>'
 				'You swallow the pill, and shortly after you feel a bit better.'
 
@@ -362,9 +368,11 @@ if $ARGS[0] = 'Main':
 				vitaminday = daystart
 				vitamin -= 1
 				frost = 0
-				if pcs_hydra < 50 : pcs_hydra += 30 else pcs_hydra +=15
-				if pcs_hydra > 100: pcs_hydra = 100
-
+				if pcs_hydra >= 100:
+					pcs_hydra += 25
+				else
+					pcs_hydra += 50
+				end
 				if KandidozOnce = 1:Kandidoz -= 2
 				if GerpesOnce = 1:Gerpes -= 2
 				if SifacOnce = 1 and Sifilis >= 10:Sifilis -= rand(0, 1)

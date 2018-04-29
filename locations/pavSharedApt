@@ -34,7 +34,7 @@ if $ARGS[0] = 'update':
 	! average dick, hairy balls
 	! not paying attention to his own image and looks, wears glasses
 	$nd_name = 'Oleg'
-	$nd_font = '55aaff'
+	$nd_font = '0096FF'
 		!blue
 	nd_leaves = 9
 	nd_comes = 18
@@ -176,6 +176,25 @@ if $ARGS[0] = 'hallway':
 	''
 	'An old, common russian apartment house, lacking lots of years of repairs and maintenance.'
 	'The entry doors are left unlocked and even if they werent, they look like fall apart any moment.'
+	
+	act 'Take the elevator':
+		*clr & cla
+		minut +=1
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/stairs/liftnotwork.jpg"></center>'
+		'The building supervisor put a sign on the elevator: "Dear tenants, the elevator is out of order for today. Don''t worry, I should have it working again by tomorrow!". Unfortunately, that sign has been there for years.'
+		act 'Leave': gt 'pavSharedApt', 'hallway'
+	end
+	
+	act 'Go up to the second floor':
+		*clr & cla
+		minut +=1
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/stairs/brokenstairs.jpg"></center>'
+		'The stairs are as rundown as the rest of the apartment building.Thankfully there is no one I want to see on the floor above.'
+		act 'Turn back': gt 'pavSharedApt', 'hallway'
+	end
+
 	if pavSharedAptEnabled = 0:
 		'Inside is a board with announcements for the tenants. One of them seems as an <a href="exec:gt ''pavSharedApt'', ''advert''">advert</a>.'
 	else
@@ -283,7 +302,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if rentPaid = 1:
-		'A large apartment currently serves as a shared living. There are four rooms, one rented by you and three occupied by <a href="exec: gt ''pavShared_nd'', ''ndDick''"><font color=#<<$nd_font>>><<$nd_name>></font></a>, <a href="exec: gt ''pavShared_gp'', ''gpDick''"><font color=#<<$gp_font>>><<$gp_name>></font></a>, <a href="exec: gt ''pavShared_sp'', ''spDick''"><font color=#<<$sp_font>>><<$sp_name>></font></a>.'
+		'A large apartment currently serves as shared living. As well as the normal living spaces, there are four bedrooms, one rented by you and three occupied by <a href="exec: gt ''pavShared_nd'', ''ndDick''"><font color=#<<$nd_font>>><<$nd_name>></font></a>, <a href="exec: gt ''pavShared_gp'', ''gpDick''"><font color=#<<$gp_font>>><<$gp_name>></font></a>, <a href="exec: gt ''pavShared_sp'', ''spDick''"><font color=#<<$sp_font>>><<$sp_name>></font></a>.'
 		'You stand in the hallway. '
 		''
 		'From the hallway several doors lead to <a href="exec:gt ''pavSharedApt'', ''ndRoom''"><<$nd_name>>''s</a>, <a href="exec:gt ''pavSharedApt'', ''gpRoom''"><<$gp_name>>''s</a> and <a href="exec:gt ''pavSharedApt'', ''spRoom''"><<$sp_name>>''s</a> rooms.'
@@ -294,6 +313,7 @@ if $ARGS[0] = 'start':
 		act 'Your room':gt 'pavSharedApt', 'pcsRoom'
 		act 'Bathroom':gt 'pavSharedApt', 'bathroom'
 		act 'Kitchen':gt 'pavSharedApt', 'kitchen'
+		act 'Living Room':gt 'pavSharedApt', 'livingRoom'
 	end
 
 	if $clothingworntype = 'nude':
@@ -497,6 +517,59 @@ if $ARGS[0] = 'payRent':
 	act 'Continue': gs 'pavSharedApt', 'start'
 end
 
+! living room
+if $ARGS[0] = 'livingRoom':
+	$location_type = 'private'
+	$locclass = 'sitroom'
+	$metka = 'livingRoom'
+	clr
+	minut += 1
+	gs 'stat'
+	'<center><b><font color="maroon">Living Room</font></b></center>'
+	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/sitr.jpg"></center>'
+	'The sitting room is rather sparsly decorated. An old sofa sits against the wall, some crates for tables, and an empty TV cabinet. It''s unlikely anyone will bother buying a TV, as they spend all their time in their own rooms.'
+	
+	act 'An old sofa':
+		*clr & cla
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/shulginhome/sdivan.jpg"></center>'
+		'<center>A small sofa just big enough for you to curl up on and take a nap./center>'
+		
+		if pornMagazine > 0:'<br>There is a porn magazine stuffed between the sofa cushions'
+		
+		gs 'events', 'read_porn'
+		gs 'events', 'read'
+
+		if pcs_horny >= 50:
+			act 'Masturbate':gt 'selfplay', 'start'
+		end
+
+		act 'Take a nap (1:00)':
+			if pcs_sleep < 90:
+				pcs_sleep += 10
+				pcs_health += 5
+				minut += 60
+				gs 'stat'
+				'You sleep about an hour.'
+			else
+				minut += 5
+				gs 'stat'
+				'You are not tired enough to sleep, even for a short nap.'
+			end
+		end
+	act 'Get up':gt 'pavSharedApt', 'livingRoom'
+	end
+
+	if obruch > 0: '<br>A hula hoop stands in corner of the room. '
+	if skak > 0: 'A jump rope is on a shelf. '
+	if bookYog > 0: 'A yoga mat is rolled up in a corner. '
+	
+	gs 'exercise', 'start'
+	gs'subkid'
+	
+	act 'Back to the hall': gt 'pavSharedApt', 'start'
+end
+
 if $ARGS[0] = 'bathroom':
 	minut += 1
 	$location_type = 'bathroom'
@@ -562,7 +635,7 @@ if $ARGS[0] = 'kitchen':
 			pcs_mood += rand(3, 6)
 			'You make a refreshing cup of tea and everything seems a little better.'
 		end
-
+		
 		gs 'stat'
 
 		act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
@@ -579,7 +652,11 @@ if $ARGS[0] = 'kitchen':
 			pcs_health += 30
 			pcs_mood += 20
 			pcs_energy += 20
-			pcs_hydra += 60
+			if pcs_hydra >= 100:
+				pcs_hydra += 30
+			else
+				pcs_hydra += 60
+			end
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
@@ -616,7 +693,7 @@ if $ARGS[0] = 'kitchen':
 			if pcs_hydra >= 80:
 				'You don''t need any more tea.'
 			else
-				pcs_hydra = 100
+				pcs_hydra += 100
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0
@@ -632,6 +709,11 @@ if $ARGS[0] = 'kitchen':
 			cla
 			*clr
 			fatdel -= 1
+			if pcs_hydra >= 100:
+				pcs_hydra += 25
+			else
+				pcs_hydra += 50
+			end
 			salo -= 20
 			if salo < 11: salo = 11
 			gs 'body_shape', 'softreset'
@@ -641,7 +723,7 @@ if $ARGS[0] = 'kitchen':
 			act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
 		end
 	end
-	
+
 	if lekarstvo > 0:
 		'You have <<lekarstvo>> tablet(s).'
 
@@ -653,8 +735,11 @@ if $ARGS[0] = 'kitchen':
 				lekarday = daystart
 				lekarstvo -= 1
 				sick -= sick * 20 / 100
-				if pcs_hydra < 50 : pcs_hydra += 30 else pcs_hydra +=15
-				if pcs_hydra > 100: pcs_hydra = 100
+				if pcs_hydra >= 100:
+					pcs_hydra += 25
+				else
+					pcs_hydra += 50
+				end
 				picrand = rand(1,9)
 				'<center><img <<$set_imgh>> src="images/locations/shared/apartment/event/sick/lekr<<picrand>>.jpg"></center>'
 				'You swallow the pill, and shortly after you feel a bit better.'
@@ -663,30 +748,34 @@ if $ARGS[0] = 'kitchen':
 			end
 		end
 	end
-	
-	if vitamin > 0:'You have <<vitamin>> vitamin pills.'
 
-	if vitaminday ! daystart:
-		act 'Take vitamins (0:05)':
-			cla
-			*clr
+	if vitamin > 0:
+		'You have <<vitamin>> vitamin pills.'
 
-			minut += 5
-			vitaminday = daystart
-			vitamin -= 1
-			frost = 0
-			if pcs_hydra < 50 : pcs_hydra += 30 else pcs_hydra +=15
-			if pcs_hydra > 100: pcs_hydra = 100
+		if vitaminday ! daystart:
+			act 'Take vitamins (0:05)':
+				cla
+				*clr
 
-			if KandidozOnce = 1:Kandidoz -= 2
-			if GerpesOnce = 1:Gerpes -= 2
-			if SifacOnce = 1 and Sifilis >= 10:Sifilis -= rand(0, 1)
+				minut += 5
+				vitaminday = daystart
+				vitamin -= 1
+				frost = 0
+				if pcs_hydra >= 100:
+					pcs_hydra += 25
+				else
+					pcs_hydra += 50
+				end
+				if KandidozOnce = 1:Kandidoz -= 2
+				if GerpesOnce = 1:Gerpes -= 2
+				if SifacOnce = 1 and Sifilis >= 10:Sifilis -= rand(0, 1)
 
-			pcs_skin += 1
+				pcs_skin += 1
 
-			'You take some vitamins to stay healthy.'
+				'You take some vitamins to stay healthy.'
 
-			act 'Continue':gt 'pavSharedApt', 'kitchen'
+				act 'Continue':gt 'pavSharedApt', 'kitchen'
+			end
 		end
 	end
 

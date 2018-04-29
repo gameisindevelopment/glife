@@ -508,7 +508,11 @@ if $ARGS[0] = 'brothershowerlook':
 end
 
 if $ARGS[0] = 'brother_shower_together_ask':
+<<<<<<< HEAD
 	if brother_shower_times > 0:gt'brother_voyeur','brother_shower_together'
+=======
+	if brother_shower_times > 0:gt 'brother_voyeur', 'brother_shower_together'
+>>>>>>> a913db03acc0ed88ca77b4b28ea49737298a5e06
 	*clr & cla
 	'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brothertalk4.jpg"></center>'
 	'	"Hey Kolka," you say.'
@@ -551,7 +555,7 @@ if $ARGS[0] = 'brother_shower_together_ask':
 end
 
 if $ARGS[0] = 'brother_shower_together_first':
-	if brother_shower_times > 0:gt'brother_voyeur','brother_shower_together'
+	if brother_shower_times > 0:gt 'brother_voyeur', 'brother_shower_together'
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brothershower.jpg"></center>'
 	'	He''s clearly very tense right now. His responses to your questions are somewhat forced and his movements awkward. It doesn''t take a genius to figure out he''s uncomfortable because he''s trying to hide his rock hard erection.'
