@@ -697,6 +697,7 @@ if $ARGS[0] = 'brother_shower_together':
 			end
 		end
 		act'Give him "shower head"':
+			cla
 			npc_rel['A34'] += 5
 			if brotherbj < 1 and brotherfuck < 1:
 				'	"Hey Kolka, want to see something cool?"'
@@ -1675,7 +1676,7 @@ if $ARGS[0] = 'brother_shower_fuck_first':
 	npc_rel['A34'] += 20
 	gs 'boystat','A34'
 	cla & *clr
-	'<center><video src="images/characters/pavlovsk/resident/kolka/event/shower/broshower1.mp4"></center>'
+	'<center><video src="images/locations/pavlovsk/resident/apartment/home/bathroom/broshower1.mp4"></center>'
 	'	You lean back into your brother, gripping his member and jerking it a few times to make sure he''s still hard enough for what you want to do next. You pull on him, carefully guiding his cock until you can feel the tip pressing against the entrance of pussy.'	
 	if brother_knows_not_virgin = 1:
 		'	"I was wondering if you were going to let me join the "Boys Who Fuck <<$pcs_nickname>>" Club," he says, grin radiating from behind you.'
@@ -1778,7 +1779,7 @@ if $ARGS[0] = 'brother_shower_fuck_first2':
 		tmp = func('pregriskeval',eff_contra)
 		cla & *clr
 		if pcs_vag = 0:
-			'<center><video src="images/characters/pavlovsk/resident/kolka/event/shower/broshowervirgin.mp4"></center>'
+			'<center><video src="images/locations/pavlovsk/resident/apartment/home/bathroom/broshowervirgin.mp4"></center>'
 			'	Holding your breath, you push back on Kolka, feeling his tip stretch your pussy. He eventually pushes the entire length of his cock inside causing you to gasp in pain as his <<npc_dick[''A34'']>> cm dick tears through your hymen. Despite your pain, neither of you stop moving, continuing to thrust against each other.'
 		elseif stat['hidden_vaginal'] > 0 and stat['vaginal'] = 0:
 			'<center><video src="images/characters/pavlovsk/resident/kolka/event/shower/broshower.mp4"></center>'
@@ -1853,7 +1854,7 @@ if $ARGS[0] = 'brother_fuck_cum':
 		act'Not inside me!':
 			cla & *clr
 			gs 'cum_call', 'stomach', 'A34', 1
-			'<center><video src="images/characters/pavlovsk/resident/kolka/event/shower/showercum.mp4"></center>'
+			'<center><video src="images/locations/pavlovsk/resident/apartment/home/bathroom/showercum.mp4"></center>'
 			'	"Not inside me!" you cry out. You quickly pull yourself off him but your lust keeps you going in other ways. You turn around, grabbing his cock with your hand and jerking him furiously until he groans and you feel his hot cum spattering all over your stomach.'
 			act'. . .':gt'brother_voyeur','brother_shower_fuck_end'
 		end
@@ -1861,7 +1862,7 @@ if $ARGS[0] = 'brother_fuck_cum':
 		act'Suck him off':
 			cla & *clr
 			gs 'cum_call', 'mouth', 'A34', 1
-			'<center><video src="images/characters/pavlovsk/resident/kolka/event/shower/showerbj.mp4"></center>'
+			'<center><video src="images/locations/pavlovsk/resident/apartment/home/bathroomshowerbj.mp4"></center>'
 			'	Moving quickly, you pull yourself off your brother''s cock and kneel down, putting it between your lips. You suck gently on the tip and almost immediately taste hot cum spilling into your mouth.'
 			act'Swallow':
 				cla
@@ -1905,7 +1906,7 @@ if $ARGS[0] = 'brother_fuck_cum':
 		act'Push him off (not inside!)':
 			cla & *clr
 			gs 'cum_call', 'stomach', 'A34', 1
-			'<center><video src="images/characters/pavlovsk/resident/kolka/event/shower/showercum.mp4"></center>'
+			'<center><video src="images/locations/pavlovsk/resident/apartment/home/bathroom/showercum.mp4"></center>'
 			'	"No! Not inside me!" you cry out. You push him off you and turn around. Grabbing his cock, you jerk him vigorously until he groans, spraying hot cum that spatters all over your stomach.'
 			if pillcon < 30000 and pillday < 18 and tabletkishot < 1:'	Feeling his spunk on your stomach, you suddenly grow annoyed and wonder why you even finished him off. "What the fuck Kolka?! Are you <i>trying</i> to get me pregnant?"'
 			act'. . .':gt'brother_voyeur','brother_shower_fuck_end'
@@ -1914,7 +1915,7 @@ if $ARGS[0] = 'brother_fuck_cum':
 		act'Push him off (not today)':
 			cla & *clr
 			gs 'cum_call', 'stomach', 'A34', 1
-			'<center><video src="images/characters/pavlovsk/resident/kolka/event/shower/showercum.mp4"></center>'
+			'<center><video src="images/locations/pavlovsk/resident/apartment/home/bathroom/showercum.mp4"></center>'
 			'	"Not today Kolka." You push your brother off of you and turn around. Grabbing his cock, you jerk him vigorously until he groans, spraying hot cum that spatters all over your stomach.'
 			if pillcon2 < 30000 and pillday < 18 and tabletkishot < 1 and knowpreg = 0:'	"Sorry little brother." You smile apologetically. "I''m not on birth control and I can''t afford to get knocked up. Especially not by my one of my siblings."'
 			act'. . .':gt'brother_voyeur','brother_shower_fuck_end'
