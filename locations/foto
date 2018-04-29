@@ -276,6 +276,9 @@ if $ARGS[0] = 'studio':
 			else
 				gt 'foto', 'model'
 			end
+			if first_fame_event = 1:
+				act'Ask if there''s special work available':gt'foto_events','special'
+			end
 		end
 		if model = 1:act 'Go to the showers':gt'foto','showers'
 		if model = 1:act 'Go to your makeup station':gt'foto','makeup'
@@ -286,6 +289,7 @@ if $ARGS[0] = 'studio':
 end
 
 if $ARGS[0] = 'interview':
+	gs'stat'
 	if undress_ask = 0:
 		act'What? Why?':
 			undress_ask = 1
@@ -346,6 +350,7 @@ end
 					
 					
 if $ARGS[0] = 'job_offer':
+	gs'stat'
 	cla
 	*nl
 	if age >= 18 or fakepassport = 1 or age_lie = 1:
@@ -521,6 +526,7 @@ if $ARGS[0] = 'job_offer':
 end
 
 if $ARGS[0] = 'bathroom':
+	gs'stat'
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/models.jpg"></center>'
 	'A gaggle of models crowd the <a href="exec:GT ''mirror'',''start''">mirrors</a> and sinks, loudly chatting, giggling, and generally gossiping about life in the city and the studio.'
@@ -533,6 +539,7 @@ if $ARGS[0] = 'bathroom':
 end
 
 if $ARGS[0] = 'showers':
+	gs'stat'
 	cla & *clr
 	shower_sex = rand(1,7)
 	if shower_sex = 7 and krystal >= 3:gt 'foto','krystalshower'
@@ -622,6 +629,7 @@ if $ARGS[0] = 'showers':
 end
 
 if $ARGS[0] = 'krystalshower':
+	gs'stat'
 	'<center><video autoplay loop src="images/locations/city/citycenter/photo/portraits/krystal_b/shower.mp4"></video></center>'
 	'	You head to the shower area and realize that you can hear passionate moaning from inside. As you enter, you see Krystal in one of the stalls with her boyfriend doing what sounds like an excellent job of eating her pussy out.'
 	'	"Ahh! Yes! Just like that!"'
@@ -717,6 +725,7 @@ if $ARGS[0] = 'krystalshower':
 end
 	
 if $ARGS[0] = 'makeup':
+	gs'stat'
 	*clr & cla
 	$locM = 'foto'
 	$metkaM = 'makeup'
@@ -735,7 +744,7 @@ if $ARGS[0] = 'makeup':
 			'	You pick up the brush on the table of your station and work it through your hair until it shines.'
 			minut += 1
 			pcs_hairbsh = 1
-			act 'View results':gt'foto','makeup'
+			act'View results':gt'foto','makeup'
 		end
 	end
 
@@ -753,13 +762,14 @@ if $ARGS[0] = 'makeup':
 			'	Perfectly precise and with deft hands, they work carefully, covering up any and all of your imperfections but also coloring your face in ways that flawlessly compliment the natural hues of your body, eyes, face, and hair. The process takes ages, but you know that it''s worth it. This is a level of makeup that you could never achieve on your own.'
 			*nl
 			'	Finally, they finish and step back. Looking at yourself in the mirror, it''s strange. Rather than looking dolled up, overdone, and fake, it''s almost like you aren''t even wearing makeup. Unlike some famous models, you still look like a real person. More importantly than that, you still look like you. It''s just the perfect version of you.'
-			act'Finish'gt'foto','makeup'
+			act'Finish':gt'foto','makeup'
 		end
 	end
 	act 'Go to the showers':gt'foto','showers'
 end
 
 if $ARGS[0] = 'practicemodel':
+	gs'stat'
 	*clr & cla
 	minut += 5
 	if model = 0:model = 1
@@ -1436,7 +1446,7 @@ if $ARGS[0] = 'practicemodel':
 									*nl
 									'<center><video autoplay loop src="images/locations/city/citycenter/photo/modelbts2.mp4"></video></center>'
 									'	The practice shoot ends and he calls you over to his computer to show you what you need to work on.'
-									act 'Leave':gt 'foto', 'end'
+									act 'Leave':gt 'foto','end'
 								end
 							end
 						else
@@ -1489,6 +1499,7 @@ if $ARGS[0] = 'practicemodel':
 								*nl
 								if pcs_exhibition < 40:'	You''re tired and you''re sweaty, but you also feel pretty good, and <i>a lot</i> more confident in your body.'
 								if pcs_exhibition >= 40:'	The photographer comes over to you, asking how you feel it went. You start to answer him when you notice how straight you''re standing. As you talk more and more and the discussion turns to how your breasts bounced, you realize you don''t feel any embarrassment talking about your body. In fact, you don''t have any desire to cover yourself up at all. The exercise worked! You''re comfortable being naked!'
+								act'End practice':gt'foto','end'
 							else
 								exhibition_exp += 10
 								'	Loud music starts to pump into the room and over the noise the photographer shouts at you to start jumping up and down and dance in front of the camera.'
@@ -1515,7 +1526,7 @@ if $ARGS[0] = 'practicemodel':
 											gs'stat'
 											'<center><video autoplay loop src="images/locations/city/citycenter/photo/nudepractice2.mp4"></video></center>'
 											'	You spend the rest of the two hours jumping up and down, laughing, and generally having fun. At the end of it, you''re tired and a bit sweaty, but you also feel a lot more confident about being naked.'
-											act'End practice':gt 'foto', 'end'
+											act'End practice':gt'foto','end'
 										end
 									end
 								end
