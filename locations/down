@@ -138,7 +138,7 @@ else
 	$desc_txt2 = '<a href="exec:msg ''The Havana Fitness Center is closed and will reopen at 9:00''">Havana Fitness Center</a>'
 end
 '<<$desc_txt1>> is front and center in the commercial area. Nearby is a <<$desc_txt2>> which has a swimming pool that can be used for a small fee.'
-if hour >= 9 and hour <= 20:
+if hour >= 9 and hour <= 23:
 	$desc_txt1 = '<a href="exec:gt ''foto'', ''start''">Aphrodite Photography</a>'
 else
 	$desc_txt1 = '<a href="exec:msg ''Aphrodite Photography is closed and will reopen at 9:00''">Aphrodite Photography</a>'
