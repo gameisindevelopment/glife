@@ -173,6 +173,7 @@ if $ARGS[0] = 'start':
 			preg = 0
 			thinkpreg = 0
 			knowpreg = 0
+			pcs_hydra += 20
 			!! I am not sure, why is it here this cycle, but I leave it so (rachels)
 			nextbaby = arrsize('yearkid')
 			if broodcurse > 0: over = 13 & gt'gameover'

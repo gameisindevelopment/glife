@@ -711,6 +711,11 @@ if $ARGS[0] = 'sisboyQW_party':
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
+		if pcs_hydra >= 100:
+			pcs_hydra -= 10
+		else
+			pcs_hydra -= 20
+		end
 		gs'stat'
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/rekshome/party/sisboyqwparty_9.jpg"></center>'
 		*nl
@@ -728,6 +733,11 @@ if $ARGS[0] = 'sisboyQW_party':
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
+		if pcs_hydra >= 100:
+			pcs_hydra -= 10
+		else
+			pcs_hydra -= 20
+		end
 		gs'stat'
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/rekshome/party/sisboyqwparty_9.jpg"></center>'
 		*nl

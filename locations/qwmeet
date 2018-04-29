@@ -51,7 +51,7 @@ if $ARGS[0] = '':
 						cla
 						minut += 15
 						pcs_energy = 100
-						water = 100
+						pcs_hydra = 100
 						gs 'stat'
 						'You drank the wine and began to dig in to the salad with the fork. Vladimir said, "Let''s move on you, I hope you do not mind?" You shake your head confirming that you too find this formal conversation style a bit much.'
 						'Vladimir continued "In business terms I''m a wolf. I find it impossible to stand still, I have to constantly find new prey. Now I''m opening another business. Therefore I could take you to work."'
@@ -249,7 +249,7 @@ end &! --- qwmeetkatdy ---
 if $ARGS[0] = 'qwpaluba':
 	minut += 30
 	pcs_energy = 100
-	water = 100
+	pcs_hydra = 100
 	gs 'stat'
 	'<center><b><font color="maroon">The boat</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/characters/city/vladimir/kater2.jpg"></center>'
@@ -512,7 +512,7 @@ if $ARGS[0] = 'qwmeetdin':
 		*clr & cla
 		minut += 60
 		pcs_energy = 100
-		water = 100
+		pcs_hydra = 100
 		vladimirday = daystart
 		vladimirQW = 35
 		gs 'stat'

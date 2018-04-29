@@ -509,6 +509,7 @@ if $ARGS[0] = 'PregBDSM' :
 				'"<<$pitfs>>What do I do? I can''t do this, but if I stop now I won''t get any money and Pavlin will be furious! Why did I put myself in this situation?<<$pitfe>>" Your breathing becomes ragged as the panic reaches a new peak in your chest.'
 				act 'Swallow your last bit of pride and take a sip':
 					*clr & cla
+					pcs_hydra += 20
 					if pcs_dom => 20: 
 						pcs_dom -20
 					else

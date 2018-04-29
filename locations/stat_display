@@ -71,7 +71,7 @@ end
 !!!!!!!!!!!!!!!!!!!!!
 
 if pcs_sleep > 100: pcs_sleep = 100
-
+if pcs_hydra > 200: pcs_hydra = 200
 
 !!----------------image Extra messages, start--------------------------
 $stat_imgtool_msg=''
@@ -188,14 +188,17 @@ if stolmoney > 0: $stat_msg += '<BR>You have <b><<stolmoney>> ₽</b> in your de
 if ETOmenu = 1:
 	$stat_msg += '<BR><b><<$pcs_health>></b>'
 	$stat_msg += '<BR><b><<$pcs_willpwr>></b>'
-	$stat_msg += '<BR><b><<$pcs_energy>></b>'
-	$stat_msg += '<BR><b><<$water>></b>'
-	$stat_msg += '<BR><b><<$pcs_sleep>></b>'
+	if cheatNoEat = 0: $stat_msg += '<BR><b><<$pcs_energy>></b>'
+	if cheatNoDrink = 0: $stat_msg += '<BR><b><<$pcs_hydra>></b>'
+	if cheatNoSleep = 0: $stat_msg += '<BR><b><<$pcs_sleep>></b>'
 elseif Enable_scalepic = 2:
-$st_temp='rgb(<<(16777216 + fcolor) mod 256>>,<<(16777216 + fcolor)/256 mod 256>>,<<(16777216 + fcolor)/65536>>)'
-$stat_msg += '<p><font color="<<$st_temp>>"><TABLE width="300" cellpadding="1" cellspacing="0"><TR><TD width="85%">'+FUNC('indiktab', '2', pcs_horny, pcs_horny)+'</TD><TD> Arousal</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '2', pain['total'], pain['total'])+'</TD><TD> Pain</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_health * 100 / healthmax, pcs_health)+'</TD><TD> Health</TD></TR>'
-if MagikDostup = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_manna * 100 / mannamax, pcs_manna)+'</TD><TD> Manna</TD></TR>'
-$stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_willpwr * 100 / willpowermax, pcs_willpwr)+'</TD><TD> Willpower</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_stam * 100 / stammax, pcs_stam)+'</TD><TD> Stamina</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_mood, pcs_mood)+'</TD><TD> Mood</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_energy, pcs_energy)+'</TD><TD> Hunger</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_sleep, pcs_sleep)+'</TD><TD> Sleep</TD></TR></TABLE></font></p>'
+	$st_temp='rgb(<<(16777216 + fcolor) mod 256>>,<<(16777216 + fcolor)/256 mod 256>>,<<(16777216 + fcolor)/65536>>)'
+	$stat_msg += '<p><font color="<<$st_temp>>"><TABLE width="300" cellpadding="1" cellspacing="0"><TR><TD width="85%">'+FUNC('indiktab', '2', pcs_horny, pcs_horny)+'</TD><TD> Arousal</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '2', pain['total'], pain['total'])+'</TD><TD> Pain</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_health * 100 / healthmax, pcs_health)+'</TD><TD> Health</TD></TR>'
+	if MagikDostup = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_manna * 100 / mannamax, pcs_manna)+'</TD><TD> Manna</TD></TR>'
+	$stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_willpwr * 100 / willpowermax, pcs_willpwr)+'</TD><TD> Willpower</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_stam * 100 / stammax, pcs_stam)+'</TD><TD> Stamina</TD></TR><TR><TD width="85%">'+FUNC('indiktab', '1', pcs_mood, pcs_mood)+'</TD><TD> Mood</TD></TR>'
+	if cheatNoEat = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_energy, pcs_energy)+'</TD><TD> Hunger</TD></TR>'
+	if cheatNoDrink = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_hydra, pcs_hydra)+'</TD><TD> Thirst</TD></TR>'
+	if cheatNoSleep = 0: $stat_msg += '<TR><TD width="85%">'+FUNC('indiktab', '1', pcs_sleep, pcs_sleep)+'</TD><TD> Sleep</TD></TR></TABLE></font></p>'
 else
 	gs 'indik', '2', pcs_horny, pcs_horny
 	$stat_msg += '<BR><<$ind>> Arousal'
@@ -220,11 +223,20 @@ else
 	gs 'indik', '1', pcs_mood, pcs_mood
 	$stat_msg += '<BR><<$ind>> Mood'
 
-	gs 'indik', '1', pcs_energy, pcs_energy
-	$stat_msg += '<BR><<$ind>> Hunger'
+	if cheatNoEat = 0:
+		gs 'indik', '1', pcs_energy, pcs_energy
+		$stat_msg += '<BR><<$ind>> Hunger'
+	end
 
-	gs 'indik', '1', pcs_sleep, pcs_sleep
-	$stat_msg += '<BR><<$ind>> Sleep'
+	if cheatNoDrink = 0:
+		gs 'indik', '1', pcs_hydra, pcs_hydra
+		$stat_msg += '<BR><<$ind>> Thirst'
+	end
+
+	if cheatNoSleep = 0:
+		gs 'indik', '1', pcs_sleep, pcs_sleep
+		$stat_msg += '<BR><<$ind>> Sleep'
+	end
 end
 
 
@@ -473,12 +485,12 @@ if home_owned[1] = 1 and ArendHouseSL <= 0:
 	if money >= 6000 or stolmoney >= 6000 or money + stolmoney >= 6000 or karta + bankDebtLimit >= 6000:
 		$stat_msg += ' Renew with '
 		if money >= 6000:
-			$stat_msg += ' <a href="exec:money -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash</a>'
+			$stat_msg += ' <a href="exec:money -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash</a>'
 		elseif stolmoney >= 6000:
-			$stat_msg += ' <a href="exec:stolmoney -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from drawer</a>'
+			$stat_msg += ' <a href="exec:stolmoney -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from drawer</a>'
 		elseif money + stolmoney >= 6000:
 			!both < 6000, so money = money - 6000 + stolmoney
-			$stat_msg += ' <a href="exec:money -= 6000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from purse and drawer</a>'
+			$stat_msg += ' <a href="exec:money -= 6000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from purse and drawer</a>'
 		end
 		!from purse, drawer or both
 		if karta >= 6000: 
@@ -542,24 +554,40 @@ if mentats_dose >= 1:$stat_msg += '<BR><font color = green>You feel sharp and fo
 if bcream_used = 1:$stat_msg += '<BR><font color = #DB7093>Your breasts are feeling hot and tingly.</font>'
 if aphrodisiac_timer > 0:$stat_msg += '<BR><font color = #DB7093>You are feeling hot and every move causes your groin to tingle.</font>'
 
-if pcs_energy < 5:
-	$stat_msg += '<BR><font color="red">You feel faint from hunger, if you don''t have something to eat very soon, you will pass out.</font>'
-elseif pcs_energy < 10:
-	$stat_msg += '<BR><font color="red">You are starving, you really need to have something to eat.</font>'
-elseif pcs_energy < 20:
-	$stat_msg += '<BR>You are very hungry and struggle to concentrate on anything other than food.'
-elseif pcs_energy < 30:
-	$stat_msg += '<BR>You feel peckish and your thoughts sometimes drift towards food.'
+if cheatNoEat = 0:
+	if pcs_energy < 5:
+		$stat_msg += '<BR><font color="red"><b>You feel faint from hunger, if you don''t have something to eat very soon, you will pass out.</b></font>'
+	elseif pcs_energy < 10:
+		$stat_msg += '<BR><font color="red">You are starving, you really need to have something to eat.</font>'
+	elseif pcs_energy < 20:
+		$stat_msg += '<BR>You are very hungry and struggle to concentrate on anything other than food.'
+	elseif pcs_energy < 30:
+		$stat_msg += '<BR>You feel peckish and your thoughts sometimes drift towards food.'
+	end
 end
 
-if pcs_sleep < 5:
-	$stat_msg += '<BR><font color="red">You can''t keep your eyes open, if you don''t go to bed now, you will fall asleep right here.</font>'
-elseif pcs_sleep < 10:
-	$stat_msg += '<BR><font color="red">You are exhausted, you really need to go to bed soon.</font>'
-elseif pcs_sleep < 20:
-	$stat_msg += '<BR>You are tired and you are struggling to concentrate.'
-elseif pcs_sleep < 30:
-	$stat_msg += '<BR>You feel a little tired.'
+if cheatNoDrink = 0:
+	if pcs_hydra < 5:
+		$stat_msg += '<BR><font color="red"><b>You feel light-headed, if you don''t have something to drink very soon, you will pass out.</b></font>'
+	elseif pcs_hydra < 10:
+		$stat_msg += '<BR><font color="red">You are dehydrated, you really need to have something to drink.</font>'
+	elseif pcs_hydra < 20:
+		$stat_msg += '<BR>You are thirsty and your dry throat is irritating and distracting you.'
+	elseif pcs_hydra < 30:
+		$stat_msg += '<BR>You feel a little thirsty and your mouth is a little dry.'
+	end
+end
+
+if cheatNoSleep= 0:
+	if pcs_sleep < 5:
+		$stat_msg += '<BR><font color="red"><b>You can''t keep your eyes open, if you don''t go to bed now, you will fall asleep right here.</b></font>'
+	elseif pcs_sleep < 10:
+		$stat_msg += '<BR><font color="red">You are exhausted, you really need to go to bed soon.</font>'
+	elseif pcs_sleep < 20:
+		$stat_msg += '<BR>You are tired and you are struggling to concentrate.'
+	elseif pcs_sleep < 30:
+		$stat_msg += '<BR>You feel a little tired.'
+	end
 end
 
 if $pantyworntype ! 'none' and clit_size >= 25:$stat_msg += '<BR><font color = #FF1493>Your panties keep rubbing against your clit and making you horny.</font>'
@@ -601,42 +629,44 @@ if smoker >= 20:
 		end
 	else
 		if siga > 0:
-			$stat_msg += '<BR><a href="exec:gs ''shortgs'',''smoker''"><font color="blue"><b>You have <<siga>> cigarettes left.</b></font></a><BR>'
+			$stat_msg += '<BR><a href="exec:gs ''shortgs'',''smoker''"><font color=#0064FF><b>You have <<siga>> cigarettes left.</b></font></a><BR>'
 		else
-			$stat_msg += '<BR><font color="blue"><b>You feel like you should get some cigarettes.</b></font><BR>'
+			$stat_msg += '<BR><font color=#0064FF><b>You feel like you should get some cigarettes.</b></font><BR>'
 		end
 	end
 elseif siga > 0:
-	$stat_msg += '<BR><a href="exec:gs ''shortgs'',''smoker''"><font color = blue><b>You have <<siga>> cigarettes.</b></font></a><BR>'
+	$stat_msg += '<BR><a href="exec:gs ''shortgs'',''smoker''"><font color=#0064FF><b>You have <<siga>> cigarettes.</b></font></a><BR>'
 end
 
 if smokeHour = hour and smokeday = day and smokeminut >= minut:$stat_msg += '<BR><font color="green">You are smoking a cigarette.</font><BR>'
 
-if pcs_sweat < 0 : pcs_sweat = 0
-if pcs_sweat > 69 : pcs_sweat = 69
-jump 'statDswt<<pcs_sweat/10>>'
-:statDswt0
-	if arrsize('sparrvol') = 0 : $stat_msg += '<BR><b><font color="green">You are sparkling clean.</font></b>'
-	jump 'statDswtEnd'
-:statDswt1
-	jump 'statDswtEnd'
-:statDswt2
-	$stat_msg += '<BR><font color="brown">You''re sweating.</font><BR>'
-	jump 'statDswtEnd'
-:statDswt3
-	$stat_msg += '<BR><font color="red">You are a little smelly.</font><BR>'
-	jump 'statDswtEnd'
-:statDswt4
-	$stat_msg += '<BR><font color="red">You stink.</font><BR>'
-	jump 'statDswtEnd'
-:statDswt5
-	$stat_msg += '<BR><b><font color="red">You really stink.</font></b><BR>'
-	jump 'statDswtEnd'
-:statDswt6
-	$stat_msg += '<BR><b><font color="red">You are dripping wet from sweat and smell like a gym sock.</font></b><BR>'
-	jump 'statDswtEnd'
+if cheatNoSweat = 0:
+	if pcs_sweat < 0 : pcs_sweat = 0
+	if pcs_sweat > 69 : pcs_sweat = 69
+	jump 'statDswt<<pcs_sweat/10>>'
+	:statDswt0
+		if arrsize('sparrvol') = 0 : $stat_msg += '<BR><b><font color="green">You are sparkling clean.</font></b>'
+		jump 'statDswtEnd'
+	:statDswt1
+		jump 'statDswtEnd'
+	:statDswt2
+		$stat_msg += '<BR><font color="brown">You''re sweating.</font><BR>'
+		jump 'statDswtEnd'
+	:statDswt3
+		$stat_msg += '<BR><font color="red">You are a little smelly.</font><BR>'
+		jump 'statDswtEnd'
+	:statDswt4
+		$stat_msg += '<BR><font color="red">You stink.</font><BR>'
+		jump 'statDswtEnd'
+	:statDswt5
+		$stat_msg += '<BR><b><font color="red">You really stink.</font></b><BR>'
+		jump 'statDswtEnd'
+	:statDswt6
+		$stat_msg += '<BR><b><font color="red">You are dripping wet from sweat and smell like a gym sock.</font></b><BR>'
+		jump 'statDswtEnd'
 
-:statDswtEnd
+	:statDswtEnd
+end
 
 if dirtyclothes = 1 and swamp_clothes = 0:
 	if pcs_sweat > 40:
@@ -646,21 +676,37 @@ if dirtyclothes = 1 and swamp_clothes = 0:
 	end
 end
 
-if lactate = 1:
+if lactate = 1 and night_mode = 0:
 	if lactatemv >= lactatemm-1:
-		$stat_msg += '<BR><font color = black>Your breasts are so full they hurt and a little milk is constantly dribbling out.</font><BR>'
-	elseif lactatemv > lactatemm*9/10:
-		$stat_msg += '<BR><font color = black>Your breasts are firm and full, and starting to hurt from all the milk they contain.</font><BR>'
-	elseif lactatemv > lactatemm*3/4:
-		$stat_msg += '<BR><font color = black>Your breasts feel firm and heavy, full of milk.</font><BR>'
-	elseif lactatemv > lactatemm/2:
-		$stat_msg += '<BR><font color = black>Your breasts are heavy, a cargo of milk inside.</font><BR>'
-	elseif lactatemv > lactatemm/4:
-		$stat_msg += '<BR><font color = black>Your breasts feel a little heavy.</font><BR>'
-	elseif lactatemv > 0:
-		$stat_msg += '<BR><font color = black>Your breasts tingle a little from the feeling of milk production.</font><BR>'
-	else
-		$stat_msg += '<BR><font color = black>Your breasts feel soft and empty.</font><BR>'
+			$stat_msg += '<BR><font color = black>Your breasts are so full they hurt and a little milk is constantly dribbling out.</font><BR>'
+		elseif lactatemv > lactatemm*9/10:
+			$stat_msg += '<BR><font color = black>Your breasts are firm and full, and starting to hurt from all the milk they contain.</font><BR>'
+		elseif lactatemv > lactatemm*3/4:
+			$stat_msg += '<BR><font color = black>Your breasts feel firm and heavy, full of milk.</font><BR>'
+		elseif lactatemv > lactatemm/2:
+			$stat_msg += '<BR><font color = black>Your breasts are heavy, a cargo of milk inside.</font><BR>'
+		elseif lactatemv > lactatemm/4:
+			$stat_msg += '<BR><font color = black>Your breasts feel a little heavy.</font><BR>'
+		elseif lactatemv > 0:
+			$stat_msg += '<BR><font color = black>Your breasts tingle a little from the feeling of milk production.</font><BR>'
+		else
+			$stat_msg += '<BR><font color = black>Your breasts feel soft and empty.</font><BR>'
+	end
+elseif lactate = 1 and night_mode = 1:
+	if lactatemv >= lactatemm-1:
+			$stat_msg += '<BR><font color = white>Your breasts are so full they hurt and a little milk is constantly dribbling out.</font><BR>'
+		elseif lactatemv > lactatemm*9/10:
+			$stat_msg += '<BR><font color = white>Your breasts are firm and full, and starting to hurt from all the milk they contain.</font><BR>'
+		elseif lactatemv > lactatemm*3/4:
+			$stat_msg += '<BR><font color = white>Your breasts feel firm and heavy, full of milk.</font><BR>'
+		elseif lactatemv > lactatemm/2:
+			$stat_msg += '<BR><font color = white>Your breasts are heavy, a cargo of milk inside.</font><BR>'
+		elseif lactatemv > lactatemm/4:
+			$stat_msg += '<BR><font color = white>Your breasts feel a little heavy.</font><BR>'
+		elseif lactatemv > 0:
+			$stat_msg += '<BR><font color = white>Your breasts tingle a little from the feeling of milk production.</font><BR>'
+		else
+			$stat_msg += '<BR><font color = white>Your breasts feel soft and empty.</font><BR>'
 	end
 end
 
@@ -950,7 +996,7 @@ i = 0
 					end
 				end
 			end
-			if j <= 4 and trt_cumeater = 1 and $txtiscum = 'cum':$txtiscum = '<a href="exec:gs ''cum_manage'', ''cumeater'', <<i>>"><font color="blue">' + $txtiscum + '</font></a>'
+			if j <= 4 and trt_cumeater = 1 and $txtiscum = 'cum':$txtiscum = '<a href="exec:gs ''cum_manage'', ''cumeater'', <<i>>"><font color=#0064FF>' + $txtiscum + '</font></a>'
 			$txtiscum += ' from '
 			if i = 0 and j = 4 and vibratorIN = 0 and pcs_vag*10 < cumvolume['<<i>>:<<j>>'] and cumvolume['<<i>>:<<j>>'] >= 20:
 				if $pantyworntype ! 'none':
@@ -1042,7 +1088,7 @@ if $clothingworntype = 'nude':
 			elseif pcs_exhibition < 20:
 				$stat_msg += '<BR><b><font color = orange>You are completely naked, you''re not too comfortable with nudity but it is a little exciting.</font></b>'
 			elseif pcs_exhibition >= 90:
-				$stat_msg += '<BR><b><font color = blue>You are completely naked, which is far better than having to wear clothes.</font></b>'
+				$stat_msg += '<BR><b><font color=#0064FF>You are completely naked, which is far better than having to wear clothes.</font></b>'
 			else
 				$stat_msg += '<BR><b><font color = #FF00FF>You are completely naked. It''s exciting and you feel tingly inside.</font></b>'
 			end
@@ -1055,7 +1101,7 @@ elseif $pantyworntype = 'none' and $clothingworntype ! 'swimwear':
 		$stat_msg += '<BR><b><font color = #FF00FF>You like, totally forgot to put on any panties. You are such a bimbo.</font></b>'
 	elseif PCloSkirt > 3:
 		if pcs_exhibition > 50:
-			$stat_msg += '<BR><b><font color="blue">You feel liberated not wearing panties as your naked ass flashes from under your short skirt.</font></b>'
+			$stat_msg += '<BR><b><font color=#0064FF>You feel liberated not wearing panties as your naked ass flashes from under your short skirt.</font></b>'
 		else
 			$stat_msg += '<BR><b><font color="red">Your face is flushed with shame, you are not wearing panties and your naked ass flashes from under your short skirt.</font></b>'
 		end
@@ -1223,11 +1269,11 @@ end
 if pornmiss = 1: $stat_msg += '<br><b>You missed a scheduled porno shoot!</b>'
 if prodcosttrue > 0: $stat_msg += '<br><b>You owe to the porn studio <<prodcost>>?</b>'
 if firstkasting > 0 and pfilmNO < 1 and pornstack < 10: $stat_msg += '<br><b>You can contract to <<10-pornstack>> porno movie.</b>'
-if hour < 22 and week >= 2 and week <= 4 and workKafe = 1:$stat_msg += '<BR><b><font color="red">Today you have a shift in cafe starting at 11:00.</font></b>'
-if hour < 17 and week < 5 and workSec >= 1 or hour < 17 and week < 5 and PersSecWork = 1:$stat_msg += '<BR><b><font color="red">Today you have a shift as a secretary from 9:00 to 17:00</font></b>'
+if hour < 22 and week >= 2 and week <= 4 and workKafe = 1:$stat_msg += '<BR><b><font color="red">Today you have a shift at The Roadhouse cafe starting at 11:00.</font></b>'
+if hour < 17 and week < 5 and workSec >= 1 or hour < 17 and week < 5 and PersSecWork = 1:$stat_msg += '<BR><b><font color="red">Today you have a shift as a secretary at Titran-Express from 9:00 to 17:00</font></b>'
 if hour < 20 and week => 1 and week <= 5 and age < 18 and workFabrika = 1:$stat_msg += '<BR><b><font color = red>Today you have work in the garment factory in Pavlovsk. Shift starts at 16:00.</font></b>'
 if hour < 16 and week => 1 and week <= 5 and age >= 18 and workFabrika = 1:$stat_msg += '<BR><b><font color = red>Today you have work in the garment factory in Pavlovsk. Shift starts at 8:00.</font></b>'
-if hour < 16 and week > 1 and week <= 5 and workhosp = 1:$stat_msg += '<BR><b><font color="red">You work as a nurse in the clinic. Your shift starts at 8:00.</font></b>'
+if hour < 16 and week > 1 and week <= 5 and workhosp = 1:$stat_msg += '<BR><b><font color="red">You work as a nurse in the Pavlovsk clinic. Your shift starts at 8:00.</font></b>'
 if hour < 10 and worksalon = 1 and (week = 1 or week = 3 or week = 5):$stat_msg += '<BR><b><font color = red>Today you have work as masseuse in beauty salon. Shift starts at 9:00.</font></b>'
 if leonidVisit = 1 and hour < 21 and hour > 6: $stat_msg += '<br><b>You have to serve Leonid at 20:00 in his Pavlovsk office!</b>'
 

@@ -84,7 +84,7 @@ if $ARGS[0] = 'pos22':
 		act 'Swallow':
 			cls
 			swallow += 1
-			water -= 10
+			pcs_hydra += 5
 			minut += 1
 			gs'stat'
 			'<center><video autoplay loop src="images/shared/sex/cum/mouth/cum1,'+rand(0,10)+'.mp4"></video></center>'

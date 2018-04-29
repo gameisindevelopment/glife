@@ -74,6 +74,11 @@ if $ARGS[0] = 'pos6':
 	cla
 	*clr
 	minut += 5
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/characters/city/anastasia/1shamp0.jpg"></center>'
 	'You ask the waitress to bring you salads and a bottle of champagne and have a nice, long chat with Nastya. It turns out you two have a lot in common. At some point, Anastasia admits that she''s a bit of an "attention whore".'
@@ -90,6 +95,11 @@ if $ARGS[0] = 'pos7':
 	cla
 	*clr
 	minut += 5
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/characters/city/anastasia/1party.jpg"></center>'
 	'You have the waitress bring salads, starters and vodka. You have a lot of fun chatting with Nastya and, as it turns out, you have a lot in common. Anastasia says that she likes to be the center of attention, that she loves it when men look at her. "And sometimes... I show them a little more than I should...", she whispers with a conspiratorial grin.'
@@ -105,6 +115,7 @@ if $ARGS[0] = 'pos8':
 	cla
 	*clr
 	minut += 5
+	pcs_hydra += 30
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/characters/city/anastasia/1shamp0.jpg"></center>'
 	'"Oh... Really? Well... alright, then let''s have some tea." Even though Nastya is taken aback at first, she quickly recovers and smiles at you reassuringly.' 
@@ -481,6 +492,11 @@ if $ARGS[0] = 'pos23':
 	cla
 	*clr
 	minut += 30
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	nastjaday = daystart
 	gs 'stat'
 
@@ -501,6 +517,7 @@ if $ARGS[0] = 'pos24':
 	*clr
 	minut += 120
 	pcs_energy = 10
+	pcs_hydra = 20
 	pcs_mood += 10
 	pcs_willpwr = pcs_willpwr + 10
 	alko += 2
@@ -528,6 +545,7 @@ if $ARGS[0] = 'pos25':
 	*clr
 	minut += 60
 	pcs_energy += 80
+	pcs_hydra += 40
 	money -= 100
 	gs 'stat'
 
@@ -613,6 +631,7 @@ if $ARGS[0] = 'pos30':
 	*clr
 	minut += 90
 	pcs_energy += 80
+	pcs_hydra += 40
 	gs 'stat'
 
 	'<center><img <<$set_imgh>> src="images/characters/city/anastasia/towel.jpg"></center>'

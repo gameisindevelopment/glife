@@ -1,5 +1,7 @@
 # saveupdater
 
+if water > 0: pcs_hydra = water & killvar 'water'
+
 pcs_dob = (birthyear * 10000) + (birthmonth * 100) + birthday
 
 if karinsucsexday > 0:tatianasucsexday = karinsucsexday & killvar 'karinsucsexday'

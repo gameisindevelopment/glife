@@ -650,6 +650,7 @@ if $ARGS[0] = 'kuh':
 		act 'Drink':
 			cla
 			*clr
+			pcs_hydra += 40
 			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/office/sex/m13.jpg"></center>'
 			'You have no choice as a drink, you open your mouth and start drinking. His second hand starts to hug your waist. "Well at least not reached under her skirt, " you think, but its rather posmetrev smirk realized that rushed to conclusions.'
 			'"That''s good girl all drunk, you''re all over this docile?" he said, and without waiting for an answer continued, "I know that obedient, I already blogged about that you are very diligent girl" with these words, his hand went up your spine and shoulder blades reaching, he began to press forward, so that you start to bend.'

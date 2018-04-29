@@ -71,6 +71,23 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 			act 'Get up from the table': gt 'swamphouse', 'start'
 		end
 	end
+	if bilberry > 0:
+		act 'To eat berries':
+			cla
+			*clr
+			minut += 20
+			pcs_energy += 10
+			pcs_hydra += 20
+			bilberry -= 1
+			pcs_willpwr += 5
+			pcs_health += 5
+			pcs_mood += 10
+			gs 'stat'
+			'<center><img src="images/locations/gadukino/forest/bilberry.jpg"></center>'
+			'You ate a few berries.'
+			act 'Continue': gt 'swamphouse', 'start'
+		end
+	end
 	!re-arrange it, there should be no logic error now by illume
 	if $clothingworntype ! 'nude' or swamp_clothes = 1:
 		!have cloth, or rag on
@@ -478,10 +495,10 @@ if $ARGS[0] = 'bucket':
 		minut+=5
 		cumspclnt = 2 & gs 'cum_cleanup' & pcs_breath = 0
 		bucket -= 1
-		if water >= 100:
+		if pcs_hydra >= 100:
 			'You''re not thirsty anymore. You don''t need to drink more water.'
 		else
-			water += 80
+			pcs_hydra += 80
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
@@ -933,6 +950,11 @@ if $ARGS[0] = 'hanterstable':
 		act 'Drink vodka':
 			*clr & cla
 			minut += 1
+			if pcs_hydra >= 100:
+				pcs_hydra -= 5
+			else
+				pcs_hydra -= 10
+			end
 			alko +=4
 			gs 'stat'
 
@@ -946,7 +968,7 @@ if $ARGS[0] = 'hanterstable':
 			minut += 15
 			alko +=2
 			fat += 1
-			water += 20
+			pcs_hydra += 10
 			gs 'stat'
 
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/shulginhome/kuh/beer2.jpg"></center>'

@@ -610,7 +610,7 @@ if $shoplocation = 'icecream':
 			money -= 50
 			fat += 3
 			pcs_mood += 50
-			water += 60
+			pcs_hydra += 60
 			pcs_energy += 30
 			cumspclnt = 2
 			gs 'cum_cleanup'

@@ -229,8 +229,7 @@ if $ARGS[0] = 'doPunish':
 end
 
 if $ARGS[0] = 'doPaperwork':
-	durr = 60
-	minut += durr
+	minut += 60
 	leoHorny += rand (5 * mult, 20 * mult)
 	leoStress += rand (5, 20)
 	leoCoffee += rand (5, 15)
@@ -246,8 +245,7 @@ if $ARGS[0] = 'doPaperwork':
 end
 
 if $ARGS[0] = 'doLazy':
-	durr = 60
-	minut += durr
+	minut += 60
 	leoHorny += rand (5 * mult, 20 * mult)
 	leoStress += rand (5, 20)
 	leoCoffee += rand (5, 15)
@@ -375,8 +373,7 @@ if $ARGS[0] = 'cumPussy':
 end
 
 if $ARGS[0] = 'askForJob':
-	durr = 2
-	minut += durr
+	minut += 2
 	'Sir you know.. I.. I need money. So i thought, maybe, maybe I could work for you..'
 	'You don''t want me whoring to random men, do you?'
 	''

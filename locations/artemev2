@@ -120,6 +120,11 @@ elseif artQW = 10:
 	'You spend the next half hour talking about your plans after you finish school, with your good grades. The bottle of wine is empty before you know it, and you feel a bit tipsy.'
 	'Artem looks at you greedily, and when the conversation hits a break he suddenly moves in and kisses you. You kiss him back, but then Artem''s hands are tugging at your clothes, trying to take them off.'
 	minut += 30
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	alko += 4
 	gs 'stat'
 

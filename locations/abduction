@@ -491,7 +491,11 @@ if $ARGS[0] = 'abdEscapeWindow3':
 	'You decide to...'
 	nroad = 12
 	minut += 180
-	water -= 50
+	if pcs_hydra >= 100:
+		pcs_hydra -= 25
+	else
+		pcs_hydra -= 50
+	end
 	gs 'stat'
 
 	painkiller = painkiller_bak
@@ -519,15 +523,19 @@ if $ARGS[0] = 'abdFood':
 		'Suddenly you spot a loose chainlink on your leash. You try to manipulate it and you manage to free yourself from the wall.'
 		'<a href="exec:gt ''abduction'', ''abdEscape''">Go to the window</a>'
 	end
-	act 'Eat dried food (0:20)':
+	act 'Eat dried food (0:10)':
 		cla
 		*clr
 		minut += 20
 		pranik -= 1
 		pcs_health += 30
 		pcs_mood += 10
-		pcs_energy += 50
-		water -= 25
+		pcs_energy += 25
+		if pcs_hydra >= 100:
+			pcs_hydra -= 10
+		else
+			pcs_hydra -= 20
+		end
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
@@ -547,7 +555,11 @@ if $ARGS[0] = 'abdFood':
 		pranik -= 1
 		pcs_health += 30
 		pcs_mood += 10
-		water += 100
+		if pcs_hydra >= 100:
+			pcs_hydra += 50
+		else
+			pcs_hydra += 100
+		end
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		gs 'stat'
@@ -572,8 +584,8 @@ if $ARGS[0] = 'abdFood':
 				vitaminday = daystart
 				vitamin -= 1
 				frost = 0
-				if water < 50 : water += 30 else water +=15
-				if water > 100: water = 100
+				if pcs_hydra < 50 : pcs_hydra += 30 else pcs_hydra +=15
+				if pcs_hydra > 100: pcs_hydra = 100
 
 				if KandidozOnce = 1:Kandidoz -= 2
 				if GerpesOnce = 1:Gerpes -= 2

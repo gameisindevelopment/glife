@@ -28,13 +28,13 @@ end
 act 'Drink the water':
 	*clr & cla
 	minut += 5
-	if water >= 100:
+	if pcs_hydra >= 100:
 		*clr & cla
 		'<center><img <<$set_imgh>> src="images/locations/gadukino/hunters/hands.jpg"></center>'
 		'You''re not thirsty anymore.'
 	else
 		*clr & cla
-		water += 80
+		pcs_hydra += 80
 		cumspclnt = 2 & gs 'cum_cleanup' & pcs_breath = 0
 		'<center><img <<$set_imgh>> src="images/locations/gadukino/hunters/hands.jpg"></center>'
 		'You take a sip of the spring water.'

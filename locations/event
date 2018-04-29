@@ -158,7 +158,7 @@ if $ARGS[0] = 'dima':
 			'"I don''t usually drink vodka." Maybe this was a bad idea.'
 
 			act 'Make excuses and go':gt'street'
-			act 'Drink vodka':gt'event','dima2'
+			act 'Drink vodka':pcs_hydra -=10 & gt'event','dima2'
 		end
 	end
 

@@ -1716,39 +1716,39 @@ end
 
 if $ARGS[0] = 'records':
 	clr
-	if home_owned[1] > 0:pl'You live in a two-room apartment, in a residential area. Rent for the apartment is subtracted automatically, in sum of 3000 <b>₽</b> plus electric bill on 25th of each month.'
+	if home_owned[1] > 0:pl'You live in a two-room apartment, in the city residential area. Rent for the apartment is subtracted automatically, in sum of 3000 <b>₽</b> plus electric bill on 25th of each month.'
 	nl
 	if workPTU > 2:pl'You work as a teacher at the Lycée. Working days Mon-Sat, with 14.00 to 16.00. Salary 300r/day. Dress code - office clothes, Strict. The road from the apartment to the Lyceum takes 2 hours 10 minutes.'
 	nl
-	if (work = 1 or cheatWork = 1) and workKafe > 0:pl'You are working as a waitress in a cafe. You need to come to work between 11 and 12, working days: Tuesday, Wednesday and Thursday. At work, you can receive tips from customers, and payment is received on 25th of each month.'
+	if (work = 1 or cheatWork = 1) and workKafe > 0:pl'You are working as a waitress at The Roadhouse cafe. You need to come to work between 11 and 12, working days: Tuesday, Wednesday and Thursday. At work, you can receive tips from customers, and payment is received on 25th of each month.'
 	nl
-	if (work = 1 or cheatWork = 1) and workhosp > 0:pl'You work as a nurse in the clinic. You need to come to work between 8 and 9, during the week. Salary is automatically transferred on 25th of each month.'
+	if (work = 1 or cheatWork = 1) and workhosp > 0:pl'You work as a nurse in the Pavlovsk clinic. You need to come to work between 8 and 9, during the week. Salary is automatically transferred on 25th of each month.'
 	nl
-	if (work = 1 or cheatWork = 1) and worksalon > 0:pl'You work in a salon as masseuse. You need to come to work with 9 to 10, working days, Monday, Wednesday, Friday. Salary is automatically transferred on 25th of each month.'
+	if (work = 1 or cheatWork = 1) and worksalon > 0:pl'You work as a masseuse in the city at the Beauty Bar. You need to come to work with 9 to 10, working days, Monday, Wednesday, Friday. Salary is automatically transferred on 25th of each month.'
 	nl
-	if (work = 1 or cheatWork = 1) and workSec > 0:pl'You work as a secretary in the office. At work you need to come up 9, during the week. Salary is automatically transferred on 25th of each month.'
+	if (work = 1 or cheatWork = 1) and workSec > 0:pl'You work as a secretary at Titran-Express. At work you need to come up 9, during the week. Salary is automatically transferred on 25th of each month.'
 	nl
-	if (work = 1 or cheatWork = 1) and tanwork > 0:pl'You work as a governess for Tanya. Salary is automatically transferred on 25th of each month.'
+	if (work = 1 or cheatWork = 1) and tanwork > 0:pl'You work as a governess for Tanya, at Nicholas'' luxury city apartment. Salary is automatically transferred on 25th of each month.'
 	nl
-	if (work = 1 or cheatWork = 1) and young_shop_work = 1:pl'You work as a store clerk in Pussy-Cats. Work starts at 15, every day except Saturday and Sunday. The salary shall be issued once a week on Fridays.'
+	if (work = 1 or cheatWork = 1) and young_shop_work = 1:pl'You work in the city as a store clerk at Pussy-Cats - youth clothing store. Work starts at 15, every day except Saturday and Sunday. The salary shall be issued once a week on Fridays.'
 	nl
 	if (work = 1 or cheatWork = 1) and workFabrika = 1:pl'You work as a seamstress in a factory in Pavlovsk. Work is every day except Saturday and Sunday. Salary is automatically transferred on 25th of each month.'
 	nl
-	if workrin = 1:pl'You are working on the market in Arthur''s tent as clothing saleswoman. Work on Tuesday, Thursday and Saturday, starting at 8 AM. Salary depends on sales.'
+	if workrin = 1:pl'You are working at the market in Arthur''s tent as clothing saleswoman. Work on Tuesday, Thursday and Saturday, starting at 8 AM. Salary depends on sales.'
 	nl
 	if maidqw = 1:pl'You can work in Pavlovsk hotel as a maid. Work is every day from 16 to 19. Salary is 250 plus tips.'
 	nl
 	if (work = 1 or cheatWork = 1) and gpoliuborka > 1:pl'You can work part-time as a cleaner in pavlovo clinic. Work is from 16 to 21.'
 	nl
-	if stripwork >= 1:pl'You can work as a stripper, free schedule, every day from 15 to midnight. No salary, only tips.'
+	if stripwork >= 1:pl'You can work as a stripper in the city industrial region. Free schedule, every day from 15 to midnight. No salary, only tips.'
 	nl
 	if pfilmSTOP = 1:pl'<<$pfilmstory_new>>'
-	if film > 0:pl'You are working as pornographic actress under the name <<$pfname>>, Filmography:'
+	if film > 0:pl'You are working in the city industrial region as pornographic actress under the name <<$pfname>>, Filmography:'
 	pl'<<$pfilmhistory>>'
 	nl
 	if bumtolik = 4:pl'You have been asked to help the homeless at the Mercy Clinic in the city industrial region.'
 	nl
-	if bumtolik >= 5:pl'You volunteer at the Mercy Clinic working with the homeless. Working hours are from 9 to 17, Saturday and Sunday.'
+	if bumtolik >= 5:pl'You volunteer at the Mercy Clinic in the city industrial region, working with the homeless. Working hours are from 9 to 17, Saturday and Sunday.'
 	nl
 	if husband > 0:pl'You have been married for <<husbanday>> days. Your husband <<$husName>> <<$husBody>> <<$husFat>> <<$husHair>>. Member <<husDick>> Relationship <<husband>>.'
 	if kid > 0:

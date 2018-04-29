@@ -1744,7 +1744,7 @@ if $ARGS[0] = 'Meal':
 	pcs_mood += 20
 	fat += 2
 	pcs_energy += 60
-	water += 60
+	pcs_hydra += 60
 	cumspclnt = 2
 	money -= 200
 	gs'stat'
@@ -1761,7 +1761,7 @@ if $ARGS[0] = 'Salad':
 	pcs_mood += 20
 	pcs_energy += 45
 	fat -= 1
-	water += 50
+	pcs_hydra += 50
 	cumspclnt = 2
 	money -= 200
 	gs'stat'

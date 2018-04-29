@@ -1,8 +1,10 @@
 # kiosk
 
 !!WD:"SUB >= 15" for act - Will need balancing / playtesting
+
+if $kioskloc = 'counter': gt 'kiosk', 'counter'
+
 if $ARGS[0] = 'start':
-	$kioskloc = ''
 	if hour >= 14 and hour <= 16:
 		cls
 		gs 'stat'
@@ -10,7 +12,7 @@ if $ARGS[0] = 'start':
 		'It is currently very busy and looks like you''ll have to wait to get to the counter.'
 		act 'Wait in line (20 Minutes)':
 			minut += 20
-			$kioskloc = 'counter' & gt 'kiosk'
+			gt 'kiosk', 'counter'
 		end
 
 		act 'Leave':gt $loc
@@ -20,55 +22,32 @@ if $ARGS[0] = 'start':
 				cls
 
 				exhibition_exp += rand(12,15)
-
-				'<center><img <<$set_imgh>> src="images/shared/sex/exhibitionism/flash_tits_pus.jpg"></center>'
-				'The people in front of you are shocked, as they see you flashing your tits and your pussy. As a small thank you, some of them let you move further up the line.'
-
-				gs 'arousal', 'flash', 10
-				minut -= 5
-				gs 'arousal', 'end'
+				gs 'events', 'flash_full', 'outdoors', 5
 				gs 'stat'
 				
-				act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+				act 'Go to the counter': gt 'kiosk', 'counter'
 			end
 		end
 
 		if pcs_exhibition >= 40:
 			act 'Flash your pussy':
 				cls
-
 				exhibition_exp += rand(9,12)
-
-				if pcs_pubes >= 10:
-					'<center><img <<$set_imgh>> src="images/shared/sex/exhibitionism/flash_hairy.jpg"></center>'
-				else
-					'<center><img <<$set_imgh>> src="images/shared/sex/exhibitionism/flash_nohairy.jpg"></center>'
-				end
-
-				'The people in front of you are shocked, as they see you flashing your pussy. As a small thank you, some of them let you move further up the line.'
-
-				gs 'arousal', 'flash', 5
-				gs 'arousal', 'end'
+				gs 'events', 'flash_pussy', 'outdoors', 5
 				gs 'stat'
 				
-				act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+				act 'Go to the counter': gt 'kiosk', 'counter'
 			end
 		end
 
 		if pcs_exhibition >= 35:
 			act 'Flash your tits':
 				cls
-
 				exhibition_exp += rand(5,8)
-
-				'<center><img <<$set_imgh>> src="images/shared/sex/exhibitionism/flash_tits.jpg"></center>'
-				'The people in front of you are shocked, as they see you flashing your tits. As a small thank you, some of them let you move further up the line.'
-
-				gs 'arousal', 'flash', 5
-				gs 'arousal', 'end'
+				gs 'events', 'flash_tits', 'outdoors', 5
 				gs 'stat'
 				
-				act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+				act 'Go to the counter': gt 'kiosk', 'counter'
 			end
 		end
 
@@ -97,7 +76,7 @@ if $ARGS[0] = 'start':
 						gs 'arousal', 'end'
 						gs 'stat'
 						
-						act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+						act 'Go to the counter': gt 'kiosk', 'counter'
 					end
 
 					act 'Cum on your mouth':
@@ -110,7 +89,7 @@ if $ARGS[0] = 'start':
 						gs 'arousal', 'end'
 						gs 'stat'
 						
-						act 'Go to the counter':$kioskloc = 'counter' & gt 'kiosk'
+						act 'Go to the counter': gt 'kiosk', 'counter'
 					end
 				else
 					'<center><video autoplay loop src="images/locations/shared/postoffice/punch.mp4"></video></center>'	
@@ -123,11 +102,14 @@ if $ARGS[0] = 'start':
 			end
 		end
 	else
-		$kioskloc = 'counter' & gt 'kiosk'
+		gt 'kiosk', 'counter'
 	end
 end
 
-if $kioskloc = 'counter':
+if $ARGS[0] = 'counter':
+	$messdrink = 'beverage', 'afterdrink'
+	$messfood = 'beverage', 'afterdrink'
+	$kioskloc = 'counter'
 	cls
 	gs 'stat'
 	
@@ -141,28 +123,65 @@ if $kioskloc = 'counter':
 	end	
 	*pl '<center><table align="center" width=80%>' 
 	*pl '<center><table align="center">'
-	*P FUNC ('$stock_item', 20, 'Cigarettes', 50, 'siga', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Fashion magazine', 50, 'fashmag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Computer magazine', 50, 'compmag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Biographical magazine', 50, 'biomag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Cooking magazine', 50, 'cookmag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Knitting magazine', 50, 'knitmag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Fitness magazine', 50, 'fitmag', 'kiosk')
+	*P FUNC ('$stock_item', 20, 'Cigarettes', 115, 'siga', 'kiosk')
+	*P FUNC ('$single_stock_item', 1, 'Fashion magazine', 430, 'fashmag', 'kiosk')
+	*P FUNC ('$single_stock_item', 1, 'Computer magazine', 430, 'compmag', 'kiosk')
+	*P FUNC ('$single_stock_item', 1, 'Biographical magazine', 430, 'biomag', 'kiosk')
+	*P FUNC ('$single_stock_item', 1, 'Cooking magazine', 430, 'cookmag', 'kiosk')
+	*P FUNC ('$single_stock_item', 1, 'Knitting magazine', 430, 'knitmag', 'kiosk')
+	*P FUNC ('$single_stock_item', 1, 'Fitness magazine', 430, 'fitmag', 'kiosk')
 	'</table></center>'
 	*pl
-	if money >= 50:
-			act 'Eat snack (50 <b>₽</b>)':
-				money -= 50
-				gs 'food', 'snack'
-			end   
-		end
-		
-	act 'Leave':minut += 5 & gt $loc
 
-	act 'View phone themes': $kioskloc = 'themes' & gt 'kiosk'
+	act 'Leave (0:05)': $kioskloc = '' & gt $loc
+
+	act 'Buy a snack (100 <b>₽</b>) (0:05)':
+		cla
+		*clr
+		money -= 100
+		pcs_health += 10
+		pcs_mood += 20
+		fat += 6
+		pcs_energy += 20
+		if pcs_hydra >= 100:
+			pcs_hydra += 10
+		else
+			pcs_hydra += 20
+		end
+		cumspclnt = 2
+		pcs_breath = 0
+		gs 'cum_cleanup'
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
+		'You enjoy a small tasty, but somewhat fattening, snack. It wasn''t very much food, and<<$mtxt>>'
+		act 'return': gt 'kiosk', 'start'
+	end
+
+	act 'Buy some water (20 <b>₽</b>) (0:05)':
+		*clr
+		cla
+		frost = 1
+		money -= 20
+		pcs_health += 5
+		pcs_energy += 4
+		if pcs_hydra >= 100:
+			pcs_hydra += 25
+		else
+			pcs_hydra += 50
+		end
+		cumspclnt = 2
+		gs 'cum_cleanup'
+		pcs_breath = 0
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderwater.jpg"></center>'
+		'You enjoy a drink of water, and <<$mtxt>>'
+		act 'return': gt 'kiosk', 'start'
+	end
+
+	act 'View phone themes': gt 'kiosk', 'themes'
 end
 
-if $kioskloc = 'themes':
+if $ARGS[0] =  'themes':
 	cls
 	gs 'stat'
 	
@@ -176,7 +195,7 @@ if $kioskloc = 'themes':
 	i += 1
 	if i < 13: jump 'phonethemeloop'
 
-	act 'Return': $kioskloc = 'counter' & gt 'kiosk'
+	act 'Return': gt 'kiosk', 'counter'
 end
 
 --- kiosk ---------------------------------

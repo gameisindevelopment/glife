@@ -36,6 +36,11 @@ end
 if $ARGS[0] = 'a':
 	minut += 30
 	alko += 1
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	'When your food arrives, <<$loverdesc[lover_number]>> pours you a glass of wine and proposes a toast to love.'
 
 	act 'Eat':
@@ -51,6 +56,11 @@ if $ARGS[0] = 'b':
 
 	gs 'food', 'm_meal'
 	alko += 2
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	gs 'stat'
 	'After you finish your meal and empty the wine, <<$loverdesc[lover_number]>> offers to take you to his home.'
 

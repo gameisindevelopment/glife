@@ -79,7 +79,7 @@ if $ARGS[0] = 'talk':
 		if i = 7:'"Roma sends his greetings, he said he missed our threesomes, I slapped him across the face for it."'
 		if i = 8:'"What do you think of our host?"'
 		if i = 9:'"Get wild <<$pcs_nickname>>, everything that happens at Rex''s parties, stays at Rex''s parties."'
-     
+
 	end
 	act 'Move away':gt $loc,$metka
 end
@@ -88,6 +88,11 @@ if $ARGS[0] = 'drink':
 	cls
 	minut += 5
 	alko +=1
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0

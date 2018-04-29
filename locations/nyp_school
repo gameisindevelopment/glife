@@ -22,7 +22,7 @@ if $ARGS[0] = 'start':
 		minut += 30
 		fat += 3
 		pcs_energy += 40
-		water += 60
+		pcs_hydra += 60
 		gs 'stat'
 		if music_on = 1:
 			$track_loop = 'sound/newyear.mp3'
@@ -104,6 +104,11 @@ if $ARGS[0] = 'start':
 						cumspclnt = 2
 						gs 'cum_cleanup'
 						pcs_breath = 0
+						if pcs_hydra >= 100:
+							pcs_hydra -= 5
+						else
+							pcs_hydra -= 10
+						end
 						gs 'stat'
 
 						act 'Get dragged into the locker room': gt 'nyp_school', 'slut'
@@ -127,9 +132,10 @@ if $ARGS[0] = 'start':
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/newyear/punch.jpg"></center>'
 					'You grab one of the plastic cups and spoon out some of the spiked juice, having a drink it isn''t too bad. The juice covers up most of the taste of the vodka.'
 					minut += 5
+					pcs_hydra += 10
 					alko += 5 & !!need code for adding alcohol
 					gs 'stat'
-					act 'Drink some more':gt 'nyp_school', 'drink more'
+					act 'Drink some more':pcs_hydra += 10 & gt 'nyp_school', 'drink more'
 					if grupTipe = 5:
 						!!If Sveta is a outcast this should be the only option and the above options should not show up, if Sveta is a outcast. If Sveta is not a outcast then the go stand against the wall alone should not show up.
 						act 'Go stand against the wall alone.':gt 'nyp_school', 'outcast'

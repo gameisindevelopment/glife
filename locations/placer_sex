@@ -131,6 +131,11 @@ if $args[0] = 'vodka':
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
+	end
 	*clr & cla
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/park/sex/placer_sex2.jpg"></center>'
 	'You accept the drink happily: "Sure, a drink would be nice! Thanks!"'
@@ -1412,7 +1417,7 @@ if $args[0] = 'breakfast':
 			minut += 30
 			fat += 3
 			pcs_energy += 15
-			water += 15
+			pcs_hydra += 15
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/park/sex/placer_sex39.jpg"></center>'
 			'Everyone gathers at the table, and you have to admit: his omelettes are fantastic. The guys occasionally glance over your body while you eat... you never did put on more clothes and are still sitting in your underwear. You feel comfortable around them though, and your lack of clothes doesn''t bother you at all. They don''t make any further moves on you, but ask if you want to stay around a while longer.'
@@ -1428,6 +1433,11 @@ if $args[0] = 'stay':
 	if hour <= 22:
 		hour = 23
 		minut = 0
+	end
+	if pcs_hydra >= 100:
+		pcs_hydra -= 5
+	else
+		pcs_hydra -= 10
 	end
 	gs'stat'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/park/sex/placer_sex29.jpg"></center>'

@@ -1,0 +1,161 @@
+#beverage_menu
+
+if night_mode = 1:
+	$fcolor1 = '#FFFFFF'
+	$bcolor1 = '#202020'
+	$bcolor2 = '#303030'
+else
+	$fcolor1 = '#000000'
+	$bcolor1 = '#FFFFFF'
+	$bcolor2 = '#e6f2ff'
+end
+
+if $ARGS[0] = 'diner':
+	*clr & cla
+	act 'Back': gt $loc, $metka
+	killvar '$_diner'
+	$_diner['0,name'] = 'Water'
+	$_diner['0,type'] = 'bev_wat'
+	$_diner['0,price'] = 35
+	$_diner['1,name'] = 'Kvass'
+	$_diner['1,type'] = 'bev_kva'
+	$_diner['1,price'] = 55
+	$_diner['2,name'] = 'Juice'
+	$_diner['2,type'] = 'bev_jui'
+	$_diner['2,price'] = 70
+	$_diner['3,name'] = 'Spiced Tea'
+	$_diner['3,type'] = 'bev_tea'
+	$_diner['3,price'] = 110
+	$_diner['4,name'] = 'Black Coffee'
+	$_diner['4,type'] = 'bev_cof'
+	$_diner['4,price'] = 120
+	$_diner['5,name'] = 'Milkshake'
+	$_diner['5,type'] = 'bev_mil'
+	$_diner['5,price'] = 180
+	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
+	i = 0
+	:loop_diner
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_diner['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_diner['<<i>>,price']),'<a href="exec:gt''beverage'',$_diner[''<<i>>,type''] ,<<i>>">'+$_diner['<<i>>,price']+'</a>',$_diner['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
+	i += 1
+	if i < arrsize('$_diner')/3:jump 'loop_diner'
+	$_str += '</table></center></font>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/dinerdrinks.jpg"</center><br>'
+	'Your drinks order:<br><br>'+$_str
+	killvar '$_str'
+	killvar '$fcolor1'
+	killvar '$bcolor1'
+	killvar '$bcolor2'
+end
+
+if $ARGS[0] = 'cafe':
+	*clr & cla
+	act 'Back': gt $loc, $metka
+	killvar '$_cafe'
+	$_cafe['0,name'] = 'Water'
+	$_cafe['0,type'] = 'bev_wat'
+	$_cafe['0,price'] = 40
+	$_cafe['1,name'] = 'Kvass'
+	$_cafe['1,type'] = 'bev_kva'
+	$_cafe['1,price'] = 60
+	$_cafe['2,name'] = 'Juice'
+	$_cafe['2,type'] = 'bev_jui'
+	$_cafe['2,price'] = 80
+	$_cafe['3,name'] = 'Spiced Tea'
+	$_cafe['3,type'] = 'bev_tea'
+	$_cafe['3,price'] = 120
+	$_cafe['4,name'] = 'Black Coffee'
+	$_cafe['4,type'] = 'bev_cof'
+	$_cafe['4,price'] = 130
+	$_cafe['5,name'] = 'Milkshake'
+	$_cafe['5,type'] = 'bev_mil'
+	$_cafe['5,price'] = 200
+	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
+	i = 0
+	:loop_cafe
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_cafe['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_cafe['<<i>>,price']),'<a href="exec:gt''beverage'',$_cafe[''<<i>>,type''] ,<<i>>">'+$_cafe['<<i>>,price']+'</a>',$_cafe['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
+	i += 1
+	if i < arrsize('$_cafe')/3:jump 'loop_cafe'
+	$_str += '</table></center></font>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/cafedrinks.jpg"</center><br>'
+	'Your drinks order:<br><br>'+$_str
+	killvar '$_str'
+	killvar '$fcolor1'
+	killvar '$bcolor1'
+	killvar '$bcolor2'
+end
+
+if $ARGS[0] = 'fancy':
+	*clr & cla
+	act 'Back': gt $loc, $metka
+	killvar '$_fancy'
+	$_fancy['0,name'] = 'Spring Water'
+	$_fancy['0,type'] = 'bev_wat'
+	$_fancy['0,price'] = 70
+	$_fancy['1,name'] = 'Imported Tea'
+	$_fancy['1,type'] = 'bev_tea'
+	$_fancy['1,price'] = 180
+	$_fancy['2,name'] = 'Imported Beer'
+	$_fancy['2,type'] = 'bev_bee'
+	$_fancy['2,price'] = 200
+	$_fancy['3,name'] = 'Vodka Martini'
+	$_fancy['3,type'] = 'bev_mar'
+	$_fancy['3,price'] = 400
+	$_fancy['4,name'] = 'Glass of Wine'
+	$_fancy['4,type'] = 'bev_win'
+	$_fancy['4,price'] = 800
+	$_fancy['5,name'] = 'Glass of Champagne'
+	$_fancy['5,type'] = 'bev_cha'
+	$_fancy['5,price'] = 900
+	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
+	i = 0
+	:loop_fancy
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_fancy['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_fancy['<<i>>,price']),'<a href="exec:gt''beverage'',$_fancy[''<<i>>,type''] ,<<i>>">'+$_fancy['<<i>>,price']+'</a>',$_fancy['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
+	i += 1
+	if i < arrsize('$_fancy')/3:jump 'loop_fancy'
+	$_str += '</table></center></font>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/fancydrinks.jpg"</center><br>'
+	'Your drinks order:<br><br>'+$_str
+	killvar '$_str'
+	killvar '$fcolor1'
+	killvar '$bcolor1'
+	killvar '$bcolor2'
+end
+
+if $ARGS[0] = 'pub':
+	*clr & cla
+	act 'Back': gt $loc, $metka
+	killvar '$_pub'
+	$_pub['0,name'] = 'Water'
+	$_pub['0,type'] = 'bev_wat'
+	$_pub['0,price'] = 35
+	$_pub['1,name'] = 'Beer on tap'
+	$_pub['1,type'] = 'bev_bee'
+	$_pub['1,price'] = 60
+	$_pub['2,name'] = 'Vodka'
+	$_pub['2,type'] = 'bev_vod'
+	$_pub['2,price'] = 120
+	$_pub['3,name'] = 'Scotch'
+	$_pub['3,type'] = 'bev_sco'
+	$_pub['3,price'] = 140
+	$_pub['4,name'] = 'Glass of Wine'
+	$_pub['4,type'] = 'bev_win'
+	$_pub['4,price'] = 160
+	$_pub['5,name'] = 'Black Russian'
+	$_pub['5,type'] = 'bev_bla'
+	$_pub['5,price'] = 250
+	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
+	i = 0
+	:loop_pub
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="75%" align="center"><font color="<<$fcolor1>>">'+$_pub['<<i>>,name']+'</td><td height="30" width="15%" align="right">'+iif(money >= val($_pub['<<i>>,price']),'<a href="exec:gt''beverage'',$_pub[''<<i>>,type''] ,<<i>>">'+$_pub['<<i>>,price']+'</a>',$_pub['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽.</b></td></tr>'
+	i += 1
+	if i < arrsize('$_pub')/3:jump 'loop_pub'
+	$_str += '</table></center></font>'
+	'<center><img <<$set_imgh>> src="images/shared/drinks/bardrinks.jpg"</center><br>'
+	'Your drinks order:<br><br>'+$_str
+	killvar '$_str'
+	killvar '$fcolor1'
+	killvar '$bcolor1'
+	killvar '$bcolor2'
+end
+
+--- beverage_menu ---------------------------------

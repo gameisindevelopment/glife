@@ -62,7 +62,7 @@ if $ARGS[0] = 'SGStart':
 	salo = 80
 	dick = 0
 	pcs_energy = 60
-	water = 60
+	pcs_hydra = 60
 	pcs_sleep = 70
 !!	Stats
 	pcs_stren = 30
@@ -266,7 +266,6 @@ if $ARGS[0] = 'charselect':
 				grupvalue[3] = 50
 				grupvalue[1] = 10
 				kosmetica = 10
-				shampoo = 20
 				stanok = 10
 				swimwear[58] = 1
 				swimwearH[58] = 60
@@ -890,6 +889,7 @@ if $ARGS[0] = 'nerd':
 	grupvalue[6] = 10
 	genbsize = 22
 	salo = 100
+	shampoo = 20
 end
 
 if $ARGS[0] = 'jock':
@@ -933,6 +933,7 @@ if $ARGS[0] = 'jock':
 	pcs_skin = 60
 	npc_rel['A34'] += 10
 	grupTipe=2
+	shampoo = 20
 end
 
 if $ARGS[0] = 'cool':
@@ -963,6 +964,7 @@ if $ARGS[0] = 'cool':
 	pcs_skin = 60
 	npc_rel['A33'] += 10
 	grupTipe=1
+	shampoo = 20
 end
 
 if $ARGS[0] = 'gopnik':
@@ -1007,6 +1009,7 @@ if $ARGS[0] = 'gopnik':
 	stat['vaginal'] = 1
 	pav_sex = 30
 	grupTipe=4
+	shampoo = 20
 end
 
 if $ARGS[0] = 'outcast':
@@ -1029,6 +1032,7 @@ if $ARGS[0] = 'outcast':
 	end
 	pcs_skin = 20
 	grupTipe=5
+	shampoo = 20
 end
 
 if $ARGS[0] = 'socialgroup_setting':

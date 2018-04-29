@@ -34,7 +34,7 @@ if $ARGS[0] = 'update':
 	! average dick, hairy balls
 	! not paying attention to his own image and looks, wears glasses
 	$nd_name = 'Oleg'
-	$nd_font = '000099'
+	$nd_font = '0096FF'
 		!blue
 	nd_leaves = 9
 	nd_comes = 18
@@ -133,48 +133,68 @@ if $ARGS[0] = 'update':
 
 	gs 'stat'
 
-	if debg = 0:
-		'<a href="exec:debg=1">DEBUG</a>'
-	elseif debg = 1:
-		'<a href="exec:debg=0">DEBUG</a>'
-		$nd_name+' relation: '+nd_rel
-		!$gp_name+' relation: '+gp_rel
-		!$sp_name+' relation: '+sp_rel
-		'rentLeft: '+rentLeft
-		'weekNum: '+weekNum
-		'rentWeekNum: '+rentWeekNum
-		'servitudeLvl: '+servitudeLvl
-		'servicePaid: '+servicePaid
-		'cashPaid: '+cashPaid
-		'step: '+step
-		'subStep: '+subStep
-		'gp_mood: '+gp_mood
-		'gp_cumVol: '+gp_cumVol
-		'gp_cumVag: '+gp_cumVag
-		'gp_cumAnal: '+gp_cumAnal
-		'gp_cumSwall: '+gp_cumSwall
-		'nd_cumVol: '+nd_cumVol
-		'nd_cumMax: '+nd_cumMax
-		'nd_horny: '+nd_horny
-		'gp_horny: '+gp_horny
-		'sp_horny: '+sp_horny
-		''
-		nd_served = 0
-		nd_mood = 2
-		gp_served = 0
-		gp_mood = 2
-		sp_mood = 2
-		sp_served = 0
-	end
+	! if debg = 0:
+		! '<a href="exec:debg=1">DEBUG</a>'
+	! elseif debg = 1:
+		! '<a href="exec:debg=0">DEBUG</a>'
+		! $nd_name+' relation: '+nd_rel
+		! !$gp_name+' relation: '+gp_rel
+		! !$sp_name+' relation: '+sp_rel
+		! 'rentLeft: '+rentLeft
+		! 'weekNum: '+weekNum
+		! 'rentWeekNum: '+rentWeekNum
+		! 'servitudeLvl: '+servitudeLvl
+		! 'servicePaid: '+servicePaid
+		! 'cashPaid: '+cashPaid
+		! 'step: '+step
+		! 'subStep: '+subStep
+		! 'gp_mood: '+gp_mood
+		! 'gp_cumVol: '+gp_cumVol
+		! 'gp_cumVag: '+gp_cumVag
+		! 'gp_cumAnal: '+gp_cumAnal
+		! 'gp_cumSwall: '+gp_cumSwall
+		! 'nd_cumVol: '+nd_cumVol
+		! 'nd_cumMax: '+nd_cumMax
+		! 'nd_horny: '+nd_horny
+		! 'gp_horny: '+gp_horny
+		! 'sp_horny: '+sp_horny
+		! ''
+		! nd_served = 0
+		! nd_mood = 2
+		! gp_served = 0
+		! gp_mood = 2
+		! sp_mood = 2
+		! sp_served = 0
+	! end
 end
 
 ! apt house entry hallway
 if $ARGS[0] = 'hallway':
 	minut += 2
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptHallway.jpg"></left>'
+	'<center><h3>old apartment building</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptHallway.jpg"></center>'
 	''
 	'An old, common russian apartment house, lacking lots of years of repairs and maintenance.'
 	'The entry doors are left unlocked and even if they werent, they look like fall apart any moment.'
+	
+	act 'Take the elevator':
+		*clr & cla
+		minut +=1
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/stairs/liftnotwork.jpg"></center>'
+		'The building supervisor put a sign on the elevator: "Dear tenants, the elevator is out of order for today. Don''t worry, I should have it working again by tomorrow!". Unfortunately, that sign has been there for years.'
+		act 'Leave': gt 'pavSharedApt', 'hallway'
+	end
+	
+	act 'Go up to the second floor':
+		*clr & cla
+		minut +=1
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/stairs/brokenstairs.jpg"></center>'
+		'The stairs are as rundown as the rest of the apartment building.Thankfully there is no one I want to see on the floor above.'
+		act 'Turn back': gt 'pavSharedApt', 'hallway'
+	end
+
 	if pavSharedAptEnabled = 0:
 		'Inside is a board with announcements for the tenants. One of them seems as an <a href="exec:gt ''pavSharedApt'', ''advert''">advert</a>.'
 	else
@@ -190,17 +210,17 @@ end
 ! accomodation advert
 if $ARGS[0] = 'advert':
 	minut += 2
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/board.jpg"></left>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/board.jpg"></center>'
 	''
 	'Three young people offer a spare room in a shared apartment in this house.'
-	'If you are interested, come see us in the apartment No 3.' 
+	'If you are interested, come see us in the apartment No 3.'
 	seenAd = 1
 	act 'Continue':gt 'pavSharedApt', 'hallway'
 end
 
 ! door No 3
 if $ARGS[0] = 'doorNo3':
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptNo3Door.jpg"></left>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptNo3Door.jpg"></center>'
 	''
 	'You stand before the entry door to apartment No 3.'
 	if pavSharedAptEnabled = 1:
@@ -208,7 +228,7 @@ if $ARGS[0] = 'doorNo3':
 	else
 		act 'Ring the bell':gt 'pavSharedApt', 'intro'
 	end
-	act 'Go back':gt 'pavSharedApt', 'hallway'	
+	act 'Go back':gt 'pavSharedApt', 'hallway'
 end
 
 ! apt hall
@@ -240,17 +260,17 @@ if $ARGS[0] = 'start':
 		sp_cleaned = 0
 		sp_cumVol += rand(5, 20)
 	end
-	
+
 	! do this every time
 	rentLeft = rentWeekly - servicePaid - cashPaid
 
-	'<h3>Hallway</h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/hallway.jpg"></left>'
+	'<center><h3>Hallway</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/hallway.jpg"></center>'
 	'It is week number '+weekNum+'.'
-	
+
 	if weekNum < rentWeekNum:
 		if rentLeft > 0:
-			'You have left '+rentLeft+' RUB of rent to pay for the next week.'
+			'You have left '+rentLeft+' <b>₽</b> of rent to pay for the next week.'
 			if servitudeLvl >= 1:
 				'You may still pay it in <a href="exec:gt ''pavSharedApt'', ''payCash''">cash</a>, if you want.'
 			else
@@ -282,24 +302,25 @@ if $ARGS[0] = 'start':
 	end
 
 	if rentPaid = 1:
-		'A large apartment currently serves as a shared living. There are four rooms, one rented by you and three occupied by <a href="exec: gt ''pavShared_nd'', ''ndDick''"><font color=#<<$nd_font>>><<$nd_name>></font></a>, <a href="exec: gt ''pavShared_gp'', ''gpDick''"><font color=#<<$gp_font>>><<$gp_name>></font></a>, <a href="exec: gt ''pavShared_sp'', ''spDick''"><font color=#<<$sp_font>>><<$sp_name>></font></a>.'
-		'You stand in the hallway. ' 
+		'A large apartment currently serves as shared living. As well as the normal living spaces, there are four bedrooms, one rented by you and three occupied by <a href="exec: gt ''pavShared_nd'', ''ndDick''"><font color=#<<$nd_font>>><<$nd_name>></font></a>, <a href="exec: gt ''pavShared_gp'', ''gpDick''"><font color=#<<$gp_font>>><<$gp_name>></font></a>, <a href="exec: gt ''pavShared_sp'', ''spDick''"><font color=#<<$sp_font>>><<$sp_name>></font></a>.'
+		'You stand in the hallway. '
 		''
 		'From the hallway several doors lead to <a href="exec:gt ''pavSharedApt'', ''ndRoom''"><<$nd_name>>''s</a>, <a href="exec:gt ''pavSharedApt'', ''gpRoom''"><<$gp_name>>''s</a> and <a href="exec:gt ''pavSharedApt'', ''spRoom''"><<$sp_name>>''s</a> rooms.'
 		'The last doors lead to the <a href="exec:gt ''pavSharedApt'', ''pcsRoom''">room</a> you have rented.'
 		''
 		'There are several closets for your <a href="exec:gt ''shoes'', ''select''">shoes</a> and a large tall <a href="exec:gt ''mirror'', ''start''">mirror</a>.'
 		if servitudeLvl >= 1:'A computer printed <a href="exec:gt ''pavSharedApt'', ''list''">list</a> hangs on the exit door.'
-		act '<<$pcs_firstname>>''s room':gt 'pavSharedApt', 'pcsRoom'
+		act 'Your room':gt 'pavSharedApt', 'pcsRoom'
 		act 'Bathroom':gt 'pavSharedApt', 'bathroom'
 		act 'Kitchen':gt 'pavSharedApt', 'kitchen'
+		act 'Living Room':gt 'pavSharedApt', 'livingRoom'
 	end
-	
+
 	if $clothingworntype = 'nude':
 		''
 		'<b>You cannot leave the apartment naked.</b>'
 	else
-		act 'Leave':gt 'pavResidential'
+		act 'Leave':gt 'pavSharedApt', 'hallway'
 	end
 end
 
@@ -307,7 +328,7 @@ if $ARGS[0] = 'payCash':
 	minut += 2
 	cash = rentLeft
 	if money >= cash:
-		'You have decided to pay the remainder of the weekly rent in cash. It makes '+cash+' RUB.'
+		'You have decided to pay the remainder of the weekly rent in cash. It makes '+cash+' <b>₽</b>.'
 		cashPaid += cash
 		money -= cash
 		rentPaid = 1
@@ -320,7 +341,7 @@ end
 
 if $ARGS[0] = 'payService':
 	minut += 1
-	'The amount '+price+' RUB was taken in account of your weekly rent.'
+	'The amount '+price+' <b>₽</b> was taken in account of your weekly rent.'
 	servicePaid += price
 	act 'Continue':gt 'pavSharedApt', 'start'
 end
@@ -336,15 +357,15 @@ end
 
 if $ARGS[0] = 'intro':
 	gs 'pavSharedApt', 'update'
-	if step > 0:	
-		'<left><img border="5" bordercolor="<<$sp_font>>" height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/gp/gp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/nd/nd.jpg"></left>'
+	if step > 0:
+		'<center><img border="5" bordercolor="<<$sp_font>>" height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/gp/gp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/nd/nd.jpg"></center>'
 		''
 	end
 
 	if step = 0:
 		minut += 2
 		step = 1
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
 		''
 		'The door are opened by a young, nice looking athletic man.'
 		'<font color=#<<$sp_font>>>"Hi sweetie! What do you need?"</font>'
@@ -458,8 +479,8 @@ if $ARGS[0] = 'list':
 	$metka = 'list'
 	minut += 2
 	$goBack = $metka
-	'<h3><<$pcs_firstname>>''s pricelist</h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/list.jpg"></left>'
+	'<center><h3><<$pcs_firstname>>''s pricelist</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/list.jpg"></center>'
 	''
 	'The basic weekly rent is <<rentWeekly>> rubles.'
 	'It is possible to pay it in cash, or offer services instead. The prices are folllowing:'
@@ -496,13 +517,66 @@ if $ARGS[0] = 'payRent':
 	act 'Continue': gs 'pavSharedApt', 'start'
 end
 
+! living room
+if $ARGS[0] = 'livingRoom':
+	$location_type = 'private'
+	$locclass = 'sitroom'
+	$metka = 'livingRoom'
+	clr
+	minut += 1
+	gs 'stat'
+	'<center><b><font color="maroon">Living Room</font></b></center>'
+	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/sitr.jpg"></center>'
+	'The sitting room is rather sparsly decorated. An old sofa sits against the wall, some crates for tables, and an empty TV cabinet. It''s unlikely anyone will bother buying a TV, as they spend all their time in their own rooms.'
+	
+	act 'An old sofa':
+		*clr & cla
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/shulginhome/sdivan.jpg"></center>'
+		'<center>A small sofa just big enough for you to curl up on and take a nap./center>'
+		
+		if pornMagazine > 0:'<br>There is a porn magazine stuffed between the sofa cushions'
+		
+		gs 'events', 'read_porn'
+		gs 'events', 'read'
+
+		if pcs_horny >= 50:
+			act 'Masturbate':gt 'selfplay', 'start'
+		end
+
+		act 'Take a nap (1:00)':
+			if pcs_sleep < 90:
+				pcs_sleep += 10
+				pcs_health += 5
+				minut += 60
+				gs 'stat'
+				'You sleep about an hour.'
+			else
+				minut += 5
+				gs 'stat'
+				'You are not tired enough to sleep, even for a short nap.'
+			end
+		end
+	act 'Get up':gt 'pavSharedApt', 'livingRoom'
+	end
+
+	if obruch > 0: '<br>A hula hoop stands in corner of the room. '
+	if skak > 0: 'A jump rope is on a shelf. '
+	if bookYog > 0: 'A yoga mat is rolled up in a corner. '
+	
+	gs 'exercise', 'start'
+	gs'subkid'
+	
+	act 'Back to the hall': gt 'pavSharedApt', 'start'
+end
+
 if $ARGS[0] = 'bathroom':
 	minut += 1
 	$location_type = 'bathroom'
 	$metka = 'bathroom'
 
-	'<h3>Bathroom</h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></left>'
+	'<center><h3>Bathroom</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
 	'Modest bathroom, containing all that young people need for their daily life.'
 
 	gs 'din_van', 'private'
@@ -510,11 +584,12 @@ if $ARGS[0] = 'bathroom':
 end
 
 if $ARGS[0] = 'kitchen':
+	*clr & cla
 	minut += 2
 	$metka = 'kitchen'
 	gs 'kit_din'
-	'<h3>Kitchen</h3>'
-	'<left><img <<$set_imgh>> src="images/locations/oldtown/apartment/kuhr2x.jpg"></left>'
+	'<center><h3>Kitchen</h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/kuhrpar.jpg"></center>'
 	'It is a modest kitchen but has all that is needed.'
 
 	! dishes
@@ -533,30 +608,176 @@ if $ARGS[0] = 'kitchen':
 	! food
 	if eda > 0:
 		if cltarelka = 0 or edahot > 0:$edagot = ''
-		if cltarelka > 0 and edahot = 0:
-			$edagot = '<a href="exec:dynamic $edagotd">Cook meal (0:30) for yourself</a>'
-			if eda >= 3:
-				'<a href="exec: gt ''pavSharedApt'', ''cookForGuys''">Cook meal (1:30) for the guys</a>'
-			end
-			'In the refrigerator there''s enough (your own) food for <b><<eda>></b> servings. <<$edagot>>'
-		end
+		if cltarelka > 0 and edahot = 0:$edagot = '<a href="exec:dynamic $edagotd">Cook meal (0:30) for yourself</a>'
+		'In the refrigerator there''s enough (your own) food for <b><<eda>></b> servings. <<$edagot>>'
 	end
-	if edahot > 0:'<a href="exec: dynamic $edahotd ">On the table is ready meal.</a>'
+	if edahot > 0:'<a href="exec: dynamic $edahotd ">On the table is ready meal (0:30).</a>'
+	if edaD = 0 and eda = 0:'<b><font color="red">Yyou have nothing to eat, the refrigerator is empty!</font></b>'
+
+	if eda >= 3:
+		'<a href="exec: gt ''pavSharedApt'', ''cookForGuys''">Cook meal (1:30) for the guys</a>'
+	end
+
+	act 'Have a snack (0:05)':gs 'food', 'snack'
+
+	act 'Drink some water (0:05)':gs 'beverage', 'bev_wat'
+
+	act 'Have a cup of tea (0:05)':
+		cls
+		minut += 5
+		if pcs_hydra >= 100:
+			'You don''t need any more tea.'
+		else
+			pcs_hydra += 80
+			cumspclnt = 2
+			gs 'cum_cleanup'
+			pcs_breath = 0
+			pcs_mood += rand(3, 6)
+			'You make a refreshing cup of tea and everything seems a little better.'
+		end
+		
+		gs 'stat'
+
+		act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
+	end
 
 	if pranik > 0:
-		if pranik = 1:
-			'You only have a couple of cookies for a snack.'
-		else
-			'You have enough cookies for <b><<pranik>></b> more snacks.'
+		'You have <<pranik>> cookies.'
+
+		act 'Drink tea with cookies (0:05)':
+			cla
+			*clr
+			minut += 5
+			pranik -= 1
+			pcs_health += 30
+			pcs_mood += 20
+			pcs_energy += 20
+			if pcs_hydra >= 100:
+				pcs_hydra += 30
+			else
+				pcs_hydra += 60
+			end
+			cumspclnt = 2
+			gs 'cum_cleanup'
+			pcs_breath = 0
+			fat += 4
+			frost = 0
+			gs 'stat'
+			'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
+			'You drank tea and enjoyed the cookies. You know they''re too sweet and can''t be good for your figure, but they taste so good!'
+
+			act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
 		end
-		dynamic $pranik
 	end
 
-	dynamic $edaD
-	dynamic $fatdel
-	dynamic $driwater
-	dynamic $lekarstvo
-	dynamic $vitamin
+	if edaD > 0:
+		act 'Eat diet food (0:30)':
+			cla
+			*clr
+			frost = 0
+			minut += 30
+			pcs_health += 10
+			pcs_mood += 20
+			edaD -= 1
+			'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
+			if pcs_energy >= 100:
+				'You prepare a diet meal and try to eat it, but you''re really not hungry at all. You can''t finish the meal.'
+			elseif pcs_energy >= 80:
+				pcs_energy += 40
+				'You try to enjoy the diet meal, but half-way in you realize you weren''t all that hungry yet. You manage to finish the meal, but feel like it was kind of wasted.'
+			else
+				pcs_energy += 80
+				'The diet meal is tasty, and you enjoy eating it.'
+			end
+
+			if pcs_hydra >= 80:
+				'You don''t need any more tea.'
+			else
+				pcs_hydra += 100
+				cumspclnt = 2
+				gs 'cum_cleanup'
+				pcs_breath = 0
+				'You have a cup of tea, quenching your thirst.'
+			end
+
+			act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
+		end
+	end
+
+	if fatdel > 0:
+		act 'Consume fat burners':
+			cla
+			*clr
+			fatdel -= 1
+			if pcs_hydra >= 100:
+				pcs_hydra += 25
+			else
+				pcs_hydra += 50
+			end
+			salo -= 20
+			if salo < 11: salo = 11
+			gs 'body_shape', 'softreset'
+
+			'You throw the capsule of fat burners in a glass, add some water and drink it. You''re amazed at how fast the capsule works, feeling your body slim down almost immediately.'
+
+			act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
+		end
+	end
+
+	if lekarstvo > 0:
+		'You have <<lekarstvo>> tablet(s).'
+
+		if sick > 0 and lekarday ! daystart:
+			act 'Take a pill (0:05)':
+				cla
+				*clr
+				minut += 5
+				lekarday = daystart
+				lekarstvo -= 1
+				sick -= sick * 20 / 100
+				if pcs_hydra >= 100:
+					pcs_hydra += 25
+				else
+					pcs_hydra += 50
+				end
+				picrand = rand(1,9)
+				'<center><img <<$set_imgh>> src="images/locations/shared/apartment/event/sick/lekr<<picrand>>.jpg"></center>'
+				'You swallow the pill, and shortly after you feel a bit better.'
+
+				act 'Continue':gt 'pavSharedApt', 'kitchen'
+			end
+		end
+	end
+
+	if vitamin > 0:
+		'You have <<vitamin>> vitamin pills.'
+
+		if vitaminday ! daystart:
+			act 'Take vitamins (0:05)':
+				cla
+				*clr
+
+				minut += 5
+				vitaminday = daystart
+				vitamin -= 1
+				frost = 0
+				if pcs_hydra >= 100:
+					pcs_hydra += 25
+				else
+					pcs_hydra += 50
+				end
+				if KandidozOnce = 1:Kandidoz -= 2
+				if GerpesOnce = 1:Gerpes -= 2
+				if SifacOnce = 1 and Sifilis >= 10:Sifilis -= rand(0, 1)
+
+				pcs_skin += 1
+
+				'You take some vitamins to stay healthy.'
+
+				act 'Continue':gt 'pavSharedApt', 'kitchen'
+			end
+		end
+	end
 
 	act 'Leave':gt 'pavSharedApt', 'start'
 end
@@ -579,21 +800,21 @@ if $ARGS[0] = 'cookForGuys':
 end
 
 if $ARGS[0] = 'cleanForGuys':
-    cla
-    *clr
-    minut += 60
-    suhbelo += dirtbelo
-    poroshok -= 3
-    dirtbelo = 0
-    pcs_mood -= 10
+	cla
+	*clr
+	minut += 60
+	suhbelo += dirtbelo
+	poroshok -= 3
+	dirtbelo = 0
+	pcs_mood -= 10
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/stir.jpg"></center>'
-	
-	price = price_clean 
+
+	price = price_clean
 	*nl
-    'You collect piles piles of dirty clothes around the room, carry them into the bathroom, put them in a basin and then pour washing powder on them. You wash them until they are finally clean.'
-    cumStainCh =  rand (0, 100)
-    if servitudeLvl = 2 and cumStainCh <= 50:'<i>You notice bedsheets with what seems as dried out cum. Probably remainder of one of yours "servings". Maybe it is really better to swallow everytime, you wonder?</i>'
+	'You collect piles piles of dirty clothes around the room, carry them into the bathroom, put them in a basin and then pour washing powder on them. You wash them until they are finally clean.'
+	cumStainCh =  rand (0, 100)
+	if servitudeLvl = 2 and cumStainCh <= 50:'<i>You notice bedsheets with what seems as dried out cum. Probably remainder of one of yours "servings". Maybe it is really better to swallow everytime, you wonder?</i>'
 
 	act 'Hang them to dry out and leave':gt 'pavSharedApt', 'payService'
 end
@@ -605,11 +826,11 @@ if $ARGS[0] = 'pcsRoom':
 	$locclass = 'bedr'
 	gs 'pavSharedApt', 'update'
 
-	'<h3><<$pcs_firstname>>''s bedroom</h3>'
+	'<center><h3><<$pcs_firstname>>''s bedroom</h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/bedr.jpg"></center>'
-	'A tight, little room with a <a href="exec:gt ''bed'', ''start''">double bed</a> and an <a href="exec:gt ''budilnik'', ''start''">alarm clock</a>.' 
+	'A tight, little room with a <a href="exec:gt ''bed'', ''start''">double bed</a> and an <a href="exec:gt ''budilnik'', ''start''">alarm clock</a>.'
 	'An old wooden <a href="exec:gt ''wardrobe'', ''start''">wardrobe</a> (where you can <a href="exec:gt ''clothing'', ''view_clothing_list'', ''wardrobe''">organize your clothes</a>) stands near the door to the corridor, on top of it there''s a <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcase</a> you can store some clothes in. The windows are closed with faded, heavy curtains.'
-	
+
 	if budilnikOn = 0:
 		'Your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> is set for <<timer>> hours <<timerM>> minutes and currently turned <a href="exec: budilnikOn = 1 & GT ''pavSharedApt'',''pcsRoom''">off</a>.'
 	else
@@ -650,7 +871,7 @@ if $ARGS[0] = 'pcsRoom':
 	end
 
 	if tovarL > 0:'You currently have <<tovarL>> trinkets to sell at the station. The maximum you can carry with you is 30.'
-	
+
 	if vcard > 0:
 		act 'Look at your deck of vintage porn cards':card_deck = 0 & gt 'card'
 	end
@@ -716,6 +937,10 @@ if $ARGS[0] = 'pcsRoom':
 			end
 		end
 	end
+	dynamic $wearpan
+	dynamic $removepan
+	gs 'events', 'read_porn'
+	gs 'subkid'
 	if pcs_sleep <= 80:
 		if succubusQW = 2:
 			act 'Undress and go to sleep':
@@ -741,18 +966,13 @@ if $ARGS[0] = 'pcsRoom':
 		end
 	end
 
-	dynamic $wearpan
-	dynamic $removepan
-	gs 'events', 'read_porn'
-	gs 'subkid'
-
 	act 'Leave your room':gt 'pavSharedApt', 'start'
 end
 
 if $ARGS[0] = 'ndRoom':
 	minut += 2
-	'<h3><font color=#<<$nd_font>>><<$nd_name>>''s room</font></h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/nd/room.jpg"></left>'
+	'<center><h3><font color=#<<$nd_font>>><<$nd_name>>''s room</font></h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/nd/room.jpg"></center>'
 	'The room is surprisingly not as messy as one would expect, given that <<$nd_name>> is an IT guy.'
 	'There is one large window with bed bellow it, but the whole room is dominated by a large table with several computers and monitors.'
 	'Looking at it one would say that this must be a den of a hacker.'
@@ -773,8 +993,8 @@ end
 
 if $ARGS[0] = 'gpRoom':
 	minut += 2
-	'<h3><font color=#<<$gp_font>>><<$gp_name>>''s room</font></h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/gp/room.jpg"></left>'
+	'<center><h3><font color=#<<$gp_font>>><<$gp_name>>''s room</font></h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/gp/room.jpg"></center>'
 	'Messy room. Clothes everywhere.'
 
 	if hour >= gp_wakes and hour < gp_leaves:
@@ -794,10 +1014,10 @@ end
 
 if $ARGS[0] = 'spRoom':
 	minut += 2
-	'<h3><font color=#<<$sp_font>>><<$sp_name>>''s room</font></h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/room.jpg"></left>'
+	'<center><h3><font color=#<<$sp_font>>><<$sp_name>>''s room</font></h3></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/room.jpg"></center>'
 	'Tidy room full of sporting stuff like dresses, equipment and trophys. On the walls hang several posters of famous sport guys.'
-	
+
 	if hour >= sp_wakes and hour < sp_leaves:
 		'<<$sp_name>> is already awake, packing his bags to leave.'
 		act 'Approach him': gt 'pavShared_sp', 'sp'

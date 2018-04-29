@@ -14,9 +14,15 @@ if $args[0]= 'start':
 end
 
 if $args[0]= 'inner':
+	$metka = $ARGS[0]
+	$loc = $CURLOC
 	'<img <<$set_imgh>> src="images/locations/pavlovsk/park/cafe/caffe_del_parco_in.jpg">'
-
+	
+	act 'Order food':gs 'food_menu', 'cafe'
+	act 'Order drinks':gs 'beverage_menu', 'cafe'
+	
 	act 'Go back outside': gt 'gskver'
+	
 	gs 'family'
 
 	if (sunWeather = 0 or temper < 5) and week mod 2 = 0 and (hour >= 14 and hour < 20) and mey_vika_qw_day ! daystart:

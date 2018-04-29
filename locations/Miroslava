@@ -118,7 +118,7 @@ if $ARGS[0] = 'Start' or $ARGS[0] = '':
 		act 'Talking to Mira':
 			*clr & cla
 			minut += 60
-			if temper >= 25 and sunWeather = 1:water -= 12
+			if temper >= 25 and sunWeather = 1:pcs_hydra -= 12
 			if npc_rel['A60'] < 50: npc_rel['A60'] += 1
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/characters/village/mira/graze_cow_mira.jpg"></center>'
@@ -138,7 +138,7 @@ if $ARGS[0] = 'Start' or $ARGS[0] = '':
 				run_exp += 1
 				pcs_sweat += 10
 				pcs_mood += 5
-				if temper >= 25 and sunWeather = 1:water -= 24
+				if temper >= 25 and sunWeather = 1:pcs_hydra -= 24
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/characters/village/mira/graze_cow_run_mira.jpg"></center>'
 				'You within the hour, nothing to do, was running across the field.'

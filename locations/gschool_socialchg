@@ -439,7 +439,7 @@ if $ARGS[0] = 'gopnik initiation':
 
 			act 'Wait for distraction':
 				cla & *clr
-				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/events/gopnikinvite/distraction.mp4"></center>'
+				'<center><video src="images/locations/pavlovsk/events/gopnikinvite/distraction.mp4"></center>'
 				'You make your way towards the back, keeping a eye on Lena and Lera who are standing near the checkout and then they start making out. Lera seems to be really into it, pulling Lena back in for further kisses having her hands roam all over Lena''s body. Well it seems to have worked as the only other customer and the man behind the counter are both staring at them.'
 				minut += 5
 				gs 'stat'
@@ -541,7 +541,7 @@ if $ARGS[0] = 'gopnik initiation':
 
 				act 'Wait for distraction':
 					cla & *clr
-					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/events/gopnikinvite/distraction.mp4"></center>'
+					'<center><video src="images/locations/pavlovsk/events/gopnikinvite/distraction.mp4"></center>'
 					'You make your way towards the back, keeping a eye on Lena and Lera. Who are standing near the checkout and then they start making out. Lera seems to be really into it, pulling Lena back in for further kisses while her hands roam all over Lena''s body. Well it seems to have worked as the only other customer and the man behind the counter are both staring at them.'
 					minut += 5
 					gs 'stat'
@@ -651,7 +651,7 @@ if $ARGS[0] = 'gopnik initiation':
 
 						act 'Go with it':
 							cla & *clr
-							'<center><img <<$set_imgh>> src="images/locations/pavlovsk/events/gopnikinvite/distraction.mp4"></center>'
+							'<center><video src="images/locations/pavlovsk/events/gopnikinvite/distraction.mp4"></center>'
 							'Your lips meet and you begin kissing each other. You can feel her hands roaming over your body. She is actually a really good kisser and soon you are really getting into it yourself. You loose yourself in the kiss and then suddenly she breaks it and you realize that Lena has left.'
 							*nl
 							'Lera takes you by the hand and leads you towards the door, you manage to throw a quick glance at the guy behind the counter. "We need to go, at least we won''t need any condoms." She says giggling as she pulls you out the door. Then the two of you rush around the side of the building and find Lena with two bottles of vodka. Lena slips them back in her bag and then starts off running. "Lets go bitches, we got a party to get to." With that you follow them to the party.'
@@ -761,14 +761,14 @@ if $ARGS[0] = 'gopnik party':
 	gs 'gschool_socialchg', 'group_rel_change','gopniks', 5
 	grupTipe = 4
 
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/oldschool/gophangout/hall.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/oldschool/hall.jpg"></center>'
 	'You follow Lena and Lera who talk the whole way about how awesome that was and about how you did a good job. Upon arriving at old school, Lena and Lara slip through the busted front door, down the main hallway. Straight to see Vitek, who is waiting in the old school offices, with the rest of the gopniks.'
 	minut += 10
 	gs 'stat'
 
 	act 'Join the party':
 		cla & *clr
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/oldschool/gophangout/main.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/oldschool/main.jpg"></center>'
 		'You walk into the main office and you can spot out some old furniture placed in the middle of this huge room.'
 		'Lena tells you to wait at the entrance while she approaches the group that''s occupying the sofas. After a little while you can see her returning with Vitek, both of them are grinning.'
 		'"I heard you had something for me." Vitek eyes you.'
@@ -834,6 +834,7 @@ if $ARGS[0] = 'gopnik party':
 end
 
 if $ARGS[0] = 'explore':
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/oldschool/gophangout/party/party.jpg"></center>'
 	'Once your story has been told and everyone took a drink or more of the vodka, the large crowd scatters around and smaller cliques have formed instead. Those left in the main office are <a href="exec:gt ''gschool_socialchg'', ''tVitek''">Vitek</a> and <a href="exec:gt ''gschool_socialchg'', ''tLavrenti''">Lavrenti</a> who are discussing something, while <a href="exec:gt ''gschool_socialchg'', ''tDan''">Dan</a> is sitting on the sofa with a drink in his hand carefully listening to the discussion.'
 	'<a href="exec:gt ''gschool_socialchg'', ''tVasily''">Vasily</a> is standing nearby pouring himself a drink. <a href="exec:gt ''gschool_socialchg'', ''tLena''">Lena</a> and <a href="exec:gt ''gschool_socialchg'', ''tLera''">Lera</a> are standing a bit farther away talking to each other while, <a href="exec:gt ''gschool_socialchg'', ''tPauline''">Pauline</a> is standing by the window smoking a cigarette.'
 	gs 'stat'
@@ -1658,14 +1659,14 @@ if $ARGS[0] = 'gopnik slut':
 	grupvalue[1] -= 20
 	gs 'gschool_socialchg', 'group_rel_change','gopniks', 5
 	grupTipe = 4
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/oldschool/gophangout/hall.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/oldschool/hall.jpg"></center>'
 	'You follow Lena and Lera who don''t really talk to you during the walk to the old school, you get the feeling you might have made a mistake. But you agreed to be the party slut and you are not sure they would even let you backout now. Once at the old school they slip through the busted front door, down the main hallway, that leads to the old offices and teachers lounge.'
 	minut += 10
 	gs 'stat'
 
 	act 'Join the party':
 		cla & *clr
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/oldschool/gophangout/main.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/oldschool/main.jpg"></center>'
 		'As you get closer, you can already hear music playing and people talking loudly. Once inside you see all the gopniks from school, along with a few you don''t know. Some are from the other years class and others you think have already graduated or dropped out. Many of them cast hungery eyes on you, as the new girl. You are far less sure about this, but also you know it was way to late to change your mind. You are pretty sure you choices are go along with it willingly or unwillingly. If you go along with it, maybe it won''t be to bad.'
 		*nl
 		'Lena walks over to her brother Vitek, while Lera motions for you to stop. You do and look around the room. It seems the gopniks have been busy, several of the windows have been busted out and covered with boards, graffiti covers the walls, though much of it is pretty good. A large potbellied stove is near one of the boarded up windows with a pipe going out between two boards. Several tables in varies styles and condition litter the room, along with a motley crew of chairs and even a couple of old couches. Candles seem to be all over as the main source of light, while a old boombox plays music. A couple of doors lead off the main room, you suspect to the teachers lounge and principals office, or what they use to be.'

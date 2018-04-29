@@ -228,7 +228,7 @@ if $ARGS[0] = 'Done':
 		shampoo = 5
 		tampon = 2
 		pcs_energy = 100
-		water = 100
+		pcs_hydra = 100
 		pcs_sleep = 100
 
 !!		Starting Option Adjustments
@@ -294,7 +294,7 @@ if $ARGS[0] = 'Done':
 		shampoo = 20
 		tampon = 15
 		pcs_energy = 100
-		water = 100
+		pcs_hydra = 100
 		pcs_sleep = 100
 
 !!		Starting Option Adjustments
@@ -315,7 +315,6 @@ if $ARGS[0] = 'Done':
 		eda = 0
 		poroshok = 0
 		shampoo = 0
-		sanpad = 20
 
 		hcolmotherremember = pcs_haircol
 		hcolfatherremember = pcs_haircol

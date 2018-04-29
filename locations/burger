@@ -30,10 +30,9 @@ if $ARGS[0] = 'start':
 		gt 'down'
 	end
 
-	if money >= 100:
-		act 'Eat (100 <b>₽</b>)':money -= 100 & gs 'food', 'f_food'
-	end
-
+	act 'Order food':gs 'food_menu', 'diner'
+	act 'Order drinks':gs 'beverage_menu', 'diner'
+		
 	if IvanPodstavaQW = 2:
 		act 'Go into the office to Anatoly Borisovich':gt 'burger', 'office'
 	end

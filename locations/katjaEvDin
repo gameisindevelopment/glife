@@ -292,6 +292,13 @@ if $ARGS[0] = 'sex':
 	end
 	if strapon > 0:
 		if pcs_dom >= KatjaDom:
+			if KatjaSlut + (pcs_dom - KatjaDom) >= 40 and katjahorny >= 40:
+				act'Get the Strap On': gt 'KatjaEvDin', 'strapon_main'
+			end
+		end
+	end
+	if dildo > 0:
+		if pcs_dom >= KatjaDom:
 			if KatjaSlut + (pcs_dom - KatjaDom) >= 40 and katjahorny >= 30:
 				act'Get Toys': gt 'KatjaEvDin', 'dildo'
 			end

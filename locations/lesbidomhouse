@@ -88,6 +88,11 @@ if $ARGS[0] = 'QW1':
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0
+				if pcs_hydra >= 100:
+					pcs_hydra -= 5
+				else
+					pcs_hydra -= 10
+				end
 				gs'stat'
 					
 				'<center><img <<$set_imgh>> src="images/characters/city/natalya/wine.jpg"></center>'
@@ -136,6 +141,11 @@ if $ARGS[0] = 'QW1':
 					cumspclnt = 2
 					gs 'cum_cleanup'
 					pcs_breath = 0
+					if pcs_hydra >= 100:
+						pcs_hydra -= 5
+					else
+						pcs_hydra -= 10
+					end
 					gs'stat'
 				
 					'<center><img <<$set_imgh>> src="images/characters/city/natalya/wine.jpg"></center>'
@@ -2185,6 +2195,11 @@ if $ARGS[0] = 'QW12':
 				act 'Sign the contract':
 					cla
 					*clr
+					if pcs_hydra >= 100:
+						pcs_hydra -= 5
+					else
+						pcs_hydra -= 10
+					end
 					lesbiQW = 13
 					mistresscontract = daystart + 365
 					'<center><img <<$set_imgh>> src="images/characters/city/natalya/sex/sub198.jpg"></center>'

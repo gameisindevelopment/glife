@@ -23,6 +23,11 @@ if $ARGS[0] = '':
 				'You take a glass of moonshine and quickly gulp it down, you cough and suck in your breath.  Mira meanwhile holds her drink and slowly sips on it, while the local youths encourage her to slug it down like you did.'
 				minut += 15
 				alko += rand (3,5)
+				if pcs_hydra >= 100:
+					pcs_hydra -= 10
+				else
+					pcs_hydra -= 20
+				end
 				temp_mb = 2
 				gs 'stat'
 

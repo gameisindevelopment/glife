@@ -167,6 +167,7 @@ if $ARGS[0] = 'Cinema':
 			pcs_mood += 20
 			pcs_willpwr += 20
 			pcs_energy += 20
+			pcs_hydra += 5
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0				
@@ -191,6 +192,7 @@ if $ARGS[0] = 'Cinema':
 			pcs_willpwr += 20
 			fat += 1
 			pcs_energy += 30
+			pcs_hydra += 5
 			cumspclnt = 2	
 			gs 'cum_cleanup'
 			pcs_breath = 0				
@@ -240,8 +242,8 @@ if $ARGS[0] = 'Movies 2':
 				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/fedor/fedorev2/movies/hj.jpg"></center>'
 				'Feeling his warm penis in your hand and seeing his expression just fills you with excitement and a sense of power as you are in full control his pleasure. You continue to jerk him off as you admire the look of pleasure in his face and the slow throbbing of his cock. Soon Fedor''s head slams back in his chair and he lets out a muffled groan as his cock starts rapidly throbbing and erupting squirt after squire of semen on your pants and hands. Fedor lays back motionlessly for a few seconds then turns to you with a very satisfied look on his face, he leans toward you and kiss you on the cheek as he whispers "Wow <<$pcs_nickname>>, You are the best." then leans back in his chair, zipping his pants.'
 				gs 'arousal', 'hj', 5, 'dom'
-				gs 'cum_call', 'clothesgroin', $boy
-				gs 'cum_call', 'hands', $boy						
+				gs 'cum_call', 'clothesgroin', $boy, 1 
+				gs 'cum_call', 'hands', $boy, 1						
 				gs 'arousal', 'end'
 				gs 'stat'						
 				
@@ -330,6 +332,7 @@ if $ARGS[0] = 'Home':
 			pcs_willpwr += 40
 			fat += 2
 			pcs_energy += 90
+			pcs_hydra += 60
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0				
@@ -413,7 +416,7 @@ if $ARGS[0] = 'Vaginal Sex':
 		'<center><video autoplay loop src="images/characters/pavlovsk/school/boy/fedor/fedorev/home/orgasm.mp4"></video></center>'
 		gs 'arousal', 'vaginal', 5, 'sub'
 		gs 'boyStat', 'A5'
-		gs 'cum_call', 'stomach', $boy
+		gs 'cum_call', 'stomach', $boy, 1
 		gs'stat'		
 
 		act 'Orgasm':
@@ -488,7 +491,7 @@ if $ARGS[0] = 'Virgin Sex':
 						gs 'arousal', 'kiss', 5, 'sub'
 						gs 'arousal', 'end'		
 						gs 'boyStat', 'A5'
-						gs 'cum_call', 'stomach', $boy
+						gs 'cum_call', 'stomach', $boy, 1
 						gs'stat'			
 						
 						act 'Shower':gt 'FedorEv2', 'Wash Up'
@@ -534,7 +537,7 @@ if $ARGS[0] = 'Anal Sex':
 				gs 'arousal', 'anal', 5, 'sub'
 				gs 'arousal', 'end'	
 				gs 'boyStat', 'A5'
-				gs 'cum_call', 'anus', $boy		
+				gs 'cum_call', 'anus', $boy, 1		
 				gs'stat'	
 				
 				act 'Clean up':gt 'FedorEv2', 'Wash Up'
@@ -891,7 +894,7 @@ if $ARGS[0] =  'Park 2':
 					gs 'arousal', 'bj', 5, 'dom'
 					gs 'arousal', 'end'	
 					gs 'boyStat', 'A5'
-					gs 'cum_call', 'mouth', $boy	
+					gs 'cum_call', 'mouth', $boy, 1	
 					gs'stat'		
 					
 					act 'Take me home':gt 'FedorEv2', 'Park End'

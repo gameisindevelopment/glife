@@ -57,8 +57,8 @@ if pranik > 0:
 		pranik -= 1
 		pcs_health += 30
 		pcs_mood += 20
-		pcs_energy += 60
-		water += 60
+		pcs_energy += 20
+		pcs_hydra += 60
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
@@ -80,10 +80,10 @@ act 'Drink':
 	cla
 	minut += 5
 
-	if water >= 20:
+	if pcs_hydra >= 100:
 		'You are not thirsty.'
-	elseif water < 20:
-		water += 20
+	elseif pcs_hydra < 80:
+		pcs_hydra += 30
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0

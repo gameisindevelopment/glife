@@ -2,7 +2,7 @@
 
 if $ARGS[0] = 'start':
 	if genbsize = '': genbsize = 22
-	if $soc_grup = '':$soc_grup = 'none'
+	if $soc_grup = '':gs 'preSYS2', 'none'
 	act 'Pick a social group': gt 'preSYS2','modgrup'
 	act 'Set attributes': gt 'preSYS2','modatt'
 	act 'Set skills': gt 'preSYS2','modskl'
@@ -185,7 +185,7 @@ if $ARGS[0] = 'modite_pha':
 	gs 'preSYS2', 'modrel_setup2', 'pregtest', 'Pregnancy tests'
 	gs 'preSYS2', 'modrel_setup2', 'tabletki', 'Birth control pills'
 	gs 'preSYS2', 'modrel_setup2', 'lekarstvo', 'Antibiotics'
-	gs 'preSYS2', 'modrel_setup2', 'vitamin', 'Vitmain drinks'
+	gs 'preSYS2', 'modrel_setup2', 'vitamin', 'Vitmains'
 	gs 'preSYS2', 'modrel_setup2', 'painkiller', 'Painkillers'
 	gs 'preSYS2', 'modrel_setup2', 'mosolmaz', 'Ointment for chafing'
 	gs 'preSYS2', 'modrel_setup2', 'lubri', 'Lubricants'
@@ -360,14 +360,8 @@ if $ARGS[0] = 'modgrup':
 	act 'Popular, Cool, Beautiful':$soc_grup = 'cool'& gt 'preSYS2','modgrup'
 	act 'Gopnik, Rebel, Punk, Troublemaker':$soc_grup = 'gopnik'& gt 'preSYS2','modgrup'
 	act 'Outcast, Loser, Goth, Ugly':$soc_grup = 'outcast'& gt 'preSYS2','modgrup'
-	act 'None, Unaffiliated, Blank': $soc_grup = 'none'& gt 'preSYS2','modgrup'
 	act 'Return':
-		if $soc_grup ! 'none':
-			gs 'preSYS2', 'none'
-			gs 'preSYS', $soc_grup
-		else
-			gs 'preSYS2', $soc_grup
-		end
+		gs 'preSYS2', $soc_grup
 		gt 'preSYS2','start'
 	end
 end
@@ -601,6 +595,8 @@ if $ARGS[0] = 'none':
 	stat['bj'] = 0	
 	stat['hj'] = 0	
 	stat['vaginal'] = 0
+	$soc_grup = 'outcast'
+	gs 'preSYS2', $soc_grup
 end
 
 if $ARGS[0] = 'modrel':

@@ -181,6 +181,11 @@ elseif trfatherQW = 3 and week = 6 and hour = 12:
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
+			if pcs_hydra >= 100:
+				pcs_hydra -= 5
+			else
+				pcs_hydra -= 10
+			end
 			minut += 5
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/characters/city/mikhail/terminal/trfatherqw_10.jpg"></center>'
@@ -190,6 +195,11 @@ elseif trfatherQW = 3 and week = 6 and hour = 12:
 			act 'Drink':
 				cls
 				alko += 3
+				if pcs_hydra >= 100:
+					pcs_hydra -= 5
+				else
+					pcs_hydra -= 10
+				end
 				minut += 5
 				gs'stat'
 				'<center><img <<$set_imgh>> src="images/characters/city/mikhail/terminal/trfatherqw_11.jpg"></center>'

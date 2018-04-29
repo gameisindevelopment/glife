@@ -115,8 +115,8 @@ if $ARGS[0] = '':
 			else
 				pcs_energy += 80
 			end
-			if water < 80:
-				water += 80
+			if pcs_hydra < 80:
+				pcs_hydra += 80
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0
@@ -376,8 +376,8 @@ if $ARGS[0] = '':
 				else
 					pcs_energy += 80
 				end
-				if water < 80:
-					water += 80
+				if pcs_hydra < 80:
+					pcs_hydra += 80
 					cumspclnt = 2
 					gs 'cum_cleanup'
 					pcs_breath = 0
@@ -416,8 +416,8 @@ if $ARGS[0] = '':
 			else
 				pcs_energy += 80
 			end
-			if water < 80:
-				water += 80
+			if pcs_hydra < 80:
+				pcs_hydra += 80
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0
@@ -502,6 +502,7 @@ if $ARGS[0] = '':
 			act 'Sit on his lap':
 				cls
 				gs 'arousal', 'foreplay_give', 5, 'incest'
+				pcs_hydra += 30
 				gs'stat'
 				'<center><img <<$set_imgh>> src="images/characters/city/mikhail/sex/trfatherqw_41.jpg"></center>'
 				'You''re hesitant as you''re still buzzing from the drive, you still want to drive the truck back. Mikhail is standing quietly wondering how he could make you sit in the passenger seat. You smile as you''ve got a solution, "How about I sit in your lap?"'

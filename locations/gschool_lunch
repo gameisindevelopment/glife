@@ -296,6 +296,12 @@ if $ARGS[0] = 'marcus_event':
 			act 'Yes':
 				*clr & cla
 				pcs_energy += 40
+				pcs_health += 10
+				fat += 3
+				pcs_hydra += 40
+				cumspclnt = 2
+				gs 'cum_cleanup'
+				pcs_breath = 0
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/lunch/lunch.jpg"></center>'
 				'"Yes thank you Marcus, that is sweet." With that he buys both your lunches, you find a table and sit while you eat and talk for the whole lunch period.'
@@ -335,12 +341,14 @@ if $ARGS[0] = 'marcus_event':
 				'With a loud sigh, he leans back against the teacher''s desk. "Fuck yeah, thanks <<$pcs_nickname>> I really needed that. Hey, why don''t you come sit with me at lunch? I will even buy if you are not already full." He adds with a smirk.'
 				'You can''t help but roll your eyes at that as you do the best you can to clean up, <i>Jesus, your whole face is nearly coated in his cum</i>. You can''t believe all that came from just one guy. Sitting with him at lunch sounds nice, but he does kinda have a point. Do you really want anything to eat, well anything else to eat that is?'
 				act 'Yes':
-					*clr & cla
+						*clr & cla
+					pcs_energy += 40
+					pcs_health += 10
+					fat += 3
+					pcs_hydra += 40
 					cumspclnt = 2
 					gs 'cum_cleanup'
 					pcs_breath = 0
-					pcs_energy += 40
-					water += 40
 					gs 'stat'
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/lunch/lunch.jpg"></center>'
 					'"Sure, I would love to have lunch with you!" With that, the two of you walk to the cafeteria together. He buys you both lunch, you find a table and sit together while you eat and talk for the rest lunch period.'

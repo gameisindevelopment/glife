@@ -629,6 +629,7 @@ if $ARGS[0] =  'Popcorn':
 	pcs_mood += 20
 	fat += 1
 	pcs_energy += 30
+	pcs_hydra += 10
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -666,6 +667,7 @@ if $ARGS[0] =  'Snacks':
 	pcs_willpwr += 20
 	pcs_mood += 20
 	pcs_energy += 20
+	pcs_hydra += 20
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -1635,7 +1637,7 @@ if $ARGS[0] =  'Bedroom Cam':
 				'<center><video autoplay loop src="images/shared/sex/blowjob/bj14.mp4"></video></center>'
 				'You push Fedor onto the bed then begin unbuttoning his pants. You take Fedor''s penis out of his pants then begin slowly stroking it, as you stare at the camera before wrapping your lips around his shaft, causing him to let out a low moan. You begin sucking Fedor''s dick while staring at the camera as he says, "You look so sexy with my dick in your mouth." you let out a low moan which seems to stimulate Fedor even more as he lets out a moan. Fedor looks down at you and says, "I''m cumming <<$pcs_nickname>>."'
 				*nl
-				'<center><video autoplay loop src="images/shared/sex/blowjob/h0,3.mp4"></video></center>'
+				'<center><video autoplay loop src="images/shared/sex/blowjob/kotovbj11.mp4"></video></center>'
 				gs 'arousal', 'bj', 5, 'dom', 'exhibitionism'
 				gs'stat'
 
@@ -2669,6 +2671,7 @@ if $ARGS[0] =  'Fridge':
 		pcs_willpwr += 10
 		pcs_mood += 20
 		pcs_energy += 20
+		pcs_hydra += 5
 		cumspclnt = 2
 		gs'stat'
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/fedor/fedorev2/home/livingroom/munch1.jpg"></center>'
@@ -2680,6 +2683,7 @@ if $ARGS[0] =  'Fridge':
 		cls
 		minut += 15
 		pcs_health += 10
+		pcs_hydra += 10
 		pcs_mood += 20
 		fat += 2
 		pcs_energy += 60
@@ -2977,6 +2981,7 @@ if $ARGS[0] =  'Dinner':
 	pcs_willpwr += 20
 	pcs_mood += 20
 	pcs_energy += 70
+	pcs_hydra += 60
 	fat += 2
 	cumspclnt = 2
 	minut += 20
@@ -3076,6 +3081,7 @@ if $ARGS[0] =  'Fedor Kitchen':
 			pcs_mood += 20
 			fat += 1
 			pcs_energy += 60
+			pcs_hydra += 40
 			cumspclnt = 2
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/fedor/fedorev2/home/kitchen/eating2.jpg"></center>'

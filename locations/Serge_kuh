@@ -1557,6 +1557,11 @@ if $ARGS[0] = 'izn2':
 				act 'Continue':
 					*clr & cla
 					minut +=5
+					if pcs_hydra >= 100:
+						pcs_hydra -= 5
+					else
+						pcs_hydra -= 10
+					end
 					'<center><video autoplay loop src="images/locations/pavlovsk/resident/apartment/shulginhome/kuh/help/event/gif/end1.mp4"></video></center>'
 					'When you move to sit down next to him, he stops you: "You''re not sitting on my couch with your cum-filled ass. Sit on the ground."'
 					'You nod understandingly, you wouldn''t want that either if it were your couch. Sergey smiles at you benevolently as he sits quietly on the couch, admiring your pussy and anus that are still glistening from his seed, while your face is still covered in saliva from earlier.'

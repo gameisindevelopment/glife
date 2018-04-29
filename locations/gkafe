@@ -14,21 +14,25 @@ else
 	lcolor = rgb(106, 90, 205)
 end
 '<center><b><font color="maroon">Pavlovsk''s train station cafe</font></b></center>'
+'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
+'A small cafe, attached to the train station. It looks rather shabby.'
+'The cafe is closed right now, it''s usually open between 8:00 and 20:00.'
 
 if mother_go = 1 and hour = 16:
+	*clr & cla
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
 	'A small cafe, attached to the train station. It looks rather shabby.'
 	'The door is currently locked, and the sign on the door says "Closed". That''s strange, the cafe is supposed to be open at this time.'
 
 	act 'Walk around the cafe':
-		cls
+		*clr
 		minut += 15
 		gs 'stat'
 		'Being locked outside of the cafe, you walk around it to try and figure out why it is closed. Suddenly, you hear weak voices through the wall. It sounds like some poor woman is screaming! You quickly look around and notice a stack of old crates. If you stand on it, you think you can reach a small window and see what is happening inside.'
 
 		act 'Leave, it''s probably none of your business':gt 'vokzalG'
 		act 'Get up there and peek through the window':
-			cls
+			*clr & cla
 			minut += 5
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/mom/event/momslut.jpg"></center>'
@@ -43,7 +47,7 @@ if mother_go = 1 and hour = 16:
 			act 'Leave, you don''t want to see this':gt 'vokzalG'
 
 			act 'Keep looking':
-				cls
+				*clr & cla
 				minut += 5
 				mother_go = 0
 				gs 'stat'
@@ -56,6 +60,7 @@ if mother_go = 1 and hour = 16:
 	end
 else
 	if hour >= 8 and hour <= 19:
+		*clr & cla
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe2.jpg"></center>'
 		'A small cafe, attached to the train station. It looks rather shabby.'
 
@@ -68,10 +73,7 @@ else
 				'The bar owner <a href="exec:GT ''motherkafeboss''">Borislav</a> is currently taking orders in the bar. Most people call him Slava.'
 			end
 		end
-
-		act 'Have a meal at the cafe':
-			gs 'food', 'm_meal'
-
+			
 			razvrand = rand(1, 10)
 
 			! WD: Allpw event to trigger even after talking to mum about fucking her boss
@@ -86,22 +88,19 @@ else
 
 				act 'Agree to go ''drink tea'' with uncle Misha':gs 'boyStat', 'A54' & sexpartkno = 1 & gt 'gevent', '1-1'
 			end
-
-			act 'Get up from the table':gt 'gkafe'
 		end
 		if StoryLine = 1 and SchoolAtestat = 0:
 			if (sunWeather = 0 or temper <= 0) and (hour >= 18 and hour < 20 and week < 6) or (week >= 6 and hour >= 9 and hour < 20):
 				'You see your classmates <a href="exec:minut += 3 & gt ''gopskver''">Vitek, Dan and Vasily</a> sitting at a table in the far corner, drinking beer.'
-			end
 		end
-	else
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe.jpg"></center>'
-		'A small cafe, attached to the train station. It looks rather shabby.'
-		'The cafe is closed right now, it''s usually open between 8:00 and 20:00.'
 	end
+	if hour >= 8 and hour <= 19:
+	act 'Order food':gs 'food_menu', 'cafe'
+	act 'Order drinks':gs 'beverage_menu', 'cafe'
+	end
+	act 'Leave':gt 'vokzalG'
 end
 
-act 'Leave':gt 'vokzalG'
 
 --- gkafe ---------------------------------
 

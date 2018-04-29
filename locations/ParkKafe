@@ -1,8 +1,14 @@
 # ParkKafe
 
-if $ARGS[0] = 'food':
-	money -= 100
-	gs 'food', 'm_meal'
+if $ARGS[0] = 'start':
+	minut = +5
+	$metka = $ARGS[0]
+	$loc = $CURLOC
+	$location_type = 'public_indoors'
+	'<center><img <<$set_imgh>> src="images/locations/city/centralpark/parkcafe.jpg"></center>'
+	
+	act 'Order food':gs 'food_menu', 'cafe'
+	act 'Order drinks':gs 'beverage_menu', 'cafe'
 	'Whilst sitting and eating in the summer cafe. You take a moment and enjoy the beautiful scenery.'
 
 	arand = rand(1, 7)
@@ -204,6 +210,11 @@ if $ARGS[0] = 'man':
 				gs 'npcgeneratec', 0, 'Respectable Man', rand(18,45)
 				gs 'boyStat', $npclastgenerated
 				dick = rand (12, 18)
+				if pcs_hydra >= 100:
+					pcs_hydra -= 5
+				else
+					pcs_hydra -= 10
+				end
 				silavag = 2
 
 				if saunasex = 0:saunasex = 1 & guy += 1

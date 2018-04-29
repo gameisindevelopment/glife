@@ -32,8 +32,7 @@ if $ARGS[0] = 'abdCustomerGo':
 end
 
 if $ARGS[0] = 'abdCustomer':
-	durr = 5
-	minut += durr
+	minut += 5
 	gs 'stat'
 
 	! customer character type
@@ -275,8 +274,7 @@ if $ARGS[0] = 'abdCustomer-buyoutLeave':
 end
 
 if $ARGS[0] = 'abdCustomer-virgin1':
-	durr = 10
-	minut += durr
+	minut += 10
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhorevirgin1.mp4"></video></center>'
 	'Your master leaves and you start to shiver.'
 	'"Don''t worry slut, it will hurt only a lot!" the customer is clearly enjoying himself.'
@@ -288,8 +286,7 @@ if $ARGS[0] = 'abdCustomer-virgin1':
 	act 'Continue':gt 'abductionCustomer', 'abdCustomer-virgin2'
 end
 if $ARGS[0] = 'abdCustomer-virgin2':
-	durr = 5
-	minut += durr
+	minut += 2
 	pcs_mood = 5
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhorevirgin2.mp4"></video></center>'
 	'He starts to undress, finishing off with his pants. As he pulls them down, you can finally can see his naked member fall out.'
@@ -298,8 +295,7 @@ if $ARGS[0] = 'abdCustomer-virgin2':
 	act 'Continue':gt 'abductionCustomer', 'abdCustomer-virgin3'
 end
 if $ARGS[0] = 'abdCustomer-virgin3':
-	durr = 10
-	minut += durr
+	minut += 10
 	'<center><img <<$set_imgh>> src="images/locations/shared/abduction/sex/slavewhorevirgin3.jpg"></center>'
 	'He starts jerking his member, looking at you - bound and helpless, slowly making his cock hard.'
 	'From his eyes you can see he relishes looking at you in your despair.'
@@ -307,8 +303,6 @@ if $ARGS[0] = 'abdCustomer-virgin3':
 	act 'Continue':gt 'abductionCustomer', 'abdCustomer-virgin4'
 end
 if $ARGS[0] = 'abdCustomer-virgin4':
-	durr = 5
-	minut += durr
 	'<center><img <<$set_imgh>> src="images/locations/shared/abduction/sex/slavewhorevirgin4.jpg"></center>'
 	'Finally he reaches to you, bringing the tip of his phallus in front of your pussy.'
 	'He covers his <<$dick_girth>> member in thick layer of lube and starts slowly pressing against the opening of your vagina.'
@@ -320,12 +314,10 @@ if $ARGS[0] = 'abdCustomer-virgin4':
 	stat['vaginal'] += 1
 	pain['vaginal'] += 20
 	gs 'stat'
-	gs 'arousal', 'vaginal', durr, 'sub', 'maso', 'humiliation', 'rough', 'bound'
+	gs 'arousal', 'vaginal', 5, 'sub', 'maso', 'humiliation', 'rough', 'bound'
 	act 'Cry':gt 'abductionCustomer', 'abdCustomer-virgin5'
 end
 if $ARGS[0] = 'abdCustomer-virgin5':
-	durr = 30
-	minut += durr
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhorevirgin5.mp4"></video></center>'
 	'He leaves his cock inside you, enjoying your facial expressions and the sight of blood coating his cock.'
 	'For a while he removes it, renewing the pain and enjoying himself again.'
@@ -334,12 +326,11 @@ if $ARGS[0] = 'abdCustomer-virgin5':
 	pain['cervix'] += 10
 	pain['tummy'] += 10
 	gs 'stat'
-	gs 'arousal', 'vaginal', durr, 'sub', 'maso', 'humiliation', 'rough', 'bound'
+	gs 'arousal', 'vaginal', 30, 'sub', 'maso', 'humiliation', 'rough', 'bound'
 	act 'Cry':gt 'abductionCustomer', 'abdCustomer-virgin6'
 end
 if $ARGS[0] = 'abdCustomer-virgin6':
-	durr = 5
-	minut += durr
+	minut += 5
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhorevirgin6.mp4"></video></center>'
 	'"And now whore, you will receive your first cum, as the breeder you were always supposed to be and that you are about to become."'
 	'With new tears streaming down your cheeks, he spurts his <<$cumType>> amount of sperm <<dick>> cm deep inside your belly."'
@@ -348,8 +339,6 @@ if $ARGS[0] = 'abdCustomer-virgin6':
 	act 'Cry more':gt 'abductionCustomer', 'abdCustomer-virgin7'
 end
 if $ARGS[0] = 'abdCustomer-virgin7':
-	durr = 10
-	minut += durr
 	'<center><img <<$set_imgh>> src="images/locations/shared/abduction/sex/slavewhorevirgin7.jpg"></center>'
 	'He rests with his dick deep inside you for a while, again enjoying the sight of your sobbing and despair.'
 	'"As his <<$dick_girth>> member becomes flaccid, he grabs a dildo that looks almost exactly like his own dick, probably having been modeled after it."'
@@ -362,12 +351,11 @@ if $ARGS[0] = 'abdCustomer-virgin7':
 	pain['cervix'] += 10
 	pain['belly'] += 20
 	gs 'stat'
-	gs 'arousal', 'vaginal_dildo', durr, 'sub', 'maso', 'humiliation', 'rough', 'bound'
+	gs 'arousal', 'vaginal_dildo', 10, 'sub', 'maso', 'humiliation', 'rough', 'bound'
 	act 'Struggle to remove the dildo':gt 'abductionCustomer', 'abdCustomer-virgin8'
 end
 if $ARGS[0] = 'abdCustomer-virgin8':
-	durr = 10
-	minut += durr
+	minut += 10
 	'<center><img <<$set_imgh>> src="images/locations/shared/abduction/sex/slavewhorevirgin8.jpg"></center>'
 	'Your master comes and finds you struggling on the ground, trying to shake the <<$dick_girth>> dildo out of you.'
 	'"Stop it, girl. You are just making it worse."'
@@ -378,8 +366,7 @@ if $ARGS[0] = 'abdCustomer-virgin8':
 	act 'Lie down':gt 'abductionCustomer', 'abdCustomer-virgin9'
 end
 if $ARGS[0] = 'abdCustomer-virgin9':
-	durr = 480
-	minut += durr
+	minut += 480
 	pcs_sleep += 70
 	'<center><img <<$set_imgh>> src="images/locations/shared/abduction/sex/slavewhorevirgin9.jpg"></center>'
 	'Still having your hands bound you are put on your bed, tied to the wall on a short leash.'
@@ -388,8 +375,7 @@ if $ARGS[0] = 'abdCustomer-virgin9':
 	act 'Try to rest':gt 'abductionCustomer', 'abdCustomer-virgin10'
 end
 if $ARGS[0] = 'abdCustomer-virgin10':
-	durr = 15
-	minut += durr
+	minut += 15
 	pcs_mood = 5
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhorevirgin10.mp4"></video></center>'
 	'A sound of the master coming from upstairs wakes you up.'
@@ -408,8 +394,7 @@ end
 
 
 if $ARGS[0] = 'abdCustomer-unzip':
-	durr = 2
-	minut += durr
+	minut += 2
 	gs 'stat'
 	'You reach towards his crotch and slowly start to unzip his trousers.'
 	'Pressing your face underneath his crotch, you pull down his shorts and a <<$dick_girth>> member falls out, landing directly on your face with a slapping sound.'
@@ -439,8 +424,7 @@ if $ARGS[0] = 'abdCustomer-unzip':
 end
 
 if $ARGS[0] = 'abdCustomer-show':
-	durr = 10
-	minut += durr
+	minut += 10
 	i = rand(1, 5)
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhoretease<<i>>.mp4"></video></center>'
 	'You decide to tease the customer by showing him your sexy assets by jiggling your girly parts.'
@@ -449,8 +433,6 @@ if $ARGS[0] = 'abdCustomer-show':
 end
 
 if $ARGS[0] = 'abdCustomer-suckTip':
-	durr = 15
-	minut += durr
 	gs 'stat'
 	i = rand(1, 5)	
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhoreblowjobtip<<i>>.mp4"></video></center>'
@@ -490,12 +472,10 @@ if $ARGS[0] = 'abdCustomer-suckTip':
 		'The customer seems pleased by your sucking skills, so you continue to tease the tip of his <<$dick_girth>> cock, looking at him with as much sensual abandon that you can muster under the present conditions.'
 		act 'Continue sucking the tip':gt 'abductionCustomer', 'abdCustomer-fuck'
 	end
-	gs 'arousal', 'bj', durr, 'sub'
+	gs 'arousal', 'bj', 15, 'sub'
 end
 
 if $ARGS[0] = 'abdCustomer-suckForceself':
-	durr = 15
-	minut += durr
 	pcs_throat += 1
 	pain['throat'] += throatDMG
 	gs 'stat'
@@ -503,13 +483,11 @@ if $ARGS[0] = 'abdCustomer-suckForceself':
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhoreblowjobselfforced<<i>>.mp4"></video></center>'
 	'Knowing you will probably hurt yourself, you force yourself on his <<dick>> cm long cock all the way down to the balls anyway.'
 	'You start gagging and saliva is everywhere, but the customer seems more content now.'
-	gs 'arousal', 'bj', durr, 'sub', 'rough', 'deepthroat'
+	gs 'arousal', 'bj', 15, 'sub', 'rough', 'deepthroat'
 	act 'Continue':gt 'abductionCustomer', 'abdCustomer-fuck'
 end
 
 if $ARGS[0] = 'abdCustomer-suckForced':
-	durr = 15
-	minut += durr
 	pain['throat'] += throatDMG * 2
 	pcs_throat += 2
 	gs 'stat'
@@ -534,24 +512,21 @@ if $ARGS[0] = 'abdCustomer-suckForced':
 			act 'Continue':gt 'abductionCustomer', 'abdCustomer-fuckAnalRough'
 		end
 	end
-	gs 'arousal', 'bj', durr, 'sub', 'rough', 'deepthroat', 'humiliation'
+	gs 'arousal', 'bj', 15, 'sub', 'rough', 'deepthroat', 'humiliation'
 end
 
 if $ARGS[0] = 'abdCustomer-suckDeep':
-	durr = 15
-	minut += durr
 	pcs_throat += 1
 	gs 'stat'
 	i = rand(1, 6)
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhoreblowjob<<i>>.mp4"></video></center>'
 	'You swallow his <<$dick_girth>> cock all the way down to the balls.'
-	gs 'arousal', 'bj', durr, 'sub', 'deepthroat'
+	gs 'arousal', 'bj', 15, 'sub', 'deepthroat'
 	act 'Continue':gt 'abductionCustomer', 'abdCustomer-fuck'
 end
 
 if $ARGS[0] = 'abdCustomer-fuck':
-	durr = 2
-	minut += durr
+	minut += 2
 	pcs_throat += 1
 	gs 'stat'
 	endPunishment = 0
@@ -584,8 +559,7 @@ if $ARGS[0] = 'abdCustomer-fuck':
 end
 
 if $ARGS[0] = 'abdCustomer-decide':
-	durr = 2
-	minut += durr
+	minut += 2
 	gs 'stat'
 	sexRand = rand(1, 2)
 	vagOrAss = rand (1, 2)
@@ -610,8 +584,7 @@ end
 
 if $ARGS[0] = 'abdCustomer-beg':
 	vagOrAss = rand (1, 2)
-	durr = 2
-	minut += durr
+	minut += 2
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/shared/abduction/sex/slavewhorebeg1.jpg"></center>'
 	'Please be kind to me Sir, I''m so afraid and sore... please!'
@@ -651,8 +624,6 @@ if $ARGS[0] = 'abdCustomer-beg':
 end
 
 if $ARGS[0] = 'abdCustomer-fuckAnal':
-	durr = 30
-	minut += durr
 	pcs_ass += 1
 	gs 'stat'
 	i = rand(1, 5)
@@ -663,19 +634,17 @@ if $ARGS[0] = 'abdCustomer-fuckAnal':
 	if dick > pcs_ass:
 		pain['asshole'] += assDMG
 		pain['tummy'] += assDMG
-		gs 'arousal', 'anal', durr, 'sub', 'rough'
+		gs 'arousal', 'anal', 30, 'sub', 'rough'
 		act 'Continue':gt 'abductionCustomer', 'abdCustomer-fuckAnalDeep'
 	else
 		'You have no problems accommodating his <<$dick_girth>> member.'
-		gs 'arousal', 'anal', durr, 'sub'
+		gs 'arousal', 'anal', 30, 'sub'
 		act 'Continue':gt 'abductionCustomer', 'abdCustomer-cumGate'
 	end
 
 end
 
 if $ARGS[0] = 'abdCustomer-fuckAnalRough':
-	durr = 30
-	minut += durr
 	pcs_ass += 2
 	gs 'stat'
 	i = rand(1, 5)
@@ -713,12 +682,11 @@ if $ARGS[0] = 'abdCustomer-fuckAnalRough':
 		gs 'stat'
 		act 'Continue':gt 'abductionCustomer', 'abdCustomer-fuckAnalDeep'
 	end
-	gs 'arousal', 'anal', durr, 'sub', 'rough', 'bound'
+	gs 'arousal', 'anal', 30, 'sub', 'rough', 'bound'
 end
 
 if $ARGS[0] = 'abdCustomer-fuckAnalDeep':
-	durr = 15
-	minut += durr
+	minut += 15
 	pcs_ass += 1
 	gs 'stat'
 	i = rand(1, 1)
@@ -752,9 +720,7 @@ if $ARGS[0] = 'abdCustomer-fuckAnalDeep':
 end
 
 if $ARGS[0] = 'abdCustomer-fuckNormal':
-	durr = 30
-	pcs_vag += 1 
-	minut += durr
+	pcs_vag += 1
 	gs 'stat'
 	i = rand(1, 5)
 	'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhorefucknormal<<i>>.mp4"></video></center>'
@@ -763,12 +729,12 @@ if $ARGS[0] = 'abdCustomer-fuckNormal':
 		'He''s not gentle, but it is not a very rough fuck either.'
 		'You have no problems accommodating his <<$dick_girth>> dick.'
 		'At some moments, you almost seem to enjoy it.'
-		gs 'arousal', 'vaginal', durr, 'sub'
+		gs 'arousal', 'vaginal', 30, 'sub'
 		act 'Be silent':gt 'abductionCustomer', 'abdCustomer-cumGate'
 	elseif vagDMG <= 2:
 		'His <<$dick_girth>> dick is too big for you and you suffer a lot of stretching pain, as his dick bumps against your vaginal walls.'
 		pain['vaginal'] += vagDMG
-		gs 'arousal', 'vaginal', durr, 'sub', 'rough'
+		gs 'arousal', 'vaginal', 30, 'sub', 'rough'
 		gs 'stat'
 		act 'Continue':gt 'abductionCustomer', 'abdCustomer-fuckDeep'
 	else
@@ -776,15 +742,13 @@ if $ARGS[0] = 'abdCustomer-fuckNormal':
 		'The tip of his cock even penetrates your cervix, or at least it seems like it to you - the pain almost unbearable!'
 		pain['vaginal'] += vagDMG
 		pain['cervix'] += vagDMG
-		gs 'arousal', 'vaginal', durr, 'sub', 'rough'
+		gs 'arousal', 'vaginal', 30, 'sub', 'rough'
 		gs 'stat'
 		act 'Continue':gt 'abductionCustomer', 'abdCustomer-fuckDeep'
 	end
 end
 
 if $ARGS[0] = 'abdCustomer-fuckRough':
-	durr = 30
-	minut += durr
 	pcs_vag += 2
 	gs 'stat'
 	i = rand(1, 5)
@@ -793,7 +757,7 @@ if $ARGS[0] = 'abdCustomer-fuckRough':
 	'What comes next is an excruciatingly rough fuck that clearly shows he has no regard for all the pain you have to endure, whatsoever.'	
 	if vagDMG <= 0:
 		'Fortunately his <<$dick_girth>> dick is not enough to damage your vagina, not more than usual, anyway.'
-		gs 'arousal', 'vaginal', durr, 'sub', 'bound'
+		gs 'arousal', 'vaginal', 30, 'sub', 'bound'
 		if $charType = 'sadistic':
 			act 'Be silent':gt 'abductionCustomer', 'abdCustomer-cum'
 		else
@@ -802,7 +766,7 @@ if $ARGS[0] = 'abdCustomer-fuckRough':
 	elseif vagDMG <= 2:
 		'His <<$dick_girth>> dick is too big for you and you suffer a lot of stretching pain, as his dick bumps against your vaginal walls.'
 		pain['vaginal'] += vagDMG
-		gs 'arousal', 'vaginal', durr, 'sub', 'bound', 'rough'
+		gs 'arousal', 'vaginal', 30, 'sub', 'bound', 'rough'
 		gs 'stat'
 		act 'Continue':gt 'abductionCustomer', 'abdCustomer-fuckDeep'
 	else
@@ -812,15 +776,14 @@ if $ARGS[0] = 'abdCustomer-fuckRough':
 		'Enjoying your suffering, he pushes his dick even deeper inside and you squeal like pig being slaughtered.'
 		pain['vaginal'] += vagDMG * 2
 		pain['cervix'] += vagDMG * 2
-		gs 'arousal', 'vaginal', durr, 'sub', 'bound', 'rough'
+		gs 'arousal', 'vaginal', 30, 'sub', 'bound', 'rough'
 		gs 'stat'
 		act 'Continue':gt 'abductionCustomer', 'abdCustomer-fuckDeep'
 	end
 end
 
 if $ARGS[0] = 'abdCustomer-fuckDeep':
-	durr = 15
-	minut += durr
+	minut += 15
 	pcs_ass += 1
 	gs 'stat'
 	i = rand(1, 5)
@@ -1009,10 +972,12 @@ if $ARGS[0] = 'abdCustomer-cumMouth':
 		'His <<$cumType>> amount of cum fills your gullet and drips down into your stomach.'
 		'You feel as if you just ate a bunch of biscuits.'
 		pcs_energy += 50
+		pcs_hydra += 40
 	elseif cumVol => 5:
 		'You are being pumped like a water bag. His <<$cumType>> amount of jizz fills your stomach and gullet.'
 		'Today you probably won''t need another meal..'
 		pcs_energy += 100
+		pcs_hydra += 90
 	else
 		'The customer shoots his <<$cumType>> amount of cum inside your mouth and down your gullet.'
 	end

@@ -36,7 +36,7 @@ elseif lernHome = 0:
 			minut += 30
 			fat += 2
 			pcs_energy += 60
-			water += 60
+			pcs_hydra += 60
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
@@ -63,6 +63,11 @@ elseif lernHome = 0:
 				cumspclnt = 2
 				gs 'cum_cleanup'
 				pcs_breath = 0
+				if pcs_hydra >= 100:
+					pcs_hydra -= 5
+				else
+					pcs_hydra -= 10
+				end
 				JulMilBestFrend += 1
 				pcs_horny += 10
 				gs 'stat'

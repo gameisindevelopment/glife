@@ -848,7 +848,11 @@ if $ARGS[0] = 'piss':
 	pcs_health +=10
 	pcs_willpwr +=10
 	minut += 1
-	water -=2
+	if pcs_hydra >= 100:
+		pcs_hydra -= 2
+	else
+		pcs_hydra -= 5
+	end
 	piss +=1
 	gs'stat'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/park/gop/piss'+rand(1,6)+'.jpg"></center>'

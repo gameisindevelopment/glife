@@ -260,7 +260,7 @@ if $ARGS[0] = 'peeswallow':
 	cls
 	minut += 5
 	money += 100
-	water += 10
+	pcs_hydra += 10
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
@@ -274,6 +274,7 @@ if $ARGS[0] = 'peeswallow2':
 	cla
 	cls
 	minut += 5
+	pcs_hydra += 10
 	'<center><video autoplay loop src="images/characters/city/bobka/sex/peeswallow2.mp4"></video></center>'
 	'Bobka interrupted his stream until you''re done coughing and have your mouth open again, but resumes his peeing. Your mouth fills up quickly with his nasty liquid, and you carefully try to swallow some to make space.'
 	'You barely manage to suppress your gag reflex and attempt to swallow his urine as it flows, but it''s too much. From the corners of your mouth and your chin, his pee dribbles down.'
@@ -287,6 +288,7 @@ if $ARGS[0] = 'peeswallow3':
 	cla
 	cls
 	minut += 5
+	pcs_hydra += 10
 	'<center><img <<$set_imgh>> src="images/characters/city/bobka/sex/peeswallow3.jpg"></center>'
 	'Bobka steps a bit closer to you and puts the tip of his cock directly onto your lower lip and then makes you close your mouth, making you suck the last drops out of him directly.'
 
@@ -297,6 +299,7 @@ if $ARGS[0] = 'peeswallow4':
 	cla
 	cls
 	minut += 5
+	pcs_hydra += 10
 	'<center><img <<$set_imgh>> src="images/characters/city/bobka/sex/peeswallow4.jpg"></center>'
 	'You obediently suck on his cock for a little while, no longer really caring about the horrible taste. You get used to it after a while.'
 	'While you try not to think about what you just did to earn it, you extend your trembling hand.'
@@ -313,6 +316,7 @@ if $ARGS[0] = 'peewhore':
 	SNarkTimes += 1
 	NarkShmaraTimes += 1
 	pcs_mood += 40
+	pcs_hydra += 20
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/characters/city/bobka/sex/peewhore.jpg"></center>'
 	'You don''t even bother washing yourself as you quickly grab the syringe, and inject yourself with it. Bobka looks down on you with a devious smile, he knows he''s very close to completely controlling your life. Soon, you won''t be able to say no any more...'

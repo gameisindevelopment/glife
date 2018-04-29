@@ -376,12 +376,10 @@
       <Location name="lena"/>
     </Folder>
     <Folder name="Dima Nosov">
-      <Location name="dimaRudeEv"/>
+      <Location name="dimaEv"/>
       <Location name="dimaHome"/>
       <Location name="dimaRevenge"/>
-      <Location name="dimaGoHome2"/>
       <Location name="dinnpc"/>
-      <Location name="DimkaWarning"/>
       <Location name="krutishi"/>
     </Folder>
     <Folder name="Artem Chebotarev">
@@ -668,6 +666,8 @@
       <Location name="bed"/>
       <Location name="bed1"/>
       <Location name="bed2"/>
+      <Location name="beverage"/>
+      <Location name="beverage_menu"/>
       <Location name="dreams"/>
       <Location name="budilnik"/>
       <Location name="divan"/>
@@ -681,6 +681,7 @@
       <Location name="$phone_theme"/>
       <Location name="kit_din"/>
       <Location name="food"/>
+      <Location name="food_menu"/>
       <Location name="TV"/>
       <Location name="vann"/>
     </Folder>

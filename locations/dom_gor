@@ -125,10 +125,10 @@ if eda >= 1:
 			'You eat with pleasure.'
 		end
 
-		if water >= 80:
+		if pcs_hydra >= 80:
 			'You don''t really need any more tea.'
 		else
-			water += 80
+			pcs_hydra += 80
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
@@ -159,10 +159,10 @@ if edaD > 0:
 			'You gladly devoured the cooked meal.'
 		end
 
-		if water >= 80:
+		if pcs_hydra >= 80:
 			'You don''t need any more tea.'
 		else
-			water += 80
+			pcs_hydra += 80
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0

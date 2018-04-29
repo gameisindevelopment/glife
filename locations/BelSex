@@ -46,7 +46,7 @@ if $ARGS[0] = 'bj1':
 		'Not daring making him more upset you make sure your teeth don''t get in the way and open your mouth as wider.'
 		act'Open wide':
 			cls
-			gs 'cum_call', 'mouth', 'Bely'
+			gs 'cum_call', 'mouth', 'A113', 1
 			gs'stat'
 			picrand = rand(0,10)
 			'<center><video autoplay loop src="images/shared/sex/cum/mouth/cum<<picrand>>.mp4"></video></center>'
@@ -93,7 +93,7 @@ if $ARGS[0] = 'bj2':
 		'Your lust takes over and you take him as deep into your mouth as you can, keeping him there until you start to gag and have to come up for air. Taking few breaths to recover, you take him inside again, rapidly moving your head, sucking and deepthroating him for all you''re worth.'
 		act'Keep sucking':
 			cls
-			gs 'cum_call', 'mouth', 'Bely'
+			gs 'cum_call', 'mouth', 'A113', 1
 			gs'stat'
 			picrand = rand(0,10)
 			'<center><video autoplay loop src="images/shared/sex/cum/mouth/cum<<picrand>>.mp4"></video></center>'
@@ -140,7 +140,7 @@ if $ARGS[0] = 'bj3':
 		'"Good girl, keep on sucking my cock." All of a sudden his cock gets stiffer and he pulls out of your mouth. "I''m ready to cum..." You move your head towards his cock but he stops you...'
 		act'Continue':
 			cls
-			gs 'cum_call', 'mouth', 'Bely'
+			gs 'cum_call', 'mouth', 'A113', 1
 			gs'stat'
 			picrand = rand(0,10)
 			belsexpayment = 300
@@ -184,7 +184,7 @@ if $ARGS[0] = 'vaginal1':
 	gs 'stat'
 	
 	if belact <= 0:
-		gs 'cum_call', '', 'Bely'
+		gs 'cum_call', '', 'A113', 1
 		gs'stat'
 		belsexpayment = 600
 		'<center><video autoplay loop src="images/shared/sex/cum/vagcreampie/creampie3.mp4"></video></center>'
@@ -219,7 +219,7 @@ if $ARGS[0] = 'vaginal2':
 	gs 'stat'
 	
 	if belact <= 0:
-		gs 'cum_call', '', 'Bely'
+		gs 'cum_call', '', 'A113', 1
 		gs'stat'
 		belsexpayment = 600
 		'<center><video autoplay loop src="images/shared/sex/cum/vagcreampie/creampie1.mp4"></video></center>'
@@ -254,7 +254,7 @@ if $ARGS[0] = 'doggy':
 	gs 'stat'
 	
 	if belact <= 0:
-		gs 'cum_call', '', 'Bely'
+		gs 'cum_call', '', 'A113', 1
 		gs'stat'
 		belsexpayment = 600
 		'<center><video autoplay loop src="images/shared/sex/cum/vagcreampie/creampie4.mp4"></video></center>'
@@ -290,7 +290,7 @@ if $ARGS[0] = 'cowgirl':
 	gs 'stat'
 	
 	if belact <= 0:
-		gs 'cum_call', '', 'Bely'
+		gs 'cum_call', '', 'A113', 1
 		gs'stat'
 		belsexpayment = 600
 		'<center><video autoplay loop src="images/shared/sex/cum/vagcreampie/creampie2.mp4"></video></center>'
@@ -323,7 +323,7 @@ if $ARGS[0] = 'anal1':
 	gs 'stat'
 	
 	if belact <= 0:
-		gs 'cum_call', 'anus', 'Bely'
+		gs 'cum_call', 'anus', 'A113', 1
 		gs'stat'
 		belsexpayment = 600
 		picrand = rand(1,2)
@@ -346,7 +346,7 @@ if $ARGS[0] = 'anal2':
 	gs 'stat'
 	
 	if belact <= 0:
-		gs 'cum_call', 'anus', 'Bely'
+		gs 'cum_call', 'anus', 'A113', 1
 		gs'stat'
 		belsexpayment = 600
 		'<center><img <<$set_imgh>> src="images/shared/sex/cum/analcreampie/analcum.jpg"></center>'
@@ -368,7 +368,7 @@ if $ARGS[0] = 'analdoggy':
 	gs 'stat'
 	
 	if belact <= 0:
-		gs 'cum_call', 'anus', 'Bely'
+		gs 'cum_call', 'anus', 'A113', 1
 		gs'stat'
 		belsexpayment = 600
 		'<center><img <<$set_imgh>> src="images/shared/sex/cum/analcreampie/kafeanpie.jpg"></center>'
@@ -422,7 +422,6 @@ if $ARGS[0] = 'shower':
 			gs 'stat'
 			
 			act 'Leave': gt 'pavResidential'
-			end
 		end
 	end
 end

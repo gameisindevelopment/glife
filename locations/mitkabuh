@@ -44,6 +44,11 @@ if $ARGS[0] = 'partyalone':
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
+			if pcs_hydra >= 100:
+				pcs_hydra -= 5
+			else
+				pcs_hydra -= 10
+			end
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/gadukino/village/drunk.jpg"></center>'
 			'You drank the moonshine and it burns as it goes down your throat.  Your eyes water a little and you have a tough time catching your breath.  you wipe your eyes and mouth on your sleeve , you look around and are a little disappointed because of the lack of snacks to munch on. Mitka said approvingly "Good shit, huhh."'
