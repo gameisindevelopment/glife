@@ -508,11 +508,7 @@ if $ARGS[0] = 'brothershowerlook':
 end
 
 if $ARGS[0] = 'brother_shower_together_ask':
-<<<<<<< HEAD
 	if brother_shower_times > 0:gt'brother_voyeur','brother_shower_together'
-=======
-	if brother_shower_times > 0:gt 'brother_voyeur', 'brother_shower_together'
->>>>>>> a913db03acc0ed88ca77b4b28ea49737298a5e06
 	*clr & cla
 	'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brothertalk4.jpg"></center>'
 	'	"Hey Kolka," you say.'
@@ -665,7 +661,7 @@ if $ARGS[0] = 'brother_shower_together':
 		end
 	end	
 	
-	act'Suggest you wash each other':gt'brother_voyeur','brother_wash_first'
+	act'Suggest you wash each other (0:10)':gt'brother_voyeur','brother_wash_first'
 	
 	if brother_shower_times > 2:
 		if pcs_horny >= 50:
@@ -737,101 +733,98 @@ end
 			
 if $ARGS[0] = 'brother_wash':
 	npc_rel['A34'] += 5
-	cla 
-	act'Wash each other (0:10)':
-		cla & *clr
-		minut += 10
-		pcs_horny += 20
-		brotherwash += 1
-		'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brotherwash.jpg"></center>'
-		'	You and Kolka spend some time lathering each other with soap and rubbing each other down, both of you appreciatively feeling each other''s bodies as you do so.'
-		if brotherwash > 5 or brotherSex > 0:'	Kolka even slips his hands between your legs and gives your pussy a good cleaning, paying special attention to your clit and causing you to squirm and and moan under his touch.'
-		if brotherwash > 5 or brotherSex > 1:pcs_horny += 10
-		gs 'stat'
-		
-		if pcs_leghair >= 3 or pcs_pubes > 3:
-			*nl
-			if pcs_leghair >= 3 and pcs_pubes > 3:'	As you rinse off, your brother gives a meaningful look at your lower body and you follow his gaze to your <<$pcdesc_legs>> legs and <<$pcdesc_pubes>> pussy.'
-			if pcs_leghair < 3 and pcs_pubes > 3:'	As you rinse off, your brother gives a meaningful look at your lower body and you follow his gaze to your <<$pcdesc_legs>> legs.'
-			if pcs_leghair >= 3 and pcs_pubes <= 3:'	As you rinse off, your brother gives a meaningful look at your lower body and you follow his gaze to your <<$pcdesc_pubes>> pussy.'
-			'	"Aren''t you going to shave?"'
-			if stanok = 0:
-				act'"I can''t. I don''t have any razors"':
-					cla
-					*nl
-					'	"I couldn''t even if I wanted to," you say to him with a shrug. He looks at you in confusion. "I''m out of razors. Can''t shave without a razor kiddo."'
-					'	"Oh." He looks around at the contents of the shower to see that you really are out of razors. "You know, you should really be more responsible sis. You shouldn''t let yourself run out of shaving supplies like that."'
-					'	You roll your eyes at his suggestions of responsibility, recognizing that they''re obviously motivated by to his preference for clean-shaven girls.'
-					act'Finish showering together':gt'brother_voyeur','brother_shower_end'
-						
-					if brothersex > 0 or brotherfuck > 0 or brotherbj > 0 or brotherwash > 5:
-						act'Have some fun':
-							cla & *clr
-							'<center><img <<$set_imgh>> src="images/shared/home/bathroom/broshowersex2.jpg"></center>'
-							'	Clean from your shower together, you can''t help yourself as you start to get frisky with your brother. His hands slide up your body to caress your breasts. In response, you reach back and start jerking his cock feeling him harden under your touch.'
-							act'Blow him':gt'brother_voyeur','brother_shower_bj'
-							act'Fuck him':gt'brother_voyeur','brother_shower_fuck'
-						end
-					end
-				end
-			else
-				act'Don''t feel like it':
-					cla & *clr
-					'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brotherwash.jpg"></center>'
-					'	"Nah," you say dismissively. "Don''t feel like doing it right now."'
-					'	Kolka''s mouth twists in disappointment. "You know, you really should. Nobody likes girls with hairy legs and a bush between them. You''ll get bullied by other girls and never get a boyfriend if you don''t shave."'
-					'	You roll your eyes at his suggestions, recognizing that they''re obviously motivated by to his preference for clean-shaven girls.'
-					act'Finish showering together':gt'brother_voyeur','brother_shower_end'
-						
-					if brothersex > 0 or brotherfuck > 0 or brotherbj > 0 or brotherwash > 5:
-						act'Have some fun':
-							cla & *clr
-							'<center><img <<$set_imgh>> src="images/shared/home/bathroom/broshowersex2.jpg"></center>'
-							'	Clean from your shower together, you can''t help yourself as you start to get frisky with your brother. His hands slide up your body to caress your breasts. In response, you reach back and start jerking his cock feeling him harden under your touch.'
-							act'Blow him':gt'brother_voyeur','brother_shower_bj'
-							act'Fuck him':gt'brother_voyeur','brother_shower_fuck'
-						end
-					end
-				end
-				
-				act'I like it this way':
-					cla & *clr
-					'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brotherwash.jpg"></center>'
-					'	"No?" you say questioningly. "I like it this way!"'
-					'	Kolka''s mouth twists in disappointment. "You know, you really should reconsider. Nobody likes girls with hairy legs and a bush between them. You''ll get bullied by other girls and never get a boyfriend if you don''t shave."'
-					'	You roll your eyes at his suggestions, recognizing that they''re obviously motivated by to his preference for clean-shaven girls.'
-					act'Finish showering together':gt'brother_voyeur','brother_shower_end'
+	cla & *clr
+	minut += 10
+	pcs_horny += 20
+	brotherwash += 1
+	'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brotherwash.jpg"></center>'
+	'	You and Kolka spend some time lathering each other with soap and rubbing each other down, both of you appreciatively feeling each other''s bodies as you do so.'
+	if brotherwash > 5 or brotherSex > 0:'	Kolka even slips his hands between your legs and gives your pussy a good cleaning, paying special attention to your clit and causing you to squirm and and moan under his touch.'
+	if brotherwash > 5 or brotherSex > 1:pcs_horny += 10
+	gs 'stat'
+	
+	if pcs_leghair >= 3 or pcs_pubes > 3:
+		*nl
+		if pcs_leghair >= 3 and pcs_pubes > 3:'	As you rinse off, your brother gives a meaningful look at your lower body and you follow his gaze to your <<$pcdesc_legs>> legs and <<$pcdesc_pubes>> pussy.'
+		if pcs_leghair < 3 and pcs_pubes > 3:'	As you rinse off, your brother gives a meaningful look at your lower body and you follow his gaze to your <<$pcdesc_legs>> legs.'
+		if pcs_leghair >= 3 and pcs_pubes <= 3:'	As you rinse off, your brother gives a meaningful look at your lower body and you follow his gaze to your <<$pcdesc_pubes>> pussy.'
+		'	"Aren''t you going to shave?"'
+		if stanok = 0:
+			act'"I can''t. I don''t have any razors"':
+				cla
+				*nl
+				'	"I couldn''t even if I wanted to," you say to him with a shrug. He looks at you in confusion. "I''m out of razors. Can''t shave without a razor kiddo."'
+				'	"Oh." He looks around at the contents of the shower to see that you really are out of razors. "You know, you should really be more responsible sis. You shouldn''t let yourself run out of shaving supplies like that."'
+				'	You roll your eyes at his suggestions of responsibility, recognizing that they''re obviously motivated by to his preference for clean-shaven girls.'
+				act'Finish showering together':gt'brother_voyeur','brother_shower_end'
 					
-					if brothersex > 0 or brotherfuck > 0 or brotherbj > 0 or brotherwash > 5:
-						act'Have some fun':
-							cla & *clr
-							'<center><img <<$set_imgh>> src="images/shared/home/bathroom/broshowersex2.jpg"></center>'
-							'	Clean from your shower together, you can''t help yourself as you start to get frisky with your brother. His hands slide up your body to caress your breasts. In response, you reach back and start jerking his cock feeling him harden under your touch.'
-							act'Blow him':gt'brother_voyeur','brother_shower_bj'
-							act'Fuck him':gt'brother_voyeur','brother_shower_fuck'
-						end
+				if brothersex > 0 or brotherfuck > 0 or brotherbj > 0 or brotherwash > 5:
+					act'Have some fun':
+						cla & *clr
+						'<center><img <<$set_imgh>> src="images/shared/home/bathroom/broshowersex2.jpg"></center>'
+						'	Clean from your shower together, you can''t help yourself as you start to get frisky with your brother. His hands slide up your body to caress your breasts. In response, you reach back and start jerking his cock feeling him harden under your touch.'
+						act'Blow him':gt'brother_voyeur','brother_shower_bj'
+						act'Fuck him':gt'brother_voyeur','brother_shower_fuck'
 					end
-				end
-				
-				act'I should shave':
-					cla
-					*nl
-					'	"Yeah, you''re probably right. I should shave," you say looking down at yourself, frowning at the growing body hair.'
-					gt'brother_voyeur','brother_shower_shave'
-				end
-					
-				act'Just for you':
-					cla
-					*nl
-					kolka_shave_ask = daystart
-					'	"You know, I wasn''t really planning on it," you say looking down at yourself.'
-					'	"But just because you asked, "I''ll do it for you!" you smile at Kolka.'
-					gt'brother_voyeur','brother_shower_shave'
 				end
 			end
-		end	
-		act'Finish showering':gt'brother_voyeur',
-	end
+		else
+			act'Don''t feel like it':
+				cla & *clr
+				'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brotherwash.jpg"></center>'
+				'	"Nah," you say dismissively. "Don''t feel like doing it right now."'
+				'	Kolka''s mouth twists in disappointment. "You know, you really should. Nobody likes girls with hairy legs and a bush between them. You''ll get bullied by other girls and never get a boyfriend if you don''t shave."'
+				'	You roll your eyes at his suggestions, recognizing that they''re obviously motivated by to his preference for clean-shaven girls.'
+				act'Finish showering together':gt'brother_voyeur','brother_shower_end'
+					
+				if brothersex > 0 or brotherfuck > 0 or brotherbj > 0 or brotherwash > 5:
+					act'Have some fun':
+						cla & *clr
+						'<center><img <<$set_imgh>> src="images/shared/home/bathroom/broshowersex2.jpg"></center>'
+						'	Clean from your shower together, you can''t help yourself as you start to get frisky with your brother. His hands slide up your body to caress your breasts. In response, you reach back and start jerking his cock feeling him harden under your touch.'
+						act'Blow him':gt'brother_voyeur','brother_shower_bj'
+						act'Fuck him':gt'brother_voyeur','brother_shower_fuck'
+					end
+				end
+			end
+			
+			act'I like it this way':
+				cla & *clr
+				'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brotherwash.jpg"></center>'
+				'	"No?" you say questioningly. "I like it this way!"'
+				'	Kolka''s mouth twists in disappointment. "You know, you really should reconsider. Nobody likes girls with hairy legs and a bush between them. You''ll get bullied by other girls and never get a boyfriend if you don''t shave."'
+				'	You roll your eyes at his suggestions, recognizing that they''re obviously motivated by to his preference for clean-shaven girls.'
+				act'Finish showering together':gt'brother_voyeur','brother_shower_end'
+				
+				if brothersex > 0 or brotherfuck > 0 or brotherbj > 0 or brotherwash > 5:
+					act'Have some fun':
+						cla & *clr
+						'<center><img <<$set_imgh>> src="images/shared/home/bathroom/broshowersex2.jpg"></center>'
+						'	Clean from your shower together, you can''t help yourself as you start to get frisky with your brother. His hands slide up your body to caress your breasts. In response, you reach back and start jerking his cock feeling him harden under your touch.'
+						act'Blow him':gt'brother_voyeur','brother_shower_bj'
+						act'Fuck him':gt'brother_voyeur','brother_shower_fuck'
+					end
+				end
+			end
+			
+			act'I should shave':
+				cla
+				*nl
+				'	"Yeah, you''re probably right. I should shave," you say looking down at yourself, frowning at the growing body hair.'
+				gt'brother_voyeur','brother_shower_shave'
+			end
+				
+			act'Just for you':
+				cla
+				*nl
+				kolka_shave_ask = daystart
+				'	"You know, I wasn''t really planning on it," you say looking down at yourself.'
+				'	"But just because you asked, "I''ll do it for you!" you smile at Kolka.'
+				gt'brother_voyeur','brother_shower_shave'
+			end
+		end
+	end	
+	act'Finish showering':gt'brother_voyeur','brother_shower_end'
 end
 
 if $ARGS[0] = 'showerfun':
