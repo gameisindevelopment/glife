@@ -2,6 +2,8 @@
 
 !!WD:"SUB >= 15" for act - Will need balancing / playtesting
 
+if $kioskloc = 'counter' and $args[0] ! 'counter': gt 'kiosk', 'counter'
+
 if $ARGS[0] = 'start':
 	if hour >= 14 and hour <= 16:
 		cls
@@ -106,6 +108,7 @@ end
 
 if $ARGS[0] = 'counter':
 	cls
+	$kioskloc = 'counter'
 	gs 'stat'
 	
 	'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/kiosk123.jpg"></center>'
@@ -128,7 +131,7 @@ if $ARGS[0] = 'counter':
 	'</table></center>'
 	*pl
 
-	act 'Leave (0:05)': gt $loc
+	act 'Leave (0:05)': $kioskloc = '' & gt $loc
 
 	act 'Buy a snack (100 <b>₽</b>) (0:05)':
 		*clr & cla
