@@ -28,7 +28,7 @@ act 'Kneel down':
 		gs 'arousal', 'end'
 		gs 'stat'
 	
-		act 'Leave':gt 'Grinok'
+		act 'Leave':gt 'Grinok', 'start'
 	end
 end
 
