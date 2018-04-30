@@ -2,7 +2,8 @@
 gs 'stat'
 minut += 60
 
-evgentipe = rand(0, 3)
+evgentipe = rand(0,3)
+
 if evgentipe = 0:
 	'During the break you are greeted by Zhendos, a friend of your brother "<<$pcs_nickname>>! My little pet, meet me after school."'
 
