@@ -71,10 +71,10 @@ if $ARGS[0] = 'gcafe':
 	$_drink['5,price'] = 0
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
-	:loop_cafe_drinks
+	:loop_gcafe_drinks
 	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="80%" align="center"><font color="<<$fcolor1>>">'+$_drink['<<i>>,name']+'</td><td height="30" width="20%" align="center"><a href="exec:gt''beverage'',$_drink[''<<i>>,type''],<<i>>">Free</a><font color="<<$fcolor1>>"><b></b></td></tr>'
 	i += 1
-	if i < arrsize('$_drink')/3:jump 'loop_cafe_drinks'
+	if i < arrsize('$_drink')/3:jump 'loop_gcafe_drinks'
 	$_str += '</table></center></font>'
 	'<center><img <<$set_imgh>> src="images/shared/drinks/cafedrinks.jpg"</center><br>'
 	'Your drinks order:<br><br>'+$_str
@@ -109,11 +109,7 @@ if $ARGS[0] = 'cafe':
 	$_str = '<table border="0" width="400" cellpadding="0" cellspacing="1">'
 	i = 0
 	:loop_cafe_drinks
-	if $metka = gkafe:
-		$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="80%" align="center"><font color="<<$fcolor1>>">'+$_drink['<<i>>,name']+'</td><td height="30" width="20%" align="center"><a href="exec:gt''beverage'',$_drink[''<<i>>,type''],<<i>>">Free</a>',$_drink['<<i>>,price']+'<font color="<<$fcolor1>>"><b></b></td></tr>'
-	else
-		$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="80%" align="center"><font color="<<$fcolor1>>">'+$_drink['<<i>>,name']+'</td><td height="30" width="20%" align="right">'+iif(money >= val($_drink['<<i>>,price']),'<a href="exec:gt''beverage'',$_drink[''<<i>>,type''],<<i>>">'+$_drink['<<i>>,price']+'</a>',$_drink['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽. </b></td></tr>'
-	end
+	$_str += '<tr bgcolor='+iif(i mod 2 = 0,'<<$bcolor1>>','<<$bcolor2>>')+'><td height="30" width="80%" align="center"><font color="<<$fcolor1>>">'+$_drink['<<i>>,name']+'</td><td height="30" width="20%" align="right">'+iif(money >= val($_drink['<<i>>,price']),'<a href="exec:gt''beverage'',$_drink[''<<i>>,type''],<<i>>">'+$_drink['<<i>>,price']+'</a>',$_drink['<<i>>,price'])+'<font color="<<$fcolor1>>"><b> ₽. </b></td></tr>'
 	i += 1
 	if i < arrsize('$_drink')/3:jump 'loop_cafe_drinks'
 	$_str += '</table></center></font>'
