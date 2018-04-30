@@ -138,7 +138,7 @@ if $ARGS[0] = 'start':
 	act 'Leave':
 		cla
 		killvar 'ks'
-		gt $loc
+		gt $loc, $metka
 	end
 end
 
