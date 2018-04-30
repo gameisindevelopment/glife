@@ -27,17 +27,19 @@ if pain['total'] > 100: pain['total'] = 100
 pain['damage'] = pain['total']
 pain['relief'] = 0
 
-if alko > 6:
-	pain['relief'] = 50
+if alko > 9:
+	pain['relief'] = 70
+elseif alko > 6:
+	pain['relief'] = 40
 elseif alko > 3:
-	pain['relief'] = 20
+	pain['relief'] = 15
 end
 
 if StrongNarkota > 0:
 	pain['relief'] = 90
 elseif nark > 0:
 	pain['relief'] = 60
-elseif pain['killer'] > 12:
+elseif pain['killer'] > 12 and alko <= 9:
 	pain['relief'] = 50
 end
 
@@ -1220,11 +1222,11 @@ if meetday[2] < daystart and svidanie[2] = 1:pcs_lovers_rel[2] -= 10 & svidanie[
 if StrongNarkota > 20:$stat_msg += '<BR><b><font color="red">You are stoned.</font></b>'
 if amphHigh > 0: $stat_msg += '<BR><b><font color="red">You feel a little wired.</font></b>'
 
-if alko > 0:
-	if alko < 3:
+if alko > 2:
+	if alko < 6:
 		slut_bonus = 0
-		$stat_msg += '<BR><b><font color="red">You''re a little dizzy.</font></b>'
-	elseif alko < 6:
+		$stat_msg += '<BR><b><font color="red">You feel a little buzz from drinking.</font></b>'
+	elseif alko < 9:
 		slut_bonus = 25
 		$stat_msg += '<BR><b><font color="red">You''re drunk.</font></b>'
 	else

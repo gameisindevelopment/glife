@@ -423,11 +423,11 @@ if minut >= 60:
 	pcs_manna += mannamax / 20
 
 	if alko > 0 and alkoblock = 0:
-		if alko >= 4:
+		if alko >= 6:
 			if pcs_run > 0: run_deg -= 1
 			if vball_lvl >= 50: vball_deg -= 1
 
-			if alko >= 6:
+			if alko >= 10:
 				if pcs_stren > 10: stren_deg -= 1
 				if pcs_vital > 10: vital_deg -= 1
 				if pcs_intel > 10: intel_deg -= 1
