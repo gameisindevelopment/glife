@@ -177,8 +177,8 @@ if hour >= 16 and hour <= 20 and indorf = 0:
 		gs 'stat'
 		*pl $korrParMomHeader
 
-		if belgangQW=10000:
-			belgangQW=10001
+		if npc_QW['A113'] = 10000:
+			npc_QW['A113'] = 10001
 			schoolprogul = 0
 			GspravkaT = 2
 			motherKnowSpravka = 1
