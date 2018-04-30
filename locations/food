@@ -28,7 +28,8 @@ if $ARGS[0] = 'pirosh':
 	'<center><img <<$set_imgh>> src="images/shared/food/pirozhki.jpg"></center>'
 	'You enjoy some vegatarian Piroshki, and <<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish': gt $loc, $metka
 end
 
@@ -53,7 +54,8 @@ if $ARGS[0] = 'golub':
 	'<center><img <<$set_imgh>> src="images/shared/food/golubtsy.jpg"></center>'
 	'You enjoy some well made Golubtsy in a tomato sauce. The portions were moderate and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -78,7 +80,8 @@ if $ARGS[0] = 'pozhar':
 	'<center><img <<$set_imgh>> src="images/shared/food/pozharsky.jpg"></center>'
 	'You thoroughly enjoy the nicely cooked Pozharsky Cutlets. The portions were moderate and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -103,7 +106,8 @@ if $ARGS[0] = 'reuben':
 	'<center><img <<$set_imgh>> src="images/shared/food/reuben.jpg"></center>'
 	'You had trouble finishing the Rueben Sandwich, but you enjoyed it immensely. The portion was fairly large and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -128,7 +132,8 @@ if $ARGS[0] = 'blini':
 	'<center><img <<$set_imgh>> src="images/shared/food/blini.jpg"></center>'
 	'You eat some blini. The portions are fairly small and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -152,7 +157,8 @@ if $ARGS[0] = 'varenfan':
 	'<center><img <<$set_imgh>> src="images/shared/food/varenikifancy.jpg"></center>'
 	'You sit and eat a plate of yummy Vareniki with potatoes. The portions are fairly moderate and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -177,6 +183,7 @@ if $ARGS[0] = 'salfan':
 	'<center><img <<$set_imgh>> src="images/shared/food/salmonfancy.jpg"></center>'
 	'You thoroughly enjoy the massive fresh salmon steak. The meal was simply colossal and<<$mtxt>>'
 	gs 'stat'
+	killvar '$_eat'
 
 	act 'Finish':gt $loc, $metka
 end
@@ -202,7 +209,8 @@ if $ARGS[0] = 'strofan':
 	'<center><img <<$set_imgh>> src="images/shared/food/stroganofffancy.jpg"></center>'
 	'You are loving the delicious Beef Stroganoff. You enjoy it immensely. The portion was fairly moderate and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -227,7 +235,8 @@ if $ARGS[0] = 'borfan':
 	'<center><img <<$set_imgh>> src="images/shared/food/borschtfancy.jpg"></center>'
 	'You a steaming hot bowel of Borscht. The portions are fairly small and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -252,7 +261,8 @@ if $ARGS[0] = 'blifan':
 	'<center><img <<$set_imgh>> src="images/shared/food/blinifancy.jpg"></center>'
 	'You eat a petite caviar blini appetiser. The portions are fairly small and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -277,7 +287,8 @@ if $ARGS[0] = 'ryesna':
 	'<center><img <<$set_imgh>> src="images/shared/food/ryesnack.jpg"></center>'
 	'You have a tasty bowel of toasted rye snacks. The portions are fairly small and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -302,7 +313,8 @@ if $ARGS[0] = 'crisps':
 	'<center><img <<$set_imgh>> src="images/shared/food/crisps.jpg"></center>'
 	'You enjoy the salty flavour of a bowl of crisps. The portions are fairly small and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -327,7 +339,8 @@ if $ARGS[0] = 'onring':
 	'<center><img <<$set_imgh>> src="images/shared/food/onionrings.jpg"></center>'
 	'You push yourself to eat the dry fatty onion rings. The portions are fairly small and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -352,7 +365,8 @@ if $ARGS[0] = 'vegburg':
 	'<center><img <<$set_imgh>> src="images/shared/food/vegieburger.jpg"></center>'
 	'You eat the delicious vegieburger. The portions are fairly small and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -377,7 +391,8 @@ if $ARGS[0] = 'turburg':
 	'<center><img <<$set_imgh>> src="images/shared/food/turkeyburger.jpg"></center>'
 	'You enjoy the turkey burger. The portions are fairly small and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -402,7 +417,8 @@ if $ARGS[0] = 'batfish':
 	'<center><img <<$set_imgh>> src="images/shared/food/batteredfish.jpg"></center>'
 	'You eat the fish, but it has little flavour. The portions were moderate and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -427,7 +443,8 @@ if $ARGS[0] = 'cheburg':
 	'<center><img <<$set_imgh>> src="images/shared/food/cheeseburger.jpg"></center>'
 	'You are a little sickened by the greasy looking cheeseburger and fries in front of you. The meal was simply colossal and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -451,7 +468,8 @@ if $ARGS[0] = 'snack':
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You enjoy a small tasty, but somewhat fattening, snack. It wasn''t very much food, and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Return':gt $loc, $metka
 end
 
@@ -475,7 +493,8 @@ if $ARGS[0] = 'f_food':
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You happily eat some fast food. The portions are quite generous and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish':gt $loc, $metka
 end
 
@@ -497,8 +516,9 @@ if $ARGS[0] = 's_meal':
 	pcs_breath = 0
 	gs 'food', 'aftermeal'
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
-	'You happily eat your meal. The portions are fairly small and<<$mtxt>>' 
+	'You happily eat your meal. The portions are fairly small and<<$mtxt>>'
 	gs 'stat'
+	killvar '$_eat'
 
 	act 'Finish':gt $loc, $metka
 end
@@ -524,6 +544,7 @@ if $ARGS[0] = 'm_meal':
 	'You thoroughly enjoy the nicely cooked meal. The portions were moderate and<<$mtxt>>'
 	'You accompany it with a mug of tea.'
 	gs 'stat'
+	killvar '$_eat'
 
 	act 'Finish':gt $loc, $metka
 end
@@ -548,8 +569,9 @@ if $ARGS[0] = 'l_meal':
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You are almost overwhelmed by the delicious meal laid before you and enjoy it immensely. The meal was simply colossal and<<$mtxt>>'
 	gs 'stat'
+	killvar '$_eat'
 	if plcooked = 1: killvar 'plcooked'
-	
+
 	act 'Finish':  gt $loc, $metka
 end
 
@@ -573,6 +595,7 @@ if $ARGS[0] = 'bag_lunch':
 	'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
 	'You eat the lunch you packed from home. There was nothing fancy about it and<<$mtxt>>'
 	gs 'stat'
+	killvar '$_eat'
 
 	act 'Finish':  gt $loc, $metka
 end
@@ -599,6 +622,7 @@ if $ARGS[0] = 'h_food':
 	'The maid brings you a decent meal,<<$mtxt>>'
 	'You accompany it with a mug of tea.'
 	gs 'stat'
+	killvar '$_eat'
 
 	act 'Finish':gt $loc, $metka
 end
@@ -623,10 +647,11 @@ if $ARGS[0] = 'h_meal':
 	'<center><img <<$set_imgh>> src="images/shared/food/eating-salad.jpg"></center>'
 	'You enjoy a crisp salad of fresh green and<<$mtxt>>'
 	gs 'stat'
-	
+	killvar '$_eat'
+
 	act 'Finish': gt $loc, $metka
 end
-	
+
 if $ARGS[0] = 'aftermeal':
 
 	if pcs_energy > 100:

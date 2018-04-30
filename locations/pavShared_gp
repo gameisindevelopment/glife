@@ -117,7 +117,7 @@ if $ARGS[0] = 'gpChat':
 		elseif say = 2:
 			! age reactions
 			if age < 18:
-				'<font color=#<<$gp_font>>>"I like that you have only <<age>> years <<$pcs_firstname>>."</font>'
+				'<font color=#<<$gp_font>>>"I like that you are only <<age>> years old<<$pcs_firstname>>."</font>'
 				if rand(0, 100)< 30:'<font color=#<<$gp_font>>>"By the way, don''t you have even younger sister or girlfriend that would like, you know, to meet me?"</font>'
 			else
 				'<font color=#<<$gp_font>>>"<<$pcs_firstname>> you are becoming too old for my taste. <<age>> years is too much."</font>'

@@ -136,8 +136,8 @@ if $ARGS[0] = 'counter':
 	act 'Buy a snack (100 <b>₽</b>) (0:05)':
 		*clr & cla
 		gs 'stat'
-		minut += 15
-		money -= val($_eat['<<args[1]>>,price'])
+		minut += 5
+		money -= 100
 		pcs_health += 10
 		pcs_mood += 20
 		fat += 6
@@ -160,8 +160,8 @@ if $ARGS[0] = 'counter':
 		*clr & cla
 		frost = 1
 		alko -= 1
-		minut += 15
-		money -= val($_drink['<<args[1]>>,price'])
+		minut += 5
+		money -= 40
 		pcs_health += 10
 		pcs_energy += 4
 		if pcs_hydra >= 100:

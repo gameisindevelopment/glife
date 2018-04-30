@@ -1,6 +1,14 @@
 # pavSharedApt
 
-$loc = 'pavSharedApt'
+if night_mode = 1:
+	fcolor = rgb(255, 255, 255)
+	bcolor = rgb(0, 0, 0)
+	lcolor = rgb(106, 90, 205)
+else
+	fcolor = rgb(0, 0, 0)
+	bcolor = rgb(255, 255, 255)
+	lcolor = rgb(106, 90, 205)
+end
 
 if $ARGS[0] = 'update':
 	rentWeekly = 2000
@@ -121,16 +129,6 @@ if $ARGS[0] = 'update':
 	if sp_mood = 4:$sp_mood = 'bad'
 	if sp_mood = 5:$sp_mood = 'very bad'
 
-	if night_mode = 1:
-		fcolor = rgb(255, 255, 255)
-		bcolor = rgb(0, 0, 0)
-		lcolor = rgb(106, 90, 205)
-	else
-		fcolor = rgb(0, 0, 0)
-		bcolor = rgb(255, 255, 255)
-		lcolor = rgb(106, 90, 205)
-	end
-
 	gs 'stat'
 
 	! if debg = 0:
@@ -237,6 +235,7 @@ if $ARGS[0] = 'start':
 	$goBack = $metka
 	$metkaM = 'start'
 	$locM = 'pavSharedApt'
+	$loc = 'pavSharedApt'
 	gs 'pavSharedApt', 'update'
 	if introDone = 0:gt 'pavSharedApt', 'intro'
 	minut += 2
@@ -308,7 +307,7 @@ if $ARGS[0] = 'start':
 		'From the hallway several doors lead to <a href="exec:gt ''pavSharedApt'', ''ndRoom''"><<$nd_name>>''s</a>, <a href="exec:gt ''pavSharedApt'', ''gpRoom''"><<$gp_name>>''s</a> and <a href="exec:gt ''pavSharedApt'', ''spRoom''"><<$sp_name>>''s</a> rooms.'
 		'The last doors lead to the <a href="exec:gt ''pavSharedApt'', ''pcsRoom''">room</a> you have rented.'
 		''
-		'There are several closets for your <a href="exec:gt ''shoes'', ''select''">shoes</a> and a large tall <a href="exec:gt ''mirror'', ''start''">mirror</a>.'
+		'There are several closets for your <a href="exec:gt''shoes'',''view_shoe_list''">shoes</a> and a large tall <a href="exec:gt ''mirror'', ''start''">mirror</a>.'
 		if servitudeLvl >= 1:'A computer printed <a href="exec:gt ''pavSharedApt'', ''list''">list</a> hangs on the exit door.'
 		act 'Your room':gt 'pavSharedApt', 'pcsRoom'
 		act 'Bathroom':gt 'pavSharedApt', 'bathroom'
@@ -316,8 +315,19 @@ if $ARGS[0] = 'start':
 		act 'Living Room':gt 'pavSharedApt', 'livingRoom'
 	end
 
+	! if kid > 0:
+		! *clr & cla
+		! step = 0
+		! introDone = 0
+		! minut = 5
+		! !Need to have some actual story to this with NPC reactions. 
+		! '<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/dimka/revenge/crying.jpg"></center>'
+		! 'You''ve been kicked out of the apartment due to having children'
+		! pavSharedAptEnabled = 0
+		! act 'Leave':gt 'pavSharedApt', 'hallway'
+	! end
+
 	if $clothingworntype = 'nude':
-		''
 		'<b>You cannot leave the apartment naked.</b>'
 	else
 		act 'Leave':gt 'pavSharedApt', 'hallway'
@@ -385,18 +395,23 @@ if $ARGS[0] = 'intro':
 		'<font color=#<<$sp_font>>>"So that''s her guys. <<$pcs_firstname>>, could you introduce yourself to guys?"</font>'
 		'<font color=#<<$pcs_font>>>"Hello, my name is <<$pcs_firstname>> <<$pcs_lastname>>. I would like to rent the empty room in your apartment."</font>'
 		'<font color=#<<$gp_font>>>"Well now that''s what I like! Finally this won''t be such a gay party!"</font>'
-		'<font color=#<<$nd_font>>>"<<$pcs_firstname>> please excuse my friend <<$gp_name>>, he is such a rude to everyone. My name is <<$nd_name>>."</font>'
+		'<font color=#<<$nd_font>>>"<<$pcs_firstname>> please excuse my friend <<$gp_name>>, he is such a rude prick to everyone. My name is <<$nd_name>>."</font>'
 		'<font color=#<<$gp_font>>>"Yup, I''m <<$gp_name>>."</font>'
 		'<font color=#<<$nd_font>>>"So you would like to live here with us?"</font>'
 		'<font color=#<<$pcs_font>>>"Yes. I need a new place to stay."</font>'
 		'<font color=#<<$gp_font>>>"How old are you girl?"</font>'
-		'<font color=#<<$nd_font>>>"<<$gp_name>>! Not again this!"</font>'
-		'<font color=#<<$pcs_font>>>"It''s OK. I have actually <<age>> years. Why do you ask?"</font>'
+		'<font color=#<<$nd_font>>>"<<$gp_name>>! Not this again!"</font>'
+		'<font color=#<<$pcs_font>>>"It''s OK. I am actually <<age>> years old. Why do you ask?"</font>'
 		'<font color=#<<$nd_font>>>"He''s just idiot, don''t listen to him."</font>'
 		if age < 18:
 			'(You can see <<$gp_name>> rub his crotch just a brief moment after you told him your age. What''s he up to?)'
 		end
-		act 'Continue':gt 'pavSharedApt', 'intro'
+		! if kid > 0:
+			! '<font color=#<<$pcs_font>>>"How you feel about having children here, as I''m a single mother; will this be a problem?"</font>'
+			! act 'Continue':step = 50 & gt 'pavSharedApt', 'intro'
+		! else
+			act 'Continue':gt 'pavSharedApt', 'intro'
+		! end
 	elseif step = 2:
 		minut += 3
 		step = 3
@@ -470,7 +485,16 @@ if $ARGS[0] = 'intro':
 		'<font color=#<<$nd_font>>>"Just shut up already!"</font>'
 		''
 		'<font color=#<<$sp_font>>>"Sorry <<$pcs_firstname>>. We respect your decision. If you change your mind and room is still empty, let us know and we can talk again. Goodbye!"</font>'
-		act 'Tell them goodbye and leave':step = 0 & gt 'pavResidential'
+		act 'Tell them goodbye and leave':step = 0 & gt 'pavSharedApt', 'hallway'
+	elseif step = 50:
+		minut += 2
+		!add dialogue for returning after being previously expelled from apartment
+		'<font color=#<<$nd_font>>>"I''m sorry <<$pcs_firstname>>, but we don''t want children or pets in the apartment!"</font>'
+		'<font color=#<<$pcs_font>>>"OK, I understand."</font>'
+		'<font color=#<<$gp_font>>>"If you get rid of the kid, come back and see us."</font>'
+		'<font color=#<<$sp_font>>>"Don''t mind him. There''s simply not enough room for 4 people, plus kids or pets. I hope you understand"</font>'
+		'<font color=#<<$gp_font>>>"Seeya <<$pcs_firstname>>."</font>'
+		act 'Thank them and leave':step = 0 & gt 'pavSharedApt', 'hallway'
 	end
 end
 
@@ -521,6 +545,7 @@ end
 if $ARGS[0] = 'livingRoom':
 	$location_type = 'private'
 	$locclass = 'sitroom'
+	$loc = 'pavSharedApt'
 	$metka = 'livingRoom'
 	clr
 	minut += 1
@@ -565,7 +590,7 @@ if $ARGS[0] = 'livingRoom':
 	if bookYog > 0: 'A yoga mat is rolled up in a corner. '
 	
 	gs 'exercise', 'start'
-	gs'subkid'
+	!gs'subkid'
 	
 	act 'Back to the hall': gt 'pavSharedApt', 'start'
 end
@@ -573,6 +598,7 @@ end
 if $ARGS[0] = 'bathroom':
 	minut += 1
 	$location_type = 'bathroom'
+	$loc = 'pavSharedApt'
 	$metka = 'bathroom'
 	$metkaM = 'bathroom'
 	$locM = 'pavSharedApt'
@@ -588,6 +614,7 @@ end
 if $ARGS[0] = 'kitchen':
 	*clr & cla
 	minut += 2
+	$loc = 'pavSharedApt'
 	$metka = 'kitchen'
 	gs 'kit_din'
 	'<center><h3>Kitchen</h3></center>'
@@ -822,10 +849,12 @@ if $ARGS[0] = 'cleanForGuys':
 end
 
 if $ARGS[0] = 'pcsRoom':
-	minut += 2
+	$loc = 'pavSharedApt'
 	$metka = 'pcsRoom'
 	$location_type = 'private'
 	$locclass = 'bedr'
+	minut += 2
+	gs 'stat'
 	gs 'pavSharedApt', 'update'
 
 	'<center><h3><<$pcs_firstname>>''s bedroom</h3></center>'
@@ -942,7 +971,7 @@ if $ARGS[0] = 'pcsRoom':
 	dynamic $wearpan
 	dynamic $removepan
 	gs 'events', 'read_porn'
-	gs 'subkid'
+	!gs 'subkid'
 	if pcs_sleep <= 80:
 		if succubusQW = 2:
 			act 'Undress and go to sleep':
