@@ -431,7 +431,7 @@ if minut >= 60:
 				if pcs_vital > 10: vital_deg -= 1
 				if pcs_intel > 10: intel_deg -= 1
 
-				alko -= rand (1, 2)
+				alko -= rand (0,1)
 			end
 		end
 
