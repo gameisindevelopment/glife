@@ -460,7 +460,7 @@ if ARGS[0] = 4:
 		end
 		act 'Buy vibrator (700 <b>₽</b>)':
 			cla
-			if money >= 1300 and vibrator = 0:
+			if money >= 700 and vibrator = 0:
 				minut += 5
 				vibrator = 1
 				money -= 700
