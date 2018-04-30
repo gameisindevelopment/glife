@@ -401,6 +401,7 @@ if minut >= 60:
 		end
 		pcs_stam += stammax / 10
 		pcs_sleep -= 4
+		alko -= 1
 	else
 		if amphHigh > 0:
 			pcs_energy -= (8 / amphetamineBonus + succublvl)
