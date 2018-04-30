@@ -66,6 +66,12 @@ elseif pain['total'] > 0:
 	if (pcs_mood * 10 / 9) >= 100: pcs_mood = pcs_mood * 90 / 100
 end
 
+!!--------------------------pain calculation end--------------------------------
+
+!!update skills and attributes to pcs_ from there _lvl values plus adjustments based on condition
+gs 'stat_sklattrib_lvlset'
+
+
 !!!!!!!!!!!!!!!!!!!!!
 !!!Beginning Description!!!
 !!!!!!!!!!!!!!!!!!!!!
