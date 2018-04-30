@@ -47,7 +47,10 @@ if $ARGS[0] = 'start':
 			
 			exit
 		end
+		
 		act 'Wander through the market': gt 'Grinok','events'
+		act 'Go back to the station': minut += 3 & gt 'vokzalG'
+		
 		!expand market events from 1.2.4
 
 		if arturKnow = 1 and arturQW = 0:
@@ -211,8 +214,9 @@ if $ARGS[0] = 'start':
 			act 'Leave': gt 'Grinok', 'start'
 		end
 	else
-	act 'Wander through the market': gt 'Grinok','events'
-	act 'Go back to the station':minut += 3 & gt 'vokzalG'
+		act 'Wander through the market': gt 'Grinok','events'
+		act 'Go back to the station': minut += 3 & gt 'vokzalG'
+	end
 end
 
 if $ARGS[0] = 'events':
@@ -244,19 +248,10 @@ if $ARGS[0] = 'events':
 end
 
 if ARGS[0] = 1:
+	cla
+	*clr
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/poproshaika1.jpg"></center>'
 	'You are strolling through the market when a beggar asks you for some change.'
-	act 'Give some money': 
-		cla
-		*clr
-		money -= rand(3,20)
-		pcs_willpwr += 5
-		pcs_mood += 5
-		gs 'stat'
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/podaet.jpg"></center>'
-		'You give the beggar a few rubles'
-		act 'Wander around the market': gt 'Grinok','events'
-	end
 	act 'Don''t give money': 
 		cla
 		*clr
@@ -266,6 +261,17 @@ if ARGS[0] = 1:
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/poproshaika2.jpg"></center>'
 		'You ignore the begger and pretend not to hear him.'
+		act 'Wander around the market': gt 'Grinok','events'
+	end
+	act 'Give some money': 
+		cla
+		*clr
+		money -= rand(3,20)
+		pcs_willpwr += 5
+		pcs_mood += 5
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/podaet.jpg"></center>'
+		'You give the beggar a few rubles'
 		act 'Wander around the market': gt 'Grinok','events'
 	end
 end
@@ -321,6 +327,8 @@ if ARGS[0] = 3:
 end
 
 if ARGS[0] = 4:
+	cla
+	*clr
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
 	'You find a small stall that has many shelves with a large variety of porn magazines, a pack of brand new porn playing cards, and you can see several sex toys just behind the counter. The salesman watches over his stall with shifty eyes.'
 	act 'Leave':gt 'Grinok', 'start'
@@ -350,7 +358,6 @@ if ARGS[0] = 4:
 				act 'Buy something else':gt 'Grinok', 4
 			end
 		end
-	end
 	else
 		act 'Browse the porn magazines':
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
@@ -385,8 +392,7 @@ if ARGS[0] = 4:
 						act 'Leave':gt 'Grinok', 'start'
 					end
 				end
-			end
-			elseif TimesBuyPorno > 0:
+			elseif TimesBuyPorno > 0 and TimesBuyPorno < 5:
 				'The porn dealer notices you coming over and asks, "Looking to buy a magazine? They''re only 400 <b>₽</b> each."'
 				act 'Look through a magazine':
 					cls
@@ -410,8 +416,7 @@ if ARGS[0] = 4:
 					end
 					act 'Leave':gt 'Grinok', 'start'
 				end
-			end
-			if TimesBuyPorno >= 5:
+			elseif TimesBuyPorno >= 5:
 				'The porn dealer see you approaching. "Ah, my best customer!"'
 				act 'Look through a magazine':
 					cls
