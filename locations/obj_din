@@ -472,15 +472,17 @@ if $ARGS[0] = 'stats_achievements':
 	nl
 	!!!
 	if modelfoto > 0:
+		'<b>Modelling Stats</b>'
 		pl'<<modelfoto>> - Number of times you have worked as a model'
 		pl'<<modelfotomoney>> - The amount of money you''ve made modelling'
-		if modelfoto_fashion > 0: pl'<<modelfoto_fashion>> - Number of times you have been photographed as a fashion model'
-		if modelfoto_ero_clo > 0: pl'<<modelfoto_ero_clo>> - Number of times you have been an erotic clothing model'
-		if modelfoto_bikini > 0: pl'<<modelfoto_bikini>> - Number of times you have been photographed as a bikini model'
-		if modelfoto_lingerie > 0: pl'<<modelfoto_lingerie>> - Number of times you have been photographed as a lingerie model'
-		if modelfoto_nip > 0: pl'<<modelfoto_nip>> - Number of times you have been photographed as a model with exposed nipples'
-		if modelfoto_topless > 0: pl'<<modelfoto_topless>> - Number of times you have been a topless model'
-		if modelfoto_nude > 0: pl'<<modelfoto_nude>> - Number of times you have been a nude model'
+		if modelfoto_fashion > 0: pl'<<modelfoto_fashion>> - Number of fashion shoots you have participated in'
+		if modelfoto_ero_clo > 0: pl'<<modelfoto_ero_clo>> - Number of erotic clothing shoots you have participated in'
+		if modelfoto_bikini > 0: pl'<<modelfoto_bikini>> - Number of swimsuit shoots you have modelled in'
+		if modelfoto_lingerie > 0: pl'<<modelfoto_lingerie>> - Number of lingerie shoots you have participated in'
+		if modelfoto_nip > 0: pl'<<modelfoto_nip>> - Number of shoots where you have exposed your nipples'
+		if modelfoto_topless > 0: pl'<<modelfoto_topless>> - Number of shoots you have been topless'
+		if modelfoto_nude > 0: pl'<<modelfoto_nude>> - Number of shoots you have been nude without showing your vagina'
+		if modelfoto_nude_frontal > 0: pl'<<modelfoto_nude>> - Number of shoots you have shown full frontal nudity'
 		nl
 	end
 	
@@ -951,7 +953,10 @@ if $ARGS[0] = 'rep2':
 		
 		if brothershowertalk > 0:pl'<<brothershowertalk>> - Number of conversations you''ve had with your brother in the shower.'
 		if brothershowerlook = 1:pl'You let your brother look at you when you''re shower'
-		if brothershave > 0:pl'<<brothershave>> - Number of times you''ve let your brother watch while you shave your pussy'
+		if brothershave > 0:pl'<<brothershave>> - Number of times you''ve let your brother watch you shave your pussy'
+        if brotherbj > 0:pl'<<brotherbj>> - Number of times you''ve given your brother blowjobs'
+        if brotherfuck > 0:pl'<<brotherSex>> - Number of times you''ve had sex with your brother'
+
 	end
 end
 
@@ -1848,6 +1853,7 @@ if $ARGS[0] = 'exit':
 	cla
 	if StoryLine = 1:act 'Go to Pavlovsk':gt 'pavResidential'
 	act 'Go to the street':gt 'street'
+	act 'Cancel':gt $loc
 end
 
 if $ARGS[0] = 'new':
@@ -1882,15 +1888,15 @@ if $ARGS[0] = 'old':
 	if bag > 0:addobj 'Purse'
 	addobj 'Notebook'
 	addobj 'Refresh'
-	addobj 'The new menu'
-	addobj 'Game Setting'
-	addobj 'Cheat menu'
-	addobj 'Emergency exit'
+	addobj 'Settings'
+	addobj 'Cheats'
 	if disable_autosave = 1:
-		addobj 'Enable autosave'
+		addobj '<font color = red><b>[</b></font>Autosave<font color = red><b>]</b></font>'
 	else
-		addobj 'Disable autosave'
+		addobj '<font color = green><b>[</b></font>Autosave<font color = green><b>]</b></font>'
 	end
+	addobj ''
+	addobj '<font color = red>Emergency</font>'
 end
 
 if $ARGS[0] = 'autosave':
@@ -1903,12 +1909,12 @@ if $ARGS[0] = 'autosave':
 	elseif oldobjmenu = 1:
 		if disable_autosave = 1:
 			disable_autosave = 0
-			delobj 'Enable autosave'
-			addobj 'Disable autosave'
+			delobj '[Autosave]'
+			addobj '[Autosave]'
 		else
 			disable_autosave = 1
-			delobj 'Disable autosave'
-			addobj 'Enable autosave'
+			delobj '[Autosave]'
+			addobj '[Autosave]'
 		end
 	end
 	gs'stat'

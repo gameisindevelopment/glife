@@ -197,7 +197,7 @@ act 'watch porn':
 					act 'Leave':gt 'gschool_grounds', 'sports'
 				end
 			end
-		elseif evgenQW = 2 and rand(0, 1) = 0:
+		elseif evgenQW = 2 and rand(0,1) = 0:
 			cls
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/grounds/seeporn/seeporn.jpg"></center>'
@@ -253,7 +253,7 @@ act 'watch porn':
 				end
 			end
 			exit
-		elseif evgenQW = 1 and rand(0, 1) = 0:
+		elseif evgenQW = 1 and rand(0,1) = 0:
 			cls
 			pcs_horny += 10
 			gs 'stat'
@@ -285,7 +285,7 @@ act 'watch porn':
 			end
 
 			exit
-		elseif evgenQW = 0 and rand(0, 1) = 0:
+		elseif evgenQW = 0 and rand(0,1) = 0:
 			cls
 			gs 'stat'
 			'The boys intensely watch porn, you notice, their boners straining to get out of their pants.'

@@ -1444,8 +1444,7 @@ elseif pcs_makeup = 3:
 	$pcdesc_makeup = 'vibrantly done-up'
 	$pcdesc_makeupwordy = 'colourful, tastefully done-up'
 	$pcs_makeup = 'Your makeup has some mildly vibrant tones, covering your minor imperfections and enhancing your best features'
-else
-	pcs_makeup = 4
+elseif pcs_makeup = 4:
 	rand_makeup = rand(0,3)
 	if rand_makeup = 0:$pcdesc_makeuprandom = 'painted-on'
 	if rand_makeup = 1:$pcdesc_makeuprandom = 'makeup-caked'
@@ -1454,6 +1453,16 @@ else
 	$pcdesc_makeup = 'dolled-up'
 	$pcdesc_makeupwordy = 'heavily dolled-up and painted'
 	$pcs_makeup = 'Your makeup is thick enough to cover most imperfections, with rich shades drawing attention to your eyes and lips'
+elseif pcs_makeup = 5:
+	rand_makeup = rand(0,3)
+	if rand_makeup = 0:$pcdesc_makeuprandom = 'painted-on'
+	if rand_makeup = 1:$pcdesc_makeuprandom = 'makeup-caked'
+	if rand_makeup = 2:$pcdesc_makeuprandom = 'dolled-up'
+	if rand_makeup = 3:$pcdesc_makeuprandom = 'sultry, dramatically done-up'
+	$pcdesc_makeup = 'dolled-up'
+	$pcdesc_makeupwordy = 'heavily dolled-up and painted'
+	$pcs_makeup = 'Your makeup is professional grade, covering up any and all imperfections and flawlessly complimenting the natural hues of your eyes, face, and hair.'
+	mopkoef = 30
 end
 
 if pcs_leghair <= 0:

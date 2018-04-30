@@ -2,13 +2,13 @@
 
 !!WD:"SUB >= 15" for act - Will need balancing / playtesting
 
-if $kioskloc = 'counter': gt 'kiosk', 'counter'
+if $kioskloc = 'counter' and $args[0] ! 'counter': gt 'kiosk', 'counter'
 
 if $ARGS[0] = 'start':
 	if hour >= 14 and hour <= 16:
 		cls
 		gs 'stat'
-		'<center><img WIDTH = 1000 HEIGHT = 650 src="images/locations/city/shared/kiosk/kiosk21.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/kiosk21.jpg"></center>'
 		'It is currently very busy and looks like you''ll have to wait to get to the counter.'
 		act 'Wait in line (20 Minutes)':
 			minut += 20
@@ -107,14 +107,12 @@ if $ARGS[0] = 'start':
 end
 
 if $ARGS[0] = 'counter':
-	$messdrink = 'beverage', 'afterdrink'
-	$messfood = 'beverage', 'afterdrink'
-	$kioskloc = 'counter'
 	cls
+	$kioskloc = 'counter'
 	gs 'stat'
 	
-	'<center><img WIDTH = 800 HEIGHT = 500 src="images/locations/city/shared/kiosk/kiosk123.jpg"></center>'
-	'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/ruch.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/kiosk123.jpg"></center>'
+	'<center><img WIDTH = 245 HEIGHT = 56 src="images/locations/city/shared/kiosk/ruch.jpg"></center>'
 	if $message ! '':
 		'<center>'+$message+'</center>'
 		killvar '$message'
@@ -123,21 +121,22 @@ if $ARGS[0] = 'counter':
 	end	
 	*pl '<center><table align="center" width=80%>' 
 	*pl '<center><table align="center">'
-	*P FUNC ('$stock_item', 20, 'Cigarettes', 115, 'siga', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Fashion magazine', 430, 'fashmag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Computer magazine', 430, 'compmag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Biographical magazine', 430, 'biomag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Cooking magazine', 430, 'cookmag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Knitting magazine', 430, 'knitmag', 'kiosk')
-	*P FUNC ('$single_stock_item', 1, 'Fitness magazine', 430, 'fitmag', 'kiosk')
+	*P FUNC ('$stock_item', 20, 'Cigarettes', 115, 'siga', 'kiosk', 'counter')
+	*P FUNC ('$single_stock_item', 1, 'Fashion magazine', 430, 'fashmag', 'kiosk', 'counter')
+	*P FUNC ('$single_stock_item', 1, 'Computer magazine', 430, 'compmag', 'kiosk', 'counter')
+	*P FUNC ('$single_stock_item', 1, 'Biographical magazine', 430, 'biomag', 'kiosk', 'counter')
+	*P FUNC ('$single_stock_item', 1, 'Cooking magazine', 430, 'cookmag', 'kiosk', 'counter')
+	*P FUNC ('$single_stock_item', 1, 'Knitting magazine', 430, 'knitmag', 'kiosk', 'counter')
+	*P FUNC ('$single_stock_item', 1, 'Fitness magazine', 430, 'fitmag', 'kiosk', 'counter')
 	'</table></center>'
 	*pl
 
 	act 'Leave (0:05)': $kioskloc = '' & gt $loc
 
 	act 'Buy a snack (100 <b>₽</b>) (0:05)':
-		cla
-		*clr
+		*clr & cla
+		gs 'stat'
+		minut += 5
 		money -= 100
 		pcs_health += 10
 		pcs_mood += 20
@@ -149,20 +148,21 @@ if $ARGS[0] = 'counter':
 			pcs_hydra += 20
 		end
 		cumspclnt = 2
-		pcs_breath = 0
 		gs 'cum_cleanup'
+		pcs_breath = 0
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/shared/food/food.jpg"></center>'
-		'You enjoy a small tasty, but somewhat fattening, snack. It wasn''t very much food, and<<$mtxt>>'
+		'You enjoy a small tasty, but somewhat fattening, snack.'
 		act 'return': gt 'kiosk', 'start'
 	end
 
-	act 'Buy some water (20 <b>₽</b>) (0:05)':
-		*clr
-		cla
+	act 'Buy some water (40 <b>₽</b>) (0:05)':
+		*clr & cla
 		frost = 1
-		money -= 20
-		pcs_health += 5
+		alko -= 1
+		minut += 5
+		money -= 40
+		pcs_health += 10
 		pcs_energy += 4
 		if pcs_hydra >= 100:
 			pcs_hydra += 25
@@ -172,9 +172,10 @@ if $ARGS[0] = 'counter':
 		cumspclnt = 2
 		gs 'cum_cleanup'
 		pcs_breath = 0
+		gs 'cum_cleanup'
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorderwater.jpg"></center>'
-		'You enjoy a drink of water, and <<$mtxt>>'
+		'You enjoy a drink of water'
 		act 'return': gt 'kiosk', 'start'
 	end
 
@@ -185,8 +186,8 @@ if $ARGS[0] =  'themes':
 	cls
 	gs 'stat'
 	
-	'<center><img WIDTH = 800 HEIGHT = 500 src="images/locations/city/shared/kiosk/kiosk123.jpg"></center>'
-	'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/ruch.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/kiosk123.jpg"></center>'
+	'<center><img WIDTH = 245 HEIGHT = 56 src="images/locations/city/shared/kiosk/ruch.jpg"></center>'
 	'All themes cost 500 <b>₽</b>'
 
 	i = 1

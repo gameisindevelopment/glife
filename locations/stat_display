@@ -66,6 +66,12 @@ elseif pain['total'] > 0:
 	if (pcs_mood * 10 / 9) >= 100: pcs_mood = pcs_mood * 90 / 100
 end
 
+!!--------------------------pain calculation end--------------------------------
+
+!!update skills and attributes to pcs_ from there _lvl values plus adjustments based on condition
+gs 'stat_sklattrib_lvlset'
+
+
 !!!!!!!!!!!!!!!!!!!!!
 !!!Beginning Description!!!
 !!!!!!!!!!!!!!!!!!!!!
@@ -156,17 +162,17 @@ $stat_android += '<<$week[week]>> <<day>>/<<month>>, <<money>> ₽, <a href="exe
 ! $stat_android for short desc in android mode, $stat_msg for status bar.
 if StoryLine > 0 and SchoolAtestat = 0 and $holyday ! '': $stat_msg += '<BR><<$holyday>>' & $stat_msg += '<BR>'
 if birthday = day and birthmonth = month: $stat_msg += '<BR><b>Today is your birthday.</b>' & $stat_msg += '<BR>'
-$pockets = 'pockets'
-if bag > 0: $pockets = 'purse'
+$pockets = 'Pockets'
+if bag > 0: $pockets = 'Purse'
 if bankAccount = 0 and stolmoney = 0:
 	$stat_msg += '<BR>You have <b><<money>> ₽</b> in your <<$pockets>>.'
 else
 	!combine money status to single line
 	$stat_msg += '<BR><<$pockets>>: <b><<money>> ₽</b>'
-	if stolmoney > 0: $stat_msg += ', drawer <b><<stolmoney>> ₽</b>'	
+	if stolmoney > 0: $stat_msg += ', Drawer <b><<stolmoney>> ₽</b>'	
 	if bankAccount = 1:
 		if karta >= 0:
-			$stat_msg += ', bank: <b><<karta>> ₽</b>'
+			$stat_msg += ', Bank: <b><<karta>> ₽</b>'
 		else
 			$stat_msg += '<BR><font color="red">Your bank account is overdrawn by <b><<karta>> ₽</b>!!</font>'
 		end
@@ -1289,12 +1295,12 @@ proverka5 = 0
 
 if boletus + bilberry > 0:
 	if boletus + bilberry >= 10:
-		$stat_msg +='<br><b><font color = Olive>You have a full basket.</b></font> '
+		$stat_msg +='<br><b><font color = Olive>You have a full basket. </b></font> '
 	else
-		$stat_msg +='<br><b>In Your basket</b>:'
+		$stat_msg +='<br><b><font color = Olive>In Your basket: </b></font>'
 	end
-	if boletus > 0:$stat_msg +='mushrooms: <b><<boletus>></b> kg.'
-	if bilberry > 0:$stat_msg +='berries: <b><<bilberry>></b> kg.'
+	if boletus > 0:$stat_msg +='Mushrooms: <b><<boletus>></b> kg. '
+	if bilberry > 0:$stat_msg +='Berries: <b><<bilberry>></b> kg. '
 end
 
 $stat_msg += '<br><br><center><a href="exec:savegame ''quicksave.sav'' && pl''Quicksave Done''"><img height = 35 src="images/system/icon/stat_Qsave.png"></a>  <a href="exec:savegame"><img height = 35 src="images/system/icon/stat_save.png"></a>  <a href="exec:opengame"><img height = 35 src="images/system/icon/stat_load.png"></a>  <a href="exec:if input(''Input Anything to confirm Quick Load'') ! null: opengame ''quicksave.sav''"><img height = 35 src="images/system/icon/stat_Qload.png"></a></center>'

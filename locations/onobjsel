@@ -30,11 +30,11 @@ $menu_view[3] = 'Refresh:$menu_obnovit'
 
 killvar 'menu_other'
 $menu_other[0] = 'Notebook:$menu_bloknot'
-$menu_other[1] = 'Emergency exit:$menu_avariya'
+$menu_other[1] = 'Exigent:$menu_avariya'
 if disable_autosave = 1:
-	$menu_other[2] = 'Enable autosave:$menu_autosave'
+	$menu_other[2] = '[Autosave]:$menu_autosave'
 else
-	$menu_other[2] = 'Disable autosave:$menu_autosave'
+	$menu_other[2] = '[Autosave]:$menu_autosave'
 end
 if mobila > 0:$menu_other[3] = 'Phone:$menu_mobila'
 
@@ -58,15 +58,13 @@ if $selobj = 'Purse':dynamic $d_bag
 if $selobj = 'Phone':gs 'telefon','Phone_menu'
 if $selobj = 'Notebook':gs 'obj_din', 'records'
 if $selobj = 'Refresh':gs '$menu_obnovit'
-if $selobj = 'The new menu':menu_option = 0 & gs 'obj_din', 'new'
-if $selobj = 'Cheat menu':gs '$menu_cheat'
-if $selobj = 'Game Setting':gs '$menu_setting'
-
-if $selobj = 'Emergency exit':gs 'obj_din', 'exit'
+if $selobj = 'Cheats':gs '$menu_cheat'
+if $selobj = 'Settings':gs '$menu_setting'
+if $selobj = '<font color = red>Emergency</font>':gs 'obj_din', 'exit'
 if disable_autosave = 1:
-	if $selobj = 'Enable autosave':gs 'obj_din', 'autosave'
+	if $selobj = '<font color = red><b>[</b></font>Autosave<font color = red><b>]</b></font>':gs 'obj_din', 'autosave'
 else
-	if $selobj = 'Disable autosave':gs 'obj_din', 'autosave'
+	if $selobj = '<font color = green><b>[</b></font>Autosave<font color = green><b>]</b></font>':gs 'obj_din', 'autosave'
 end
 !The old menu: end
 

@@ -292,7 +292,6 @@ if $ARGS[0] = 'hypnoSuck':
 		bedpanty = 1
 	end
 	'<center><video autoplay loop src="images/locations/pavlovsk/clinic/therapist/dressup.mp4"></video></center>'
-	$orgasm_or = 'yes'
 	gs 'arousal', 'end'
 	gs 'stat'
 	act 'Wake up':gt 'therapist', 'hypnoEnd'
