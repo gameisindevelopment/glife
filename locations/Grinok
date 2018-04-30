@@ -352,11 +352,11 @@ if ARGS[0] = 4:
 		end
 	end
 	else
-		act 'Browse the porn magazines'
+		act 'Browse the porn magazines':
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
 			if TimesBuyPorno = 0:
 				'You look over the covers of the magazines, covered in images of half-naked girls on them. Many of them appear to be near your own age. The porn dealer noticed your interest and looks at you expectantly.'
-				act 'Look through a magazine'
+				act 'Look through a magazine':
 					cls
 					pcs_horny += 10
 					gs 'stat'
@@ -387,8 +387,8 @@ if ARGS[0] = 4:
 				end
 			end
 			elseif TimesBuyPorno > 0:
-				'The porn dealer notices you coming over and asks, "Looking to buy a magazine?  They''re only 400 <b>₽</b> each."'
-				act 'Look through a magazine'
+				'The porn dealer notices you coming over and asks, "Looking to buy a magazine? They''re only 400 <b>₽</b> each."'
+				act 'Look through a magazine':
 					cls
 					pcs_horny += 10
 					gs 'stat'
@@ -413,7 +413,7 @@ if ARGS[0] = 4:
 			end
 			if TimesBuyPorno >= 5:
 				'The porn dealer see you approaching. "Ah, my best customer!"'
-				act 'Look through a magazine'
+				act 'Look through a magazine':
 					cls
 					pcs_horny += 10
 					gs 'stat'
@@ -438,9 +438,9 @@ if ARGS[0] = 4:
 			end
 		end
 	end
-	act 'Ask to see the sex toys'
+	act 'Ask to see the sex toys':
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/sextoys.jpg"></center>'
-		'He lets you step behind the counter so you can get a better look, as you do he says. "Take a look and let me know what you would like." You see several 15cm dildos. Each with a  tag, "Only 700 <b>₽</b> each."  You also see a small selection of vibrators in various colors, mostly pink. "Only 700 <b>₽</b>each." To one side you see many butt plugs, rubber and metal. "Only 700 <b>₽</b>each." Near the bottom is several strapon harnesses. "Only 1000 <b>₽</b>each."'
+		'He lets you step behind the counter so you can get a better look, as you do he says. "Take a look and let me know what you would like." You see several 15cm dildos. Each with a tag, "Only 700 <b>₽</b> each." You also see a small selection of vibrators in various colors, mostly pink. "Only 700 <b>₽</b> each." To one side you see many butt plugs, rubber and metal. "Only 700 <b>₽</b>each." Near the bottom is several strapon harnesses. "Only 1000 <b>₽</b>each."'
 		act 'Buy dildo (700 <b>₽</b>)':
 			cla
 			if money >= 700 and dildo = 0:
