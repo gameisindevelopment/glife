@@ -472,15 +472,17 @@ if $ARGS[0] = 'stats_achievements':
 	nl
 	!!!
 	if modelfoto > 0:
+		'<b>Modelling Stats</b>'
 		pl'<<modelfoto>> - Number of times you have worked as a model'
 		pl'<<modelfotomoney>> - The amount of money you''ve made modelling'
-		if modelfoto_fashion > 0: pl'<<modelfoto_fashion>> - Number of times you have been photographed as a fashion model'
-		if modelfoto_ero_clo > 0: pl'<<modelfoto_ero_clo>> - Number of times you have been an erotic clothing model'
-		if modelfoto_bikini > 0: pl'<<modelfoto_bikini>> - Number of times you have been photographed as a bikini model'
-		if modelfoto_lingerie > 0: pl'<<modelfoto_lingerie>> - Number of times you have been photographed as a lingerie model'
-		if modelfoto_nip > 0: pl'<<modelfoto_nip>> - Number of times you have been photographed as a model with exposed nipples'
-		if modelfoto_topless > 0: pl'<<modelfoto_topless>> - Number of times you have been a topless model'
-		if modelfoto_nude > 0: pl'<<modelfoto_nude>> - Number of times you have been a nude model'
+		if modelfoto_fashion > 0: pl'<<modelfoto_fashion>> - Number of fashion shoots you have participated in'
+		if modelfoto_ero_clo > 0: pl'<<modelfoto_ero_clo>> - Number of erotic clothing shoots you have participated in'
+		if modelfoto_bikini > 0: pl'<<modelfoto_bikini>> - Number of swimsuit shoots you have modelled in'
+		if modelfoto_lingerie > 0: pl'<<modelfoto_lingerie>> - Number of lingerie shoots you have participated in'
+		if modelfoto_nip > 0: pl'<<modelfoto_nip>> - Number of shoots where you have exposed your nipples'
+		if modelfoto_topless > 0: pl'<<modelfoto_topless>> - Number of shoots you have been topless'
+		if modelfoto_nude > 0: pl'<<modelfoto_nude>> - Number of shoots you have been nude without showing your vagina'
+		if modelfoto_nude_frontal > 0: pl'<<modelfoto_nude>> - Number of shoots you have shown full frontal nudity'
 		nl
 	end
 	
