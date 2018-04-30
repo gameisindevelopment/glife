@@ -1355,9 +1355,9 @@ $cheatmenu['display'] = {
 	nl
 
 	if oldobjmenu = 1:
-		pl'Menu Style: <a href="exec:oldobjmenu = 0 & gs ''obj_din'',''new'' ">New Style Menu</a>'
+		pl'Current Menu Style: <a href="exec:oldobjmenu = 0 & gs ''obj_din'',''new'' & dynamic $cheatmenu[''display'']">Old Style Menu</a>'
 	else
-		pl'Menu Style: <a href="exec:oldobjmenu = 1 & gs ''obj_din'',''old'' ">Old Style Menu</a>'
+		pl'Current Menu Style: <a href="exec:oldobjmenu = 1 & gs ''obj_din'',''old'' & dynamic $cheatmenu[''display'']">New Style Menu</a>'
 	end
 	if disable_autosave = 1:
 		pl'AutoSave: Currently OFF - <a href="exec:disable_autosave = 0 & dynamic $cheatmenu[''display'']">Turn ON</a>'
