@@ -27,10 +27,10 @@ if $ARGS[0] = 'start':
 	end
 	'<center><b><font color="maroon">Sex Toys</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop/sexshop.jpg"></center>'
-	'Lubricant - 300 <b>₽</b>'
-	'Dildo - 800 <b>₽</b>'
-	'Vibrator - 1,300 <b>₽</b>'
-	'Strap 1,200 <b>₽</b>'
+	'Lubricant - 145 <b>₽</b>'
+	'Dildo starting at - 800 <b>₽</b>'
+	'Vibrator - 800 <b>₽</b>'
+	'Strapon harness starting at 1,200 <b>₽</b>'
 	'Butt plug 1,200 <b>₽</b>'
 	'In the basement are the private booths for viewing porn movies (50 <b>₽</b> 15 minutes).'
 
@@ -192,7 +192,7 @@ if $ARGS[0] = 'start':
 				lubri += portion * 5
 				money -= portion * 300
 				minut += 5
-				'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 				'You bought some lubricant and paid the cashier.'
 			end
 
@@ -214,111 +214,111 @@ if $ARGS[0] = 'start':
 	end
 
 	if money >= 800 and dildo = 0:
-		act 'Buy dildo (800 <b>₽</b>)':
+		act 'Buy 10cm dildo (800 <b>₽</b>)':
 			cla
 			*clr
-			minut += 15
+			minut += 5
 			dildo = 1
 			money -= 800
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a dildo and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop', 'start'
 		end
 	end
 
-	if money >= 1500 and middildo = 0:
-		act 'Buy 15cm long dildo (1,500 <b>₽</b>)':
+	if money >= 850 and middildo = 0:
+		act 'Buy 15cm long dildo (850 <b>₽</b>)':
 			cla
 			*clr
-			minut += 15
+			minut += 5
 			middildo = 1
-			money -= 1500
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			money -= 850
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a 15cm long dildo and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
 	end
 
-	if money >= 2500 and largedildo = 0:
-		act 'Buy 20cm long dildo (2,500 <b>₽</b>)':
+	if money >= 900 and largedildo = 0:
+		act 'Buy 20cm long dildo (900 <b>₽</b>)':
 			cla
 			*clr
-			minut += 15
+			minut += 5
 			largedildo = 1
-			money -= 2500
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			money -= 900
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a 20cm long dildo and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
 	end
 
-	if money >= 4500 and bigdildo = 0:
-		act 'Buy 25cm long dildo (4,500 <b>₽</b>)':
+	if money >= 950 and bigdildo = 0:
+		act 'Buy 25cm long dildo (950 <b>₽</b>)':
 			cla
 			*clr
 			minut += 15
 			bigdildo = 1
-			money -= 4500
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			money -= 950
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a 25cm long dildo and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
 	end
 
-	if money >= 6500 and extradildo = 0:
-		act 'Buy 30cm long dildo (6,500 <b>₽</b>)':
+	if money >= 1000 and extradildo = 0:
+		act 'Buy 30cm long dildo (1,000 <b>₽</b>)':
 			cla
 			*clr
-			minut += 15
+			minut += 5
 			extradildo = 1
-			money -= 6500
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			money -= 1000
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a 30cm long dildo and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
 	end
 
-	if money >= 8500 and superdildo = 0:
+	if money >= 1100 and superdildo = 0:
 		act 'Buy 35cm long dildo (8,500 <b>₽</b>)':
 			cla
 			*clr
-			minut += 15
+			minut += 5
 			superdildo = 1
-			money -= 8500
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			money -= 1100
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a 35cm long dildo and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
 	end
 
-	if money >= 12000 and maddildo = 0:
-		act 'Buy 40cm long dildo (12,000 <b>₽</b>)':
+	if money >= 1200 and maddildo = 0:
+		act 'Buy 40cm long dildo (1,200 <b>₽</b>)':
 			cla
 			*clr
-			minut += 15
+			minut += 5
 			maddildo = 1
-			money -= 12000
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			money -= 1200
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a 40cm long dildo and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
 	end
 
-	if money >= 1300 and vibrator = 0:
-		act 'Buy vibrator (1,300 <b>₽</b>)':
+	if money >= 800 and vibrator = 0:
+		act 'Buy vibrator (800 <b>₽</b>)':
 			cla
 			*clr
-			minut += 15
+			minut += 5
 			vibrator = 1
-			money -= 1300
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			money -= 800
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a vibrator and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop', 'start'
@@ -326,27 +326,96 @@ if $ARGS[0] = 'start':
 	end
 
 	if money >= 1200 and strapon = 0:
-		act 'Buy a strapon (1,200 <b>₽</b>)':
+		act 'Buy a strapon with a 15cm dildo (1,200 <b>₽</b>)':
 			cla
 			*clr
-			minut += 15
+			minut += 5
 			strapon = 1
 			money -= 1200
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
+			'You bought a strapon and paid the cashier.'
+
+			act 'Move away from the counter':gt 'sexshop', 'start'
+		end
+	end
+	if money >= 1300 and largestrapon = 0:
+		act 'Buy a strapon with a 20cm dildo (1,300 <b>₽</b>)':
+			cla
+			*clr
+			minut += 5
+			largestrapon = 1
+			money -= 1300
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a strapon and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop', 'start'
 		end
 	end
 
-	if money >= 1200 and analplug = 0:
-		act 'Buy butt plug 1,200 <b>₽</b>':
+	if money >= 1400 and bigstrapon = 0:
+		act 'Buy a strapon with a 25cm dildo (1,400 <b>₽</b>)':
 			cla
 			*clr
-			minut += 15
+			minut += 5
+			bigstrapon = 1
+			money -= 1400
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
+			'You bought a strapon and paid the cashier.'
+
+			act 'Move away from the counter':gt 'sexshop', 'start'
+		end
+	end
+
+	if money >= 1500 and extrastrapon = 0:
+		act 'Buy a strapon with a 30cm dildo (1,500 <b>₽</b>)':
+			cla
+			*clr
+			minut += 5
+			extrastrapon = 1
+			money -= 1500
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
+			'You bought a strapon and paid the cashier.'
+
+			act 'Move away from the counter':gt 'sexshop', 'start'
+		end
+	end
+
+	if money >= 1600 and superstrapon = 0:
+		act 'Buy a strapon with a 35cm dildo (1,600 <b>₽</b>)':
+			cla
+			*clr
+			minut += 5
+			superstrapon = 1
+			money -= 1600
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
+			'You bought a strapon and paid the cashier.'
+
+			act 'Move away from the counter':gt 'sexshop', 'start'
+		end
+	end
+
+	if money >= 1700 and madstrapon = 0:
+		act 'Buy a strapon with a 40cm dildo (1,700 <b>₽</b>)':
+			cla
+			*clr
+			minut += 5
+			madstrapon = 1
+			money -= 1700
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
+			'You bought a strapon and paid the cashier.'
+
+			act 'Move away from the counter':gt 'sexshop', 'start'
+		end
+	end
+
+	if money >= 800 and analplug = 0:
+		act 'Buy butt plug 800 <b>₽</b>':
+			cla
+			*clr
+			minut += 5
 			analplug = 1
-			money -= 1200
-			'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
+			money -= 800
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a butt plug and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop', 'start'

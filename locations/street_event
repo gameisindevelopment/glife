@@ -1525,7 +1525,7 @@ if $ARGS[1] = 'main':
 								gs 'stat'
 								'You bought a romance novel for 300 <b>₽</b>.'
 
-								act 'Leave':gt 'Grinok'
+								act 'Leave':gt 'Grinok', 'start'
 							end
 						end
 						act 'leave':gt $loc
@@ -1594,7 +1594,7 @@ if $ARGS[1] = 'main':
 								gs 'stat'
 								'You bought a romance novel for 300 <b>₽</b>.'
 
-								act 'Leave':gt 'Grinok'
+								act 'Leave':gt 'Grinok', 'start'
 							end
 						end
 						act 'leave':gt $loc
