@@ -435,7 +435,7 @@ if minut >= 60:
 			end
 		end
 
-		alko -= 1
+		alko -= rand (0,1)
 	end
 
 	!!!!!!!!!!!!!
