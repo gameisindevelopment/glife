@@ -1484,14 +1484,15 @@ if $ARGS[0] = 'practicemodel':
 						'	The photographer nods. "Yeah, I thought as much. With that in mind, I thought we''d do a confidence building exercise instead of a normal practice shoot to help you get used to being on camera. It''ll feel a little silly, but we think you''ll get used to being comfortable in your own body a lot faster. Sound good?"'
 						'	You nod and he leads you onto the set, setting up a video camera in front.'
 						act'. . .':
+							cla & *clr
 							mdlng_exp += 1
 							gs 'stat'
 							'<center><video autoplay loop src="images/locations/city/citycenter/photo/nudepractice2.mp4"></video></center>'
 							if pcs_exhibition >= 30:
-								exhibition_exp += 10
 								pcs_sweat += 20
 								pcs_mood += 10
 								pcs_stam -= 20
+								exhibition_exp += 10
 								gs'stat'
 								'	Loud music starts to pump into the room and over the noise the photographer shouts at you to start jumping up and down and dance in front of the camera.'
 								'	You do as he says, getting into it. Though at first you feel a bit dumb, within minutes you''ve almost forgotten your nakedness and start having a surprising amount of fun just jumping up and down and generally being silly.'
@@ -1501,7 +1502,7 @@ if $ARGS[0] = 'practicemodel':
 								if pcs_exhibition >= 40:'	The photographer comes over to you, asking how you feel it went. You start to answer him when you notice how straight you''re standing. As you talk more and more and the discussion turns to how your breasts bounced, you realize you don''t feel any embarrassment talking about your body. In fact, you don''t have any desire to cover yourself up at all. The exercise worked! You''re comfortable being naked!'
 								act'End practice':gt'foto','end'
 							else
-								exhibition_exp += 10
+								
 								'	Loud music starts to pump into the room and over the noise the photographer shouts at you to start jumping up and down and dance in front of the camera.'
 								'	You do as he says, feeling rather silly, like he said you would. You must have had some kind of expression on your face because he shouts at you again.'
 								'	"Smile! Laugh! Have a good time!"'
@@ -1512,7 +1513,10 @@ if $ARGS[0] = 'practicemodel':
 									'	As you keep dancing and more and more time passes, you realize... you''re actually starting to enjoy yourself!'
 									'	Your dancing continues and you still feel silly but now in a good way. You''re having so much fun that you suddenly realize that you forgot you were naked!'
 									act'. . .':
-										cla
+										exhibition_exp += 10
+										gs'stat'
+										cla & *clr
+										'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
 										'	The music stops abruptly and you lean on your knees, a bit winded. The photographer comes up to you.'
 										'	"So, how''re you feeling?"'
 										'	Face flushed from the jumping, you smile back at him.'
@@ -1698,7 +1702,7 @@ if $ARGS[0] = 'model':
 		
 		act 'Bikini modelling':
 			if pcs_exhibition < 20:
-				msg'	You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
+				msg'You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 				gt 'foto', 'model'
 			else
 				cla
@@ -1733,7 +1737,7 @@ if $ARGS[0] = 'model':
 		
 		act 'Erotic clothed':
 			if pcs_exhibition < 25:
-				msg'	You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
+				msg'You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 				gt 'foto', 'model'
 			else
 				cla
@@ -1758,7 +1762,7 @@ if $ARGS[0] = 'model':
 		
 		act 'Lingerie modelling':
 			if pcs_exhibition < 25:
-				msg'	You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
+				msg'You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 				gt 'foto', 'model'
 			else
 				cla
@@ -1789,7 +1793,7 @@ if $ARGS[0] = 'model':
 	
 	act'"I''d like to do a nude shoot"':
 		if pcs_exhibition < 30:
-			msg'	You toy with the idea of exposing yourself on camera but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
+			msg'You toy with the idea of exposing yourself on camera but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 		else
 			gt 'foto', 'nude_shoot'
 		end
@@ -1856,7 +1860,7 @@ if $ARGS[0] = 'nude_shoot':
 
 	act 'Topless':
 		if pcs_exhibition < 33:
-			msg'	You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
+			msg'You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 			gt 'foto', 'nude_shoot'
 		else
 			cla
@@ -1887,7 +1891,7 @@ if $ARGS[0] = 'nude_shoot':
 
 	act 'Nude with covered genitals':
 		if pcs_exhibition < 36:
-			msg'	You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
+			msg'You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 			gt 'foto', 'nude_shoot'
 		else
 			cla
@@ -1898,6 +1902,7 @@ if $ARGS[0] = 'nude_shoot':
 				minut += 120
 				modelpayfin = 1800 + (modelpay * 2) + (50*rand(0,7))
 				modelfoto_nip += 1
+				modelfoto_topless += 1
 				modelfoto_nude += 1
 				mdlng_exp += rand(8,10)
 				city_modelling += rand(15,18)
@@ -1920,7 +1925,7 @@ if $ARGS[0] = 'nude_shoot':
 
 	act 'Nude with stockings':
 		if pcs_exhibition < 38:
-			msg'	You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
+			msg'You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 			gt 'foto', 'nude_shoot'
 		else
 			cla
@@ -1931,7 +1936,7 @@ if $ARGS[0] = 'nude_shoot':
 				minut += 120
 				modelpayfin = 1900 + (modelpay * 2) + (50*rand(0,7))
 				modelfoto_nip += 1
-				modelfoto_nude += 1
+				modelfoto_pussy += 1
 				mdlng_exp += rand(8,10)
 				city_modelling += rand(15,20)
 				pav_modelling += rand(0,city_modelling)/10
@@ -1953,9 +1958,9 @@ if $ARGS[0] = 'nude_shoot':
 		end
 	end
 
-	act 'Completely nude':
+	act 'Full nude shoot':
 		if pcs_exhibition < 40:
-			msg'	You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
+			msg'You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 			gt 'foto', 'nude_shoot'
 		else
 			cla
@@ -1966,12 +1971,12 @@ if $ARGS[0] = 'nude_shoot':
 				minut += 120
 				modelpayfin = 2000 + (modelpay * 2) + (50*rand(0,7))
 				modelfoto_nip += 1
-				modelfoto_nude += 1
+				modelfoto_topless += 1
+				modelfoto_pussy += 1
 				mdlng_exp += rand(9,10)
 				city_modelling += rand(18,21)
 				pav_modelling += rand(0,city_modelling)/4
 				exhibition_exp += 5
-				pcs_mood += 5
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/nude.jpg"></center>'
 				'	Already naked, you step onto set and begin the shoot immediately.'
@@ -1991,7 +1996,7 @@ if $ARGS[0] = 'nude_shoot':
 
 	act 'Variety shoot':
 		if pcs_exhibition < 40:
-			msg'	You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
+			msg'You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 			gt 'foto', 'nude_shoot'
 		else
 			cla
@@ -2009,7 +2014,7 @@ if $ARGS[0] = 'nude_shoot':
 				modelfoto_fashion += 1
 				modelfoto_lingerie += 1
 				modelfoto_topless += 1
-				modelfoto_nude += 1
+				modelfoto_pussy += 1
 				gs 'stat'
 				'<center><video autoplay loop src="images/locations/city/citycenter/photo/vmodel.mp4"></video></center>'
 				'	You spend the next two hours posing for the photographer, changing in and out of various underwears, sexy clothings, and lingeries until you end the shoot fully striped down and dancing naked.'
