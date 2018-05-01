@@ -5,7 +5,7 @@ if $ARGS[0] = 'fame':
 	special_model = 2000
 	special_skill_model = 2000
 	fame_model_event = daystart
-	if first_fame_event = 0:gt'foto_events','topless1'
+	if first_fame_event <= 1:gt'foto_events','topless1'
 	mdlng_fame_event = rand(1,3)
 	if mdlng_fame_event = 1:gt'foto_events','topless1'
 	if mdlng_fame_event = 2:gt'foto_events','pool1'
@@ -31,6 +31,380 @@ if $ARGS[0] = 'skill':
 
 end
 
+!!------------------------------------------------------------------- Special Modelling Jobs ------------------------------------------------------------------
+
+
+if $ARGS[0] = 'special':
+	if specialmodelrequest ! daystart:
+		specialmodelrequest = daystart
+		specialjob1 = rand(1,100)
+		specialjob2 = rand(1,100)
+		specialjob3 = rand(1,100)
+		specialjob4 = rand(1,100)
+		specialjob5 = rand(1,100)
+		specialjob6 = rand(1,100)
+		specialjob7 = rand(1,100)
+!!		specialjob8 = rand(1,100)
+!!		specialjob9 = rand(1,100)
+	end
+	cla & *clr
+	'<center><b><font color="maroon">Photographer</font></b></center>'
+	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+	'	"Hey!" you call out to one of the studio managers. "Looking for some more work, any special jobs still available today?"'
+	act'Return to the main floor':gt'foto','studio'
+	if specialjob1 < 95 and specialjob2 < 95 and specialjob3 < 95 and specialjob4 < 95 and specialjob5 < 95 and specialjob6 < 95 and specialjob7 < 95 and specialjob8 < 95 and specialjob9 < 95:
+		no_job_reason = rand(1,2)
+		if no_job_reason = 1:
+			'	"Sorry <<$pcs_firstname>>, we don''t have anything today. Check in again tomorrow, maybe there''ll be something for you."'
+		else
+			'	"Sorry <<$pcs_firstname>>, we already assigned all the requests we had today to other girls. Got none left for you. Check in again tomorrow, maybe there''ll be something for you."'
+		end
+	else
+		'	"Sure, we have a few today. Come take a look at the list, tell me if you''re interested in doing something."'
+		act'Look at the list':gt 'foto_events','list'
+	end
+end
+if $ARGS[0] = 'list':
+	act'Nothing interesting':
+		cla & *clr
+		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+		'	"Hmm. Sorry, I don''t think I want to do any of these today."'
+		'	"Alright, no problem <<$pcs_firstname>>. See you later."'
+		'	You wave goodbye as you walk back to the main floor.'
+		act'Go back to the main floor':gt'foto','studio'
+	end
+	if specialjob1 >= 95:'<a href="exec:gt ''foto_events'',''high_fasion''">	High Fashion</a>'
+	if specialjob2 >= 95:'<a href="exec:gt ''foto_events'',''fine_art''">	Fine Art Project(sex)</a>'
+	if specialjob3 >= 95:'<a href="exec:gt ''foto_events'',''modern_art''">	Modern Art Project(69)</a>'
+	if specialjob4 >= 95:'<a href="exec:gt ''foto_events'',''aphrodite_advert''">	Aphrodite Advert</a>'
+	if specialjob5 >= 95:'<a href="exec:gt ''foto_events'',''independent_art''">	Independent Art Project</a>'
+	if specialjob6 >= 95:'<a href="exec:gt ''foto_events'',''documentary''">	Documentary</a>'
+	if specialjob7 >= 95:'<a href="exec:gt ''foto_events'',''designer_wedding''">	Designer Wedding Dress</a>'
+!!		if specialjob8 >= 95:'<a href="exec:gt ''foto_events'',''model_portraits''">photo albums</a>'
+!!		if specialjob9 >= 95:'<a href="exec:gt ''foto_events'',''model_portraits''">photo albums</a>'
+
+if $ARGS[0] = 'high_fasion':
+	cla & *clr
+	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+	'	"High fashion?" you ask. "What''s this one about?"'
+	'	"Some fashion designer sent us some clothes, asked us to snap some pictures of someone wearing them to see if her ideas are on the right track. It''s one of those things that only shows up at fashion shows that don''t feature anything practical. I''ve seen some of the pieces and let me tell you, they''re definitely not suited for everyday use."'
+	'	"Hmmm..."'
+	act'Back to the list':gt'foto_events','list'
+	act'I''d like to do this one':
+		cla
+		*nl
+		specialjob1 = 0
+		'	"I''d like to do this one."'
+		'	"Great! Go to set 14 and tell the photographer that you''ve got the job. They''ll dress you up there."'
+		act'Go to work':
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/special1.jpg"></center>'
+			minut += 120
+			modelpayfin = 1800 + (modelpay * 2) + (50*rand(0,7))
+			modelfoto_pussy += 1
+			mdlng_exp += rand(1,2)
+			city_modelling += rand(5,25)
+			pav_modelling += rand(0,city_modelling)/6
+			exhibition_exp += rand(0,1)
+			'	You spend the duration of the shoot changing in and out of designer bodices, corsets, and other tops, all of which conspicuously lack any kind of bottom, leaving your pussy exposed.'
+			*nl
+			'	Your manager was right. <i>Definitely</i> not suited for every day use.'
+			*nl
+			'	Two hours later, you''ve modelled and been photographed in every item of clothing requested by the client and are handed <<modelpayfin>> <b>₽</b> in payment for the job.'
+			act'Go back to the main floor':gt'foto','studio'
+		end
+	end
+end
+
+if $ARGS[0] = 'fine_art':
+	cla & *clr
+	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+	'	"Fine art?" you ask. "What''s this one about?"'
+	'	"One of those famous modern artist people wants to use a model as reference for his ''erotic masterpiece.'' Says that he knows exactly what the subject of his next piece should be but he doesn''t know what medium he wants it in. So your job would be to hold the position she wants with the male model she''s bringing and we''ll take photos while she sketches you. She''s also said something about a sculpture so we''re also setting up equipment to get a digital 3D model of you too. She''s the real eccentric and crazy type, but the money''s pretty good."'
+	'	"Hmmm..."'
+	act'Back to the list':gt'foto_events','list'
+	act'I''d like to do this one':
+		cla
+		*nl
+		specialjob2 = 0
+		'	"I''d like to do this one."'
+		'	"Great! Go to set 32, the client is waiting for you there. Just tell him you''re the model he''ll be working with today and follow his instructions.'
+		act'Go to set 32':
+			cla & *clr
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+			'	You go to set 32 and find a short woman wearing a black turtleneck and a soft flat-crowned hat. Standing next to him is lean but muscular young man, who is naked like you and is the owner a large flaccid cock hanging between his legs.'
+			'	<i>Really? A beret? Talk about cliché.</i>'
+			'	Walking up to the woman, you introduce yourself. "Hello ma''am, I''m <<$pcs_firstname>>. I''ll be your model for today."'
+			'	"Ahh! Zer yu are! I haff been waiting for almost five minutes! Zis is almost unacceptable!" You''re immediately taken aback by her words, both because of the clearly foreign accent and the rudeness that accompanies it.'
+			'	"I''m sorry, I only jus-"'
+			'	"Enough talk! We vazte time! Quickly! Get on zis and kneel down!"'
+			act'Do as she says':
+				cla & *clr
+				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+				'	You step up onto a platform which is really a large mattress with a cover on it. Doing as she instructs, you get down onto your knees, leaning forward and supporting your weight with your hand. The young naked man kneels behind you and holds you by the shoulder, pressing his hips into yours. Despite being in such a sexual position, you feel the man''s cock is still flaccid, hanging down and bouncing lightly between your thighs.'
+				'	The woman circles around you for several minutes, hand on her chin, judging your pose. She crawls onto the mattress beneath you, looking up between your legs at your pussy, her assistant''s still flaccid cock pressing awkwardly against it. You blush at her straightforward nature, feeling a tingling between your legs where her gaze wanders.'
+				'	At the same time, you can''t help but think to yourself, <i>Really? He''s still soft after all this? I mean, damn! Kind of makes me feel bad about myself to be honest... Am I not hot enough to get a guy hard when his dick is practically rubbing up against my pussy?</i>'
+				'	"No!"'
+				'	The woman''s shout snaps you back to attention, wondering what is wrong. "Zis is not good enough! Not passionate enough! I cannot produce mah mazterpiece like zis! I shall require full penetration! Alexhandar! Please put your penis inside her."'
+				act'What?!':
+					cla & *clr
+					'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+					'	"What?!" you shriek.'
+					'	At the woman''s command, you feel the man''s cock immediately stiffen, going from flaccid to rock hard and rubbing against your abdomen in two seconds flat. He starts to pull back and you feel his tip scraping backwards over the top of your stomach.'
+					act'Wait! Wait! Wait!':
+						cla
+						*nl
+						'	"Wait! Wait! Wait!" you shout. Alexander pauses behind you, the tip of his member poised, hovering, right in front of the entrance to your pussy.'
+						'	Hands on her hips, the woman leans forward, frowning at you with obvious displeasure.'
+						'	"Vell? Vhat are we waiting for?"'
+						'	"You can''t do this!"'
+						'	"And vhy not?"'
+						if stat['vaginal'] = 0:
+							act'I''m a virgin!':
+								cla & *clr
+								'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+								'	"I''m a virgin! I''ve never had sex before! I can''t lose my virginity like this to some guy I''ve never met before in the middle of some modelling job!"'
+								'	The woman''s eyes widen as you say this.'
+								'	"You are a... virgin?" she asks, slowly'
+								'	"Yes! You understand now, right?"'
+								'	The woman begins laughing and jumping up and down with excitement. You stare at her in confusion, your mouth agape.'
+								'	"Yez! Yez! A virgin! That''s what this piece was truly missing! Vhy did I not think of zis before? Yez! Zis is the key to my mazterpiece! I shall call it, ''Ze Final Flowher.'' No, vait, perhaps, ''Torn Petal.'' It iz perfhect!"'
+								act'Yell at her':
+									cla & *clr
+									'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+									'	"Hey! ... HEY!!" you yell at her.'
+									'	She stops her maniacal laughing and finally looks back at you.'
+									'	"That''s not the point! The point is that I don''t want to lose my virginity right now!" The woman frowns at you, this time with disappointment.'
+									'	"And vhy not? Iz it becauze you have not found ze right man? Not to worry, Alexhandar iz great man. I know. He iz my zon. Zatisfies many girls. He vill-"'
+									'	"NOOOO!!!" you yell at her again to stop her ranting. "I''m saying I don''t want to lose my virginity right now and in this way! Besides, I didn''t sign up for this! I thought I was just supposed to be posing as an art model, WITHOUT HAVING SEX WITH ANYONE!" you scream the last part, anticipating her objection that you can still be posing with a dick up your ass.'
+									'	She stares at you flatly. "Okay, how about zis? I vill pay you an extra 30,000 <b>₽</b> on top of ze already agreed upon fee if you do zis for me. Not an inzignificant amount of money, but we muzt make zacrifices for great art! I vill zacrifice my money to you, if you zacrifice your virginity for me. Do ve have a deal?"'
+									act'No, I''m not losing my virginity':
+										cla & *clr
+										fine_art_deal = 2
+										'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+										'	"No," you say, standing firm. "I''m not about to lose my virginity just for a modelling job. You''ll have to make do with that, or get another model who''s willing to <b>whore herself</b> out for your art."'
+										'	"Ugh," she rolls her eyes and waves her hand dismissively. "Vine, vine. I vill not take your virginity. Ve are vasting too much time. But Alexhandar, maintain your erection. I cannot have a flaccid penis in a piece that iz zat iz zupposed to exude <i>lust</i> and <i>eroticism!</i>"'
+										'	You breathe out a sigh of relief and resume the pose she wants, waiting for further instruction.'
+										act'. . .':gt'foto_events','fine_art2'
+									act'Take the deal':
+										cla & *clr
+										fine_art_deal = 1
+										'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+										'	You gulp. 30,000<b>₽</b>... That''s a lot of money...'
+										'	"I''ll take the deal."'
+										'	The woman grins widely.'
+										'	"Exzellent." She pulls you back into the posture she wants you in, and giving you new instructions, Alexander''s cock still hovering outside your entrance. "Do not hide your feelingz. Let them bubble to ze top. Let your emotions be vizible and zelf-evident. But maintain ze posture and hold still, or ze 3D scanner vill not capture you accurately. You vill not be paid if I do not get vhat I am here for. Do you underztand?"'
+										'	You nod, swallowing one more time. The woman moves off to the side, and making sure all the equipment is set, she picks up a small device. Some kind of remote camera switch, you guess.'
+										'	"And... now!"'
+										act'"AHH!!"':gt'foto_events','fine_art2'
+									end
+								end
+										
+								act'Resign yourself to your fate':
+									fine_art_deal = 2
+									cla & *clr
+									'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/art1.jpg"></center>'
+									'	You look on in horror with the realization that there is nothing you can do to convince this woman to change her mind. Her obsession with art is too great.'
+									'	She excitedly shouts instructions at you and her assistant.'
+									'	"Do not hide your feelingz! Let them bubble to ze top! Let your emotions be vizible and zelf-evident! But maintain ze posture and hold still, or ze 3D scanner vill not capture you accurately. Are ve ready? Good! Do it! Do it now Alexhandar!"'
+									'	And he thrusts his cock inside you.'
+									act'"AHH!!"':gt'foto_events','fine_art2'
+								end
+							end
+						end
+						act'I''m not about to get fucked just because you asked':
+							cla & *clr
+							fine_art_deal = 3
+							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+							'	"Because I''m not about to let some guy shove his dick in me just because you told him to!"'
+							'	The woman sniffs in indignation. "He iz not just ''zome man.'' He iz my zon. Very good man."'
+							'	"I don''t care who he is, he''s not putting his dick inside me! Either deal with that or get yourself a new model."'
+							'	"Ugh," she rolls her eyes and waves her hand dismissively. "Vine, vine. Ve are vasting too much time. But Alexhandar, maintain your erection. I cannot have a flaccid penis in a piece that iz zat iz zupposed to exude <i>lust</i> and <i><eroticism!</i>"'
+							'	You huff in annoyance, but the matter resolved, you resume the pose she wants and wait for further instruction.'
+							act'. . .':gt'foto_events','fine_art2'
+						end
+					end
+				end
+				if pcs_vag > 0:
+					act'Say nothing, do as instructed':
+						fine_art_deal = 4
+						gt'foto_events','fine_art2'
+					end
+				end
+			end
+		end
+	end
+end
+
+if $ARGS[0] = 'fine_art2':
+	cla & *clr
+	gs 'npcgeneratec', 0, 'Alexander', 27
+	gs 'boyStat', $npclastgenerated
+	dick = 34
+	modelpayfin = 2000 + (modelpay * 2) + (50*rand(0,7))
+	modelfoto_nip += 1
+	modelfoto_topless += 1
+	modelfoto_nude += 1
+	modelfoto_pussy += 1
+	mdlng_exp += rand(10,20)
+	city_modelling += rand(1,20)
+	if fine_art_deal = 1 or fine_art_deal = 2:
+		gs 'arousal', 'vaginal', 1
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/art1.jpg"></center>'
+		'	"AHH!!!"'
+		'	You shriek in pain as Alexander thrusts his enormous 34 cm cock inside you. Far too big for your virgin pussy, only about half of his length fits inside you. The woman shakes her head. '
+		'	"No, no, Alexhandar. It iz no good like zat. All ze way inside." He immediately does as instructed, gripping your shoulder and he pulling you back while simultaneously pushing his hips forward. You gasp for breath, eyes watering, as he slowly drives the entire length of his cock inside your pussy centimeter by centimeter, stretching you to a breaking point. When his cock is fully enveloped and balls are brushing up against your clit, you hear the woman again.'
+		'	"Yez! Yez! Just like zat! Now hold zat pozition just like zat!" In the corner of your tear-blurred vision, you see her click the remote and a ring of cameras flash around you, snapping simultaneously. Then, a red laser begin to scan you from bottom to top. The scanner works at an excruciatingly slow pace. It takes all of your willpower not to cry out, quiver, or scream in pain. You bite down hard on your lip, tears streaming down your face as it the only facial expression you can bear to maintain without moving.'
+		'	The scan continues but at the edge of your hearing you can perceive a faint scratching sound. After a few minutes, you sink into despair when you realize that it''s the sound of drawing. She expects you to hold this position, hold this monstrously huge cock in your pussy without flinching. You want to whimper but fearing retribution you just bite down on your lip harder.'
+		act'. . .':
+			modelfoto += 1
+			if fine_art_deal = 1:money += modelpayfin + 30000
+			if art_resign = 1:money += modelpayfin
+			if fine_art_deal = 1:modelfotomoney += modelpayfin + 30000
+			if art_resign = 1:modelfotomoney += modelpayfin
+			minut += 90
+			pcs_mood -= 5
+			gs 'arousal', 'end'
+			cla & *clr
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/art1.jpg"></center>'
+			'	You spend the next ninety minutes holding the position for the artist woman. The scan finishes in the first 15 minutes but the client insists on her models continuing to stand stock still until her drawing is completed.'
+			'	"You cannot zubstitute a perzon for pictures once you have already begun with a living creature. Art iz about <i>life</i>. Without ze proper reference, you cannot truly capture life''s essence." Alexander, the perfect model, literally allows you no wiggle room. His grip is like iron, holding you tight against him, maintaining his pose with perfect posture. Even his cock is unflinching, neither throbbing nor softening even for a single second. For all 90 minutes it maintains peak hardness, like a sword stabbing into you, threatening to tear you in half at any moment.'
+			'	Finally, she calls for a stop and allows you to be released from your position. You lean forward, easing yourself off of Alexander''s enormous cock. Your pussy releases it with a pop and you feel hollow, an enormous aching void between your legs. You feel something leaking out and looking back, you see the red drops of your virgin blood, running down your thighs, staining the sheet beneath you. Alexander''s cock is coated in it as well, glistening crimson. Looking to the side, you see the woman studying her drawing and looking back to a computer screen, comparing the two.'
+			'	"I think I shall make zis into a sculpture. This piece must be chiseled from marble to truly encapsulate ze glory of zis zubject!" She snaps her fingers twice and staff come out to begin collecting the equipment and putting it away. The woman herself walks over and reaches into her purse.'
+			if fine_art_deal = 1:'	"Zis is for ze job," she says, placing wad of <<modelpayfin>> <b>₽</b> into your hand. "And zis, is for your contribution to art!" she says, placing in your other hand a large stack of bills equaling to 30,000 <b>₽</b>. "Zis vill be a famous piece to go down in the history of ze world! Do not forget and take pride in your part of what began here today!"'
+			if fine_art_deal = 2:'	"Zis is for ze job," she says, placing wad of <<modelpayfin>> <b>₽</b> into your hand. "And be proud," she says, placing her other hand on your shoulder. "Zis vill be a famous piece to go down in the history of ze world! One day, vhen you see ze statue, remember and be proud of ze young woman whose loss of virtue vas immortalized in stone. Remember and <i>be proud.</i>"'
+			act'. . .':
+				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+				'	As the people around you pack up the equipment and depart, the artist and Alexander disappearing with them, you stand there, feeling the throbbing ache between your legs and the blood still dripping down your thighs. While you stand, all you can do is stare at the stacks of cash you have been given; the money that bought your virginity. And while you stand and stare, you think to yourself...'
+				*nl
+				'	<i>Is this what my virginity was worth?</i>'
+				act'Leave':
+					fine_art_deal = 0
+					gt'foto','studio'
+				end
+			end
+		end
+	elseif fine_art_deal = 3:
+		money += modelpayfin
+		modelfotomoney += modelpayfin
+		minut += 90
+		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/art1.jpg"></center>'
+		'	You hold the position with Alexander, feeling his thick cock extending out under you, brushing against your thighs and stomach. The woman clicks a button and cameras flash all around you and the red line of scanners begin to slowly ascend your body from bottom to top. As the scanner moves, you see her sit down in front of an easel from the corner of your eye and begin to draw.'
+		*nl
+		'	90 minutes pass before she is finished sketching. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Shaking her head, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles.'
+		'	The woman steps forward, reaching into her purse to pull out <<modelpayfin>> <b>₽</b>, which she places in your hand.'
+		'	"I am disappointed with your commitment," she says. "Great people should be willing to sacrifice for the sake of great art. I vish you vere one of those people." She shakes her head and walks away, snapping her fingers twice and causing her crew to start packing up equipment.'
+		*nl
+		if pcs_vag = 0:'	You watch them leave, the money from the job in hand and your virginity still intact.'
+		if pcs_vag > 0:'	You watch them leave, the money from the job in hand and your dignity still intact.'
+		act'Leave':
+			fine_art_deal = 0
+			gt'foto','studio'
+		end
+	elseif fine_art_deal = 4:
+		gs 'arousal', 'vaginal', 1
+		gs 'stat'
+		money += modelpayfin
+		modelfotomoney += modelpayfin + 3000
+		minut += 90
+		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/art1.jpg"></center>'
+		if pcs_vag <= 10:
+			'	Alexander pushes himself inside you. You can''t help but release a small grunt of discomfort as his 32 cm cock stretches your <<$pcdesc_pussy>> pussy. It takes a few tries to get his exceptional length and girth all the way inside before settling back into the exact posture you were instructed to hold. The woman clicks a button and cameras flash all around you and the red line of scanners begin to slowly ascend your body from bottom to top. As the scanner moves, you see her sit down in front of an easel from the corner of your eye and begin to draw.'
+			*nl
+			'	90 minutes pass before she is finished sketching, your pussy more than a little bit uncomfortable from being overstuffed with Alexander''s enormous cock. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Clapping her hands, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles and sliding off of Alexander''s cock. Its absence leaves you feeling quite empty.'
+		elseif pcs_vag > 10 and pcs_vag <= 15:
+			'	Alexander pushes himself inside you. You exhale slowly, relaxing to accommodate the enormous 32 cm cock sliding your <<$pcdesc_pussy>> pussy. You give yourself a moment to adjust to his sizable length and girth before settling back into the exact posture you were instructed to hold. The woman clicks a button and cameras flash all around you and the red line of scanners begin to slowly ascend your body from bottom to top. As the scanner moves, you see her sit down in front of an easel from the corner of your eye and begin to draw.'
+			*nl
+			'	90 minutes pass before she is finished sketching, your pussy snuggly filled by Alexander''s cock for the duration. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Clapping her hands, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles and sliding off of Alexander''s cock. Its absence leaves you feeling quite empty.'
+		elseif pcs_vag > 15 and <= 25:
+			'	Alexander pushes himself inside you. You relax, letting the enormous 32 cm cock slide into your <<$pcdesc_pussy>> pussy with relative ease. You check your position, making sure you can feel his balls against your clit and that he''s all the way inside before settling back into the exact posture you were instructed to hold. The woman clicks a button and cameras flash all around you and the red line of scanners begin to slowly ascend your body from bottom to top. As the scanner moves, you see her sit down in front of an easel from the corner of your eye and begin to draw.'
+			*nl
+			'	90 minutes pass before she is finished sketching, your pussy comfortably filled by Alexander''s cock for the duration. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Clapping her hands, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles and sliding off of Alexander''s cock. Its absence leaves you feeling quite empty.'
+		else
+			'	Alexander pushes himself inside you. His enormous 32 cm cock slides into you easily, your <<$pcdesc_pussy>> pussy readily stretching to accommodate his sizable length and girth. You check your position, making sure you can feel his balls against your clit and that he''s all the way inside before settling back into the exact posture you were instructed to hold. The woman clicks a button and cameras flash all around you and the red line of scanners begin to slowly ascend your body from bottom to top. As the scanner moves, you see her sit down in front of an easel from the corner of your eye and begin to draw.'
+			*nl
+			'	90 minutes pass before she is finished sketching, your pussy satisfyingly filled by Alexander''s cock for the duration. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Clapping her hands, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles and sliding off of Alexander''s cock. Its absence leaves you feeling quite empty.'
+		end
+		'	"Zis is for ze job," she says, placing wad of <<modelpayfin>> <b>₽</b> into your hand. "And zis, is for your contribution to art!," she says, placing another 3,000 <b>₽</b> on top. "It iz always so much better to be able to work with models who do as instructed. Zo many do not understand ze nature of art. Take zis with my compliments." With that, she snaps her fingers twice and her crew immediately starts packing up equipment.'
+		*nl
+		if pcs_vag <= 10:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy is a bit sore.'
+		if pcs_vag > 10 and pcs_vag <= 15:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit stretched now.'
+		if pcs_vag > 15 and <= 25:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit empty now.'
+		if pcs_vag > 25:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit empty now. It''s not often you get filled by such a magnificent cock.'
+		act'Leave':
+			fine_art_deal = 0
+			gt'foto','studio'
+		end
+	end
+end
+		
+!!if $ARGS[0] = 'modern_art':
+!!	cla & *clr
+!!	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+!!	'	"Modern art project?" you ask. "What''s this one about?"'
+!!	'	"Some rich university student wants to use some of our girls as the subject of her art classes'' next exhibition. The way she worded included a lot of elaborate and confusing artsy nonsense words but to cut to the chase, she basically wants you and another girl to sixty-nine with your legs around each other''s faces. You don''t actually have to eat each other out for real obviously but fair warning that if you take the job, your face is going to be close to another girl''s muff and someone else''s is going to be close to yours."'
+!!	'	"Hmmm..."'
+!!	act'Back to the list':gt'foto_events','list'
+!!	act'I''d like to do this one':
+!!		cla
+!!		*nl
+!!		specialjob3 = 0
+!!	
+!!end
+	
+!!if $ARGS[0] = 'aphrodite_advert':
+!!	cla & *clr
+!!	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+!!	'	"Aphrodite Advert?" you ask. "Aphrodite like ''this studio'' Aphrodite?"'
+!!	'	"Actually, Aphrodite is just a modelling agency. Though most of you never leave the studio, Aphrodite''s main business is renting you girls out to people who want young, beautiful models for their projects. This building and the non-models who work here are actually a distinct sub-entity. People pay us for access to our girls and then for a little extra, we offer them the studio as a location to shoot in as well. If they shoot in the studio, they can purchase a special add-on and we''ll even provide a full camera crew. For such convenience, people rarely say no. Lets us make our money coming <i>and</i> going. Anyways, about the job, it''s always good to keep updating our adverts to let potential clients. And since you girls pretty much <i>are</i> the business, we advertise by taking group pictures of you. Having only one model on a banner ad or billboard or poster is wasting space. Doesn''t show the diverse options the agency has to offer. So we take group photos instead. Anyways, what do you think? Being featured in one of these ads is likely to increase your profile pretty well. People outside the city might even recognize you."'
+!!	'	"Hmmm..."'
+!!	act'Back to the list':gt'foto_events','list'
+!!	act'I''d like to do this one':
+!!		cla
+!!		*nl
+!!		specialjob4 = 0
+!!end
+!!	
+!!if $ARGS[0] = 'independent_art':
+!!	cla & *clr
+!!	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+!!	'	"Independent art project?" you ask. "What''s this one about?"'
+!!	'	"Some independent photographer wants to use some of our girls in some kind of fancy time or art piece or something like that, something he''s been commissioned to do I think. Anyways, he wants to do the direction yourself so I don''t know the nitty gritty details. As far as I know, it''s mostly just you putting your hair up and wearing some kind of fancy sheer dress while he, I believe the request reads, ''elegantly poses'' you."'
+!!	'	"Hmmm..."'
+!!	act'Back to the list':gt'foto_events','list'
+!!	act'I''d like to do this one':
+!!		cla
+!!		*nl
+!!		specialjob5 = 0
+!!end
+
+!!if $ARGS[0] = 'documentary':
+!!	cla & *clr
+!!	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+!!	'	"Documentary?" you ask. "What do you mean documentary? What''s this about?"'
+!!	'	"It''s not a modelling job, but someone''s going around asking about life as a model and in the industry. They want to interview some of the models here. Point a camera at them, ask them a few questions, put it on the internet and stuff. The pay is about that of a standard nude shoot but it''s also likely to increase your profile more than the average nude shoot, how many people who''ve seen your face, know your name. Could be good for increasing your reputation or popularity."'
+!!	'	"Hmmm..."'
+!!	act'Back to the list':gt'foto_events','list'
+!!	act'I''d like to do this one':
+!!		cla
+!!		*nl
+!!		specialjob6 = 0
+!!		
+!!end
+
+!!if $ARGS[0] = 'designer_wedding':
+!!	cla & *clr
+!!	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+!!	'	"Designer wedding dress?" you ask. "We do this kind of work?"'
+!!	'	"When it''s this kind of designer we do. It''s another one of those high fashion type things, taking a look at the bridal fashion, looking to make it more dramatic, more exciting, more sexual. Anyways, bottom line, I wouldn''t call this a ''dress.'' I''d barely call it clothing actually. It''s pretty much just a veil, stockings, and lingerie. I guess it''s a little bit like a wedding dress in that it has lacy gloves. Anyways, that''s the request. Wear the stuff, show some skin, we take the pictures to send to her so she can share them with her designer friends. So, what do you say?"'
+!!	act'Back to the list':gt'foto_events','list'
+!!	act'I''d like to do this one':
+!!		cla
+!!		*nl
+!!		specialjob7 = 0
+!!		
+!!end
+
 !!------------------------------------------------------------------------ Fame events ------------------------------------------------------------------------
 if $ARGS[0] = 'topless1':
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
@@ -48,7 +422,7 @@ if $ARGS[0] = 'topless1':
 			'	"You''re starting to make a name for yourself around here <<$pcs_firstname>>. I''m here to talk to you about a special offer."'
 			if casting > 0 and first_fame_event = 0:
 				'	"Special offer? Like another commercial?"'
-				'	"No, no. Nothing like that. We''ve been getting a lot of positive feedback about your work. A producer asked us to put out a special issue that features exclusively you if you''re up for it. We wanted to do something special so the plan is to do it outside the studio in a place with more natural light. It''ll just be a topless shoot and will take a bit longer than usual to get there and set up, but we''ll pay you for it in addition to your normal once a week contract. What do you say? Are you in?"'
+				'	"No, no. Not quite like that. We''ve been getting a lot of positive feedback about your work. One of the higher ups in the company asked us to put out a special issue that features exclusively you if you''re up for it. We wanted to do something special so the plan is to do it outside the studio in a place with more natural light. It''ll just be a topless shoot and will take a bit longer than usual to get there and set up, but we''ll pay you for it in addition to your normal once a week contract. What do you say? Are you in?"'
 				if first_fame_event = 0:first_fame_event = 1
 				act'"No thanks"':
 					*clr & cla
@@ -59,72 +433,12 @@ if $ARGS[0] = 'topless1':
 				end
 				
 				act'"Yeah! Let''s do it!"':
+					first_fame_event = 2
 					*clr & cla
 					'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
 					'	"Yeah! Let''s do it!" you say excitedly.'
 					'	"Great! Do your makeup and put your clothes back on, we''ll leave as soon as you''re ready.'
-					act'. . .':
-						*clr & cla
-						gs 'underwear', 'wear'
-						gs 'clothing', 'wear_last_worn'
-						gs 'stat'
-						pcs_hairbsh = 1
-						pcs_makeup = 2
-						pcs_lipbalm = 1
-						'<center><video autoplay loop src="images/locations/city/citycenter/photo/dress.mp4"></video></center>'
-						'	You run to your makeup station and get your makeup straighted out before running back to the dressing room and throwing your clothes on.'
-						act'. . .':
-							*clr & cla
-							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
-							minut += 60
-							'	You hop in the van they have prepared and drive to a house with large windows. You get in the clothes they want you to and begin the photo shoot.'
-							act'. . .':
-								*clr & cla
-								gs 'clothing', 'strip'
-								gs 'underwear', 'remove'
-								gs 'stat'
-								'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless1.mp4"></video></center>'
-								'	They have you start in an oversized hoodie, teasing the camera with your breasts until you finally pull it all the way off and bare your shoulders.'
-								act'. . .':
-									*clr & cla
-									'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless2.mp4"></video></center>'
-									'	The photographer has you play with some of the pillows on the furniture and then in a moment of spontaneous glee you drop kick one of them across the room.'
-									act'. . .':
-										*clr & cla
-										'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless3.mp4"></video></center>'
-										'	Afterwards, you drop back down on the sofa, basking in the warmth of the sun.'
-										act'. . .':
-											*clr & cla
-											'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless4.mp4"></video></center>'
-											'	To end the shoot, you wiggle around on your back, letting gravity do the work as your breasts jiggle enticingly.'
-											act'. . .':
-												*clr & cla
-												'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless5.mp4"></video></center>'
-												minut += 120
-												'	"Okay we''re all done here," the photographer says. "Did you have fun?"'
-												'	You laugh hysterically for a moment and smile at him. You <i>did</i> have a lot of fun. "Even though I''ve been a model for a little while, I''m not sure I''ve ever done anything like this."'
-												'	"Like what?" the photographer asks, confused.'
-												'	"Like this!" you laugh as you move your shoulders back and forth and make your breasts jiggle again.'
-												act'Finish up and go back':
-													*clr & cla
-													modelpayfin = 2500 + (modelpay * 2) + (50*rand(0,7))
-													gs 'underwear', 'wear'
-													gs 'stat'
-													gs 'clothing', 'wear_last_worn'
-													minut += 60
-													'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
-													'You get dressed again while they load everything back into the van and then you all drive back to the studio. They drop you on the curb with your pay of <<modelpayfin>> <b>₽</b> for today''s work. You can see there''s even a little extra!'
-													money += modelpayfin
-													modelfotomoney += modelpayfin
-													act'. . .':gt'down'
-												end
-											end
-										end
-									end
-								end
-							end
-						end
-					end
+					act'. . .':gt'foto_events','topless1.1'
 				end		
 			else
 				'	"What kind of offer?"'
@@ -139,71 +453,78 @@ if $ARGS[0] = 'topless1':
 				
 				act'"Yeah! Let''s do it!"':
 					*clr & cla
+					first_fame_event = 2
 					'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
 					'	"Yeah! Let''s do it!" you say excitedly.'
 					'	"Great! Do your makeup and put your clothes back on, we''ll leave as soon as you''re ready.'
+					act'. . .':gt'foto_events','topless1.1'
+				end
+			end
+		end
+	end
+end
+
+if $ARGS[0] = 'topless1.1':
+	*clr & cla
+	pcs_hairbsh = 1
+	pcs_makeup = 2
+	pcs_lipbalm += 8
+	gs 'underwear', 'wear'
+	gs 'stat'
+	gs 'clothing', 'wear_last_worn'
+	'<center><video autoplay loop src="images/locations/city/citycenter/photo/dress.mp4"></video></center>'
+	'	You run to your makeup station and get your makeup straighted out before running back to the dressing room and throwing your clothes on.'
+	act'. . .':
+		*clr & cla
+		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
+		minut += 60
+		'	You hop in the van they have prepared and drive to a house with large windows. You get in the clothes they want you to and begin the photo shoot.'
+		act'. . .':
+			*clr & cla
+			gs 'clothing', 'strip'
+			gs 'underwear', 'remove'
+			gs 'stat'
+			'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless1.mp4"></video></center>'
+			'	They have you start in an oversized hoodie, teasing the camera with your breasts until you finally pull it all the way off and bare your shoulders.'
+			act'. . .':
+				*clr & cla
+				'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless2.mp4"></video></center>'
+				'	The photographer has you play with some of the pillows on the furniture and then in a moment of spontaneous glee you drop kick it across the room.'
+				act'. . .':
+					*clr & cla
+					'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless3.mp4"></video></center>'
+					'	Afterwards, you drop back down on the sofa, basking in the warmth of the sun.'
 					act'. . .':
 						*clr & cla
-						pcs_hairbsh = 1
-						pcs_makeup = 2
-						pcs_lipbalm += 8
-						gs 'underwear', 'wear'
-						gs 'stat'
-						gs 'clothing', 'wear_last_worn'
-						'<center><video autoplay loop src="images/locations/city/citycenter/photo/dress.mp4"></video></center>'
-						'	You run to your makeup station and get your makeup straighted out before running back to the dressing room and throwing your clothes on.'
+						'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless4.mp4"></video></center>'
+						'	To end the shoot, you wiggle around on your back, letting gravity do the work as your breasts jiggle enticingly.'
 						act'. . .':
 							*clr & cla
-							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
-							minut += 60
-							'	You hop in the van they have prepared and drive to a house with large windows. You get in the clothes they want you to and begin the photo shoot.'
-							act'. . .':
+							'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless5.mp4"></video></center>'
+							minut += 120
+							'	"Okay we''re all done here," the photographer says. "Did you have fun?"'
+							'	You laugh hysterically for a moment and smile at him. You <i>did</i> have a lot of fun. "Even though I''ve been a model for a little while, I''m not sure I''ve ever done anything like this."'
+							'	"Like what?" the photographer asks, confused.'
+							'	"Like this!" you laugh as you move your shoulders back and forth and make your breasts jiggle again.'
+							act'Finish up and go back':
 								*clr & cla
-								gs 'clothing', 'strip'
-								gs 'underwear', 'remove'
+								modelpayfin = 2500 + (modelpay * 2) + (50*rand(0,7))
+								gs 'underwear', 'wear'
 								gs 'stat'
-								'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless1.mp4"></video></center>'
-								'	They have you start in an oversized hoodie, teasing the camera with your breasts until you finally pull it all the way off and bare your shoulders.'
-								act'. . .':
-									*clr & cla
-									'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless2.mp4"></video></center>'
-									'	The photographer has you play with some of the pillows on the furniture and then in a moment of spontaneous glee you drop kick it across the room.'
-									act'. . .':
-										*clr & cla
-										'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless3.mp4"></video></center>'
-										'	Afterwards, you drop back down on the sofa, basking in the warmth of the sun.'
-										act'. . .':
-											*clr & cla
-											'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless4.mp4"></video></center>'
-											'	To end the shoot, you wiggle around on your back, letting gravity do the work as your breasts jiggle enticingly.'
-											act'. . .':
-												*clr & cla
-												'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless5.mp4"></video></center>'
-												minut += 120
-												'	"Okay we''re all done here," the photographer says. "Did you have fun?"'
-												'	You laugh hysterically for a moment and smile at him. You <i>did</i> have a lot of fun. "Even though I''ve been a model for a little while, I''m not sure I''ve ever done anything like this."'
-												'	"Like what?" the photographer asks, confused.'
-												'	"Like this!" you laugh as you move your shoulders back and forth and make your breasts jiggle again.'
-												act'Finish up and go back':
-													*clr & cla
-													modelpayfin = 2500 + (modelpay * 2) + (50*rand(0,7))
-													gs 'underwear', 'wear'
-													gs 'stat'
-													gs 'clothing', 'wear_last_worn'
-													minut += 60
-													'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
-													'	You get dressed again while they load everything back into the van and then you all drive back to the studio. They drop you on the curb with your pay of <<modelpayfin>> <b>₽</b> for today''s work. You can see there''s even a little extra!'
-													money += modelpayfin
-													modelfotomoney += modelpayfin
-													modelfoto_topless += 1
-													mdlng_exp += rand(8,10)
-													city_modelling += 20
-													pav_modelling += rand(0,city_modelling)/10
-													act'Leave':gt'down'
-												end
-											end
-										end
-									end
+								gs 'clothing', 'wear_last_worn'
+								minut += 60
+								'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
+								'	You get dressed again while they load everything back into the van and then you all drive back to the studio. They drop you on the curb with your pay of <<modelpayfin>> <b>₽</b> for today''s work. You can see there''s even a little extra!'
+								money += modelpayfin
+								modelfotomoney += modelpayfin
+								modelfoto_nip += 1
+								modelfoto_topless += 1
+								mdlng_exp += rand(8,10)
+								city_modelling += 20
+								pav_modelling += rand(0,city_modelling)/10
+								act'Leave':
+									msg'You''ve shown the studio that you''re willing to go above and beyond what is normally asked of you and that you''re willing to capitalize on your popularity as a model. The photographers might come to you for more off-site shoots like this in the future. Additionally, you are now considered a viable candidate for special requests that might be asked of the studio. Each day there may or may not be such work available for you. Check with the photographers if you want to supplement your income with these specialized jobs.'
+									gt'down'
 								end
 							end
 						end
@@ -212,11 +533,10 @@ if $ARGS[0] = 'topless1':
 			end
 		end
 	end
+
+
 end
 
-			
-
-			
 if $ARGS[0] = 'pool1':
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
 	'	"<<$pcs_firstname>>!"'
@@ -271,6 +591,8 @@ if $ARGS[0] = 'pool1':
 						*clr & cla
 						minut += 180
 						modelpayfin = 3000 + (modelpay * 2) + (50*rand(0,7))
+						modelfoto_nip += 1
+						modelfoto_topless += 1
 						modelfoto_nude += 1
 						mdlng_exp += 10
 						city_modelling += 35
@@ -361,6 +683,7 @@ if $ARGS[0] = 'tennis':
 							modelpayfin = 2500 + (modelpay * 2) + (50*rand(0,7))
 							money += modelpayfin
 							modelfotomoney += modelpayfin
+							modelfoto_nip += 1
 							modelfoto_topless += 1
 							mdlng_exp += 8
 							city_modelling += 35
@@ -426,6 +749,7 @@ if $ARGS[0] = 'topless2':
 							modelfotomoney += modelpayfin
 							city_modelling += 15
 							mdlng_exp += rand(8,10)
+							modelfoto_nip += 1
 							modelfoto_topless += 1
 							gs 'underwear', 'wear'
 							gs 'stat'
@@ -502,6 +826,7 @@ if $ARGS[0] = 'beach2':
 								city_modelling += 15
 								mdlng_exp += rand(8,10)
 								modelfoto_topless += 1
+								modelfoto_nip += 1
 								gs 'stat'
 								gs 'clothing', 'wear_last_worn'
 								'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
@@ -558,11 +883,11 @@ if $ARGS[0] = 'pool2':
 						minut += 30
 						modelpayfin = 2500 + (modelpay * 2) + (50*rand(0,7))
 						money += modelpayfin
-						modelfotomoney += modelpayfin
-						modelfoto_topless += 1
+						modelfotomoney += modelpayfin						
 						city_modelling += 15
 						mdlng_exp += rand(8,10)
 						modelfoto_topless += 1
+						modelfoto_nip += 1
 						gs 'underwear', 'wear'
 						gs 'stat'
 						gs 'clothing', 'wear_last_worn'
@@ -633,11 +958,10 @@ if $ARGS[0] = 'runway2':
 						act'. . .':
 							hour = 20
 							modelpayfin = 6000 + (modelpay * 3) + (50*rand(0,7))
-							modelfoto_topless += 1
 							city_modelling += 30
 							pav_modelling += rand(0,city_modelling)/5
 							mdlng_exp += rand(8,10)
-							modelfoto_topless += 1
+							modelfoto_nip += 1
 							*clr & cla
 							'<center><video autoplay loop src="images/locations/city/citycenter/photo/skill_runway.mp4"></video></center>'
 							'	As soon as they send you down the runway you realize something''s gone wrong. The loose cleavage of the dress you''re wearing is too loose. With the kind of purposeful steps you''re taking and your breasts jiggling underneath, the fabric falls to the sides and your breasts are left completely exposed. You try your best to recover but the dress is just too loose and skimpy and no matter what you do your breasts end up coming loose.'
@@ -708,6 +1032,8 @@ if $ARGS[0] = 'wet':
 						act'. . .':
 							cla
 							modelpayfin = 3000 + (modelpay * 2) + (50*rand(0,7))
+							modelfoto_nip += 1
+							modelfoto_topless += 1
 							modelfoto_nude += 1
 							mdlng_exp += rand(9,10)
 							city_modelling += rand(18,21)

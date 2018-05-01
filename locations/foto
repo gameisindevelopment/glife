@@ -39,8 +39,8 @@ if $ARGS[0] = 'studio':
 	*clr & cla
 	killvar '$modelopt'
 	
-	if special_model < city_modelling and modelfoto_nude > 0 and hour < 15 and fame_model_event < daystart:gt 'foto_events','fame'
-	if special_skill_model < pcs_mdlng and modelfoto_nude > 0 and hour < 15 and skill_model_event < daystart:gt 'foto_events','skill'
+	if special_model < city_modelling and modelfoto_pussy > 0 and hour < 15 and fame_model_event < daystart:gt 'foto_events','fame'
+	if special_skill_model < pcs_mdlng and modelfoto_pussy > 0 and hour < 15 and skill_model_event < daystart:gt 'foto_events','skill'
 	
 	minut += 5
 	gs 'stat'
@@ -228,31 +228,7 @@ if $ARGS[0] = 'studio':
 				act'Head to the back':gt 'foto','start'
 				act'Leave the studio':gt 'down'
 			else
-				'	"You want to work here? How old are you?"'
-				if age >= 18:
-					'	"<<age>>." '
-					'	"I see. Alright, undress. Let me take a look at you."'
-					gt'foto','interview'
-				elseif fakepassport = 1:
-					'	"I''m 18."'
-					'	"I see. Alright, undress. Let me take a look at you."'
-					gt'foto','interview'
-				else
-					act 'Tell the truth': 
-						age_truth = 1
-						cla
-						'	"I''m <<age>>."'
-						'	"I see. Alright, undress. Let me take a look at you."'
-						gt'foto','interview'
-					end
-					act 'Lie':
-						age_lie = 1
-						cla
-						'	"I''m 18."'
-						'	"I see. Alright, undress. Let me take a look at you."'
-						gt'foto','interview'
-					end
-				end
+				gt'foto','interview'
 			end
 		end
 	elseif pcs_apprnc < 80:
@@ -276,9 +252,9 @@ if $ARGS[0] = 'studio':
 			else
 				gt 'foto', 'model'
 			end
-			if first_fame_event = 1:
-				act'Ask if there''s special work available':gt'foto_events','special'
-			end
+		end
+		if first_fame_event = 2:
+			act'Ask if there''s special work available':gt'foto_events','special'
 		end
 		if model = 1:act 'Go to the showers':gt'foto','showers'
 		if model = 1:act 'Go to your makeup station':gt'foto','makeup'
@@ -289,6 +265,35 @@ if $ARGS[0] = 'studio':
 end
 
 if $ARGS[0] = 'interview':
+	cla & *clr
+	if howoldareyou = 0:
+		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+		'	"You want to work here? How old are you?"'
+		if age >= 18:
+			howoldareyou = 1
+			'	"<<age>>." '
+			'	"I see. Alright, undress. Let me take a look at you."'
+		elseif fakepassport = 1:
+			howoldareyou = 1
+			'	"I''m 18."'
+			'	"I see. Alright, undress. Let me take a look at you."'
+		else
+			act 'Tell the truth': 
+				age_truth = 1
+				howoldareyou = 1
+				cla
+				'	"I''m <<age>>."'
+				'	"I see. Alright, undress. Let me take a look at you."'
+			end
+			act 'Lie':
+				age_lie = 1
+				howoldareyou = 1
+				cla
+				'	"I''m 18."'
+				'	"I see. Alright, undress. Let me take a look at you."'
+			end
+		end
+	end
 	gs'stat'
 	if undress_ask = 0:
 		act'What? Why?':
@@ -1936,6 +1941,7 @@ if $ARGS[0] = 'nude_shoot':
 				minut += 120
 				modelpayfin = 1900 + (modelpay * 2) + (50*rand(0,7))
 				modelfoto_nip += 1
+				modelfoto_nude += 1
 				modelfoto_pussy += 1
 				mdlng_exp += rand(8,10)
 				city_modelling += rand(15,20)
@@ -1972,6 +1978,7 @@ if $ARGS[0] = 'nude_shoot':
 				modelpayfin = 2000 + (modelpay * 2) + (50*rand(0,7))
 				modelfoto_nip += 1
 				modelfoto_topless += 1
+				modelfoto_nude += 1
 				modelfoto_pussy += 1
 				mdlng_exp += rand(9,10)
 				city_modelling += rand(18,21)
