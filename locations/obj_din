@@ -479,10 +479,10 @@ if $ARGS[0] = 'stats_achievements':
 		if modelfoto_ero_clo > 0: pl'<<modelfoto_ero_clo>> - Number of erotic clothing shoots you have participated in'
 		if modelfoto_bikini > 0: pl'<<modelfoto_bikini>> - Number of swimsuit shoots you have modelled in'
 		if modelfoto_lingerie > 0: pl'<<modelfoto_lingerie>> - Number of lingerie shoots you have participated in'
-		if modelfoto_nip > 0: pl'<<modelfoto_nip>> - Number of shoots where you have exposed your nipples'
-		if modelfoto_topless > 0: pl'<<modelfoto_topless>> - Number of shoots you have been topless'
-		if modelfoto_nude > 0: pl'<<modelfoto_nude>> - Number of shoots you have been nude without showing your vagina'
-		if modelfoto_nude_frontal > 0: pl'<<modelfoto_nude>> - Number of shoots you have shown full frontal nudity'
+		if modelfoto_nip > 0: pl'<<modelfoto_nip>> - Number of times your nipples have been visible as a model'
+		if modelfoto_topless > 0: pl'<<modelfoto_topless>> - Number of shoots where you have been topless'
+		if modelfoto_nude > 0: pl'<<modelfoto_nude>> - Number of nude modelling shoots you have participated in'
+		if modelfoto_pussy > 0: pl'<<modelfoto_pussy>> - Number of shoots your vagina has been visible'
 		nl
 	end
 	
