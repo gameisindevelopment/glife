@@ -25,12 +25,11 @@ if mother_go = 1 and hour = 16:
 	'The door is currently locked, and the sign on the door says "Closed". That''s strange, the cafe is supposed to be open at this time.'
 
 	act 'Walk around the cafe':
-		*clr
+		*clr & cla
 		minut += 15
 		gs 'stat'
 		'Being locked outside of the cafe, you walk around it to try and figure out why it is closed. Suddenly, you hear weak voices through the wall. It sounds like some poor woman is screaming! You quickly look around and notice a stack of old crates. If you stand on it, you think you can reach a small window and see what is happening inside.'
 
-		act 'Leave, it''s probably none of your business':gt 'vokzalG'
 		act 'Get up there and peek through the window':
 			*clr & cla
 			minut += 5
@@ -44,8 +43,6 @@ if mother_go = 1 and hour = 16:
 				'You carefully climb on top of the boxes, and stand on your toes to reach the small window. It gives you a view into the back room of the cafe. Through the window you see a woman on her knees, giving the cafe owner a blowjob. She''s very enthusiastic about it, and alternates between sucking his dick and licking his balls. Then she begins to deepthroat him, sliding his dick further and further down her mouth until his balls rest on her chin. When you look closer, you realize... that''s your mother!'
 			end
 
-			act 'Leave, you don''t want to see this':gt 'vokzalG'
-
 			act 'Keep looking':
 				*clr & cla
 				minut += 5
@@ -56,8 +53,11 @@ if mother_go = 1 and hour = 16:
 
 				act 'Go back to the train station':gt 'vokzalG'
 			end
+			act 'Leave, you don''t want to see this':gt 'vokzalG'
 		end
+		act 'Leave, it''s probably none of your business':gt 'vokzalG'
 	end
+	act 'Leave, it''s probably none of your business':gt 'vokzalG'
 else
 	if hour >= 8 and hour <= 19:
 		*clr & cla

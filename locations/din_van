@@ -1174,7 +1174,7 @@ if $ARGS[0] = 'pblc_pee':
 	act 'Go pee':
 		*clr
 		cla
-		'<center><img <<$set_imgh>> src="images/pc/pee/pee-public/' + rand(1,12) + '.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/pc/pee/pee-public/' + rand(1,11) + '.jpg"></center>'
 		rand_pee = rand(0,7)
 		if rand_pee = 0:
 			'Settling into the toilet seat you pull out your phone and begin checking for messages and doing other things to occupy the time until the stream slows to a trickle and finally stops.'

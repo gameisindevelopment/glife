@@ -229,22 +229,24 @@ if $ARGS[0] = 'events':
 
 	act 'Wander around the market': gt 'Grinok','events'
 	act 'Stop wandering': gt 'Grinok', 'start'
-	if rand(0,3) ! 0: gs 'Grinok', rinevrand
-
-	$grinok_text[3]='you pass a stall, it is selling children''s clothes.'
-	$grinok_text[4]='you see a woman looking for underwear.'
-	$grinok_text[5]='you notice a half-naked girl trying on clothes.'
-	$grinok_text[6]='you look away as a woman tries on a bra'
-	$grinok_text[7]='you don''t see anything unusual, just the usual vegetables and tasteless clothes.'
-	$grinok_text[8]='you just see old women in dressing gowns and slippers. Stupid crappy market.'
-	$grinok_text[9]='you don''t find anything interesting'
-	$grinok_text[10]='you just see cheap Chinese goods and nothing more.'
-	$grinok_text[11]='you see all the usual stuff. People with bags scurrying back and forth, children begging for toys from their parents and vociferous traders.'
-	$grinok_text[12]='you have to be careful as its so busy. The hustle and bustle makes it hard to find anything worthwhile.'	
-
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/brodit'+rand(1,8)+'.jpg"></center>'
-	'As you are strolling through the market, ' + $grinok_text[rand(3,12)]
-	killvar '$grinok_text'
+	if rand(0,3) ! 0: 
+		gs 'Grinok', rinevrand
+	else
+		$grinok_text[3]='you pass a stall, it is selling children''s clothes.'
+		$grinok_text[4]='you see a woman looking for underwear.'
+		$grinok_text[5]='you notice a half-naked girl trying on clothes.'
+		$grinok_text[6]='you look away as a woman tries on a bra'
+		$grinok_text[7]='you don''t see anything unusual, just the usual vegetables and tasteless clothes.'
+		$grinok_text[8]='you just see old women in dressing gowns and slippers. Stupid crappy market.'
+		$grinok_text[9]='you don''t find anything interesting'
+		$grinok_text[10]='you just see cheap Chinese goods and nothing more.'
+		$grinok_text[11]='you see all the usual stuff. People with bags scurrying back and forth, children begging for toys from their parents and vociferous traders.'
+		$grinok_text[12]='you have to be careful as its so busy. The hustle and bustle makes it hard to find anything worthwhile.'	
+	
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/brodit'+rand(1,8)+'.jpg"></center>'
+		'As you are strolling through the market, ' + $grinok_text[rand(3,12)]
+		killvar '$grinok_text'
+	end
 end
 
 if ARGS[0] = 1:
@@ -287,6 +289,7 @@ if ARGS[0] = 3:
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/book.jpg"></center>'
 	end
 	'You find a stall selling various books, there are fantasy books, science fiction and romance novels, all of which costs only 350 <b>₽</b> each.'
+	act 'Leave':gt 'Grinok', 'start'
 	if money >= 350:
 		act 'Buy a fantasy book (350 <b>₽</b>)':
 			cls
@@ -320,7 +323,6 @@ if ARGS[0] = 3:
 			act 'Leave':gt 'Grinok', 'start'
 		end
 	end
-	act 'Leave':gt 'Grinok', 'start'
 end
 
 if ARGS[0] = 4:
@@ -329,14 +331,16 @@ if ARGS[0] = 4:
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
 	'You find a small stall that has many shelves with a large variety of porn magazines, a pack of brand new porn playing cards, and you can see several sex toys just behind the counter. The salesman watches over his stall with shifty eyes.'
 	act 'Leave':gt 'Grinok', 'start'
-	if money >= 699:
+	if money >= 699 and card < 2:
 		act 'Buy cards (699 <b>₽</b>)':
+			cls
 			minut += 5
 			money -= 699
 			card = 2
 			TimesBuyPorno += 1
 			delact 'Buy cards'
 			gs 'stat'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
 			'You tried not to look into the eyes of the porn dealer as you counted out the money. You took the cards and quickly put them in your purse.'
 			act 'Leave':gt 'Grinok', 'start'
 			act 'Buy something else':gt 'Grinok', 4
@@ -350,6 +354,7 @@ if ARGS[0] = 4:
 				money -= 400
 				haveporn = 1
 				gs 'stat'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
 				'You tried not to look into the eyes of the porn dealer as you counted out the money. You took the magazine and quickly hid it.'
 				act 'Leave':gt 'Grinok', 'start'
 				act 'Buy something else':gt 'Grinok', 4
@@ -357,21 +362,27 @@ if ARGS[0] = 4:
 		end
 	else
 		act 'Browse the porn magazines':
+			cls
+			pcs_horny += 10
+			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
+			act 'Leave':gt 'Grinok', 'start'
+			act 'Look for something else':gt 'Grinok', 4
 			if TimesBuyPorno = 0:
 				'You look over the covers of the magazines, covered in images of half-naked girls on them. Many of them appear to be near your own age. The porn dealer noticed your interest and looks at you expectantly.'
 				act 'Look through a magazine':
-					cls
-					pcs_horny += 10
-					gs 'stat'
-					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
+					cla
 					'You pick up one of the magazines and flip through the pages. Inside the magazines, you see men with large erect penis engaging in sexual acts with women who are either half-naked or fully naked, most of them look close to your own age. You feel yourself getting aroused looking at the images.'
+					act 'Leave':gt 'Grinok', 'start'
+					act 'Look for something else':gt 'Grinok', 4
 					act 'Ask for the price':
 						cls
 						minut += 5
 						gs 'stat'
 						'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
 						'Blushing profusely right down to your roots, you approach the porn dealer and stammeringly ask him the price on the magazines. The porn dealer smiles at you and says, "All magazines are 400 <b>₽</b> each."'
+						act 'Leave':gt 'Grinok', 'start'
+						act 'Look for something else':gt 'Grinok', 4
 						if money >= 400:
 							act 'Buy magazine (400 <b>₽</b>)':
 								cls
@@ -386,17 +397,15 @@ if ARGS[0] = 4:
 								act 'Buy something else':gt 'Grinok', 4
 							end
 						end
-						act 'Leave':gt 'Grinok', 'start'
 					end
 				end
 			elseif TimesBuyPorno > 0 and TimesBuyPorno < 5:
 				'The porn dealer notices you coming over and asks, "Looking to buy a magazine? They''re only 400 <b>₽</b> each."'
 				act 'Look through a magazine':
-					cls
-					pcs_horny += 10
-					gs 'stat'
-					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
+					cla
 					'You pick up one of the magazines and flip through the pages. Inside the magazines, you see men with large erect penis engaging in sexual acts with women who are either half-naked or fully naked, most of them look close to your own age. You feel yourself getting aroused looking at the images.'
+					act 'Leave':gt 'Grinok', 'start'
+					act 'Look for something else':gt 'Grinok', 4
 					if money >= 400:
 						act 'Buy magazine':
 							cls
@@ -411,16 +420,14 @@ if ARGS[0] = 4:
 							act 'Buy something else':gt 'Grinok', 4
 						end
 					end
-					act 'Leave':gt 'Grinok', 'start'
 				end
 			elseif TimesBuyPorno >= 5:
 				'The porn dealer see you approaching. "Ah, my best customer!"'
 				act 'Look through a magazine':
-					cls
-					pcs_horny += 10
-					gs 'stat'
-					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/pornmag.jpg"></center>'
+					cla
 					'You pick up one of the magazines and flip through the pages. Inside the magazines, you see men with large erect penis engaging in sexual acts with women who are either half-naked or fully naked, most of them look close to your own age. You feel yourself getting aroused looking at the images.'
+					act 'Leave':gt 'Grinok', 'start'
+					act 'Look for something else':gt 'Grinok', 4
 					if money >= 400:
 						act 'Buy magazine':
 							cls
@@ -435,14 +442,17 @@ if ARGS[0] = 4:
 							act 'Buy something else':gt 'Grinok', 4
 						end
 					end
-					act 'Leave':gt 'Grinok', 'start'
 				end
 			end
 		end
 	end
 	act 'Ask to see the sex toys':
+		cls
+		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/market/sextoys.jpg"></center>'
 		'He lets you step behind the counter so you can get a better look, as you do he says. "Take a look and let me know what you would like." You see several 15cm dildos. Each with a tag, "Only 700 <b>₽</b> each." You also see a small selection of vibrators in various colors, mostly pink. "Only 700 <b>₽</b> each." To one side you see many butt plugs, rubber and metal. "Only 700 <b>₽</b>each." Near the bottom is several strapon harnesses. "Only 1000 <b>₽</b>each."'
+		act 'Leave':gt 'Grinok', 'start'
+		act 'Look for something else':gt 'Grinok', 4
 		act 'Buy dildo (700 <b>₽</b>)':
 			cla
 			if money >= 700 and dildo = 0:
