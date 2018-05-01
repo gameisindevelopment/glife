@@ -1929,7 +1929,7 @@ if $ARGS[0] = 'nude_shoot':
 	end
 
 	act 'Nude with stockings':
-		if pcs_exhibition < 38:
+		if pcs_exhibition < 40:
 			msg'You think about asking to do this shoot but then blush and realize you aren''t confident enough to have pictures of yourself like this circling around the internet. Maybe you could practice it later, but you''re not ready to do it for real.'
 			gt 'foto', 'nude_shoot'
 		else
