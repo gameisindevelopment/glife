@@ -43,9 +43,6 @@ if $ARGS[0] = 'details':
 	if boyfacerand = 2: $boyface = 'brunet'
 	if boyfacerand = 3: $boyface = 'blond'
 
-	!!variable is responsible for guy
-	boyonce = 0
-
 	!!Variables responsible for any features like
 	!!security, is responsible for the money and requirements
 	harakBoy = rand(0, 2)

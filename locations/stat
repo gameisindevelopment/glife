@@ -475,7 +475,7 @@ if minut >= 60:
 		if amphIntake > 0:
 			amphIntake -= 1
 		else
-			amphWithdrawl = o
+			amphWithdrawl = 0
 		end
 		amphHigh = 0
 		amphetamineBonus = 2
