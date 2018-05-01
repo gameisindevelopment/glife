@@ -10,7 +10,7 @@
 if $ARGS[0] = 'pirosh':
 	*clr & cla
 	frost = 0
-	minute += 25
+	minut += 25
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 5
 	mood += 5
@@ -630,7 +630,7 @@ end
 if $ARGS[0] = 'h_meal':
 	*clr & cla
 	frost = 0
-	minute += 25
+	minut += 25
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 20
 	fat += 1

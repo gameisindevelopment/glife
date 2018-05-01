@@ -1073,7 +1073,7 @@ if $ARGS[0] = 'fishing':
 				act 'Give the fish to your grandmother':
 					cla
 					*clr
-					minute += 5
+					minut += 5
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/grandparents/givefish.jpg"></center>'
 					'You try to give the fish to your grandmother, but she takes one look at the intact fish and point at your grandfather. He sighs heavily then takes the fish outside to clean them.'
 
@@ -1135,7 +1135,7 @@ if $ARGS[0] = 'fishing':
 			act 'Give the fish to your grandmother':
 				cla
 				*clr
-				minute += 5
+				minut += 5
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/grandparents/givefish.jpg"></center>'
 				'You try to give the fish to your grandmother, but she takes one look at the intact fish and point at your grandfather. He sighs heavily then takes the fish outside to clean them.'
 
