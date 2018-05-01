@@ -38,6 +38,7 @@ if $ARGS[0] = 'sog1':
 					act 'Try':
 						cla
 						*clr
+						gs 'cum_call', '', $namesob, 1, 0, -1, 60
 						'<center><img <<$set_imgh>> src="images/beast/zoo/z2.jpg"></center>'
 						'You reluctantly start trying to push the dog and off you, but as you push him backwards, <<$namesob>> leans on you with all his weight. You feel his penis rubs against your thighs searching for your hole.'
 
@@ -115,18 +116,17 @@ if $ARGS[0] = 'sog1':
 						act 'Suck husband':
 							cla
 							*clr
+							gs 'cum_call', 'mouth', $husName
 							gs 'boyStat', $husID
 							'<center><img <<$set_imgh>> src="images/beast/zoo/z3.jpg"></center>'
 							'You grab his cock and take it on your mouth, soon begins your pleasure center lights up and your whole body is racked by your orgasm.'
 							'Seconds later <<$husName>> ends up in your mouth. You swallow sperm and continue to suck his fading dick. Encouraged the dog begins trying to climb onto you, looking for a more.'
-							spafinloc = 12
-							sexpartkno = 1
-							gs 'Cum_Manage'
-							swallow += 1
-							$orgasm_or = 'yes'
-							gs 'arousal', 'bj', 10
+
+							gs 'boyStat', $husID
+							gs 'arousal', 'bj', 3, 'sub'
+							gs 'arousal', 'vaginal', 3, 'beast'
+							minut -= 3
 							gs 'arousal', 'end'
-							gs 'stat'
 							'"This is too much" says <<$husName>> and tried to shoo your dog out, but he growls and bares his teeth.'
 							'<<$husName>> goes to the bathroom and comes back with some old sheets.'
 							'Throwing them over the dog and picking up the corners is able to pick up <<$namesob>> in his improvised bag.'
@@ -148,15 +148,12 @@ if $ARGS[0] = 'sog1':
 									cla
 									*clr
 									husband -= 1
+									gs 'cum_call', 'hands', $namesob, 1, 0, -1, 60
 									'<center><img <<$set_imgh>> src="images/beast/zoo/z6.jpg"></center>'
 									'You take the dogs dick in your hand and begin to masturbate, after a few minutes you dog cums in your hand.'
 									gs 'arousal', 'hj', 10, 'beast'
 									gs 'arousal', 'end'
 									gs 'stat'
-									dynamic $dogpot
-									spafinloc = 13
-									sexpartkno = 1
-									gs 'Cum_Manage'
 									act 'Finish':gt 'bedr'
 								end
 
@@ -165,6 +162,7 @@ if $ARGS[0] = 'sog1':
 									*clr
 									swallow += 1
 									husband -= 40
+									gs 'cum_call', 'mounth', $namesob, 1, 0, -1, 60
 									'<center><img <<$set_imgh>> src="images/beast/zoo/z7.jpg"></center>'
 									'You lay the dog on the floor and take his cock in my mouth, your husband looks at you with disgust as you suck the dogs cock.'
 									'In a couple of minutes the dog cums in your mouth and you swallow his sperm.'
@@ -172,10 +170,6 @@ if $ARGS[0] = 'sog1':
 									gs 'arousal', 'bj', 10, 'beast'
 									gs 'arousal', 'end'
 									gs 'stat'
-									dynamic $dogpot
-									spafinloc = 12
-									sexpartkno = 1
-									gs 'Cum_Manage'
 									
 									act 'Finish':gt 'bedr'
 								end
@@ -223,9 +217,7 @@ if $ARGS[0] = 'sog1':
 							act 'Spread your legs':
 								cls
 								suprdolg += 1
-								spafinloc = 0
-								sexpartkno = 1
-								gs 'Cum_Manage'
+								gs 'cum_call', '', $HusID
 								'<center><img <<$set_imgh>> src="images/beast/zoo/z5.jpg"></center>'
 								'You obediently spread your legs and your husband enters your pussy, he makes you keep sucking the dog.'
 								'You are not gaining any pleasure from this. Soon your husband cums and says "<<$namesob>> hasn''t finished yet, are you not trying? Fine, Present your ass!."'
@@ -237,12 +229,7 @@ if $ARGS[0] = 'sog1':
 								act 'Offer your ass':
 									cls
 									analorgasm += 1
-									gs 'boyStat', $petID
-									pcs_horny = 0
-									dynamic $dogpot
-									spafinloc = 3
-									sexpartkno = 1
-									gs 'Cum_Manage'
+									gs 'cum_call', 'anus', $namesob, 1, 0, -1, 60
 									'<center><img <<$set_imgh>> src="images/beast/zoo/z8.jpg"></center>'
 									'You get on your knees and the dog immediately jumps on you. With one hand you spread your buttocks, and the other guides the dogs cock into your ass.'
 									'Finding your hole the dog quickly enters and fucks your ass. Your husband watches, "Go on you whore."'
@@ -290,13 +277,11 @@ end
 
 if $ARGS[0] = 'sog4':
 	cls
-	dynamic $dogpot
-	sexpartkno = 1
-	gs 'Cum_Manage'
+	gs 'cum_call', '', $namesob, 1, 0, -1, 60
 	'<center><img <<$set_imgh>> src="images/beast/zoo/sog2.jpg"></center>'
 	'You open your legs and <<$namesob>> fucks your pussy'
 	'Finally the dog ends inside you'
-	gs 'arousal', 'hj', 10, 'beast'
+	gs 'arousal', 'vaginal', 10, 'beast'
 	gs 'arousal', 'end'
 	gs 'stat'
 	
