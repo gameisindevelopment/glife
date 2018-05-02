@@ -798,7 +798,7 @@ if $ARGS[0] = 'spSexAnal':
 		end
 		'<<$sp_name>> takes you by the waist, delicately kissing you.'
 		'<font color=#<<$sp_font>>>"Do you want to make love in a certain position, or should I choose?"</font>'
-		!if sp_pornPos = 0:hisPos = rand(1, 3)
+		if sp_pornPos = 0:hisPos = rand(1, 3)
 		!if sp_pornPos = 1:hisPos = rand(1, 4)
 		!if sp_pornPos = 2:hisPos = rand(1, 5)
 
