@@ -76,10 +76,10 @@ if $ARGS[0] = 'list':
 	if specialjob1 >= 95:'<a href="exec:gt ''foto_events'',''high_fasion''">	High Fashion</a>'
 	if specialjob2 >= 95:'<a href="exec:gt ''foto_events'',''fine_art''">	Fine Art Project(sex)</a>'
 	if specialjob3 >= 95:'<a href="exec:gt ''foto_events'',''modern_art''">	Modern Art Project(69)</a>'
-	if specialjob4 >= 95:'<a href="exec:gt ''foto_events'',''aphrodite_advert''">	Aphrodite Advert</a>'
-	if specialjob5 >= 95:'<a href="exec:gt ''foto_events'',''independent_art''">	Independent Art Project</a>'
-	if specialjob6 >= 95:'<a href="exec:gt ''foto_events'',''documentary''">	Documentary</a>'
-	if specialjob7 >= 95:'<a href="exec:gt ''foto_events'',''designer_wedding''">	Designer Wedding Dress</a>'
+!!	if specialjob4 >= 95:'<a href="exec:gt ''foto_events'',''aphrodite_advert''">	Aphrodite Advert</a>'
+!!	if specialjob5 >= 95:'<a href="exec:gt ''foto_events'',''independent_art''">	Independent Art Project</a>'
+!!	if specialjob6 >= 95:'<a href="exec:gt ''foto_events'',''documentary''">	Documentary</a>'
+!!	if specialjob7 >= 95:'<a href="exec:gt ''foto_events'',''designer_wedding''">	Designer Wedding Dress</a>'
 !!		if specialjob8 >= 95:'<a href="exec:gt ''foto_events'',''model_portraits''">photo albums</a>'
 !!		if specialjob9 >= 95:'<a href="exec:gt ''foto_events'',''model_portraits''">photo albums</a>'
 
@@ -96,7 +96,8 @@ if $ARGS[0] = 'high_fasion':
 		specialjob1 = 0
 		'	"I''d like to do this one."'
 		'	"Great! Go to set 14 and tell the photographer that you''ve got the job. They''ll dress you up there."'
-		act'Go to work':
+		act'Do the shoot':
+			cla & *clr
 			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/special1.jpg"></center>'
 			minut += 120
 			modelpayfin = 1800 + (modelpay * 2) + (50*rand(0,7))
@@ -304,8 +305,8 @@ if $ARGS[0] = 'fine_art2':
 	elseif fine_art_deal = 4:
 		gs 'arousal', 'vaginal', 1
 		gs 'stat'
-		money += modelpayfin
-		modelfotomoney += modelpayfin + 3000
+		money += modelpayfin + 2000
+		modelfotomoney += modelpayfin + 2000
 		minut += 90
 		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/art1.jpg"></center>'
 		if pcs_vag <= 10:
@@ -325,7 +326,7 @@ if $ARGS[0] = 'fine_art2':
 			*nl
 			'	90 minutes pass before she is finished sketching, your pussy satisfyingly filled by Alexander''s cock for the duration. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Clapping her hands, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles and sliding off of Alexander''s cock. Its absence leaves you feeling quite empty.'
 		end
-		'	"Zis is for ze job," she says, placing wad of <<modelpayfin>> <b>₽</b> into your hand. "And zis, is for your contribution to art!," she says, placing another 3,000 <b>₽</b> on top. "It iz always so much better to be able to work with models who do as instructed. Zo many do not understand ze nature of art. Take zis with my compliments." With that, she snaps her fingers twice and her crew immediately starts packing up equipment.'
+		'	"Zis is for ze job," she says, placing wad of <<modelpayfin>> <b>₽</b> into your hand. "And zis, is for your contribution to art!," she says, placing another 2,000 <b>₽</b> on top. "It iz always so much better to be able to work with models who do as instructed. Zo many do not understand ze nature of art. Take zis with my compliments." With that, she snaps her fingers twice and her crew immediately starts packing up equipment.'
 		*nl
 		if pcs_vag <= 10:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy is a bit sore.'
 		if pcs_vag > 10 and pcs_vag <= 15:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit stretched now.'
@@ -351,32 +352,90 @@ end
 !!		specialjob3 = 0
 !!	
 !!end
+if $ARGS[0] = 'modern_art':
+	cla & *clr
+	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+	'	"Modern art project?" you ask. "What''s this one about?"'
+	'	"Some rich university student wants to use some of our girls as the subject of her art classes'' next exhibition. The way she worded included a lot of elaborate and confusing artsy nonsense words but to cut to the chase, she basically wants you and another girl to sixty-nine each other. You don''t actually have to eat each other out for real obviously but fair warning that if you take the job, your face is going to be close to another girl''s muff and someone else''s is going to be close to yours."'
+	'	"Hmmm..."'
+	act'Back to the list':gt'foto_events','list'
+	act'I''d like to do this one':
+		cla
+		*nl
+		specialjob3 = 0
+		'	"I''d like to do this one."'
+		'	"Great! Go to set 17. The client will meet you there."'
+		act'Go to set 17':
+			cla & *clr
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
+			'	You go to set 17 as instructed and find a pretty teenage girl standing with one of the other models who works here. You can tell the first girl isn''t a model here here as she''s still fully dressed in casual but expensive looking clothing, not the kind that anybody models here. As you approach, you hear her talking.'
+			'	"...''s fine that they don''t let you wear clothes here. I wouldn''t either if I were surrounded by pretty girls all day. Give me something good to look at while I work, know what I''m sayin''? But damn! Would it kill them to turn up the heat in here? I mean, do you <i>see</i> my nips right now? They feel like could rip through my shirt at any moment! And yours look hard enough to take my eye out! But, oh em gee. I love your nails. Where did you get that polish? Oh! You''re here!" she says, interrupting herself when she finally sees you coming. "Are you the other model I asked for?"'
+			'	"Yeah, that''s me!"'
+			'	"Cool! Guess we''ll get started then. Now, if the two of you could just get up on this platform together..."'
+			act'Do the shoot':
+				cla & *clr
+				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/art2.jpg"></center>'
+				minut += 90
+				modelpayfin = 2000 + (50+rand(1,9)*rand(0,7))
+				money += modelpayfin
+				modelfotomoney += modelpayfin
+				modelfoto_topless += 1
+				modelfoto_nude += 1
+				mdlng_exp += rand(9,10)
+				city_modelling += rand(1,21)
+				exhibition_exp += 5
+				modern_art_projet = 1
+				pcs_horny += 20
+				'	The girl has you and the other model lie down on your sides and then wrap your legs your heads, both of you grabbing the other''s foot with your hand in a way that allows you to perfectly mirror each other''s position. At the client''s insistence, you bury your face between between the other girl''s legs. The aroma of her sex fills your nostrils and you can feel her breath on your own pussy as well.'
+				'	"Cool!" the client squeals excitedly. "Now sit just like that and let me get my camera!"'
+				'	She starts moving about all around you, taking pictures from various angles and moving stands around, changing the lighting scheme. At one point, you hear a snapshot that sounds more like a phone sound effect than a DSLR and you think that she might have just taken a selfie on set with you. Other than that, the next hour and a half passes relatively uneventfully for you. But being stuck in a sexual position for so long takes its toll on you. The tingling of breathing on your pussy is tantalizing, and you feel an uncontrollable heat emanating from between your legs. Flushing with embarrassment, you hope the other model doesn''t notice your arousal but judging by the glistening wetness on the pussy lips in front of you, you don''t think that''s very likely.'
+				*nl
+				'	The shoot finally ends and you and the other model untangle each other from one another, stretching to ease your cramped muscles. The two of you briefly share a look together, before blushing hard and both looking away.'
+				'	"Thanks guys! You two were great! I''m like, totally gonna get an A from my professor for this." The shoot over, the client departs and you collect your money from the manager with the other model. Holding your cash, you glance at each other one more time before blushing again and both making excuses about needing to be elsewhere in the studio. This isn''t something that''s going to be forgotten any time soon...'
+				*nl
+				'	You earned <<modelpayfin>> <b>₽</b> for this job.'
+				act'Go back to the main floor':gt'foto','studio'
+			end
+		end
+	end
+end
 	
-!!if $ARGS[0] = 'aphrodite_advert':
-!!	cla & *clr
-!!	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
-!!	'	"Aphrodite Advert?" you ask. "Aphrodite like ''this studio'' Aphrodite?"'
-!!	'	"Actually, Aphrodite is just a modelling agency. Though most of you never leave the studio, Aphrodite''s main business is renting you girls out to people who want young, beautiful models for their projects. This building and the non-models who work here are actually a distinct sub-entity. People pay us for access to our girls and then for a little extra, we offer them the studio as a location to shoot in as well. If they shoot in the studio, they can purchase a special add-on and we''ll even provide a full camera crew. For such convenience, people rarely say no. Lets us make our money coming <i>and</i> going. Anyways, about the job, it''s always good to keep updating our adverts to let potential clients. And since you girls pretty much <i>are</i> the business, we advertise by taking group pictures of you. Having only one model on a banner ad or billboard or poster is wasting space. Doesn''t show the diverse options the agency has to offer. So we take group photos instead. Anyways, what do you think? Being featured in one of these ads is likely to increase your profile pretty well. People outside the city might even recognize you."'
-!!	'	"Hmmm..."'
-!!	act'Back to the list':gt'foto_events','list'
-!!	act'I''d like to do this one':
-!!		cla
-!!		*nl
-!!		specialjob4 = 0
-!!end
-!!	
-!!if $ARGS[0] = 'independent_art':
-!!	cla & *clr
-!!	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
-!!	'	"Independent art project?" you ask. "What''s this one about?"'
-!!	'	"Some independent photographer wants to use some of our girls in some kind of fancy time or art piece or something like that, something he''s been commissioned to do I think. Anyways, he wants to do the direction yourself so I don''t know the nitty gritty details. As far as I know, it''s mostly just you putting your hair up and wearing some kind of fancy sheer dress while he, I believe the request reads, ''elegantly poses'' you."'
-!!	'	"Hmmm..."'
-!!	act'Back to the list':gt'foto_events','list'
-!!	act'I''d like to do this one':
-!!		cla
-!!		*nl
-!!		specialjob5 = 0
-!!end
+if $ARGS[0] = 'aphrodite_advert':
+	cla & *clr
+	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+	'	"Aphrodite Advert?" you ask. "Aphrodite like ''this studio'' Aphrodite?"'
+	'	"Actually, Aphrodite is just a modelling agency. Though most of you never leave the studio, Aphrodite''s main business is renting you girls out to people who want young, beautiful models for their projects. This building and the non-models who work here are actually a distinct sub-entity. People pay us for access to our girls and then for a little extra, we offer them the studio as a location to shoot in as well. If they shoot in the studio, they can purchase a special add-on and we''ll even provide a full camera crew. For such convenience, people rarely say no. Lets us make our money coming <i>and</i> going. Anyways, about the job, it''s always good to keep updating our adverts to let potential clients. And since you girls pretty much <i>are</i> the business, we advertise by taking group pictures of you. Having only one model on a banner ad or billboard or poster is wasting space. Doesn''t show the diverse options the agency has to offer. So we take group photos instead. Anyways, what do you think? Being featured in one of these ads is likely to increase your profile pretty well. People outside the city might even recognize you."'
+	'	"Hmmm..."'
+	act'Back to the list':gt'foto_events','list'
+	act'I''d like to do this one':
+		cla
+		*nl
+		specialjob4 = 0
+		'	"I''d like to do this one."'
+		'	"Great! Go to set 23 and join the other girls. The head photographer will tell you what to do from there."'
+		act'Do the shoot':
+			minut += 120
+			modelpayfin = 1000
+			money += modelpayfin
+			modelfotomoney += modelpayfin
+			modelfoto_topless += 1
+			modelfoto_nude += 1
+			mdlng_exp += rand(1,10)
+			city_modelling += rand(40,60)
+			pav_modelling += rand(0,city_modelling)/4
+			cla & *clr
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/group.jpg"></center>'
+			'	You go to the designated set and find the other girls waiting there, idling chatting to each other and gossiping. You join them and when the head photographer shows up, he begins to give you all instructions.'
+			*nl
+			'	The next two hours are spent being posed, positioned, and re-positioned into various arrangements and groupings, ensuring that the advertising department has a diverse set of options to work with.'
+			'	When the shoot ends, a manager calls for all you girls to line up, handing each of you an envelope of cash as you walk by him.'
+			*nl
+			'	You are paid <<modelpayfin>> <b>₽</b> for the job today, which isn''t very much as far as the usual payment goes at the studio. But the manager did tell you up front, this job doesn''t pay out so much in money for you as it does for publicity.'
+			act'Go back to the main floor':gt'foto','studio'
+		end
+	end
+end
+	
 
 !!if $ARGS[0] = 'documentary':
 !!	cla & *clr
