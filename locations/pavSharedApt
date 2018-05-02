@@ -872,17 +872,7 @@ if $ARGS[0] = 'pcsRoom':
 
 	if komp = 1:'Your <a href="exec:gorodokKomp = 1 & GT ''Komp'',''start''">laptop</a> is on your desk.'
 
-	if pcs_horny >= 50:
-		act 'Masturbate':gt 'selfplay', 'start'
-	end
-
-	if tabletki > 0 and prezik + prezikcount + preziksabo > 0:
-		'Your <a href="exec:gt ''stol'', ''bc''">birth control</a> is hidden in one of your desk drawers, as are your <a href="exec:gt ''stol'', ''bc''">condoms</a>.'
-	elseif tabletki > 0:
-		'Your <a href="exec:gt ''stol'', ''bc''">birth control</a> is hidden in one of your desk drawers.'
-	elseif prezik + prezikcount + preziksabo > 0:
-		'Your <a href="exec:gt ''stol'', ''bc''">condoms</a> are hidden in one of your desk drawers.'
-	end
+	act 'Leave your room':gt 'pavSharedApt', 'start'
 
 	if student > 0 and kursovik < 100:
 		act 'Do coursework (1:00)':
@@ -901,7 +891,11 @@ if $ARGS[0] = 'pcsRoom':
 		end
 	end
 
-	if tovarL > 0:'You currently have <<tovarL>> trinkets to sell at the station. The maximum you can carry with you is 30.'
+	if pcs_horny >= 50:
+		act 'Masturbate':gt 'selfplay', 'start'
+	end
+	
+	gs 'events', 'read_porn'
 
 	if vcard > 0:
 		act 'Look at your deck of vintage porn cards':card_deck = 0 & gt 'card'
@@ -930,8 +924,6 @@ if $ARGS[0] = 'pcsRoom':
 			act 'Continue':gt 'pavSharedApt', 'start'
 		end
 	end
-
-	gs 'exercise', 'start'
 
 	if gobelen>0:'You have <<gobelen>> completed tapestries.'
 	if pcs_sewng >= 40 and tkan > 0:'You have enough fabric for <<tkan>> lessons.'
@@ -968,9 +960,20 @@ if $ARGS[0] = 'pcsRoom':
 			end
 		end
 	end
+
+	if tabletki > 0 and prezik + prezikcount + preziksabo > 0:
+		'Your <a href="exec:gt ''stol'', ''bc''">birth control</a> is hidden in one of your desk drawers, as are your <a href="exec:gt ''stol'', ''bc''">condoms</a>.'
+	elseif tabletki > 0:
+		'Your <a href="exec:gt ''stol'', ''bc''">birth control</a> is hidden in one of your desk drawers.'
+	elseif prezik + prezikcount + preziksabo > 0:
+		'Your <a href="exec:gt ''stol'', ''bc''">condoms</a> are hidden in one of your desk drawers.'
+	end
+
+	if tovarL > 0:'You currently have <<tovarL>> trinkets to sell at the station. The maximum you can carry with you is 30.'
+
+	gs 'exercise', 'start'
 	dynamic $wearpan
 	dynamic $removepan
-	gs 'events', 'read_porn'
 	!gs 'subkid'
 	if pcs_sleep <= 80:
 		if succubusQW = 2:
@@ -996,8 +999,6 @@ if $ARGS[0] = 'pcsRoom':
 			end
 		end
 	end
-
-	act 'Leave your room':gt 'pavSharedApt', 'start'
 end
 
 if $ARGS[0] = 'ndRoom':
