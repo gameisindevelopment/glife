@@ -35,6 +35,7 @@ end
 
 
 if $ARGS[0] = 'special':
+	modelpay = (pcs_mdlng/2 * 25) + (func('shortgs','sqrt', city_modelling) * 50) + pcs_apprnc
 	if specialmodelrequest ! daystart:
 		specialmodelrequest = daystart
 		specialjob1 = rand(1,100)
@@ -42,8 +43,8 @@ if $ARGS[0] = 'special':
 		specialjob3 = rand(1,100)
 		specialjob4 = rand(1,100)
 		specialjob5 = rand(1,100)
-		specialjob6 = rand(1,100)
-		specialjob7 = rand(1,100)
+!!		specialjob6 = rand(1,100)
+!!		specialjob7 = rand(1,100)
 !!		specialjob8 = rand(1,100)
 !!		specialjob9 = rand(1,100)
 	end
@@ -76,13 +77,12 @@ if $ARGS[0] = 'list':
 	if specialjob1 >= 95:'<a href="exec:gt ''foto_events'',''high_fasion''">	High Fashion</a>'
 	if specialjob2 >= 95:'<a href="exec:gt ''foto_events'',''fine_art''">	Fine Art Project(sex)</a>'
 	if specialjob3 >= 95:'<a href="exec:gt ''foto_events'',''modern_art''">	Modern Art Project(69)</a>'
-!!	if specialjob4 >= 95:'<a href="exec:gt ''foto_events'',''aphrodite_advert''">	Aphrodite Advert</a>'
-!!	if specialjob5 >= 95:'<a href="exec:gt ''foto_events'',''independent_art''">	Independent Art Project</a>'
+	if specialjob4 >= 95:'<a href="exec:gt ''foto_events'',''aphrodite_advert''">	Aphrodite Advert</a>'
+	if specialjob5 >= 95:'<a href="exec:gt ''foto_events'',''independent_art''">	Independent Art Project</a>'
 !!	if specialjob6 >= 95:'<a href="exec:gt ''foto_events'',''documentary''">	Documentary</a>'
 !!	if specialjob7 >= 95:'<a href="exec:gt ''foto_events'',''designer_wedding''">	Designer Wedding Dress</a>'
 !!		if specialjob8 >= 95:'<a href="exec:gt ''foto_events'',''model_portraits''">photo albums</a>'
 !!		if specialjob9 >= 95:'<a href="exec:gt ''foto_events'',''model_portraits''">photo albums</a>'
-end
 
 if $ARGS[0] = 'high_fasion':
 	cla & *clr
@@ -319,7 +319,7 @@ if $ARGS[0] = 'fine_art2':
 			'	Alexander pushes himself inside you. You exhale slowly, relaxing to accommodate the enormous 32 cm cock sliding your <<$pcdesc_pussy>> pussy. You give yourself a moment to adjust to his sizable length and girth before settling back into the exact posture you were instructed to hold. The woman clicks a button and cameras flash all around you and the red line of scanners begin to slowly ascend your body from bottom to top. As the scanner moves, you see her sit down in front of an easel from the corner of your eye and begin to draw.'
 			*nl
 			'	90 minutes pass before she is finished sketching, your pussy snuggly filled by Alexander''s cock for the duration. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Clapping her hands, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles and sliding off of Alexander''s cock. Its absence leaves you feeling quite empty.'
-		elseif pcs_vag > 15 and pcs_vag <= 25:
+		elseif pcs_vag > 15 and <= 25:
 			'	Alexander pushes himself inside you. You relax, letting the enormous 32 cm cock slide into your <<$pcdesc_pussy>> pussy with relative ease. You check your position, making sure you can feel his balls against your clit and that he''s all the way inside before settling back into the exact posture you were instructed to hold. The woman clicks a button and cameras flash all around you and the red line of scanners begin to slowly ascend your body from bottom to top. As the scanner moves, you see her sit down in front of an easel from the corner of your eye and begin to draw.'
 			*nl
 			'	90 minutes pass before she is finished sketching, your pussy comfortably filled by Alexander''s cock for the duration. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Clapping her hands, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles and sliding off of Alexander''s cock. Its absence leaves you feeling quite empty.'
@@ -332,7 +332,7 @@ if $ARGS[0] = 'fine_art2':
 		*nl
 		if pcs_vag <= 10:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy is a bit sore.'
 		if pcs_vag > 10 and pcs_vag <= 15:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit stretched now.'
-		if pcs_vag > 15 and pcs_vag <= 25:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit empty now.'
+		if pcs_vag > 15 and <= 25:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit empty now.'
 		if pcs_vag > 25:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit empty now. It''s not often you get filled by such a magnificent cock.'
 		act'Leave':
 			fine_art_deal = 0
@@ -341,19 +341,6 @@ if $ARGS[0] = 'fine_art2':
 	end
 end
 		
-!!if $ARGS[0] = 'modern_art':
-!!	cla & *clr
-!!	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
-!!	'	"Modern art project?" you ask. "What''s this one about?"'
-!!	'	"Some rich university student wants to use some of our girls as the subject of her art classes'' next exhibition. The way she worded included a lot of elaborate and confusing artsy nonsense words but to cut to the chase, she basically wants you and another girl to sixty-nine with your legs around each other''s faces. You don''t actually have to eat each other out for real obviously but fair warning that if you take the job, your face is going to be close to another girl''s muff and someone else''s is going to be close to yours."'
-!!	'	"Hmmm..."'
-!!	act'Back to the list':gt'foto_events','list'
-!!	act'I''d like to do this one':
-!!		cla
-!!		*nl
-!!		specialjob3 = 0
-!!	
-!!end
 if $ARGS[0] = 'modern_art':
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -438,6 +425,40 @@ if $ARGS[0] = 'aphrodite_advert':
 	end
 end
 	
+if $ARGS[0] = 'independent_art':
+	cla & *clr
+	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
+	'	"Independent art project?" you ask. "What''s this one about?"'
+	'	"Some independent photographer wants to use some of our girls in some kind of fancy time or art piece or something like that, something he''s been commissioned to do I think. Anyways, he wants to do the direction yourself so I don''t know the nitty gritty details. As far as I know, it''s mostly just you putting your hair up and wearing some kind of fancy dresses while he -I believe the request reads- ''elegantly poses'' you."'
+	'	"Hmmm..."'
+	act'Back to the list':gt'foto_events','list'
+	act'I''d like to do this one':
+		cla
+		*nl
+		specialjob5 = 0
+		'	"I''d like to do this one."'
+		'	"Great! Go to set 8. The client will be waiting for you there with some other girls. Just do as he says and come see me for the payment after."'
+		act'Do the shoot':
+			hpingripw = 1
+			minut += 120
+			modelpayfin = 1000
+			minut += 120
+			gs'stat'
+			modelpayfin = 1600 + (modelpay) + (35*rand(0,5))
+			money += modelpayfin
+			modelfotomoney += modelpayfin
+			modelfoto_nip += 1
+			mdlng_exp += rand(2,8)
+			city_modelling += rand(12,16)
+			cla & *clr
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/art3.jpg"></center>'
+			'	You go to the designated set where you find several other girls dressed in graceful and sophisticated clothing that is also completely sheer. At your approach, you are directed to put on one of these outfits yourself and get your hair done by the team of the makeup artists present.'
+			*nl
+			'	The next two hours after that are spent being posed quite elegantly, as promised by the request. The shoot ends and you go back to the manager who pays you <<modelpayfin>> <b>₽</b> for the job.'
+			act'Go back to the main floor':gt'foto','studio'
+		end
+	end
+end
 
 !!if $ARGS[0] = 'documentary':
 !!	cla & *clr
@@ -594,8 +615,6 @@ if $ARGS[0] = 'topless1.1':
 			end
 		end
 	end
-
-
 end
 
 if $ARGS[0] = 'pool1':
