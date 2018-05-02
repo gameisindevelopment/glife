@@ -54,6 +54,17 @@ if $ARGS[0] = 'studio':
 		lcolor = rgb(106, 90, 205)
 	end
 	
+	if city_modelling >= 100 and city_modelling < 120: rank = 1
+	if city_modelling >= 120 and city_modelling < 140: rank = 2
+	if city_modelling >= 140 and city_modelling < 160: rank = 3
+	if city_modelling >= 160 and city_modelling < 180: rank = 4
+	if city_modelling >= 180 and city_modelling < 200: rank = 5
+	if city_modelling >= 200 and city_modelling < 220: rank = 6
+	if city_modelling >= 220 and city_modelling < 280: rank = 7
+	if city_modelling >= 280 and city_modelling < 310: rank = 8
+	if city_modelling >= 310 and city_modelling < 350: rank = 9
+	if city_modelling >= 350: rank = 10
+	
 	anastasia_in = rand(0,1)
 	mari_in = rand(0,1)
 	krystal_in = rand(0,1)
@@ -208,6 +219,7 @@ if $ARGS[0] = 'studio':
 					'	He hands you back your fake passport, smiling.'
 					'	"Welcome to Aphrodite."'
 					model = 1
+					modelyear = year
 					act'Head to the back':gt'foto','start'
 					act'Leave the studio':gt'down'
 				end
@@ -234,6 +246,7 @@ if $ARGS[0] = 'studio':
 				'	He hands you back your fake passport, smiling.'
 				'	"Welcome to Aphrodite."'
 				model = 1
+				modelyear = year
 				act'Head to the back':gt'foto','start'
 				act'Leave the studio':gt'down'
 			else
