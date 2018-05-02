@@ -1308,7 +1308,7 @@ end
 if disable_LoadSave = 0:
 	$stat_msg += '<br><br><center><a href="exec:savegame ''quicksave.sav'' && pl''Quicksave Done''"><img height = 35 src="images/system/icon/stat_Qsave.png"></a>  <a href="exec:savegame"><img height = 35 src="images/system/icon/stat_save.png"></a>  <a href="exec:opengame"><img height = 35 src="images/system/icon/stat_load.png"></a>  <a href="exec:if input(''Input Anything to confirm Quick Load'') ! null: opengame ''quicksave.sav''"><img height = 35 src="images/system/icon/stat_Qload.png"></a></center>'
 elseif disable_LoadSave = 2:
-	$stat_msg += '<br><br><a href="exec:savegame ''quicksave.sav'' && pl''Quicksave Done''">Q.Save</a>  <a href="exec:savegame">Save</a>  <a href="exec:opengame">Load</a>  <a href="exec:if input(''Input Anything to confirm Quick Load'') ! null: opengame ''quicksave.sav''">Q.Load</a>'
+	$stat_msg += '<br><br><a href="exec:savegame ''quicksave.sav'' && pl''Quicksave Done''">Quick Save</a>  <a href="exec:savegame">Save</a>  <a href="exec:opengame">Load</a>  <a href="exec:if input(''Input Anything to confirm Quick Load'') ! null: opengame ''quicksave.sav''">Quick Load</a>'
 end
 
 $stat_android +=  ' <a href="exec:savegame ''quicksave.sav'' && pl''Quicksave Done''">Q.S</a>  <a href="exec:if input(''Input Anything to confirm Quick Load'') ! null: opengame ''quicksave.sav''">Q.L</a>'
