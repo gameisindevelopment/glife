@@ -1475,9 +1475,9 @@ if $ARGS[0] = 'shower_swallow':
 		cla & *clr
 		'<center><video src="images/shared/home/bathroom/showerbj.mp4"></center>'
 		'	"Yeeeech..."'
-		'	You open your mouth with your tongue out, letting your brother''s cum slide down and drip out of your mouth onto the bottom of the tub.'
-		'	"A little warning next time maybe?"'
+		'	Opening your mouth, you drool and let his cum drip down off your tongue before wadding up what''s left and spitting it onto the bottom of the bathtub.'
 		if brotherbjcomment = 1:
+			'	"A little warning next time maybe?"'
 			'	"Sorry sis. Your mouth just felt so good and your blowjobs are so great and... Sorry... I just couldn''t hold it."'
 			'	"It''s okay Kolka," you smile up at him. "It''s not like I can be mad at you for saying I''m good at giving head." You give him a quick kiss on the tip of his cock before standing up.'
 			'	"Now come on, let''s finish up before someone wonders where we are."'
@@ -1496,6 +1496,9 @@ if $ARGS[0] = 'shower_swallow':
 			else
 				act'Finish showering together':gt'brother_voyeur','brother_shower_end'
 			end
+		elseif brotherbjcomment = 3:
+			'	"Thanks for the warning Kolka," you say, smiling as you standing up.'
+			act'. . .':gt'brother_voyeur','brother_shower_fuck_end'
 		end
 	end
 end
@@ -2085,6 +2088,7 @@ if $ARGS[0] = 'brother_fuck_cum':
 		
 	elseif brothercumchoice = 4:
 		'	"<<$pcs_nickname>>-! I''m almost there! Can I cum in your mouth?"'
+		brotherbjcomment = 3
 		act'Let him cum in your mouth':gt'brother_voyeur','shower_swallow'
 		
 		act'Ignore him, make him cum inside you':
