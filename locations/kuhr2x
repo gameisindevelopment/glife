@@ -141,6 +141,7 @@ if zoo >= 6 and sobaka ! 0:
 					act 'Try':
 						cla
 						*clr
+						gs 'cum_call', '', $namesob, 1, 0, -1, 60
 						'<center><img <<$set_imgh>> src="images/beast/zoo/z2.jpg"></center>'
 						'You try to push your dog away ang get way from his clutches, but it has the opposite affect of what you''ve intended. <<$namesob>> now leans on you and you can feel his knot on your thigh, trying to find its way to your pussy.'
 						if izvratH = 0:
@@ -201,14 +202,13 @@ if zoo >= 6 and sobaka ! 0:
 						end
 					elseif izvratH = 1:
 						swallow += 1
-						spafinloc = 12
-						gs 'cum_manage'
 						'"I''m not going to", <<$husName>> chuckles. He leans back into the chair with a sly grin on his face.'
 						'"He''s not going to stop" you reply and push your legs apart. <<$husName>> looks on, enjoying your soft moans, then he suddenly gets up, pulls out his dick and tells you to suck it.'
 
 						act 'Blowjob':
 							cla
 							*clr
+							gs 'cum_call', 'mouth', $husName
 							'<center><img <<$set_imgh>> src="images/beast/zoo/z3.jpg"></center>'
 							'You grab his cock and take it into your mouth. You suck on his cock for a good two or three minutes, until <<$husName>> ends up cumming in your mouth. You swallow his sperm and clean up his cock. As your husband moves away, your dog stops licking your cunt and positions his knot above your face.'
 							'"Wooh, hold on, this goes too far", <<$husName>> says and ties to shoo your dog away, but <<$namesob>> growls at your husband. Your husband then leaves the room to grab an old bed sheet. He comes back and pulls it over <<$namesob>> head, he then takes a small rope and ties the the ends together. Your dog whimpers while inside the improvised bag.'
@@ -228,12 +228,13 @@ if zoo >= 6 and sobaka ! 0:
 
 							act 'It''s just his instincts!':
 								cla
-							'"No dear, it''s not his fault, it''s his instincts, just let him do what he''s supposed to do, he''ll eventually stop", you say.'
-							'"Well, whatever you say."'
+								'"No dear, it''s not his fault, it''s his instincts, just let him do what he''s supposed to do, he''ll eventually stop", you say.'
+								'"Well, whatever you say."'
 								act 'Jerk your dog off':
 									cla
 									*clr
 									husband -= 1
+									gs 'cum_call', 'hands', $namesob, 1, 0, -1, 60
 									'<center><img <<$set_imgh>> src="images/beast/zoo/z6.jpg"></center>'
 									'You take the dogs knot in your hand and begin to stroke it, after a few minutes your dog cums on your hands.'
 
@@ -245,6 +246,7 @@ if zoo >= 6 and sobaka ! 0:
 									*clr
 									swallow += 1
 									husband -= 40
+									gs 'cum_call', 'mouth', $namesob, 1, 0, -1, 60
 									'<center><img <<$set_imgh>> src="images/beast/zoo/z7.jpg"></center>'
 									'You order your <<$namesob>> to rollover on his back, so you can easily put his cock in your mouth. Your husband looks at you with disgust, as you suck off <<$namedog>>. After a few minutes you feel your dogs cock throbbing, as he cums in your mouth.'
 									'"My god, what kind of pervert are you", <<$husName>> asks, with obvious disgust.'
@@ -277,9 +279,6 @@ if zoo >= 6 and sobaka ! 0:
 							gt 'kuhr2x'
 						end
 					elseif izvratH = 1:
-						swallow += 1
-						spafinloc = 12
-						gs 'cum_manage'
 						'"What do you mean, you can''t stop him? Do you like the way he licks you?", <<$husName>> shouts.'
 						'"No, of course not!", you try to explain.'
 						'"And yet I see you bitch here with your legs spread apart and your juices gushing out of your cunt, while your shitty dog licks your pussy." he says. "Well, you know what, why don''t you show me how much of a bitch you are. Go on, suck his cock."'
@@ -298,10 +297,12 @@ if zoo >= 6 and sobaka ! 0:
 								cla
 								*clr
 								suprdolg += 1
+								gs 'cum_call', '', $HusID
 								'<center><img <<$set_imgh>> src="images/beast/zoo/z5.jpg"></center>'
 								'You obediently spreads your legs apart and your husband pushes his cock into your pussy. The first few times he moves slowly, but soon he starts to get very rough. He doesn''t need long before he cums deep inside your pussy'
 								'He looks at the dog, "Seems like that shit isn''t done yet. Let''s try something else, turn around bitch.", he orders. "Let''s see if he like your asshole more than your mouth.'
 
+								gs 'boyStat', $HusID
 								gs 'arousal', 'vaginal', 5, 'sub', 'rough'
 								gs 'arousal', 'anal', 5, 'beast'
 								minut -= 5
@@ -311,6 +312,7 @@ if zoo >= 6 and sobaka ! 0:
 									cla
 									*clr
 									analorgasm += 1
+									gs 'cum_call', 'anus', $namesob, 1, 0, -1, 60
 									'<center><img <<$set_imgh>> src="images/beast/zoo/z8.jpg"></center>'
 									'You turn around and position yourself on all fours. <<$namesob>> immediately jumps on you, you spread your buttocks apart with one hand. He start to fuck you, thinking you are just another bitch in heat. "That''s a good bitch", your husband comments and leaves the room. Your dog increases his speed, pumping his knot in and out of your ass and you have to admit, it starts to feel really good. For several minutes <<$namesob>> humps your ass, until you eventually climax. Your ass tightens, causing your dog to cum too.'
 

@@ -21,8 +21,8 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 	!events trigger before everything
 	if (meadow = 3 or meadow = 6) and MiraLoc = 0 and npc_QW['A60'] = 2 and temper >= 12 and sunWeather = 1:gt 'Meadow','mira_mitka'
 	if (meadow = 3 or meadow = 6) and Mira_no = 0 and MiraLoc = 0 and npc_QW['A60'] = 33 and temper >= 12 and sunWeather = 1:gt 'Meadow','mira_gang'
-	if npc_QW['A63'] > 13 and mirasex = 0 and npc_QW['A60'] < 11:gt 'Meadow','mira_lesb_talk1'
-	if npc_QW['A63'] > 13 and mirasex = 1 and npc_QW['A60'] < 11 and rand(1,5) = 1 and miraday ! daystart:gt 'Meadow','mira_lesb_talk3'
+	if npc_QW['A63'] > 13 and mirasex = 0 and npc_QW['A60'] > 11:gt 'Meadow','mira_lesb_talk1'
+	if npc_QW['A63'] > 13 and mirasex = 1 and npc_QW['A60'] > 11 and rand(1,5) = 1 and miraday ! daystart:gt 'Meadow','mira_lesb_talk3'
 	if npc_QW['A63'] > 13 and mirasex = 1 and npc_QW['A60'] > 11:gt 'Meadow','mira_lesb_talk2'
 	if mirasex = 2 and rand(1,5) > 3 and miraday ! daystart and npc_rel['A60'] >= 15:gt 'Meadow','mira_lesb'
 	!125e
@@ -120,7 +120,7 @@ if $ARGS[0] = 'Mira':
 				'You agree, intrigued.  You ask Mira what see has in mind?  After a few seconds, she tells you she saw her father masturbateing that morning.  She doesn''t think her father has been with a woman since her mother passed away.  Mira is sorry for her father''s lose, hers too for that matter, but she has an overwhelming desire to help him.  She can''t just do nothing.'
 				'You know Mira loves her father very much, you don''t know what you can do to help.  You don''t want or need this drama in your life.  First, you find out about migic being real.  School is rapid approaching.  You tell her that there is nothing you can do to help with her father''s depression.  Mira''s pouts and stands with her arms crossed. Her whole demeaner is one of injured innocence.'
 				'A few minutes later, to your surprise, you feel an unexpectedly nice itch and a wicked heat rises up in your crotch of thoughts of his sucking Mira''s father.'
-				act 'Maybe a little followup want hurt': gt 'Meadow', 'start'
+				act 'Maybe a little followup wont hurt': gt 'Meadow', 'start'
 			end
 			act 'Not interested': gt 'Meadow', 'start'
 		end

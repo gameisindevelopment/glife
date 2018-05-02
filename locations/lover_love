@@ -10,8 +10,6 @@ if loverlove[lover_number] = 3:
 		act 'Marry husband':
 			cla
 			minut += 60
-			loverslove[lover_number] = 0
-			gs 'lover', 'remove', lover_number
 			husband = 100
 			husbanday = 0
 			$husName = $lover[lover_number]
@@ -24,6 +22,8 @@ if loverlove[lover_number] = 3:
 			silavagH = loversilaVag[lover_number]
 			husbFin = loverfinance[lover_number]
 			husbandMark = 1
+			loverslove[lover_number] = 0
+			gs 'lover', 'remove', lover_number
 			'The wedding reception takes place at a cafe. There aren''t many guests since neither you nor the groom have that many friends or family members. There is a lot of congratulations, toasts, merrymaking and crying. By the evening, everybody is drunk and you and your husband stagger into a taxi, which takes you home.'
 
 			act 'Wedding night':gt 'husbsex', 'room'

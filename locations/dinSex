@@ -39,9 +39,9 @@ $dinrandswallow = {
 
 $venerasiak = {
 	tipvenerarand = rand(0, 10)
-	if protect = 1:venrand = rand(0, 1000)
-	if venrand = 1000:
-		dynamic $veneradinitog
+	if protect = 1:
+		venrand = rand(0, 1000)
+		if venrand = 1000: dynamic $veneradinitog
 	else
 		venrand = rand(0, 100)
 		if venrand >= 80:dynamic $veneradinitog
@@ -50,9 +50,9 @@ $venerasiak = {
 
 $venerasiakOral = {
 	tipvenerarand = rand(0, 10)
-	if protect = 1:venrand = rand(0, 1000)
-	if venrand = 1000:
-		dynamic $veneradinitogOral
+	if protect = 1:
+		venrand = rand(0, 1000)
+		if venrand = 1000: dynamic $veneradinitogOral
 	else
 		venrand = rand(0, 100)
 		if venrand >= 80:dynamic $veneradinitogOral

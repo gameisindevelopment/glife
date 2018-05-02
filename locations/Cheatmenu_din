@@ -1402,6 +1402,14 @@ $cheatmenu['display'] = {
 		pl'Always show face: <a href="exec:Enable_faceturn = 1 & dynamic $cheatmenu[''display'']">OFF</a>'
 	end
 	nl
+	if disable_LoadSave = 0:
+		pl'Save/Load Buttons: <a href="exec:disable_LoadSave = 2 & dynamic $cheatmenu[''display'']">Currently Image</a>'
+	elseif disable_LoadSave = 2:
+		pl'Save/Load Buttons: <a href="exec:disable_LoadSave = 1 & dynamic $cheatmenu[''display'']">Currently Text</a>'
+	elseif disable_LoadSave = 1:
+		pl'Save/Load Buttons: <a href="exec:disable_LoadSave = 0 & dynamic $cheatmenu[''display'']">Currently Off</a>'
+	end
+	nl
 	if Enable_tablemap = 1:
 		pl'List friends in table: <a href="exec:Enable_tablemap = 0 & dynamic $cheatmenu[''display'']">ON</a>'
 	else
