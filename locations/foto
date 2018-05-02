@@ -155,16 +155,18 @@ if $ARGS[0] = 'studio':
 	end
 	if model = 0:
 		act 'Leave':
-			minut += 5
+			minut += 1
 			gt 'down'
 		end
 	end
 
 	if parkblackmail = 2:
 		act 'Look around for the blackmailer':gt 'foto', 'blackm'
-	elseif model = 0:
+	end
+	if model = 0:
 		act 'Ask about working as a glamor model':
-			cla
+			cla & *clr
+			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
 			minut += 5
 			if vidage >= 40:
 				'	You ask about working as a model, but the photographer says to you, "I''m sorry, but you look like a pretty mature woman, we need models with a more youthful appearance." This is his way of telling you that you look too old for this business.'
@@ -200,7 +202,14 @@ if $ARGS[0] = 'studio':
 					end
 				else
 					'	"Yup, I''ve got it right here."'
-					'	You hand over your fake passport and he inspects it, comparing it to something on his screen and occasionally clacking on his keyboard. You feel nervous that he might be looking for discrepancies and find out it''s fake before you realize he''s just copying the information into the computer. Probably for employee records or something like that.'
+					'	You hand over your fake passport and he inspects it, comparing it to something on his screen and occasionally clacking on his keyboard. You feel nervous that he might be looking for discrepancies and find out it''s fake before you realize he''s looking back and forth because he''s copying the information into the computer. Probably for employee records or something like that. Then he smirks at you, chuckling to himself as he continues to type. You pale when you realize that he knows the passport is fake. Despite this, he doesn''t make any remarks and finishes his typing.'
+					*nl
+					'	"Alright, your info''s in the database and you''re now registered as one of our models. Head to the back to undress. When you''re ready, speak to a photographer about work. We work on freelance basis. For our lower level models, we can really only afford to pay you for coming in once a week, but you can still come in any time if you want to get some practice to work on your modelling skills. Those photos will be ours to keep and use, but it will help you to build your portfolio. If your popularity increases, we might have some special work and extra jobs for you so it''s not just once a week."'
+					'	He hands you back your fake passport, smiling.'
+					'	"Welcome to Aphrodite."'
+					model = 1
+					act'Head to the back':gt'foto','start'
+					act'Leave the studio':gt'down'
 				end
 			elseif fotofakepassport >= 2:
 				'	You walk up to the front desk and find the same man who "interviewed" you previously. He looks up from his computer and recognizing you, he gives you a lewd smile and a knowing look.'
@@ -209,7 +218,7 @@ if $ARGS[0] = 'studio':
 				if fakepassport ! 1:
 					'	"Not yet." He scowls at you.'
 					'	"Then get out and stop wasting our time here."'
-					act'Leave the studio':gt 'down'
+					act'Leave the studio':gt'down'
 				elseif fotofakepassport = 2: 
 					'	"Yup," you smile back, handing him your new fake passport.'
 					'	He takes it from you and begins copying the information onto his computer. As he types he occasionally glances at you, like he can''t wait to see you naked again. Finally, he hits a key on his keyboard with an air of finality and holds up the fake passport one more time to compare the information he just typed in. Satisfied that it has been entered accurately, he nods and clicks a few more times to save the data.'
@@ -221,12 +230,12 @@ if $ARGS[0] = 'studio':
 					'	"Here, take it pervert. Let''s get this over with so I can make some money."'
 					'	He picks it from where it fell onto his desk and begins copying the information onto his computer. As he types he occasionally glances at you, like he can''t wait to see you naked again. You roll your eyes and give him the finger which makes him smile more but at least he goes back to focusing on typing. Finally, he hits a key on his keyboard with an air of finality and holds up the fake passport one more time to compare the information he just typed in. Satisfied that it has been entered accurately, he nods and clicks a few more times to save the data.'
 				end
-				'	"Alright, your info''s in the database and you''re now registered as one of our models. Head to the back to undress and make sure your makeup is set. When you''re ready, speak to a photographer about work. We work on freelance basis. For our lower level models, we can really only afford to pay you for coming in once a week, but you can still come in any time if you want to get some practice to work on your modelling skills. Those photos will be ours to keep and use, but it will help you to build your portfolio. If your popularity increases, we might have some special work and extra jobs for you so it''s not just once a week."'
+				'	"Alright, your info''s in the database and you''re now registered as one of our models. Head to the back to undress. When you''re ready, speak to a photographer about work. We work on freelance basis. For our lower level models, we can really only afford to pay you for coming in once a week, but you can still come in any time if you want to get some practice to work on your modelling skills. Those photos will be ours to keep and use, but it will help you to build your portfolio. If your popularity increases, we might have some special work and extra jobs for you so it''s not just once a week."'
 				'	He hands you back your fake passport, smiling.'
 				'	"Welcome to Aphrodite."'
 				model = 1
-				act'Head to the back':gt 'foto','start'
-				act'Leave the studio':gt 'down'
+				act'Head to the back':gt'foto','start'
+				act'Leave the studio':gt'down'
 			else
 				gt'foto','interview'
 			end
