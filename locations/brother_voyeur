@@ -2341,6 +2341,7 @@ if $ARGS[0] = 'brother_shower_fuck_end':
 	else
 		'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brothershower.jpg"></center>'
 		'	Your teenage fuck session finished and bodies relatively clean -despite your best attempts to undo the effects of your recent washing- the two of you rinse yourselves off one last time to ensure no cum or other suspicious bodily fluids remain.'
+		*nl
 		if brotherfuck = 1 and brothervirginlie = 3:
 			cla
 			'	"Hey <<$pcs_nickname>>. Can I ask you something? I''ve been wondering..."'
@@ -2354,19 +2355,18 @@ if $ARGS[0] = 'brother_shower_fuck_end':
 				'	Kolka shies away at your sudden burst of emotion.'
 				'	"I''m sorry! I jus-"'
 				'	"Just nothing! I can''t believe I just gave my virginity to such an ungrateful brat!"'
-					act'Kick him out to cover up your lie':
-						cla & *clr
-						'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
-						'	Not knowing what else to do, you yank open the shower curtain and shove Kolka towards the door.'
-						'	"Get out."'
-						'	"But I-!"'
-						'	"Out!"'
-						'	Still dripping wet with his clothes in his arms, you shove your brother into the hallway naked. If your parents ask about it, you''ll just tell them he was peeping on you and you sprayed him with the showerhead.'
-						'	Your brother out of the room you lean back onto the door and close your eyes, feeling bad for what you just did. Maybe you shouldn''t have lied to him about that after all...'
-						brother_knows_not_virgin = 1
-						brothervirginlie = 0
-						act'Finish up':mirror_steam = hour & gt $loc
-					end
+				act'Kick him out to cover up your lie':
+					cla & *clr
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
+					'	Not knowing what else to do, you yank open the shower curtain and shove Kolka towards the door.'
+					'	"Get out."'
+					'	"But I-!"'
+					'	"Out!"'
+					'	Still dripping wet with his clothes in his arms, you shove your brother into the hallway naked. If your parents ask about it, you''ll just tell them he was peeping on you and you sprayed him with the showerhead.'
+					'	Your brother out of the room you lean back onto the door and close your eyes, feeling bad for what you just did. Maybe you shouldn''t have lied to him about that after all...'
+					brother_knows_not_virgin = 1
+					brothervirginlie = 0
+					act'Finish up':mirror_steam = hour & gt $loc
 				end
 			else
 				'	"If that was your first time, how come you didn''t have a hymen? Isn''t that supposed to tear the first time a girl has sex? I didn''t feel it when I put my dick inside you."'
