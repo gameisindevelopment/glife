@@ -1,18 +1,5 @@
 # foto_albums
 if $ARGS[0] = 'model_portraits':
-
-	if city_modelling >= 100 and city_modelling < 120: rank = 1
-	if city_modelling >= 120 and city_modelling < 140: rank = 2
-	if city_modelling >= 140 and city_modelling < 160: rank = 3
-	if city_modelling >= 160 and city_modelling < 180: rank = 4
-	if city_modelling >= 180 and city_modelling < 200: rank = 5
-	if city_modelling >= 200 and city_modelling < 220: rank = 6
-	if city_modelling >= 220 and city_modelling < 280: rank = 7
-	if city_modelling >= 280 and city_modelling < 310: rank = 8
-	if city_modelling >= 310 and city_modelling < 350: rank = 9
-	if city_modelling >= 350: rank = 10
-	
-	
 	
 	if rank = 1:gt 'foto_albums','sveta_10'
 	if rank = 2:gt 'foto_albums','sveta_9'
