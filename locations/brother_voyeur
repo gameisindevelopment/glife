@@ -2029,7 +2029,7 @@ if $ARGS[0] = 'brother_fuck_cum':
 		act'Suck him off':
 			cla & *clr
 			gs 'cum_call', 'mouth', 'A34', 1
-			'<center><video src="images/locations/pavlovsk/resident/apartment/home/bathroomshowerbj.mp4"></center>'
+			'<center><video src="images/locations/pavlovsk/resident/apartment/home/bathroom/showerbj.mp4"></center>'
 			'	Moving quickly, you pull yourself off your brother''s cock and kneel down, putting it between your lips. You suck gently on the tip and almost immediately taste hot cum spilling into your mouth.'
 			act'Swallow':
 				cla
