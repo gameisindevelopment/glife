@@ -124,7 +124,7 @@ else
 	'<<$gcartext>>'
 end
 
-if StoryLine = 1: 'An <a href="exec:minut += 2 & GT ''pavSharedApt'',''hallway''">old apartment building</a> near to where your parents live.'
+if StoryLine = 1: 'An <a href="exec:minut += 2 & GT ''pavComplexOld'',''etaj_1''">old apartment building</a> near to where your parents live.'
 
 if rexCar = 1 and rexCarDay = daystart and hour >= 21 and hour < 23 and rexSisTalk = 3:
 	'Rex is in his car, waiting for you at the parking lot near the apartment building where your parents live.'

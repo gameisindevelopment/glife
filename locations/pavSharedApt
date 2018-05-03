@@ -166,67 +166,29 @@ if $ARGS[0] = 'update':
 	! end
 end
 
-! apt house entry hallway
-if $ARGS[0] = 'hallway':
-	minut += 2
-	'<center><h3>old apartment building</h3></center>'
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptHallway.jpg"></center>'
-	''
-	'An old, common russian apartment house, lacking lots of years of repairs and maintenance.'
-	'The entry doors are left unlocked and even if they werent, they look like fall apart any moment.'
-	
-	act 'Take the elevator':
-		*clr & cla
-		minut +=1
-		gs 'stat'
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/stairs/liftnotwork.jpg"></center>'
-		'The building supervisor put a sign on the elevator: "Dear tenants, the elevator is out of order for today. Don''t worry, I should have it working again by tomorrow!". Unfortunately, that sign has been there for years.'
-		act 'Leave': gt 'pavSharedApt', 'hallway'
-	end
-	
-	act 'Go up to the second floor':
-		*clr & cla
-		minut +=1
-		gs 'stat'
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/stairs/brokenstairs.jpg"></center>'
-		'The stairs are as rundown as the rest of the apartment building.Thankfully there is no one I want to see on the floor above.'
-		act 'Turn back': gt 'pavSharedApt', 'hallway'
-	end
-
-	if pavSharedAptEnabled = 0:
-		'Inside is a board with announcements for the tenants. One of them seems as an <a href="exec:gt ''pavSharedApt'', ''advert''">advert</a>.'
-	else
-		'Inside is a board with announcements for the tenants. Nothing new there.'
-		act 'Go to door number 3': gt 'pavSharedApt', 'doorNo3'
-	end
-	if seenAd = 1:
-		act 'Go to door number 3': gt 'pavSharedApt', 'doorNo3'
-	end
-	act 'Leave the building':gt 'pavResidential'
-end
-
 ! accomodation advert
-if $ARGS[0] = 'advert':
+if $ARGS[0] = 'advertNo30':
 	minut += 2
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/board.jpg"></center>'
-	''
-	'Three young people offer a spare room in a shared apartment in this house.'
-	'If you are interested, come see us in the apartment No 3.'
 	seenAd = 1
-	act 'Continue':gt 'pavSharedApt', 'hallway'
+	gs 'stat'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptNo3Door.jpg"></center>'
+	'<br>As you pass by one of the apartments, you notice a sign stuck on the door - "сдаeтся в аренду комната" (Room for rent!).'
+	act 'Check it out':gt 'pavSharedApt', 'doorNo30'
+	act 'Go back':gt 'pavComplexb3', 'etaj_4'
 end
 
-! door No 3
-if $ARGS[0] = 'doorNo3':
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptNo3Door.jpg"></center>'
-	''
-	'You stand before the entry door to apartment No 3.'
+! door No 3 - shared
+if $ARGS[0] = 'doorNo30':
 	if pavSharedAptEnabled = 1:
+		'<center><img <<$set_imgh>> src="images/locations/shared/apartment/podezdhr.jpg"></center>'
+		'<br>You stand before the entry door to apartment No 30. The apartment you share with three others'
 		act 'Go inside':gt 'pavSharedApt', 'start'
 	else
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/aptNo3Door.jpg"></center>'
+		'<br>You stand before the entry door to apartment No 30. There is a sign on the door saying - "сдаeтся в аренду комната" (Room for rent).'
 		act 'Ring the bell':gt 'pavSharedApt', 'intro'
 	end
-	act 'Go back':gt 'pavSharedApt', 'hallway'
+	act 'Go back':gt 'pavComplexb3', 'etaj_4'
 end
 
 ! apt hall
@@ -239,6 +201,7 @@ if $ARGS[0] = 'start':
 	gs 'pavSharedApt', 'update'
 	if introDone = 0:gt 'pavSharedApt', 'intro'
 	minut += 2
+	gs 'stat'
 
 	! do this once a day
 	if daystart >= tomorrow:
@@ -307,30 +270,45 @@ if $ARGS[0] = 'start':
 		'From the hallway several doors lead to <a href="exec:gt ''pavSharedApt'', ''ndRoom''"><<$nd_name>>''s</a>, <a href="exec:gt ''pavSharedApt'', ''gpRoom''"><<$gp_name>>''s</a> and <a href="exec:gt ''pavSharedApt'', ''spRoom''"><<$sp_name>>''s</a> rooms.'
 		'The last doors lead to the <a href="exec:gt ''pavSharedApt'', ''pcsRoom''">room</a> you have rented.'
 		''
-		'There are several closets for your <a href="exec:gt''shoes'',''view_shoe_list''">shoes</a> and a large tall <a href="exec:gt ''mirror'', ''start''">mirror</a>.'
+		'There are several <a href="exec:gt ''wardrobe'', ''start''">closets</a>, that you can use to <a href="exec:gt ''clothing'', ''view_clothing_list'', ''wardrobe''">store your clothes</a>, and a large tall <a href="exec:gt ''mirror'', ''start''">mirror</a>.'
+		''
 		if servitudeLvl >= 1:'A computer printed <a href="exec:gt ''pavSharedApt'', ''list''">list</a> hangs on the exit door.'
-		act 'Your room':gt 'pavSharedApt', 'pcsRoom'
+		act 'Living room (your room)':gt 'pavSharedApt', 'pcsRoom'
 		act 'Bathroom':gt 'pavSharedApt', 'bathroom'
 		act 'Kitchen':gt 'pavSharedApt', 'kitchen'
-		act 'Living Room':gt 'pavSharedApt', 'livingRoom'
+		act '<font color=#<<$nd_font>>><<$nd_name>>''s room</font>':gt 'pavSharedApt', 'ndRoom'
+		act '<font color=#<<$gp_font>>><<$gp_name>>''s room</font>':gt 'pavSharedApt', 'gpRoom'
+		act '<font color=#<<$sp_font>>><<$sp_name>>''s room</font>':gt 'pavSharedApt', 'spRoom'
 	end
 
-	! if kid > 0:
-		! *clr & cla
-		! step = 0
-		! introDone = 0
-		! minut = 5
-		! !Need to have some actual story to this with NPC reactions. 
-		! '<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/dimka/revenge/crying.jpg"></center>'
-		! 'You''ve been kicked out of the apartment due to having children'
-		! pavSharedAptEnabled = 0
-		! act 'Leave':gt 'pavSharedApt', 'hallway'
-	! end
+	if home_owned[2] = 0 and kid > 0:
+		*clr & cla
+		pavIntroStep = 0
+		introDone = 0
+		minut = 5
+		!Need to have some actual story to this with NPC reactions. 
+		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/dimka/revenge/crying.jpg"></center>'
+		'You''ve been kicked out of the apartment due to having children.'
+		pavSharedAptEnabled = 0
+		act 'Leave':gt 'pavComplexb3', 'etaj_4'
+	end
 
-	if $clothingworntype = 'nude':
-		'<b>You cannot leave the apartment naked.</b>'
-	else
-		act 'Leave':gt 'pavSharedApt', 'hallway'
+	act '<font color = maroon>Leave and go to the stairwell.</font>':
+		if $clothingworntype ! 'nude':
+			gt 'pavComplexb3', 'etaj_4'
+		else
+			msg'<b><font color = red>You need to get dressed.</font></b>'
+			gt 'pavSharedApt', 'start'
+		end
+	end
+
+	act '<font color = maroon><b>Leave and go outside</b></font>':
+		if $clothingworntype ! 'nude':
+			gt 'pavResidential'
+		else
+			msg'<b><font color = red>You need to get dressed.</font></b>'
+			gt 'pavSharedApt', 'start'
+		end
 	end
 end
 
@@ -372,9 +350,9 @@ if $ARGS[0] = 'intro':
 		''
 	end
 
-	if step = 0:
+	if pavIntroStep = 0:
 		minut += 2
-		step = 1
+		pavIntroStep = 1
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
 		''
 		'The door are opened by a young, nice looking athletic man.'
@@ -382,9 +360,9 @@ if $ARGS[0] = 'intro':
 		'<font color=#<<$pcs_font>>>"Hello, my name is <<$pcs_firstname>> <<$pcs_lastname>>. I''ve seen the advert that someone here have a spare room for rent?"</font>'
 		'<font color=#<<$sp_font>>>"Yeah, that''s true. Come in, I''ll call the guys and we can talk about it. I''m <<$sp_name>> by the way."</font>'
 		act 'Go in':gt 'pavSharedApt', 'intro'
-	elseif step = 1:
+	elseif pavIntroStep = 1:
 		minut += 3
-		step = 2
+		pavIntroStep = 2
 		'You go through the door in a hallway. By the amount of coats and shoes you guess there are about 3 or 4 people living here.'
 		'The guy disappears in one of the doors and you can hear talking him to someone.'
 		'They seem to be trying to talk quietly, but you can hear a sentence or two..:'
@@ -406,15 +384,26 @@ if $ARGS[0] = 'intro':
 		if age < 18:
 			'(You can see <<$gp_name>> rub his crotch just a brief moment after you told him your age. What''s he up to?)'
 		end
-		! if kid > 0:
-			! '<font color=#<<$pcs_font>>>"How you feel about having children here, as I''m a single mother; will this be a problem?"</font>'
-			! act 'Continue':step = 50 & gt 'pavSharedApt', 'intro'
-		! else
+		if pregknown = 1:
+			act 'Ask about children':
+				cla
+				pavIntroStep = 50
+				'<font color=#<<$pcs_font>>>"I thought I should tell you, I''m currently pregnant. How you feel about having children in the apartment, will this be a problem?"</font>'
+				act 'continue':gt 'pavSharedApt', 'intro'
+			end
+		elseif kid > 0:
+			act 'Ask about children':
+				cla
+				pavIntroStep = 50
+				'<font color=#<<$pcs_font>>>"I thought I should tell, I''m mother. How you feel about having children in the apartment, will this be a problem?"</font>'
+				act 'continue':gt 'pavSharedApt', 'intro'
+			end
+		else
 			act 'Continue':gt 'pavSharedApt', 'intro'
-		! end
-	elseif step = 2:
+		end
+	elseif pavIntroStep = 2:
 		minut += 3
-		step = 3
+		pavIntroStep = 3
 		'<font color=#<<$pcs_font>>>"So what do you guys say, will you take me in?"</font>'
 		'<font color=#<<$nd_font>>>"We may. But first, do you have the money to pay the rent?"</font>'
 		'<font color=#<<$pcs_font>>>"Well, of course I don''t expect to let me live here for free. But I hope the rent is reasonable.."</font>'
@@ -430,7 +419,7 @@ if $ARGS[0] = 'intro':
 		'<font color=#<<$gp_font>>>"And more."</font>'
 		'<font color=#<<$nd_font>>>"Oh my... I give up."</font>'
 		act 'More what?':gt 'pavSharedApt', 'intro'
-	elseif step = 3:
+	elseif pavIntroStep = 3:
 		minut += 3
 		'<font color=#<<$gp_font>>>"More services."</font>'
 		'<font color=#<<$pcs_font>>>"What kind of ''more services''?"</font>'
@@ -439,62 +428,88 @@ if $ARGS[0] = 'intro':
 		'<font color=#<<$nd_font>>>"Please <<$pcs_firstname>>, don''t get mad. <<$gp_name>> is not just idiot, he is a rude idiot. We are definitely not asking you to be our whore or something like that."</font>'
 		'<font color=#<<$nd_font>>>"As <<$sp_name>> told you, we could decrease your rent if you would do some homekeeping stuff we really suck at. But only if you want, of course."</font>'
 		'<font color=#<<$sp_font>>>"So what do you say <<$pcs_firstname>>?"</font>'
-		act 'Say you will pay the rent the normal way':pavSharedAptEnabled = 1 & step = 10 & gt 'pavSharedApt', 'intro'
-		act 'Say you don''t mind doing the homekeeping stuff':pavSharedAptEnabled = 1 & step = 20 & gt 'pavSharedApt', 'intro'
-		act 'Say you don''t mind anything':pavSharedAptEnabled = 1 & step = 30 & gt 'pavSharedApt', 'intro'
-		act 'Say that you changed your mind about this':step = 40 & gt 'pavSharedApt', 'intro'
-	elseif step = 10:
+		act 'Say you will pay the rent the normal way':pavSharedAptEnabled = 1 & pavIntroStep = 10 & gt 'pavSharedApt', 'intro'
+		act 'Say you don''t mind doing the homekeeping stuff':pavSharedAptEnabled = 1 & pavIntroStep = 20 & gt 'pavSharedApt', 'intro'
+		act 'Say you don''t mind anything':pavSharedAptEnabled = 1 & pavIntroStep = 30 & gt 'pavSharedApt', 'intro'
+		act 'Say that you changed your mind about this':pavIntroStep = 40 & gt 'pavSharedApt', 'intro'
+	elseif pavIntroStep = 10:
 		minut += 2
 		'<font color=#<<$sp_font>>>"Fine. So the rest of this week you have for free, but you need to prepay the next week. OK?"</font>'
 		'<font color=#<<$pcs_font>>>"Yes, OK, I understand."</font>'
-		'<font color=#<<$sp_font>>>"So the room is over there. There is all you need, a bed, a table with chair, all this stuff. Just move in when you want. See you later <<$pcs_firstname>>!"</font>'
+		'<font color=#<<$sp_font>>>"So the room is over there.</font>'
+		'<font color=#<<$pcs_font>>>"Wait, Isn''t that the living room?"</font>'
+		'<font color=#<<$sp_font>>>"Yes it is, but we don''t use it, so we are renting it out. There is all you need, a bed, a table with chair, all this stuff, we even put a curtain over the doorway. Just move in when you want. See you later <<$pcs_firstname>>!"</font>'
 		'<font color=#<<$nd_font>>>"Have a nice day <<$pcs_firstname>>."</font>'
 		'<font color=#<<$gp_font>>>"See ya later girlie..."</font>'
 		'<font color=#<<$pcs_font>>>"Later guys!"</font>'
 		servitudeLvl = 0
-		act 'Continue':step = 0 & gt 'pavSharedApt', 'rentSetup'
-	elseif step = 20:
+		act 'Continue':pavIntroStep = 0 & gt 'pavSharedApt', 'rentSetup'
+	elseif pavIntroStep = 20:
 		minut += 2
 		'<font color=#<<$sp_font>>>"Fine. So the rest of this week you have for free, but you need to prepay the next week. OK?"</font>'
 		'<font color=#<<$pcs_font>>>"Yes, OK, I understand."</font>'
 		'<font color=#<<$nd_font>>>"We will pepare a list of the charges for the homekeeping services you may want to do, so it''s clear how much will be deducted form your rent."</font>'
 		'<font color=#<<$pcs_font>>>"Cool!"</font>'
-		'<font color=#<<$sp_font>>>"So the room is over there. There is all you need, a bed, a table with chair, all this stuff. Just move in when you want. See you later <<$pcs_firstname>>!"</font>'
+		'<font color=#<<$sp_font>>>"So the room is over there.</font>'
+		'<font color=#<<$pcs_font>>>"Wait, Isn''t that the living room?"</font>'
+		'<font color=#<<$sp_font>>>"Yes it is, but we don''t use it, so we are renting it out. There is all you need, a bed, a table with chair, all this stuff, we even put a curtain over the doorway. Just move in when you want. See you later <<$pcs_firstname>>!"</font>'
 		'<font color=#<<$nd_font>>>"Have a nice day <<$pcs_firstname>>."</font>'
 		'<font color=#<<$gp_font>>>"See ya later girlie..."</font>'
 		'<font color=#<<$pcs_font>>>"Later guys!"</font>'
 		servitudeLvl = 1
-		act 'Continue':step = 0 & gt 'pavSharedApt', 'rentSetup'
-	elseif step = 30:
+		act 'Continue':pavIntroStep = 0 & gt 'pavSharedApt', 'rentSetup'
+	elseif pavIntroStep = 30:
 		minut += 2
 		'<font color=#<<$sp_font>>>"Fine. So the rest of this week you have for free, but you need to prepay the next week. OK?"</font>'
 		'<font color=#<<$pcs_font>>>"Yes, OK, I understand."</font>'
 		'<font color=#<<$nd_font>>>"We will pepare a list of the charges for the homekeeping services you may want to do, so it''s clear how much will be deducted form your rent."</font>'
 		'<font color=#<<$gp_font>>>"The extra stuff services will be there too, girl."</font>'
 		'<font color=#<<$pcs_font>>>"OK.."</font>'
-		'<font color=#<<$sp_font>>>"So the room is over there. There is all you need, a bed, a table with chair, all this stuff. Just move in when you want. See you later <<$pcs_firstname>>!"</font>'
+		'<font color=#<<$sp_font>>>"So the room is over there.</font>'
+		'<font color=#<<$pcs_font>>>"Wait, Isn''t that the living room?"</font>'
+		'<font color=#<<$sp_font>>>"Yes it is, but we don''t use it, so we are renting it out. There is all you need, a bed, a table with chair, all this stuff. Just move in when you want, we even put a curtain over the doorway. See you later <<$pcs_firstname>>!"</font>'
 		'<font color=#<<$nd_font>>>"Have a nice day <<$pcs_firstname>>."</font>'
 		'<font color=#<<$gp_font>>>"See ya later girlie..."</font>'
 		'<font color=#<<$pcs_font>>>"Later guys!"</font>'
 		servitudeLvl = 2
-		act 'Continue':step = 0 & gt 'pavSharedApt', 'rentSetup'
-	elseif step = 40:
+		act 'Continue':pavIntroStep = 0 & gt 'pavSharedApt', 'rentSetup'
+	elseif pavIntroStep = 40:
 		minut += 2
 		'<font color=#<<$nd_font>>>"I told you idiot not to scare her away!"</font>'
 		'<font color=#<<$gp_font>>>"Sorry man! We can still lock her to the radiator like I suggested in the first place.."</font>'
 		'<font color=#<<$nd_font>>>"Just shut up already!"</font>'
 		''
 		'<font color=#<<$sp_font>>>"Sorry <<$pcs_firstname>>. We respect your decision. If you change your mind and room is still empty, let us know and we can talk again. Goodbye!"</font>'
-		act 'Tell them goodbye and leave':step = 0 & gt 'pavSharedApt', 'hallway'
-	elseif step = 50:
+		act 'Tell them goodbye and leave':pavIntroStep = 0 & gt 'pavComplexb3', 'etaj_4'
+	elseif pavIntroStep = 50:
 		minut += 2
 		!add dialogue for returning after being previously expelled from apartment
 		'<font color=#<<$nd_font>>>"I''m sorry <<$pcs_firstname>>, but we don''t want children or pets in the apartment!"</font>'
-		'<font color=#<<$pcs_font>>>"OK, I understand."</font>'
 		'<font color=#<<$gp_font>>>"If you get rid of the kid, come back and see us."</font>'
 		'<font color=#<<$sp_font>>>"Don''t mind him. There''s simply not enough room for 4 people, plus kids or pets. I hope you understand"</font>'
-		'<font color=#<<$gp_font>>>"Seeya <<$pcs_firstname>>."</font>'
-		act 'Thank them and leave':step = 0 & gt 'pavSharedApt', 'hallway'
+		if home_owned[2] = 1:
+			act 'Suggest a compromise':
+				cla
+				pavIntroStep = 2
+				'<font color=#<<$pcs_font>>>"I can leave them with my parents for the time being, and keep them away from the apartment, how does this sound?'
+				'<font color=#<<$sp_font>>>"Are you certain you want to do this?"</font>'
+				'<font color=#<<$gp_font>>>"Sounds good to me!"</font>'
+				'<font color=#<<$nd_font>>>"hmmmm"</font>'
+				act 'Continue':gt 'pavSharedApt', 'intro'
+			end
+			act 'I wont leave my children':
+				cla
+				pavIntroStep = 0
+				'<font color=#<<$pcs_font>>>"OK, I will make do with my current accomodation.'
+				'<font color=#<<$sp_font>>>"We understand"</font>'
+				'<font color=#<<$gp_font>>>"Damn"</font>'
+				'<font color=#<<$nd_font>>>"No problem <<$pcs_firstname>>"</font>'
+				act 'Continue':gt 'pavSharedApt', 'intro'
+			end
+		else
+			'<font color=#<<$pcs_font>>>OK, I understand.</font>'
+			act 'Thank them and leave':pavIntroStep = 0 & gt 'pavComplexb3', 'etaj_4'
+		end
 	end
 end
 
@@ -539,60 +554,6 @@ if $ARGS[0] = 'payRent':
 	money -= paid_rent
 	gs 'stat'
 	act 'Continue': gs 'pavSharedApt', 'start'
-end
-
-! living room
-if $ARGS[0] = 'livingRoom':
-	$location_type = 'private'
-	$locclass = 'sitroom'
-	$loc = 'pavSharedApt'
-	$metka = 'livingRoom'
-	clr
-	minut += 1
-	gs 'stat'
-	'<center><b><font color="maroon">Living Room</font></b></center>'
-	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/sitr.jpg"></center>'
-	'The sitting room is rather sparsly decorated. An old sofa sits against the wall, some crates for tables, and an empty TV cabinet. It''s unlikely anyone will bother buying a TV, as they spend all their time in their own rooms.'
-	
-	act 'An old sofa':
-		*clr & cla
-		gs 'stat'
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/shulginhome/sdivan.jpg"></center>'
-		'<center>A small sofa just big enough for you to curl up on and take a nap./center>'
-		
-		if pornMagazine > 0:'<br>There is a porn magazine stuffed between the sofa cushions'
-		
-		gs 'events', 'read_porn'
-		gs 'events', 'read'
-
-		if pcs_horny >= 50:
-			act 'Masturbate':gt 'selfplay', 'start'
-		end
-
-		act 'Take a nap (1:00)':
-			if pcs_sleep < 90:
-				pcs_sleep += 10
-				pcs_health += 5
-				minut += 60
-				gs 'stat'
-				'You sleep about an hour.'
-			else
-				minut += 5
-				gs 'stat'
-				'You are not tired enough to sleep, even for a short nap.'
-			end
-		end
-	act 'Get up':gt 'pavSharedApt', 'livingRoom'
-	end
-
-	if obruch > 0: '<br>A hula hoop stands in corner of the room. '
-	if skak > 0: 'A jump rope is on a shelf. '
-	if bookYog > 0: 'A yoga mat is rolled up in a corner. '
-	
-	gs 'exercise', 'start'
-	!gs'subkid'
-	
-	act 'Back to the hall': gt 'pavSharedApt', 'start'
 end
 
 if $ARGS[0] = 'bathroom':
@@ -848,6 +809,7 @@ if $ARGS[0] = 'cleanForGuys':
 	act 'Hang them to dry out and leave':gt 'pavSharedApt', 'payService'
 end
 
+! living room & pc bedroom
 if $ARGS[0] = 'pcsRoom':
 	$loc = 'pavSharedApt'
 	$metka = 'pcsRoom'
@@ -857,22 +819,64 @@ if $ARGS[0] = 'pcsRoom':
 	gs 'stat'
 	gs 'pavSharedApt', 'update'
 
-	'<center><h3><<$pcs_firstname>>''s bedroom</h3></center>'
-	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/bedr.jpg"></center>'
-	'A tight, little room with a <a href="exec:gt ''bed'', ''start''">double bed</a> and an <a href="exec:gt ''budilnik'', ''start''">alarm clock</a>.'
-	'An old wooden <a href="exec:gt ''wardrobe'', ''start''">wardrobe</a> (where you can <a href="exec:gt ''clothing'', ''view_clothing_list'', ''wardrobe''">organize your clothes</a>) stands near the door to the corridor, on top of it there''s a <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcase</a> you can store some clothes in. The windows are closed with faded, heavy curtains.'
-
+	'<center><b><font color="maroon">Living Room</font></b></center>'
+	'<center><img <<$set_imgh>> src="images/shared/home/bedroom/sofabed.jpg"></center>'
+	''
+	'The living room wasn''t in use by the other apartment occupants, so it is now rented to use as a bedroom. It''s sparsly decorated, with, a <a href="exec:gt ''bed'', ''start''">sofabed</a>, against the back wall.'
+	''
+	'Beside the sofabed, is an old cabinet, with your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> on top.'
 	if budilnikOn = 0:
 		'Your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> is set for <<timer>> hours <<timerM>> minutes and currently turned <a href="exec: budilnikOn = 1 & GT ''pavSharedApt'',''pcsRoom''">off</a>.'
 	else
 		'Your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> is set for <<timer>> hours <<timerM>> minutes and currently turned <a href="exec: budilnikOn = 0 & GT ''pavSharedApt'',''pcsRoom''">on</a>.'
+	end 
+	''
+	if TV = 0:$TV = 'a great place for a TV, if you had one.'
+	if TV = 1:$TV = 'an old CRT <a href="exec:gt ''TV'', ''start''">TV</a> sits on the shelf'
+	'There is an wall unit at the other side of the room, <<$TV>>. Everyone in the household spends their time in their own rooms, so there was never a reason to use the living room for its intended purpose.'
+	''
+	'On the other side of the sofabed are your old <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcases</a>, which you could use to store the clothes you don''t often wear.'
+	''
+	'There is no door to the living room, instead there''s <a href="exec:view''images/shared/home/bedroom/curtain.jpg''">curtain</a> covering entry to the room, which gives you a modicum of privacy; not much better than the state of the non-existant window curtains'
+
+	act 'Sit on the sofabed':
+		*clr & cla
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/shulginhome/sdivan.jpg"></center>'
+		'<center>A small sofabed, when not unfolded, is just big enough for you to curl up on and take a nap./center>'
+		
+		if pornMagazine > 0:'<br>There is a porn magazine under the sofa cushions'
+		
+		gs 'events', 'read_porn'
+		gs 'events', 'read'
+
+		if pcs_horny >= 50:
+			act 'Masturbate':gt 'selfplay', 'start'
+		end
+
+		act 'Take a nap (1:00)':
+			if pcs_sleep < 90:
+				pcs_sleep += 10
+				pcs_health += 5
+				minut += 60
+				gs 'stat'
+				'You sleep about an hour.'
+			else
+				minut += 5
+				gs 'stat'
+				'You are not tired enough to sleep, even for a short nap.'
+			end
+		end
+	act 'Get up':gt 'pavSharedApt', 'pcsRoom'
 	end
 
-	if pornMagazine > 0:'Under your mattress you hide a porn magazine.'
-
-	if komp = 1:'Your <a href="exec:gorodokKomp = 1 & GT ''Komp'',''start''">laptop</a> is on your desk.'
-
-	act 'Leave your room':gt 'pavSharedApt', 'start'
+	if obruch > 0: '<br>A hula hoop stands in corner of the room. '
+	if skak > 0: 'A jump rope is on a shelf. '
+	if bookYog > 0: 'A yoga mat is rolled up in a corner. '
+	gs 'exercise', 'start'
+	''
+	
+	if komp = 1:'Your <a href="exec:gorodokKomp = 1 & GT ''Komp'',''start''">laptop</a> is sitting on small table.'
 
 	if student > 0 and kursovik < 100:
 		act 'Do coursework (1:00)':
@@ -885,17 +889,11 @@ if $ARGS[0] = 'pcsRoom':
 
 			pcs_mood -= 10
 			'<center><img <<$set_imgh>> src="images/pc/activities/study.jpg"></center>'
-			'You sit down at the desk and do your coursework, you''ve finished <<kursovik>> percent of it.'
+			'You sit down on the sofabed and do your coursework, you''ve finished <<kursovik>> percent of it.'
 
-			act 'Leave your desk':gt 'pavSharedApt', 'start'
+			act 'Stand up':gt 'pavSharedApt', 'pcsRoom'
 		end
 	end
-
-	if pcs_horny >= 50:
-		act 'Masturbate':gt 'selfplay', 'start'
-	end
-	
-	gs 'events', 'read_porn'
 
 	if vcard > 0:
 		act 'Look at your deck of vintage porn cards':card_deck = 0 & gt 'card'
@@ -904,7 +902,7 @@ if $ARGS[0] = 'pcsRoom':
 		act 'Look at your deck of new porn cards':card_deck = 1 & gt 'card'
 	end
 
-	if dur > 0:'You have hidden <<dur>> doses of Pale Lady.'
+	if dur > 0:'You have <<dur>> doses of Pale Lady, hidden from the other housemates.'
 
 	if dur > 0 and narkday ! daystart:
 		act 'Use some Pale Lady (0:05)':
@@ -921,7 +919,7 @@ if $ARGS[0] = 'pcsRoom':
 			'<center><img <<$set_imgh>> src="images/shared/drugs/dur.jpg"></center>'
 			'You snort some Pale Lady, feeling dizzy for just a moment. After that you feel fantastic, and incredibly horny.'
 
-			act 'Continue':gt 'pavSharedApt', 'start'
+			act 'Continue':gt 'pavSharedApt', 'pcsRoom'
 		end
 	end
 
@@ -937,7 +935,7 @@ if $ARGS[0] = 'pcsRoom':
 				minut += 15
 				gs'stat'
 				'You spend 15 minutes at the embroidery frame, preparing the fabric and outlining the pattern for the tapestry.'
-				act'Set the tapestry aside':gt 'pavSharedApt', 'start'
+				act'Set the tapestry aside':gt 'pavSharedApt', 'pcsRoom'
 			end
 		end
 		if newgobelen>=1:
@@ -956,22 +954,25 @@ if $ARGS[0] = 'pcsRoom':
 					gobelen += 1
 					'Your work on the tapestry is done.'
 				end
-				act'Set the tapestry aside':gt 'pavSharedApt', 'start'
+				act'Set the tapestry aside':gt 'pavSharedApt', 'pcsRoom'
 			end
 		end
 	end
 
 	if tabletki > 0 and prezik + prezikcount + preziksabo > 0:
-		'Your <a href="exec:gt ''stol'', ''bc''">birth control</a> is hidden in one of your desk drawers, as are your <a href="exec:gt ''stol'', ''bc''">condoms</a>.'
+		'Your <a href="exec:gt ''stol'', ''bc''">birth control</a> tablets are in the cabinet next to your bed, along with some <a href="exec:gt ''stol'', ''bc''">condoms</a>.'
 	elseif tabletki > 0:
-		'Your <a href="exec:gt ''stol'', ''bc''">birth control</a> is hidden in one of your desk drawers.'
+		'Your <a href="exec:gt ''stol'', ''bc''">birth control</a> tablets are in the cabinet next to your bed.'
 	elseif prezik + prezikcount + preziksabo > 0:
-		'Your <a href="exec:gt ''stol'', ''bc''">condoms</a> are hidden in one of your desk drawers.'
+		'Your <a href="exec:gt ''stol'', ''bc''">condoms</a> are in the cabinet next to your bed.'
 	end
-
+	''
+	if sewing_kit = 1:
+		'Your <a href="exec:gt ''sewing'',''start''">sewing kit</a> is stored on a shelf.'
+	end
+	
 	if tovarL > 0:'You currently have <<tovarL>> trinkets to sell at the station. The maximum you can carry with you is 30.'
 
-	gs 'exercise', 'start'
 	dynamic $wearpan
 	dynamic $removepan
 	!gs 'subkid'
@@ -999,6 +1000,7 @@ if $ARGS[0] = 'pcsRoom':
 			end
 		end
 	end
+	act 'Leave the room':gt 'pavSharedApt', 'start'
 end
 
 if $ARGS[0] = 'ndRoom':
