@@ -31,10 +31,10 @@ $housemates = {
 	minut +=1
 	gs 'stat'
 	 '<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/stairs/housemates.jpg"></center>'
-	'Floor 1 - Apartment number'
+	'Floor 1 - Apartment number 1: Rolan Matveev'
 	'Floor 2 - Apartment number'
 	'Floor 3 - Apartment number'
-	'Floor 4 - Apartment number'
+	'Floor 4 - Apartment number 30: Shared'
 	'Floor 5 - Apartment number'
 	act 'Leave': gt 'pavComplexb3', 'etaj_1'
 }
@@ -92,6 +92,11 @@ if $ARGS[0] = 'etaj_4':
 	'<center>4th floor of the apartment building</center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/stairs/etaj4.jpg"></center>'
 	'<center>The fourth floor stairwell was renovated not long ago, but some hoodlums already sprayed graffiti on the walls.</center>'
+	if seenAd = 0:
+		gt 'pavSharedApt', 'advertNo30'
+	else:
+		act 'Go to door number 30': gt 'pavSharedApt', 'doorNo30'
+	end
 	act 'Go down to the third floor': gt 'pavComplexb3','etaj_3'
 	act 'Go up to the fifth floor': gt 'pavComplexb3','etaj_5'
 	act 'Take the elevator': gt 'pavComplexb3','lift','etaj_4'
