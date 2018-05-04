@@ -34,8 +34,8 @@ if $ARGS[0] = 'buy':
 	end
 
 	if home_owned[3] = 0:
-		'There is a holiday cottage with an adjacent allotment in the village, for 75 thousand <b>₽</b>.'
-		if karta + bankDebtLimit >= 75000:act 'Buy the cottage in the village': gt 'agentned','buy_dacha'
+		'There is a holiday cottage with an adjacent allotment in the village, for 150,000 <b>₽</b>.'
+		if karta + bankDebtLimit >= 150000:act 'Buy the cottage in the village': gt 'agentned','buy_dacha'
 	end
 
 	if home_owned[5] = 0:
@@ -56,7 +56,7 @@ if $ARGS[0] = 'sell':
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo_paperwork.jpg"></center>'
-	'You spend half an hour filling in the paperwork for the sale of your apartment in the residential area. 1 000 0000 <b>₽</b> have been paid into your bank account.'
+	'You spend half an hour filling in the paperwork for the sale of your apartment in the residential area. 1,000,0000 <b>₽</b> have been paid into your bank account.'
 
 	act 'Return':gt'agentned', 'start'
 end
@@ -68,8 +68,8 @@ if $ARGS[0] = 'rent':
 		if home_owned[1] = 0: 'There is an apartment in the residential area available'
 		'There is an apartment in the old town available'
 
-		if home_owned[1] = 0 and money >= 6000: act 'View the city residential apartment details': gt 'agentned', 'rent_cityres'
-		if money >= 6000: act 'View the apartment in the Old Town details': gt 'agentned', 'rent_pushkin'
+		if home_owned[1] = 0 and money >= 15000: act 'View the city residential apartment details': gt 'agentned', 'rent_cityres'
+		if money >= 15000: act 'View the apartment in the Old Town details': gt 'agentned', 'rent_pushkin'
 	end
 
 	act 'Return':gt'agentned', 'start'
@@ -80,7 +80,7 @@ if $ARGS[0] = 'rent_cityres':
 	*clr
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo.jpg"></center>'
-	'“We have a flat available right now in the residential area of St. Petersburg.” The receptionist says as he starts pulling out the paperwork. “Rent is 10,000₽ and leases have to be renewed every 30 days, which can be taken automatically from your account or you can come in and pay directly. Last but not least, you have to make your first payment up front at signing.”'
+	'“We have a flat available right now in the residential area of St. Petersburg.” The receptionist says as he starts pulling out the paperwork. “Rent is 15,000₽ and leases have to be renewed every 30 days, which can be taken automatically from your account or you can come in and pay directly. Last but not least, you have to make your first payment up front at signing.”'
 	'He pulls out a pen and slides the paperwork onto the counter. “Interested? We can get you moved in right away.”'
 
 	if money >= 10000:
@@ -120,7 +120,7 @@ if $ARGS[0] = 'rent_pushkin':
 	*clr
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo.jpg"></center>'
-	'“We have a small apartment available right now in Pushkin’s city center. It’s a little bit pricey, but it’s been recently renovated to be more modern, and it looks quite nice. You won’t find a place like that outside of Pushkin.” The receptionist says as he starts pulling out the paperwork. “Rent is 10,500₽ and leases have to be renewed every 30 days, which can be taken automatically from your account or you can come in and pay directly. Last but not least, you have to make your first payment up front at signing.”'
+	'“We have a small apartment available right now in Pushkin’s city center. It’s a little bit pricey, but it’s been recently renovated to be more modern, and it looks quite nice. You won’t find a place like that outside of Pushkin.” The receptionist says as he starts pulling out the paperwork. “Rent is 15,000₽ and leases have to be renewed every 30 days, which can be taken automatically from your account or you can come in and pay directly. Last but not least, you have to make your first payment up front at signing.”'
 	'He pulls out a pen and slides the paperwork onto the counter. “Interested? We can get you moved in right away.”'
 
 	if money >= 6000:
@@ -162,7 +162,7 @@ if $ARGS[0] = 'buy_cityres':
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo_paperwork.jpg"></center>'
-	'You spend half an hour filling in the paperwork to buy an apartment in the residential area. 2 000 0000 <b>₽</b> are removed from your bank account.'
+	'You spend half an hour filling in the paperwork to buy an apartment in the residential area. 2,000,0000 <b>₽</b> are removed from your bank account.'
 
 	act 'Return':gt'agentned', 'start'
 end
@@ -171,13 +171,13 @@ if $ARGS[0] = 'buy_dacha':
 	cla
 	*clr
 	minut += 30
-	karta -= 75000
+	karta -= 150000
 	home_owned[3] = 1
 	etoexhib = 0
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo_paperwork.jpg"></center>'
-	'You spend half an hour filling in the paperwork for the purchase of a cottage with a garden on the co-op 5km up the north road. 30 0000 <b>₽</b> have been removed from your bank account.'
+	'You spend half an hour filling in the paperwork for the purchase of a cottage with a garden on the co-op 5km up the north road. 150,000 <b>₽</b> have been removed from your bank account.'
 
 	act 'Return':gt'agentned', 'start'
 end
@@ -191,7 +191,7 @@ if $ARGS[0] = 'buy_Mansion':
 	gs'stat'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo_paperwork.jpg"></center>'
-	'You spend half an hour filling in the paperwork for the purchase of a lot for building a mansion 1km up the north road. 1 500 0000 <b>₽</b> have been removed from your bank account.'
+	'You spend half an hour filling in the paperwork for the purchase of a lot for building a mansion 1km up the north road. 1,500,0000 <b>₽</b> have been removed from your bank account.'
 
 	act 'Return':gt'agentned', 'start'
 end

@@ -21,10 +21,10 @@ act 'Leave':minut += 5 & gt 'torgcentr'
 if hour < 8 or hour > 20:
 	'Shop closed.'
 else
-	if karta + bankDebtLimit >= 75000 and home_owned[3] = 0:
-		act 'Buy a cottage (75,000 <b>₽</b>)':
+	if karta + bankDebtLimit >= 150000 and home_owned[3] = 0:
+		act 'Buy a cottage (150,000 <b>₽</b>)':
 			cls
-			karta -= 75000
+			karta -= 150000
 			home_owned[3] = 1
 			minut += 15
 			etoexhib = 0
@@ -35,10 +35,10 @@ else
 		end
 	end
 
-	if karta + bankDebtLimit >= 75000 and home_owned[3] = 1:
-		act 'Upgrade your cottage (75,000 <b>₽</b>)':
+	if karta + bankDebtLimit >= 200000 and home_owned[3] = 1:
+		act 'Upgrade your cottage (200,000 <b>₽</b>)':
 			cls
-			karta -= 75000
+			karta -= 200000
 			home_owned[3] = 2
 			minut += 15
 			gs 'stat'
