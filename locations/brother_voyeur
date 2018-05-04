@@ -731,13 +731,13 @@ end
 if $ARGS[0] = 'brother_wash':
 	npc_rel['A34'] += 5
 	cla & *clr
-	minut += 10
-	pcs_horny += 20
+	gs 'arousal','breasts',3
+	gs 'arousal','massage',3
 	brotherwash += 1
 	'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brotherwash.jpg"></center>'
 	'	You and Kolka spend some time lathering each other with soap and rubbing each other down, both of you appreciatively feeling each other''s bodies as you do so.'
 	if brotherwash > 5 or brotherSex > 0 or brotherfuck > 0:'	Kolka even slips his hands between your legs and gives your pussy a good cleaning, paying special attention to your clit and causing you to squirm and and moan under his touch.'
-	if brotherwash > 5 or brotherSex > 1:pcs_horny += 10
+	if brotherwash > 5 or brotherSex > 1:gs 'arousal','vaginal_finger',3
 	gs 'stat'
 	
 	if pcs_leghair > 3 or pcs_pubes > 3:
@@ -1463,6 +1463,7 @@ end
 
 
 if $ARGS[0] = 'shower_swallow':
+	brotherbjcomment = rand(1,2)
 	cla & *clr
 	'<center><video src="images/shared/home/bathroom/showerbj.mp4"></center>'
 	if broshowerfuck = daystart:
@@ -1484,14 +1485,22 @@ if $ARGS[0] = 'shower_swallow':
 			'<center><img <<$set_imgh>> src="images/shared/home/bathroom/brothershower.jpg"></center>'
 			'	You stand up without further comment, letting the water run over your body a little more and making sure your hair is thoroughly rinsed.'
 			'	"Come on Kolka, let''s finish up quickly before someone starts wondering where we are."'
-			act'Finish showering together':gt'brother_voyeur','brother_shower_end'
+			if broshowerfuck = daystart:
+				act'Finish showering together':gt'brother_voyeur','brother_shower_fuck_end'
+			else
+				act'Finish showering together':gt'brother_voyeur','brother_shower_end'
+			end
 		end
 		
 		act'Stare intimately':
 			cla
 			*nl
 			'	Still looking into his eyes, you stare at him and lean forward to give him a very long and intimate kiss on the tip of his cock before standing up. The two of you hold each other in continued silence, spending a few more minutes under the water and basking in the afterglow together.'
-			act'Finish showering together':gt'brother_voyeur','brother_shower_end'
+			if broshowerfuck = daystart:
+				act'Finish showering together':gt'brother_voyeur','brother_shower_fuck_end'
+			else
+				act'Finish showering together':gt'brother_voyeur','brother_shower_end'
+			end
 		end
 		
 		if trt_cumeater = 1:
