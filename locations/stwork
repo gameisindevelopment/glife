@@ -37,7 +37,7 @@ if $ARGS[0] = 'start':
 	publichot = pcs_dancero/2 + pcs_apprnc/4 + city_stripping/4 + stripKoef + stripKoef2 + stripKoef3 + stripKoef4 + stripKoef5 + stripKoef6 + stripKoef7
 	publichotstart = publichot
 
-	if hour >= 15 or hour <= 2:
+	if hour >= 18 or hour <= 2:
 		if cumloc[1] = 0 and cumloc[2] = 0 and cumloc[4] = 0 and cumloc[5] = 0 and cumloc[6] = 0 and cumloc[7] = 0 and cumloc[11] = 0 and cumloc[14] = 0:
 			if pcs_makeup >= 4:
 				if pcs_hairbsh = 1:

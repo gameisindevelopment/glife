@@ -7,17 +7,17 @@ if $ARGS[0] = 'strip':
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/stripclub/stripclub1.jpg"></center>'
 
 	if publichot < 10:$pubhot = 'booing you, you hear someone shout, "Get this stupid cow off the stage."'
-	if publichot >= 10 and publichot < 20:$pubhot = 'clearly showing disconsent with your dancing. They want you off the stage as quickly as possible.'
+	if publichot >= 10 and publichot < 20:$pubhot = 'clearly showing discontent with your dancing. They want you off the stage as quickly as possible.'
 	if publichot >= 20 and publichot < 30:$pubhot = 'clearly looking bored, drinking and talking among themselves, ignoring you.'
-	if publichot >= 30 and publichot < 60:$pubhot = 'sometime looking at you, smiling and enjoy the performence.'
+	if publichot >= 30 and publichot < 60:$pubhot = 'sometime looking at you, smiling and enjoy the performance.'
 	if publichot >= 60 and publichot < 70:$pubhot = 'watching you with genuine interest while conversing with each other over their beers.'
 	if publichot >= 70 and publichot < 80:$pubhot = 'having their attention focused on you.'
 	if publichot >= 80 and publichot < 90:$pubhot = 'with strained faces, sweat beading on their foreheads, their arousal clearly showing.'
-	if publichot >= 90:$pubhot = 'completely indulgded in you. They''re clapping and waving money at you trying to get you attention.'
+	if publichot >= 90:$pubhot = 'completely indulged in you. They''re clapping and waving money at you trying to get you attention.'
 
 	'There are men sitting in front of the stage <<$pubhot>>.'
 
-	if hour >= 15 or hour <= 2:
+	if hour >= 18 or hour <= 2:
 		if stpredmet > 0:
 			act 'Striptease 5 minutes (<<stpredmet>> items of clothing)':
 				cls
@@ -129,15 +129,15 @@ if $ARGS[0] = 'tipcalculator':
 	if publichot < 30:
 		'Nobody even noticed you or your efforts on the stage.'
 	elseif publichot < 60:
-		'A couple of people looked at you but nothing more than that, you didn''t recieve a tip.'
+		'A couple of people looked at you but nothing more than that, you didn''t receive a tip.'
 	elseif publichot < 70:
 		paymax = 1
-		if payrand = 0: 'A couple of people looked at you but nothing more than that, you didn''t recieve a tip.'
+		if payrand = 0: 'A couple of people looked at you but nothing more than that, you didn''t receive a tip.'
 	elseif publichot < 80:
 		chance = 5
 		paymin = 3
 		paymax = 10
-		'The customers are pleased with your performence. They give you a small tip.'
+		'The customers are pleased with your performance. They give you a small tip.'
 	elseif publichot < 90:
 		chance = 10
 		paymin = 10
@@ -166,7 +166,7 @@ if $ARGS[0] = 'privatdance':
 	act 'Go and perform a lap dance':
 		cls
 		minut += 30
-		money += 800
+		money += 400
 		if pcs_sweat < 30 : pcs_sweat += 10
 		pcs_hairbsh = 0
 		pcs_makeup = 0
@@ -179,7 +179,7 @@ if $ARGS[0] = 'privatdance':
 		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/stripclub/privatstrip.jpg"></center>'
 		'You walk over to a smaller private room where you put on some music before the customer walks in. As the customer walks in you tell him to sit down and enjoy the show. You spend half an hour showing off your dancing skills, and every time you grind against him you can feel his rock hard cock.'
 
-		stprrand = rand(0,5)
+		stprrand = rand(0,15)
 		if stprrand = 0:gt 'stwork2', 'pr1'
 		if stprrand = 1:gt 'stwork2', 'pr2'
 		if stprrand = 2:gt 'stwork2', 'pr3'
