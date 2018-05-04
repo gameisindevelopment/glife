@@ -1,6 +1,9 @@
 # saveupdater
 
+! 0.72 water to pcs_hydra
 if water > 0: pcs_hydra = water & killvar 'water'
+! 0.72 pavSharedApt changes.
+if step > 0: pavIntroStep = step & killvar 'step'
 
 pcs_dob = (birthyear * 10000) + (birthmonth * 100) + birthday
 

@@ -17,7 +17,7 @@ if $ARGS[0] = 'start':
 		if (PCloBimbo = 1 or PCloStyle = 4) and pcs_apprnc >= 60:
 			minut += 60
 			pcs_sweat += 2
-			money += 120
+			money += 100
 			skimpyCustomerChance = rand(1, 100)
 
 			if skimpyCustomerChance > 30:
@@ -73,7 +73,7 @@ if $ARGS[0] = 'blowQ':
 end
 
 if $ARGS[0] = 'titsFlash':
-	money += 100
+	money += 50
 	gifornot = rand (1, 100)
 	if gifornot < 30:
 		i = rand(1, 3)
@@ -94,7 +94,7 @@ if $ARGS[0] = 'titsFlash':
 end
 
 if $ARGS[0] = 'assFlash':
-	money += 100
+	money += 50
 	gifornot = rand (1, 100)
 	if gifornot < 30:
 		i = rand(1, 2)

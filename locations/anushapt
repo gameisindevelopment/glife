@@ -1,6 +1,5 @@
 # anushapt
 
-
 !!Eduard Konstantinov - Anushka's father, who is known as being a hard and dangerous man. Since marrying Valeria and starting a family, he has mellowed out slightly, but he is still someone you don't want to piss off. In his youth, he was the leader of a local gang that would cause mayhem and chaos wherever they went. Surprisingly, he's managed to avoid spending any time behind bars.
 
 !!Valeria Konstantinov - Anushka's mother, who enjoyed being a bad girl and a heart breaker in her youth. Ironically, she is now a wife and mother of three, which she has come to resent. More often than not, she has nothing good to say about her family. Still living in the fantasy that she's still a youthful heart breaker makes her a hot topic among the rumormongers in the town that she flirts with a lot of men, but none of them are willing to risk fooling around with her as long as Eduard is her husband.
@@ -63,12 +62,6 @@ if $ARGS[0] = 'home':
 	elseif hour < 8:
 		'It''s too early in the day to visit Anushka.'
 		act 'Move away from the door':gt'pavComplexb2','etaj_4'
-	elseif hour >= 15 and (AnushkaLoc ! 0 or rand(0,3) = 0):
-		*clr & cla
-		AnushkaLoc = 1
-		'You stand outside the Konstantinov household, hoping that Anushka will be the one to come open the door.'
-		'Anushka opens the door smiling, "Hi <<$pcs_nickname>>. Come in."'
-		act 'Enter': gt 'anushapt','hallway' 
 	elseif ((hour >= 15 and hour < 20) or (week > 5 and hour >= 10 and hour < 20)) and (rand(0,4) = 0):
 		*clr & cla
 		'You stand outside the Konstantinov household, knocking on the door. It takes quite a while before someone actually does come and in the end it turns out to be Anushka''s mother.'
@@ -77,17 +70,61 @@ if $ARGS[0] = 'home':
 	elseif (hour >= 15 and hour < 22) or (week > 5 and hour >= 8 and hour < 22):
 		*clr & cla
 		'You stand outside the Konstantinov household, waiting for Anushka to come open the door.'
-		'Maksim answers the door instead, "Anushka''s not home right now, she''s probably out sucking some guy''s dick or something, but if you want you can go wait for her in her room."'
-		if maksimQW = 0:
-			maksimQW = 1
-			'You are aghast that her brother would say such a thing about her. "Why would you tell people something like that?"'
-			'At first, he looks a bit confused, as if he''s not sure what you mean but then he just shrugs. "That''s what my mom always says when I ask where Anushka is."'
-			'You shake your head unsure about what to think, should you go in and wait for her or just go? Maksim just stands there staring at your tits and you can actually feel him undressing you with his eyes.'
+		nushdoor = RAND(1,10)
+		if nushdoor = 1:
+			*clr & cla
+			AnushkaLoc = 7:
+			'You stand outside the Konstantinov household, waiting for Anushka to come open the door.'
+			'Maksim answers the door instead, he looks you over from head to toe, obviously still trying to imagine you naked. "What?" He asks.'
+			'You ignore his look. "Is Anushka home?"'
+			'He hooks his thumb over his shoulder pointing down the hall with it. "She''s taking a shower."'
+			act 'Enter': gt 'anushapt','hallway' 
+			act 'Ask how he knows that.':
+				*clr & cla
+				'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/maksim.jpg"></center>'
+				'You smile a bit. "How do you know she is taking a shower?"'
+				'He blushes a little bit and sputters. "I can hear the water."'
+				act 'Enter': gt 'anushapt','hallway' 
+				act 'Tease him.':
+					*clr & cla
+					'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/maksim.jpg"></center>'
+					'You grin at him. "So you havn''t been spying on her taking a shower? She told me you spy on her and her friends."'
+					'He blushes red and sputters. "No!" He doesn''t seem to know what to do so he turns and walks away and just before he goes into his room he adds. "Fuck you, I can hear the water." Then before you can reply he goes into his room and closes the door.'
+					act 'Wait in her room': gt 'anushapt','showerwait'
+					act 'Go to the bathroom': gt 'anushapt','nushshower'
+				end
+			end
+		elseif nushdoor <= 3:
+			*clr & cla
+			AnushkaLoc = 2:
+			'You stand outside the Konstantinov household, waiting for Anushka to come open the door.'
+			'Maksim answers the door instead, he looks you over from head to toe, obviously still trying to imagine you naked. "What?" He asks.'
+			'You ignore his look. "Is Anushka home?"'
+			'He hooks his thumb over his shoulder pointing down the hall with it. "She''s in her room, likely getting stoned or masturbating to porn, or something."'
+			'You ignore him comments and step around, to enter the apartment. While he closes the door and heads back to his room.'
+			act 'Enter': gt 'anushapt','hallway' 
+		elseif nushdoor <= 5:
+			*clr & cla
+			AnushkaLoc = 1
+			'You stand outside the Konstantinov household, hoping that Anushka will be the one to come open the door.'
+			'Anushka opens the door smiling, "Hi <<$pcs_nickname>>. Come in."'
+			act 'Enter': gt 'anushapt','hallway' 
 		else
-			'You shake your head a bit, but there is nothing you can do about it, should you go in and wait for her or just go? As always, you can feel Maksim undressing you with his eyes while staring straight at your tits.'
+			if maksimQW = 0:
+				maksimQW = 1
+				'Maksim answers the door instead, he looks you over from head to toe, obviously still trying to imagine you naked. "What?" He asks.'
+				'You ignore his look. "Is Anushka home?"'
+				'"No she''s not home right now, she''s probably out sucking some guy''s dick or something, but if you want you can go wait for her in her room."'
+				'You are aghast that her brother would say such a thing about her. "Why would you tell people something like that?"'
+				'At first, he looks a bit confused, as if he''s not sure what you mean but then he just shrugs. "That''s what my mom always says when I ask where Anushka is."'
+				'You shake your head unsure about what to think, should you go in and wait for her or just go? Maksim just stands there staring at your tits and you can actually feel him undressing you with his eyes.'
+			else
+				'Maksim answers the door instead, he looks you over from head to toe, obviously trying to imagine you naked. "Anushka''s not home right now, she''s probably out sucking some guy''s dick or something, but if you want you can go wait for her in her room."'
+				'You shake your head a bit, but there is nothing you can do about it, should you go in and wait for her or just go? As always, you can feel Maksim undressing you with his eyes while staring straight at your tits.'
+			end
+			act 'Enter': gt 'anushapt','hallway' 
+			act 'Leave': gt 'pavComplexb2','etaj_4'
 		end
-		act 'Enter': gt 'anushapt','hallway' 
-		act 'Leave': gt 'pavComplexb2','etaj_4'
 	else
 		'You knock on the door several times but no one answers. There is probably no one home at the moment.'
 		act 'Move away from the door':gt'pavComplexb2','etaj_4'
@@ -147,7 +184,7 @@ if $ARGS[0] = 'bathroom':
 	'The bathroom has seen better days. There''s some mold in the corners of the walls and floors and the place probably hasn''t been cleaned for quite some time. The toilet sits along the far wall. There''s also a bathtub, with an old plastic shower curtain hanging from a rod above it. It also seems that the latch on the door is broken.'
 	'You can do your hair and makeup in the <a href="exec:gt ''mirror'', ''start''">mirror</a> above the sink.'
 	*nl
-    if pirsA + pirsB + pirsC + pirsD + pirsE + pirsF + pirsN + pirsG + pirsGL > 0:'<a href="exec:dynamic $pirManage">Manage Piercings</a>'
+	if pirsA + pirsB + pirsC + pirsD + pirsE + pirsF + pirsN + pirsG + pirsGL > 0:'<a href="exec:dynamic $pirManage">Manage Piercings</a>'
 	act 'Take a shower':
 		*clr
 		cla
@@ -211,23 +248,24 @@ if $ARGS[0] = 'bathroom':
 	dynamic $bath
 	dynamic $quickwash
 	dynamic $bteeth
-    dynamic $tampon
-    dynamic $basin
+	dynamic $tampon
+	dynamic $basin
 	act 'Leave the bathroom': gt 'anushapt','hallway'
 end
 
 if $ARGS[0] = 'anushroom':
 	CLOSE ALL
+	music_loop = 1
 	cla
 	*clr
 	minut += 1
 	gs 'stat'
 	'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
 	'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom.jpg"></center>'
-	'The room is surprisingly clean, even if it''s somewhat dusty. The walls are covered with pictures and posters and the room is skillfully decorated with various strings of coloured lights. In the center of the room, right under the window is a single narrow <a href="exec:gt ''anushapt'',''bed''">bed</a>. Against the opposite wall is a small desk and a chair, with a <a href="exec:gt ''anushapt'',''computer''">laptop</a> on it. Next to that a decent sized flatscreen TV, also sitting on the desk. Alongside the desk there is a bookshelf with a fairly large collection of books and just below the shelves an <a href="exec:gt ''anushapt'',''guitar''">acoustic guitar</a> and an electric guitar is resting against the wall. A skateboard is also leaning against one of the other walls.'
+	'The room is surprisingly clean, even if it''s somewhat dusty. The walls are covered with pictures and posters and the room is skillfully decorated with various strings of coloured lights. In the center of the room, right under the window is a single narrow <a href="exec:gt ''anushapt'',''bed''">bed</a>, with a small <a href="exec:gt ''anushapt'',''night_stand''">night stand</a>. Against the opposite wall is a small desk and a chair, with a <a href="exec:gt ''anushapt'',''computer''">laptop</a> on it. Next to that a decent sized flatscreen TV, also sitting on the desk. Alongside the desk there is a bookshelf with a fairly large collection of books and leaning against the wall next to the shelves is a <a href="exec:gt ''anushapt'',''guitar''">acoustic guitar</a> and an electric guitar next to it. A skateboard is also leaning against one of the other walls.'
 	if AnushkaLoc = 2:
 		'Anushka is sitting on the bed, a mysterious smirk playing around her lips as she looks at you.'
-		act 'Let''s check on your brother':AnushkaLoc=3&gt'anushapt','brotherroom'
+		act 'Let''s check on your brother': AnushkaLoc = 3 & gt 'anushapt', 'brotherroom'
 	end
 	act 'Leave Anushka''s room': gt 'anushapt','hallway'
 end
@@ -251,9 +289,9 @@ if $ARGS[0] = 'computer':
 			cla
 			'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
 			'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/bedroomtalk.jpg"></center>'
-			'You perk up at the mention of modeling earning enough to buy a nice laptop like that. "Does modeling really pay that well?"'
-			'She nods a bit. "Yeah, well sorta. I mean, if you are willing to do nude modeling you can make a lot in a short amount of time. You interested?" She asks while arching one shapely eyebrow.'
-			'Nude? Still, if it pays that much, it might be worth considering. "I don''t know, maybe. How would I start? Is there a modeling agency or something?"'
+			'You perk up at the mention of modelling earning enough to buy a nice laptop like that. "Does modelling really pay that well?"'
+			'She nods a bit. "Yeah, well sorta. I mean, if you are willing to do nude modelling you can make a lot in a short amount of time. You interested?" She asks while arching one shapely eyebrow.'
+			'Nude? Still, if it pays that much, it might be worth considering. "I don''t know, maybe. How would I start? Is there a modelling agency or something?"'
 			'She grins a bit at your reply. "In the city center." She then explains exactly where it is and to let the photographer know she sent you.'
 !!The above needs to be linked to the photographer somehow.
 			act 'Thanks':gt 'anushapt','anushroom'
@@ -388,111 +426,112 @@ if $ARGS[0] = 'computer':
 			'There are all kinds of porn sites and videos she''s watched. There is a lot of public exhibitionist porn in a variety of different sex acts, the rest is mostly kinky boy girl stuff, some with dominant girls, some with dominant boys, some anal, a lot of lesbian sex, especially those with strapons. As you keep on browsing you feel yourself getting a bit aroused.'
 			gs 'arousal', 'voyeur', 10, 'unknown'
 			act 'Turn the computer off':gt 'anushapt','anushroom'
-!!This next one only shows up as a option if Anushka is not home.
-			act 'Masturbate':
-				*clr
-				cla
-				'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-				'<center><video autoplay loop src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/nushcmast.mp4"></video></center>'
-				'While browsing her huge list of porno''s, you find one that you like and lean back in the chair and start masturbating. Before long you completely forget that you are in someone else''s bedroom masturbating to their porn on their laptop.'
-				gs 'arousal', 'voyeur', 10, 'unknown'
-				act 'Continue':
+			if AnushkaLoc = 0:
+				act 'Masturbate':
 					*clr
 					cla
 					'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
 					'<center><video autoplay loop src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/nushcmast.mp4"></video></center>'
-					'You keep rubbing your clit, you can feel your climax building and building. You are sure you are almost there.'
-					temp = rand(0,3)
-					if temp = 0:
-						'Just before you are about to explode you hear someone snickering. Your heart leaps to your throat, pounding with fear as you turn your head and see Maksim standing in the doorway, watching you with the door wide open. Your blood runs cold and you quickly rip your hand from between your legs, pulling your clothes back in place as you yell at him. "Get our of here you little pervert!"'
-						'He points and laughs at you. "You were jerking off to porn."'
-						'You are in no mood to correct him that girls don''t jerk off and you start getting up. With your face turning a scarlet red, you yell at him again, "Get out of her now or I will tell Anushka!" With that he bolts out the door and down the hall. You go over quickly and close the door behind him, but the mood is completely ruined now.'
-						act 'Find something else to do':gt 'anushapt','anushroom'
-					elseif temp = 1:
-						AnushkaLoc = 2
-						'You are so caught up in what you''re doing, you never hear the door open or someone walking in behind you. Suddenly you feel a pair of slender arms wrap around your shoulders and hands fondling your breasts. Giving a loud squeak, you practically jump out of the chair in shock, turning around to see... Anushka, practically rolling with laughter'
-						'You give her a dirty look, which only makes her laugh even harder. "You almost scared me to death, that really wasn''t funny!." Though there is very little real heat in your voice as you are so embarrassed, having been caught masturbating. "Sorry about—" You start to say but she waves you to stop.'
-						'"It''s fine, I don''t care if you masturbate in my room while you wait for me. But if you are that horny, I could always help you out with that." She says while licking her upper lip.'
-						act 'No thanks':
-							cla
-							*nl
-							'You shake your head. "Thanks but you scared the mood right out of me. Uhm... how about we just change the subject?" She laughs a bit but doesn''t seem to mind you turning her down, as she flops down on her bed.'
+					'While browsing her huge list of porno''s, you find one that you like and lean back in the chair and start masturbating. Before long you completely forget that you are in someone else''s bedroom masturbating to their porn on their laptop.'
+					gs 'arousal', 'voyeur', 10, 'unknown'
+					act 'Continue':
+						*clr
+						cla
+						'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
+						'<center><video autoplay loop src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/nushcmast.mp4"></video></center>'
+						'You keep rubbing your clit, you can feel your climax building and building. You are sure you are almost there.'
+						temp = rand(0,3)
+						if temp = 0:
+							'Just before you are about to explode you hear someone snickering. Your heart leaps to your throat, pounding with fear as you turn your head and see Maksim standing in the doorway, watching you with the door wide open. Your blood runs cold and you quickly rip your hand from between your legs, pulling your clothes back in place as you yell at him. "Get our of here you little pervert!"'
+							'He points and laughs at you. "You were jerking off to porn."'
+							'You are in no mood to correct him that girls don''t jerk off and you start getting up. With your face turning a scarlet red, you yell at him again, "Get out of her now or I will tell Anushka!" With that he bolts out the door and down the hall. You go over quickly and close the door behind him, but the mood is completely ruined now.'
 							act 'Find something else to do':gt 'anushapt','anushroom'
-						end
-						act 'Sure':
-							cla
-							*clr
-							'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-							'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les1.jpg"></center>'
-							'You smile at Anushka and move closer, right up against her, fold your arms around her body and give her a long passionate kiss, getting right back into the mood. The two of you start stumbling over to her bed, falling and crawling onto it, as your hands roam all over caressing each others bodies.'
-							gs 'arousal', 'foreplay', 10, 'lesbian'
-							act 'Undress her':
+						elseif temp = 1:
+							AnushkaLoc = 2
+							'You are so caught up in what you''re doing, you never hear the door open or someone walking in behind you. Suddenly you feel a pair of slender arms wrap around your shoulders and hands fondling your breasts. Giving a loud squeak, you practically jump out of the chair in shock, turning around to see... Anushka, practically rolling with laughter'
+							'You give her a dirty look, which only makes her laugh even harder. "You almost scared me to death, that really wasn''t funny!." Though there is very little real heat in your voice as you are so embarrassed, having been caught masturbating. "Sorry about—" You start to say but she waves you to stop.'
+							'"It''s fine, I don''t care if you masturbate in my room while you wait for me. But if you are that horny, I could always help you out with that." She says while licking her upper lip.'
+							act 'No thanks':
+								cla
+								*nl
+								'You shake your head. "Thanks but you scared the mood right out of me. Uhm... how about we just change the subject?" She laughs a bit but doesn''t seem to mind you turning her down, as she flops down on her bed.'
+								act 'Find something else to do':gt 'anushapt','anushroom'
+							end
+							act 'Sure':
 								cla
 								*clr
-								npc_rel['A144'] += 3
 								'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-								'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les2.jpg"></center>'
-								'Once in bed you waste no time in pulling her clothes off, she returns the favor and starts removing your clothes as well. It would go a lot faster if the two of you were''t also passionately kissing and caressing each others bodies. Regardless before long, you are both naked.'
+								'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les1.jpg"></center>'
+								'You smile at Anushka and move closer, right up against her, fold your arms around her body and give her a long passionate kiss, getting right back into the mood. The two of you start stumbling over to her bed, falling and crawling onto it, as your hands roam all over caressing each others bodies.'
 								gs 'arousal', 'foreplay', 10, 'lesbian'
-								act 'Get pleasured':
+								act 'Undress her':
 									cla
 									*clr
+									npc_rel['A144'] += 3
 									'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-									'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les3.jpg"></center>'
-									'After a bit of heated kissing and fondling while exploring each other''s naked bodies, you lay back on the bed and spread your legs. You place your hand on top of her head and gently guide her face toward your pussy. She really doesn''t need any encouragement and she dives straight in. She gives your pussy one long lick from taint to clit and then starts flicking your clit with her tongue, switching to sucking and giving it a quick nibble now and then, before plunging her tongue deep between your wet pussylips.'
-									pcs_horny += 10
-									gs 'arousal', 'cuni', 10, 'lesbian'
-									gs 'stat'
-									act 'Get eaten out':
+									'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les2.jpg"></center>'
+									'Once in bed you waste no time in pulling her clothes off, she returns the favor and starts removing your clothes as well. It would go a lot faster if the two of you were''t also passionately kissing and caressing each others bodies. Regardless before long, you are both naked.'
+									gs 'arousal', 'foreplay', 10, 'lesbian'
+									act 'Get pleasured':
 										cla
 										*clr
 										'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-										'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les4.jpg"></center>'
-										'You completely lose track of time as she eats you out; she either has a lot of natural talent or she has had a lot of practice with eating pussy, because she is amazing at it. You feel yourself getting very close to the edge and apparently, she notices as well, because she suddenly stops. You are only disappointed for a moment however, as she knee walks her way upwards and immediately straddles your face. You can''t blame her for wanting to receive her own pleasure from you. With her pussy right over your face you can see she is already sopping wet. You decide to tease her a little bit, at first kissing giving her pussy a few soft kisses, then licking her slowly and gently, driving her mad with just a few light touches.'
-										*nl
-										'Apparently it gets to be too much for her and she lowers herself fully, starting to grind her dripping twat against your face. You give up your teasing and quickly plunge your tongue into her pussy, giving her what she wants; pleasuring her, like she just pleasured you.'
-										gs 'arousal', 'cuni_give', 10, 'lesbian'
-										act '69':
+										'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les3.jpg"></center>'
+										'After a bit of heated kissing and fondling while exploring each other''s naked bodies, you lay back on the bed and spread your legs. You place your hand on top of her head and gently guide her face toward your pussy. She really doesn''t need any encouragement and she dives straight in. She gives your pussy one long lick from taint to clit and then starts flicking your clit with her tongue, switching to sucking and giving it a quick nibble now and then, before plunging her tongue deep between your wet pussylips.'
+										pcs_horny += 10
+										gs 'arousal', 'cuni', 10, 'lesbian'
+										gs 'stat'
+										act 'Get eaten out':
 											cla
 											*clr
 											'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-											'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les5.jpg"></center>'
-											'You can hear her starting to breathe heavier and moan louder and you are about to suggest switching again, but apparently she had the same idea. She briefly stops straddling your face before turning around and then straddling your face again, while going down on her hands and knees so she can 69 with you.'
+											'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les4.jpg"></center>'
+											'You completely lose track of time as she eats you out; she either has a lot of natural talent or she has had a lot of practice with eating pussy, because she is amazing at it. You feel yourself getting very close to the edge and apparently, she notices as well, because she suddenly stops. You are only disappointed for a moment however, as she knee walks her way upwards and immediately straddles your face. You can''t blame her for wanting to receive her own pleasure from you. With her pussy right over your face you can see she is already sopping wet. You decide to tease her a little bit, at first kissing giving her pussy a few soft kisses, then licking her slowly and gently, driving her mad with just a few light touches.'
 											*nl
-											'As soon as you feel her tongue flicking against your clit, you lift up your head slightly and begin licking her pussy again as well. Her tongue is  absolutely magical and it doesn''t take all that long until your body is rocked by a furious orgasm. Apparently feeling your pussy twitch around her tongue and the extra juices from your orgasm sets her off as well, her own pussy juice flowing out, coating her face as her own orgasm hits her.'
+											'Apparently it gets to be too much for her and she lowers herself fully, starting to grind her dripping twat against your face. You give up your teasing and quickly plunge your tongue into her pussy, giving her what she wants; pleasuring her, like she just pleasured you.'
 											gs 'arousal', 'cuni_give', 10, 'lesbian'
-											minut -= 10
-											$orgasm_or = 'yes'
-											gs 'arousal', 'cuni', 10, 'lesbian'
-											gs 'stat'
-											act 'Afterglow':
+											act '69':
 												cla
 												*clr
 												'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-												'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les6.jpg"></center>'
-												'With both of you spent, Anushka rolls herself off you and the two of you lay side by side for several minutes while you catch your breath. Then you suggest, "Maybe we should get dressed before someone walks in, like your brothers."'
+												'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les5.jpg"></center>'
+												'You can hear her starting to breathe heavier and moan louder and you are about to suggest switching again, but apparently she had the same idea. She briefly stops straddling your face before turning around and then straddling your face again, while going down on her hands and knees so she can 69 with you.'
 												*nl
-												'She nods "Yeah you''re right." As you both start to get up, she reaches over and pulls you in close to her. With you both on your knees she pulls you over until your face is nearly touching hers and she looks deeply into your eyes. The shared look is only broken by occasional quick but soft kisses from her and soon from you as well. Then she gives you a one more long and soft kiss, with a hint of passion that leaves you breathless, before she pulls away.'
-												*nl
-												'On that little high note, she gets out of bed and starts getting dressed. You soon do the same and within a couple of minutes you are both fully dressed again.'
-												gs 'arousal', 'foreplay', 2, 'lesbian'
-												minut += 8
-												gs 'arousal', 'end'
+												'As soon as you feel her tongue flicking against your clit, you lift up your head slightly and begin licking her pussy again as well. Her tongue is  absolutely magical and it doesn''t take all that long until your body is rocked by a furious orgasm. Apparently feeling your pussy twitch around her tongue and the extra juices from your orgasm sets her off as well, her own pussy juice flowing out, coating her face as her own orgasm hits her.'
+												gs 'arousal', 'cuni_give', 10, 'lesbian'
+												minut -= 10
+												$orgasm_or = 'yes'
+												gs 'arousal', 'cuni', 10, 'lesbian'
 												gs 'stat'
-												act 'Get dressed':gt 'anushapt','anushroom'
+												act 'Afterglow':
+													cla
+													*clr
+													'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
+													'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les6.jpg"></center>'
+													'With both of you spent, Anushka rolls herself off you and the two of you lay side by side for several minutes while you catch your breath. Then you suggest, "Maybe we should get dressed before someone walks in, like your brothers."'
+													*nl
+													'She nods "Yeah you''re right." As you both start to get up, she reaches over and pulls you in close to her. With you both on your knees she pulls you over until your face is nearly touching hers and she looks deeply into your eyes. The shared look is only broken by occasional quick but soft kisses from her and soon from you as well. Then she gives you a one more long and soft kiss, with a hint of passion that leaves you breathless, before she pulls away.'
+													*nl
+													'On that little high note, she gets out of bed and starts getting dressed. You soon do the same and within a couple of minutes you are both fully dressed again.'
+													gs 'arousal', 'foreplay', 2, 'lesbian'
+													minut += 8
+													gs 'arousal', 'end'
+													gs 'stat'
+													act 'Get dressed':gt 'anushapt','anushroom'
+												end
 											end
 										end
 									end
 								end
 							end
+						else
+							'You lean further back in the chair and spread your legs wider apart as you feel your climax approaching. You turn and bury your mouth in your own shoulder to keep from crying out as an orgasm rocks your body. It takes you a few moments to recover once it''s over, then you straighten everything up and wonder what you can do to kill some time next.'
+							$orgasm_or = 'yes'
+							gs 'arousal', 'masturbate', 10
+							gs 'arousal', 'end'
+							gs 'stat'
+							act 'Find something else to do':gt 'anushapt','anushroom'
 						end
-					else
-						'You lean further back in the chair and spread your legs wider apart as you feel your climax approaching. You turn and bury your mouth in your own shoulder to keep from crying out as an orgasm rocks your body. It takes you a few moments to recover once it''s over, then you straighten everything up and wonder what you can do to kill some time next.'
-						$orgasm_or = 'yes'
-						gs 'arousal', 'masturbate', 10
-						gs 'arousal', 'end'
-						gs 'stat'
-						act 'Find something else to do':gt 'anushapt','anushroom'
 					end
 				end
 			end
@@ -509,10 +548,12 @@ end
 if $ARGS[0] = 'guitar':
 	if AnushkaLoc = 2:
 		*clr & cla
+		music_loop = 0
 		PLAY 'sound/nushunplugged.mp3', 100
 		minut += 10
 		npc_rel['A144'] += 2
 		gs 'stat'
+		'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/nushplay.jpg"></center>'
 		'Noticing you looking at her guitars she says; "They are my pride and joy. I can''t even count how many hours I''ve spent learning to play these damn things."'
 		'"I''ve heard you''re pretty good, would you mind playing me something?" you ask. Anushka''s eyes brighten up as you ask her. She quickly grabs the acoustic guitar and starts playing, even singing while she plays.'
 		'You''re impressed, she is a good singer but am even better guitar player. As she ends her song you clap your hands; "Wow, I''ve heard you''re good, but I didn''t know you were this good."'
@@ -520,12 +561,14 @@ if $ARGS[0] = 'guitar':
 		act 'Put the guitar back':gt 'anushapt','anushroom'
 	else
 		*clr & cla
+		'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/guitar.jpg"></center>'
 		'You decide to live out one of your fantasies. You''ve always wanted to play the guitar.'
 		act 'Pretend to play':
 			minut += 10
 			pcs_mood += 10
 			instrmusic_exp += rand(0,1) 
 			gs 'stat'
+			'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/guitar.jpg"></center>'
 			'Grabbing hold of the guitar, you begin pretending to play and putting on a show just like a real rock star. After a while you need to catch your breath; this was harder than you thought.'
 			act 'Put the guitar back':gt 'anushapt','anushroom'
 		end
@@ -537,6 +580,7 @@ if $ARGS[0] = 'guitar':
 			minut += 20
 			gs 'pain', 1, 'fingers', 'ache'
 			gs 'stat'
+			'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/guitar.jpg"></center>'
 			'You gently brush your fingers over the strings. The feeling of the course strings against them is exhilarating. You come up with a song you want to try and play and start to work your magic...'
 			'Unfortunately, playing the guitar is a lot harder than it looks. It takes you several minutes to hit the right notes, and several more to play even the tiny first fraction of the song without making a mistake. The metal strings cut into your tender, uncalloused fingertips and after about 20 minutes, you decide to stop for now.'
 			'Learning how to play the guitar can be a frustrating, painful and long-winded experience, you realize... and yet you cannot help but gently stroke the guitar once more before putting it back in its stand, looking forward to trying again.'
@@ -549,9 +593,11 @@ if $ARGS[0] = 'bed':
 	cla
 	*clr
 	if AnushkaLoc = 2:
+		'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/nushbed.jpg"></center>'
 		'Anushka sits on her bed and waves you over to sit next to her. You quickly jump up on the bed next to her.'
 		act 'Chat': gt 'anushapt', 'chat'
 	else
+		'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/anushroom.jpg"></center>'
 		'You lay down on her bed and roll over, the pillow smells like her. There is not much to do on the bed without Anushka. You start feeling a bit bored and wish Anushka was here.'
 		act 'Get out of the bed': gt 'anushapt','anushroom'
 		!!JulienJaden: Could put a random event here if Sveta is very tired - falls asleep and Anushka wakes her up / plays with her when she comes home
@@ -798,90 +844,101 @@ if $ARGS[0] = 'chat':
 		*clr
 		'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
 		'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/brtkiss.jpg"></center>'
-		'As you lay side by side you look at her for a moment, maybe too long, or maybe she just senses it. She turns her head to look at you, her face not that far from yours and you can''t help it, you just think she is so damn pretty. You lean over and give her a kiss. She returns your kiss fully.'
-		gs 'arousal', 'foreplay', 10, 'lesbian'
-		act 'Stop kissing and talk more': gt 'anushapt', 'chat'
-		act 'Make out':
-			cla
-			*clr
-			'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-			'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/brtmakeout.jpg"></center>'
-			'She wraps her arms around you neck and pulls you close and soon the two of you are kissing passionately. The kisses are full of eager lust and urgent need. You feel yourself getting more and more aroused.'
+!!double check I did this if and else for hotcat correctly, the if should fire if hotcat is 5 or higher.
+		if hotcat => 5
+			'As you lay side by side you look at her for a moment, maybe too long, or maybe she just senses it. She turns her head to look at you, her face not that far from yours and you can''t help it, you just think she is so damn pretty. You lean over and give her a kiss. She returns your kiss fully.'
 			gs 'arousal', 'foreplay', 10, 'lesbian'
-			act 'Stop making out': 
-				cla
-				*nl
-				npc_rel['A144'] -= 3
-				'You pull away before things go too far and catch your breath. You see her slightly confused look and you feel a bit bad about it. "Sorry, I got carried away. Can we just go back to talking?" She frowns a little. "Yeah whatever." You know you annoyed her a little and you don''t blame her, you did just tease her more or less.'
-				act 'Talk about something else': gt 'anushapt', 'chat'
-			end
-			act 'Peeking':
+			gs 'stat'
+			act 'Stop kissing and talk more': gt 'anushapt', 'chat'
+			act 'Make out':
 				cla
 				*clr
 				'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-				'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les1.jpg"></center>'
-				'As the two of you keep kissing she breaks the kiss and uses one of her hands to pull down your top and expose your breasts, she takes a long hard look at your breasts. "Nice tits" You can''t help it, just the way she says it in the moment makes you giggle, but your giggle is short lived as she starts kissing you again.'
+				'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/brtmakeout.jpg"></center>'
+				'She wraps her arms around you neck and pulls you close and soon the two of you are kissing passionately. The kisses are full of eager lust and urgent need. You feel yourself getting more and more aroused.'
 				gs 'arousal', 'foreplay', 10, 'lesbian'
-				act 'Undress her':
+				gs 'stat'
+				act 'Stop making out': 
+					cla
+					*nl
+					npc_rel['A144'] -= 3
+					'You pull away before things go too far and catch your breath. You see her slightly confused look and you feel a bit bad about it. "Sorry, I got carried away. Can we just go back to talking?" She frowns a little. "Yeah whatever." You know you annoyed her a little and you don''t blame her, you did just tease her more or less.'
+					act 'Talk about something else': gt 'anushapt', 'chat'
+				end
+				act 'Peeking':
 					cla
 					*clr
-					npc_rel['A144'] += 3
 					'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-					'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les2.jpg"></center>'
-					'You don''t waste any time and start pulling her clothes off, she returns the favor and starts removing your clothes as well. It would go a lot faster if the two of you were''t also passionately kissing and caressing each others bodies. Regardless before long, you are both naked.'
+					'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les1.jpg"></center>'
+					'As the two of you keep kissing she breaks the kiss and uses one of her hands to pull down your top and expose your breasts, she takes a long hard look at your breasts. "Nice tits" You can''t help it, just the way she says it in the moment makes you giggle, but your giggle is short lived as she starts kissing you again.'
 					gs 'arousal', 'foreplay', 10, 'lesbian'
-					act 'Get pleasured':
+					gs 'stat'
+					act 'Undress her':
 						cla
 						*clr
+						npc_rel['A144'] += 3
 						'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-						'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les3.jpg"></center>'
-						'After a bit of heated kissing and fondling while exploring each other''s naked bodies, you lay back on the bed and spread your legs. You place your hand on top of her head and gently guide her face toward your pussy. She really doesn''t need any encouragement and she dives straight in. She gives your pussy one long lick from taint to clit and then starts flicking your clit with her tongue, switching to sucking and giving it a quick nibble now and then, before plunging her tongue deep between your wet pussylips.'
-						gs 'arousal', 'cuni', 10, 'lesbian'
-						pcs_horny += 10
+						'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les2.jpg"></center>'
+						'You don''t waste any time and start pulling her clothes off, she returns the favor and starts removing your clothes as well. It would go a lot faster if the two of you were''t also passionately kissing and caressing each others bodies. Regardless before long, you are both naked.'
+						gs 'arousal', 'foreplay', 10, 'lesbian'
 						gs 'stat'
-						act 'Get eaten out':
+						act 'Get pleasured':
 							cla
 							*clr
 							'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-							'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les4.jpg"></center>'
-							'You completely lose track of time as she eats you out; she either has a lot of natural talent or she has had a lot of practice with eating pussy, because she is amazing at it. You feel yourself getting very close to the edge and apparently, she notices as well, because she suddenly stops. You are only disappointed for a moment however, as she knee walks her way upwards and immediately straddles your face. You can''t blame her for wanting to receive her own pleasure from you. With her pussy right over your face you can see she is already sopping wet. You decide to tease her a little bit, at first kissing giving her pussy a few soft kisses, then licking her slowly and gently, driving her mad with just a few light touches.'
-							*nl
-							'Apparently it gets to be too much for her and she lowers herself fully, starting to grind her dripping twat against your face. You give up your teasing and quickly plunge your tongue into her pussy, giving her what she wants; pleasuring her, like she just pleasured you.'
-							gs 'arousal', 'cuni_give', 10, 'lesbian'
-							act '69':
+							'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les3.jpg"></center>'
+							'After a bit of heated kissing and fondling while exploring each other''s naked bodies, you lay back on the bed and spread your legs. You place your hand on top of her head and gently guide her face toward your pussy. She really doesn''t need any encouragement and she dives straight in. She gives your pussy one long lick from taint to clit and then starts flicking your clit with her tongue, switching to sucking and giving it a quick nibble now and then, before plunging her tongue deep between your wet pussylips.'
+							gs 'arousal', 'cuni', 10, 'lesbian'
+							pcs_horny += 10
+							gs 'stat'
+							act 'Get eaten out':
 								cla
 								*clr
 								'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-								'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les5.jpg"></center>'
-								'You can hear her starting to breathe heavier and moan louder and you are about to suggest switching again, but apparently she had the same idea. She briefly stops straddling your face before turning around and then straddling your face again, while going down on her hands and knees so she can 69 with you.'
+								'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les4.jpg"></center>'
+								'You completely lose track of time as she eats you out; she either has a lot of natural talent or she has had a lot of practice with eating pussy, because she is amazing at it. You feel yourself getting very close to the edge and apparently, she notices as well, because she suddenly stops. You are only disappointed for a moment however, as she knee walks her way upwards and immediately straddles your face. You can''t blame her for wanting to receive her own pleasure from you. With her pussy right over your face you can see she is already sopping wet. You decide to tease her a little bit, at first kissing giving her pussy a few soft kisses, then licking her slowly and gently, driving her mad with just a few light touches.'
 								*nl
-								'As soon as you feel her tongue flicking against your clit, you lift up your head slightly and begin licking her pussy again as well. Her tongue is  absolutely magical and it doesn''t take all that long until your body is rocked by a furious orgasm. Apparently feeling your pussy twitch around her tongue and the extra juices from your orgasm sets her off as well, her own pussy juice flowing out, coating your face as her own orgasm hits her.'
+								'Apparently it gets to be too much for her and she lowers herself fully, starting to grind her dripping twat against your face. You give up your teasing and quickly plunge your tongue into her pussy, giving her what she wants; pleasuring her, like she just pleasured you.'
 								gs 'arousal', 'cuni_give', 10, 'lesbian'
-								minut -= 10
-								$orgasm_or = 'yes'
-								gs 'arousal', 'cuni', 10, 'lesbian'
 								gs 'stat'
-								act 'Afterglow':
+								act '69':
 									cla
 									*clr
 									'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
-									'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les6.jpg"></center>'
-									'With both of you spent, Anushka rolls herself off you and the two of you lay side by side for several minutes while you catch your breath. Then you suggest, "Maybe we should get dressed before someone walks in, like your brothers."'
+									'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les5.jpg"></center>'
+									'You can hear her starting to breathe heavier and moan louder and you are about to suggest switching again, but apparently she had the same idea. She briefly stops straddling your face before turning around and then straddling your face again, while going down on her hands and knees so she can 69 with you.'
 									*nl
-									'She nods "Yeah you''re right." As you both start to get up, she reaches over and pulls you in close to her. With you both on your knees she pulls you over until your face is nearly touching hers and she looks deeply into your eyes. The shared look is only broken by occasional quick but soft kisses from her and soon from you as well. Then she gives you a one more long and soft kiss, with a hint of passion that leaves you breathless, before she pulls away.'
-									*nl
-									'On that little high note, she gets out of bed and starts getting dressed. You soon do the same and within a couple of minutes you are both fully dressed again.'
-									gs 'arousal', 'foreplay', 2, 'lesbian'
-									minut += 8
-									gs 'arousal', 'end'
+									'As soon as you feel her tongue flicking against your clit, you lift up your head slightly and begin licking her pussy again as well. Her tongue is  absolutely magical and it doesn''t take all that long until your body is rocked by a furious orgasm. Apparently feeling your pussy twitch around her tongue and the extra juices from your orgasm sets her off as well, her own pussy juice flowing out, coating your face as her own orgasm hits her.'
+									gs 'arousal', 'cuni_give', 10, 'lesbian'
+									minut -= 10
+									$orgasm_or = 'yes'
+									gs 'arousal', 'cuni', 10, 'lesbian'
 									gs 'stat'
-									act 'Get dressed':gt 'anushapt','anushroom'
+									act 'Afterglow':
+										cla
+										*clr
+										'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
+										'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/caughtmast/les6.jpg"></center>'
+										'With both of you spent, Anushka rolls herself off you and the two of you lay side by side for several minutes while you catch your breath. Then you suggest, "Maybe we should get dressed before someone walks in, like your brothers."'
+										*nl
+										'She nods "Yeah you''re right." As you both start to get up, she reaches over and pulls you in close to her. With you both on your knees she pulls you over until your face is nearly touching hers and she looks deeply into your eyes. The shared look is only broken by occasional quick but soft kisses from her and soon from you as well. Then she gives you a one more long and soft kiss, with a hint of passion that leaves you breathless, before she pulls away.'
+										*nl
+										'On that little high note, she gets out of bed and starts getting dressed. You soon do the same and within a couple of minutes you are both fully dressed again.'
+										gs 'arousal', 'foreplay', 2, 'lesbian'
+										minut += 8
+										gs 'arousal', 'end'
+										gs 'stat'
+										act 'Get dressed':gt 'anushapt','anushroom'
 								end
 							end
 						end
 					end
 				end
 			end
+		else
+			'As you lay side by side you look at her for a moment, maybe too long, or maybe she just senses it. She turns her head to look at you, her face not that far from yours and you can''t help it, you just think she is so damn pretty. You lean over and give her a kiss. She returns your kiss a moment then stops and pulls away. Sensing she isn''t interested you decided to keep talking instead.'
+			gs 'arousal', 'foreplay', 10, 'lesbian'
+			act 'Stop kissing and talk more': gt 'anushapt', 'chat'
 		end
 	end
 	act 'Snacks':
@@ -1315,7 +1372,6 @@ if $ARGS[0] = 'livingroom':
 	act 'Leave the room':gt 'anushapt', 'hallway'
 end
 
-
 if $ARGS[0] = 'kitchen':
 	CLOSE ALL
     *clr & cla
@@ -1389,11 +1445,6 @@ if $ARGS[0] = 'holodilnik':
 			minut += 1
 			alko +=2
 			cumspclnt = 2
-			if pcs_hydra >= 100:
-				pcs_hydra -= 5
-			else
-				pcs_hydra -= 10
-			end
 			gs 'cum_cleanup'
 			pcs_breath = 0
 			anushfood_day = daystart
@@ -1409,11 +1460,6 @@ if $ARGS[0] = 'holodilnik':
 					minut += 1
 					alko +=2
 					cumspclnt = 2
-					if pcs_hydra >= 100:
-						pcs_hydra -= 5
-					else
-						pcs_hydra -= 10
-					end
 					gs 'cum_cleanup'
 					pcs_breath = 0
 					anushvodka_count -= 1
@@ -1436,7 +1482,7 @@ if $ARGS[0] = 'holodilnik':
 			pcs_mood += 20
 			fat += 2
 			pcs_energy += 20
-			pcs_hydra += 40
+			water += 40
 			cumspclnt = 2
 			gs 'cum_cleanup'
 			pcs_breath = 0
@@ -1446,7 +1492,6 @@ if $ARGS[0] = 'holodilnik':
 	end
 	act 'Close the refrigerator': gt 'anushapt', 'kitchen'
 end 
-	
 	
 if $ARGS[0] = 'anushparents':
 	CLOSE ALL
@@ -1579,6 +1624,156 @@ if $ARGS[0] = 'firstvisit':
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/stairs/etaj4.jpg"></center>'
 	'Anushka leads you to her apartment, the two of you talk a bit as you go. Nothing important just idle small talk to pass the time. Once on the forth floor of her building she leads you to apartment 17, one of the corner apartments. You know from your own building these are the bigger three bedroom apartments. She unlocks the door with her keys and leads you inside. "Lets see if my dad is home." She tells you as she leads you to the living room.'
 	act 'Continue': AnushkaLoc = 5 & gt'anushapt','livingroom'
+end
+
+if $ARGS[0] = 'night_stand':
+	if AnushkaLoc = 2:
+		*clr & cla
+		minut += 2
+		npc_rel['A144'] += 2
+		gs 'stat'
+		'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/snoop.jpg"></center>'
+		'Having decided to snoop, you open the night stand drawer to take a peek inside, to see what she keeps there. There is some variety of medicines some legal likely some not, some pot, a pair scissors, razor blades, rolling paper, a lighter, pack of cigarettes, condoms, lotion, lube, vibrator, a dildo, butt plug, and even a strapon harness.'
+		'"See anything you like?" She asks you in a teasing tone.'
+		act 'Uh no':
+			*clr & cla
+			'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/nushdrawer.jpg"></center>'
+			'You blush slightly as she is watching you looking at her sex toys. You shake your head no and close the drawer, which just causes her to smirk in amusement.'
+			act 'Close the drawer':gt 'anushapt','anushroom'
+		act 'Strapon': gt 'anushkaev1', 'strapon1'
+	else
+		*clr & cla
+		minut += 2
+		'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/nushdrawer.jpg"></center>'
+		'Having decided to snoop, you open the night stand drawer to take a peek inside, to see what she keeps there. There is some variety of medicines some legal likely some not, some pot, a pair scissors, razor blades, rolling paper, a lighter, pack of cigarettes, condoms, lotion, lube, vibrator, a dildo, butt plug, and even a strap-on harness.'
+		'Not really surprising the amount of sex toys considering her relaxed attitude towards sex and sexuality, but it would be rude to play with someone else''s sex toys, so you close the drawer.'
+		act 'Close the drawer':gt 'anushapt','anushroom'
+	end
+end
+
+if $ARGS[0] = 'nushshower':
+	CLOSE ALL
+	cla
+	*clr
+	$metka = 'bathroom'
+	$loc = 'anushapt'
+	$metkaM = 'bathroom'
+	$locM = 'anushapt'
+	gs 'stat'
+	$location_type = 'bathroom'
+	AnushkaLoc = 7:
+	'<center><h4><font color="maroon">Bathroom</font></h4></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/dry1.jpg"></center>'
+	'As you approach the bathroom you can hear the water running. Checking the door you find the latch still broke, as you open the door and walk in, the water turns off. You look around and see that the bathroom has seen better days. There''s some mold in the corners of the walls and floors and the place probably hasn''t been cleaned for quite some time. The toilet sits along the far wall. There''s also a bathtub, with an old plastic shower curtain hanging from a rod above it. Anushka peeks out from around the curtain and when she see''s it''s you, she pushes it aside and grabs a towel. "Oh hey <<$pcs_nickname>>, what''s up?"'
+	gs 'arousal', 'voyeur', 2, 'lesbian'
+	act 'Just came over to hangout.':
+		*clr & cla
+		minut += 1
+		gs 'stat'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/dry2.jpg"></center>'
+		'You tell her. "Just came over to see what you was up to."'
+		'She nods a bit as she keeps drying off, seeming to care in the least that you are in there with her. "Was debating what I wanted to do myself tonight."'
+		'"Well now we can do something together then." you tell her.'
+		'"Sure sounds good to me, what do you want to do?"'
+		act 'We can think of something':
+			*clr & cla
+			minut += 1
+			gs 'stat'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/dry3.jpg"></center>'
+			'You think about it a moment. "I don''t know but I am sure we can come up with something to do."'
+			'"Sounds good, give me a few minutes to get dried off and I will join you in my room." She tells you.'
+			act 'Go wait for her': showerphotos = 0 & gt 'anushapt', 'shower_wait'
+			act 'Take her picture with your phone':
+				*clr & cla
+				minut += 1
+				showerphotos = 1
+				gs 'stat'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/photo1.jpg"></center>'
+				'While she is drying off you pull out your smart phone. Holding it up, you get a good image of her drying off and take her picture.'
+				'She notices you taking her picture and pulls the towel in place. "Hey you little perv."'
+				'You giggle at her reaction. "Oh please like you don''t like showing your body off all the time."'
+				'"Yes when I want to, now go on get out of here." She says while making a shooing motion with one of her hands.'
+				'You know deep down she really doesn''t care, she loves showing off her body to much, but maybe you should give her some privacy.'
+				act 'Go wait for her': gt 'anushapt', 'shower_wait'
+				act 'Show me a little skin':
+					*clr & cla
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/photo2.jpg"></center>'
+					'You move around to get in a better spot. "Don''t be like that, show me a little skin. Come on you know you want to." You say in a teasing tone.'
+					'She smiles a bit that quickly turns into a smirk as she turns her back to you and drops off the towel some to show off her back.'
+					gs 'arousal', 'voyeur', 1, 'lesbian'
+					gs 'stat'
+					act 'That''s better':
+						*clr & cla
+						'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/photo3.jpg"></center>'
+						'"Oh yeah that''s it, work it girl. Now show me a little more." You do your best to sound like a professional photographer getting a model to work the camera, even if all you have is your smart phone.'
+						gs 'arousal', 'voyeur', 2, 'lesbian'
+						gs 'stat'
+						act 'More':
+							*clr & cla
+							'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/photo4.jpg"></center>'
+							'She giggles a bit at that and turns her side to you, letting the towel open teasing you a bit with her nudity and striking a pose.'
+							'"Yeah that''s it, give me a little more, let''s see that hot little body of yours"'
+							gs 'arousal', 'voyeur', 2, 'lesbian'
+							gs 'stat'
+							act 'Perfect':
+								*clr & cla
+								'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/photo5.jpg"></center>'
+								'She turns towards you and fully opens the towel. Striking a pose and give you a full frontal view as you keep taking her picture.'
+								'You give her a little "Woo, that''s it, perfect. Work that camera girl. Now lets see that cute little ass of yours."'
+								gs 'arousal', 'voyeur', 2, 'lesbian'
+								gs 'stat'
+								act 'Cute little ass':
+									*clr & cla
+									'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/photo6.jpg"></center>'
+									'She lets the towel complete drop away and turns, putting one foot on the edge of the tub and gives a nice view of her backside.'
+									'"Yeah show me that cute little ass." You tell her as you take a couple of more pictures, until she throws the towel at you.'
+!!can we add all the above Photo''s Sveta takes of Anushka to the phone under Anushka, so the player can look at them any time as if they had really taken them? So it will save photo1-6.jpg in the players phone assuming they took those images of course.
+									gs 'arousal', 'voyeur', 2, 'lesbian'
+									gs 'stat'
+									act 'Continue':
+										*clr & cla
+										'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/selfie1.jpg"></center>'
+										'She steps out of the tub and looks in the mirror. "Damn I do look hot" Then she picks up her own phone and takes a nude selfie of herself. Then she looks over at you and waves you over. "Come on, lets takes a selfie together."'
+										gs 'arousal', 'voyeur', 1, 'lesbian'
+										gs 'stat'
+										act 'Selfie':
+											*clr & cla
+											showerphotos = 2
+											'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/selfie2.jpg"></center>'
+											'You move over and stand next to her, while she holds up her phone and takes a couple of selfies of the two of you together, which has to look a little odd. Her completely naked and you completely dressed but who are you to judge.'
+											gs 'arousal', 'voyeur', 1, 'lesbian'
+											gs 'stat'
+											act 'Go to her room': gt 'anushapt', 'shower_wait'
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+if $ARGS[0] = 'shower_wait':
+	CLOSE ALL
+	cla
+	*clr
+	gs 'stat'
+	'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
+	'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/nushbed.jpg"></center>'
+	if showerphotos = 0
+		'While Nush gets dried off you go into her room to wait for her. The room is surprisingly clean, even if it''s somewhat dusty. The walls are covered with pictures and posters and the room is skillfully decorated with various strings of coloured lights. You take a seat on the bed as you wait for her to come join you. A couple of minutes later she walks in completely naked and quickly gets dressed before jumping on the bed next to you.'
+	if showerphotos = 1
+		'Having messed around a bit taking her picture while she dried off, you decided to give her privacy and come wait in her room. The room is surprisingly clean, even if it''s somewhat dusty. The walls are covered with pictures and posters and the room is skillfully decorated with various strings of coloured lights. You take a seat on the bed as you wait for her to come join you. A couple of minutes later she walks in completely naked and quickly gets dressed before jumping on the bed next to you.'
+	if showerphotos = 2
+		'With the impromptu photo shoot and selfies done the two of you head to her room. She walks from the bathroom to her room, completely naked. Once inside she quickly gets dressed, while you take a seat on her bed as she does. Once she is fully dressed she flops down on the bed next to you.'
+	end
+	gs 'arousal', 'voyeur', 2, 'lesbian'
+	gs 'arousal', 'end'
+	act 'Chat': gt 'anushapt', 'chat'
+	act 'Get out of the bed': gt 'anushapt','anushroom'
 end
 
 --- anushapt ---------------------------------

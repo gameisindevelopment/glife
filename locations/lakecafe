@@ -174,7 +174,7 @@ if $ARGS[0] = 'barmensha':
 
 				if LCworkwork2 < 1:
 					'You ask Eugene: "I''m looking for a job. Would you happen to know about anything?"'
-					'Eugene ponders for a second and offers: "Actually, my sister always complains about how busy she is in the kitchen, during the early evening hours! If you come between 18:00 and 19:00, you could probably help her out in the kitchen for about an hour and a half. We''d be able to pay you 175 <b>₽</b> for your troubles!"'
+					'Eugene ponders for a second and offers: "Actually, my sister always complains about how busy she is in the kitchen, during the early evening hours! If you come between 18:00 and 19:00, you could probably help her out in the kitchen for about an hour and a half. We''d be able to pay you 100 <b>₽</b> for your troubles!"'
 					'You smile at her and thank her, saying you''ll keep it in mind.'
 					LCworkwork2 = 1
 					LCwork2 = 1
@@ -184,7 +184,7 @@ if $ARGS[0] = 'barmensha':
 						gt 'lakecafe', 'barmensha'
 					end
 				else
-					'When you ask Eugene about a job, she laughs: "Did you forget, <<$pcs_nickname>>? I already told you that my sister could use some help in the kitchen, during the early evening hours! If you come between 18:00 and 19:00, you can help her out for about an hour and a half! We can pay you 175 <b>₽</b> for your time."'
+					'When you ask Eugene about a job, she laughs: "Did you forget, <<$pcs_nickname>>? I already told you that my sister could use some help in the kitchen, during the early evening hours! If you come between 18:00 and 19:00, you can help her out for about an hour and a half! We can pay you 100 <b>₽</b> for your time."'
 
 					act 'Thank her for the reminder':
 						minut += 4

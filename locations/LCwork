@@ -7,7 +7,7 @@ if $ARGS[0] = 'start1':
 	slutty += 1
 	dynamic $venerasiakOral
 	dynamic $venerasiak
-	randLCpay = rand(500, 2000)
+	randLCpay = 1000
 	guy += randguycafe
 
 	if pcs_vag < 20:pcs_vag += randguycafe
@@ -32,7 +32,7 @@ if $ARGS[0] = 'start1':
 		gs 'arousal', 'bj', 120, 'sub', 'gangbang', 'prostitution'
 		gs 'arousal', 'anal', 120, 'sub', 'gangbang', 'prostitution'
 		gs 'arousal', 'vaginal', 120, 'sub', 'gangbang', 'prostitution'
-		minut -= 120
+		minut -= 240
 		gs 'stat'
 		
 	    if horand <= pcs_horny:pcs_horny = 0 & orgasm += 1 & 'You reach an orgasm throughout their rough treatment of you, and lay quivering while they continue to pound you mercilessly.'
@@ -64,7 +64,7 @@ if $ARGS[0] = 'start2':
 	facial += 1
 	spafinloc = 11
 	gs 'cum_manage'
-	randLCpay = rand(500, 2000)
+	randLCpay = 500
 
 	if pcs_vag < 18:pcs_vag += 1
 
@@ -108,7 +108,7 @@ if $ARGS[0] = 'start3':
 	gs 'cum_manage'
 	spafinloc = 12
 	gs 'cum_manage'
-	randLCpay = rand(500, 2000)
+	randLCpay = 500
 	guy += 2
 
 	if pcs_vag < 18:pcs_vag += 2
@@ -152,7 +152,7 @@ if $ARGS[0] = 'start4':
 	slutty += 1
 	spafinloc = 14
 	gs 'cum_manage'
-	randLCpay = rand(500, 2000)
+	randLCpay = 500
 	girl += 1
 	guy += 1
 
@@ -173,7 +173,7 @@ if $ARGS[0] = 'start4':
 		gs 'arousal', 'cuni', 120, 'sub', 'prostitution', 'lesbian'
 		gs 'arousal', 'vaginal_finger', 120, 'sub', 'prostitution', 'lesbian'
 		gs 'arousal', 'anal', 120, 'sub', 'prostitution'
-		minut -= 120
+		minut -= 240
 		gs 'stat'
 		
 		
@@ -247,7 +247,7 @@ if $ARGS[0] = 'start5':
 	*clr
 	horand = rand(1, 100)
 	slutty += 1
-	randLCpay = rand(500, 2000)
+	randLCpay = 500
 	girl += 1
 	dynamic $venerasiak
 	'<center><img <<$set_imgh>> src="images/locations/city/industrial/bbq/sex/5.jpg"></center>'
@@ -279,7 +279,7 @@ if $ARGS[0] = 'start6':
 	horand = rand(1, 100)
 	facial += 1
 	slutty += 1
-	randLCpay = rand(500, 2000)
+	randLCpay = 500
 	guy += 1
 
 	if pcs_vag < 18:pcs_vag += 1
@@ -319,7 +319,7 @@ if $ARGS[0] = 'Kitchen':
 	*clr
 	minut += 90
 	LCwork2 += 1
-	money += 175
+	money += 100
 	LCwork2day = daystart
 	'<center><img <<$set_imgh>> src="images/locations/city/industrial/bbq/kitchenworkcafe.jpg"></center>'
 	'Eugene gives you a warm smile and says: "That would be great, thanks!"'

@@ -316,6 +316,7 @@
       <Location name="pavComplex"/>
       <Location name="pavComplexb2"/>
       <Location name="pavComplexb3"/>
+      <Location name="pavComplexOld"/>
       <Location name="pod_ezd"/>
       <Location name="pod_whore"/>
       <Location name="gopsex"/>
@@ -419,6 +420,7 @@
     </Folder>
     <Folder name="Anushka">
       <Location name="anushka"/>
+      <Location name="anushkaev1"/>
       <Location name="anushapt"/>
     </Folder>
     <Folder name="Village">
