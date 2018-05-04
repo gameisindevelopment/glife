@@ -48,7 +48,7 @@ if $ARGS[0] = 'start':
 					cls
 					work = 0
 					PersSecWork = 2
-					Pay = PersSecWorkTimes * 2500
+					Pay = PersSecWorkTimes * 1250
 					PersSecWorkTimes = 0
 					money += Pay
 					gs 'stat'
