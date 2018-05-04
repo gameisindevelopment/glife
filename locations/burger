@@ -426,7 +426,7 @@ if $ARGS[0] = 'dishes':
 						gs 'stat'
 						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/sex/bj4.jpg"></center>'
 						'You squat in front of the manager and swallow his sperm before licking the remnants of his semen off of the still standing, but quickly lowering penis.'
-						'Finally Ivan sinks back, completely satisfied and gives you half thousand <b>₽</b> for the work you have done.'
+						'Finally Ivan sinks back, completely satisfied and gives you 500 <b>₽</b> for the work you have done.'
 
 						gs 'arousal', 'end'
 						gs 'stat'
@@ -470,7 +470,7 @@ if $ARGS[0] = 'dishes':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/sex/bj4.jpg"></center>'
 							'You squat in front of the manager and swallow his sperm as you began to lick the remnants of his semen off of the still standing, but quickly lowering penis.'
-							'Finally Ivan sinks back, completely satisfied and gives you half thousand <b>₽</b> for the work you have done.'
+							'Finally Ivan sinks back, completely satisfied and gives you 500 <b>₽</b> for the work you have done.'
 
 							gs 'arousal', 'end'
 							gs 'stat'
@@ -502,7 +502,7 @@ if $ARGS[0] = 'dishes':
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/sex/bjud.jpg"></center>'
 				'You crawl under the table and Ivan pulls out his penis in front of your face. You wrap your lips around it and begin to suck trying to get it into your mouth as deeply as possible. It is cramped and uncomfortable under the table, but you cope with it and after a few minutes of skilfully sucking him off you get Ivan to release his semen into your mouth. You quickly start to swallow, trying to avoid getting your clothes dirty.'
-				'Afterwards, Ivan takes out half a thousand rubles and hands them to you.'
+				'Afterwards, Ivan takes out 500 <b>₽</b> and hands them to you.'
 
 				gs 'arousal', 'bj', 3, 'sub'
 				gs 'arousal', 'end'
@@ -613,7 +613,7 @@ if $ARGS[0] = 'dishes':
 				soplakTimes1 += 1
 				if soplaktimes1=10:set soplaktimes=3
 				'<center><img <<$set_imgh>> src="images/shared/sex/cum/mouth/cum19.jpg"></center>'
-				'A hot jet of sperm slaps you in the mouth, while you continue to stroke his member. You are careful not to spill a drop of the nasty smelling liquid out of your mouth. Finally the stream dries up and you swallow the sperm. He grins and tosses three-hundred rubles on the floor. You pick them up and hide them in your pocket as you rise up from your knees and leave the office.'
+				'A hot jet of sperm slaps you in the mouth, while you continue to stroke his member. You are careful not to spill a drop of the nasty smelling liquid out of your mouth. Finally the stream dries up and you swallow the sperm. He grins and tosses 300 <b>₽</b> on the floor. You pick them up and hide them in your pocket as you rise up from your knees and leave the office.'
 				''
 
 				gs 'arousal', 'end'
@@ -699,7 +699,7 @@ if $ARGS[0] = 'boss':
 						cls
 						minut += 1
 						gs 'stat'
-						'You tell him, that you already work somewhere else. Anatoly Borisovich smiles a little, "What can I do to make you quit your job and work for me? You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 rubles per day."'
+						'You tell him, that you already work somewhere else. Anatoly Borisovich smiles a little, "What can I do to make you quit your job and work for me? You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 <b>₽</b> per day."'
 
 						act 'Leave':gt 'burger', 'start'
 					end
@@ -709,7 +709,7 @@ if $ARGS[0] = 'boss':
 							cls
 							minut += 1
 							gs 'stat'
-							'You ask about the job. Anatoly Borisovich smiles a little, "You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 rubles per day. I''m looking for loyalty, hard work, and strict compliance with my guidelines."'
+							'You ask about the job. Anatoly Borisovich smiles a little, "You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 <b>₽</b> per day. I''m looking for loyalty, hard work, and strict compliance with my guidelines."'
 
 							act 'Leave':gt 'burger', 'start'
 
@@ -775,7 +775,7 @@ if $ARGS[0] = 'boss':
 				end
 
 			elseif bistroQW >= 65:
-				'You sit down on a chair and Anatoly Borisovich gives you a grim look. "I did not think you were so cheap. What is your fee? 300 rubles for a blowjobto?" He pulls 300 <b>₽</b> out of his pocket and throws them on the floor. "Get down on your knees and do your work, slut."'
+				'You sit down on a chair and Anatoly Borisovich gives you a grim look. "I did not think you were so cheap. What is your fee? 300 <b>₽</b> for a blowjob?" He pulls 300 <b>₽</b> out of his pocket and throws them on the floor. "Get down on your knees and do your work, slut."'
 
 				act 'Leave':gt 'burger', 'start'
 
