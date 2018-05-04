@@ -44,7 +44,7 @@ if $ARGS[0] = 'start':
 	elseif posuda >= 1 and posudaday ! daystart and NoBistroWork = 0 and PersSecWork = 0:
 		act 'Wash the dishes for 70 <b>₽</b> (1:00)':gt 'burger', 'dishes'
 	elseif posudaA >= 1 and posudaAday ! daystart and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
-		act 'Wash the floor for 70 <b>₽</b>(1:00)':gt 'burger', 'floor'
+		act 'Wash the floor for 70 <b>₽</b> (1:00)':gt 'burger', 'floor'
 	end
 end
 
