@@ -160,7 +160,7 @@ if $ARGS[0] = '':
 			end
 		end
 
-		if therapistday ! daystart: 
+		if therapistday ! daystart:
 			act 'Visit the therapist (1:00)': gt 'therapist'
 		end
 	end
@@ -460,10 +460,10 @@ if $ARGS[0] = '':
 							'You massage it through his pants for a moment, and when you notice no objections from him you drop to your knees. He pulled his erection free from his pants, and you guide his stiff cock to your mouth with your hand. The look in his eyes is one you recognize from some of your customers - it''s the look of a man who''s going to demand a lot from you, to get his money''s worth. Oh boy.'
 							'You lick the tip of his cock teasingly. It''s a nice cock for sure, and the thought of servicing it even turns you on a little. Just because you''re repaying him for something he did for you, that doesn''t mean you can''t enjoy yourself too...'
 							'You slowly envelop his cock with your mouth, and begin to suck the head. After a minute or two you feel his hand at the back of your head. You want to raise your head and ask him what he wants, but he forces you to stay where it is and slowly pushes his hips forward, making you take more and more of his rod inside your mouth.'
-							
+
 							gs 'arousal', 'bj', 5, 'sub'
 							gs 'stat'
-							
+
 							act 'Give him a blowjob':
 								if venera > 0:gt 'gpoli', 'gynoblow'
 								cls
@@ -474,20 +474,20 @@ if $ARGS[0] = '':
 								'At one point it feels like he''s just fucking your throat carelessly, and you nearly gag when he pushes his dick all the way down your throat and holds it there for a few seconds. When he pulls back, it is fully coated with your saliva.'
 								'You gasp for breath while he pulls you up, and hear him say: "Should be slick enough... it''s time to go deeper."'
 								'You wonder what he means by that as he turns you around, and has you lean over against his chair. Once he''s certain you''re stable, he lets go of you and rubs the tip of his cock against your clitoris. It feels... quite nice, actually.'
-								
+
 								gs 'arousal', 'bj', 5, 'sub', 'deepthroat'
 								gs 'stat'
-							
+
 								act 'Continue':
 									cls
 									gs 'stat'
 									'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_8.jpg"></center>'
 									'You moan, feeling some of your wetness running down your leg as dr. Petrovich keeps rubbing his cock against your clit. He sure knows his way around a woman''s body!'
 									'For a moment you close your eyes and just give in to the pleasure. Before you know it you feel something push against your labia, and your vaginal walls are being stretched by his thick dick entering you. It''s still very slick from the blowjob you gave him earlier, and you can''t help but groan louder when it slides in.'
-									
+
 									gs 'arousal', 'vaginal', 5, 'sub'
 									gs 'stat'
-									
+
 									act 'Have sex with him':
 										cls
 										pcs_vag += 1
@@ -499,11 +499,11 @@ if $ARGS[0] = '':
 										'You feel like you''re in heat when he slowly begins to thrust his cock in and out of you. When he realizes you can take him easily, he steadily increases the pace and fucks you harder and harder. You involuntarily moan with his thrusts, fully giving yourself to this man.'
 										'Dr. Petrovich lightly slaps your ass a few times, and you groan louder. He''s making you feel so good! After a few minutes you can''t take it any more, and you try to stifle your moans so you don''t scream the whole clinic together while you have a thunderous orgasm. Your legs buckle under your weight and give way, but fortunately he pulled his dick out of you on time and catches you in his powerful arms. He carries you to a table and puts you down on top of it, with your legs spread towards him.'
 										'He immediately guides his cock back into you while your body quivers, still not fully recovered from the orgasm you just had.'
-										
+
 										$orgasm_or = 'yes'
 										gs 'arousal', 'vaginal', 5, 'sub'
 										gs 'stat'
-										
+
 										act 'Sex on the table':
 											cls
 											gs 'stat'
@@ -514,13 +514,13 @@ if $ARGS[0] = '':
 											'Just when you were about to get off the table, he returns with a big jar of lubricant in his hand and a latex glove on one hand. He motions for you to turn around, which you obediently do.'
 											'Several of his gloved fingers dip inside the jar, and when he pulls it up you see the lubricant slowly dripping from them. He puts them against your tight sphincter, and spreads some of the lube over it before thrusting three fingers in.'
 											'"Ouch!" You cry out when you feel his fingers stretch out your poor asshole... you were not counting on that! It hurts a bit, and you feel a bit uncomfortable when he pulls his fingers away and spreads more lubricant all over his cock. Before you can object, you feel the thick head of his cock pushing past your sphincter, stretching you out even further.'
-											
+
 											gs 'arousal', 'vaginal', 5, 'sub'
 											gs 'arousal', 'foreplay', 5, 'sub'
 											gs 'arousal', 'anal_finger', 5, 'sub'
 											minut -= 5
 											gs 'stat'
-											
+
 											act 'Anal sex':
 												cls
 												pcs_ass += 1
@@ -531,31 +531,31 @@ if $ARGS[0] = '':
 												'He softly mutters: "This won''t do, you''re going to alarm the entire clinic if you keep screaming like that!"'
 												'He takes his penis out of your ass, and you feel relieved. And, to be honest, rather turned on. It didn''t feel very good yet, but in a way you want it to. Maybe after a few more minutes?'
 												'"Come on, get on the floor," he says after he throws his coat down. He spreads some more lubricant over his gloved fingers, and smears it over your slightly sore butthole. Guess he''s not done with that yet...'
-												
+
 												gs 'arousal', 'anal', 5, 'sub'
 												gs 'stat'
-							
+
 												act 'Sex on the floor':
 													cls
 													gs 'stat'
 													'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_12.jpg"></center>'
 													'To your surprise he ignores your butt for now, and drives his penis into your cunt instead. He fucks you with short, rough strokes... almost as if he''s fucking the annoyance out of his system. It doesn''t feel very pleasant at first, but soon you begin to moan and enjoy the feeling again when your body relaxes.'
 													'When he notices you''re gasping faster, he quickly pulls his cock out of your snatch and rams it inside your asshole in one fluent motion. You cry out loud, partially from the pain, and partially because you''re frustrated... you were so close! Despite the discomfort and pain you''re experiencing from his dick in your ass, you rub your clitoris... partially hoping it will take your mind off the pain, and partially hoping you can still get that orgasm you were so close to.'
-													
+
 													gs 'arousal', 'vaginal', 5, 'sub', 'rough'
 													gs 'stat'
-													
+
 													act 'Anal':
 														cls
 														gs 'stat'
 														'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_13.jpg"></center>'
 														'Now that you''re so aroused, the anal sex doesn''t hurt quite as much. You furiously rub your clit while he pounds your stretched asshole roughly, slowly losing your mind when a second orgasm hits you. Dr. Petrovich must feel your anus contracting around his cock when you cum with it inside you.'
 														'He was close as well, and after you ride out your orgasm he gives it a few more thrusts before he pulls out and moves his hips towards your face. He grabs you by the hair and guides his cock towards your mouth, and you obediently open your mouth to let it in.'
-														
+
 														$orgasm_or = 'yes'
 														gs 'arousal', 'anal', 5, 'sub', 'rough'
 														gs 'stat'
-												
+
 														act 'Let him cum in your mouth':
 															cls
 															minut += 5
@@ -569,7 +569,7 @@ if $ARGS[0] = '':
 															'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_14.jpg"></center>'
 															'You feel too tired to object, even if you wanted to. You have no choice but to take his load in your mouth, and obediently let him shoot all his sperm inside you. As a nice touch, you show it all to him before swallowing his load and licking your lips. He moves his slowly softening dick towards your mouth once more, letting you suck and lick it clean.'
 															'Then he lets out a satisfied sigh and begins to put his clothes back on, as if nothing happened.'
-															
+
 															act 'Get dressed too':
 																cls
 																minut += 5
@@ -579,7 +579,7 @@ if $ARGS[0] = '':
 																'You follow his example, and also put your clothes back on.'
 																'When you''re both fully dressed again, he has a wide grin on his face: "Well now, one good turn deserves another. Considering your line of work, I suggest you come visit me at least once a week."'
 																'You happily agree with him: "That''s true. Thank you doctor, I will make sure to refer my friends to you if they ever need a check-up too."'
-																
+
 																gs 'arousal', 'end'
 																gs 'stat'
 
@@ -800,10 +800,10 @@ if $ARGS[0] = 'gynoblow':
 	'At one point it feels like he''s just fucking your throat carelessly, and you nearly gag when he pushes his dick all the way down your throat and holds it there for a few seconds. When he pulls back, it is fully coated with your saliva.'
 	'You gasp for breath while he pulls you up, and hear him say, "That''s it, take it all!."'
 	'He carries roughly pleasuring himself with your mouth until you realize he is about to cum.'
-	
+
 	gs 'arousal', 'bj', 10, 'sub', 'rough', 'deepthroat'
 	gs 'stat'
-												
+
 	act 'Let him cum in your mouth':
 		cls
 		minut += 5
@@ -817,7 +817,7 @@ if $ARGS[0] = 'gynoblow':
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_14.jpg"></center>'
 		'You feel too tired to object, even if you wanted to. You have no choice but to take his load in your mouth, and obediently let him shoot all his sperm inside you. As a nice touch, you show it all to him before swallowing his load and licking your lips. He moves his slowly softening dick towards your mouth once more, letting you suck and lick it clean.'
 		'Then he lets out a satisfied sigh and begins to put his clothes back on, as if nothing happened.'
-		
+
 		act 'Get dressed too':
 			cls
 			minut += 5
@@ -826,7 +826,7 @@ if $ARGS[0] = 'gynoblow':
 			'You follow his example, and also put your clothes back on.'
 			'When you''re both fully dressed again, he has a wide grin on his face: "Well now, one good turn deserves another. Considering your line of work, I suggest you come visit me at least once a week, but first go and see my colleague and get yourself cured."'
 			'You happily agree with him: "That''s true. Thank you doctor, I will make sure to refer my friends to you if they ever need a check-up too."'
-			
+
 			gs 'arousal', 'end'
 			gs 'stat'
 
@@ -895,20 +895,20 @@ if $ARGS[0] = 'spravka_arrange':
 			'Soon he is fucking your mouth, your saliva drooling down his shaft and over his hairy balls. The air of the office is filled with wet slurps and snorts as he pounds his cock into your mouth deeper and deeper, sometimes making you gag involuntarily as the head of his cock slips down your throat. With a sudden thrust, you can feel his curly pubic hair against your lips as he forces his cock down your throat as far as it''ll go. You panic as you can''t breathe, but dr. Petrovich just as suddenly pulls his dick out of your mouth again. Thankfully, you get a chance to catch your breath.'
 			'"I think that got me lubed up properly," dr. Petrovich says with a lusty voice. You can tell he is very excited now, and are not sure you want to find out what happens next. Nevertheless, you''re too far in to back down now. He urges you: "Come on, now it''s time to go deep."'
 			'"What do you mean?" you start to ask but get your answer almost immediately as dr. Petrovich raises you from the floor, and bends you over the chair. You can''t help but let out a moan as he begins to rub the head of his slippery cock against your engorged clitoris. You didn''t realize how excited you were getting while you were sucking his cock!'
-			
+
 			gs 'arousal', 'bj', 5, 'sub', 'deepthroat'
 			gs 'stat'
-												
+
 			act 'Continue':
 				cls
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_8.jpg"></center>'
 				'You can feel your arousal rising when his body touches yours. As dr. Petrovich keeps massaging your clitoris with his cockhead, you can feel your juices start to leak from your swollen pussy and run down your quivering thighs. You can hear the wet squelching, as he plows his throbbing cock between your soaking wet pussy lips. You close your eyes for a moment as you feel him push against your sopping wet cunt... it feels so good!'
 				'Your tender flesh resists for a moment, but then surrenders. You feel the walls of your vagina stretch open, letting the invader in. You let out a passionate groan as he fills you up completely.'
-				
+
 				gs 'arousal', 'vaginal', 5, 'sub'
 				gs 'stat'
-												
+
 				act 'Let him fuck you':
 					cls
 					pcs_vag += 1
@@ -921,11 +921,10 @@ if $ARGS[0] = 'spravka_arrange':
 					'You silently think to yourself: "I hope the room is soundproofed..." as the sound of his body slapping wetly against yours and your cries of passion and his animalistic grunts fill the room.'
 					'You can no longer control yourself and have a thunderous orgasm as the doctor keeps fucking you relentlessly. Waves of bliss sear your nerves and your mouth opens in a silent scream, as you are consumed with pleasure.'
 					'Suddenly, dr. Petrovich pulls his dick out of you and you almost fall to the floor. He catches you with his powerful arms right on time, and lowers you on a table where once again feel his cock slide into your quivering vagina.'
-					
+
 					$orgasm_or = 'yes'
 					gs 'arousal', 'vaginal', 5, 'sub'
-					gs 'stat
-				'
+					gs 'stat'
 					act 'Sex on the table':
 						cls
 						gs 'stat'
@@ -936,13 +935,13 @@ if $ARGS[0] = 'spravka_arrange':
 						'Just when you were about to get off the table, he returns with a big jar of lubricant in his hand and a latex glove on one hand. He motions for you to turn around, which you obediently do.'
 						'Several of his gloved fingers dip inside the jar, and when he pulls it up you see the lubricant slowly dripping from them. He puts them against your tight sphincter, and spreads some of the lube over it before thrusting three fingers in.'
 						'Ouch! You let out a painful sob when you feel his fingers stretch out your poor asshole... you were not counting on that! It hurts a bit, and you feel a bit uncomfortable when he pulls his fingers away and spreads more lubricant all over his cock. Before you can object, you feel the thick head of his cock pushing past your sphincter, stretching you out even further.'
-						
+
 						gs 'arousal', 'vaginal', 5, 'sub'
 						gs 'arousal', 'foreplay', 5, 'sub'
 						gs 'arousal', 'anal_finger', 5, 'sub'
 						minut -= 5
 						gs 'stat'
-											
+
 						act 'He fucks your ass':
 							cls
 							pcs_ass += 1
@@ -953,31 +952,31 @@ if $ARGS[0] = 'spravka_arrange':
 							'He softly mutters: "This won''t do, you''re going to alarm the entire clinic if you keep screaming like that!"'
 							'He takes his penis out of your ass, and you feel relieved. And, to be honest, rather turned on! It didn''t feel very good yet, but in a way you want it to. Maybe after a few more minutes?'
 							'"Come on, get on the floor," he says after he throws his coat down. He spreads some more lubricant over his gloved fingers, and smears it over your slightly sore butthole. Guess he''s not done with that hole yet...'
-							
+
 							gs 'arousal', 'anal', 5, 'sub'
 							gs 'stat'
-												
+
 							act 'Sex on the floor':
 								cls
 								gs 'stat'
 								'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_12.jpg"></center>'
 								'To your surprise he ignores your butt for now, and drives his penis into your cunt instead when he gets down behind you. He fucks you with short, rough strokes... almost as if he''s fucking the annoyance out of his system. It doesn''t feel very pleasant at first, but soon you begin to moan and enjoy the feeling again when your body begins to relax.'
 								'When he notices you''re gasping faster, he quickly pulls his cock out of your snatch and rams it inside your asshole in one fluent motion. You cry out loud, partially from the pain, and partially because you''re frustrated... you were so close! Despite the discomfort and pain you''re experiencing from his dick in your ass, you rub your clitoris... partially hoping it will take your mind off the pain, and partially hoping you can still get that orgasm you were so close to.'
-								
+
 								gs 'arousal', 'vaginal', 5, 'sub', 'rough'
 								gs 'stat'
-													
+
 								act 'Anal again':
 									cls
 									gs 'stat'
 									'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_13.jpg"></center>'
 									'Now that you''re so aroused, the anal sex doesn''t hurt quite as much. You furiously rub your clit while he pounds your stretched asshole roughly, slowly losing your mind when a second orgasm hits you. Dr. Petrovich must feel your anus contracting around his cock when you cum with it inside you.'
 									'He was close as well, and after you ride out your orgasm he gives it a few more thrusts before he pulls out and moves his hips towards your face. He grabs you by the hair and guides his cock towards your mouth, and you obediently open your mouth to let it in.'
-									
+
 									$orgasm_or = 'yes'
 									gs 'arousal', 'anal', 5, 'sub', 'rough'
 									gs 'stat'
-														
+
 									act 'Let him cum in your mouth':
 										cls
 										minut += 5
@@ -991,7 +990,7 @@ if $ARGS[0] = 'spravka_arrange':
 										'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_14.jpg"></center>'
 										'You feel too tired to object, even if you wanted to. You have no choice but to take his load in your mouth, and obediently let him shoot all his sperm inside you. As a nice touch, you show it all to him before swallowing his load and licking your lips. He moves his slowly softening dick towards your mouth once more, letting you suck and lick it clean.'
 										'Then he lets out a satisfied sigh and begins to put his clothes back on, as if nothing happened.'
-										
+
 										act 'Get dressed':
 											cls
 											minut += 5
@@ -1003,10 +1002,10 @@ if $ARGS[0] = 'spravka_arrange':
 											'You feel cheap for a moment, when you accept the referral. Nevertheless, you''re off the hook for another month... that''s worth something, right?'
 											Gspravka = 30
 											GspravkaT = 1
-											
+
 											gs 'arousal', 'end'
 											gs 'stat'
-																
+
 											act 'Leave':gt 'gpoli'
 										end
 									end
@@ -1129,10 +1128,10 @@ if $ARGS[0] = 'spravka_arrange_pale':
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_6.jpg"></center>'
 		'You sigh and slowly slide down from chair, kneeling in front of the doctor. He undoes his trousers and lets them drop to his ankles, exposing his semi-hard penis. You grasp it in your hand and reluctantly begin to lick his member while rubbing your hand up and down the shaft. As his cock begins to get harder, you become fascinated by the changes to his manhood. You find yourself starting to get involved in pleasuring him... maybe this won''t be so bad after all. To your surprise, you think you might even be starting to enjoy the feel and taste of his hot flesh. You move your hand faster, still licking his now fully erect cock and his breathing slightly accelerates. You think maybe that''s it, maybe he''s about to come...'
 		'But, no. Instead the doctor lays his hand on the back of your head. You want to raise your head to see what he wants, but instead he pulls you towards his groin and your <<$liptalk>> begin to stretch over his slippery cockhead.'
-		
+
 		gs 'arousal', 'hj', 5, 'sub'
 		gs 'stat'
-		
+
 		act 'Give him a blowjob':
 			cls
 			if gpoli_doctorhavesex = 0:gpoli_doctorhavesex = 1 & guy += 1
@@ -1144,20 +1143,20 @@ if $ARGS[0] = 'spravka_arrange_pale':
 			'Soon he is fucking your mouth, your saliva drooling down his shaft and over his hairy balls. The air of the office is filled with wet slurps and snorts as he pounds his cock into your mouth deeper and deeper, sometimes making you gag as the head of his cock slips down your throat. With a sudden thrust, you can feel his curly pubic hair against your lips as he forces his cock all the way down your throat. You panic as you can''t breathe, but dr. Petrovich just as suddenly pulls his dick out of your mouth again. Thankfully, you get a chance to catch your breath.'
 			'"I think that got me lubed up properly," dr. Petrovich says with a lusty voice. You can tell he is very excited now, and are not sure you want to find out what happens next. Nevertheless, you''re too far in to back down now. He urges you: "Come on, now it''s time to go deep."'
 			'"What do you mean?" you start to ask but get your answer almost immediately as dr. Petrovich raises you from the floor, and bends you over the chair. You can''t help but let out a moan as he begins to rub the head of his slippery cock against your engorged clitoris. You didn''t realize how excited you were getting while you were sucking his cock!'
-			
+
 			gs 'arousal', 'bj', 5, 'sub', 'deepthroat'
 			gs 'stat'
-		
+
 			act 'Continue':
 				cls
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_8.jpg"></center>'
 				'You can feel your arousal rising when his body touches yours. As dr. Petrovich keeps massaging your clitoris with his cockhead, you can feel your juices start to leak from your swollen pussy and run down your quivering thighs. You can hear the wet squelching, as he plows his throbbing cock between your soaking wet pussy lips. You close your eyes for a moment as you feel him push against your sopping wet cunt... it feels so good!'
 				'Your tender flesh resists for a moment, but then surrenders. You feel the walls of your vagina stretch open, letting the invader in. You let out a passionate groan as he fills you up completely.'
-				
+
 				gs 'arousal', 'vaginal', 5, 'sub'
 				gs 'stat'
-			
+
 				act 'Let him fuck you':
 					cls
 					pcs_vag += 1
@@ -1167,11 +1166,11 @@ if $ARGS[0] = 'spravka_arrange_pale':
 					'You silently think to yourself: "I hope the room is soundproofed..." as the sound of his body slapping wetly against yours and your cries of passion and his animalistic grunts fill the room.'
 					'You can no longer control yourself and have a thunderous orgasm as the doctor keeps fucking you relentlessly. Waves of bliss sear your nerves and your mouth opens in a silent scream, as you are consumed with pleasure.'
 					'Suddenly, dr. Petrovich pulls his dick out of you and you almost fall to the floor. He catches you right on time in his powerful arms, and lowers you on a table where you once again feel his cock slide into your quivering vagina.'
-					
+
 					$orgasm_or = 'yes'
 					gs 'arousal', 'vaginal', 5, 'sub', 'rough'
 					gs 'stat'
-				
+
 					act 'Sex on the table':
 						cls
 						gs 'stat'
@@ -1182,13 +1181,13 @@ if $ARGS[0] = 'spravka_arrange_pale':
 						'Just when you were about to get off the table, he returns with a big jar of lubricant in his hand and a latex glove on one hand. He motions for you to turn around, which you obediently do.'
 						'Several of his gloved fingers dip inside the jar, and when he pulls it up you see the lubricant slowly dripping from them. He puts them against your tight sphincter, and spreads some of the lube over it before thrusting three fingers in.'
 						'Ouch! You let out a painful sob when you feel his fingers stretch out your poor asshole... you were not counting on that! It hurts a bit, and you feel a bit uncomfortable when he pulls his fingers away and spreads more lubricant all over his cock. Before you can object, you feel the thick head of his cock pushing past your sphincter, stretching you out even further.'
-						
+
 						gs 'arousal', 'vaginal', 5, 'sub'
 						gs 'arousal', 'foreplay', 5, 'sub'
 						gs 'arousal', 'anal_finger', 5, 'sub'
 						minut -= 5
 						gs 'stat'
-						
+
 						act 'He fucks your ass':
 							cls
 							pcs_ass += 1
@@ -1199,31 +1198,31 @@ if $ARGS[0] = 'spravka_arrange_pale':
 							'He softly mutters: "This won''t do, you''re going to alarm the entire clinic if you keep screaming like that!"'
 							'He takes his penis out of your ass, and you feel relieved. And, to be honest, rather turned on! It didn''t feel very good yet, but in a way you want it to. Maybe after a few more minutes?'
 							'"Come on, get on the floor," he says after he throws his coat down. He spreads some more lubricant over his gloved fingers, and smears it over your slightly sore butthole. Guess he''s not done yet...'
-							
+
 							gs 'arousal', 'anal', 5, 'sub'
 							gs 'stat'
-							
+
 							act 'Sex on the floor':
 								cls
 								gs 'stat'
 								'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_12.jpg"></center>'
 								'To your surprise he ignores your butt for now, and drives his penis into your cunt instead when he gets down behind you. He fucks you with short, rough strokes... almost as if he''s fucking the annoyance out of his system. It doesn''t feel very pleasant at first, but soon you begin to moan and enjoy the feeling again when your body begins to relax.'
 								'When he notices you''re gasping faster, he quickly pulls his cock out of your snatch and rams it inside your asshole in one fluent motion. You cry out loud, partially from the pain, and partially because you''re frustrated... you were so close! Despite the discomfort and pain you''re experiencing from his dick in your ass, you rub your clitoris... partially hoping it will take your mind off the pain, and partially hoping you can still get that orgasm you were so close to.'
-								
+
 								gs 'arousal', 'vaginal', 5, 'sub', 'rough'
 								gs 'stat'
-								
+
 								act 'Anal again':
 									cls
 									gs 'stat'
 									'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_13.jpg"></center>'
 									'Now that you''re so aroused, the anal sex doesn''t hurt quite as much. You furiously rub your clit while he pounds your stretched asshole roughly, slowly losing your mind when a second orgasm hits you. Dr. Petrovich must feel your anus contracting around his cock when you cum with it inside you.'
 									'He was close as well, and after you ride out your orgasm he gives it a few more thrusts before he pulls out and moves his hips towards your face. He grabs you by the hair and guides his cock towards your mouth, and you obediently open your mouth to let it in.'
-									
+
 									$orgasm_or = 'yes'
 									gs 'arousal', 'anal', 5, 'sub', 'rough'
 									gs 'stat'
-									
+
 									act 'Let him cum in your mouth':
 										cls
 										minut += 5
@@ -1237,7 +1236,7 @@ if $ARGS[0] = 'spravka_arrange_pale':
 										'<center><img <<$set_imgh>> src="images/locations/pavlovsk/clinic/gyno/sex/gpoli_14.jpg"></center>'
 										'You feel too tired to object, even if you wanted to. You have no choice but to take his load in your mouth, and obediently let him shoot all his sperm inside you. As a nice touch, you show it all to him before swallowing his load and licking your lips. He moves his slowly softening dick towards your mouth once more, letting you suck and lick it clean.'
 										'Then he lets out a satisfied sigh and begins to put his clothes back on, as if nothing happened.'
-										
+
 										act 'Get dressed':
 											cls
 											minut += 5
@@ -1251,10 +1250,10 @@ if $ARGS[0] = 'spravka_arrange_pale':
 											'You feel a sharp pinch, then the feeling of a cold liquid being injected into your ass cheek. It isn''t as bad as you thought it was going to be, but you''re still relieved when it''s over.'
 											'"There, all done," the doctor says with a satisfied tone. He warns you: "It could take up to 30 days for the symptoms to fully disappear. Just be sure not to snort any more, or the cure will not work."'
 											'You quietly mumble: "Thank you doctor," as you straighten your clothes.'
-											
+
 											gs 'arousal', 'end'
 											gs 'stat'
-											
+
 											act 'Leave':gt 'gpoli'
 										end
 									end
