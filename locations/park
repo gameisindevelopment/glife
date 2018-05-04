@@ -235,10 +235,10 @@ end
 if $ARGS[0] = 'exit':
 	cla
 	act 'Cancel': gt 'park', 'start'
-	act 'Go to the highway near the park':gt 'park', 'whore'
-	act 'Go to the residential area':minut += 20 & gt 'street'
-	act 'Go to the city center':minut += 45 & gt 'down'
-	act 'Go to the city industrial region':minut += 60 & gt 'Nord'
+	act 'Go to the highway near the park (0:05)':minut += 5 & gt 'park', 'whore'
+	act 'Go to the residential area (0:20)':minut += 20 & gt 'street'
+	act 'Go to the city center (0:45)':minut += 45 & gt 'down'
+	act 'Go to the city industrial region (0:60)':minut += 60 & gt 'Nord'
 end
 
 if $ARGS[0] = 'luna':
@@ -459,7 +459,6 @@ if $ARGS[0] = 'whore':
     $location_type = 'event_outdoors'
 	cla
 	*clr
-	minut += 5
 	clr
 	gs 'stat'
 	'<center><b><font color="maroon">The road near the park</font></b></center>'
@@ -487,7 +486,7 @@ if $ARGS[0] = 'whore':
 			act 'Go back to the park':gt 'park', 'start'
 		end
 	end
-	act 'Go back to the park':gt 'park', 'start'
+	act 'Go back to the park (0:05)': minut += 5 & gt 'park', 'start'
 end
 
 if $ARGS[0] = 'prost':
