@@ -107,7 +107,7 @@ if $ARGS[0] = '':
 				cls
 				cleZarplatDay = daystart
 				vokzalVork += 1
-				money += 250
+				money += 130
 				minut += 3
 				gs 'stat'
 				'When you are done cleaning all the places you were told to clean, you go to the cashier and collect your well-earned salary.'

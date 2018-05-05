@@ -229,7 +229,7 @@ if $ARGS[0] = 'contract':
 	'Tanya isn''t exactly in disarray but her hair looks windswept, her face is still a little red, and she keeps licking her lips and smiling to herself. When she notices your look on her, she gives you a broad, satisfied smile and a thumbs-up.'
 	'Nicholas approaches and greets you in a friendly tone, but with a firm handshake. You chat for a minute about how you and Tanya know each other - "We met at the gym", is all you say, and Tanya giggles while she nods in agreement - before he tells you that she "recommended" you for a maid job and that he puts "great faith in her judgement".'
 	'He talks to you about the conditions of working as a maid for him: You would have to wear a maid uniform while you''re doing work around the apartment, clean the rooms and prepare breakfast every day, including the weekends, and attending the family and guests, should they voice any other wishes. You would also be required to <b>meet him in the living room every evening between 20 and 23 o''clock, to discuss your day''s work</b>.'
-	'"The pay is 25,000 <b>₽</b> at the end of every month, and you would be required to live in a room in the apartment", he explains, but the room he talks about turns out to be really spacious and well-furnished, including your own huge TV, couch and double bed!'
+	'"The pay is 10,000 <b>₽</b> at the end of every month, and you would be required to live in a room in the apartment", he explains, but the room he talks about turns out to be really spacious and well-furnished, including your own huge TV, couch and double bed!'
 	'After a short tour of the apartment, Nicholas reiterates the conditions to make sure you have understood everything and shows you the written contract of employment. There may be some downsides to this but there are DEFINITELY plenty of advantages.'
 
 	act 'Sign the contract and leave to get your belongings':gt 'down'
@@ -248,6 +248,6 @@ if $ARGS[0] = 'contract':
 		act 'Leave now before you can do anymore damage':gt 'down'
 	end
 end
-	
+
 --- tanapartment ---------------------------------
 

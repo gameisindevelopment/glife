@@ -92,5 +92,7 @@ killvar 'dachaest'
 killvar 'housr'
 killvar 'BuyHous'
 
+if alko < 0: alko = 0
+
 --- loadg ---------------------------------
 

@@ -179,7 +179,7 @@ if $ARGS[0] = 'counter':
 		act 'return': gt 'kiosk', 'start'
 	end
 
-	act 'View phone themes': gt 'kiosk', 'themes'
+	act 'View phone themes': $kioskloc = '' & gt 'kiosk', 'themes'
 end
 
 if $ARGS[0] =  'themes':
@@ -196,7 +196,7 @@ if $ARGS[0] =  'themes':
 	i += 1
 	if i < 13: jump 'phonethemeloop'
 
-	act 'Return': gt 'kiosk', 'counter'
+	act 'Return': $kioskloc = 'counter' & gt 'kiosk', 'counter'
 end
 
 --- kiosk ---------------------------------

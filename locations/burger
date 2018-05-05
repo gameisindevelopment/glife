@@ -42,9 +42,9 @@ if $ARGS[0] = 'start':
 	elseif posuda >= 3 and posudaA = 0:
 		act 'Go to the manager':gt 'burger', 'manager'
 	elseif posuda >= 1 and posudaday ! daystart and NoBistroWork = 0 and PersSecWork = 0:
-		act 'Wash the dishes for 100 <b>₽</b> (1:00)':gt 'burger', 'dishes'
+		act 'Wash the dishes for 70 <b>₽</b> (1:00)':gt 'burger', 'dishes'
 	elseif posudaA >= 1 and posudaAday ! daystart and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
-		act 'Wash the floor for 100 <b>₽</b>(1:00)':gt 'burger', 'floor'
+		act 'Wash the floor for 70 <b>₽</b>(1:00)':gt 'burger', 'floor'
 	end
 end
 
@@ -83,7 +83,7 @@ end
 
 if $ARGS[0] = 'apply':
 	cla
-	'You go into the manager''s office where you meet a smart girl. She begins to tell you, that you can work almost every day, "Come in any time, run the snack bar and wash the dishes for 1:00. You will get 100 <b>₽</b> immediately on hand."'
+	'You go into the manager''s office where you meet a smart girl. She begins to tell you, that you can work almost every day, "Come in any time, run the snack bar and wash the dishes for 1:00. You will get 70 <b>₽</b> immediately on hand."'
 
 	act 'Refuse and leave':gt 'burger', 'start'
 
@@ -98,7 +98,7 @@ end
 
 if $ARGS[0] = 'manager':
 	cla
-	'You go to the office of the manager. The girl tells the manager that you are doing good work and offers you another part-time job, "You can wash the floors in the morning, from 8 to 9. 1 hour of cleaning floors will get you 100 <b>₽</b> immediately on hand."'
+	'You go to the office of the manager. The girl tells the manager that you are doing good work and offers you another part-time job, "You can wash the floors in the morning, from 8 to 9. 1 hour of cleaning floors will get you 70 <b>₽</b> immediately on hand."'
 
 	act 'Refuse and leave':gt 'burger', 'start'
 
@@ -119,13 +119,13 @@ if $ARGS[0] = 'dishes':
 	minut += 60
 	posuda += 1
 	pcs_mood -= 15
-	money += 100
+	money += 70
 	pcs_sweat += 10
 
 	if bistroQW = 10:bistroQW = 0
 
 	'<center><img <<$set_imgh>> src="images/shared/home/kitchen/dirt.jpg"></center>'
-	'You clean the food residue and grease from the dirty dishes for an hour. Afterwards you are given 100 <b>₽</b> for your work.'
+	'You clean the food residue and grease from the dirty dishes for an hour. Afterwards you are given 70 <b>₽</b> for your work.'
 
 	if pcs_apprnc >= 80 and posuda >= 7 and bistroQW < 10:
 		if bistroQW = 1:
@@ -422,7 +422,7 @@ if $ARGS[0] = 'dishes':
 						sexpartkno = 1
 						spafinloc = 12
 						gs 'cum_manage'
-						money += 1500
+						money += 500
 						gs 'stat'
 						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/sex/bj4.jpg"></center>'
 						'You squat in front of the manager and swallow his sperm before licking the remnants of his semen off of the still standing, but quickly lowering penis.'
@@ -466,7 +466,7 @@ if $ARGS[0] = 'dishes':
 							sexpartkno = 1
 							spafinloc = 12
 							gs 'cum_manage'
-							money += 1500
+							money += 500
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/sex/bj4.jpg"></center>'
 							'You squat in front of the manager and swallow his sperm as you began to lick the remnants of his semen off of the still standing, but quickly lowering penis.'
@@ -498,7 +498,7 @@ if $ARGS[0] = 'dishes':
 				sexpartkno = 1
 				spafinloc = 12
 				gs 'cum_manage'
-				money += 1500
+				money += 500
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/sex/bjud.jpg"></center>'
 				'You crawl under the table and Ivan pulls out his penis in front of your face. You wrap your lips around it and begin to suck trying to get it into your mouth as deeply as possible. It is cramped and uncomfortable under the table, but you cope with it and after a few minutes of skilfully sucking him off you get Ivan to release his semen into your mouth. You quickly start to swallow, trying to avoid getting your clothes dirty.'
@@ -646,10 +646,10 @@ if $ARGS[0] = 'floor':
 	minut += 60
 	posuda += 1
 	pcs_mood -= 15
-	money += 100
+	money += 70
 	pcs_sweat += 10
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/office/clener1.jpg"></center>'
-	'You wash the floors of the bistro for an hour. Afterwards you are given 100 <b>₽</b> for your work.'
+	'You wash the floors of the bistro for an hour. Afterwards you are given 70 <b>₽</b> for your work.'
 
 	act 'Leave':gt 'burger', 'start'
 end
@@ -699,7 +699,7 @@ if $ARGS[0] = 'boss':
 						cls
 						minut += 1
 						gs 'stat'
-						'You tell him, that you already work somewhere else. Anatoly Borisovich smiles a little, "What can I do to make you quit your job and work for me? You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 2500 rubles per day."'
+						'You tell him, that you already work somewhere else. Anatoly Borisovich smiles a little, "What can I do to make you quit your job and work for me? You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 rubles per day."'
 
 						act 'Leave':gt 'burger', 'start'
 					end
@@ -709,7 +709,7 @@ if $ARGS[0] = 'boss':
 							cls
 							minut += 1
 							gs 'stat'
-							'You ask about the job. Anatoly Borisovich smiles a little, "You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 2500 rubles per day. I''m looking for loyalty, hard work, and strict compliance with my guidelines."'
+							'You ask about the job. Anatoly Borisovich smiles a little, "You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 rubles per day. I''m looking for loyalty, hard work, and strict compliance with my guidelines."'
 
 							act 'Leave':gt 'burger', 'start'
 
@@ -719,7 +719,7 @@ if $ARGS[0] = 'boss':
 								work = 1
 								PersSecWork = 1
 								gs 'stat'
-								'You agree to become a secretary to Anatoly Borisovich. He takes your CV, makes a copy of your passport and diploma, and tells you. "Come to work here every weekday, no later than 9 am, you must wear an office outfit. You will receive calls, take letters, and copy documents, and you have to do any other general office work as required. You will work until 17.00, your salary will be paid into your bank account every month."'
+								'You agree to become a secretary to Anatoly Borisovich. He takes your CV, makes a copy of your passport and diploma, and tells you. "Come to work here every weekday, no later than 9 am, you must wear an office outfit. You will receive calls, take letters, and copy documents, and you have to do any other general office work as required. You will work until 17:00, your salary will be paid into your bank account every month."'
 
 								act 'Leave':gt 'burger', 'start'
 							end
@@ -830,7 +830,6 @@ if $ARGS[0] = 'boss':
 		end
 	end
 end
-
 
 --- burger ---------------------------------
 

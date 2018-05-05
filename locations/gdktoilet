@@ -485,13 +485,13 @@ if $ARGS[0] = 'mensglory':
 					gs 'stat'
 					if rand(1, 2) = 1:
 						act 'Pull away':
-							minute +=5
+							minut +=5
 							gs 'stat'
 							cls
 							'<center><video autoplay loop src="images/shared/sex/cum/mouth/cum1,1.mp4"></video></center>'
 							'You pull away right before he cums. You start to stroke his dick and you open your mouth. His hot load fills your mouth, it tastes salty and warm.'
 							act 'swallow':
-								minute +=5
+								minut +=5
 								swallow += 1
 								spafinloc = 12
 								cls
@@ -502,7 +502,7 @@ if $ARGS[0] = 'mensglory':
 								act 'Leave': gt'gdktoilet', 'start'
 							end
 							act 'spit':
-								minute +=5
+								minut +=5
 								spafinloc = 10
 								gs 'cum_manage'
 								spafinloc = 14
@@ -517,7 +517,7 @@ if $ARGS[0] = 'mensglory':
 					else
 						act 'Keep sucking':
 							if pcs_throat <= 25:
-								minute +=5
+								minut +=5
 								spafinloc = 12
 								gs 'cum_manage'
 								gs 'stat'
@@ -526,7 +526,7 @@ if $ARGS[0] = 'mensglory':
 								'You keep sucking taking in his entire dick. You stop when you feel his hard penis throbbing as a warm liquid fills your throat. You pull out his penis from your mouth making sure to not let any get spilled. The man says, "You are much better than that hole in the wall." You smile and nod to him and get dressed. You leave the bathroom feeling satisfied and relaxed.'
 								act 'Leave': gt'gdktoilet', 'start'
 							else
-								minute +=5
+								minut +=5
 								spafinloc = 12
 								gs 'cum_manage'
 								gs 'stat'
@@ -824,7 +824,7 @@ if $ARGS[0] = 'virgin':
 			act 'Continue Stroking':
 				cls
 				spafinloc = 13
-				minute +=5
+				minut +=5
 				gs 'arousal', 'end'
 				gs 'cum_manage'
 				gs 'stat'
@@ -1150,7 +1150,7 @@ if $ARGS[0] = 'rape':
 		act 'Dance':
 			cla
 			*clr
-			minute +=10
+			minut +=10
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/community/disco/club_dance.jpg"></center>'
 			'You continue to dance until the man has left.'
 			act 'Stop': gt 'gdkin'

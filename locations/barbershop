@@ -63,7 +63,7 @@ if $ARGS[0] = 'start':
 	if pcs_hairlng <= 15:
 		'Your hair is not long enough to require cutting.'
 	else
-		'<a href=' + iif(money >= 500, '"exec:gt ''barbershop'', ''cuthair''"', '') + '>Cut your hair - 500 <b>₽</b></a>'
+		'<a href=' + iif(money >= 700, '"exec:gt ''barbershop'', ''cuthair''"', '') + '>Cut your hair - 700 <b>₽</b></a>'
 	end
 
 	*nl
@@ -71,7 +71,7 @@ if $ARGS[0] = 'start':
 	if pcs_hairlng <= 80:
 		'Your hair is not long enough to be curled.'
 	else
-		'<a href=' + iif(money >= 300, '"exec:gt ''barbershop'', ''perm''"','') + '>Curl your hair - 300 <b>₽</b></a>'
+		'<a href=' + iif(money >= 1500, '"exec:gt ''barbershop'', ''perm''"','') + '>Curl your hair - 1500 <b>₽</b></a>'
 	end
 	
 	*nl
@@ -79,7 +79,7 @@ if $ARGS[0] = 'start':
 	if pcs_hairlng <= 80:
 		'Your hair is not long enough to be straightened.'
 	else
-		'<a href=' + iif(money >= 300, '"exec:gt ''barbershop'', ''perm2''"', '') + '>Straighten your hair - 300 <b>₽</b></a>'
+		'<a href=' + iif(money >= 1500, '"exec:gt ''barbershop'', ''perm2''"', '') + '>Straighten your hair - 1500 <b>₽</b></a>'
 	end
 	
 	*nl
@@ -145,7 +145,7 @@ if barbershop_wrk = 0:
 		'You smile cheerfully. "That sound great! What would I have to do?"'
 		'"Well," he says, while looking around and gathering tasks for you. "...,  you''d have to mop the floor here in the main room and the break room in the back as well. Take out all the trash, clean the breakroom kitchen, clean the mirrors, windows, chairs and toilet and of course dust the shelves. It might sound like a lot, but don''t worry, even doing one thing, makes my life easier."'
 		'You think about it for a second, but you guess it won''t be too bad and you could need any amount of money... "I...uhm...hate to ask, but how much would I earn per hour?"'
-		'"Ah yes," Mr. Syomin chuckles. "..., the most important question. Are you alright with 100 <b>₽</b> per hour?"'
+		'"Ah yes," Mr. Syomin chuckles. "..., the most important question. Are you alright with 90 <b>₽</b> per hour?"'
 			
 		act 'Accept the job':
 			cla
@@ -169,10 +169,10 @@ elseif barbershop_wrk = 1 and barbershop_wrk_day ! daystart:
 		cla
 		*clr
 		minut += 60
-		money += 100
+		money += 90
 		barbershop_wrk_day = daystart
 		gs 'stat'
-		'You work diligently and fast. You clean the floor, take out the trash, dust off the shelves and wipe some mirrors and windows. Before you know an hour has passed and you''re 100 <b>₽</b> richer.'
+		'You work diligently and fast. You clean the floor, take out the trash, dust off the shelves and wipe some mirrors and windows. Before you know an hour has passed and you''re 90 <b>₽</b> richer.'
 
 		act 'Leave': gt 'barbershop','start'
 	end
@@ -189,7 +189,7 @@ if $ARGS[0] = 'cuthair':
 		act 'Very short':
 			cla
 			*clr
-			money -= 500
+			money -= 700
 			'You sit down and say, "I want my hair to be very short."'
 			'"Of course", he says with a friendly smile on her face, while leading you to a free seat.'
 
@@ -211,7 +211,7 @@ if $ARGS[0] = 'cuthair':
 		act 'Short, but not too short':
 			cla
 			*clr
-			money -= 500
+			money -= 700
 			'"I''d like to have my hair cut short, but it shouldn''t get too short. I hope, you know what I mean.", you tell him, hoping he wouldn''t cut everything off.'
 			'"I know what you mean, that''s not problem at all", he says, then he turns around one of the free seats and makes a gesture to you, to sit down.'
 
@@ -268,7 +268,7 @@ if $ARGS[0] = 'cuthair':
 		act 'About chin-line length':
 			cla
 			*clr
-			money -= 500
+			money -= 700
 			'"Could you cut my hair back to between my chin and shoulder, please?", you ask him.'
 			'"Sure, no problem", he tells you getting a chair for you ready.'
 
@@ -325,7 +325,7 @@ if $ARGS[0] = 'cuthair':
 		act 'Shoulder Length':
 			cla
 			*clr
-			money -= 500
+			money -= 700
 			'"I would like to have my hair cut back to about the height of my shoulder.", you tell him.'
 			'"Sure, no problem", he tells you, gesturing you, to sit down into a free chair.'
 
@@ -382,7 +382,7 @@ if $ARGS[0] = 'cuthair':
 		act 'About Brastrap length':
 			cla
 			*clr
-			money -= 500
+			money -= 700
 			'"Could you cut my hair back to about where my bra-strap sits?", you ask him.'
 			'"That''s absolutely no problem.", he says, when gesturing you sit down on one of the free seat'
 
@@ -436,10 +436,10 @@ if $ARGS[0] = 'cuthair':
 	end
 
 	if pcs_hairlng > 401:
-		act 'About Back length':
+		act 'About small of back length':
 			cla
 			*clr
-			money -= 500
+			money -= 700
 			'"Could you cut my hair back to about the small of my back?", you ask him.'
 			'"That''s absolutely no problem.", he says, when gesturing you sit down on one of the free seat'
 
@@ -496,7 +496,7 @@ if $ARGS[0] = 'cuthair':
 		act 'About Hip length':
 			cla
 			*clr
-			money -= 500
+			money -= 700
 			'"Could you cut my hair back to about the top of my hips?", you ask him.'
 			'"That''s absolutely no problem.", he says, when gesturing you sit down on one of the free seat'
 
@@ -553,7 +553,7 @@ if $ARGS[0] = 'cuthair':
 		act 'Cut the tips':
 			cla
 			*clr
-			money -= 500
+			money -= 700
 			'"I''d like to keep this length, but my tips might need some cutting. Could you do that?", you ask him. '
 			'"Of course, please sit down.", he says.'
 
@@ -613,7 +613,7 @@ if $ARGS[0] = 'perm':
 	cla
 	*clr
 	minut += 20
-	money -= 300
+	money -= 1500
 	if defcurly = 0:
 		curly = rand(12,16)
 		gs 'stat'
@@ -632,7 +632,7 @@ if $ARGS[0] = 'perm2':
 	cla
 	*clr
 	minut += 20
-	money -= 300
+	money -= 1500
 	curly = 0
 	if defcurly = 0:
 		gs 'stat'

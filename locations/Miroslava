@@ -212,10 +212,22 @@ if $ARGS[0] = 'Start' or $ARGS[0] = '':
 			gt 'Meadow','lesb_talk_mira2'
 		end
 	else
-		!if mirasex = 1 and npc_QW['A63'] < 13 and miralick > 0 and MiraLoc = 2 and pcs_horny >= 40:act 'Ordered to lick':gt 'Meadow','lesb_talk_mira3' - Not certain this belongs here, looks like it belongs in Meadow
-		!if mirasex = 2 and MiraLoc = 2 and pcs_horny >= 40 and npc_rel['A60'] >= 15:act 'Stick':gt 'Meadow','lesb_mira' - not certain this belongs here, looks like it belongs in Meadow
+		if mirasex = 1 and npc_QW['A63'] < 13 and miralick > 0 and MiraLoc = 2 and pcs_horny >= 40:
+			
+			act 'Ordered to lick':
+				gt 'Meadow','lesb_talk_mira3'
+			end
+		end
+		if mirasex = 2 and MiraLoc = 2 and pcs_horny >= 40 and npc_rel['A60'] >= 15:
+		
+			act 'Stick':
+				gt 'Meadow','lesb_mira'
+			end
+		end
+		! not certain this belongs here, looks like it belongs in Meadow
 
 		act 'Chat':gt 'Miroslava', 'miratalk'
+
 		if month >= 4 and month <= 10 and sunWeather = 1:
 
 			act 'Offer to walk together':

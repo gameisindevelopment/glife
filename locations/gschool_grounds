@@ -90,7 +90,7 @@ if $ARGS[0] = 'main':
 !!					end
 				end
 			elseif hour = 7:
-				if NikoEv = 10 and minut <= 15: 
+				if NikoEv = 10:
 					gt 'NikoDates', 'Walk Of Shame'
 				elseif minut <= 45:
 					act 'Go to class':
@@ -116,6 +116,7 @@ if $ARGS[0] = 'main':
 					end
 				end
 			elseif hour = 8:
+				if NikoEv = 10:gt 'NikoDates', 'Walk Of Shame'
 				'You missed your whole first class, hopefully no one noticed.'
 				act 'Rush to class':
 					demerit += 10

@@ -1003,8 +1003,8 @@ end
 if day = 25:
 	!! meynold payment
 	if mey_vika_qw >= 35 and mey_tamara_help_count >= 10 and mey_tamara_qw_end = 0:
-		money += 10000
-		'<b><font color=green>For your efforts aunt Tamara gave you 10000 rubles</font></b>'
+		money += 5000
+		'<b><font color=green>For your efforts aunt Tamara gave you 5,000 rubles</font></b>'
 		mey_tamara_help_count = 0
 	end
 
@@ -1018,14 +1018,14 @@ if day = 25:
 
 	if workKafe = 1 and paydayKafe = 0:
 		paydayKafe = 1
-		pay = smenaKafe * 600
+		pay = smenaKafe * 1500
 		karta += pay
 		smenaKafe = 0
 		'<b><font color="green">Your salary of <<pay>> <b>₽</b> has been paid into your bank account for your job as a waitress in a cafe.</font></b>'
 	end
 
 	if workhosp = 1 and nopaypoly = 0:
-		pay = smena * 1000
+		pay = smena * 1500
 		karta += pay
 		smena = 0
 		nopaypoly = 1
@@ -1033,7 +1033,7 @@ if day = 25:
 	end
 
 	if worksalon = 1 and nopaysalon = 0:
-		pay = smena * 800
+		pay = smena * 1560
 		karta += pay
 		smena = 0
 		nopaysalon = 1
@@ -1042,22 +1042,22 @@ if day = 25:
 
 	if tanwork = 1 and nopaytanwork = 0:
 		nopaytanwork = 1
-		karta += 25000
-		'<b><font color="green">Your salary of 25,000 <b>₽</b> has been paid into your bank account for your work as a house maid.</font></b>'
+		karta += 10000
+		'<b><font color="green">Your salary of 10,000 <b>₽</b> has been paid into your bank account for your work as a house maid.</font></b>'
 	end
 
 	if workSec = 1 and paydaySec = 0:
 		paydaySec = 1
-		pay = sekDay * 800
+		pay = sekDay * 1200
 
-		if officebestslut >= 3:pay += 20000
+		if officebestslut >= 3:pay += 10000
 		karta += pay
 		sekDay = 0
 		'<b><font color="green">Your salary of <<pay>> <b>₽</b> has been paid into your bank account for your job as a secretary.</font></b>'
 	end
 
 	if workFabrika = 1:
-		pay = smenaFabrika * 400
+		pay = smenaFabrika * 420
 		smenaFabrika = 0
 		karta += pay
 		'<b><font color="green">Your salary of <<pay>> <b>₽</b> has been paid into your bank account for your job at the garment factory.</font></b>'
@@ -1066,8 +1066,8 @@ if day = 25:
 	if husband > 0 and paydayHusb = 0:
 		paydayHusb = 1
 
-		if husbFin = 0:huspay = 15000
-		if husbFin = 1:huspay = 25000
+		if husbFin = 0:huspay = 20000
+		if husbFin = 1:huspay = 30000
 		if husbFin = 2:huspay = 40000
 
 		karta += huspay
@@ -1075,7 +1075,7 @@ if day = 25:
 	end
 
 	if stipuha = 1 and stipuhaday = 0:stipuhaday = 1 & karta += 1200 & '<b><font color="green">You have received 1,200 <b>₽</b> scholarship.</font></b>'
-	if home_owned[1] = 1 and haday = 0 and BuyHous = 0:haday = 1 & money -= 3000 & '<b><font color="red">You paid 3,000 <b>₽</b> for your apartment.</font></b>'
+	if home_owned[1] = 1 and haday = 0 and BuyHous = 0:haday = 1 & money -= 15000 & '<b><font color="red">You paid 15,000 <b>₽</b> for your apartment.</font></b>'
 
 	if home_owned[1] > 0 and electroday = 0:
 		electroday = 1
@@ -1219,6 +1219,14 @@ if storyline = 1:
 				$holyday = '<b>Last day of Autumn Break.</b>'
 			end
 		end
+	end
+	!!Brother''s dick growth as he gets older
+	kolka_dick_month = daystart/30
+	if kolka_dick_month > daystart/30 and npc_dick['A34'] < 26: npc_dick['A34'] += 1
+	if npc_dick['A34'] < 20 and npc_dick['A34'] > 16:
+		$npc_thdick['A34'] = 'well proportioned'
+	elseif npc_dick['A34'] >= 20 and npc_dick['A34'] <= 26:
+		$npc_thdick['A34'] = 'thick'
 	end
 end
 

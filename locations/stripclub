@@ -20,7 +20,7 @@ if $ARGS[0] = 'start':
 	if hour = 2:
 		'The strip club is closing and security guard ushers everyone out.'
 	elseif hour > 2 and hour < 15:
-		'The strip club is closed. You notic a sign on the door: The business hours are between 15 - 02.'
+		'The strip club is closed. You notice a sign on the door: The business hours are between 15 - 02.'
 	else
 
 		if rand(1, 100) <= 30 and stripday ! daystart:
@@ -32,7 +32,7 @@ if $ARGS[0] = 'start':
 		end
 
 		if cfnm = 1:'Tonight''s performance will only feature male strippers. The entrance fee is 500 <b>₽</b>.'
-		if cfnm = 0:'Tonight''s performance will only feature female strippers. The entrance fee is 500 <b>₽</b>.'
+		if cfnm = 0:'Tonight''s performance will only feature female strippers. The entrance fee is 300 <b>₽</b>.'
 		
 		if stripdolg > 0:
 			if money >= 50000:
@@ -56,10 +56,10 @@ if $ARGS[0] = 'start':
 					frost = 0
 					gt 'stripclub', 'forwoman'
 				end
-			elseif cfnm = 0 and money >= 500:
-				act 'Enter (500 <b>₽</b>)':
+			elseif cfnm = 0 and money >= 300:
+				act 'Enter (300 <b>₽</b>)':
 					cla
-					money -= 500
+					money -= 300
 					minut += 5
 					frost = 0
 					gt 'stripclub', 'forman'
@@ -72,13 +72,13 @@ if $ARGS[0] = 'start':
 					*clr
 					minut += 15
 					gs 'stat'
-					'The manager observes you for a while and asks, "Are you really 18 years old? I had a visit from the police last week and they found an underaged girl working here. I was fortunate enough that the officers could be bribed."'
+					'The manager observes you for a while and asks, "Are you really 18 years old? I had a visit from the police last week and they found an under-aged girl working here. I was fortunate enough that the officers could be bribed."'
 					*nl
 
 					if age >= 18:
 						'"Yes I am." You answer him. He points at a spot where he wants you to do a little dance.'
-						'You dance sensually, clearly he''s smitten by you. He asks you to sit down, "Our business hours are between 15:00 to 02:00. Some days there are only male strippers performing. We don''t pay strippers, but the customers tip generously. Think of it as an incentive, perform well and you''ll earn a tip."'
-						'"Strippers can perform lap dances for clients at their request for 1000 <b>₽</b> per lap dance, the stripper gets 800 <b>₽</b>, and the rest belongs to the club. They may want further entertainment, as the club doesn''t operate as a brothel we don''t really accept that kind of business but we usually turn a blind eye to it."'
+						'You dance sensually, clearly he''s smitten by you. He asks you to sit down, "Our business hours are between 18:00 to 02:00. Some days there are only male strippers performing. We don''t pay strippers, but the customers tip generously. Think of it as an incentive, perform well and you''ll earn a tip."'
+						'"Strippers can perform lap dances for clients at their request for 1000 <b>₽</b> per lap dance, the stripper gets 400 <b>₽</b>, and the rest belongs to the club. They may want further entertainment, as the club doesn''t operate as a brothel we don''t really accept that kind of business but we usually turn a blind eye to it."'
 						'"One last thing that I nearly forgot, dancing on stage involves a lot of work on the pole. Unless you do that, it is unlikely you will earn anything. There is no set schedule, the employees choose when they want to come to work. So what do you say, are you interested?"'
 						
 						act 'Accept his offer':
@@ -102,14 +102,14 @@ if $ARGS[0] = 'start':
 							*clr
 							gs 'stat'
 							'You thank him for the offer but you''re not ready to commit to anything yet.'
-							'You can see on his face that he''s dissapointed but he can''t really do anything about your decision. He thanks you and tells you if you ever change your mind you''re welcome back.'
+							'You can see on his face that he''s disappointed but he can''t really do anything about your decision. He thanks you and tells you if you ever change your mind you''re welcome back.'
 							act 'Leave':gt 'stripclub', 'start'
 						end					
 					elseif fakepassport = 1:
 						'"Yes I am." you answer, handing him your fake passport.'
 						'You see him frown as he checks your passport with suspicion, "Well, I guess everything is in order." as he points at a spot where he wants you to do a little dance.'
-						'You dance sensually, clearly he''s smitten by you. He asks you to sit down, "Our business hours are between 15:00 to 02:00. Some days there are only male strippers performing. We don''t pay strippers, but the customers tip generously. Think of it as an incentive, perform well and you''ll earn a tip."'
-						'"Strippers can perform lap dances for clients at their request for 1000 <b>₽</b> per lap dance, the stripper gets 800 <b>₽</b>, and the rest belongs to the club. They may want further entertainment, as the club doesn''t operate as a brothel we don''t really accept that kind of business but we usually turn a blind eye to it."'
+						'You dance sensually, clearly he''s smitten by you. He asks you to sit down, "Our business hours are between 18:00 to 02:00. Some days there are only male strippers performing. We don''t pay strippers, but the customers tip generously. Think of it as an incentive, perform well and you''ll earn a tip."'
+						'"Strippers can perform lap dances for clients at their request for 1000 <b>₽</b> per lap dance, the stripper gets 400 <b>₽</b>, and the rest belongs to the club. They may want further entertainment, as the club doesn''t operate as a brothel we don''t really accept that kind of business but we usually turn a blind eye to it."'
 						'"One last thing that I nearly forgot, dancing on stage involves a lot of work on the pole. Unless you do that, it is unlikely you will earn anything. There is no set schedule, the employees choose when they want to come to work. So what do you say, are you interested?"'
 						
 						act 'Accept his offer':
@@ -133,7 +133,7 @@ if $ARGS[0] = 'start':
 							*clr
 							gs 'stat'
 							'You thank him for the offer but you''re not ready to commit to anything yet.'
-							'You can see on his face that he''s dissapointed but he can''t really do anything about your decision. He thanks you and tells you if you ever change your mind you''re welcome back.'
+							'You can see on his face that he''s disappointed but he can''t really do anything about your decision. He thanks you and tells you if you ever change your mind you''re welcome back.'
 							act 'Leave':gt 'stripclub', 'start'
 						end					
 					else
@@ -514,7 +514,7 @@ if $ARGS[0] = 'stpr2':
 			prsexrand = rand(14, 19)
 			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/stripclub/sex/prsex<<prsexrand>>.jpg"></center>'
 			'You yearn to have your holes filled as you stop sucking them and order them to fill your orifices. The girls quickly position themselves and start fucking you.'
-			'Losing youselves to the moment it is no longer clear who is the customer and who isn''t, as they fuck you in different positions and orifices, you lose count of how many times you orgasm, at the end you are all quite satisfied.'
+			'Losing yourselves to the moment it is no longer clear who is the customer and who isn''t, as they fuck you in different positions and orifices, you lose count of how many times you orgasm, at the end you are all quite satisfied.'
 
 			act 'Finish':gt 'stripclub', 'forman'
 		end
