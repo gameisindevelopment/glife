@@ -41,9 +41,13 @@ if $ARGS[0] = 'start':
 		act 'Ask about work':gt 'burger', 'apply'
 	elseif posuda >= 3 and posudaA = 0:
 		act 'Go to the manager':gt 'burger', 'manager'
-	elseif posuda >= 1 and posudaday ! daystart and NoBistroWork = 0 and PersSecWork = 0:
+	end
+	
+	if posuda >= 1 and posudaday ! daystart and NoBistroWork = 0 and PersSecWork = 0:
 		act 'Wash the dishes for 70 <b>₽</b> (1:00)':gt 'burger', 'dishes'
-	elseif posudaA >= 1 and posudaAday ! daystart and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
+	end
+	
+	if posudaA >= 1 and posudaAday ! daystart and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
 		act 'Wash the floor for 70 <b>₽</b> (1:00)':gt 'burger', 'floor'
 	end
 end

@@ -234,6 +234,8 @@ end
 
 if $ARGS[0] = 'exit':
 	cla
+	'<center><b><font color="maroon">Park</font></b></center>'
+	'<center><img <<$set_imgh>> src="images/locations/city/centralpark/park.jpg"></center>'
 	act 'Cancel': gt 'park', 'start'
 	act 'Go to the highway near the park (0:05)':minut += 5 & gt 'park', 'whore'
 	act 'Go to the residential area (0:20)':minut += 20 & gt 'street'
