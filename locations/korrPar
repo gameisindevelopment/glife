@@ -81,8 +81,8 @@ if indorf = 1:'With your parents being away to visit your grandparents, the apar
 
 !to add a counter if you avoid Dimka
 if nodimkaK >= rand(7,10) and DimkaWarnedToday = 0:
-   if hour >= 14 and hour < 24 and week <=5 and DimkaWarnedToday = 0: gt 'DimkaWarning'
-   if hour >= 9 and hour < 24 and week >=6 and DimkaWarnedToday = 0: gt 'DimkaWarning'
+   if hour >= 14 and hour < 24 and week <=5 and DimkaWarnedToday = 0: gt 'dimaEv', 'Dimka_warning'
+   if hour >= 9 and hour < 24 and week >=6 and DimkaWarnedToday = 0: gt 'dimaEv', 'Dimka_warning'
 end
 
 $korrParMomHeader = '<center><h1><font color="maroon">Mom</font></h1></center><center><img <<$set_imgh>> src="images/characters/pavlovsk/resident/mom/mother.jpg"></center><br />'
