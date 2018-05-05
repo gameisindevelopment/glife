@@ -42,7 +42,7 @@ if $ARGS[0] = '':
 
 	gs'street_event','Nord', 'extras'
 
-	act 'Walk to the main road to Pavlovsk (15 min)':minut += 15 & nroad = 0 & gt'road'
+	act 'Walk to the main road to Pavlovsk (0:15)':minut += 15 & nroad = 0 & gt'road'
 	act 'Visit the Red Light district': gt 'Nord', 'redlight'
 	act 'Wait':
 		cla
