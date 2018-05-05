@@ -94,7 +94,7 @@ if $ARGS[0] = 'strapon1':
 												gs 'pain', 2, 'asshole', 'stretch'
 												gs 'arousal', 'anal_strap', 5, 'lesbian'
 												gs 'stat'
-												act '"Not so rough."':
+												act '"Not so rough"':
 													*clr & cla
 													'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/sex/strapon/strapme10.jpg"></center>'
 													'Once she starts to really hammer your ass the pleasure stats, but the pain grows a bit. You grip the bed sheets tightly in your hands, unsure if the pleasure or pain is winning out. Rising up your upper body you grunt out. "Not so rough!"'
@@ -273,7 +273,7 @@ if $ARGS[0] = 'strapon1':
 		'You pull out the strap-on harness and hold it up. "Yeah, I like this."'
 		'She laughs, walks over and takes it from you. She puts it back in the drawer and closes it. "Well then maybe you should buy one, then huh?"'
 		'A bit disappointed she doesn''t want to play you nod. "Yeah, guess I should."'
-		act 'Look around some more.':gt 'anushapt','anushroom'
+		act 'Look around some more':gt 'anushapt','anushroom'
 	end
 end
 
