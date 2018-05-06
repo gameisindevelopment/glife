@@ -5,7 +5,6 @@ if $ARGS[0] = 'start':
 	*clr
 	CLOSE ALL
 	frost = 0
-	minut += 10
 	gs'stat'
 	gs'dina'
 	'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
@@ -21,10 +20,11 @@ if $ARGS[0] = 'start':
 	act 'View rentals': gt 'agentned', 'rent'
 	act 'View properties for sale': gt 'agentned', 'buy'
 	
-	act '<B>Leave</B>':gt'down'
+	act '<B>Leave</B>': minut += 5 & gt'down'
 end
 
 if $ARGS[0] = 'buy':
+	minut += 5
 	if home_owned[1] = 0:
 		'There is an apartment in the city residential area available for 2 million <b>₽</b>.'
 		if karta + bankDebtLimit >= 2000000:act 'Buy the city residential apartment': gt 'agentned', 'buy_cityres'
@@ -62,6 +62,7 @@ if $ARGS[0] = 'sell':
 end
 
 if $ARGS[0] = 'rent':
+	minut += 5
 	if ArendHouseSL ! 0:
 		'You already have a rental home with us'
 	else
@@ -106,6 +107,7 @@ if $ARGS[0] = 'rent_cityres':
 	act 'Decline':
 		cla
 		*clr
+		minut += 5
 		'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo.jpg"></center>'
 		'You shake your head, “Actually, I need more time to think about this.”'
@@ -144,6 +146,7 @@ if $ARGS[0] = 'rent_pushkin':
 	act 'Decline':
 		cla
 		*clr
+		minut += 5
 		'<center><b><font color = maroon>Real Estate Agency</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/realestate/agenstvo.jpg"></center>'
 		'You shake your head, “Actually, I need more time to think about this.”'

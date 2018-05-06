@@ -13,7 +13,7 @@ if $ARGS[0] = 'start':
 	if vladimirday = daystart and vladimirQW = 21 and hour = 20: gt 'qwmeet'
 	
 	act 'Approach the maître d'' ': gt 'restoran', 'maitred'
-	act 'Leave the restaurant': minut += 10 & gt 'down'
+	act 'Leave the restaurant': minut += 5 & gt 'down'
 end
 
 if $ARGS[0] = 'maitred':
