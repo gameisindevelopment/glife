@@ -332,7 +332,7 @@ if $ARGS[1] = 'main':
 	end
 
 	streetrand = rand(0, 100)
-	if streetrand < streetev_rob and money >= 1000 and daystart >= 10 and (hour < 6 or hour >= 20) and streetev_day ! daystart:
+	if streetrand < streetev_rob and money >= 1000 and daystart >= 10 and (hour < 6 or hour >= 20) and streetev_day ! daystart and bag = 1:
 	!!I would like this one only to happen from 20:00 till 06:00 as the times it can happen.
 		cla
 		*clr
@@ -427,7 +427,7 @@ if $ARGS[1] = 'main':
 
 	streetrand = rand(0, 100)
 
-	if streetrand < streetev_hijack and money >= 1000 and daystart >= 10 and (hour < 6 or hour >= 20) and streetev_day ! daystart:
+	if streetrand < streetev_hijack and money >= 1000 and daystart >= 10 and (hour < 6 or hour >= 20) and streetev_day ! daystart and bag = 1:
 	!!this one takes the place of the above mugging if the hours are 06:00 till 20:00
 		cla
 		*clr
@@ -445,7 +445,7 @@ if $ARGS[1] = 'main':
 		act 'Chase him':
 			*clr
 			cla
-			if pcs_react < 55 or pcs_agil < 55 or pcs_vital < 55:
+			if pcs_run + pcs_stam < rand(120,250):
 				money = 0
 				gs 'stat'
 				'<<$streetev_title>>'
