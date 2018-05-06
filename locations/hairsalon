@@ -21,7 +21,7 @@ if $ARGS[0] = 'start':
 	if hour =< 8 or hour >= 20:
 		cls
 		'The hair salon is closed. You should come back during their working hours.'
-		act 'Leave':minut += 2 & gt 'torgcentr'
+		act 'Leave':minut += 3 & gt 'torgcentr'
 		exit
 	end
 
@@ -43,7 +43,7 @@ if $ARGS[0] = 'start':
 	end
 	'<a href=' + iif(money >= 1250, '"exec:gt ''hairsalon'', ''braidhair''"', '') + '>Get your hair braided - 1250 <b>₽</b></a>'
 
-	act 'Leave':minut += 2 & gt 'torgcentr'
+	act 'Leave':minut += 3 & gt 'torgcentr'
 
 	if money >= 100:
 		act 'Buy Scrunchies - 100 <b>₽</b>':

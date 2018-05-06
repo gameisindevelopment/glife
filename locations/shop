@@ -86,7 +86,7 @@ if $shoplocation = 'main':
 							'<center><img <<$set_imgh>> src="images/locations/city/residential/street/sex/gostdt2.jpg"></center>'
 							'Dima finally finishes in your mouth, you obediently swallow and lick the remnants of sperm off his big cock.'
 
-							act 'Leave':gt 'street'
+							act 'Leave': minut += 3 & gt 'street'
 						else
 							cla
 							stat['vaginal'] += 1
@@ -102,7 +102,7 @@ if $shoplocation = 'main':
 							'<center><img <<$set_imgh>> src="images/locations/city/residential/street/sex/gostanal2.jpg"></center>'
 							'Dima fucks you in the ass whilst slapping your butt, at first it is painful, but gradually you get it and it feels amazing. Finally, your ass fills with hot liquid and Dima moans and grabs your buttocks.'
 
-							act 'Leave':gt 'street'
+							act 'Leave': minut += 3 & gt 'street'
 						end
 					end
 				end
@@ -136,7 +136,7 @@ if $shoplocation = 'main':
 		end
 	end
 
-	act 'Leave the store':gt $loc
+	act 'Leave the store': minut += 3 & gt $loc
 	exit
 end
 

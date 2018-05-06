@@ -21,7 +21,7 @@ if $ARGS[0] = 'start' :
 	else
 		gt 'pharmacy', 'shop'
 	end				
-	act 'Leave' : gt $loc, $metka
+	act 'Leave': minut += 5 & gt $loc, $metka
 end
 
 if $ARGS[0] = 'shop' or $ARGS[0] = '':
@@ -79,7 +79,7 @@ if $ARGS[0] = 'shop' or $ARGS[0] = '':
 			act 'Move away from the counter':gt 'pharmacy', 'start'
 		end
 	end
-	act 'Leave': gt $loc, $metka
+	act 'Leave': minut += 5 & gt $loc, $metka
 end
 
 --- pharmacy ---------------------------------

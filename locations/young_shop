@@ -649,7 +649,7 @@ if hour > 21 or hour < 8:
 	'"Sorry, but the store is closed" the guard comes up to you. "Proceed to the exit."'
 	'<b><center><font color="red">The store is closing.</font></center></b>'
 
-	act '<b>Get out of the shop</b>':gt 'torgcentr'
+	act '<b>Get out of the shop</b>': minut += 3 & gt 'torgcentr'
 end
 
 gs 'stat'

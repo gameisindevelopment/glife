@@ -6,7 +6,6 @@ if $ARGS[0] = 'start':
 	cls
     $location_type = 'public_indoors'
 	CLOSE ALL
-	minut += 5
 	gs 'stat'
 	if night_mode = 1:
 		fcolor = rgb(255, 255, 255)
@@ -26,7 +25,7 @@ if $ARGS[0] = 'start':
 
 	act 'Leave':
 		cla
-		minut += 5
+		minut += 1
 		gt 'down'
 	end
 
@@ -41,9 +40,13 @@ if $ARGS[0] = 'start':
 		act 'Ask about work':gt 'burger', 'apply'
 	elseif posuda >= 3 and posudaA = 0:
 		act 'Go to the manager':gt 'burger', 'manager'
-	elseif posuda >= 1 and posudaday ! daystart and NoBistroWork = 0 and PersSecWork = 0:
+	end
+	
+	if posuda >= 1 and posudaday ! daystart and NoBistroWork = 0 and PersSecWork = 0:
 		act 'Wash the dishes for 70 <b>₽</b> (1:00)':gt 'burger', 'dishes'
-	elseif posudaA >= 1 and posudaAday ! daystart and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
+	end
+	
+	if posudaA >= 1 and posudaAday ! daystart and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
 		act 'Wash the floor for 70 <b>₽</b> (1:00)':gt 'burger', 'floor'
 	end
 end
@@ -51,6 +54,7 @@ end
 if $ARGS[0] = 'office':
 	cls
 	gs 'stat'
+	minut += 5
 	'You go to the office of the owner. He is sitting at his desk, dealing with your papers. Anatoly Borisovich looks at you and says, "Well? Do you have any news?"'
 
 	act 'Leave':gt 'burger', 'start'
@@ -58,6 +62,7 @@ if $ARGS[0] = 'office':
 	if money >= 650000:
 		act 'Repay the debt (650,000 <b>₽</b>)':
 			cls
+			minut += 5
 			money -= 650000
 			IvanPodstavaQW = 5
 			gs 'stat'
@@ -70,6 +75,7 @@ if $ARGS[0] = 'office':
 	if IvanEvidence = 1:
 		act 'Show proof':
 			cls
+			minut += 5
 			IvanPodstavaQW = 6
 			IvanKvartira = 0
 			IvanEvidence = 0
@@ -83,6 +89,7 @@ end
 
 if $ARGS[0] = 'apply':
 	cla
+	minut += 5
 	'You go into the manager''s office where you meet a smart girl. She begins to tell you, that you can work almost every day, "Come in any time, run the snack bar and wash the dishes for 1:00. You will get 70 <b>₽</b> immediately on hand."'
 
 	act 'Refuse and leave':gt 'burger', 'start'
@@ -98,6 +105,7 @@ end
 
 if $ARGS[0] = 'manager':
 	cla
+	minut += 5
 	'You go to the office of the manager. The girl tells the manager that you are doing good work and offers you another part-time job, "You can wash the floors in the morning, from 8 to 9. 1 hour of cleaning floors will get you 70 <b>₽</b> immediately on hand."'
 
 	act 'Refuse and leave':gt 'burger', 'start'
@@ -309,7 +317,7 @@ if $ARGS[0] = 'dishes':
 							'Anatoly pale, flushed and hissing angrily jumps out of the fitting followed by your loud laughter.'
 
 							act 'Leave':
-								minut += 5
+								minut += 1
 								gt 'down'
 							end
 						end

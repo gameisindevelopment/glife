@@ -1,5 +1,5 @@
 # elevator
-act 'Back':gt 'hotel'
+act 'Back': minut += 1 & gt 'hotel'
 
 act 'Go to your room':
 	msg 'Excuse me, but the elevator is not working'

@@ -9,7 +9,6 @@ if $ARGS[0] = 'start':
 	cla
 	*clr
 	salonrand = rand(0, 9)
-	minut += 5
 	gs 'stat'
 	if night_mode = 1:
 		fcolor = rgb(255, 255, 255)
@@ -44,10 +43,10 @@ if $ARGS[0] = 'start':
 	if hour < 8 or hour > 20:
 		cls
 		'As the salon closes you are politely asked to leave and come again.'
-		act 'Leave':minut += 5 & gt 'torgcentr'
+		act 'Leave':minut += 3 & gt 'torgcentr'
 		exit
 	end
-	act 'Leave':minut += 5 & gt 'torgcentr'
+	act 'Leave':minut += 3 & gt 'torgcentr'
 end
 
 if $ARGS[0] = 'solyariy':
@@ -119,7 +118,7 @@ if $ARGS[0] = 'resnici':
 		'Remove your eyelash extensions - 500<b> ₽</b>'
 	end
 	
-	act 'back':gt 'salon','start'
+	act 'back': minut += 5 & gt 'salon','start'
 end
 
 if $ARGS[0] = 'lashTreatment':

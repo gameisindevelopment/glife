@@ -10,17 +10,18 @@ if $ARGS[0] = 'start':
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/kiosk21.jpg"></center>'
 		'It is currently very busy and looks like you''ll have to wait to get to the counter.'
+		
+		act 'Leave': minut += 1 & gt $loc
+		
 		act 'Wait in line (20 Minutes)':
 			minut += 20
 			gt 'kiosk', 'counter'
 		end
 
-		act 'Leave':gt $loc
-
 		if pcs_exhibition >= 45:
 			act 'Flash both your tits and your pussy':
 				cls
-
+				minut += 1
 				exhibition_exp += rand(12,15)
 				gs 'events', 'flash_full', 'outdoors', 5
 				gs 'stat'
@@ -32,6 +33,7 @@ if $ARGS[0] = 'start':
 		if pcs_exhibition >= 40:
 			act 'Flash your pussy':
 				cls
+				minut += 1
 				exhibition_exp += rand(9,12)
 				gs 'events', 'flash_pussy', 'outdoors', 5
 				gs 'stat'
@@ -43,6 +45,7 @@ if $ARGS[0] = 'start':
 		if pcs_exhibition >= 35:
 			act 'Flash your tits':
 				cls
+				minut += 1
 				exhibition_exp += rand(5,8)
 				gs 'events', 'flash_tits', 'outdoors', 5
 				gs 'stat'
@@ -51,7 +54,7 @@ if $ARGS[0] = 'start':
 			end
 		end
 
-		if SUB >= 15:
+		if sub >= 15:
 			act 'Suggest a blowjob in exchange for jumping the queue':
 				if cumloc[12] = 0 and cumloc[11] = 0:
 					cls
@@ -79,7 +82,7 @@ if $ARGS[0] = 'start':
 						act 'Go to the counter': gt 'kiosk', 'counter'
 					end
 
-					act 'Cum on your mouth':
+					act 'Cum inside your mouth':
 						cls
 						'<center><img <<$set_imgh>> src="images/locations/shared/postoffice/sex/cumlip.jpg"></center>'
 						'The man cums inside your mouth.'
@@ -92,11 +95,13 @@ if $ARGS[0] = 'start':
 						act 'Go to the counter': gt 'kiosk', 'counter'
 					end
 				else
+					cls
 					'<center><video autoplay loop src="images/locations/shared/postoffice/punch.mp4"></video></center>'	
 					'The Man punches you in the gut and says, <font color="#0D42C0">"Go away bitch, your mouth is full of sperm."</font> You stagger away from the kiosk and spend 2 hours curled up in a ball.'
 					minut += 120
 					gs 'pain', 4, 'tummy', 'hit'
-
+					gs 'stat'
+					
 					act 'Recover':gt $loc
 				end
 			end
@@ -131,7 +136,7 @@ if $ARGS[0] = 'counter':
 	'</table></center>'
 	*pl
 
-	act 'Leave (0:05)': $kioskloc = '' & gt $loc
+	act 'Leave': $kioskloc = '' & minut += 1 & gt $loc
 
 	act 'Buy a snack (100 <b>₽</b>) (0:05)':
 		*clr & cla

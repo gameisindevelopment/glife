@@ -10,15 +10,15 @@ if $ARGS[0] = '':
 	gs'stat'
 	'<center><img <<$set_imgh>> src="images/locations/shared/train/vokzalholle.jpg" ></center>'
 	'There is a <a href="exec:GT ''dort''">path</a> leading off in to the distance, in the direction of the lake.'
-	act 'Leave the station building':gt 'vokzal' & minut+=5
+	act 'Leave the station building': minut += 2 & gt 'vokzal'
 	*nl
 	if Trainpass_day > daystart:
 		'You have <<Trainpass_day - daystart>> days left on your train pass.'
 		act 'Go to the platforms': gt 'vokzalper'
 	else
-		act 'Go to the ticket office': gt 'vokzalholle', 'ticket'
+		act 'Go to the ticket office': minut += 1 & gt 'vokzalholle', 'ticket'
 	end
-	act 'Go to the restrooms':gt 'vokzaltoilet' & minut+=5
+	act 'Go to the restrooms': minut += 1 & gt 'vokzaltoilet'
 end
 
 if $ARGS[0] = 'ticket':

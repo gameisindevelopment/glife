@@ -248,7 +248,7 @@ if $ARGS[0] = 'tailor':
 						'You undress and give the clothes you need adjusting to Jacob Solomonovich, it is fifteen minutes until your clothes and returned to you.'
 					end
 
-					act 'Leave':gt 'street'
+					act 'Leave': minut += 10 & gt 'street'
 				end
 
 				act 'Take in different clothes':gt 'clothing', 'view_clothing_list', 'resize'
@@ -273,11 +273,11 @@ if $ARGS[0] = 'tailor':
 					'Jacob Solomonovich jumps up smartly and nimbly removes the tape from his neck and begins to measure your chest, waist and hips.'
 					'"Well, I can take in whatever clothing you bring to me for 500 <b>₽</b>."'
 
-					act 'Leave':gt 'street'
+					act 'Leave': minut += 10 & gt 'street'
 				end
 			end
 		end
-		act 'Leave':gt 'street'
+		act 'Leave': minut += 10 & gt 'street'
 	end
 end
 
