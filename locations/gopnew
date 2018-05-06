@@ -192,11 +192,11 @@ if $ARGS[0] = 'start5':
 			'"Got the money?" he asks intently.'
 
 			if money >= 2000:
-				act 'Give him the money (-2,000 rubles)':
+				act 'Give him the money (-2,000 <b>₽</b>)':
 					cla
 					money -= 2000
 					gopopusday = daystart
-					'You offer him the 2,000 rubles he expects from you. He counts it quickly and gives you an affirmative grunt.'
+					'You offer him the 2,000 <b>₽</b> he expects from you. He counts it quickly and gives you an affirmative grunt.'
 
 					act 'Walk away quickly': minut += 5 & gt 'street'
 
@@ -244,11 +244,11 @@ if $ARGS[0] = 'start5':
 			'"Do you have cum in your ears or something, slut? We asked you a question! Where''s our fucking money?" Vasan shouts.'
 
 			if money >= 2000:
-				act 'Give him the money (-2,000 rubles)':
+				act 'Give him the money (-2,000 <b>₽</b>)':
 					cla
 					money -= 2000
 					gopopusday = daystart
-					'You offer him the 2,000 rubles he expects from you. He counts it quickly and gives you an affirmative grunt.'
+					'You offer him the 2,000 <b>₽</b> he expects from you. He counts it quickly and gives you an affirmative grunt.'
 
 					act 'Walk away quickly': minut += 5 & gt 'street'
 
@@ -677,8 +677,8 @@ if $ARGS[0] = 'tf':
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/city/residential/street/sex/rapebjcum2.jpg"></center>'
 				'You close your eyes as you close your lips around the head of his cock again, not wanting to look him in the eye while you swallow his load and lick him clean.'
-				'"Vasan pulls his cock away when he''s bored of it, and says: "Listen up, whore. You just got yourself into a heap of trouble. As an apology, you will bring me 2,000 rubles every day for as long as I want. I will fuck you whenever I want as well, got that?"'
-				'The amount dazzles you - 2,000 rubles every day!? How are you supposed to get that kind of money?'
+				'"Vasan pulls his cock away when he''s bored of it, and says: "Listen up, whore. You just got yourself into a heap of trouble. As an apology, you will bring me 2,000 <b>₽</b> every day for as long as I want. I will fuck you whenever I want as well, got that?"'
+				'The amount dazzles you - 2,000 <b>₽</b> every day!? How are you supposed to get that kind of money?'
 				'"Don''t even try to hide from me, whore. I will find you. You''re mine! I will fucking end you if you don''t keep coming, understood?"'
 
 				act 'Nod meekly':
@@ -691,7 +691,7 @@ if $ARGS[0] = 'tf':
 					'Vasan grabs your face in his hands and forces your mouth open, spitting in your mouth as he says: "That goes for my buddies as well! If they want to have fun with you, you do as they say!"'
 					'Then he grins to his friends: "She''s all yours, guys. Have fun."'
 					'Just when they came closer to you pulling their cocks out of their pants, you hear shouting at the end of the alley. Someone spotted you!'
-					'The Gopniks quickly run away, leaving you alone on the pavement covered in cum, saliva and tears. "Remember, whore... 2,000 rubles! Tomorrow!" Vasan shouts, before he disappears around a corner.'
+					'The Gopniks quickly run away, leaving you alone on the pavement covered in cum, saliva and tears. "Remember, whore... 2,000 <b>₽</b>! Tomorrow!" Vasan shouts, before he disappears around a corner.'
 
 					act 'Return to the streets': minut += 5 & gt 'street'
 				end
