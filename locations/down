@@ -180,8 +180,10 @@ else
 end
 if week < 6 and hour >= 9 and hour <= 18:
 	$desc_txt2 = '<a href="exec:gt ''bank'', ''start''">VTB bank</a>'
+elseif week < 5 and hour > 18:
+	$desc_txt2 = '<a href="exec:msg ''VTB bank is closed and will reopen tomorrow at 9:00''">VTB bank</a>'
 else
-	$desc_txt2 = '<a href="exec:msg ''VTB bank is closed and will reopen at 9:00''">VTB bank</a>'
+	$desc_txt2 = '<a href="exec:msg ''VTB bank is closed and will reopen on monday at 9:00''">VTB bank</a>'
 end
 if hour >= 8 and hour <= 22:
 	$desc_txt3 = '<a href="exec: minut += 5 & gt ''agentned'', ''start''">Kirsanova Realty</a>'
