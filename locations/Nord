@@ -25,7 +25,7 @@ if $ARGS[0] = '':
 
 
 	'<center><h2>St. Petersburg</h2></center>'
-	'<center><b>Industrial region</b></center>'
+	'<center><b>Industrial Region</b></center>'
 	if month >= 11 or month <= 3:
 		if hour >= 8 and hour <= 21:
 			'<center><img <<$set_imgh>> src="images/locations/city/industrial/industw.jpg"></center>'
@@ -43,7 +43,7 @@ if $ARGS[0] = '':
 	gs'street_event','Nord', 'extras'
 
 	act 'Walk to the main road to Pavlovsk (0:15)':minut += 15 & nroad = 0 & gt'road'
-	act 'Visit the Red Light district': gt 'Nord', 'redlight'
+	act 'Visit the Red Light District': gt 'Nord', 'redlight'
 	act 'Wait':
 		cla
 		waiting = input ("How long would you like to wait? (Not more than 120 minutes)")
@@ -124,7 +124,7 @@ if $ARGS[0] = 'redlight':
 	'A shop for <a href="exec:gt ''sexshop'', ''start''">sex toys</a> is open for perverts from all around the city.'
 	if bordel > 0 and hour >= 20 or bordel > 0 and hour <= 3:'Inside the courtyard is the entrance to the <a href="exec:gt ''bordel''">brothel</a>.'
 
-	act 'Return to the industrial area': gt 'Nord'
+	act 'Return to the Industrial Region': gt 'Nord'
 	
 		act 'Wait':
 		cla
