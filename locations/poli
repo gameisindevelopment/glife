@@ -21,26 +21,27 @@ if $ARGS[0] = 'start':
 	end
 	'<center><b><font color="maroon">Clinic</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/shared/clinic/poli.jpg"></center>'
-	'General practitioner available'
-	'Psychotherapist available'
+	'A sign inside the clinic lists some of the services the clinic has to offer:'
+	'<i>General practitioner: currently available'
+	'Psychotherapist: currently available'
 	'STD testing - 1,000 <b>₽</b>.'
 	''
-	'For hospital admissions, arrive Monday before the 10th of the month.'
+	'For hospital admissions visit us on a Monday before the 10th of the month.'
 	''
-	'An abortion at the woman''s request can be performed up to 84th day of pregnancy - 15,000 <b>₽</b>.'
-	'Be warned, improperly performed abortions can be dangerous to your health. There is a risk of complications and the possibility of damage to your uterus.'
+	'An abortion at the woman''s request can be performed up until the 84th day of pregnancy - 15,000 <b>₽</b>.'
+	'Be warned, improperly performed abortions can be dangerous to your health. There is a risk of complications and the possibility of damage to your uterus.</i>'
 	''
-	'(At first you thought the warning was only health department boiler-plate. However, no sooner do you finish thinking that then you noticed a nurse pushing a cart of freshly sterilized coat hangers down the hallway and begin to wonder how competent this facility really is in terms of women''s health...)'
+	'At first you thought the warning was only health department boiler-plate. However, no sooner do you finish thinking that then you noticed a nurse pushing a cart of freshly sterilized coat hangers down the hallway and begin to wonder how competent this facility really is in terms of women''s health...'
 	''
-	'Near the entrance there is an advertisement for cosmetic surgery with directions to the surgeon''s office.'
+	'One area of the clinic is devoted to cosmetic surgery. A sign with directions on the wall point you to the surgeon''s office.'
 
-	if workhosp = 1 and hour >= 8 and hour <= 9 and week < 6:act 'Exit to replace':gt 'poli', 'beginwork'
+	if workhosp = 1 and hour >= 8 and hour <= 9 and week < 6:act 'Begin your work day':gt 'poli', 'beginwork'
 
-	act 'Leave Clinic': minut += 5 & gt 'street'
-	act 'See cosmetic surgeon':gt 'poli','cosmetic1'
+	act 'Leave the clinic':gt 'street'
+	act 'Go see a cosmetic surgeon':gt 'poli','cosmetic1'
 
 	if pcs_health < (pcs_vital * 10 + pcs_stren * 5):
-		act 'Treat health (1:00)':
+		act 'Ask the doctor for a health treatment (1:00)':
 			cla
 			minut += 60
 			pcs_health = pcs_vital * 10 + pcs_stren * 5 + 1000
@@ -49,14 +50,14 @@ if $ARGS[0] = 'start':
 			if hosprand = 1:gt 'poli', '1'
 			if hosprand = 2:gt 'poli', '2'
 
-			'The doctor gives you a shot and you immediately feel much better'
+			'The doctor guides you to a bed and tells you to lie down, after which he gives you a shot. You feel drowsy for a little while, but afterwards you feel a lot better and healthier.'
 
-			act 'Leave':gt 'poli', 'start'
+			act 'Return to the entrance':gt 'poli', 'start'
 		end
 	end
 
 	if pain['total'] > 10:
-		act 'Pain relief (1:00)':
+		act 'Ask the doctor to treat your pains (1:00)':
 			cla
 			minut += 60
 			if pain['head'] > 0:pain['head'] -= rand(7,13)
@@ -96,13 +97,14 @@ if $ARGS[0] = 'start':
 			if pain['clitoris'] > 0:pain['clitoris'] -= rand(7,13)
 			if pain['urethra'] > 0:pain['urethra'] -= rand(7,13)
 			if pain['cervix'] > 0:pain['cervix'] -= rand(7,13)
-			'You receive a combined painkiller, steroid and vitamin shot which not only helps the pain but speeds your recovery too, permanently reducing your current pain.'
+			'The doctor guides you to a bed and tells you to lie down, after which he gives you a combined painkiller, steroid and vitamin shot.'
+			'You feel drowsy for a little while, but afterwards you feel a lot better. The shot sped up your aching body''s recovery by a lot, meaning the pain probably won''t come back nearly as strongly when the shot wears off.'
 
 			if hosprand = 0:gt 'poli', '0'
 			if hosprand = 1:gt 'poli', '1'
 			if hosprand = 2:gt 'poli', '2'
 
-			act 'Leave':gt 'poli', 'start'
+			act 'Return to the entrance':gt 'poli', 'start'
 		end
 	end
 
@@ -116,9 +118,9 @@ if $ARGS[0] = 'start':
 			if hosprand = 0:gt 'poli', '0'
 			if hosprand = 1:gt 'poli', '1'
 			if hosprand = 2:gt 'poli', '2'
-			'You lie down on the therapists couch and tell him all about your troubles. You immediately feel much better, but your therapist seems to be in a state of shock.'
+			'You lie down on the therapist''s couch and tell him all about your troubles. You immediately feel much better, but the therapist seems to be in a state of shock.'
 
-			act 'Leave':gt 'poli', 'start'
+			act 'Return to the entrance':gt 'poli', 'start'
 		end
 	end
 
@@ -135,8 +137,8 @@ if $ARGS[0] = 'start':
 			money -= 750
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/shared/clinic/poli.jpg"></center>'
-			'You are escorted into an examination room, where you are told to sit. After almost fifteen minutes a nurse comes in, sticks a needle in your arm, and depresses the plunger. "All done. Have a nice day." she says to you. You gather your things to leave.'
-			act 'Leave':gt 'poli', 'start'
+			'You are escorted into an examination room, where you are told to sit. After almost fifteen minutes a nurse comes in, sticks a needle in your arm, and depresses the plunger. "All done. Have a nice day!" she says to you. Wait... was that it!?'
+			act 'Return to the entrance':gt 'poli', 'start'
 		end
 	end
 			
@@ -200,7 +202,7 @@ if $ARGS[0] = 'start':
 				jump 'poliabortloop'
 			end
 
-			act 'Leave':gt 'poli', 'start'
+			act 'Return to the entrance':gt 'poli', 'start'
 		end
 	end
 	
@@ -247,7 +249,7 @@ if $ARGS[0] = 'start':
 			gs 'cum_cleanup', 'reset'
 			dynamic $d_cycreport_choice
 			gs 'stat'
-			act 'Leave':gt 'poli', 'start'
+			act 'Return to the entrance':gt 'poli', 'start'
 		end
 	end
 
@@ -281,9 +283,9 @@ if $ARGS[0] = 'start':
 			if ninelrand = 0:
 				'At the reception desk you are told that Dr. Ninel is in her office.'
 
-				act 'Go to Ninel':gt 'poli', 'ninel3'
+				act 'Go to Dr. Ninel':gt 'poli', 'ninel3'
 			elseif ninelrand = 1:
-				'At the reception desk you are told that today do not accept Dr. Ninel.'
+				'At the reception desk you are told that Dr. Ninel can''t see you today.'
 
 				act 'Leave the clinic':gt 'street'
 			elseif ninelrand = 2:
@@ -350,16 +352,17 @@ if $ARGS[0] = 'start':
 
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/pc/body/anus/<<anpic>>.jpg"></center>'
-			'You go to the office to the proctologist. He immediately asks you to remove all clothes from your lower body and bend over.'
+			'You go to the office to the proctologist. He immediately asks you to remove all clothes from your lower body and bend over a table.'
 
 			if pcs_ass <= 15:
-				'The doctor examines your anus and says, "Well, slightly distended, but no abnormalities."'
+				'The doctor examines your anus and says: "Hmm... slightly distended, but no abnormalities."'
 			elseif pcs_ass > 15 and pcs_ass <= 25:
-				'The doctor examines your anus and says, "You have a stretched anus and sphincter. I would recommend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
+				'The doctor examines your anus and says: "Hmm... your anus and sphincter appear to have stretched beyond their normal capabilities. I would recommend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
 			elseif pcs_ass > 25 and pcs_ass <= 35:
-				'The doctor examines your anus and says, "You have a greatly distended anus, most likely your sphincter is not able to close fully. I would recommend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
+				'The doctor examines your anus and says: "Oh my... you have a greatly distended anus, and most likely your sphincter is not able to close fully either? I would recommend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
 			elseif pcs_ass > 35:
-				'The doctor examines your anus and says, "Oh my God! In all my years, I have never seen a case such as this! You''ll have to be careful not to cough, or your guts will fall out. I would recommend massage therapy, 1,000 <b>₽</b> per session. This will help restore the anus to its normal size."'
+				'The doctor examines your anus and says: "Oh my God! In all my years, I have never seen anything like this! You''ll have to be careful not to cough, or your guts could fall out!"'
+				'He chuckles at his own joke, and continues: "I''m sorry, that was unprofessional of me. However, I would strongly recommend we start massage therapy right away to restore the area, it''s 1,000 <b>₽</b> per session. This will in time help restore the anus to its normal size, but it''ll take more than a few sessions."'
 			end
 
 			if money >= 1000 and pcs_ass > 15 and proktologday ! daystart:
@@ -371,9 +374,9 @@ if $ARGS[0] = 'start':
 					pcs_ass -= 5
 					gs 'stat'
 					'<center><img <<$set_imgh>> src="images/pc/body/anus/<<anpic>>.jpg"></center>'
-					'You pay for the therapy and the doctor spends an hour massaging your ass muscles. It really isn''t as much fun as it looked in the brochure.'
+					'You pay for the massage therapy and the doctor spends an hour carefully massaging your anal muscles, occasionally rubbing some ointment on them. It really isn''t as much fun as it looked in the brochure.'
 
-					act 'Get away from the clinic':gt 'street'
+					act 'Leave the clinic':gt 'street'
 				end
 			end
 
@@ -394,7 +397,7 @@ if $ARGS[0] = 'start':
 			glassqw = 2
 			glass = 1
 			blizoruk += 1
-			act 'Leave':gt 'poli', 'start'
+			act 'Return to the entrance':gt 'poli', 'start'
 		end
 	end
 
@@ -402,11 +405,11 @@ if $ARGS[0] = 'start':
 		act 'Go to the optometrist':
 			cls
 			gs 'stat'
-			'The Optometrist examines your eyes and says that he can perform laser eye surgery for 75,000 <b>₽</b>. Of course, reading books can cause your eyesight to deteriorate again.'
+			'The optometrist examines your eyes and says that he can perform laser eye surgery for 75,000 <b>₽</b>. Of course, reading books can cause your eyesight to deteriorate again.'
 
 			if glass = 1:'The doctor adds, there is also the option to buy glasses for 4,500 <b>₽</b>.'
 
-			act 'Leave':gt 'poli', 'start'
+			act 'Return to the entrance':gt 'poli', 'start'
 
 			if glass = 1:
 				if money >= 4500:
@@ -418,7 +421,7 @@ if $ARGS[0] = 'start':
 						gs 'stat'
 						'You buy a new, more stylish pair of glasses.'
 
-						act 'Leave':gt 'poli', 'start'
+						act 'Return to the entrance':gt 'poli', 'start'
 					end
 				else
 					*nl
@@ -436,7 +439,7 @@ if $ARGS[0] = 'start':
 						glass = 0
 						gs 'stat'
 						'You undergo laser eye surgery. Your eyesight is much better now.'
-						act 'Leave':gt 'poli', 'start'
+						act 'Return to the entrance':gt 'poli', 'start'
 					end
 				else
 					*nl
@@ -587,37 +590,35 @@ if $ARGS[0] = 'stdcheck':
 				cla
 				*clr
 				'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/zw61kh75.jpg"></center>'
-				'The doctor first monitors your heart rate then checks your breasts for lumps'
+				'The doctor first monitors your heart rate then checks your breasts for lumps.'
 				act 'Further':
 					cla
 					*clr
 					'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/bn72qy99.jpg"></center>'
-					'The doctor examines your genitals externally and internally, carrying out tests.'
+					'The doctor examines your genitals externally and internally, carrying out several tests.'
 					if money >= 10000 and rand(1,100) >= 97:
 						cla
 						*clr
 						'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/gy93cr29.jpg"></center>'
-						'While you''re lying on an examination tablem you notice there is a hidden camera in the corner of the ceiling.'
-						act 'Rebel':
+						'While you''re lying on an examination table staring at the ceiling, you notice there is a hidden camera in the corner.'
+						act 'Ask him why he''s filming your examination':
 							cla
 							*clr
 							'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/bg28qy97.jpg"></center>'
-							'The doctor, unfazed, speaks in a calm voice as he apologizes and says, "You have two options to solve this issue."'
-							'"Give me 10000 <b>₽</b> and it will be deleted, like this never happened."'
-							'"I''ll pay you a 3000 <b>₽</b> fee."'
-							'"Lie down, think it over, but do not take too long now."'
-							act 'Pay him':gt 'poli', 'ven1'
-							act 'Take the money':gt 'poli', 'ven2'
+							'The doctor, unfazed, speaks in a calm voice: "Oh, you noticed that huh? The camera is there for your safety as well as mine, miss. I''ve been accused of molestation before."'
+							'"Then it hit me: people on the internet pay good money to see my examinations! Two birds with one stone, right?" he continues. After a moment of silence he adds with a wicked grin: "Okay... since you spotted the camera, I''ll offer you a choice. If you give me 10.000 <b>₽</b> I''ll delete the footage, as if you were never here. I''d be losing a lot of income, so that''s only fair."'
+							'Before you can reply he adds: "Or if you don''t mind being watched by a few thousand people who you''ll probably never meet anyway, I can give you... 3000 <b>₽</b> to keep quiet. It''s your call."'
+							act 'Pay him to delete the footage':gt 'poli', 'ven1'
+							act 'Take the bribe':gt 'poli', 'ven2'
 							act 'Threaten to report him':
 								cla
 								*clr
 								'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/bg28qy97.jpg"></center>'
-								'The doctor brings your face to his and says in a low voice.'
-								'"Listen to me, bitch! I hope you''re just joking with me, we have plenty of accidents here. Do you want to be another ''complication''?"'
-								'"Now make your choice, and we can forget everything you just said."'
-								act 'Pay him':gt 'poli', 'ven1'
-								act 'Take the money':gt 'poli', 'ven2'
-								act 'Run':gt 'poli', 'ven3'
+								'The doctor brings his face very close to yours and hisses: "Look at where you are, bitch! You better shut your fucking mouth right now, I can make you disappear just like THAT and everyone would be none the wiser!" He snaps his fingers for emphasis. "I made you a very generous offer, don''t make me regret that. An unfortunate ''complication'' is easy to arrange..."'
+								'Then he becomes his calm self again and sighs: "Anyway, let''s forget what you just said and start over. Are you going to compensate me for having to delete the footage?"'
+								act 'Pay him to delete the footage':gt 'poli', 'ven1'
+								act 'Take the bribe':gt 'poli', 'ven2'
+								act 'Try to escape':gt 'poli', 'ven3'
 							end
 						end
 					else
@@ -676,9 +677,9 @@ if $ARGS[0] = 'ven1':
 	money -= 10000
 	gs'stat'
     '<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/gy93cr29.jpg"></center>'
-    'You lie down, almost crying, in the surgery thinking it over,'
-    'You know it is not fair, but you can''t allow these images to go public.'
-    act 'Pay the money':gt'poli','start'
+    'You lie down, almost crying, mulling over the doctor''s words again and again in your head. You know it is not fair, but you can''t allow these images to go public and decide to pay him to delete the footage.'
+	'You pull the money from your wallet and give it to him, hoping he''ll keep true to his word...'
+    act 'Return to the lobby':gt'poli','start'
 end
 
 if $ARGS[0] = 'ven2':
@@ -688,9 +689,9 @@ if $ARGS[0] = 'ven2':
 	sub += 1
 	gs'stat'
     '<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/gy93cr29.jpg"></center>'
-    'You lie down, almost crying, in the surgery thinking it over,'
-    'You know it is not fair, but the money would be useful...'
-    act 'Take the money':gt'poli','start'
+    'You lie down, almost crying, mulling over the doctor''s words again and again in your head. After a while you decide that you want the money... you probably won''t be recognized, and even if you do: you can always pretend you didn''t know you were being filmed?'
+	'The doctor seems somewhat surprised to hear your answer, but gives you the money as promised. He grins: "Don''t worry, most of my subscribers don''t live in the city. Maybe a hundred, tops... what are the odds of you running into one of them the coming weeks?"'
+    act 'Leave his office':gt'poli','start'
 end
 
 if $ARGS[0] = 'ven3':
@@ -699,9 +700,12 @@ if $ARGS[0] = 'ven3':
 	over = 9
 	gs'stat'
     '<center><img <<$set_imgh>> src="images/locations/shared/clinic/poli.jpg"></center>'
-    'Out of fear, you run from the office.'
-    'Out of nowhere came nurses and other staff. You are restrained and dragged back. Confidently, the doctor explains to the patients and visitors that you are not well in the head.'
-    act 'Further':gt'gameover'
+    'The only thing you want to do now is get out of here! You can file a complaint later...'
+    '"Stop her! Stop her right now, she''s dangerous!" the doctor yells as you head for the door, trying to escape. Unfortunately for you, several staff members happened to be in the hallway as you tried to make your escape, who instantly spring to their colleague''s aid.'
+	'The doctor is only a few steps behind you, planting a syringe in your neck and injecting you with a liquid before you can tell them what''s happening. As your vision goes blurry and your body goes limp, you hear the doctor say: "That was close! She''s not well in the head and has these fits of violent rage because of her drug addiction! Thank you friends, I can take it from here."'
+	'He scoops you up in his arms and carries your limp body back to his office.'
+	'"Yet another overdose victim, so sad..." he mumbles to himself once the door is closed.'
+    act 'Continue':gt'gameover'
 end
 
 if $ARGS[0] = 'drPP':
@@ -744,10 +748,10 @@ if $ARGS[0] = 'drPP':
 					cumcondslip = 0
 					gs 'stat'
 					'The doctor quickly examines you, and establishes that you are suffering from toxic shock from a spent condom in your body.'
-					'"I removed it as soon as I found it. If you were feeling sick, it should slowly subside."'
+					'He explains: "I removed the condom as soon as I found it. You might still feel sick for another while, but the feeling should slowly subside."'
 					'You thank the doctor.'
 
-					act 'Go home':gt 'street'
+					act 'Leave the clinic':gt 'street'
 				end
 			end
 		else
@@ -765,10 +769,10 @@ if $ARGS[0] = 'drPP':
 					minut += 20
 					'<center><img <<$set_imgh>> src="images/locations/shared/apartment/event/sick/ninel03.jpg"></center>'
 					'The doctor listens to your lungs, looks down your throat and sticks a thermometer in your mouth. 60 seconds later, he removes the thermometer and says,'
-					'"Don''t worry is just a common cold. Buy small pills in the drugstore, have a couple days of bed rest and everything will be alright. Make sure to keep warm."'
+					'"Don''t worry is just the common cold. Get some vitamins in the drugstore, have a couple days of bed rest and everything will be alright. Make sure to keep warm!"'
 					'You thank the Doctor.'
 
-					act 'Go home':gt 'street'
+					act 'Leave the clinic':gt 'street'
 				end
 			end
 		end
@@ -810,7 +814,7 @@ if $ARGS[0] = 'ninel':
 					minut += 20
 					'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/exam01.jpg"></center>'
 					'The doctor listens to your lungs, looks down your throat and sticks a thermometer in your mouth. 60 seconds later, she removes the thermometer and says,'
-					'"Don''t worry is just a common cold. Buy small pills in the drugstore, have a couple days of bed rest and everything will be alright. Make sure to keep warm."'
+					'"Don''t worry is just a common cold. Buy some vitamins in the drugstore, have a couple days of bed rest and everything will be alright. Make sure to keep warm."'
 					'You thank the Doctor.'
 
 					act 'Go home':gt 'street'
@@ -1206,17 +1210,16 @@ if $ARGS[0] = 'ninel3':
 end
 
 if $ARGS[0] = 'glavdoc':
-	delact 'Visit the chief doctor'
+	delact 'Visit the clinic''s chief of staff'
 	minut += 5
 	if workhosp = 0:
-		'You enter his office and ask about the job.'
-		'The chief doctor looks at you. "Oh yeah, you''re that girl Catherine was talking about. Okay, It''s pretty simple."'
-		'"You''ll work weekdays, come here between 8 and 9, and the shift finishes at 16 hours. Miss a day and you don''t get paid. Salary paid on 25th, the pay per shift - 1000 <b>₽</b>."'
-		'"All details and assignments handled by personnel department. So, do you want the job?"'
+		'You enter the chief of staff''s office and ask him about the job.'
+		'The chief of staff looks at you and says: "Oh yeah, you must be the girl Kat was talking about. You have some experience in the medical field, right? I don''t have much time, so I''ll keep it short and will take her word for it."'
+		'He continues: "You''ll work five days per week, Mondays to Fridays. Your shift begins between 8:00 and 9:00, and finishes around 16:00. Miss a day and you don''t get paid. You''ll get 1.500 <b>₽</b> per shift, and your salary will be deposited onto your back account on the 25th of the month."'
+		'He looks at his watch again and shrugs: "You can sort out the rest of the details with the personnel department later. So, do you want the job?"'
 	else
 		'You step into the office of the chief of staff.'
-		'The doctor looks up at you from his paperwork, then smiles.'
-		'"Ah, Ms. <<$pcs_lastname>>, nice to see you! Can I help you with something?"'
+		'He looks up at you from his paperwork, then smiles: "Ah, Ms. <<$pcs_lastname>>, nice to see you! To what do I owe the please?"'
 	end
 
 	! WD: Uninitialised ~ 'workshop' use 'workhosp'
@@ -1225,15 +1228,16 @@ if $ARGS[0] = 'glavdoc':
 			cla
 			workhosp = 1
 			work = 1
-			'The personnel department give you a pass and a booklet with T''s + C''s. "Welcome on board."'
+			'You shake his hand and sort out the paperwork with the personnel department afterwards. Whatever Kat told them must''ve worked, none of them ask any questions about your credentials!'
+			'Five minutes later when you leave the office, you''re holding a shiny new employee pass and a booklet with relevant information.'
 
-			act 'Leave':gt 'poli', 'start'
+			act 'Return to the lobby':gt 'poli', 'start'
 		end
 	end
 
-	if workhosp = 1:act 'Resign':gt 'poli', 'discharge'
+	if workhosp = 1:act 'Quit your job':gt 'poli', 'discharge'
 
-	act 'Leave':gt 'poli', 'start'
+	act 'Return to the lobby':gt 'poli', 'start'
 end
 
 if $ARGS[0] = 'beginwork':
@@ -1241,14 +1245,14 @@ if $ARGS[0] = 'beginwork':
 	*clr
 	'<center><b><font color="maroon">Clinic</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/hospital.jpg"></center>'
-	'You have replaced the clinic.'
+	'You enter the clinic, getting ready for a new work day.'
 
 	act 'Start work':
 		smena += 1
 		gt 'WorkHosp', 'start'
 	end
 
-	act 'Resign':gt 'poli', 'discharge'
+	act 'Quit your job':gt 'poli', 'discharge'
 
 end
 
@@ -1260,18 +1264,18 @@ if $ARGS[0] = 'discharge':
 	pay = smena * 1000
 	money += pay
 	smena = 0
-	'Chief doctor looks at you. "Here is your outstanding pay, <<pay>> <b>₽</b> and your employment history. Goodbye."'
+	'The chief of staff looks disappointed as he says: "So... you''re leaving us, huh? That''s a shame. Here is your outstanding pay, <<pay>> <b>₽</b> and your employment history. Take care."'
 
-	act 'Leave':gt 'street'
+	act 'Leave the clinic':gt 'street'
 end
 
 if $ARGS[0] = '0':
 	cla
 	*clr
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/hospsex1.jpg"></center>'
-	'During the examination, the doctor starts to flirt and touch you, clearly trying to start something intimate.'
+	'During the examination, the doctor starts to flirt with you and touch you longer than is necessary, clearly trying to start something intimate.'
 							
-	act 'Reject him':gt 'poli', 'start'
+	act 'Stop him':gt 'poli', 'start'
 
 	act 'Have some fun':
 		picrand = 11
@@ -1286,11 +1290,11 @@ if $ARGS[0] = '1':
 	cla
 	*clr
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/sex/hospsex2.jpg"></center>'
-	'You are examined by two doctors, they touch you everywhere clearly going beyond what is permitted'
+	'You are examined by two doctors, they touch you everywhere clearly going beyond what is permitted.'
 
 	act 'Storm out':gt 'poli', 'start'
 
-	act 'Have some fun':
+	act 'Have some fun with them':
 		gs 'npcgeneratec', 0, 'Doctor', rand(28,48)
 		$boy[0] = $npclastgenerated
 		gs 'npcgeneratec', 0, 'Doctor', rand(28,48)
@@ -1445,7 +1449,7 @@ if $ARGS[0] = 'electrolysis':
 	money -= 80000
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/electrolysis.jpg"></center>'
-	'Surgeon has you strip and lie down on the table. Over next few hours you are treated by a laser over and over again. You can feel a scarcely whiff from the burnt hair.'
+	'The surgeon has you strip completely and lie down on the table. Over next few hours you are treated by a laser over and over again. When the treatment is finished and you get up from the table, your skin feels silky smooth.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1458,7 +1462,8 @@ if $ARGS[0] = 'lipPlus':
 	gs 'body_shape', 'basebeautycalc', 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
+	'The surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you: "Just breathe in deeply... we''ll be done before you know it."'
+	'By the time you wake up again, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1471,7 +1476,8 @@ if $ARGS[0] = 'lipMin':
 	gs 'body_shape', 'basebeautycalc', 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
+	'The surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you: "Just breathe in deeply... we''ll be done before you know it."'
+	'By the time you wake up again, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1484,7 +1490,8 @@ if $ARGS[0] = 'eyePlus':
 	gs 'body_shape', 'basebeautycalc', 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
+	'The surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you: "Just breathe in deeply... we''ll be done before you know it."'
+	'By the time you wake up again, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1497,7 +1504,8 @@ if $ARGS[0] = 'eyeMin':
 	gs 'body_shape', 'basebeautycalc', 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
+	'The surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you: "Just breathe in deeply... we''ll be done before you know it."'
+	'By the time you wake up again, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1511,7 +1519,8 @@ if $ARGS[0] = 'lyposuction':
 	gs 'body_shape', 'softreset'
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
+	'The surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you: "Just breathe in deeply... we''ll be done before you know it."'
+	'By the time you wake up again, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1523,7 +1532,8 @@ if $ARGS[0] = 'bImplantA':
 	money -= 90000
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
+	'The surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you: "Just breathe in deeply... we''ll be done before you know it."'
+	'By the time you wake up again, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1535,7 +1545,8 @@ if $ARGS[0] = 'bImplantFill':
 	money -= 200000
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
+	'The surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you: "Just breathe in deeply... we''ll be done before you know it."'
+	'By the time you wake up again, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
@@ -1547,7 +1558,8 @@ if $ARGS[0] = 'bImplantString':
 	money -= 250000
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/clinic/cosmeticsur.jpg"></center>'
-	'Surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you to breathe in. By the time you wake up, the procedure is complete.'
+	'The surgeon has you strip, put on a gown and lie down on the table. He gives you a mask and tells you: "Just breathe in deeply... we''ll be done before you know it."'
+	'By the time you wake up again, the procedure is complete.'
 
 	act 'Continue':gt 'poli', 'cosmetic1'
 end
