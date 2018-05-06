@@ -94,7 +94,7 @@ if car > 0 and cardrive = 24:
 end
 
 if hour >= 8 and hour <= 20:
-	$Pharmname = ', and the <a href="exec: minut += 15 & gt ''gaptek'', ''start''">pharmacy</a> is right across the street.'
+	$Pharmname = ', and the <a href="exec: minut += 5 & gt ''gaptek'', ''start''">pharmacy</a> is right across the street.'
 else
 	$Pharmname = '.'
 end
