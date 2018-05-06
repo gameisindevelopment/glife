@@ -91,7 +91,11 @@ else
 	streetev_bf = 90
 end
 
-if $ARGS[1] = 'extras':
+if $ARGS[1] = 'main':
+	if lesbiday + 21 <= daystart and RAND(0,100) < streetev_mistmeet and lesbiQW >= 11 and hour >= 8 and hour < 21 and $pantyworntype ! 'none' and month > 2 and month ! 12 and sub > 0:gt 'lesbimistress', 'mistmeet'
+
+	streetrand = rand(0, 100)
+	!!start of old random street events that can always happen.
 	
 	if streetrand < streetev_bf and pcs_lover < 3 and streetbfhour ! hour:
 		streetbfhour = hour
@@ -119,15 +123,6 @@ if $ARGS[1] = 'extras':
 			if svidanie[2] = 1:'<b><a href="exec:lover_number = 2 & gt ''lover_meet'', ''start''"><<$loverdesc[2]>></a> is waiting <<$streetev_home>>.</b>'
 		end
 	end
-end
-
-
-if $ARGS[1] = 'main':
-	if lesbiday + 21 <= daystart and RAND(0,100) < streetev_mistmeet and lesbiQW >= 11 and hour >= 8 and hour < 21 and $pantyworntype ! 'none' and month > 2 and month ! 12 and sub > 0:gt 'lesbimistress', 'mistmeet'
-
-
-	streetrand = rand(0, 100)
-	!!start of old random street events that can always happen.
 
 	!!Changing this event some and rewriting parts of it. I also want to change how often and when it can happen, based on clothes, time and if drunk. If drunk double the odds and for time it can happen from 24:00 to 04:00. This gets checked last after any other events could happen.
 	!!town(pav or pushkin) normal clothes 1 in 50, if drunk 1 in 25. slutty clothes(clothes that cover everything but very short skirts revealing tops etc) 1 in 30, if drunk 1 in 15. bimbo/exhibitionist clothes 1 in 20, if drunk 1 in 10. naked 1 in 5, if drunk 1 in 2
