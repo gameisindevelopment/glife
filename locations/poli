@@ -649,7 +649,7 @@ if $ARGS[0] = 'stdcheck':
 
 						if TriperOnce = 1:
 							'We found gonorrhea. In principle, this disease is curable.'
-							if TriperNapr = 0:TriperNapr = 5 & 'I''m going to put you on a course of gonorrhea injections. You''ll need a total of 5 injections (no more than 1 a day), each injection will cost 450 <b>₽</b>'
+							if TriperNapr = 0:TriperNapr = 5 & 'I''m going to put you on a course of gonorrhea injections. You''ll need a total of 5 injections (no more than 1 a day), each injection will cost 750 <b>₽</b>'
 							if SifNapr > 0:'You need to see the nurse for your gonorrhea injections.'
 						end
 
