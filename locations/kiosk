@@ -15,7 +15,7 @@ if $ARGS[0] = 'start':
 			gt 'kiosk', 'counter'
 		end
 
-		act 'Leave':gt $loc
+		act 'Leave': minut += 1 & gt $loc
 
 		if pcs_exhibition >= 45:
 			act 'Flash both your tits and your pussy':

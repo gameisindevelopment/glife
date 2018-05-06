@@ -1530,7 +1530,7 @@ end
 if $ARGS[0] = 'pos51':
 	cla
 	*clr
-	minut += 5
+	minut += 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/podezd.jpg"></center>'
 	'Entrance to the 5-floors building in which you live. The lock on the door leading to the attic is broken.'
@@ -1571,6 +1571,7 @@ if $ARGS[0] = 'pos51':
 			'<b><font color="red">You are too ill to walk to the street.</font></b>'
 			xgt $curloc
 		else
+			minut += 1
 			xgt 'street'
 		end
 	end
@@ -1581,7 +1582,7 @@ end
 
 if $ARGS[0] = 'pos52':
 	cls
-	minut += 5
+	minut += 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/cherdak.jpg"></center>'
 	'A flight of stairs that lead to the roof through the attic. It''s dark and scary. This is clearly no place for a decent girl.'
@@ -1603,7 +1604,7 @@ if $ARGS[0] = 'pos53':
 	$loc = $CURLOC
     $location_type = 'secluded'
 	cls
-	minut += 5
+	minut += 1
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/roof.jpg"></center>'
 	'The roof of your apartment building.'

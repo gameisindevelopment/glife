@@ -36,7 +36,7 @@ if $ARGS[0] = 'start':
 
 	if workhosp = 1 and hour >= 8 and hour <= 9 and week < 6:act 'Exit to replace':gt 'poli', 'beginwork'
 
-	act 'Leave Clinic':gt 'street'
+	act 'Leave Clinic': minut += 5 & gt 'street'
 	act 'See cosmetic surgeon':gt 'poli','cosmetic1'
 
 	if pcs_health < (pcs_vital * 10 + pcs_stren * 5):

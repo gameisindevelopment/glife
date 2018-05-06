@@ -6,7 +6,6 @@ if $ARGS[0] = 'start':
 	$location_type = 'public_indoors'
 	CLOSE ALL
 	if sound = 0:PLAY 'sound/cafe.mp3',30
-	minut += 1
 	gs 'stat'
 	gs 'kit_din'
 	'<center><b><font color="maroon">The Roadhouse</font></b></center>'
@@ -23,7 +22,7 @@ if $ARGS[0] = 'start':
 
 	act 'Sit down at a table': gt 'kafe', 'table'
 	
-	act 'Leave':gt 'street'
+	act 'Leave': minut += 5 & gt 'street'
 end
 
 if $ARGS[0] = 'table':
@@ -267,7 +266,7 @@ if $ARGS[0] = 'workPred':
 				gs 'arousal', 'end'
 				gs 'stat'
 
-				act 'Go home':gt 'street'
+				act 'Go home': minut += 5 & gt 'street'
 			end
 
 			if pcs_horny >= 50:
@@ -294,7 +293,7 @@ if $ARGS[0] = 'workPred':
 						gs 'arousal', 'end'
 						gs 'stat'
 
-						act 'Go home':gt 'street'
+						act 'Go home': minut += 5 & gt 'street'
 					end
 
 					act 'Spit sperm into her mouth':
@@ -321,7 +320,7 @@ if $ARGS[0] = 'workPred':
 								gs 'arousal', 'end'
 								gs 'stat'
 
-								act 'Go home':gt 'street'
+								act 'Go home': minut += 5 & gt 'street'
 							end
 						end
 
@@ -334,7 +333,7 @@ if $ARGS[0] = 'workPred':
 							'You wiped the remnants of sperm off your face, help her to feet and sort her out. Ira, regaining her senses, looks to you with a beatific smile "That Givi is chock-bellied ugly, but he fucked me like I''ve never been fucked before. I even lost consciousness from an orgasm."'
 							'Ira is still floating in ecstasy, so you decide to walk her home. At her front door, she kisses you on the lips and leaves.'
 
-							act 'Go home':gt 'street'
+							act 'Go home': minut += 5 & gt 'street'
 						end
 					end
 				end
@@ -748,7 +747,7 @@ if $ARGS[0] = 'workPred':
 					'The basement has all the tools set out ready. You sit on a chair and a heavily tattooed orangutan comes up to you with a clip and a pair of scissors, he pull your tongue out of your mouth and pierces it with lightning speed. Into the bleeding wound in your tonuge he attaches a small bar.'
 					'Damn, it''s very painful. You moan with your tongue hanging out, the bandits laughing at your pain. Finally your tongue is freed. Tears roll down your cheeks as the bandits escort you out of the cottages.'
 
-					act 'Go home':gt 'street'
+					act 'Go home': minut += 5 & gt 'street'
 				elseif kaferand > 25 and (opusk > 0 or gnewQW = 5) and pirsA > 0 and hour >= 12 and hour <= 19 and cafe_mobster ! daystart:
 					*clr & cla
 					cafe_mobster = daystart
@@ -842,19 +841,19 @@ if $ARGS[0] = 'razvod':
 		'<<$boydesc>> invites you to dance.'
 		act 'Dance':gt 'cafe2', 'dance'
 		if pcs_horny < 75:
-			act 'Leave':gt 'street'
+			act 'Leave': minut += 5 & gt 'street'
 		end
 	elseif deyst = 1:
 		'<<$boydesc>> asks permission to sit down at the same table as you.'
 		act 'Drink':gt 'cafe2', 'booze'
 		if pcs_horny < 75:
-			act 'Leave':gt 'street'
+			act 'Leave': minut += 5 & gt 'street'
 		end
 	elseif deyst = 2:
 		'<<$boydesc>> invites you to a nearby party which he is going to.'
 		act 'Agree':gt 'cafe2', 'kompashka'
 		if pcs_horny < 75:
-			act 'Leave':gt 'street'
+			act 'Leave': minut += 5 & gt 'street'
 		end
 	elseif deyst = 3:
 		'<<$boydesc>> is incredibly drunk and you feel tipsy just from the smell of booze on him. "Hey baby, got some spare time? Come have fun in the outhouse."'
@@ -871,7 +870,7 @@ if $ARGS[0] = 'razvod':
 				else
 					'"Well, okay, get out of here, you are ugly anyway."'
 				end
-				act 'Fuck you':gt 'street'
+				act 'Fuck you': minut += 5 & gt 'street'
 			end
 		end
 	end
