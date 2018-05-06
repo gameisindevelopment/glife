@@ -440,7 +440,7 @@ if $ARGS[1] = 'main':
 		act 'Chase him':
 			*clr
 			cla
-			if pcs_run + pcs_stam < rand(120,250):
+			if pcs_run + pcs_stam > rand(120,250):
 				money = 0
 				gs 'stat'
 				'<<$streetev_title>>'

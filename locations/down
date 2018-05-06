@@ -1,7 +1,7 @@
 # down
 
 $metka = $ARGS[0]
-$loc = $CURLOC
+$loc = 'down'
 $location_type = 'public_outdoors'
 CLOSE ALL
 if sound = 0:
