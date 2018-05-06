@@ -32,6 +32,9 @@ if $ARGS[0] = 'start':
 	
 	act 'Visit clothing department':
 		cla
+		
+		act 'Return':gt 'budgetclothes', 'start'
+		
 		act 'View cheap clothing':
 			minut += 1
 			gt 'budgetclothes', 'clothes'
@@ -51,12 +54,13 @@ if $ARGS[0] = 'start':
 			minut += 1
 			gt 'budgetclothes', 'school'
 		end
-
-		act 'Return':gt 'budgetclothes', 'start'
 	end
 
 	act 'Visit shoe department':
 		cla
+		
+		act 'Return':gt 'budgetclothes', 'start'
+		
 		act 'Look at regular shoes':
 			minut += 1
 			gt 'budgetclothes', 'shoes'
@@ -66,8 +70,6 @@ if $ARGS[0] = 'start':
 			minut += 1
 			gt 'budgetclothes', 'trainers'
 		end
-
-		act 'Return':gt 'budgetclothes', 'start'
 	end
 
 	act 'View coats':
@@ -89,7 +91,6 @@ if $ARGS[0] = 'start':
 		minut += 1
 		gt 'budgetclothes', 'bras'
 	end
-
 end
 
 if $ARGS[0] = 'clothes':
