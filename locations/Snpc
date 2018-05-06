@@ -75,6 +75,11 @@ if grupTipe[numnpc] = 4:
 					minut += 5
 					npc_rel[$static_num] += 5
 					alko += 1
+					if pcs_hydra >= 100:
+						pcs_hydra += 5
+					else
+						pcs_hydra += 10
+					end
 					cumspclnt = 2
 					gs 'cum_cleanup'
 					pcs_breath = 0

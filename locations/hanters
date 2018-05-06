@@ -50,7 +50,7 @@ if hantersKnow = 0:
 		$npc_usedname['A172'] = 'Andrei'
 		$npc_usedname['A173'] = 'Igor'
 		$npc_usedname['A174'] = 'Sergei'
-		act 'Sit down': gt 'hanters'
+		act 'Sit down': gt 'hanters', 'start'
 		act 'Move away': gt 'swamp_yard'
 	end
 elseif hour = 8 or hour = 14 or hour = 19:
@@ -255,7 +255,7 @@ elseif hour = 8 or hour = 14 or hour = 19:
 				'You approach the hunters sitting in the meadow. "Guys, let me shoot the rifle," you look at them with your puppy eyes.'
 				'"<<$pcs_nickname>>, come closer," replied Andrei. "If you want to shoot you need to repay us somehow."'
 
-				act'Approach':gt 'hanters'
+				act'Approach':gt 'hanters', 'start'
 			else
 				*clr & cla
 				minut += 5
