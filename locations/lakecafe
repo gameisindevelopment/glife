@@ -245,7 +245,7 @@ if $ARGS[0] = 'barmensha':
 							cla
 							'You press Eugene for more information.'
 							'Eugene seems to be hurt by your insistance to find out more, but she reluctantly relents.'
-							'"All our regulars know that we ''arrange meetings'' every Monday between 22:00 and 23:00. If you''re here at that time and want to earn some money, introduce yourself to the person or group you want to service and say: ''I''ll be your waitress tonight.'' They''ll know what it means. From what the girls told me, they get paid between 500 and 2,000 <b>₽</b>."'
+							'"All our regulars know that we ''arrange meetings'' every Monday between 22:00 and 23:00. If you''re here at that time and want to earn some money, introduce yourself to the person or group you want to service and say: ''I''ll be your waitress tonight.'' They''ll know what it means. From what the girls told me, they get paid between 500 and 1,000 <b>₽</b>."'
 							'Before you leave, she adds: "Please don''t do it. I''m starting to care for you and..."'
 							'She looks away from you.'
 							act 'Say you won''t do it':
