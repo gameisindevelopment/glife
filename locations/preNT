@@ -197,6 +197,7 @@ if $ARGS[0] =  'Ride':
 						cla
 						*clr
 						sub += 5
+						guy += 1
 						minut -= 2
 						gs'stat'
 						'<center><video autoplay loop src="images/characters/pavlovsk/school/boy/fedor/fedorev2/Home/bedroom/sex/bj2.mp4"></video></center>'
@@ -206,6 +207,7 @@ if $ARGS[0] =  'Ride':
 						gs 'cum_call', 'mouth', 'Albert'
 						gs 'arousal', 'bj', 5, 'sub'
 						gs 'stat'
+						gs 'arousal', 'end'
 
 						act 'Continue riding in silence':
 							cla
@@ -259,6 +261,7 @@ if $ARGS[0] =  'Ride':
 					cla
 					*clr
 					pcs_dom += 5
+					guy += 1
 					minut += 4
 					gs'stat'
 					'<center><video autoplay loop src="images/pre/city/hj2.mp4"></video></center>'
@@ -277,6 +280,7 @@ if $ARGS[0] =  'Ride':
 						gs 'cum_call', 'hands', 'Albert'
 						gs 'arousal', 'hj', 5, 'dom'
 						gs 'stat'
+						gs 'arousal', 'end'
 
 						act 'Lay back and relax':
 							cla
@@ -387,13 +391,14 @@ if $ARGS[0] =  'Listings':
 	minut += 2
 	gs'stat'
 	'<center><img <<$set_imgh>> src="images/pre/city/paper.jpg"></center>'
-	'Mercy Clinic Volunteer is looking for volunteers to help with elderly patients in the City Industrial District.'
-	'Salon Masseuse in the City Center.'
-	'Office Secretary in the City Center (Requires secretary diploma,)'
-	'Pussy Cats Store Clerk in the City Center Mall.'
-	'Clothing Saleswoman in the City Residential District.'
-	'Stripper in the City Center Strip Club.'
-	'Fashion Model in the City Center.'
+	'Clothing Saleswoman at the marketplace (Residential Area).'
+	'Waitress at the Roadhouse (Residential Area).'
+	'Office Secretary at Titran-Express (City Center).'
+	'Salon Masseuse at Beauty Bar in the Galeria Mall (City Center).'
+	'Store Clerk at Pussy Cats in the Galeria Mall (City Center).'
+	'Fashion Model at Aphrodite Photography (City Center).'
+	'Mercy Clinic is looking for volunteers to help with elderly patients (City Industrial Region).'
+	'Stripper in the Red Light District (City Industrial Region).'
 
 	act 'Continue toward your apartment':
 		cla
@@ -442,13 +447,14 @@ if $ARGS[0] =  'Train':
 		minut += 2
 		gs'stat'
 		'<center><img <<$set_imgh>> src="images/pre/city/paper.jpg"></center>'
-		'Mercy Clinic Volunteer is looking for volunteers to help with elderly patients in the City Industrial District.'
-		'Salon Masseuse in the City Center.'
-		'Office Secretary in the City Center (Requires secretary diploma,)'
-		'Pussy Cats Store Clerk in the City Center Mall.'
-		'Clothing Saleswoman in the City Residential District.'
-		'Stripper in the City Center Strip Club.'
-		'Fashion Model in the City Center.'
+		'Clothing Saleswoman at the marketplace (Residential Area).'
+		'Waitress at the Roadhouse (Residential Area).'
+		'Office Secretary at Titran-Express (City Center).'
+		'Salon Masseuse at Beauty Bar in the Galeria Mall (City Center).'
+		'Store Clerk at Pussy Cats in the Galeria Mall (City Center).'
+		'Fashion Model at Aphrodite Photography (City Center).'
+		'Mercy Clinic is looking for volunteers to help with elderly patients (City Industrial Region).'
+		'Stripper in the Red Light District (City Industrial Region).'
 
 		act 'Finish reading':
 			cla
