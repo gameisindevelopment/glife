@@ -857,17 +857,17 @@ if $ARGS[0] = 'postvideo':
 	pornstack -= 1
 	pornnow = 0
 	if film < 5:
-		fmulti = 100
+		fmulti = 25
 	elseif film < 10:
-		fmulti = 120
+		fmulti = 30
 	elseif film < 15:
-		fmulti = 140
+		fmulti = 35
 	elseif film < 25:
-		fmulti = 160
+		fmulti = 40
 	elseif film < 50:
-		fmulti = 180
+		fmulti = 45
 	elseif film >= 50:
-		fmulti = 200
+		fmulti = 50
 	end
 
 	film += 1
