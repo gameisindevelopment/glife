@@ -5,13 +5,13 @@ if $ARGS[0] = 'start':
 	if sound = 0:PLAY 'sound/metro.mp3',30
 	'<center><b><font color="maroon">Metro station</font></b></center>'
 	if $loc = 'street':
-		'<center><b><font color="maroon">Residential area</font></b></center>'
+		'<center><b><font color="maroon">Residential Area</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/shared/metro/platresident.jpg"></center>'
 	elseif $loc = 'down':
 		'<center><b><font color="maroon">City Center</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/shared/metro/platcenter.jpg"></center>'
 	elseif $loc = 'Nord':
-		'<center><b><font color="maroon">City Industrial Area</font></b></center>'
+		'<center><b><font color="maroon">City Industrial Region</font></b></center>'
 		'<center><img <<$set_imgh>> src="images/locations/city/shared/metro/platindust.jpg"></center>'
 !!new locations for the metro, you will have to see how the code works and for now the island will be commented out until we add that area of the city
 	elseif $loc = 'psiklin':
@@ -61,7 +61,7 @@ if $ARGS[0] = 'start':
 		end
 
 		if $loc ! 'Nord':
-			act 'Go to the <b>City Industrial Area</b> (16 <b>₽</b>)':
+			act 'Go to the <b>City Industrial Region</b> (16 <b>₽</b>)':
 				$loc = 'Nord'
 				$metka = ''
 				money -= 16
