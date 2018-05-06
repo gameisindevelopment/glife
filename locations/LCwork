@@ -323,7 +323,7 @@ if $ARGS[0] = 'Kitchen':
 	LCwork2day = daystart
 	'<center><img <<$set_imgh>> src="images/locations/city/industrial/bbq/kitchenworkcafe.jpg"></center>'
 	'Eugene gives you a warm smile and says: "That would be great, thanks!"'
-	'You spend the next hour and a half washing dishes, cleaning the floors, chopping vegetables and cooking food. When you''re finished, Eugene gives you your well-earned 175 <b>₽</b>.'
+	'You spend the next hour and a half washing dishes, cleaning the floors, chopping vegetables and cooking food. When you''re finished, Eugene gives you your well-earned 100 <b>₽</b>.'
 
 	act 'Continue':
 		gs 'stat'
