@@ -501,11 +501,15 @@ if minut >= 60:
 
 	if mosol >= 30 and pain['pubic'] < 80: gs 'pain', 1, 'pubic', 'ache'
 
-	if pcs_energy > 100:
+	if pcs_energy > 100: 
 		fat += (pcs_energy - 100) / 4
 		pcs_energy = 100
 	end
-
+	
+	if pcs_sleep > 100: pcs_sleep = 100
+		
+	if pcs_hydra > 200: pcs_hydra = 200
+	
 	if mosol > 0:
 		if $pantyworntype ! 'none' or $clothingworntype = 'nude' or PCloPanties = 1:mosol -= rand(0,1)
 	end
@@ -852,8 +856,8 @@ end
 
 if pcs_hydra <= 0:
 	pcs_hydra = 0
-	health -= 10
-	willpower -= 1
+	pcs_health -= 5
+	pcs_willpwr -= 1
 end
 
 if pcs_mood <= 0:
