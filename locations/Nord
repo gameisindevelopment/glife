@@ -69,9 +69,9 @@ if $ARGS[0] = '':
 
 	'<a href="exec:minut += 15 & gt ''vokzal''">Train Station</a> to get to the small Town.'
 
-	if hour < 16: 
-		'The Bar "Rabotnik" is here, but it seems to be closed. A sign by the door tells you that it''s open every day between 16:00 and 24:00.'
-	else:
+	if week = 3 or hour < 16: 
+		'The Bar "Rabotnik" is here, but it seems to be closed. A sign by the door tells you that it''s open every day (except Wednesday) between 16:00 and 24:00.'
+	else
 		'The <a href="exec: minut += 5 & gt ''qwBarPolet''">Bar "Rabotnik"</a> seems to be open.'
 	end
 	![slavaQW - Related to Glory; references to bar "Flight" have to be fixed - requirement to access the bar has been removed for now, since content not related - Variable not used by anything else at the moment]
