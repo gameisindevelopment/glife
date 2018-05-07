@@ -234,7 +234,7 @@ if $ARGS[0] = 'billiard_ev1':
 						
 						if MartinSex = 0:
 							'His words hit you surprisingly hard. You''re not sure if you want to slap him, walk off, or break into tears. Before you can decide, you feel his calloused hand at your chin, forcing you to raise your head and meet his eyes.'
-							'"There are things you shouldn''t do for money. You''re not easy, corazón, so don''t make yourself cheap."'
+							'"There are things you shouldn''t do for money. You''re not easy, corazó®¬ so don''t make yourself cheap."'
 							'And with that, Martin walks off, leaving you to contemplate his words and his concern for you.'
 							
 							act 'Return to the bar': gt 'qwBarPolet'

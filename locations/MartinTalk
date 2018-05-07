@@ -90,7 +90,7 @@ if $ARGS[0] = '':
 		*nl
 		'"You''re a sly one, aren''t you?" He sounds impressed.'
 		'You raise the corner of your mouth. "I thought I was ''easy''?"'
-		'He bursts into laughter. "Maybe you are, maybe you aren''t; but you are alright either way, coraz髇."'
+		'He bursts into laughter. "Maybe you are, maybe you aren''t; but you are alright either way, coraz贸n."'
 		*nl
 		'With that, he leaves you to your drink. Minutes pass as you enjoy your beverage, only stopping when you find your glass empty.'
 		
@@ -164,7 +164,7 @@ if $ARGS[0] = '':
 		'"Passionate," he corrects.'
 		*nl
 		'You stop him with a wave of your hand. "Same difference! Well, which is it? Do you like fat women or skinny ones?"'
-		'"First of all: Eating right and overeating are two entirely different things, coraz髇. And I didn''t mean that you were skinny as in ''too thin'', but that you could use a little more mass to work with."'
+		'"First of all: Eating right and overeating are two entirely different things, coraz贸n. And I didn''t mean that you were skinny as in ''too thin'', but that you could use a little more mass to work with."'
 		'"Are you my bartender or my personal trainer?"'
 		*nl
 		'"Martin musters you once more. "I can be both," he grins.'
@@ -227,7 +227,7 @@ if $ARGS[0] = '':
 			*nl
 			'Martin shakes his head slightly. "I have to say, though, I am somewhat disappointed."'
 			'You raise an eyebrow. "Why? Because I don''t have any dark secret hobbies to share?"'
-			'"Ah ah ah," Martin admonishes, "just because you didn''t share them, coraz髇, doesn''t mean you don''t have any."'
+			'"Ah ah ah," Martin admonishes, "just because you didn''t share them, coraz贸n, doesn''t mean you don''t have any."'
 			'"Alright, you caught me." You raise your hands in defeat. "<b>I</b> am the one who has been selling drugs to the homeless all along," you say dramatically.'
 			*nl
 			'Martin laughs. "Well, that would make for a much better twist than me doing it, wouldn''t it?"'
@@ -385,7 +385,7 @@ if $ARGS[0] = '':
 		'He shakes his head wordlessly. Instead, he does something you don''t think you''ve ever seen him do while the bar is open: He pours himself a glass of tequila and, after regarding it for a moment, slams it back.'
 		*nl
 		'It''s fairly obvious that this is a sensitive topic, and you barely dare to raise your voice. "What happened?"'
-		'He sighs deeply; not at your question, you feel, but at his own answer: "Life happened, coraz髇. Life can make or break someone''s faith. Me, I eventually figured that either there was no god or the filio di puta had a really twisted sense of humor and didn''t deserve my faith." The bitterness in his voice is almost palpable.'
+		'He sighs deeply; not at your question, you feel, but at his own answer: "Life happened, coraz贸n. Life can make or break someone''s faith. Me, I eventually figured that either there was no god or the filio di puta had a really twisted sense of humor and didn''t deserve my faith." The bitterness in his voice is almost palpable.'
 		
 		act 'What happened to him?':
 			cls
@@ -815,7 +815,7 @@ if $ARGS[0] = '':
 		end
 		*nl
 		'"What about your parents?" You ask.'
-		'Martin smiles wistfully and shakes his head. "Long gone, coraz髇. Long gone."'
+		'Martin smiles wistfully and shakes his head. "Long gone, coraz贸n. Long gone."'
 		*nl
 		'You nod understandingly and, for a moment, both of you fall silent.'
 		'As your mind processes the wealth of new information, you think about his brother, the actor, again, trying to recall his name... and remember something else. "Wait, didn''t you say you had ''brothers''?"'
@@ -994,7 +994,7 @@ if $ARGS[0] = 'MartinTalkApartment':
 		'Martin smiles. "You don''t have to justify yourself. There are worse things than living with your parents. The train ride must suck, though."'
 		*nl
 		'You sigh. "Yeah, it does. I''ll get an apartment of my own as soon as I can. In the city, I hope."'
-		'"You do that, coraz髇," Martin says, already a little distracted by a patron waving at him, and just like that, you''re alone with your drink.'
+		'"You do that, coraz贸n," Martin says, already a little distracted by a patron waving at him, and just like that, you''re alone with your drink.'
 		
 	else
 		'You do not want to talk about your current living situation, though. It''s just too embarrassing to talk to him about it while you''re sitting in his bar, so you have to make something up, and quick.'
@@ -1036,7 +1036,7 @@ end
 !After all, you weren''t actually looking for a serious relationship with a man old enough to be your father, were you?
 
 
-!!CONVERSATION WITH MARTIN IF SVETA GOT PREGNANT FROM HIM???
+!!CONVERSATION WITH MARTIN IF SVETA GOT PREGNANT FROM HIM??
 !!How would that change sex between them?
 !He would probably pay alimony - how much?
 
