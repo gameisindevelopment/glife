@@ -1247,8 +1247,10 @@ end
 
 if model > 0 and model_week = (daystart - week) / 7:
 	$stat_msg += '<BR><b>You have worked as a model this week.</b>'
-elseif model > 0 and model_week < (daystart - week) / 7:
-	$stat_msg += '<BR><b>You can do paid modelling this week.</b>'
+elseif model > 0 and model_week < (daystart - week) / 7 and model_job_week < 1:
+	$stat_msg += '<BR><b>You can get paid for 2 modelling jobs this week.</b>'
+elseif model > 0 and model_week < (daystart - week) / 7 and model_job_week = 1:
+	$stat_msg += '<BR><b>You can get paid for 1 more modelling job this week.</b>'
 end
 if pornstack > 0:
 	aa = 0
