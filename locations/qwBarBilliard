@@ -613,7 +613,7 @@ if $ARGS[0] = 'billiard_money':
 	*nl
 	gs 'qwBarBilliard', 'billiard_engine'
 						
-	if billwin >= 12:
+	if billwin >= 8:
 		pcs_mood += rand(1,4)
 		money += 500
 		'Lady Luck seems to be smiling on you tonight - you end up ' + iif(pcs_billiard>50,'comfortably','closely') + ' winning the game.'
