@@ -3,7 +3,7 @@
 if $ARGS[0] = 'bev_kva':
 	*clr & cla
 	frost = 1
-	minut += 15
+	minut += 10
 	fat += 2
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 5
@@ -30,7 +30,7 @@ if $ARGS[0] = 'bev_jui':
 	*clr & cla
 	frost = 1
 	alko -= 1
-	minut += 15
+	minut += 10
 	fat += 3
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 8
@@ -56,7 +56,7 @@ end
 if $ARGS[0] = 'bev_mil':
 	*clr & cla
 	frost = 1
-	minut += 15
+	minut += 10
 	fat += 6
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 5
@@ -83,7 +83,7 @@ if $ARGS[0] = 'bev_wat':
 	*clr & cla
 	frost = 1
 	alko -= 1
-	minut += 15
+	minut += 10
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 10
 	pcs_energy += 4
@@ -108,7 +108,7 @@ if $ARGS[0] = 'bev_cof':
 	*clr & cla
 	frost = 0
 	alko -= 1
-	minut += 15
+	minut += 10
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 5
 	pcs_mood += 20
@@ -134,7 +134,7 @@ if $ARGS[0] = 'bev_tea':
 	*clr & cla
 	frost = 0
 	alko -= 1
-	minut += 15
+	minut += 10
 	money -= val($_drink['<<args[1]>>,price'])
 	pcs_health += 10
 	pcs_mood += 20

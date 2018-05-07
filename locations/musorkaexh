@@ -96,7 +96,7 @@ if $ARGS[0] = 'pos7':
 		'Suddenly, pulling your hand to him, he grabs you by the buttocks and starts, right through your clothes, kissing and sniffing furiously between your legs.'
 		'"Argh, sniff, sniff, what a beauty!'
 		
-		act 'Slap the freak':gt'street'
+		act 'Slap the freak and run away':gt'street'
 	end
 end
 
@@ -110,9 +110,9 @@ if $ARGS[0] = 'pos8':
 	'You are standing in front of a hungover homeless man.'
 	'"You know you''re a kind person. How do I say this.'
 	'"I gathered some money and spend some of it on drink, but nothing on food. I''ve been watching you, you''re the business girl. Besides being beautiful, you''re trying to make a living."'
-	'"Now,  I''m a man, not that young anymore, but I still appreciate the pleasure of female beauty."'
+	'"Now, I''m a man, not that young anymore, but I still appreciate the pleasure of female beauty."'
 	'You interrupt, "What are you hinting at?"'
-	'"Nothing like that, I just wanted to offer money in exchange for beauty. You show me something, and I just look. Easy, and I will give you all that I gathered during the week. As much as 300 <b>₽</b>!"'
+	'"Nothing like that, I just wanted to offer money in exchange for beauty. You show me something, and I just look. Easy, and I will give you all that I gathered during the week. As much as 100 <b>₽</b>!"'
 
 	act 'Agree':
 		cls
@@ -127,7 +127,7 @@ if $ARGS[0] = 'pos8':
 		'The bum looks at you with round eyes and violently jerks his penis. You get scared, what if someone comes to empty their trash.'
 		'"Argh, wait let me finish!"'
 		'Finally with a loud puff, the homeless man collapses on his cardboard box.'
-		'"Money, money gimme!" You cry as you grab all the bums money and run away.'
+		'"Give me my money!" You cry as you grab all the bums money and run away.'
 
 		gs 'arousal', 'flashlite', 10
 		gs 'arousal', 'flash', 10
@@ -138,7 +138,7 @@ if $ARGS[0] = 'pos8':
 		act 'Leave':gt'street'
 	end
 
-	act 'Takeout':gt'street'
+	act 'Leave':gt'street'
 end
 
 if $ARGS[0] = 'pos9':
@@ -165,9 +165,9 @@ if $ARGS[0] = 'pos10':
 	'You are standing in front of a hungover homeless man.'
 	'"You know you''re a kind person. How do I say this.'
 	'"I gathered some money and spend some of it on drink, but nothing on food. I''ve been watching you, you''re the business girl. Besides being beautiful, you''re trying to make a living."'
-	'"Now,  I''m a man, not that young anymore, but I still appreciate the pleasure of female beauty."'
+	'"Now, I''m a man, not that young anymore, but I still appreciate the pleasure of female beauty."'
 	'You interrupt, "What are you hinting at?"'
-	'"Nothing like that, I just wanted to offer money in exchange for beauty. You show me something, and I just look. Easy, and I will give you all that I gathered during the week. As much as 300 <b>₽</b>!"'
+	'"Nothing like that, I just wanted to offer money in exchange for beauty. You show me something, and I just look. Easy, and I will give you all that I gathered during the week. As much as 100 <b>₽</b>!"'
 
 	act 'Agree':
 		cls
@@ -179,7 +179,7 @@ if $ARGS[0] = 'pos10':
 		'The bum looks at you with round eyes and violently jerks his penis. You get scared, what if someone comes to empty their trash.'
 		'"Argh, wait let me finish!"'
 		'Finally with a loud puff, the homeless man collapses on his cardboard box.'
-		'"Money, money gimme!" You cry as you grab the bums money and prepare to make a quick get away.'
+		'"Give me my money!" You cry as you grab the bums money and prepare to make a quick get away.'
 		
 		gs 'arousal', 'flashlite', 10
 		gs 'arousal', 'flash', 10
@@ -189,7 +189,7 @@ if $ARGS[0] = 'pos10':
 		if bomjqw > 0:
 			'The homeless man asks, "Thank you very much once again, but if you agree to one more service...'
 			'"What service?"'
-			'"Could you help an old man with your lovely mouth? I''ll pat good money, well, what do you say?"'
+			'"Could you help an old man with your lovely mouth? I''ll pay good money, well, what do you say?"'
 			if pcs_horny < 50:
 				clr
 				cla
@@ -218,7 +218,7 @@ if $ARGS[0] = 'pos10':
 					act 'Suck harder':
 						cla
 						'You start sucking enthusiastically, and your efforts are paying off. The old man is ready to cum.'
-						act 'In the mouth':
+						act 'In your mouth':
 							cla
 							*clr
 							gs'stat'
@@ -233,7 +233,7 @@ if $ARGS[0] = 'pos10':
 							
 							act 'Leave': gt'street'
 						end
-						act 'On the face':
+						act 'On your face':
 							cla
 							*clr
 							gs'stat'
@@ -252,7 +252,7 @@ if $ARGS[0] = 'pos10':
 					end
 				end
 				if bomjshet >= 10:
-					act'Give the homeless':
+					act'Give yourself to the homeless man':
 						cla
 						*clr
 						dick = 14

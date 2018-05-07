@@ -19,7 +19,7 @@ if $ARGS[0] = 'start':
 	if student =0:
 		'Since you''re not attending the University you are not allowed to enter unless you''re visiting someone you know.'
 
-		act 'Leave':gt 'island'
+		act 'Leave': minut += 5 & gt 'island'
 
 		if afra > 0 and hour < 22 and hour >= 7:
 			act 'I''m here to visit DeMarcus':

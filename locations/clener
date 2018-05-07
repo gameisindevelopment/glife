@@ -4,7 +4,6 @@ if $ARGS[0] = 'start':
 	*clr
 	CLOSE ALL
 	if sound = 0 and hour >= 8 and hour < 17:PLAY 'sound/office.mp3',30 & PLAY 'sound/office2.mp3',30
-	minut += 5
 	clr
 	gs 'stat'
 	if night_mode = 1:
@@ -207,7 +206,7 @@ if $ARGS[0] = 'start':
 			cla
 			'You ask Boris Ivanovich whether he has more work for you. He says that he needs a cleaner to clean the toilets. You''ll be almost able to work every day. Cleaning toilets for an hour earns you 65 <b>₽</b> upfront.'
 
-			act 'Refuse and leave':gt 'street'
+			act 'Refuse and leave': minut += 5 & gt 'street'
 
 			act 'Accept':
 				cla
@@ -222,9 +221,9 @@ if $ARGS[0] = 'start':
 	if clener = 1:
 		act 'Ask about available jobs':
 			cla
-			'You head into the office that advertised the job. You see a large man in a jacket sitting there. He tells you can clean the Office for 200 <b>₽</b> per hour, payed upfront.'
+			'You head into the office that advertised the job. You see a large man in a jacket sitting there. He tells you can clean the Office for 65 <b>₽</b> per hour, payed upfront.'
 
-			act 'Refuse and leave':gt 'street'
+			act 'Refuse and leave': minut += 5 & gt 'street'
 
 			act 'Accept':
 				cla
@@ -328,7 +327,7 @@ if $ARGS[0] = 'start':
 						pcs_dom += 1
 						jouryResult = 1
 						'You''re offended by his behaviour and without any hesitation you tell Yuri to go to hell. He quickly turns and walks away.'
-						'You continue on by mopping the floor and polish the toilets and urinals. You are given 100 <b>₽</b> for your work.'
+						'You continue on by mopping the floor and polish the toilets and urinals. You are given 65 <b>₽</b> for your work.'
 
 						act 'Leave':gt 'clener', 'start'
 					end
@@ -382,13 +381,13 @@ if $ARGS[0] = 'start':
 				exit
 			end
 
-			'You wash the floor and polish all the booths and urinals. You are given 100 <b>₽</b> for your work.'
+			'You wash the floor and polish all the booths and urinals. You are given 65 <b>₽</b> for your work.'
 
 			act 'Leave':gt 'clener', 'start'
 		end
 	end
 
-	act 'Leave':gt 'street'
+	act 'Leave': minut += 5 & gt 'street'
 end
 
 --- clener ---------------------------------

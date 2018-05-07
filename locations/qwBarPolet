@@ -14,7 +14,6 @@ if $ARGS[0] = '':
 	$metka = ''
 	$loc = 'qwBarPolet'
 	$location_type = 'public_indoors'
-	minut += 5
 	alko_temp = alko
 	gs 'stat'
 	gs 'qwBarPolet', 'intro'
@@ -87,7 +86,7 @@ if $ARGS[0] = '':
 			'You nod, and he gives you a hint of smile - it amazes you how that gruff face lights up as he does - before Martin returns to the regulars he had been talking to.'
 			'You spend the next 15 minutes pondering his words and the impression he has left on you, absentmindedly nursing on your drink until you notice that your glass is empty.'
 
-			act 'Continue': gt 'qwBarPolet'
+			act 'Continue': minut += 15 & gt 'qwBarPolet'
 
 		else
 			*nl
@@ -99,10 +98,11 @@ if $ARGS[0] = '':
 		end
 	end
 
-	act 'Go to the toilet': gt 'qwBarPoletToilet'
+	act 'Go to the toilet': minut += 1 & gt 'qwBarPoletToilet'
 	
 	act 'Leave':
 		killvar 'alko_temp'
+		minut += 5
 		gt 'nord' 
 	end
 end
@@ -812,7 +812,7 @@ if $ARGS[0] = 'DrunkEncounters':
 							'You put your hands on his and stop him from undoing his pants further. You lean in to kiss his cheek, then whisper. "Thank you for this... but I gotta go. Have a nice evening."'
 							'Then, before he has even had time to process what you just said, you pull away and walk off. You can hear him calling you a "bitch" among other things, but you don''t care - you got yours, and that puts a spring in your step as you leave the bar.'
 							gs 'arousal', 'end'
-							act 'Leave':gt 'nord'
+							act 'Leave': minut += 5 & gt 'nord'
 						end
 
 						act 'Return the favor':
@@ -1023,7 +1023,7 @@ if $ARGS[0] = 'billiard':
 					'"You shut your mouth or I swear I will stuff it with those pool balls! <<$pcs_firstname>>, go."'
 					'Not wanting to make him say it once more, you quickly turn and walk towards the exit. Something about the disappointment you saw in Martin''s eyes doesn''t sit well with you, though, and while you got out of giving that blowjob, you''re half-wondering if it hadn''t been better to give so you didn''t have to admit to Martin that you had taken that bet.'
 
-					act 'Leave the bar': gt 'nord'
+					act 'Leave the bar': minut += 5 & gt 'nord'
 
 				else
 					cla

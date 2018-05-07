@@ -1,12 +1,12 @@
 # anushapt
 
-!!Eduard Konstantinov - Anushka's father, who is known as being a hard and dangerous man. Since marrying Valeria and starting a family, he has mellowed out slightly, but he is still someone you don't want to piss off. In his youth, he was the leader of a local gang that would cause mayhem and chaos wherever they went. Surprisingly, he's managed to avoid spending any time behind bars.
+!!Eduard Konstantinov - Anushka''s father, who is known as being a hard and dangerous man. Since marrying Valeria and starting a family, he has mellowed out slightly, but he is still someone you don''t want to piss off. In his youth, he was the leader of a local gang that would cause mayhem and chaos wherever they went. Surprisingly, he''s managed to avoid spending any time behind bars.
 
-!!Valeria Konstantinov - Anushka's mother, who enjoyed being a bad girl and a heart breaker in her youth. Ironically, she is now a wife and mother of three, which she has come to resent. More often than not, she has nothing good to say about her family. Still living in the fantasy that she's still a youthful heart breaker makes her a hot topic among the rumormongers in the town that she flirts with a lot of men, but none of them are willing to risk fooling around with her as long as Eduard is her husband.
+!!Valeria Konstantinov - Anushka''s mother, who enjoyed being a bad girl and a heart breaker in her youth. Ironically, she is now a wife and mother of three, which she has come to resent. More often than not, she has nothing good to say about her family. Still living in the fantasy that she''s still a youthful heart breaker makes her a hot topic among the rumormongers in the town that she flirts with a lot of men, but none of them are willing to risk fooling around with her as long as Eduard is her husband.
 
-!!Maksim Konstantinov - Anushka's younger brother, who is four years younger than her. Until recently, he was considered a good kid, but now he has started to notice girls, bully other kids at school, and hassle old people in town. He seems to idolize Radomir, often saying he wants to be just like him.
+!!Maksim Konstantinov - Anushka''s younger brother, who is four years younger than her. Until recently, he was considered a good kid, but now he has started to notice girls, bully other kids at school, and hassle old people in town. He seems to idolize Radomir, often saying he wants to be just like him.
 
-!!Timofey Konstantinov - Anushka's youngest brother, who is a couple years younger than Maksim. Unlike his brother, he is still doing great in school and is seen as the nicer sibling compared to Maksim. When he isn't following his brother around, he is often found playing with the other kids or riding his skateboard around the apartment complex.
+!!Timofey Konstantinov - Anushka''s youngest brother, who is a couple years younger than Maksim. Unlike his brother, he is still doing great in school and is seen as the nicer sibling compared to Maksim. When he isn''t following his brother around, he is often found playing with the other kids or riding his skateboard around the apartment complex.
 
 !AnushkaLoc tells us where Anushka is located
 !----------------------------------------------
@@ -666,7 +666,7 @@ if $ARGS[0] = 'chat':
 		act 'Keep talking': gt 'anushapt', 'chat'
 		act 'Stop talking': gt 'anushapt', 'anushroom'
 	end
-	act 'Ask about her being a free-spirit.':
+	act 'Ask about her being a free-spirit':
 		cla
 		*clr
 		'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
@@ -845,7 +845,7 @@ if $ARGS[0] = 'chat':
 		'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
 		'<center><img src="images/characters/pavlovsk/school/girl/anushka/bedroom/brtkiss.jpg"></center>'
 !!double check I did this if and else for hotcat correctly, the if should fire if hotcat is 5 or higher.
-		if hotcat => 5
+		if hotcat => 5:
 			'As you lay side by side you look at her for a moment, maybe too long, or maybe she just senses it. She turns her head to look at you, her face not that far from yours and you can''t help it, you just think she is so damn pretty. You lean over and give her a kiss. She returns your kiss fully.'
 			gs 'arousal', 'foreplay', 10, 'lesbian'
 			gs 'stat'
@@ -929,6 +929,7 @@ if $ARGS[0] = 'chat':
 										gs 'arousal', 'end'
 										gs 'stat'
 										act 'Get dressed':gt 'anushapt','anushroom'
+									end
 								end
 							end
 						end
@@ -1640,6 +1641,7 @@ if $ARGS[0] = 'night_stand':
 			'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/anushroom/nushdrawer.jpg"></center>'
 			'You blush slightly as she is watching you looking at her sex toys. You shake your head no and close the drawer, which just causes her to smirk in amusement.'
 			act 'Close the drawer':gt 'anushapt','anushroom'
+		end
 		act 'Strapon': gt 'anushkaev1', 'strapon1'
 	else
 		*clr & cla
@@ -1666,7 +1668,7 @@ if $ARGS[0] = 'nushshower':
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/anushapt/bathroom/dry1.jpg"></center>'
 	'As you approach the bathroom you can hear the water running. Checking the door you find the latch still broke, as you open the door and walk in, the water turns off. You look around and see that the bathroom has seen better days. There''s some mold in the corners of the walls and floors and the place probably hasn''t been cleaned for quite some time. The toilet sits along the far wall. There''s also a bathtub, with an old plastic shower curtain hanging from a rod above it. Anushka peeks out from around the curtain and when she see''s it''s you, she pushes it aside and grabs a towel. "Oh hey <<$pcs_nickname>>, what''s up?"'
 	gs 'arousal', 'voyeur', 2, 'lesbian'
-	act 'Just came over to hangout.':
+	act 'Just came over to hangout':
 		*clr & cla
 		minut += 1
 		gs 'stat'
@@ -1763,11 +1765,11 @@ if $ARGS[0] = 'shower_wait':
 	gs 'stat'
 	'<center><h4><font color="maroon">Anushka''s Room</font></h4></center>'
 	'<center><img src="images/locations/pavlovsk/resident/apartment/anushapt/nushbed.jpg"></center>'
-	if showerphotos = 0
+	if showerphotos = 0:
 		'While Nush gets dried off you go into her room to wait for her. The room is surprisingly clean, even if it''s somewhat dusty. The walls are covered with pictures and posters and the room is skillfully decorated with various strings of coloured lights. You take a seat on the bed as you wait for her to come join you. A couple of minutes later she walks in completely naked and quickly gets dressed before jumping on the bed next to you.'
-	if showerphotos = 1
+	elseif showerphotos = 1:
 		'Having messed around a bit taking her picture while she dried off, you decided to give her privacy and come wait in her room. The room is surprisingly clean, even if it''s somewhat dusty. The walls are covered with pictures and posters and the room is skillfully decorated with various strings of coloured lights. You take a seat on the bed as you wait for her to come join you. A couple of minutes later she walks in completely naked and quickly gets dressed before jumping on the bed next to you.'
-	if showerphotos = 2
+	elseif showerphotos = 2:
 		'With the impromptu photo shoot and selfies done the two of you head to her room. She walks from the bathroom to her room, completely naked. Once inside she quickly gets dressed, while you take a seat on her bed as she does. Once she is fully dressed she flops down on the bed next to you.'
 	end
 	gs 'arousal', 'voyeur', 2, 'lesbian'

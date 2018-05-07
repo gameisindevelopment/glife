@@ -73,7 +73,7 @@ if $ARGS[0] = 'start':
 	act 'Walk around the park (1:00)': gt 'parkdin'
 	
 	if hour >= 10 and hour <= 22 and money >= 100:
-		act 'Have some food in the cafe': gt 'ParkKafe', 'start'
+		act 'Have some food in the cafe': minut += 5 & gt 'ParkKafe', 'start'
 	end
 
 	if home_owned[1] = 0 and tanwork = 0 and student = 0:
@@ -118,6 +118,7 @@ if $ARGS[0] = 'start':
 			gs 'exercise', 'tier1', 60, 'run_exp'
 			fat -= rand(0, 4)
 			pcs_sweat += 5
+			'<center><b><font color="maroon">Park</font></b></center>'
 			'<center><img <<$set_imgh>> src="images/locations/shared/park/parkbeg.jpg"></center>'
 			'You randomly take the paths, you run them up and down and about an hour later, you are out of breath and heavily sweating.'
 
@@ -234,11 +235,13 @@ end
 
 if $ARGS[0] = 'exit':
 	cla
+	'<center><b><font color="maroon">Park</font></b></center>'
+	'<center><img <<$set_imgh>> src="images/locations/city/centralpark/park.jpg"></center>'
 	act 'Cancel': gt 'park', 'start'
-	act 'Go to the highway near the park':gt 'park', 'whore'
-	act 'Go to the residential area':minut += 20 & gt 'street'
-	act 'Go to the city center':minut += 45 & gt 'down'
-	act 'Go to the city industrial region':minut += 60 & gt 'Nord'
+	act 'Go to the highway near the park (0:05)':minut += 5 & gt 'park', 'whore'
+	act 'Go to the Residential Area (0:20)':minut += 20 & gt 'street'
+	act 'Go to the City Center (0:35)':minut += 35 & gt 'down'
+	act 'Go to the City Industrial Region (1:00)':minut += 60 & gt 'Nord'
 end
 
 if $ARGS[0] = 'luna':
@@ -459,7 +462,6 @@ if $ARGS[0] = 'whore':
     $location_type = 'event_outdoors'
 	cla
 	*clr
-	minut += 5
 	clr
 	gs 'stat'
 	'<center><b><font color="maroon">The road near the park</font></b></center>'
@@ -487,7 +489,7 @@ if $ARGS[0] = 'whore':
 			act 'Go back to the park':gt 'park', 'start'
 		end
 	end
-	act 'Go back to the park':gt 'park', 'start'
+	act 'Go back to the park (0:05)': minut += 5 & gt 'park', 'start'
 end
 
 if $ARGS[0] = 'prost':

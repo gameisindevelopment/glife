@@ -4,7 +4,6 @@ if $ARGS[0] = 'start1':
 	*clr
 	horand = rand(1, 100)+ 40
 	facial += 1
-	slutty += 1
 	dynamic $venerasiakOral
 	dynamic $venerasiak
 	randLCpay = 1000
@@ -60,7 +59,6 @@ if $ARGS[0] = 'start2':
 	cla
 	*clr
 	horand = rand(1, 100)
-	slutty += 1
 	facial += 1
 	spafinloc = 11
 	gs 'cum_manage'
@@ -102,7 +100,6 @@ if $ARGS[0] = 'start3':
 	cla
 	*clr
 	horand = rand(1, 100) + 20
-	slutty += 1
 	facial += 1
 	spafinloc = 11
 	gs 'cum_manage'
@@ -149,7 +146,6 @@ if $ARGS[0] = 'start4':
 	cla
 	*clr
 	horand = rand(1, 100) + 20
-	slutty += 1
 	spafinloc = 14
 	gs 'cum_manage'
 	randLCpay = 500
@@ -246,7 +242,6 @@ if $ARGS[0] = 'start5':
 	cla
 	*clr
 	horand = rand(1, 100)
-	slutty += 1
 	randLCpay = 500
 	girl += 1
 	dynamic $venerasiak
@@ -278,7 +273,6 @@ if $ARGS[0] = 'start6':
 	*clr
 	horand = rand(1, 100)
 	facial += 1
-	slutty += 1
 	randLCpay = 500
 	guy += 1
 
@@ -323,7 +317,7 @@ if $ARGS[0] = 'Kitchen':
 	LCwork2day = daystart
 	'<center><img <<$set_imgh>> src="images/locations/city/industrial/bbq/kitchenworkcafe.jpg"></center>'
 	'Eugene gives you a warm smile and says: "That would be great, thanks!"'
-	'You spend the next hour and a half washing dishes, cleaning the floors, chopping vegetables and cooking food. When you''re finished, Eugene gives you your well-earned 175 <b>₽</b>.'
+	'You spend the next hour and a half washing dishes, cleaning the floors, chopping vegetables and cooking food. When you''re finished, Eugene gives you your well-earned 100 <b>₽</b>.'
 
 	act 'Continue':
 		gs 'stat'

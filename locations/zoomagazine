@@ -3,7 +3,6 @@ if $ARGS[0] = 'start':
 	cla
 	clr
 	*clr
-	minut += 5
 	gs 'stat'
 	if night_mode = 1:
 		fcolor = rgb(255, 255, 255)
@@ -17,6 +16,7 @@ if $ARGS[0] = 'start':
 	'<center><b><font color="maroon">Pet Emporium</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/mall/pet shop/shop.jpg"</center>'
 	if saveparQW = 1 and saveparQWfailed = 0:
+		minut += 5
 		'When you enter the pet store you can see the owner talking to some customers'
 		'In normal circumstances you would have simply waited your turn but you had no time now.'
 		'You notice a little ladder  standing next to the men and decide to create a distraction.'
@@ -29,6 +29,7 @@ if $ARGS[0] = 'start':
 		'he wrapped up his conversation with the men and took you to the back office'
 		act 'Continue':
 			cls
+			minut += 5
 			' - "So little girl, what is the big emergency"'
 			' - "Well, a few months ago I have bought a parrot from this shop. everything was fine at first but the last couple of weeks he has been saying some things he should not be saying."'
 			' - "Oh, what kind of things would that be?"'
@@ -39,12 +40,14 @@ if $ARGS[0] = 'start':
 			'You realise the owner might just be an old pervert but it is your only chance to save your bird.'
 			act 'Berate him for wasting your time and leave the store':
 				saveparQWfailed = 1
+				minut += 3
 				gt 'torgcentr'
 			end
 			act 'Show your body':
 				gs 'npcgeneratec', '0'				
 				gs 'boyStat', $npclastgenerated
 				cls
+				minut += 5
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/mall/pet shop/pet1.jpg"</center>'
 				'You slide up your top and show off your <a href="exec:gs ''obj_din'', ''show_tits''"><<$titsize>></a> breasts.'
 				'-"hmm, he was definitely not lying about your top half, ok show me the rest."'
@@ -79,6 +82,7 @@ if $ARGS[0] = 'start':
 						gs 'dinsex','vaginal_sex'
 						act 'Continue':
 							cls & cla
+							minut += 5
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/mall/pet shop/pet7.jpg"</center>'
 							'After a few minutes the owner pulled out and turned you around, he started stroking his dick and came all over your face.'
 							'He took another tissue and wiped some of the cum off.'
@@ -89,22 +93,20 @@ if $ARGS[0] = 'start':
 							gs 'cum_call','face', $npclastgenerated
 							guy += 1
 							saveparQW = 2
-							act 'Leave the store':gt 'torgcentr'
+							act 'Leave the store': minut += 3 & gt 'torgcentr'
 							
 						end
-						
-						
 					end
 				end
-			end
-				
-				
+			end	
 		end
 	exit
 	end
 	'Dog - 3000 <b>₽</b>'
 	'Rabbit - 2000 <b>₽</b>'
 	'Parrot - 3000 <b>₽</b>'
+	
+	act 'Leave': minut += 3 & gt 'torgcentr'
 	
 	if money >= 3000 and sobaka = 0:
 		act 'Buy a dog (3000 <b>₽</b>)':
@@ -147,10 +149,7 @@ if $ARGS[0] = 'start':
 			else
 				'You need to have your own place before you can buy a dog'
 			end
-
-
-				act 'Leave':gt 'zoomagazine', 'start'
-				
+			act 'Move away from the counter': minut += 5 & gt 'zoomagazine', 'start'		
 		end
 	end
 
@@ -169,7 +168,7 @@ if $ARGS[0] = 'start':
 			else
 				'You need to have your own place before you can buy a rabbit.'
 			end
-			act 'Move away from the counter':gt 'zoomagazine', 'start'
+			act 'Move away from the counter': gt 'zoomagazine', 'start'
 		end
 	end
 
@@ -188,7 +187,7 @@ if $ARGS[0] = 'start':
 			else
 				'You need to have your own place before you can buy a parrot.'
 			end
-			act 'Move away from the counter':gt 'zoomagazine', 'start'
+			act 'Move away from the counter': gt 'zoomagazine', 'start'
 		end
 	end
 	
@@ -206,11 +205,9 @@ if $ARGS[0] = 'start':
 			$namepopu2 = input ("I call parrot ...")
 			if $namepopu2 = '':$namepopu2 = 'Polly'
 
-			act 'Move away from the counter':gt 'zoomagazine', 'start'
+			act 'Move away from the counter': gt 'zoomagazine', 'start'
 		end
 	end
-
-	act 'Leave':gt 'torgcentr'
 end
 
 --- zoomagazine ---------------------------------

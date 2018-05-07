@@ -1,7 +1,6 @@
 # dk
 $location_type = 'public_indoors'
 if $ARGS[0] = 'start':
-	minut += 5
 	'<center><b>The Vladimir Lenin community centre</b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/industrial/community/dk4.jpg"></center>'
 	'Open: 9 through 17 on workdays, closed on Saturday and Sunday.'
@@ -23,13 +22,12 @@ if $ARGS[0] = 'start':
 				act 'Leave':gt 'dk', 'holl'
 			end
 		end
-	else
-		act 'Leave':gt 'nord'
 	end
+	act 'Leave': minut += 5 & gt 'nord'
 end
 
 if $ARGS[0] = 'holl':
-	minut += 5
+	minut += 1
 	gs 'stat'
 	'<center><b>The Vladimir Lenin community centre</b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/industrial/community/dk1.jpg"></center>'
@@ -210,7 +208,7 @@ if $ARGS[0] = 'holl':
 						'When you came to him for your first lesson, he immediately recognized your talent, even though your unique voice hadn''t reached its full potential, but he claims that you have been improving massively under his guidance and he is blown away by how good you''ve already become. You cannot help but smile at his compliments - how often do you get praise by a real musician, after all?' 
 						'Thanks to the conversation, you barely even notice where your feet and Alexei are taking you until you find yourself at an apartment door. Alexei charmingly smiles at you and invites you into his home.'
 
-						act 'Leave': alexeyQW -= rand(2,3) & gt 'nord'
+						act 'Leave': alexeyQW -= rand(2,3) & minut += 6 & gt 'nord'
 
 						act 'Enter Alexei''s home':
 							*clr & cla
@@ -268,7 +266,7 @@ if $ARGS[0] = 'holl':
 										'You try to push him off but your position doesn''t make it any easier. After a few attempts, you manage to free yourself and crawl out from under his sleeping body, pushing him on his back in the process. Alexei''s snoring fills the room and your actions don''t seem to have stirred him. You indignantly dress yourself and decide to leave the apartment.'
 										gs 'stat'
 
-										act 'Leave':gt 'nord'
+										act 'Leave': minut += 6 & gt 'nord'
 									end
 								end
 							end
@@ -389,7 +387,7 @@ if $ARGS[0] = 'holl':
 		end
 	end
 
-	act 'Leave':gt 'nord'
+	act 'Leave': minut += 6 & gt 'nord'
 end
 
 --- dk ---------------------------------

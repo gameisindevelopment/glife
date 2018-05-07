@@ -16,7 +16,7 @@ end
 'You can also buy land for mansion for 1.5 million and all the many construction projects required to build and upgrade it.'
 'All payments must be made from you bank account. Current balance - <<karta>> <b>₽</b>.'
 
-act 'Leave':minut += 5 & gt 'torgcentr'
+act 'Leave': minut += 3 & gt 'torgcentr'
 
 if hour < 8 or hour > 20:
 	'Shop closed.'

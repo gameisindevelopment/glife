@@ -329,11 +329,12 @@ if zoo >= 6 and sobaka ! 0:
 end
 
 if musor > 3:
-	act 'Throw out rubbish':
+	act 'Take out the trash':
 		if $clothingworntype = 'nude':
 			'I can not go to the trash cans naked!'
 		else
-			killvar 'fullmorrout' & gt 'trashplace', 'start'
+			musor = 0
+			killvar 'fullmorrout' & minut += 3 & gt 'trashplace', 'start'
 		end
 	end
 end

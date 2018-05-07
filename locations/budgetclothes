@@ -19,66 +19,6 @@ if $ARGS[0] = 'start':
 		lcolor = rgb(106, 90, 205)
 	end
 
-	act 'Visit clothing department':
-		cla
-		act 'View cheap clothing':
-			minut += 2
-			gt 'budgetclothes', 'clothes'
-		end
-		
-		act 'View office wear':
-			minut += 2
-			gt 'budgetclothes', 'office'
-		end
-
-		act 'View uniforms':
-			minut += 2
-			gt 'budgetclothes', 'uniform'
-		end
-
-		act 'View school uniforms':
-			minut += 2
-			gt 'budgetclothes', 'school'
-		end
-
-		act 'Return':gt 'budgetclothes', 'start'
-	end
-
-	act 'Visit shoe department':
-		cla
-		act 'Look at regular shoes':
-			minut += 2
-			gt 'budgetclothes', 'shoes'
-		end
-
-		act 'Look at exercise shoes':
-			minut += 2
-			gt 'budgetclothes', 'trainers'
-		end
-
-		act 'Return':gt 'budgetclothes', 'start'
-	end
-
-	act 'View coats':
-		minut += 2
-		gt 'budgetclothes', 'coats'
-	end
-
-	act 'View purses':
-		minut += 2
-		gt 'budgetclothes', 'purses'
-	end
-
-	act 'View panties':
-		minut += 2
-		gt 'budgetclothes', 'panties'
-	end
-
-	act 'View bras':
-		minut += 2
-		gt 'budgetclothes', 'bras'
-	end
-
 	act 'Leave the store':
 		cla
 		$shoplocation = ''
@@ -88,6 +28,68 @@ if $ARGS[0] = 'start':
 		else
 			gt 'Gshveyfab', 'start'
 		end
+	end
+	
+	act 'Visit clothing department':
+		cla
+		
+		act 'Return':gt 'budgetclothes', 'start'
+		
+		act 'View cheap clothing':
+			minut += 1
+			gt 'budgetclothes', 'clothes'
+		end
+		
+		act 'View office wear':
+			minut += 1
+			gt 'budgetclothes', 'office'
+		end
+
+		act 'View uniforms':
+			minut += 1
+			gt 'budgetclothes', 'uniform'
+		end
+
+		act 'View school uniforms':
+			minut += 1
+			gt 'budgetclothes', 'school'
+		end
+	end
+
+	act 'Visit shoe department':
+		cla
+		
+		act 'Return':gt 'budgetclothes', 'start'
+		
+		act 'Look at regular shoes':
+			minut += 1
+			gt 'budgetclothes', 'shoes'
+		end
+
+		act 'Look at exercise shoes':
+			minut += 1
+			gt 'budgetclothes', 'trainers'
+		end
+	end
+
+	act 'View coats':
+		minut += 1
+		gt 'budgetclothes', 'coats'
+	end
+
+	act 'View purses':
+		minut += 1
+		gt 'budgetclothes', 'purses'
+	end
+
+	act 'View panties':
+		minut += 1
+		gt 'budgetclothes', 'panties'
+	end
+
+	act 'View bras':
+		minut += 1
+		gt 'budgetclothes', 'bras'
 	end
 end
 

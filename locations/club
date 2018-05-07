@@ -18,7 +18,7 @@ if $ARGS[0] = 'start':
 	end
 	'<center><b><font color="maroon">Night club</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/nightclub/club.jpg"></center>'
-	'The entrance area of the club is full of young people. The entrance itself is guarded by the heavy and strong type of men, who check everyones passport. A Ticket costs 500 <b>₽</b>.'
+	'The entrance area of the club is full of young people. The entrance itself is guarded by the heavy and strong type of men, who check everyones passport. A Ticket costs 250 <b>₽</b>.'
 
 	act 'Return to the city center':
 		minut += 5

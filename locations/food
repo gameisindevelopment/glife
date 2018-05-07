@@ -10,7 +10,7 @@
 if $ARGS[0] = 'pirosh':
 	*clr & cla
 	frost = 0
-	minut += 25
+	minut += 15
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 5
 	mood += 5
@@ -36,7 +36,7 @@ end
 if $ARGS[0] = 'golub':
 	*clr & cla
 	frost = 0
-	minut += 30
+	minut += 20
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	mood += 5
@@ -62,7 +62,7 @@ end
 if $ARGS[0] = 'pozhar':
 	*clr & cla
 	frost = 0
-	minut += 30
+	minut += 20
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 15
 	mood += 10
@@ -88,7 +88,7 @@ end
 if $ARGS[0] = 'reuben':
 	*clr & cla
 	frost = 0
-	minut += 35
+	minut += 25
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 20
 	mood += 25
@@ -165,7 +165,7 @@ end
 if $ARGS[0] = 'salfan':
 	*clr & cla
 	frost = 0
-	minut += 35
+	minut += 40
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 20
 	mood += 20
@@ -191,7 +191,7 @@ end
 if $ARGS[0] = 'strofan':
 	*clr & cla
 	frost = 0
-	minut += 30
+	minut += 35
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 20
 	mood += 30
@@ -243,7 +243,7 @@ end
 if $ARGS[0] = 'blifan':
 	*clr & cla
 	frost = 0
-	minut += 15
+	minut += 20
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 30
 	mood += 40
@@ -269,7 +269,7 @@ end
 if $ARGS[0] = 'ryesna':
 	*clr & cla
 	frost = 0
-	minut += 15
+	minut += 10
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 5
 	mood += 10
@@ -295,7 +295,7 @@ end
 if $ARGS[0] = 'crisps':
 	*clr & cla
 	frost = 0
-	minut += 15
+	minut += 10
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 5
 	mood += 20
@@ -321,7 +321,7 @@ end
 if $ARGS[0] = 'onring':
 	*clr & cla
 	frost = 0
-	minut += 15
+	minut += 10
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	mood += 5
@@ -347,7 +347,7 @@ end
 if $ARGS[0] = 'vegburg':
 	*clr & cla
 	frost = 0
-	minut += 30
+	minut += 20
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 20
 	mood += 10
@@ -373,7 +373,7 @@ end
 if $ARGS[0] = 'turburg':
 	*clr & cla
 	frost = 0
-	minut += 30
+	minut += 20
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 10
 	mood += 10
@@ -399,7 +399,7 @@ end
 if $ARGS[0] = 'batfish':
 	*clr & cla
 	frost = 0
-	minut += 30
+	minut += 20
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 15
 	mood += 15
@@ -425,7 +425,7 @@ end
 if $ARGS[0] = 'cheburg':
 	*clr & cla
 	frost = 0
-	minut += 30
+	minut += 25
 	money -= val($_eat['<<args[1]>>,price'])
 	pcs_health += 20
 	mood += 20

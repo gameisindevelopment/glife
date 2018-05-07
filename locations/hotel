@@ -1,6 +1,5 @@
 # hotel
 clr
-minut += 5
 nom_o[1] = 100
 nom_o[2] = 1000
 nom_o[3] = 10000
@@ -16,6 +15,7 @@ if tobiQW = 2001:
 	act 'Excuse me':
 		cla
 		*clr
+		minut += 5
 		'<center><img <<$set_imgh>> src="images/locations/city/industrial/casino/oldman.jpg"></center>'
 		'"I didn''t mean to disturb you, but what language is the book written in?" you ask the man.'
 		'The man stops, looks up to you and cheerfully answers, "This book right here is written in old Japanese language. Why do you ask?" the man asks curiously.'
@@ -26,13 +26,13 @@ if tobiQW = 2001:
 		'"My name is <<$pcs_firstname>> <<$pcs_lastname>>." you answer.'
 		'"I hope this doesn''t sound too creepy but would you please follow me to my room?" Plato asks you.'
 
-		act 'Go with Plato':gt 'mqroom'
+		act 'Go with Plato': minut += 1 & gt 'mqroom'
 	end
 end
 
-act 'Go to the reception desk':gt 'Maria1'
-act 'Go to the lift':gt 'elevator'
-act 'Leave':gt 'down'
+act 'Go to the reception desk': minut += 1 & gt 'Maria1'
+act 'Go to the lift': minut += 1 & gt 'elevator'
+act 'Leave': minut += 5 & gt 'down'
 
 --- hotel ---------------------------------
 

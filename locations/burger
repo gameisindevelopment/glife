@@ -6,7 +6,6 @@ if $ARGS[0] = 'start':
 	cls
     $location_type = 'public_indoors'
 	CLOSE ALL
-	minut += 5
 	gs 'stat'
 	if night_mode = 1:
 		fcolor = rgb(255, 255, 255)
@@ -26,7 +25,7 @@ if $ARGS[0] = 'start':
 
 	act 'Leave':
 		cla
-		minut += 5
+		minut += 1
 		gt 'down'
 	end
 
@@ -41,16 +40,21 @@ if $ARGS[0] = 'start':
 		act 'Ask about work':gt 'burger', 'apply'
 	elseif posuda >= 3 and posudaA = 0:
 		act 'Go to the manager':gt 'burger', 'manager'
-	elseif posuda >= 1 and posudaday ! daystart and NoBistroWork = 0 and PersSecWork = 0:
+	end
+	
+	if posuda >= 1 and posudaday ! daystart and NoBistroWork = 0 and PersSecWork = 0:
 		act 'Wash the dishes for 70 <b>₽</b> (1:00)':gt 'burger', 'dishes'
-	elseif posudaA >= 1 and posudaAday ! daystart and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
-		act 'Wash the floor for 70 <b>₽</b>(1:00)':gt 'burger', 'floor'
+	end
+	
+	if posudaA >= 1 and posudaAday ! daystart and hour < 10 and NoBistroWork = 0 and PersSecWork = 0:
+		act 'Wash the floor for 70 <b>₽</b> (1:00)':gt 'burger', 'floor'
 	end
 end
 
 if $ARGS[0] = 'office':
 	cls
 	gs 'stat'
+	minut += 5
 	'You go to the office of the owner. He is sitting at his desk, dealing with your papers. Anatoly Borisovich looks at you and says, "Well? Do you have any news?"'
 
 	act 'Leave':gt 'burger', 'start'
@@ -58,6 +62,7 @@ if $ARGS[0] = 'office':
 	if money >= 650000:
 		act 'Repay the debt (650,000 <b>₽</b>)':
 			cls
+			minut += 5
 			money -= 650000
 			IvanPodstavaQW = 5
 			gs 'stat'
@@ -70,6 +75,7 @@ if $ARGS[0] = 'office':
 	if IvanEvidence = 1:
 		act 'Show proof':
 			cls
+			minut += 5
 			IvanPodstavaQW = 6
 			IvanKvartira = 0
 			IvanEvidence = 0
@@ -83,6 +89,7 @@ end
 
 if $ARGS[0] = 'apply':
 	cla
+	minut += 5
 	'You go into the manager''s office where you meet a smart girl. She begins to tell you, that you can work almost every day, "Come in any time, run the snack bar and wash the dishes for 1:00. You will get 70 <b>₽</b> immediately on hand."'
 
 	act 'Refuse and leave':gt 'burger', 'start'
@@ -98,6 +105,7 @@ end
 
 if $ARGS[0] = 'manager':
 	cla
+	minut += 5
 	'You go to the office of the manager. The girl tells the manager that you are doing good work and offers you another part-time job, "You can wash the floors in the morning, from 8 to 9. 1 hour of cleaning floors will get you 70 <b>₽</b> immediately on hand."'
 
 	act 'Refuse and leave':gt 'burger', 'start'
@@ -309,7 +317,7 @@ if $ARGS[0] = 'dishes':
 							'Anatoly pale, flushed and hissing angrily jumps out of the fitting followed by your loud laughter.'
 
 							act 'Leave':
-								minut += 5
+								minut += 1
 								gt 'down'
 							end
 						end
@@ -426,7 +434,7 @@ if $ARGS[0] = 'dishes':
 						gs 'stat'
 						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/sex/bj4.jpg"></center>'
 						'You squat in front of the manager and swallow his sperm before licking the remnants of his semen off of the still standing, but quickly lowering penis.'
-						'Finally Ivan sinks back, completely satisfied and gives you half thousand <b>₽</b> for the work you have done.'
+						'Finally Ivan sinks back, completely satisfied and gives you 500 <b>₽</b> for the work you have done.'
 
 						gs 'arousal', 'end'
 						gs 'stat'
@@ -470,7 +478,7 @@ if $ARGS[0] = 'dishes':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/sex/bj4.jpg"></center>'
 							'You squat in front of the manager and swallow his sperm as you began to lick the remnants of his semen off of the still standing, but quickly lowering penis.'
-							'Finally Ivan sinks back, completely satisfied and gives you half thousand <b>₽</b> for the work you have done.'
+							'Finally Ivan sinks back, completely satisfied and gives you 500 <b>₽</b> for the work you have done.'
 
 							gs 'arousal', 'end'
 							gs 'stat'
@@ -502,7 +510,7 @@ if $ARGS[0] = 'dishes':
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/diner/sex/bjud.jpg"></center>'
 				'You crawl under the table and Ivan pulls out his penis in front of your face. You wrap your lips around it and begin to suck trying to get it into your mouth as deeply as possible. It is cramped and uncomfortable under the table, but you cope with it and after a few minutes of skilfully sucking him off you get Ivan to release his semen into your mouth. You quickly start to swallow, trying to avoid getting your clothes dirty.'
-				'Afterwards, Ivan takes out half a thousand rubles and hands them to you.'
+				'Afterwards, Ivan takes out 500 <b>₽</b> and hands them to you.'
 
 				gs 'arousal', 'bj', 3, 'sub'
 				gs 'arousal', 'end'
@@ -613,7 +621,7 @@ if $ARGS[0] = 'dishes':
 				soplakTimes1 += 1
 				if soplaktimes1=10:set soplaktimes=3
 				'<center><img <<$set_imgh>> src="images/shared/sex/cum/mouth/cum19.jpg"></center>'
-				'A hot jet of sperm slaps you in the mouth, while you continue to stroke his member. You are careful not to spill a drop of the nasty smelling liquid out of your mouth. Finally the stream dries up and you swallow the sperm. He grins and tosses three-hundred rubles on the floor. You pick them up and hide them in your pocket as you rise up from your knees and leave the office.'
+				'A hot jet of sperm slaps you in the mouth, while you continue to stroke his member. You are careful not to spill a drop of the nasty smelling liquid out of your mouth. Finally the stream dries up and you swallow the sperm. He grins and tosses 300 <b>₽</b> on the floor. You pick them up and hide them in your pocket as you rise up from your knees and leave the office.'
 				''
 
 				gs 'arousal', 'end'
@@ -699,7 +707,7 @@ if $ARGS[0] = 'boss':
 						cls
 						minut += 1
 						gs 'stat'
-						'You tell him, that you already work somewhere else. Anatoly Borisovich smiles a little, "What can I do to make you quit your job and work for me? You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 rubles per day."'
+						'You tell him, that you already work somewhere else. Anatoly Borisovich smiles a little, "What can I do to make you quit your job and work for me? You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 <b>₽</b> per day."'
 
 						act 'Leave':gt 'burger', 'start'
 					end
@@ -709,7 +717,7 @@ if $ARGS[0] = 'boss':
 							cls
 							minut += 1
 							gs 'stat'
-							'You ask about the job. Anatoly Borisovich smiles a little, "You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 rubles per day. I''m looking for loyalty, hard work, and strict compliance with my guidelines."'
+							'You ask about the job. Anatoly Borisovich smiles a little, "You can think about it, I won''t force you, but I''ll pay you a normal salary. You will get 1250 <b>₽</b> per day. I''m looking for loyalty, hard work, and strict compliance with my guidelines."'
 
 							act 'Leave':gt 'burger', 'start'
 
@@ -775,7 +783,7 @@ if $ARGS[0] = 'boss':
 				end
 
 			elseif bistroQW >= 65:
-				'You sit down on a chair and Anatoly Borisovich gives you a grim look. "I did not think you were so cheap. What is your fee? 300 rubles for a blowjobto?" He pulls 300 <b>₽</b> out of his pocket and throws them on the floor. "Get down on your knees and do your work, slut."'
+				'You sit down on a chair and Anatoly Borisovich gives you a grim look. "I did not think you were so cheap. What is your fee? 300 <b>₽</b> for a blowjob?" He pulls 300 <b>₽</b> out of his pocket and throws them on the floor. "Get down on your knees and do your work, slut."'
 
 				act 'Leave':gt 'burger', 'start'
 

@@ -82,7 +82,7 @@ if $ARGS[0] = 'start1':
 		'"Come on, babe!" he tries. "Surely you can spare like 30 minutes and have a chat with me?"'
 
 		act 'Go drink beer with him':gt 'gopnew', 'pivas'
-		act 'Decline and leave':gt 'street'
+		act 'Decline and leave': minut += 5 & gt 'street'
 	end
 
 	act 'Go drink beer with him':gt 'gopnew', 'pivas'
@@ -98,7 +98,7 @@ if $ARGS[0] = 'start2':
 		'"Come on, babe!" he tries. "Surely you can spare like 30 minutes and have a chat with me?"'
 
 		act 'Go drink beer with him':gt 'gopnew', 'pivas'
-		act 'Decline and leave':gt 'street'
+		act 'Decline and leave': minut += 5 & gt 'street'
 	end
 
 	act 'Go drink beer with him':gt 'gopnew', 'pivas'
@@ -115,7 +115,7 @@ if $ARGS[0] = 'start2':
 			gopota += 1
 			'You walk through the park with Vasan, but don''t find any marks worth robbing. You still had a fun time chatting with him, though.'
 
-			act 'Say goodbye and go back home':gt 'street'
+			act 'Say goodbye and go back home': minut += 5 & gt 'street'
 		elseif goprandwork < 95:
 			cla
 			gopstop += 1
@@ -123,7 +123,7 @@ if $ARGS[0] = 'start2':
 			minut += 60
 			'You help the guys steal a few cellphones by distracting random people in the park, but didn''t get much done. The few rubles you all got for selling the items, were immediately used to buy more beer.'
 
-			act 'Say goodbye and go back home':gt 'street'
+			act 'Say goodbye and go back home': minut += 5 & gt 'street'
 		else
 			cla
 			gopstop += 1
@@ -133,7 +133,7 @@ if $ARGS[0] = 'start2':
 			money += randmon
 			'You and the guys had a pretty good day, and they managed to steal several wallets and cell phones while you distracted the marks. After Vasan sells the lot to the pawn shop, he gives you your share: <<randmon>> <b>₽</b>.'
 
-			act 'Say goodbye and go back home':gt 'street'
+			act 'Say goodbye and go back home': minut += 5 & gt 'street'
 		end
 	end
 end
@@ -145,7 +145,7 @@ if $ARGS[0] = 'start3':
 	'"Of course not! You know me!" you reassure them. You sit down and tell the guys what happened, omitting some of the sexual details. When you''re finished, one of them grins: "We should find this cop bitch, and catch her! You deserve to fuck her, after all she did to you!"'
 	'The other Gopniks laugh, and you laugh with them. If only they knew...'
 
-	act 'Excuse yourself and leave':gt 'street'
+	act 'Excuse yourself and leave': minut += 5 & gt 'street'
 end
 
 if $ARGS[0] = 'start4':
@@ -157,7 +157,7 @@ if $ARGS[0] = 'start4':
 		'"Come on, babe!" he tries. "Surely you can spare like 30 minutes and have a chat with me?"'
 
 		act 'Go drink beer with him':gt 'gopnew', 'pivas'
-		act 'Decline and leave':gt 'street'
+		act 'Decline and leave': minut += 5 & gt 'street'
 	end
 
 	act 'Go drink beer with him':gt 'gopnew', 'pivas'
@@ -192,13 +192,13 @@ if $ARGS[0] = 'start5':
 			'"Got the money?" he asks intently.'
 
 			if money >= 2000:
-				act 'Give him the money (-2,000 rubles)':
+				act 'Give him the money (-2,000 <b>₽</b>)':
 					cla
 					money -= 2000
 					gopopusday = daystart
-					'You offer him the 2,000 rubles he expects from you. He counts it quickly and gives you an affirmative grunt.'
+					'You offer him the 2,000 <b>₽</b> he expects from you. He counts it quickly and gives you an affirmative grunt.'
 
-					act 'Walk away quickly':gt 'street'
+					act 'Walk away quickly': minut += 5 & gt 'street'
 
 					if GLust > 0:
 						cla
@@ -226,7 +226,7 @@ if $ARGS[0] = 'start5':
 			else
 				'Vasan spits on the ground in front of you and grunts: "You''re lucky no one wants you right now, bitch. Get out of here, before I change my mind."'
 
-				act 'Get away from him':gt 'street'
+				act 'Get away from him': minut += 5 & gt 'street'
 			end
 		end
 	end
@@ -238,19 +238,19 @@ if $ARGS[0] = 'start5':
 		if gopopusday = daystart:
 			'Vasan laughs: "Look at her run! A bit bow-legged at that... probably fresh from getting her worthless cunt fucked again! Keep running, whore!"'
 
-			act 'Run away from them':gt 'street'
+			act 'Run away from them': minut += 5 & gt 'street'
 		elseif gopopusday ! daystart:
 			'Unfortunately, he doesn''t. He and his friends quickly overtake you and surround you.'
 			'"Do you have cum in your ears or something, slut? We asked you a question! Where''s our fucking money?" Vasan shouts.'
 
 			if money >= 2000:
-				act 'Give him the money (-2,000 rubles)':
+				act 'Give him the money (-2,000 <b>₽</b>)':
 					cla
 					money -= 2000
 					gopopusday = daystart
-					'You offer him the 2,000 rubles he expects from you. He counts it quickly and gives you an affirmative grunt.'
+					'You offer him the 2,000 <b>₽</b> he expects from you. He counts it quickly and gives you an affirmative grunt.'
 
-					act 'Walk away quickly':gt 'street'
+					act 'Walk away quickly': minut += 5 & gt 'street'
 
 					if GLust > 0:
 						cla
@@ -284,11 +284,11 @@ if $ARGS[0] = 'start6':
 		'He rubs his groin awkwardly while he tells you: "How long has it been? I want you, now. Follow me."'
 
 		act 'Go with him':gt 'gopnew', 'sexstart'
-		act 'Walk away quickly':gt 'street'
+		act 'Walk away quickly': minut += 5 & gt 'street'
 	else
 		'When you approach them, he gives you a dismissive nod, noticing you didn''t ignore him. "Good, you listened. Now get out of here, before we change our minds."'
 
-		act 'Quickly leave':gt 'street'
+		act 'Quickly leave': minut += 5 & gt 'street'
 	end
 end
 
@@ -310,7 +310,7 @@ if $ARGS[0] = 'start7':
 				gopdolg = 0
 				'You give the guy <<gopdolg>> <b>₽</b>. He counts the money, almost disappointed to see it''s all there.'
 
-				act 'Quickly go away':gt 'street'
+				act 'Quickly go away': minut += 5 & gt 'street'
 			end
 		else
 			'"Guys, please! I have no money!" you cry out, with tears in your eyes.'
@@ -322,7 +322,7 @@ if $ARGS[0] = 'start7':
 		exit
 	end
 
-	act 'Quickly walk away from them':gt 'street'
+	act 'Quickly walk away from them': minut += 5 & gt 'street'
 end
 
 if $ARGS[0] = 'pivas':
@@ -490,7 +490,7 @@ if $ARGS[0] = 'pivas':
 		if VasanTut = 2 or BerezaTut = 2 or VitekTut = 2 or KostilTut = 2 or UdmurtTut = 2 or SeriTut = 2:gt 'gopnew', 'sexstart'
 	end
 
-	act 'Leave them be':gt 'street'
+	act 'Leave them be': minut += 5 & gt 'street'
 end
 
 if $ARGS[0] = 'bazar':
@@ -677,8 +677,8 @@ if $ARGS[0] = 'tf':
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/city/residential/street/sex/rapebjcum2.jpg"></center>'
 				'You close your eyes as you close your lips around the head of his cock again, not wanting to look him in the eye while you swallow his load and lick him clean.'
-				'"Vasan pulls his cock away when he''s bored of it, and says: "Listen up, whore. You just got yourself into a heap of trouble. As an apology, you will bring me 2,000 rubles every day for as long as I want. I will fuck you whenever I want as well, got that?"'
-				'The amount dazzles you - 2,000 rubles every day!? How are you supposed to get that kind of money?'
+				'"Vasan pulls his cock away when he''s bored of it, and says: "Listen up, whore. You just got yourself into a heap of trouble. As an apology, you will bring me 2,000 <b>₽</b> every day for as long as I want. I will fuck you whenever I want as well, got that?"'
+				'The amount dazzles you - 2,000 <b>₽</b> every day!? How are you supposed to get that kind of money?'
 				'"Don''t even try to hide from me, whore. I will find you. You''re mine! I will fucking end you if you don''t keep coming, understood?"'
 
 				act 'Nod meekly':
@@ -691,9 +691,9 @@ if $ARGS[0] = 'tf':
 					'Vasan grabs your face in his hands and forces your mouth open, spitting in your mouth as he says: "That goes for my buddies as well! If they want to have fun with you, you do as they say!"'
 					'Then he grins to his friends: "She''s all yours, guys. Have fun."'
 					'Just when they came closer to you pulling their cocks out of their pants, you hear shouting at the end of the alley. Someone spotted you!'
-					'The Gopniks quickly run away, leaving you alone on the pavement covered in cum, saliva and tears. "Remember, whore... 2,000 rubles! Tomorrow!" Vasan shouts, before he disappears around a corner.'
+					'The Gopniks quickly run away, leaving you alone on the pavement covered in cum, saliva and tears. "Remember, whore... 2,000 <b>₽</b>! Tomorrow!" Vasan shouts, before he disappears around a corner.'
 
-					act 'Return to the streets':gt 'street'
+					act 'Return to the streets': minut += 5 & gt 'street'
 				end
 			end
 		end
@@ -710,14 +710,14 @@ if $ARGS[0] = 'dolg':
 	'You feel dazzled when you hear the amount - <<gopdolg>> <b>₽</b>! How the hell are you supposed to gather than in ten days?'
 	'"We will find you if you don''t pay, <<$pcs_nickname>>. Don''t bother trying to hide from us," Konstantin says with a mean grin on his face."'
 
-	act 'Leave while you can':gt 'street'
+	act 'Leave while you can': minut += 5 & gt 'street'
 
 	act 'Tell them you can''t gather that much money':
 		cla
 		'"Guys, come on!" you plead. "I can''t gather that amount on such short notice!"'
 		'Not my problem," Vasan shrugs. "Perhaps you can earn it with your body, eh? You seem to be good at that..."'
 
-		act 'Leave':gt 'street'
+		act 'Leave': minut += 5 & gt 'street'
 
 		act 'Ask if there is another way':
 			cla
@@ -725,7 +725,7 @@ if $ARGS[0] = 'dolg':
 			'"How about you pay us directly with your body? I guess I wouldn''t mind a good fuck every now and then, and neither would my buddies! Fine... forget about the money, but you''re ours to fuck whenever we want. Deal?" Vasan grins.'
 			'The large bulge in his groin tells you he wants you to start ''paying'' right away, if you say yes. It might be your only way out, though... how are you going to gather <<gopdolg>> <b>₽</b> in ten days?'
 
-			act 'Refuse, maybe you can get the money after all':gt 'street'
+			act 'Refuse, maybe you can get the money after all': minut += 5 & gt 'street'
 
 			act 'Agree to let them fuck you when they want':
 				gnewQW = 6
@@ -785,7 +785,7 @@ if $ARGS[0] = 'sexstart':
 			act 'Go with Gray':SeriTut = 3 & gs 'gopnew', 'sexboy1'
 		end
 	end
-	act 'Leave':gt 'street'
+	act 'Leave': minut += 5 & gt 'street'
 end
 
 if $ARGS[0] = 'sexboy':
@@ -908,7 +908,7 @@ if $ARGS[0] = '1':
 
 	'<<$boydesc>> wipes his cock on your ass cheeks and tucks it back into his pants. After that, he goes back to drinking beer with his friends, not paying any more attention to you.'
 
-	act 'Leave':gt 'street'
+	act 'Leave': minut += 5 & gt 'street'
 end
 
 if $ARGS[0] = '11':
@@ -936,7 +936,7 @@ if $ARGS[0] = '11':
 			swallow += 1
 			'You swallow <<$boydesc>>''s sperm diligently after which he wipes his dick on your lips, making you lick the last remains off. Once he''s satisfied, he pulls his pants up again and returns to his friends.'
 
-			act 'Leave':gt 'street'
+			act 'Leave': minut += 5 & gt 'street'
 		end
 
 		act 'Spit it out':
@@ -946,7 +946,7 @@ if $ARGS[0] = '11':
 			gs 'cum_manage'
 			'You wait for <<$boydesc>> to turn his back on you, and discreetly spit the semen onto the ground. He doesn''t seem to care what you do with it, he''s already walking away from you.'
 
-			act 'Leave':gt 'street'
+			act 'Leave': minut += 5 & gt 'street'
 		end
 	end
 
@@ -965,7 +965,7 @@ if $ARGS[0] = '11':
 			'He wipes the last remains of sperm off onto your cheek, and makes you lick his cock clean before tucking it back into his pants. Then he leaves, no longer caring about what you do.'
 		end
 
-		act 'Leave':gt 'street'
+		act 'Leave': minut += 5 & gt 'street'
 	end
 end
 
@@ -995,7 +995,7 @@ if $ARGS[0] = '12':
 
 	'<<$boydesc>> pulls out right before he orgasms, and ends up spraying his sperm all over your ass cheeks. He wipes his cock clean on an unsoiled spot on your ass and tucks it back into his pants, returning to his friends for another beer. He no longer cares what you do or where you go next.'
 
-	act 'Leave':gt 'street'
+	act 'Leave': minut += 5 & gt 'street'
 end
 
 if $ARGS[0] = '2':
@@ -1032,7 +1032,7 @@ if $ARGS[0] = '2':
 
 		'They cum all over your face and in your mouth, and your face looks like a mess by the time they finally let you go.'
 
-		act 'Leave':gt 'street'
+		act 'Leave': minut += 5 & gt 'street'
 	elseif tiprand = 1 or GLust = 2:
 		stat['bj'] += 1
 		pcs_vag += 1
@@ -1086,7 +1086,7 @@ if $ARGS[0] = '2':
 
 		'The guys just cum wherever they feel like while they''re fucking you, giving you no warning. By the time they all finish, you''re a mess. You should probably go take a shower...'
 
-		act 'Leave':gt 'street'
+		act 'Leave': minut += 5 & gt 'street'
 	end
 end
 
@@ -1140,7 +1140,7 @@ if $ARGS[0] = '3':
 		'You orgasm during their relentless pounding, holding your hand over your mouth to stop yourself from crying out loud.'
 	end
 
-	act 'Leave':gt 'street'
+	act 'Leave': minut += 5 & gt 'street'
 end
 
 if $ARGS[0] = 'degrading':
@@ -1163,7 +1163,7 @@ if $ARGS[0] = 'degrading':
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/street/sex/deg'+rand(1, 9)+'.jpg"></center>'
 	'The guys drive you to a nearby building and drag you inside, forcing you to undress. They spend the next two hours degrading you in every way imaginable: they slap your face and tits, they spit in your face, but most of the time they try to force large objects into your vagina and ass. By the time you''re exhausted, they pick you up and dump you in the back yard with your clothes. When you catch your breath again, you slowly put your clothes on and try to find your way back to the main streets.'
 
-	act 'Leave':gt 'street'
+	act 'Leave': minut += 5 & gt 'street'
 end
 
 --- gopnew ---------------------------------

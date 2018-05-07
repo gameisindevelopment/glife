@@ -6,13 +6,13 @@ $dinrandbj = {
 	tperbjran = rand(0, 3)
 	if tperbjran = 0:$tperbj = 'Your <<$liptalk>> wraps around <<$xyr>> <<dick>> centimeter member'
 	if tperbjran = 1:$tperbj = 'Your <<$liptalk>> clasps <<$xyr>> the purple head of the <<dick>> centimeter member'
-	if tperbjran = 2:$tperbj = 'You held your <<$liptalk>> on the head of <<$xyr>> <<dick>> centimeter member and pulled it into your mouth'
-	if tperbjran = 3:$tperbj = 'The <<dick>> centimeter dick rested between your <<$liptalk>>, you opened them slightly and let the dick in your mouth.'
+	if tperbjran = 2:$tperbj = 'You hold your <<$liptalk>> on the head of <<$xyr>> <<dick>> centimeter member and pull it into your mouth'
+	if tperbjran = 3:$tperbj = 'The <<dick>> centimeter dick rests between your <<$liptalk>>, you open them slightly and let the dick in your mouth.'
 	if tperbjran = 4:$tperbj = ''   
 	if tperbjran = 5:$tperbj = ''
 	tperbjran2 = rand(0, 2)
-	if tperbjran2 = 0:$tperbj2 = 'Your mouth quickly opened and was filled by a slightly salty and hard cock, which you started to suck.'
-	if tperbjran2 = 1:$tperbj2 = 'The big cock inside your mouth went hard and hot, and you started sucking'
+	if tperbjran2 = 0:$tperbj2 = 'Your mouth quickly opens and is filled by a slightly salty and hard cock, which you start to suck.'
+	if tperbjran2 = 1:$tperbj2 = 'The big cock inside your mouth grows hard and hot, and you start sucking'
 	if tperbjran2 = 2:$tperbj2 = 'The hard cock around your <<$liptalk>> is filling your whole mouth and with every move it''s going down your throat.'
 	if tperbjran2 = 3:$tperbj2 = ''
 	if tperbjran2 = 4:$tperbj2 = ''
@@ -22,17 +22,17 @@ $dinrandbj = {
 
 $dinrandswallow = {
 	tperswalrand = rand(0, 2)
-	if tperswalrand = 0:$tperswal = 'Suddenly your mouth is shot with a jet of viscous semen.'
-	if tperswalrand = 1:$tperswal = 'The cock twitched and jets of sperm flew between your lips into your mouth.'
-	if tperswalrand = 2:$tperswal = 'Your mouth has been filled with sperm and you started to remove your mouth from the dick.'
+	if tperswalrand = 0:$tperswal = 'Suddenly shots of viscous semen fill your mouth.'
+	if tperswalrand = 1:$tperswal = 'The cock twitches and jets of sperm fly between your lips into your mouth.'
+	if tperswalrand = 2:$tperswal = 'Your mouth is filled with sperm and you move back to allow the dick to slide out.'
 	tperswalrand2 = rand(0, 2)
-	if tperswalrand2 = 0:$tperswal2 = 'Your mouth is quickly filled with warm sperm and you feel its sharp taste.'
-	if tperswalrand2 = 1:$tperswal2 = 'Your mouth is filled with cum and began to run down your <<$liptalk2>>'
-	if tperswalrand2 = 2:$tperswal2 = 'Hot seed quickly filled your mouth, making you experience the whole scale and sharp taste of sperm.'
+	if tperswalrand2 = 0:$tperswal2 = 'Your mouth quickly fills with warm sperm and you feel its sharp taste.'
+	if tperswalrand2 = 1:$tperswal2 = 'Your mouth fills with cum and begins to run down your <<$liptalk2>>'
+	if tperswalrand2 = 2:$tperswal2 = 'Hot seed quickly fills your mouth, making you experience the whole stale and sharp taste of sperm.'
 	tperswalrand3 = rand(0, 2)
-	if tperswalrand3 = 0:$tperswal3 = 'You gulped and swallowed the sperm located in your mouth. The taste of semen stayed in your mouth and you could smell <<$xyr>> scent.'
+	if tperswalrand3 = 0:$tperswal3 = 'You gulp and swallow the sperm filling your mouth. The taste of semen stays in your mouth and you can smell <<$xyr>> scent.'
 	if tperswalrand3 = 1:$tperswal3 = 'You swallow the warm cum that fills your mouth and lick the remnants of the seed with your <<$liptalk3>>.'
-	if tperswalrand3 = 2:$tperswal3 = 'You swallow the viscous semen that is filling your mouth, and then lick your lips to make sure you don''t leave any drop.'
+	if tperswalrand3 = 2:$tperswal3 = 'You swallow the viscous semen that is filling your mouth, and then lick your lips to make sure you don''t leave a single drop.'
 	'<<$tperswal>> <<$tperswal2>> <<$tperswal3>>'
 }
 
@@ -144,10 +144,10 @@ $sexstart = {
 		protect = 1
 		if preziktype = 2:
 			sexcontra = 7
-			'<<$boydesc>> took your sabotaged condom and put it on <<$xyr>> <<dick>> centimeter member.'
+			'<<$boydesc>> take your sabotaged condom and put it on <<$xyr>> <<dick>> centimeter member.'
 		else
 			sexcontra = 3
-			'<<$boydesc>> took your condom and put it on <<$xyr>> <<dick>> centimeter member.'
+			'<<$boydesc>> take your condom and put it on <<$xyr>> <<dick>> centimeter member.'
 		end
 	else
 		sexcontra = 0
@@ -266,47 +266,47 @@ $sexstart2 = {
 			pcs_horny = 0
 			pcs_mood -= 15
 			pcs_willpwr -= 15
-			'You groaned in pain when <<$boydesc>> penetrated your pussy. Tears flowed from your eyes and it felt like someone drove a red-hot rod in your vagina. You cry and moan while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy.'
+			'You groan in pain when <<$boydesc>> penetrates your pussy. Tears flow from your eyes and it feels like someone drove a red-hot poker in your vagina. You cry and moan while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy.'
 		elseif orgazm = 1:
 			if vgape < 2:vgape = 2
 			pcs_horny -= 10
 			pcs_mood -= 10
 			pcs_willpwr -= 10
-			'You bite your lip in pain when <<$boydesc>> entered, it is very painful. You are frowning and moaning in pain while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy.'
+			'You bite your lip in pain when <<$boydesc>> enters, it is very painful. You frown and moan in pain while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy.'
 		elseif orgazm = 2:
 			if vgape < 1:vgape = 1
 			pcs_horny -= 5
 			pcs_mood -= 5
 			pcs_willpwr -= 5
-			'You winced at the sudden pain when <<$boydesc>> entered, it hurts but it gradually became quite tolerable. You are trying to get aroused while <<$xyr>> <<dick>> centimeter dick fucks your pussy, but you did not succeed.'
+			'You wince at the sudden pain when <<$boydesc>> enters, it hurts but it gradually becomes quite tolerable. You are trying to get aroused while <<$xyr>> <<dick>> centimeter dick fucks your pussy, but you do not succeed.'
 		elseif orgazm = 3:
 			pcs_mood += 5
 			pcs_willpwr += 5
-			'You are startled by the feeling that your pussy is stretching when <<$boydesc>> entered you. It feels good when <<$xyr>> <<dick>> centimeter dick fucks your pussy.'
+			'You are startled by the feeling that your pussy is stretching when <<$boydesc>> enters you. It feels good when <<$xyr>> <<dick>> centimeter dick fucks your pussy.'
 		elseif orgazm = 4:
 			pcs_horny += 10
 			pcs_mood += 10
 			pcs_willpwr += 10
-			'You are startled by the feeling that your pussy is stretching as <<$boydesc>> entered you. It feels good when <<$xyr>> strong <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remained like that until the end.'
+			'You are startled by the feeling that your pussy is stretching as <<$boydesc>> enters you. It feels good when <<$xyr>> strong <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreases a little and remains like that until the end.'
 		elseif orgazm = 5:
 			pcs_horny = 0
 			pcs_mood += 15
 			pcs_willpwr += 15
 			orgasm += 1
 			vaginalOrgasm += 1
-			'You flinched from a pleasant feeling when your pussy is stretched by <<$xyr>> dick. It feels good when <<$xyr>> <<dick>> centimeter dick fucks your pussy.Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling became unbearable and your entire body was covered with hot waves of orgasm, you scream with pleasure.'
+			'You flinched from a pleasant feeling when your pussy is stretched by <<$xyr>> dick. It feels good when <<$xyr>> <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling becomes unbearable and your entire body is covered with hot waves of orgasm, you scream with pleasure.'
 		elseif orgazm = 6:
 			pcs_horny += 5
 			pcs_mood += 5
 			pcs_willpwr += 5
-			'You can feel <<$xyr>> penis entering your pussy. This feels nice between your legs , but <<$xyr>> <<dick>> cm dick is significantly less than what your pussy needs. This is not enough for you. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remained like that until the end.'
+			'You can feel <<$xyr>> penis entering your pussy. This feels nice between your legs, but <<$xyr>> <<dick>> cm dick is significantly less than what your pussy needs. This is not enough for you. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreases a little and remains like that until the end.'
 		end
 		if pcs_vag = 0:
 			pcs_horny = 0
 			pcs_mood -= 15
 			pcs_willpwr -= 15
 			pcs_vag += 1
-			'You were biting your <<$liptalk>> in pain and tears started to flow from your eyes when <<$boydesc>> entered, breaking your hymen. You moan while crying and <<$xyr>> <<dick>> centimeter dick fucks your bloody pussy.'
+			'You are biting your <<$liptalk>> in pain and tears start to flow from your eyes when <<$boydesc>> enters, breaking your hymen. You moan while crying and <<$xyr>> <<dick>> centimeter dick fucks your bloody pussy.'
 		elseif pcs_vag <= dick:
 			pcs_vag += 1
 		end
@@ -323,7 +323,7 @@ $sexstart3 = {
 		pcs_horny = 0
 		pcs_mood -= 10
 		pcs_willpwr -= 10
-		'You have your period and blood slowly flows from your vagina while you move on <<$xyr>> dick. This is giving you painful and pleasants sensations . You moan while <<$xyr>> strong <<dick>> centimeter penis fucks you.'
+		'You have your period and blood slowly flows from your vagina while you move on <<$xyr>> dick. This is giving you painful and pleasant sensations .You moan while <<$xyr>> strong <<dick>> centimeter penis fucks you.'
    
 	elseif cycle > 0 and pcs_vag > 0:
 		!!no monthly
@@ -336,7 +336,6 @@ $sexstart3 = {
 		
 		smazka = pcs_horny / 10
 		prinat = smazka + pcs_vag
-
 		if dick >= prinat * 2:
 			!!member of the critical features more years
 			if silavag = 0:orgazm = 0
@@ -431,49 +430,49 @@ $sexstart3 = {
 			pcs_horny = 0
 			pcs_mood -= 15
 			pcs_willpwr -= 15
-			'You groaned in pain when <<$boydesc>> penetrated your pussy. Tears flowed from your eyes and it felt like someone drove a red-hot rod in your vagina. You cry and moan while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy.'
+			'You groan in pain as <<$boydesc>> penetrates your pussy. Tears flow from your eyes and it feels like someone drove a red hot poker in your vagina. You cry and moan while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy.'
 		elseif orgazm = 1:
 			if vgape < 2:vgape = 2
 			pcs_horny -= 10
 			pcs_mood -= 10
 			pcs_willpwr -= 10
-			'You bite your lip in pain when you got on the penis and felt the dick of <<$boydesc>> entering you. It really hurts between your legs. You are frowning and moaning in pain while moveing up and down on his strong <<dick>> centimeter penis.'
+			'You bite your lip in pain as feel <<$boydesc>>''s cock entering you. It really hurts between your legs. You are frowning and moaning in pain while moving up and down on his strong <<dick>> centimeter penis.'
 			
 		elseif orgazm = 2:
 			if vgape < 1:vgape = 1
 			pcs_horny -= 5
 			pcs_mood -= 5
 			pcs_willpwr -= 5
-			'You winced at the sudden pain when you felt the penis of <<$boydesc>> entering you.  The pain between your legs gradually dissapeared and it became quite tolerable. You are trying to get aroused while rhythmically moving on <<$xyr>> sturdy and strong <<dick>> centimeter dick fucking your pussy, but you do not succeed.'
+			'You wince at the sudden pain as you feel the penis of <<$boydesc>> entering you.  The pain between your legs gradually disappears and it becomes quite tolerable. You are trying to get aroused while rhythmically moving on <<$xyr>> sturdy and strong <<dick>> centimeter dick fucking your pussy, but you do not succeed.'
 		elseif orgazm = 3:
 			pcs_horny += 5
 			pcs_mood += 5
 			pcs_willpwr += 5
-			'You are startled by the feeling that your pussy is stretched when you lowered yourself on the cock of <<$boydesc>> and you could feel him entering you. Between your legs you get a little nice feeling when you move up and down on a strong <<dick>> centimeter penis.'
+			'You are startled by the feeling that your pussy is stretched as you lower yourself on the cock of <<$boydesc>> and you can feel him entering you. Between your legs you get a little nice feeling as you move up and down on a strong <<dick>> centimeter penis.'
 		elseif orgazm = 4:
 			pcs_horny += 10
 			pcs_mood += 10
 			pcs_willpwr += 10
-			'You are startled by the feeling that your pussy is stretched when you lowered yourself on the cock of <<$boydesc>> and you could feel him entering you. Between your legs you get a little nice feeling when you move up and down on a strong <<dick>> centimeter penis. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remained like that until the end.'
+			'You try to enjoy the unique feeling of your pussy being stretched as you lower yourself on the <<$boydesc>>''s cock and you feel him entering you. Between your legs you get a little nice feeling as you move up and down on a strong <<dick>> centimeter penis. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreases a little and remains like that until the end.'
 		elseif orgazm = 5:
 			pcs_horny = 0
 			pcs_mood += 15
 			pcs_willpwr += 15
 			orgasm += 1
 			vaginalOrgasm += 1
-			'You flinched from a pleasant feeling when your pussy is stretched by <<$xyr>> dick. Between your legs you are getting a very warm and pleasant feeling when you move up and down on the strong <<dick>> centimeter penis. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling became unbearable and your entire body was covered with hot waves of orgasm. You scream with pleasure.'
+			'You flinch from a pleasant feeling as your pussy is stretched by <<$xyr>> dick. Between your legs you are getting a very warm and pleasant feeling as you move up and down on the strong <<dick>> centimeter penis. Gradually a pleasant warmth and some pulsations start building up in your stomach. Then the feeling becomes unbearable and your entire body is covered with hot waves of orgasm. You scream with pleasure.'
 		elseif orgazm = 6:
 			pcs_horny += 5
 			pcs_mood += 5
 			pcs_willpwr += 5
-			'You can feel <<$xyr>> penis entering your pussy. This feels nice between your legs , but <<$xyr>> <<dick>> cm dick  is significantly less than what your pussy needs .This is not enough for you. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remained like that until the end.'
+			'You can feel <<$xyr>> penis entering your pussy. This feels nice between your legs, but <<$xyr>> <<dick>> cm dick is significantly less than what your pussy needs. This is not enough for you. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreases a little and remains like that until the end.'
 		end
 		if pcs_vag = 0:
 			pcs_horny = 0
 			pcs_mood -= 15
 			pcs_willpwr -= 15
 			pcs_vag += 1
-			'You were biting your <<$liptalk>> in pain and tears started to flow from your eyes when <<$boydesc>> entered, breaking your hymen. You moan while crying and <<$xyr>> <<dick>> centimeter dick fucks your bloody pussy.'
+			'You are biting your <<$liptalk>> in pain and tears start to flow from your eyes as <<$boydesc>> enters you, breaking your hymen. You moan while crying and <<$xyr>> <<dick>> centimeter dick fucks your bloody pussy.'
 		elseif pcs_vag <= dick:
 			pcs_vag += 1
 		end
@@ -489,7 +488,7 @@ $sexstart4 = {
 		pcs_horny = 0
 		pcs_mood = pcs_mood - 10
 		pcs_willpwr = pcs_willpwr - 10
-		'You are menstruating but this does not stop <<$xe>> from ramming <<$xyr>> dick into you. vaginal blood flows slowly out of your pussy. You are experiencing  both painful and pleasant sensations. You moan while a strong <<dick>> centimeter dick fucks your pussy.'
+		'You are menstruating but this does not stop <<$xe>> from ramming <<$xyr>> dick into you. Vaginal blood flows slowly out of your pussy. You are experiencing both painful and pleasant sensations. You moan while the strong <<dick>> centimeter dick fucks your pussy.'
 	elseif cycle > 0 and pcs_vag > 0:
 		!!no monthly
 		!!horny - excitement
@@ -596,48 +595,48 @@ $sexstart4 = {
 			pcs_horny = 0
 			pcs_mood -= 15
 			pcs_willpwr -= 15
-			'You groaned in pain when <<$boydesc>> penetrated your pussy. Tears flowed from your eyes and it felt like someone drove a red-hot rod in your vagina. You cry and moan while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy.'
+			'You groan in pain when <<$boydesc>> penetrates your pussy. Tears flow from your eyes and it feels like someone drove a red hot poker into your vagina. You cry and moan while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy.'
 		elseif orgazm = 1:
 			if vgape < 2:vgape = 2
 			pcs_horny -= 10
 			pcs_mood -= 10
 			pcs_willpwr -= 10
-			'You bit your lip in pain when <<$boydesc>> penetrated you. You feel some pain between your legs. You are frowning and moaning in pain while a strong <<dick>> centimeter dick fucks your pussy.'
+			'You bit your lip in pain when <<$boydesc>> penetrates you. You feel some pain between your legs. You are frowning and moaning in pain while a strong <<dick>> centimeter dick fucks your pussy.'
 		elseif orgazm = 2:
 			if vgape < 1:vgape = 1
 			pcs_horny -= 5
 			pcs_mood -= 5
 			pcs_willpwr -= 5
-			'You flinched at the sudden pain when <<$boydesc>> penetrated you. You feel some pain between your legs. It gradually settles down and becomes quite tolerable. You are trying to get aroused while a strong <<dick>> centimeter dick fucks your pussy, but you could not succeed.'
+			'You flinched at the sudden pain when <<$boydesc>> penetrates you. You feel some pain between your legs. It gradually settles down and becomes quite tolerable. You are trying to get aroused while a strong <<dick>> centimeter dick fucks your pussy, but you could not succeed.'
 		elseif orgazm = 3:
 			pcs_horny = pcs_horny + 5
 			pcs_mood += 5
 			pcs_willpwr += 5
-			'You flinched from the feeling that your pussy is being stretched, when <<$boydesc>> penetrated you. You have a little nice sensation between your legs while a strong <<dick>> centimeter dick fucks your pussy.'
+			'You flinch from the feeling that your pussy is being stretched, when <<$boydesc>> penetrates you. You have a little nice sensation between your legs while a strong <<dick>> centimeter dick fucks your pussy.'
 		elseif orgazm = 4:
 			pcs_horny = pcs_horny + 10
 			pcs_mood += 10
 			pcs_willpwr += 10
-			'You flinched from the feeling that your pussy is being stretched when <<$boydesc>> penetrated you. You have a little nice sensation between your legs while a strong <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remained like that until the end.'
+			'You flinch from the feeling that your pussy is being stretched when <<$boydesc>> penetrates you. You have a little nice sensation between your legs while a strong <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreases a little and remains like that until the end.'
 		elseif orgazm = 5:
 			pcs_horny = 0
 			pcs_mood += 15
 			pcs_willpwr += 15
 			orgasm += 1
 			vaginalOrgasm += 1
-			'You are startled by a pleasant sensation when your pussy is stretched and start taking a dick. You have a very warm and pleasant feeling between the legs when a strong <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling became unbearable and your entire body was covered with hot waves of orgasm, you scream with pleasure.'
+			'You are startled by a pleasant sensation when your pussy is stretched as it starts taking a dick. You have a very warm and pleasant feeling between the legs when a strong <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling became unbearable and your entire body is covered with hot waves of orgasm, you scream with pleasure.'
 		elseif orgazm = 6:
 			pcs_horny += 5
 			pcs_mood += 5
 			pcs_willpwr += 5
-			'You feel  <<$xyr>> penis entering your pussy. This feels nice between your legs , but <<$xyr>> <<dick>> cm dick  is significantly less than what your pussy needs .This is not enough for you. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remained like that until the end.'
+			'You feel <<$xyr>> penis entering your pussy. This feels nice between your legs, but <<$xyr>> <<dick>> cm dick is significantly less than what your pussy needs. This is not enough for you. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreases a little and remains like that until the end.'
 		end
 		if pcs_vag = 0:
 			pcs_horny = 0
 			pcs_mood -= 15
 			pcs_willpwr -= 15
 			pcs_vag += 1
-			'You suddenly bite your <<$liptalk>> in pain and tears started to flow from your eyes when <<$boydesc>> entered you, breaking your hymen. You moan while crying and <<$xyr>> <<dick>> centimeter dick fucks your bloody pussy.'
+			'You suddenly bite your <<$liptalk>> in pain and tears start to flow from your eyes when <<$boydesc>> enters you, breaking your hymen. You moan while crying and <<$xyr>> <<dick>> centimeter dick fucks your bloody pussy.'
 		elseif pcs_vag <= dick:
 			pcs_vag += 1
 		end
@@ -664,22 +663,22 @@ $sexcum = {
 			!!Out
 			if pose = 0:
 				spafinloc = 14
-				'<<$boydesc>> groaned and after pulling out <<$xyr>> dick, <<$xe>> came on your stomach.'
+				'<<$boydesc>> groans and after pulling out <<$xyr>> dick, <<$xe>> cums on your stomach.'
 			elseif pose = 1:
 				spafinloc = 4
-				'<<$boydesc>> groaned and after pulling out <<$xyr>> dick, <<$xe>> came on your ass.'
+				'<<$boydesc>> groans and after pulling out <<$xyr>> dick, <<$xe>> cums on your ass.'
 			end
 		end
 		gs 'Cum_Manage'
 	elseif protect = 1:
 		$tmp = ''
 		if sexcontra = 7: $tmp = 'sabotaged '
-		'<<$boydesc>> groaned and you realized that <<$xe>> came in the <<$tmp>>condom.'
+		'<<$boydesc>> groans and you realize that <<$xe>> came in the <<$tmp>>condom.'
 		gs 'Cum_Manage'
 		if sexcontra = 4:
-			'Pulling out of you and looking at <<$xyr>> dick, <<$boydesc>> said "Hmm, the condom burst."'
+			'Pulling out of you and looking at <<$xyr>> dick, <<$boydesc>> says "Hmm, the condom burst."'
 		elseif sexcontra = 5:
-			'Pulling out of you and looking at <<$xyr>> dick, <<$boydesc>> said "Hmm, the condom is missing."'
+			'Pulling out of you and looking at <<$xyr>> dick, <<$boydesc>> says "What the fuck? The condom is missing."'
 		end
 		gs 'cuminsidereact'
 		protect = 0
@@ -728,7 +727,7 @@ $sexcumsk = {
 		if sexcontra = 4:
 			'Pulls <<$xyr>> cock out of you and, looking at <<$xyr>> dick, <<$shultextrand33>> says "Hmm, the condom burst."'
 		elseif sexcontra = 5
-			'Pulls <<$xyr>> cock out of you and, looking at <<$xyr>> dick, <<$shultextrand33>> says "Hmm, the condom is missing."'
+			'Pulls <<$xyr>> cock out of you and, looking at <<$xyr>> dick, <<$shultextrand33>> says "What the fuck? The condom is missing."'
 		end
 		gs 'cuminsidereact'
 		protect = 0
@@ -747,11 +746,11 @@ $analsex = {
 		lubonus = 10
 		!!!
 		analplugin = 0
-		'<<$boydesc>> has pulled out your ass plug'
+		'<<$boydesc>> pulls out your ass plug'
 	end
 
 	if dick >= pcs_ass:pcs_ass += 3
-	'<<$boydesc>> began to massage your anus with <<$xyr>> fingers.'
+	'<<$boydesc>> begins to massage your anus with <<$xyr>> fingers.'
 	!!!WD: Replaced
 	!!if lubri > 0:
 	!!!
@@ -759,26 +758,26 @@ $analsex = {
 	!!!
 		lubri -= 1
 		lubonus += rand(1, 5)
-		'You squeezed anal lube on your hand and began to smear it in your ass. Then you gave it to <<$xem>> and <<$xe>> smeared it on <<$xyr>> dick'
+		'You squeeze anal lube on your hand and begin to smear it in your ass. Then you give it to <<$xem>> and <<$xe>> smear it on <<$xyr>> dick'
 	end
 
-	if pcs_ass < 10:'<<$xec>> inserted three fingers into your ass and you groaned in pain.'
-	if pcs_ass >= 10:'<<$xec>> started to stretch your anus with three fingers.'
-	'<<$boydesc>> pulled <<$xyr>> fingers out of your ass and you felt <<$xyr>> hard cock near your hole.'
-	if pcs_ass + lubonus + 10 < dick:'You screamed and bit your lip from a sharp pain when <<$xyr>> <<dick>> centimeter dick entered your ass.'
-	if pcs_ass + lubonus + 10 >= dick:'You moaned when <<$xyr>> <<dick>> centimeter dick entered your ass.'
-	'<<$boydesc>> stopped for a moment, giving your ass time to adjust to <<$xyr>> cock in it, and then started to slowly move, stretching your anus.'
+	if pcs_ass < 10:'<<$xec>> inserts three fingers into your ass and you groan in pain.'
+	if pcs_ass >= 10:'<<$xec>> starts to stretch your anus with three fingers.'
+	'<<$boydesc>> pulls <<$xyr>> fingers out of your ass and you feel <<$xyr>> hard cock near your hole.'
+	if pcs_ass + lubonus + 10 < dick:'You scream and bite your lip from a sharp pain when <<$xyr>> <<dick>> centimeter dick enters your ass.'
+	if pcs_ass + lubonus + 10 >= dick:'You moan when <<$xyr>> <<dick>> centimeter dick enters your ass.'
+	'<<$boydesc>> stops for a moment, giving your ass time to adjust to <<$xyr>> cock in it, and then starts to slowly move, stretching your anus.'
 
 	if pcs_ass + lubonus + 2 < dick:
 		if pcs_makeup > 1:pcs_makeup = 0
 		pcs_horny -= 20
 		pcs_mood -= 20
 		if agape < 3:agape = 3
-		'You cried and bit your lip when <<dick>> centimeter cock began to fuck your ass on (! full force !). Your ass felt like it was on fire and all you wanted was for this torture to be over quickly.'
+		'You cry and bite your lip when <<dick>> centimeter cock begins to fuck your ass full force. Your ass feels like it is on fire and all you want is for this torture to be over quickly.'
 	elseif pcs_ass + lubonus + 2 >= dick:
 		pcs_horny += 10
 		if agape < 2 and lubonus = 0:agape = 2
-		'You started to moan rhythmically, matching the timings of  <<$xyr>> cock''s movements inside you. You feel your anus stretching when <<$xyr>> penis enters you.'
+		'You started to moan rhythmically, matching the timings of <<$xyr>> cock''s movements inside you. You feel your anus stretching when <<$xyr>> penis enters you.'
 
 		if pcs_horny >= 100:
 			if stat['anal'] >= 10 and orgasm > 0:
@@ -791,7 +790,7 @@ $analsex = {
 		end
 	end
 	lubonus = 0
-	'After some time <<$boydesc>> groaned and you feel your ass filling up with a pleasant warmth.'
+	'After some time <<$boydesc>> groans and you feel your ass filling up with a pleasant warmth.'
 	spafinloc = 3
 	gs 'Cum_Manage'
 }
@@ -805,10 +804,10 @@ $analsex2 = {
 		lubonus = 10
 		!!!
 		analplugin = 0
-		'<<$boydesc>> pulled your butt plug out of your narrow and tight ass.'
+		'<<$boydesc>> pulls your butt plug out of your narrow and tight ass.'
 	end
 	if dick >= pcs_ass:pcs_ass += 3
-	'<<$boydesc>> began to massage your anus with <<$xyr>> fingers.'
+	'<<$boydesc>> begins to massage your anus with <<$xyr>> fingers.'
 
 	!!!WD: Replaced
 	!!if lubri > 0:
@@ -817,27 +816,27 @@ $analsex2 = {
 	!!!
 	lubri -= 1
 	lubonus += rand(1, 5)
-	'You squeezed anal lube on your hand and began to smear it in your ass. Then you gave the guy a tube and <<$xe>> started lucricating <<$xyr>> cock.'
+	'You squeeze anal lube on your hand and begin to smear it in your ass. Then you gave the guy a tube and <<$xe>> starts lucricating <<$xyr>> cock.'
 	end
-	if pcs_ass < 10:'When <<$xe>> entered three fingers in your ass you groaned in pain.'
+	if pcs_ass < 10:'When <<$xe>> enters three fingers in your ass you groan in pain.'
    	if pcs_ass >= 10:'<<$xec>> started to stretch your anus with three fingers.'
-	'<<$boydesc>> pulled <<$xyr>> fingers out of your ass and you felt <<$xyr>> hard cock near your hole.'
+	'<<$boydesc>> pulls <<$xyr>> fingers out of your ass and you feel <<$xyr>> hard cock near your hole.'
 	!!!WD: Added lubonus
-	if pcs_ass + lubonus + 10 < dick:'You screamed and bit your lip from a sharp pain when <<$xyr>> <<dick>> centimeter dick entered your ass.'
-	if pcs_ass + lubonus + 10 >= dick:'You moaned when <<$xyr>> <<dick>> centimeter dick entered your ass.'
+	if pcs_ass + lubonus + 10 < dick:'You scream and bit your lip from a sharp pain as <<$xyr>> <<dick>> centimeter dick enters your ass.'
+	if pcs_ass + lubonus + 10 >= dick:'You moan as <<$xyr>> <<dick>> centimeter dick enters your ass.'
 	!!!
-	'<<$boydesc>> stopped for a moment, giving your ass time to adjust to <<$xyr>> cock in it. Then he started to slowly move, stretching your anus.'
+	'<<$boydesc>> stops for a moment, giving your ass time to adjust to <<$xyr>> cock in it. Then he starts to slowly move, stretching your anus.'
 
 	if pcs_ass + lubonus + 2 < dick:
 		if pcs_makeup > 1:pcs_makeup = 0
 		pcs_horny -= 20
 		pcs_mood -= 20
 		if agape < 3:agape = 3
-		'You cried and bit your lip when <<dick>> centimeter cock began to fuck your ass on (! full force !). Your ass felt like it was on fire and all you wanted was for this torture to be over quickly.'
+		'You cry and bite your lip as <<dick>> centimeter cock begins to fuck your ass on with <<$xyr>> full force. Your ass feels like it is on fire and all you want is for this torture to be over quickly.'
 	elseif pcs_ass + lubonus + 2 >= dick:
 		pcs_horny += 10
 		if agape < 2 and lubonus = 0:agape = 2
-		'You started to moan rhythmically following the movements of <<$xyr>> cock inside you. You can feel your anus stretching when <<$xyr>> penis enters you.'
+		'You started to moan rhythmically following the movements of <<$xyr>> cock inside you. You can feel your anus stretching as <<$xyr>> penis enters you.'
 
 		if pcs_horny >= 100:
 			if stat['anal'] >= 10 and orgasm > 0:
@@ -851,7 +850,7 @@ $analsex2 = {
 	end
 
 	lubonus = 0
-	'After some time <<$boydesc>> groaned and you feel your ass filling with a pleasant warmth.'
+	'After some time <<$boydesc>> groans and you feel your ass filling with a pleasant warmth.'
 	spafinloc = 3
 	gs 'Cum_Manage'
 }
@@ -865,17 +864,17 @@ $analsexrude = {
 		lubonus = 10
 		!!!
 		analplugin = 0
-		'<<$boydesc>> pulled your butt plug out of your narrow and tight ass.'
+		'<<$boydesc>> pulls your butt plug out of your narrow and tight ass.'
 	end
 
 	if dick >= pcs_ass:pcs_ass += 3
-	'<<$boydesc>> tucked a finger into your anus, then a second one .'
-	if pcs_ass < 10:'When <<$xe>> entered three fingers in your ass you groaned in pain.'
+	'<<$boydesc>> tucks a finger into your anus, then a second one.'
+	if pcs_ass < 10:'When <<$xe>> enters three fingers in your ass you groan in pain.'
 	if pcs_ass >= 10:'<<$xec>> started to stretch your anus with three fingers.'
-	'<<$boydesc>> pulled <<$xyr>> fingers out of your ass and you feel <<$xyr>> pushing his hard cock into your hole.'
-	if pcs_ass + lubonus + 10 < dick:'You screamed and bit your lip from a sharp pain when <<$xyr>> <<dick>> centimeter dick entered your ass.'
-   	if pcs_ass + lubonus + 10 >= dick:'You moaned when <<$xyr>> <<dick>> centimeter dick entered your ass.'
-	'<<$boydesc>> stopped for a moment, giving your ass time to adjust to <<$xyr>> cock in it. Then he started to slowly move, stretching your anus.'
+	'<<$boydesc>> pulls <<$xyr>> fingers out of your ass and you feel <<$xyr>> pushing his hard cock into your hole.'
+	if pcs_ass + lubonus + 10 < dick:'You scream and bite your lip from a sharp pain when <<$xyr>> <<dick>> centimeter dick enters your ass.'
+   	if pcs_ass + lubonus + 10 >= dick:'You moan when <<$xyr>> <<dick>> centimeter dick enters your ass.'
+	'<<$boydesc>> stops for a moment, giving your ass time to adjust to <<$xyr>> cock in it. Then he starts to slowly move, stretching your anus.'
 
 	if pcs_ass + lubonus + 2 < dick:
    		if pcs_makeup > 1:pcs_makeup = 0
@@ -883,12 +882,12 @@ $analsexrude = {
 		pcs_mood -= 20
 		if agape < 3:agape = 3
 
-		'You cried and bit your lip when <<dick>> centimeter cock began to fuck your ass on (! full force !). Your ass felt like it was on fire and all you wanted was for this torture to be over quickly.'
+		'You cry and bite your lip when <<dick>> centimeter cock began to fuck your ass on (! full force !). Your ass feels like it is on fire and all you want is for this torture to be over quickly.'
    
 	elseif pcs_ass + lubonus + 2 >= dick:
 		pcs_horny += 10
 		if agape < 2 and lubonus = 0:agape = 2
-		'You started to moan rhythmically, following the movements of <<$xyr>> cock inside you. You can feel your anus stretching when <<$xyr>> penis enters you.'
+		'You start to moan rhythmically, following the movements of <<$xyr>> cock inside you. You can feel your anus stretching when <<$xyr>> penis enters you.'
 
 		if pcs_horny >= 100:
 			if stat['anal'] >= 10 and orgasm > 0:
@@ -904,7 +903,7 @@ $analsexrude = {
 	lubonus = 0
 	spafinloc = 3
 	gs 'Cum_Manage'
-	'After some time <<$boydesc>> groaned and you feel your ass filling with a pleasant warmth.'
+	'After some time <<$boydesc>> groan and you feel your ass filling with a pleasant warmth.'
 }
 
 ! "deal_with_condom" procedure should be replacement of "sexstart" dynamic procedure
@@ -1050,20 +1049,20 @@ if $ARGS[0] = 'vaginal_sex':
 	if pcs_vag > 0:
 		gs 'arousal','vaginal',ARGS[1],$ARGS[2],$ARGS[3],$ARGS[4],$ARGS[5],$ARGS[6],$ARGS[7],$ARGS[8]
 		$temp_mens = iif(cycle <= 0,' and menstruation blood leaks from your vagina','')
-		if (vgrdif + vltdif) >= 30: 'You groaned in pain when <<$boydesc>> penetrated you, tears flowed from your eyes and it feels like someone drove a red-hot rod in your vagina. You cry and moan while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy<<$temp_mens>>.'
-		if (vgrdif + vltdif) >= 20 and (vgrdif + vltdif) < 30: 'You bite your lip in pain when <<$boydesc>> entered, it is very painful. You are frowning and moaning in pain while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy<<$temp_mens>>.'
+		if (vgrdif + vltdif) >= 30: 'You groan in pain when <<$boydesc>> penetrates you, tears flowed from your eyes and it feels like someone drove a red hot poker in your vagina. You cry and moan while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy<<$temp_mens>>.'
+		if (vgrdif + vltdif) >= 20 and (vgrdif + vltdif) < 30: 'You bite your lip in pain when <<$boydesc>> enters, it is very painful. You are frowning and moaning in pain while <<$xyr>> strong <<dick>> centimeter dick fucks your pussy<<$temp_mens>>.'
 		if cycle <= 0: $temp_mens = ' even though' + $temp_mens
-		if (vgrdif + vltdif) >= 12 and (vgrdif + vltdif) < 20: 'You winced at the sudden pain when <<$boydesc>> entered, it hurt but gradually it became quite tolerable. You are trying to get aroused while <<$xyr>> <<dick>> centimeter dick fucks your pussy<<$temp_mens>>, but you did not succeed.'
-		if (vgrdif + vltdif) >= 7 and (vgrdif + vltdif) < 12: 'You are startled by the feeling that your pussy is stretching when <<$boydesc>> entered you. It feels good when <<$xyr>> <<dick>> centimeter dick fucks your pussy<<$temp_mens>>.'
-		if (vgrdif + vltdif) >=  2 and (vgrdif + vltdif) < 7: 'You are startled by the feeling that your pussy is stretching as <<$boydesc>> enters you. It feels good when <<$xyr>> strong <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remained like that until the end<<$temp_mens>>.'
-		if (vgrdif + vltdif) >= -3 and (vgrdif + vltdif) < 2: 'You flinched from a pleasant feeling when your pussy is stretched by <<$xyr>> dick. It feels good when <<$xyr>> <<dick>> centimeter dick fucks your pussy<<$temp_mens>>. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling became unbearable and your entire body was covered with hot waves of orgasm You scream with pleasure.'
-		if (vgrdif + vltdif) <  -3: 'You feel  <<$xyr>> penis entering your pussy. This gives you a nice tingling feeling between your legs , but <<$xyr>> <<dick>> cm dick  is significantly less than what your pussy needs .This is not enough for you. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remained like that until the end<<$temp_mens>>.'
+		if (vgrdif + vltdif) >= 12 and (vgrdif + vltdif) < 20: 'You winced at the sudden pain when <<$boydesc>> enters, it hurt but gradually it became quite tolerable. You are trying to get aroused while <<$xyr>> <<dick>> centimeter dick fucks your pussy<<$temp_mens>>, but you did not succeed.'
+		if (vgrdif + vltdif) >= 7 and (vgrdif + vltdif) < 12: 'You are startled by the feeling that your pussy is stretching when <<$boydesc>> enters you. It feels good when <<$xyr>> <<dick>> centimeter dick fucks your pussy<<$temp_mens>>.'
+		if (vgrdif + vltdif) >=  2 and (vgrdif + vltdif) < 7: 'You are startled by the feeling that your pussy is stretching as <<$boydesc>> enters you. It feels good when <<$xyr>> strong <<dick>> centimeter dick fucks your pussy. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remains like that until the end<<$temp_mens>>.'
+		if (vgrdif + vltdif) >= -3 and (vgrdif + vltdif) < 2: 'You flinched from a pleasant feeling when your pussy is stretched by <<$xyr>> dick. It feels good when <<$xyr>> <<dick>> centimeter dick fucks your pussy<<$temp_mens>>. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling became unbearable and your entire body is covered with hot waves of orgasm You scream with pleasure.'
+		if (vgrdif + vltdif) <  -3: 'You feel  <<$xyr>> penis entering your pussy. This gives you a nice tingling feeling between your legs , but <<$xyr>> <<dick>> cm dick  is significantly less than what your pussy needs .This is not enough for you. Gradually a pleasant warmth and some pulsations started building up in your stomach. Then the feeling decreased a little and remains like that until the end<<$temp_mens>>.'
 	else
 		$temp_mens = iif(cycle <= 0,' and menstruation blood leaks from your vagina','')
 		pcs_horny = 0
 		pcs_mood -= 15
 		pcs_willpwr -= 15
-		'You were biting your <<$liptalk>> in pain and tears started to flow from your eyes when <<$boydesc>> penetrated you, breaking your hymen. You moan while crying and <<$xyr>> <<dick>> centimeter dick fucks your bloody pussy.'
+		'You were biting your <<$liptalk>> in pain and tears started to flow from your eyes when <<$boydesc>> penetrates you, breaking your hymen. You moan while crying and <<$xyr>> <<dick>> centimeter dick fucks your bloody pussy.'
 		gs 'arousal','vaginal',ARGS[1],$ARGS[2],$ARGS[3],$ARGS[4],$ARGS[5],$ARGS[6],$ARGS[7],$ARGS[8]
 	end
 	killvar '$temp_mens'
@@ -1082,13 +1081,13 @@ if $ARGS[0] = 'analsex':
 	*p '<<$boydesc>> pulls <<$xyr>> fingers out of your ass and you feel '
 	if rand(0,1)=0: '<<$xyr>> hard cock near your hole.' else '<<$xem>> pushing <<$xyr>> hard cock into your hole.'
 	gs 'arousal','anal',ARGS[1],$ARGS[2],$ARGS[3],$ARGS[4],$ARGS[5],$ARGS[6],$ARGS[7],$ARGS[8]
-	if (agrdif + altdif) >= 20:'You scream and bit your lip from a sharp pain when <<$xyr>> <<dick>> centimeter dick enters your ass.'
+	if (agrdif + altdif) >= 20:'You scream and bite your lip from the sharp pain when <<$xyr>> <<dick>> centimeter dick enters your ass.'
 	if (agrdif + altdif) <  20:'You moan when <<$xyr>> <<dick>> centimeter dick enters your ass.'
 	'<<$boydesc>> stops for a moment, giving your ass time to adjust to <<$xyr>> cock in it. Then he starts to slowly move, stretching your anus.'
 
 	if (agrdif + altdif) >= 30:
 		if pcs_makeup > 1:pcs_makeup = 0
-		'You cry and bit your lip when <<dick>> centimeter cock begins to fuck your ass on (! full force !). Your ass feels like it is on fire and all you want is for this torture to be over quickly.'
+		'You cry and bite your lip when <<dick>> centimeter cock begins to fuck your ass on (! full force !). Your ass feels like it is on fire and all you want is for this torture to be over quickly.'
 	elseif (agrdif + altdif) >= 20 and (agrdif + altdif) < 30:
 		pcs_horny += 10
 		'You start to moan rhythmically in time with <<$xyr>> cock''s movements inside you. You feel like your anus is stretched when <<$xyr>> penis enters you.'
@@ -1115,20 +1114,20 @@ if $ARGS[0] = 'sexcum':
 			!!Out
 			if pose = 0:
 				spafinloc = 14
-				'<<$boydesc>> groaned and after pulling out <<$xyr>> dick, <<$xe>> came on your stomach.'
+				'<<$boydesc>> groans and after pulling out <<$xyr>> dick, <<$xe>> came on your stomach.'
 				gs 'cum_call','stomach',$boy,1
 			elseif pose = 1:
-				'<<$boydesc>> groaned and after pulling out <<$xyr>> dick, <<$xe>> came on your ass.'
+				'<<$boydesc>> groans and after pulling out <<$xyr>> dick, <<$xe>> came on your ass.'
 				gs 'cum_call','butt',$boy,1
 			end
 		end
 	else
 		$tmp = iif(sexcontra = 7,'sabotaged ','')
-		'<<$boydesc>> groaned and you realized that <<$xe>> ejaculated in the <<$tmp>>condom.'
+		'<<$boydesc>> groans and you realized that <<$xe>> ejaculated in the <<$tmp>>condom.'
 		if sexcontra = 4:
 			'Pulling out of you and looking at <<$xyr>> dick, <<$boydesc>> said "Hmm, the condom burst."'
 		elseif sexcontra = 5:
-			'Pulling out of you and looking at <<$xyr>> dick, <<$boydesc>> said "Hmm, the condom is missing."'
+			'Pulling out of you and looking at <<$xyr>> dick, <<$boydesc>> said "Fuck! The condom is missing."'
 		end
 		eff_contra = sexcontra
 		gs 'cum_call','',$boy,1
@@ -1145,7 +1144,7 @@ end &! --- sexcum ---
 !! phrases rewrited by Filicophyte 
 if $ARGS[0] = 'dinrandbj':
 	tperbjran = rand(0, 3)
-	if tperbjran = 0:$tperbj = 'You wrap your <<$liptalk>> around <<$xyr>> <<dick>>cm member.'
+	if tperbjran = 0:$tperbj = 'You wraps your <<$liptalk>> around <<$xyr>> <<dick>>cm member.'
 	if tperbjran = 1:$tperbj = 'Your <<$liptalk>> engulf the purple head of <<$xyr>> <<dick>>cm member.'
 	if tperbjran = 2:$tperbj = 'You plant your <<$liptalk>> on the bulbous tip of <<$xyr>> <<dick>>cm cock and greedily slide your mouth down along <<$xyr>> throbbing maleness.'
 	if tperbjran = 3:$tperbj = 'The <<dick>> centimeters dick rests between your <<$liptalk>> then you slightly part them and allow the delicious invador to slide into your mouth.'
