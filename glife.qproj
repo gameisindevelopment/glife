@@ -885,6 +885,9 @@
     <Folder name="Quest">
       <Location name="qwBarPolet"/>
       <Location name="qwBarPoletToilet"/>
+      <Location name="MartinSex"/>
+      <Location name="MartinSex2"/>
+      <Location name="MartinSex3"/>
       <Location name="qwIzoldaApp"/>
       <Location name="qwloc"/>
       <Location name="qwmeet"/>
