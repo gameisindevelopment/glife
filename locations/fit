@@ -132,7 +132,7 @@ if $ARGS[0] = 'dressing room':
 
 			act 'Go to a crossfit workout': 
 				cla
-				gt 'crossfit_sever_box', 'box'
+				gt 'crossfit_north_box', 'box'
 			end
 		end
 

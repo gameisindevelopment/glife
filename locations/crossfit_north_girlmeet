@@ -1,4 +1,4 @@
-# crossfit_sever_girlmeet
+# crossfit_north_girlmeet
 
 if $ARGS[0] = 'start':
 	!! generate a girlfriend
@@ -52,4 +52,4 @@ if $ARGS[0] = 'start':
 end
 
 
---- crossfit_sever_girlmeet ---------------------------------
+--- crossfit_north_girlmeet ---------------------------------

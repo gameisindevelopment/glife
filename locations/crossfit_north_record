@@ -1,18 +1,18 @@
-# crossfit_sever_record
+# crossfit_north_record
 
 if $ARGS[0] = 'view_records':
 	cla
-	cls
-	gs 'crossfit_sever_record', 'update_box_records'
+	*clr
+	gs 'crossfit_north_record', 'update_box_records'
 
-	'<center><img <<$set_imgh>> src="images_cf/mod/sever_crossfit/records.jpg"></center>'
+	'<center><img <<$set_imgh>> src="<<$crossfit_north_image_dir>>records.jpg"></center>'
 	'You look at the board outlining the personal records'
 	'<center><table border=1><tr><th>Workout</th><th>Personal Best</th><th>Box Record (Women)</th><th>Box Record Holder</th></tr>'
 	record_table_counter = 0
 	:recordloop
 	if record_table_counter < ARRSIZE('$crossfit_wods'):
 		$crossfit_wod = $crossfit_wods[record_table_counter]
-		'<tr><td><<$crossfit_wod>></td><td>' & func('crossfit_sever_record', 'recordstring', $crossfit_wod, personal_wod_record[$crossfit_wod]) & '</td><td>' & func('crossfit_sever_record', 'recordstring', $crossfit_wod, box_wod_record[$crossfit_wod])  & '</td><td> <<$box_wod_record_holder[$crossfit_wod]>></td></tr>'
+		'<tr><td><<$crossfit_wod>></td><td>' & func('crossfit_north_record', 'recordstring', $crossfit_wod, personal_wod_record[$crossfit_wod]) & '</td><td>' & func('crossfit_north_record', 'recordstring', $crossfit_wod, box_wod_record[$crossfit_wod])  & '</td><td> <<$box_wod_record_holder[$crossfit_wod]>></td></tr>'
 		record_table_counter += 1
 		jump 'recordloop'
 	end
@@ -50,7 +50,7 @@ if $ARGS[0] = 'update_box_records':
 
 	:recordupdateloop
 	if current_record_update_count < number_of_box_record_updates:
-		gs 'crossfit_sever_record', 'box_records'
+		gs 'crossfit_north_record', 'box_records'
 		current_record_update_count += 1
 		jump 'recordupdateloop'
 	end
@@ -82,4 +82,4 @@ if $ARGS[0] = 'box_records':
 	killvar '$crossfit_wod'
 end
 
---- crossfit_sever_record ---------------------------------
+--- crossfit_north_record ---------------------------------

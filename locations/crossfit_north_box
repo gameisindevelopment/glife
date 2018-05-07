@@ -1,33 +1,34 @@
-# crossfit_sever_box
+# crossfit_north_box
 
 $loc = $CURLOC
-$locM = 'crossfit_sever_box'
-$sexloc = 'crossfit_sever_box'
+$locM = 'crossfit_north_box'
+$sexloc = 'crossfit_north_box'
 $location_type = 'public_indoors'
 $metka = 'box'
 $metkaM = 'box'
+$crossfit_north_image_dir = 'mod/crossfit_north/'
 
 if $ARGS[0] = 'box':
 	if crossfit_random_choice < daystart OR $todays_crossfit_wod = '':
-		gs 'crossfit_sever_wod', 'setup_wod'
+		gs 'crossfit_north_wod', 'setup_wod'
 		$todays_crossfit_wod = $crossfit_wods[rand(0, ARRSIZE('$crossfit_wods') - 1)]
 		crossfit_random_choice = daystart
 	end
 
 	if $previous_record_holder ! ''  and pcs_lover < 3 and last_crossfit_workout < daystart:
-		gt 'crossfit_sever_girlmeet', 'start'
+		gt 'crossfit_north_girlmeet', 'start'
 	end
 
-	'<center><b><font color="maroon">Crossfit Sever St. Petersburg</font></b></center>'
-	'<center><img <<$set_imgh>> src="images_cf/mod/sever_crossfit/start.jpg"></center>'
+	'<center><b><font color="maroon">Crossfit North St. Petersburg</font></b></center>'
+	'<center><img <<$set_imgh>> src="<<$crossfit_north_image_dir>>start.jpg"></center>'
 	'This crossfit box might not look like it, but is said to be one of the best ones in the region.'
 	'Today''s exercise is <<$todays_crossfit_wod>>.'
 	'It consists of:'
-	gs 'crossfit_sever_wod', $todays_crossfit_wod
+	gs 'crossfit_north_wod', $todays_crossfit_wod
 
 	act 'Check personal records':
 		cla
-		gt 'crossfit_sever_record', 'view_records'
+		gt 'crossfit_north_record', 'view_records'
 	end
 
 	act 'Start the exercise':
@@ -36,18 +37,18 @@ if $ARGS[0] = 'box':
 			msg'<b><font color = red>You already did this workout today. That''s enough for one day.</font></b>'
 		else
 			cla
-			cls
+			*clr
 			last_crossfit_workout = daystart
 			abonement -= 1
 			'You start with the workout.'
-			gs 'crossfit_sever_wod', $todays_crossfit_wod
+			gs 'crossfit_north_wod', $todays_crossfit_wod
 			gs 'exercise', 'tier4', 20, 'stren_exp', 'vital_exp', 'agil_exp'
-			'<center><video autoplay loop src="images_cf/mod/sever_crossfit/<<$wod_video[$todays_crossfit_wod]>>.mp4"></video></center>'
+			'<center><video autoplay loop src="<<$crossfit_north_image_dir>><<$wod_video[$todays_crossfit_wod]>>.mp4"></video></center>'
 			current_wod_score = max(1,(100 - ((100 * pcs_health * (rand(40,100) + pcs_sleep  + pcs_vital + pcs_agil + pcs_stren))/ (healthmax * 500))))
 			cla
 			act 'Check your score':
 				cla
-				$resultstring = func('crossfit_sever_record', 'recordstring', $todays_crossfit_wod,  current_wod_score)
+				$resultstring = func('crossfit_north_record', 'recordstring', $todays_crossfit_wod,  current_wod_score)
 				'You successfully finish the workout <<$todays_crossfit_wod>> in <<$resultstring>>'
 				if personal_wod_record[$todays_crossfit_wod] = 0:
 					personal_wod_record[$todays_crossfit_wod] = current_wod_score
@@ -60,7 +61,7 @@ if $ARGS[0] = 'box':
 					$box_wod_record_holder[$todays_crossfit_wod] = $pcs_nickname
 				elseif current_wod_score < box_wod_record[$todays_crossfit_wod]:
 					'Not only that, it''s also a new best record for the whole box!'
-					$prevrecordstring = func('crossfit_sever_wod', 'recordstring', $todays_crossfit_wod, box_wod_record[$todays_crossfit_wod])
+					$prevrecordstring = func('crossfit_north_wod', 'recordstring', $todays_crossfit_wod, box_wod_record[$todays_crossfit_wod])
 					if $box_wod_record_holder[$todays_crossfit_wod] ! $pcs_nickname:
 						$previous_record_holder = $box_wod_record_holder[$todays_crossfit_wod]
 						'You beat <<$previous_record_holder>>''s record of <<$prevrecordstring>>'
@@ -83,4 +84,4 @@ if $ARGS[0] = 'box':
 	end
 end
 
---- crossfit_sever_box ---------------------------------
+--- crossfit_north_box ---------------------------------

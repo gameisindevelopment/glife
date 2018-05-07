@@ -1,4 +1,4 @@
-# crossfit_sever_wod
+# crossfit_north_wod
 
 !! set up wods
 if $ARGS[0] = 'setup_wod':
@@ -7,12 +7,12 @@ if $ARGS[0] = 'setup_wod':
 	killvar 'wod_max_score'
 	killvar '$wod_type'
 	killvar '$wod_video'
-	gs 'crossfit_sever_wod', 'add_wod', 'Fran', 120, 600, 'for_time', 'pullup'
-	gs 'crossfit_sever_wod', 'add_wod', 'Nancy', 600, 1200, 'for_time', 'ohs'
-	gs 'crossfit_sever_wod', 'add_wod', 'Isabel', 90, 600, 'for_time', 'snatch'
-	gs 'crossfit_sever_wod', 'add_wod', 'Open 17.1', 600, 1200, 'for_time', 'dumbbell_snatch'
-	gs 'crossfit_sever_wod', 'add_wod', 'Open 16.1', 1300, 100, 'for_rounds', 'overhead_lunge'
-	gs 'crossfit_sever_wod', 'add_wod', 'Karen', 300, 720, 'for_time', 'wallball'
+	gs 'crossfit_north_wod', 'add_wod', 'Fran', 120, 600, 'for_time', 'pullup'
+	gs 'crossfit_north_wod', 'add_wod', 'Nancy', 600, 1200, 'for_time', 'ohs'
+	gs 'crossfit_north_wod', 'add_wod', 'Isabel', 90, 600, 'for_time', 'snatch'
+	gs 'crossfit_north_wod', 'add_wod', 'Open 17.1', 600, 1200, 'for_time', 'dumbbell_snatch'
+	gs 'crossfit_north_wod', 'add_wod', 'Open 16.1', 1300, 100, 'for_rounds', 'overhead_lunge'
+	gs 'crossfit_north_wod', 'add_wod', 'Karen', 300, 720, 'for_time', 'wallball'
 end
 
 if $ARGS[0] = 'Fran':
@@ -68,4 +68,4 @@ if $ARGS[0] = 'add_wod':
 	$wod_video[$ARGS[1]] = $ARGS[5]
 end
 
---- crossfit_sever_wod ---------------------------------
+--- crossfit_north_wod ---------------------------------
