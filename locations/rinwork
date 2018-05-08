@@ -24,9 +24,6 @@ $location_type = 'event_outdoors'
 !NadiaQW 		?
 !
 
-
-
-
 if $ARGS[0] = 'start':
 	$metka = 'start'
 	$loc = 'rinwork'
@@ -542,9 +539,9 @@ if $ARGS[0] = 'start':
 			if poktiprand = 2:$pokup = 'A teenage boy approaches your stall.' & $poktip = 'Boy' & pokti = 3
 			if poktiprand = 3:$pokup = 'A woman approaches your stall.' & $poktip = 'Woman' & pokti = 1
 			if poktiprand = 4:$pokup = 'A girl approaches your stall.' & $poktip = 'Girl' & pokti = 2
-			if poktiprand = 5:$pokup = 'A teen girl approaches your stall.' & $poktip = 'Girlfriend' & pokti = 3
-			if poktiprand = 6:$pokup = 'An old man  approaches your stall.' & $poktip = 'Old man' & pokti = 0
-			if poktiprand = 7:$pokup = 'A Grandma  approaches your stall.' & $poktip = 'Granny' & pokti = 0
+			if poktiprand = 5:$pokup = 'A teen girl approaches your stall.' & $poktip = 'Teen girl' & pokti = 3
+			if poktiprand = 6:$pokup = 'An old man approaches your stall.' & $poktip = 'Old man' & pokti = 0
+			if poktiprand = 7:$pokup = 'A Grandma approaches your stall.' & $poktip = 'Old woman' & pokti = 0
 		end
 
 		'<b><<$pokup>></b>'
@@ -598,9 +595,9 @@ if $ARGS[0] = 'answerrin':
 		if pokvnirand = 0:
 			pokpay = rand(1000, 1200)
 		elseif pokvnirand = 1:
-			pokpay = rand(1200, 1500)
+			pokpay = rand(1100, 1300)
 		elseif pokvnirand = 2:
-			pokpay = rand(1500, 2000)
+			pokpay = rand(1300, 1500)
 		end
 		'<<$poktip>> asks you for a price'
 		gs 'rinwork', 'tellprice'

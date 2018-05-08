@@ -768,6 +768,17 @@
       <Location name="obekt2"/>
       <Location name="dangeon"/>
     </Folder>
+    <Folder name="Bar Rabotnik">
+      <Location name="qwBarPolet"/>
+      <Location name="qwBarPoletToilet"/>
+      <Location name="qwBarBilliard"/>
+      <Location name="qwBarBilliard2"/>
+      <Location name="qwBarEncounters"/>
+      <Location name="MartinTalk"/>
+      <Location name="MartinSex"/>
+      <Location name="MartinSex2"/>
+      <Location name="MartinSex3"/>
+    </Folder>
     <Folder name="North Road">
       <Location name="dachain"/>
       <Location name="dachamy"/>
@@ -883,8 +894,6 @@
       <Location name="carF1"/>
     </Folder>
     <Folder name="Quest">
-      <Location name="qwBarPolet"/>
-      <Location name="qwBarPoletToilet"/>
       <Location name="qwIzoldaApp"/>
       <Location name="qwloc"/>
       <Location name="qwmeet"/>

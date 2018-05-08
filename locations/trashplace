@@ -208,8 +208,8 @@ if bumtolik = 3 and hour >= 6 and hour <= 20 and rand(0, 1) = 1:
 	act 'Ask what she''s upto':gt'musorkaexh','pos9'
 end
 
-if musor > 0:
-	act 'Take out trash':
+if musor > 3:
+	act 'Take out the trash':
 		cls
 		musor = 0
 

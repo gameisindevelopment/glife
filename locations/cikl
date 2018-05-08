@@ -54,6 +54,9 @@ if (film > 0 or pornstack = 1) and pfilmNO = 0 and pfilmSTOP = 0:
 	gs 'pornschedule', 'schedule'
 end
 
+!!modelling job check
+if model_week ! (daystart - week) / 7:model_job_week = 0
+
 !!acting strings to set available jobs
 if casting = 1:
 	acting_string1 = rand(10000000000,199999999999)
@@ -1079,10 +1082,10 @@ if day = 25:
 
 	if home_owned[1] > 0 and electroday = 0:
 		electroday = 1
-		if elektro >= 800:elektro = 800 + rand(0, 100)
+		if elektro >= 2000:elektro = 2000 + rand(0, 100)
 
 		money -= elektro
-		'<b><font color="red">You paid <<elektro>> for electricity.</font></b>'
+		'<b><font color="red">You paid <<elektro>> for utilities.</font></b>'
 	end
 
 	if home_owned[1] > 0 and kabel > 0 and kabelday = 0:kabelday = 1 & money -= 300 & '<b><font color="red">You have paid 300 <b>₽</b> for cable TV.</font></b>'

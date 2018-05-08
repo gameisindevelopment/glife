@@ -71,6 +71,7 @@ if $ARGS[0] = 'peek':
 		if sub < 30: act 'Scream': gt 'brother', 'brother_go_away'
 		act 'Let him look': gt 'brother', 'brother_voyeur_ev1'
 		act 'Invite him in for a chat':gt 'brother_voyeur','showertalk1'
+		if brother_shower_times > 0:act'Invite him into the shower with you':gt'brother_voyeur','brother_shower_together'
 		if brothershowertalk > 0:act'Tell him you''re too busy to talk':gt'brother_voyeur','showertalkbusy'
 		exit
 	end
