@@ -89,7 +89,7 @@ if $ARGS[0] = '':
 			'Far from empty already, the bar keeps filling at an astounding rate as people look to spend their day off in the familiar comfort of the bar they visit every other day of the week, where the barman is burly, the men rowdy and the women ugly, but at least the beer tastes less like piss than it does in most other bars in the area.'
 		elseif hour >= 21 and (hour <=23 and minut < 45) and (week < 5 or week = 7):
 			'With the hour getting late and tomorrow being a workday, you are not surprised to see people trickle out of the bar, some walking straight, some stumbling, but all heading home. Still, what people are left manage to be fairly loud. A group of men playing billiards seems to be mainly responsible for it, but among the men who are quietly drinking and talking among themselves, there are some louder, less inhibited and supposedly drunker specimens.'
-		elseif hour >= 21 and (hour <=23 and minut < 45) and (week = 5 or week = 6)
+		elseif hour >= 21 and (hour <=23 and minut < 45) and (week = 5 or week = 6):
 			'The hour may be getting late, but few of the people here seem concerned with going home anytime soon, enjoying the weekend the best way they can: With friends, at a bar, and well on their way to getting shitfaced, so it doesn''t come as a surprise that the bar is one of the noisiest places on the block right now. A group of men playing billiards seems to be mainly responsible for the racket, but even in the main room, the men who are quietly drinking and talking among themselves are in the minority tonight.'
 		end
 		*nl
