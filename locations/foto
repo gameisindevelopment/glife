@@ -38,7 +38,7 @@ end
 if $ARGS[0] = 'studio':
 	*clr & cla
 	killvar '$modelopt'
-	if model_week ! (daystart - week) / 7:model_job_week = 0
+
 	if special_model < city_modelling and modelfoto_pussy > 0 and hour < 15 and fame_model_event < daystart:gt 'foto_events','fame'
 	if special_skill_model < pcs_mdlng and modelfoto_pussy > 0 and hour < 15 and skill_model_event < daystart:gt 'foto_events','skill'
 	
