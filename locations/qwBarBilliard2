@@ -14,7 +14,7 @@ end
 if $ARGS[0] = 'VicArt_Ev1_Cash':
 	cls
 	minut += 20
-	pool_exp += rand(1,2)
+	pool_exp += rand(2,4)
 	!picture (gif of breaking the balls?)
 	
 	!pool2.jpg - see PBB event
@@ -116,7 +116,7 @@ if $ARGS[0] = 'VicArt_Ev1_Broke':
 		act 'Deal - If I lose, I strip':
 			cls
 			minut += 20
-			pool_exp += rand(1,2)
+			pool_exp += rand(2,4)
 			!picture (gif of breaking the balls?)
 			'There''s a difference between fantasizing about getting caught in a public place and actually getting caught. And there''s a world of difference between getting caught by people you don''t know and will never see again and people you might run into again and again, some of which you might know.'
 			*nl
