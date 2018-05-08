@@ -38,9 +38,8 @@ if $ARGS[0] = 'billiard_ev1':
 		if billwin > 16:
 			act 'Win':
 				cls
-				!check pictures?
 				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/poolw.jpg"></center>'
-				pool_exp += rand(1,3)
+				pool_exp += rand(2,5)
 				money += 2500
 				killvar 'billiard_ev_var'
 				minut += 30
@@ -56,9 +55,9 @@ if $ARGS[0] = 'billiard_ev1':
 		
 		else
 			act 'Lose':
-				cla
-				*nl
-				pool_exp += rand(1,3)
+				cls
+				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pooll.jpg"></center>'
+				pool_exp += rand(2,5)
 				money -= 2500
 				killvar 'billiard_ev_var'
 				minut += 30
@@ -115,7 +114,6 @@ if $ARGS[0] = 'billiard_ev1':
 					act 'You''re on':
 						cla
 						*nl
-						!Check pictures?
 						'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pool2.jpg"></center>'
 						billiard_ev_var = 2
 						'<i>I can take him</i>, you think to yourself, <i>and even if I can''t, it''s just a blow job.</i>' 
@@ -142,12 +140,11 @@ if $ARGS[0] = 'billiard_ev1':
 		if billwin > 16:
 			act 'Win':
 				cls
-				pool_exp += rand(1,3)
+				pool_exp += rand(2,5)
 				money += 2500
 				killvar 'billiard_ev_var'
 				minut += 30
 				gs 'stat'
-				!Check pictures?
 				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/poolw.jpg"></center>'
 				'He comes out strong and plays really well, but you play just a tiny bit better and manage to win the round by a hair.' 
 				*nl
@@ -161,21 +158,20 @@ if $ARGS[0] = 'billiard_ev1':
 		else
 			act 'Lose':
 				cls
-				pool_exp += rand(1,3)
+				pool_exp += rand(2,5)
 				money -= 2500
 				killvar 'billiard_ev_var'
 				minut += 30
 				gs 'stat'
-				!check pictures?
-				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pool2.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pooll.jpg"></center>'
 				'He is good - really good. In fact, you think he has been holding back a bit until now: He rarely misses a shot, sets up obstacles for you, and before long, he has won the game.' 
 				*nl
 				'"Guess I''m getting that blowjob," he says with a smug smile.'
 				'You made that bet willingly but you are getting the distinct feeling that he hustled you...'
 				
 				act 'Refuse':
-					cla
-					*nl
+					cls
+					'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/poolr.jpg"></center>'
 					'You shake your head. "I''m not sucking your dick. You scammed me."'
 					'You turn to walk off, but his eyes flash with anger and he grabs your arm. "You''re not going anywhere. You made a bet, sweetheart, and you lost, so pay up."' 
 					'"Let me go!" '
@@ -191,11 +187,9 @@ if $ARGS[0] = 'billiard_ev1':
 					'"Yeah, I did," you confess quietly.'
 					'"Alright." Martin pauses for a second. "Leave."'
 					
-					!!WHEN WOULD HE THROW SVETA OUT?
 					if npc_rel['A216'] < 20 or MartinLie = 1:
-					
+					!!WHEN WOULD HE THROW SVETA OUT?
 					!SHOULD MartinLie GET KILLED AT SOME POINT?
-					
 						cla
 						*nl
 						npc_rel['A216'] -= 1
@@ -246,6 +240,7 @@ if $ARGS[0] = 'billiard_ev1':
 							'For a moment, you wonder how far he would go. Reluctant as he is, you doubt that he''d go as far as screwing you over the billiard table while there are people in the bar. He seems to be on the verge of agreeing to a blowjob, though, if you are bold or horny enough to push him...'
 							
 							act 'Back off':
+								cla
 								npc_rel['A216'] += 1
 								'You not and remove your hand from his swelling cock.' 
 								'"Okay, if that''s what you want."'
@@ -254,6 +249,7 @@ if $ARGS[0] = 'billiard_ev1':
 								'"I''ll see what I can do," you say noncommittaly, give him a smile and leave him to calm down.'
 								
 								act 'Return to the bar': gt 'qwBarPolet'
+							end
 							
 							if pcs_dom >= 30 and pcs_exhibition >= 50:
 								$martinpos = 'But I want to'
@@ -264,7 +260,7 @@ if $ARGS[0] = 'billiard_ev1':
 							if (pcs_horny >= 80 and pcs_exhibition >= 30) or (pcs_dom >= 30 and pcs_exhibition >= 50):
 								act '<<$martinpos>>':
 									cls
-									!pictures
+									'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/poolm1.jpg"></center>'
 									gs 'boyStat', 'A216'
 									npc_rel['A216'] += 1
 									
@@ -287,7 +283,7 @@ if $ARGS[0] = 'billiard_ev1':
 									
 									act 'Make Martin come':
 										cls
-										!pictures
+										'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/poolm2.jpg"></center>'
 										if pcs_exhibition <= 30:
 											pcs_exhibition += rand(0,2)
 										else
@@ -374,10 +370,10 @@ if $ARGS[0] = 'billiard_ev2':
 			act 'Play a round':
 				cls
 				minut += 20
-				pool_exp += rand(1,2)
+				pool_exp += rand(3,5)
 				pcs_mood += rand(1,3)
 				Jaska_Friend_Bill = 1
-				!picture (gif of breaking the balls?)
+				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pool2.jpg"></center>'
 				'Time flies when you''re having fun and, as sleazy as the two - they introduce themselves as Artyom and Victor - come across, they are pretty decent company once you get used to their bawdy comments.'
 				'The game ends up being quite close as you take shots on your own while they play together. You end up winning closely.'
 				*nl
@@ -391,10 +387,10 @@ if $ARGS[0] = 'billiard_ev2':
 					act 'Sure, let''s play':
 						cls
 						minut += 20
-						pool_exp += rand(1,2)
+						pool_exp += rand(3,5)
 						pcs_mood += rand(3,5)
 						money += 1000
-						!picture
+						'<center><video src="images/locations/city/industrial/bar/sex/pool/pool4.mp4"></center>'
 						'"Sure, I''m game if you are." You rummage through your ' + iif(bag>0,'purse','pocket') + ' and put a couple of bills on the table. Your two opponents quickly follow suit and set up the game.'
 						*nl
 						'The following game is close and it''s clear that Artyom and Victor are very skilled players, but Victor fumbles a shot or two towards the end of the game, which greatly upsets Artyom, and his mistakes are enough to bring you victory.'
@@ -425,9 +421,9 @@ if $ARGS[0] = 'billiard_ev2':
 						act 'Sure, let''s play':
 							cls
 							minut += 20
-							pool_exp += rand(1,2)
+							pool_exp += rand(3,5)
 							pcs_mood += rand(1,3)
-							!picture (gif of breaking the balls?)
+							'<center><video src="images/locations/city/industrial/bar/sex/pool/pool4.mp4"></center>'
 							'You agree to play another friendly match. You cannot help but notice the scowl on Artyom''s face, and it seems to have very little to do with the fact that you are, once again, coming out ahead at the end.'
 							'Victor once again applauds your skill while Artyom merely gives you an acknowledging nod. Victor seems annoyed at his friend''s bad mood but doesn''t let it keep himself from having a friendly chat with you for a few minutes.'
 							'"You know where to find us if you wanna play," Victor emphasizes as you give them your goodbye.'
@@ -515,7 +511,7 @@ if $ARGS[0] = 'billiard_ev2':
 	
 		
 	elseif bill_rand > 2:
-		!picture
+		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pool3.jpg"></center>'
 		'You enter the backroom. The group of three inside turn to greet you and you strike up a conversation with them as they finish the round they''ve been playing.'
 		if bill_rand > 3:
 			'You notice a small pile of bills sitting on the edge of the table. It''s no fortune by any stretch but these guys seem to enjoy a little wager.'
@@ -530,7 +526,7 @@ if $ARGS[0] = 'billiard_ev2':
 				'"How about we make this more interesting?" You suggest. "We could play for money. Maybe like 300 rubles each?"'
 				
 				if bill_rand > 3:
-					if pool_exp >= 60: temp = rand(1,4)
+					if pcs_pool >= 60: temp = rand(1,4)
 					if temp = 1:
 						'One of them shakes their head. "I don''t think so. I know you. You play way too well."'
 						'"Yeah, I don''t think I wanna play for money with you either," another one agrees.'
@@ -548,11 +544,11 @@ if $ARGS[0] = 'billiard_ev2':
 					'"It''s been a long day," one of them explains, "and I don''t think any of us are really up for a wager tonight, even if it''s a small one. We''d rather just have a good time, no risk involved."'
 									
 					act 'Have a friendly match instead':
-						pool_exp += rand(0,1)
+						pool_exp += rand(1,4)
 						pcs_mood += rand(1,3)
 						minut += 30
 						temp = rand(1,4)
-						!picture
+						'<center><video src="images/locations/city/industrial/bar/sex/pool/pool4.mp4"></center>'
 						'You agree to playing a friendly match instead, though you have to admit you would have liked to maybe make a little money this way.'
 						*nl
 						gs 'qwBarBilliard','billiard_friendly'
@@ -565,11 +561,11 @@ if $ARGS[0] = 'billiard_ev2':
 		
 		act 'Suggest a friendly match':
 			cls
-			pool_exp += rand(0,1)
+			pool_exp += rand(1,4)
 			pcs_mood += rand(1,3)
 			minut += 30
 			temp = rand(1,4)
-			!picture
+			'<center><video src="images/locations/city/industrial/bar/sex/pool/pool4.mp4"></center>'
 			'You suggest playing a friendly match and they agree to keep money out of this.'
 			*nl
 			gs 'qwBarBilliard','billiard_friendly'
@@ -581,7 +577,7 @@ if $ARGS[0] = 'billiard_friendly':
 	if temp <= 2:
 		'The following match is slow but enjoyable, thanks to the cheerful conversation you are having with the guys as you wait for whoever''s turn it is to take their shot.'
 		if temp = 1:
-			pool_exp += rand(0,1)
+			pool_exp += rand(1,4)
 			'But you and the guys end up trying to do trick-shots to impress each other. Most of them fail spectacularly but those that work are quite impressive.'
 		else
 			'As it turns out, the guys are pretty terrible at billiards. You don''t exactly play like a champ yourself but their shots are remarkably badly aimed. That would have been a great boost in confidence if you didn''t catch two of them staring at your ass as you bent over for your final shot - maybe they were just distracted?'
@@ -606,9 +602,9 @@ end
 
 if $ARGS[0] = 'billiard_money':
 	cls 
-	pool_exp += rand(0,1)
+	pool_exp += rand(1,4)
 	minut += 30
-	!picture
+	'<center><video src="images/locations/city/industrial/bar/sex/pool/pool4.mp4"></center>'
 	'You give it your best shot. True, there''s not a lot of money riding on this, but losing money is never fun.'
 	*nl
 	gs 'qwBarBilliard', 'billiard_engine'
