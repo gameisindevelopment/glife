@@ -562,7 +562,7 @@ end
 
 if $ARGS[0] = 'bathroom':
 	$locM = 'foto'
-	$metkaM = 'makeup'
+	$metkaM = 'bathroom'
 	gs'stat'
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/models.jpg"></center>'
