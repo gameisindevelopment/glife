@@ -201,7 +201,7 @@ if $ARGS[0] = '':
 					act 'Return to the bar': gt 'qwBarPolet'
 				end
 				
-				if money > 2500:
+				if money >= 2500:
 					act 'Accept':
 						*clr
 						cla
