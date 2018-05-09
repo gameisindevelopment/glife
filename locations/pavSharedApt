@@ -820,7 +820,7 @@ if $ARGS[0] = 'pcsRoom':
 	gs 'pavSharedApt', 'update'
 
 	'<center><b><font color="maroon">Living Room</font></b></center>'
-	'<center><img <<$set_imgh>> src="images/shared/home/bedroom/sofabed.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/shared/sharedapt/bedroom/sofabed.jpg"></center>'
 	''
 	'The living room wasn''t in use by the other apartment occupants, so it is now rented to use as a bedroom. It''s sparsly decorated, with, a <a href="exec:gt ''bed'', ''start''">sofabed</a>, against the back wall.'
 	''
@@ -837,7 +837,7 @@ if $ARGS[0] = 'pcsRoom':
 	''
 	'On the other side of the sofabed are your old <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcases</a>, which you could use to store the clothes you don''t often wear.'
 	''
-	'There is no door to the living room, instead there''s <a href="exec:view''images/shared/home/bedroom/curtain.jpg''">curtain</a> covering entry to the room, which gives you a modicum of privacy; not much better than the state of the non-existant window curtains'
+	'There is no door to the living room, instead there''s <a href="exec:view''images/shared/sharedapt/bedroom/curtain.jpg''">curtain</a> covering entry to the room, which gives you a modicum of privacy; not much better than the state of the non-existant window curtains'
 
 	act 'Sit on the sofabed':
 		*clr & cla
