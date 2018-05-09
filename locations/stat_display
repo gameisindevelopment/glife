@@ -1245,12 +1245,12 @@ if StoryLine = 1:
 	if nerd_night_game = 1 and nerd_night_game_day = daystart and hour > 15 and hour < 21: $stat_msg += '<BR><b>Join nerds at the community center at eight</b>'
 end
 
-if model > 0 and model_week = (daystart - week) / 7 and model_job_week > 2:
+if model > 0 and model_week = (daystart - week) / 7 and model_job_week >= 2:
 	$stat_msg += '<BR><b>You have no more modelling jobs available this week.</b>'
-elseif model > 0 and model_week < (daystart - week) / 7 and model_job_week < 1:
-	$stat_msg += '<BR><b>You can get paid for 2 modelling jobs this week.</b>'
 elseif model > 0 and model_week < (daystart - week) / 7 and model_job_week = 1:
 	$stat_msg += '<BR><b>You can get paid for 1 more modelling job this week.</b>'
+elseif model > 0 and model_week < (daystart - week) / 7 and model_job_week < 1:
+	$stat_msg += '<BR><b>You can get paid for 2 modelling jobs this week.</b>'
 end
 if pornstack > 0:
 	aa = 0

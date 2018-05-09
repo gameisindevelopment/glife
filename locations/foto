@@ -54,16 +54,16 @@ if $ARGS[0] = 'studio':
 		lcolor = rgb(106, 90, 205)
 	end
 	
-	if city_modelling >= 200 and city_modelling < 240: rank = 1
-	if city_modelling >= 240 and city_modelling < 280: rank = 2
-	if city_modelling >= 280 and city_modelling < 320: rank = 3
-	if city_modelling >= 320 and city_modelling < 360: rank = 4
-	if city_modelling >= 360 and city_modelling < 400: rank = 5
-	if city_modelling >= 400 and city_modelling < 440: rank = 6
-	if city_modelling >= 440 and city_modelling < 560: rank = 7
-	if city_modelling >= 560 and city_modelling < 620: rank = 8
-	if city_modelling >= 620 and city_modelling < 700: rank = 9
-	if city_modelling >= 700: rank = 10
+	if city_modelling >= 200 and city_modelling < 240:rank = 1
+	if city_modelling >= 240 and city_modelling < 280:rank = 2
+	if city_modelling >= 280 and city_modelling < 320:rank = 3
+	if city_modelling >= 320 and city_modelling < 360:rank = 4
+	if city_modelling >= 360 and city_modelling < 400:rank = 5
+	if city_modelling >= 400 and city_modelling < 440:rank = 6
+	if city_modelling >= 440 and city_modelling < 560:rank = 7
+	if city_modelling >= 560 and city_modelling < 620:rank = 8
+	if city_modelling >= 620 and city_modelling < 700:rank = 9
+	if city_modelling >= 700:rank = 10
 	
 	anastasia_in = rand(0,1)
 	mari_in = rand(0,1)
@@ -81,6 +81,8 @@ if $ARGS[0] = 'studio':
 	
 	if model = 1:
 		'You step onto the main floor of the studio, standing amongst the various sets and photographers who are working those sets.'
+		*nl
+		'Farther along are the studio''s collection of <a href="exec:gt ''foto_albums'',''model_portraits''">photo albums</a> of their top 10 models.'
 		*nl
 		'In various parts of the studios, you can see some of the other models who work here.'
 		if anastasia >= 2:
