@@ -167,7 +167,7 @@ if $ARGS[0] = '':
 					MartinSexTalkDay = daystart
 					pcs_mood -= 8
 					*nl
-					$OpenInnerThough+'Too young? Really?'+$CloseInnerThough
+					$OpenInnerThought+'Too young? Really?'+$CloseInnerThought
 					'Being treated like you are basically a child pisses you off to no end. Who is he to decide what is good or bad for you, anyway?'
 					'Well, if he wants some teenage drama, he can have it!'
 					*nl
@@ -328,7 +328,7 @@ if $ARGS[0] = '':
 				minut += 1
 				pcs_mood -= 8
 				*nl
-				OpenInnerThough+'I want to talk about this! I really, really do!'+$CloseInnerThough+' You tell yourself.'
+				$OpenInnerThought+'I want to talk about this! I really, really do!'+$CloseInnerThought+' You tell yourself.'
 				'... but that doesn''t mean it has to be today, right?'
 				*nl
 				'"Nevermind, it''s not urgent," you backpedal quickly. "I have to go now."'

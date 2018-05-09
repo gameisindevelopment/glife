@@ -118,7 +118,7 @@ if $ARGS[0] = '':
 		'As gruff and menacing as Martin looks and acts sometimes, it''s good to know that he will pull your leg and laugh about just like anybody else. His shell may be hard but there''s definitely more to him than that. You''re not sure that his core is soft, but whatever it is, it''s bound to be interesting. And as strange as this episode was, it feels like something changed, like, after chipping away at it for a while, you finally broke the ice.'
 		*nl
 		'And armed with that knowledge and a newfound ease, you chat and joke with Martin a while longer before another patron demands his attention.'
-		$OpenInnerThough+'Hm... Maybe I really should try and talk to him when he''s starting to clean up and close for the night - I think he starts throwing people out around quarter to Midnight.'+$CloseInnerThough
+		$OpenInnerThought+'Hm... Maybe I really should try and talk to him when he''s starting to clean up and close for the night - I think he starts throwing people out around quarter to Midnight.'+$CloseInnerThought
 		
 		act 'Finish your drink': gt 'qwBarPolet'
 				
@@ -432,7 +432,7 @@ if $ARGS[0] = '':
 		
 	elseif MartinTalkVar = 9 and npc_rel['A216'] >= 48:
 		MartinTalkVar = 10
-		'"Here you go." Martin puts your drink in front of you before you''ve even properly come to rest on the stool. '+$OpenInnerThough+'When your bartender has your drink ready by the time you order it, maybe you''ve been spending too much time in the bar,'+$CloseInnerThough+' you think to yourself.'
+		'"Here you go." Martin puts your drink in front of you before you''ve even properly come to rest on the stool. '+$OpenInnerThought+'When your bartender has your drink ready by the time you order it, maybe you''ve been spending too much time in the bar,'+$CloseInnerThought+' you think to yourself.'
 		*nl
 		'"How are you doing today?" You ask.'
 		'Martin shrugs. "Same as always: You kill a man, you move on."'
@@ -922,7 +922,7 @@ if $ARGS[0] = 'NotInUseRightNow':
 		'It hurts. You always kinda knew that he felt this way, and it''s not like you were pushing for a proposal or a baby, but to hear it still hurts.'
 		*nl
 		'He continues: "Maybe with a woman my age, one day, but not with a girl who..." He hesitates.' 
-		$OpenInnerThough+'Who is young enough to be my daughter?'+$CloseInnerThough+' You think.' 
+		$OpenInnerThought+'Who is young enough to be my daughter?'+$CloseInnerThought+' You think.' 
 		'"Who would outlive me by many years," he finishes the thought. "I want you to look for a man your age, a man you can have a future with."'
 		'"Maybe I want you," you say sulkily, "a future with you."'
 		'"Mi amor, you know how much I want you, and you can have me for as long as you wish... but a future?" He shakes his head, a sad look on his face. "That''s not in the cards for us."'
@@ -975,7 +975,7 @@ if $ARGS[0] = 'MartinTalkApartment':
 		'"Well, it''s not ''my'' apartment. I just live in a room in it. It''s a bit complicated, but basically, I get to live in the city center, rent-free."'
 		*nl
 		'Martin laughs. "Well, you definitely make it sound complicated. Good for you. But," he turns serious once more, "nothing like that is ever truly ''free'', so... be careful."'
-		$OpenInnerThough+'He wouldn''t be Martin if he didn''t tell me to "watch out" at least once a day,'+$CloseInnerThough+' you think and roll your eyes, but still nod yes at him before he has to get back to work.'
+		$OpenInnerThought+'He wouldn''t be Martin if he didn''t tell me to "watch out" at least once a day,'+$CloseInnerThought+' you think and roll your eyes, but still nod yes at him before he has to get back to work.'
 	
 	elseif student > 0:
 		'"I have a room in one of the university dormitories, actually. I wouldn''t call it ''living'', though."'
@@ -984,7 +984,7 @@ if $ARGS[0] = 'MartinTalkApartment':
 		'"Yeah, but that doesn''t earn any money, and probably won''t for some time, so..." You shrug.'
 		'Martin nods understandingly. "I get it. At least you have a place to live near the center. Though it can get pretty wild there during the weekend, I heard," he comments, "and drunk people can be unpredictable. So, you watch yourself, okay?"'
 		*nl
-		$OpenInnerThough+'He wouldn''t be Martin if he didn''t tell me to "watch out" at least once a day,'+$CloseInnerThough+' you think and roll your eyes, but still smile and say "I always do" before he has to get back to work.'
+		$OpenInnerThought+'He wouldn''t be Martin if he didn''t tell me to "watch out" at least once a day,'+$CloseInnerThought+' you think and roll your eyes, but still smile and say "I always do" before he has to get back to work.'
 	
 	elseif StoryLine = 1 and ParHomeBlock = 0:
 		'"I still live with my parents, in Pavlovsk," you admit.'

@@ -217,7 +217,7 @@ if $ARGS[0] = 'MartinSexDyn'
 	
 	*nl	
 	if tabletkishot < 1 and pillcon2 < 30000: 
-		'The thought that you could get pregnant is still present in the back of your head, now that Martin''s dick is deep inside you, but you have long passed the point of no return. <<$OpenInnerThough>>I can always have him pull out,<<$CloseInnerThough>> you think to yourself and allow the thought to fade as you give in to the sensations that flood your senses.'
+		'The thought that you could get pregnant is still present in the back of your head, now that Martin''s dick is deep inside you, but you have long passed the point of no return. <<$OpenInnerThought>>I can always have him pull out,<<$CloseInnerThought>> you think to yourself and allow the thought to fade as you give in to the sensations that flood your senses.'
 	end
 	
 	*nl	
@@ -516,7 +516,7 @@ if $ARGS[0] = 'MartinSexDyn'
 					'"Shit, I think the condom slipped off," Martin curses under his breath. A shiver runs through you as you realize that you have a used condom stuck inside you and could just have been impregnated after all.'
 				elseif sexcontra = 5 and preziktype = 0: 
 					'"Shit, I think the condom slipped off," Martin curses under his breath.' 
-					'"Don''t worry," you say with a comforting smile, "I''m on the pill." <<$OpenInnerThough>>Still need to get that condom out of my vagina though,<<$CloseInnerThough>> you think to yourself.'
+					'"Don''t worry," you say with a comforting smile, "I''m on the pill." <<$OpenInnerThought>>Still need to get that condom out of my vagina though,<<$CloseInnerThought>> you think to yourself.'
 				elseif sexcontra = 7:
 					'"Shit, I think the condom broke," Martin curses under his breath.' 
 					'"Don''t worry," you say with a comforting smile, "I''m on the pill." It was a blatant lie, of course - you poked those holes into the condom and no hormone would get in the way of that sperm.'
@@ -686,13 +686,13 @@ if $ARGS[0] = 'MartinAnalDyn':
 					*nl
 					'It takes a while like this, but after a few minutes of slow up-and-down, your butt cheeks meet his pelvis for the first time and you feel wonderfully full. Martin''s groan causes you to look back at him and you grin when you see the expression on his face: It is one of pure bliss. The bartender seems completely overwhelmed by the fact that a young, beautiful woman is riding his dick with her ass.'
 					*nl
-					'<<$OpenInnerThough>You ain''t seen nothing yet<<$CloseInnerThough>>, you think to yourself and lift yourself up. This time, however, you push down faster. Up again and, encouraged by the lack of pain the first time around, you slam your ass down, slapping against Martin''s hips as you take him balls-deep.'
+					'<<$OpenInnerThought>>You ain''t seen nothing yet<<$CloseInnerThought>>, you think to yourself and lift yourself up. This time, however, you push down faster. Up again and, encouraged by the lack of pain the first time around, you slam your ass down, slapping against Martin''s hips as you take him balls-deep.'
 				else
 					'Truth be told, even without the lube your asshole would have been wide enough to accommodate Martin''s dick, but with the lube, you don''t have to hold back: Feeling like a pornstar, you take his cock inside your ass and, without pausing, keep lowering yourself until you feel his hips against your ass cheeks.'
 					*nl
 					'You feel incredibly full, and a single look over the shoulder confirms that Martin is no less pleased: He is looking at where you are connected, spell-bound by the sight of his cock hilted in your ass.'
 					*nl
-					'<<$OpenInnerThough>You ain''t seen nothing yet<<$CloseInnerThough>>, you think to yourself and lift yourself up. This time, however, you push down faster. Up again and, encouraged by the lack of pain the first time around, you slam your ass down, slapping against Martin''s hips as you take him balls-deep again.'
+					'<<$OpenInnerThought>>You ain''t seen nothing yet<<$CloseInnerThought>>, you think to yourself and lift yourself up. This time, however, you push down faster. Up again and, encouraged by the lack of pain the first time around, you slam your ass down, slapping against Martin''s hips as you take him balls-deep again.'
 				end
 		
 			elseif pcs_ass >= dick:	
@@ -700,7 +700,7 @@ if $ARGS[0] = 'MartinAnalDyn':
 				*nl			
 				'You feel incredibly full, and a single look over the shoulder confirms that Martin is no less pleased: He is looking at where you are connected, spell-bound by the sight of his cock hilted in your ass.'
 				*nl
-				'<<$OpenInnerThough>You ain''t seen nothing yet<<$CloseInnerThough>>, you think to yourself and lift yourself up. This time, however, you push down faster. Up again and, encouraged by the lack of pain the first time around, you slam your ass down, slapping against Martin''s hips as you take him balls-deep again.'
+				'<<$OpenInnerThought>>You ain''t seen nothing yet<<$CloseInnerThought>>, you think to yourself and lift yourself up. This time, however, you push down faster. Up again and, encouraged by the lack of pain the first time around, you slam your ass down, slapping against Martin''s hips as you take him balls-deep again.'
 		
 			else
 				gt 'MartinSex2', 'PainalDyn'
@@ -860,7 +860,7 @@ if $ARGS[0] = 'PainalDyn':
 			'Maybe this wasn''t such a good idea after all?'
 			*nl
 		end		
-		iif($martinpos='rev_cowgirl','But f','F') + 'eeling both stubborn and horny, you think <<$OpenInnerThough>>fuck it, I can do this<<$CloseInnerThough>>, literally, anally.'
+		iif($martinpos='rev_cowgirl','But f','F') + 'eeling both stubborn and horny, you think <<$OpenInnerThought>>fuck it, I can do this<<$CloseInnerThought>>, literally, anally.'
 		'Trying to help move things along with a little more spit, you push against Martin''s cock once more, ignoring the unpleasant sensations that go with it. You succeed, too: His cock slips inside your asshole.'
 		*nl
 		

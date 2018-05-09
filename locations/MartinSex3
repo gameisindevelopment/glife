@@ -30,7 +30,7 @@ if $ARGS[0] = 'MartinBlowTease':
 			'You undo his fly as you kiss him, liberating his <<dick>>cm <<$dick_girth>> cock, rock-hard from the show you put on for him. With a wicked smile, you get down on your knees. He seems even bigger now that you''re face to face with him, and you''re only just getting to know him. You give its tips a few measured licks to gauge Martin''s reaction, closely observing his face.'
 			'Martin wears a mask of strained stoicism - he has caught on and seems to have no intention of letting you monopolize the control.'
 			*nl
-			$OpenInnerThough+'If that''s how you want to play it...'+$CloseInnerThough
+			$OpenInnerThought+'If that''s how you want to play it...'+$CloseInnerThought
 			'You close your eyes and take the head inside your mouth and slowly pull it out again, paying special attention that your <<$pcdesc_lipgloss>>, <<$pcdesc_lips>> lips massage every spot of it; and to top off your performance, you give a soft lascivious moan, just loud enough to sound involuntary.'
 			*nl
 			'This time, when you look up to him, you see that Martin has dropped all pretense of equilibrium. If you hadn''t shown him that you were in charge right now, you''re sure he would have already grabbed your head and started fucking your mouth.'
