@@ -1733,7 +1733,7 @@ if $ARGS[0] = 'model':
 			act 'Agree (2:00)':
 				*clr & cla
 				minut += 120
-				modelpayfin = 600 + (modelpay) + (25*rand(0,5)) + (pcs_apprnc)
+				modelpayfin = 600 + (modelpay) + (15*rand(0,5)) + (pcs_apprnc)
 				modelfoto_fashion += 1
 				mdlng_exp += rand(5,8)
 				city_modelling += rand(7,12)
@@ -1765,7 +1765,7 @@ if $ARGS[0] = 'model':
 				act 'Agree (2:00)':
 					*clr & cla
 					minut += 120
-					modelpayfin = 650 + (modelpay) + (35*rand(0,5))
+					modelpayfin = 650 + (modelpay) + (15*rand(0,5))
 					modelfoto_bikini += 1
 					city_modelling += rand(7,12)
 					pav_modelling += rand(1,city_modelling)/10
@@ -1818,7 +1818,7 @@ if $ARGS[0] = 'model':
 				act 'Agree (2:00)':
 					*clr & cla
 					minut += 120
-					modelpayfin = 650 + (modelpay) + (25*rand(0,5))
+					modelpayfin = 650 + (modelpay) + (15*rand(0,5))
 					modelfoto_ero_clo += 1
 					mdlng_exp += rand(5,10)
 					city_modelling += rand(7,12)
@@ -1844,7 +1844,7 @@ if $ARGS[0] = 'model':
 				act 'Agree (2:00)':
 					*clr & cla
 					minut += 120
-					modelpayfin = 650 + (modelpay) + (35*rand(0,5))
+					modelpayfin = 650 + (modelpay) + (15*rand(0,5))
 					modelfoto_lingerie += 1
 					mdlng_exp += rand(6,10)
 					city_modelling += rand(7,13)
@@ -1887,7 +1887,7 @@ if $ARGS[0] = 'nude_shoot':
 			*clr & cla
 			
 			minut += 120
-			modelpayfin = 700 + (modelpay) + (35*rand(0,5))
+			modelpayfin = 700 + (modelpay) + (15*rand(0,5))
 			modelfoto_nip += 1
 			mdlng_exp += rand(6,10)
 			city_modelling += rand(7,13)
@@ -1914,7 +1914,7 @@ if $ARGS[0] = 'nude_shoot':
 			*clr & cla
 			
 			minut += 120
-			modelpayfin = 700 + (modelpay) + (35*rand(0,5))
+			modelpayfin = 700 + (modelpay) + (15*rand(0,5))
 			modelfoto_nip += 1
 			mdlng_exp += rand(6,10)
 			city_modelling += rand(7,13)
@@ -1944,7 +1944,7 @@ if $ARGS[0] = 'nude_shoot':
 			act 'Agree (2:00)':
 				*clr & cla
 				minut += 120
-				modelpayfin = 750 + (modelpay) + (35*rand(0,5))
+				modelpayfin = 750 + (modelpay) + (15*rand(0,5))
 				modelfoto_nip += 1
 				modelfoto_topless += 1
 				mdlng_exp += rand(6,10)
@@ -1975,7 +1975,7 @@ if $ARGS[0] = 'nude_shoot':
 			act 'Agree (2:00)':
 				*clr & cla
 				minut += 120
-				modelpayfin = 800 + (modelpay * 2) + (35*rand(0,7))
+				modelpayfin = 800 + (modelpay * 2) + (15*rand(0,7))
 				modelfoto_nip += 1
 				modelfoto_topless += 1
 				modelfoto_nude += 1
@@ -2009,7 +2009,7 @@ if $ARGS[0] = 'nude_shoot':
 			act 'Agree (2:00)':
 				*clr & cla
 				minut += 120
-				modelpayfin = 800 + (modelpay * 2) + (35*rand(0,7))
+				modelpayfin = 800 + (modelpay * 2) + (15*rand(0,7))
 				modelfoto_nip += 1
 				modelfoto_nude += 1
 				modelfoto_pussy += 1
@@ -2045,7 +2045,7 @@ if $ARGS[0] = 'nude_shoot':
 			act 'Agree (2:00)':
 				*clr & cla
 				minut += 120
-				modelpayfin = 800 + (modelpay * 2) + (35*rand(0,7))
+				modelpayfin = 800 + (modelpay * 2) + (15*rand(0,7))
 				modelfoto_nip += 1
 				modelfoto_topless += 1
 				modelfoto_nude += 1
@@ -2082,7 +2082,7 @@ if $ARGS[0] = 'nude_shoot':
 			act 'Agree (2:00)':
 				*clr & cla
 				minut += 120
-				modelpayfin = 825 + (modelpay * 2) + (35*rand(0,7))
+				modelpayfin = 825 + (modelpay * 2) + (15*rand(0,7))
 				mdlng_exp += 10
 				city_modelling += rand(10,20)
 				pav_modelling += rand(0,city_modelling)/10
