@@ -783,7 +783,7 @@ if $ARGS[0] = '':
 		
 		act 'Finish your drink': gt 'qwBarPolet'	
 	
-	elseif MartinTalkVar = 11 and MartinSex = 1 and  and npc_rel['A216'] >= 65:
+	elseif MartinTalkVar = 11 and MartinSex = 1 and npc_rel['A216'] >= 65:
 		MartinTalkVar = 12
 		'Martin nods and a few seconds later, a drink sits in front of you.'
 		*nl

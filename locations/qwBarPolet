@@ -267,7 +267,7 @@ if $ARGS[0] = 'DrinkingBooze':
 	
 	else
 		if MartinTalkDay = 0:
-			act 'Order a drink and chat with Martin (150 <b>₽</b>)':
+			act 'Order the drink and chat with Martin':
 				MartinTalkDay = 1
 				npc_rel['A216'] += rand(1,2)
 				gt 'MartinTalk'
