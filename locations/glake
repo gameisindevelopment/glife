@@ -199,7 +199,6 @@ if temper >= 15 and month>=5 and month<=9 and hour>=6 and hour<=20:
 					'<center><img <<$set_imgh>> src="images/beast/dogcaine.jpg"></center>'
 					'As you lie down on your towel to catch some rays of sun and hopefully work on your tan a little, a stray dog appears out of nowhere. It keeps sniffing between your legs, which makes you feel very uncomfortable since you''re not wearing anything. You spend most of the hour trying to chase the dog away, but it comes back every time you think you got rid of it. You don''t get much sunbathing done as a result.'
 					act 'Give up on sunbathing':gt'glake'
-
 				else
 					cla
 					*clr
@@ -293,6 +292,10 @@ if temper >= 15 and month>=5 and month<=9 and hour>=6 and hour<=20:
 
 								act 'Walk away':gt 'glake'
 								exit
+							else
+								cla
+								'While you are sunbathing, three guys sit down near you. While you notice them looking at you and talking about your body, they don''t come over.'
+								act'Stop sunbathing':gt'glake'
 							end
 						elseif tipelakeboyrand <= 30:
 							!! {below is for when this event is fixed. Generates a boy[0], boy[1], and boy[2]}
@@ -322,7 +325,6 @@ if temper >= 15 and month>=5 and month<=9 and hour>=6 and hour<=20:
 							act 'Get away from him':gt'glake'
 							dynamic $gL_boy_z
 							exit
-
 						else
 							'While you are sunbathing, three guys sit down near you. While you notice them looking at you and talking about your body, they don''t come over.'
 							act 'Stop sunbathing':gt'glake'
