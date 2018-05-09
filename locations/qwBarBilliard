@@ -532,18 +532,20 @@ if $ARGS[0] = 'billiard_ev2':
 						'"Yeah, I don''t think I wanna play for money with you either," another one agrees.'
 						'"Suit yourselves," you shrug and turn to leave. Pity.'
 						
-						act 'Return to the bar': gt 'qwbarPolet'
+						act 'Return to the bar': gt 'qwBarPolet'
 					else
-					'"Sure," one of them agrees and his friends nod, "we can do another match for cash."'
-					'Without further ado, they set up the table again.'
+						'"Sure," one of them agrees and his friends nod, "we can do another match for cash."'
+						'Without further ado, they set up the table again.'
 					
-					act 'Play to win': gt 'qwBarBilliard','billiard_money'
+						act 'Play to win': gt 'qwBarBilliard','billiard_money'
+					end
 											
 				else
 					'Your suggestion seems to be making them really uncomfortable.'
 					'"It''s been a long day," one of them explains, "and I don''t think any of us are really up for a wager tonight, even if it''s a small one. We''d rather just have a good time, no risk involved."'
 									
 					act 'Have a friendly match instead':
+						cla
 						pool_exp += rand(1,4)
 						pcs_mood += rand(1,3)
 						minut += 30
