@@ -58,7 +58,6 @@ if $ARGS[0] = 'billiard_ev1':
 				cls
 				'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pooll.jpg"></center>'
 				pool_exp += rand(2,5)
-				money -= 2500
 				killvar 'billiard_ev_var'
 				minut += 30
 				gs 'stat'
@@ -71,6 +70,7 @@ if $ARGS[0] = 'billiard_ev1':
 					act 'Play again':
 						cla
 						*nl
+						money -= 2500
 						billiard_ev_var = 1
 						'"Alright, let''s play."'
 						'You ' + iif(bag > 0,'open your purse','reach into your pocket') + ' and pull out enough money to lay it down on the table. He grins, racks up the balls and lets you break again as he lays his money down on top of yours.'

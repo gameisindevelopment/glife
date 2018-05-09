@@ -203,6 +203,7 @@ if $ARGS[0] = '':
 				
 				if money > 2500:
 					act 'Accept':
+						*clr
 						cla
 						*nl
 						'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pool2.jpg"></center>'
@@ -248,6 +249,7 @@ if $ARGS[0] = '':
 						end
 						
 						act 'You''re on':
+							*clr
 							cla
 							*nl
 							'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pool2.jpg"></center>'
