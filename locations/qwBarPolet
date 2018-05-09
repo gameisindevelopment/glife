@@ -17,7 +17,7 @@ if $ARGS[0] = '':
 	alko_temp = alko
 	gs 'stat'
 	gs 'qwBarPolet', 'intro'
-		if orderDrink = 1:
+	if orderDrink = 1:
 		orderDrink = 0
 		gt 'qwbarPolet','DrinkingBooze'
 	end	
@@ -109,7 +109,8 @@ if $ARGS[0] = '':
 				*nl
 				'But honestly, you don''t want to talk to him at all right now - you are still too angry for that.'
 			end
-				
+		end
+		
 		act 'Order a snack':
 			if cumloc[7] > 0 or cumloc[10] > 0 or cumloc[11] > 0 or cumloc[13] > 0 or cumloc[16] > 0:
 				if pcs_exhibition < 60: 
@@ -331,6 +332,7 @@ if $ARGS[0] = 'Ordering':
 		end
 		
 		act 'I''m not that drunk':
+			cla
 			'"Come on, I''m not that drunk!" You insist. Unfortunately, instead of telling Martin, you were addressing the beer taps next to him. Oops.'
 			'"Well, I''m convinced," he replies sarcastically.'
 			*nl
