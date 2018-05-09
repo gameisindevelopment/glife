@@ -73,6 +73,9 @@ end
 !!update skills and attributes to pcs_ from there _lvl values plus adjustments based on condition
 gs 'stat_sklattrib_lvlset'
 
+!!Sleep variable cap
+if pcs_sleep > 100: pcs_sleep = 100
+
 
 !!!!!!!!!!!!!!!!!!!!!
 !!!Beginning Description!!!
