@@ -85,7 +85,7 @@ if $ARGS[0] = 'billiard_ev1':
 					*nl
 					'You shrug slightly and tell him you don''t have that much money on you. He nods in understanding, then looks around a bit before leaning in close. "We can play for something else, you know..."'
 					'You look at him suspiciously. "Like what?"'
-					'He gives you a relaxed, friendly smile. "If you win, you get the money. And if I win, you give me a blow job. Sound fair?"'
+					'He gives you a relaxed, friendly smile. "If you win, you get the money. And if I win, you give me a blowjob. Sound fair?"'
 					
 					if city_slut < 75 and (pcs_dom >= 20 or (pcs_exhibition < 20 and alko < 5) or pcs_horny < 30):
 						act 'Not that kind of girl':
@@ -116,7 +116,7 @@ if $ARGS[0] = 'billiard_ev1':
 						*nl
 						'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pool2.jpg"></center>'
 						billiard_ev_var = 2
-						'<i>I can take him</i>, you think to yourself, <i>and even if I can''t, it''s just a blow job.</i>' 
+						'<i>I can take him</i>, you think to yourself, <i>and even if I can''t, it''s just a blowjob.</i>' 
 						'With that in mind, you nod your head and tell him he''s on.'
 						gs 'qwBarBilliard', 'billiard_engine'
 						gs 'qwBarBilliard', 'billiard_ev1'
@@ -174,7 +174,7 @@ if $ARGS[0] = 'billiard_ev1':
 					'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/poolr.jpg"></center>'
 					'You shake your head. "I''m not sucking your dick. You scammed me."'
 					'You turn to walk off, but his eyes flash with anger and he grabs your arm. "You''re not going anywhere. You made a bet, sweetheart, and you lost, so pay up."' 
-					'"Let me go!" '
+					'"Let me go!"'
 					*nl
 					'You try and jerk free but you can''t, he is much stronger than he looks. Things get a little heated and you both get louder, but before things can escalate, Martin, with his uncanny ability to appear wherever he''s needed, walks in.'
 					'"You two need to calm down. What''s going on?" He asks, his tone calm but abrasive.'
@@ -195,7 +195,7 @@ if $ARGS[0] = 'billiard_ev1':
 						npc_rel['A216'] -= 1
 						'You look up and see Martin''s eyes rest on you. "Leave, now."'
 						'"But-"'
-						'"What about my payout?" The guy protests, but Martin doesn''t turn to him. That doesn''t diminish his threat any, though:'
+						'"What about my payout?" The guy protests, but Martin doesn''t turn to him. That doesn''t diminish his threat, though:'
 						'"You shut your mouth or I swear I will stuff it with those pool balls! <<$pcs_firstname>>, go."'
 						*nl
 						'Not wanting to make him say it once more, you quickly turn and walk towards the exit. Something about the disappointment you saw in Martin''s eyes doesn''t sit well with you, though. You got out of giving that blowjob, but you''re half-wondering if it hadn''t been better to give so you didn''t have to admit to Martin that you had taken that bet.'
@@ -532,18 +532,20 @@ if $ARGS[0] = 'billiard_ev2':
 						'"Yeah, I don''t think I wanna play for money with you either," another one agrees.'
 						'"Suit yourselves," you shrug and turn to leave. Pity.'
 						
-						act 'Return to the bar': gt 'qwbarPolet'
+						act 'Return to the bar': gt 'qwBarPolet'
 					else
-					'"Sure," one of them agrees and his friends nod, "we can do another match for cash."'
-					'Without further ado, they set up the table again.'
+						'"Sure," one of them agrees and his friends nod, "we can do another match for cash."'
+						'Without further ado, they set up the table again.'
 					
-					act 'Play to win': gt 'qwBarBilliard','billiard_money'
+						act 'Play to win': gt 'qwBarBilliard','billiard_money'
+					end
 											
 				else
 					'Your suggestion seems to be making them really uncomfortable.'
 					'"It''s been a long day," one of them explains, "and I don''t think any of us are really up for a wager tonight, even if it''s a small one. We''d rather just have a good time, no risk involved."'
 									
 					act 'Have a friendly match instead':
+						cla
 						pool_exp += rand(1,4)
 						pcs_mood += rand(1,3)
 						minut += 30

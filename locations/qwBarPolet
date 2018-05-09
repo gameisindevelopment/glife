@@ -17,7 +17,7 @@ if $ARGS[0] = '':
 	alko_temp = alko
 	gs 'stat'
 	gs 'qwBarPolet', 'intro'
-		if orderDrink = 1:
+	if orderDrink = 1:
 		orderDrink = 0
 		gt 'qwbarPolet','DrinkingBooze'
 	end	
@@ -109,7 +109,8 @@ if $ARGS[0] = '':
 				*nl
 				'But honestly, you don''t want to talk to him at all right now - you are still too angry for that.'
 			end
-				
+		end
+		
 		act 'Order a snack':
 			if cumloc[7] > 0 or cumloc[10] > 0 or cumloc[11] > 0 or cumloc[13] > 0 or cumloc[16] > 0:
 				if pcs_exhibition < 60: 
@@ -235,6 +236,7 @@ end
 
 if $ARGS[0] = 'DrinkingBooze':
 	cls
+	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 	!Different Picture/s?!
 	if MartinSexTalk = 1:
@@ -280,6 +282,7 @@ if $ARGS[0] = 'DrinkingBooze':
 			elseif MartinRand <= 4:
 				gt 'qwBarEncounters'
 			else
+				cla
 				*nl
 				'Safe from the friendly smile and words of gratitude you exchange with Martin, you were quickly left alone with your drink and nothing interesting seemed to be happening around the bar.'
 				'You therefore spent the last 15 minutes in peace, taking the occasional sip from your glass as you reflect the events of the day, think about your life and the people in it. You barely notice how your glass gets emptier and emptier until, finally, you notice that you have nothing left to drink.'
@@ -331,6 +334,7 @@ if $ARGS[0] = 'Ordering':
 		end
 		
 		act 'I''m not that drunk':
+			cla
 			'"Come on, I''m not that drunk!" You insist. Unfortunately, instead of telling Martin, you were addressing the beer taps next to him. Oops.'
 			'"Well, I''m convinced," he replies sarcastically.'
 			*nl
@@ -620,7 +624,7 @@ if $ARGS[0] = 'RandomDrinkEvents':
 		end
 		if pcs_horny < 90: pcs_horny += rand(1,3)
 		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/event4.jpg"></center>'
-		'"Right away," Martin says. With practiced ease, he pours you a beverage and sets it in front of you. You can say little more than a "thank you" before he has to move on to the next customer. '+$OpenInnerThough+'Busy night.'#$CloseInnerThough
+		'"Right away," Martin says. With practiced ease, he pours you a beverage and sets it in front of you. You can say little more than a "thank you" before he has to move on to the next customer. '+$OpenInnerThought+'Busy night.'+$CloseInnerThought
 		*nl
 		'As you sip on your drink, you let your mind and your eyes wander and- wait, what was that?'
 		*nl
