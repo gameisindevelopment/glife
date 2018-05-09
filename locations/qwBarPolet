@@ -111,8 +111,30 @@ if $ARGS[0] = '':
 			end
 				
 		act 'Order a snack':
-			'"What do you want?" The bartender asks.'
-			gs 'food_menu', 'pub'
+			if cumloc[7] > 0 or cumloc[10] > 0 or cumloc[11] > 0 or cumloc[13] > 0 or cumloc[16] > 0:
+				if pcs_exhibition < 60: 
+					mood -= rand(2,5)
+				else
+					pcs_horny += 5	
+				end
+				npc_rel['A216'] -= 2
+				'Martin gives a stern look. "Don''t you think you should clean yourself up first?"'
+				*nl
+				'You are visibly covered in cum and Martin noticed it!'
+				if pcs_exhibition < 60: 
+					'How embarrassing...'
+				else
+					'It''s kinda sexy to know that he noticed it. Your belly tingles at the thought that seeing the sperm must have made Martin imagine you having sex.'
+					'Still...'
+				end
+				'You should probably go to the bathroom and wash it off.'
+				
+				act 'Step away from the counter': gt 'qwBarPolet'
+			
+			else
+				'"What do you want?" The bartender asks.'
+				gs 'food_menu', 'pub'
+			end
 		end
 		
 		act 'Order drinks': gt 'qwBarPolet','Ordering'
@@ -273,12 +295,23 @@ if $ARGS[0] = 'Ordering':
 	'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bar.jpg"></center>'
 	!Different Picture/s?!
 	'You go to the counter, sit down on one of the stools and, when the bartender notices you, ask: "Hey, could you bring me something to drink?"'
-	
-	if [SPERM IN A VISIBLE LOCATION - Anything above the belly]:
-		!mood penalty if pcs_exhibition below a threshold?
-		!relationship penalty if knowMartin?
-				
-		'You should probably get yourself cleaned up.'
+	if cumloc[7] > 0 or cumloc[10] > 0 or cumloc[11] > 0 or cumloc[13] > 0 or cumloc[16] > 0:
+		if pcs_exhibition < 60: 
+			mood -= rand(2,5)
+		else
+			pcs_horny += 5	
+		end
+		npc_rel['A216'] -= 2
+		'Martin gives a stern look. "Don''t you think you should clean yourself up first?"'
+		*nl
+		'You are visibly covered in cum and Martin noticed it!'
+		if pcs_exhibition < 60: 
+			'How embarrassing...'
+		else
+			'It''s kinda sexy to know that he noticed it. Your belly tingles at the thought that seeing the sperm must have made Martin imagine you having sex.'
+			'Still...'
+		end
+		'You should probably go to the bathroom and wash it off.'
 		
 		act 'Step away from the counter': gt 'qwBarPolet'
 	
