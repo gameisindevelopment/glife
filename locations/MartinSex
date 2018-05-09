@@ -241,6 +241,7 @@ if $ARGS[0] = '':
 			'You turn and go towards the exit. You can hear something behind you, feel his look on your back, but you ignore it as best you can and go outside, the matter between you unresolved.'
 			
 			act 'Leave': gt 'nord'
+		end
 		
 		if exhibitionism > 15 and pcs_dom > 20 and cycle ! 0:
 			act 'Go on the offensive - Strip':MartinStripVar = 1 & gt'MartinSex','MartinTease'
