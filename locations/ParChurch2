@@ -352,18 +352,8 @@ if $ARGS[0] = 'first_conf':
 		cls
 		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/church/confessionalt.jpg"></center>'
-		if guy = 0:
-			confK += 1
-			'"Father, I don''t really have anything important to confess, but I felt I should speak to you."'
-			'"Maybe it was our Holy Father who guided you to me, to keep your soul clean, my child." responded the priest.'
-			'You shake your head.'
-			'"No, Father, I don''t think that it is God who''s leading me." you say with a slight smile, looking at the priest''s broad back in front of you.'
-			'"Hmm. Anyway, my child, is there anything you wanted to share with me? Something that makes you feel better?" he inquires as you kneel together next to the analogion holding a richly decorated Gospel Book with a blessing cross upon its cover.'
-			'"No, nothing, Father. My mind is going blank." you say, "I''m not really sure why I came to see you. I''m sorry to have wasted your time."'
-			'"No, don''t worry, child. I was glad to have spoken you, even it was for such a short time. Please come again, and if you feel unsure, simply pray to God and He will hear you."'
-			'"Thank you, Father." you say as you leave.'
-			act 'Return to Narthex': gt 'ParChurch', 'Narthex'
-		elseif group['exp'] ! 0:
+
+		if group['exp'] ! 0:
 			cla
 			confK += 1
 			moral += 1
@@ -380,8 +370,6 @@ if $ARGS[0] = 'first_conf':
 			'"Such acts are too lewd even for the marital bed, child. Do not fear that your soul has been stained by your actions, however such behaviour may lead to greater sins in the future." the priest scolded you as he draped his stole over your head and began the Prayer of Absolution.'
 			'"Now you must mend you ways, child. Please come again, and if you feel unsure, simply pray to God and He will hear you."'
 			'"Thank you, Father." you say as you leave.'
-
-			act 'Return to Narthex': gt 'ParChurch', 'Narthex'
 		elseif stat['anal'] ! 0:
 			cla
 			confK += 1
@@ -399,8 +387,6 @@ if $ARGS[0] = 'first_conf':
 			'"Such acts are considered an abomination in the eyes of God. I fear that your soul has been stained by your actions, and such behaviour may lead to greater sins in the future." the priest scolded you as he draped his stole over your head and began the Prayer of Absolution.'
 			'"Now you must mend you ways, child. Please come again, and if you feel unsure, simply pray to God and He will hear you."'
 			'"Thank you, Father." you say as you leave.'
-
-			act 'Return to Narthex': gt 'ParChurch', 'Narthex'
 		elseif stat['vaginal'] ! 0:
 			cla
 			confK += 1
@@ -418,7 +404,6 @@ if $ARGS[0] = 'first_conf':
 			'"Such acts should be reserved for the marital bed, child. Do not fear that your soul has been stained by your actions, however such behaviour may lead to greater sins in the future." the priest scolded you as he draped his stole over your head and began the Prayer of Absolution.'
 			'"Now you must mend you ways, child. Please come again, and if you feel unsure, simply pray to God and He will hear you."'
 			'"Thank you, Father." you say as you leave.'
-			act 'Return to Narthex': gt 'ParChurch', 'Narthex'
 		elseif stat['bj'] ! 0:
 			cla
 			confK += 1
@@ -435,8 +420,6 @@ if $ARGS[0] = 'first_conf':
 			'"Such experimentation is to be expected, my child. Do not fear that your soul has been stained by your actions, however such behaviour may lead to greater sins in the future." the priest told you as he draped his stole over your head and began the Prayer of Absolution.'
 			'"Please come again, and if you feel unsure, simply pray to God and He will hear you."'
 			'"Thank you, Father." you say as you leave.'
-
-			act 'Return to Narthex': gt 'ParChurch', 'Narthex'
 		elseif stat['hj'] ! 0:
 			cla
 			confK += 1
@@ -453,9 +436,19 @@ if $ARGS[0] = 'first_conf':
 			'"Such experimentation is to be expected, my child. Do not fear that your soul has been stained by your actions." the priest told you as he draped his stole over your head and began the Prayer of Absolution.'
 			'"Please come again, and if you feel unsure, simply pray to God and He will hear you."'
 			'"Thank you, Father." you say as you leave.'
-
-			act 'Return to Narthex': gt 'ParChurch', 'Narthex'
+		else
+			confK += 1
+			'"Father, I don''t really have anything important to confess, but I felt I should speak to you."'
+			'"Maybe it was our Holy Father who guided you to me, to keep your soul clean, my child." responded the priest.'
+			'You shake your head.'
+			'"No, Father, I don''t think that it is God who''s leading me." you say with a slight smile, looking at the priest''s broad back in front of you.'
+			'"Hmm. Anyway, my child, is there anything you wanted to share with me? Something that makes you feel better?" he inquires as you kneel together next to the analogion holding a richly decorated Gospel Book with a blessing cross upon its cover.'
+			'"No, nothing, Father. My mind is going blank." you say, "I''m not really sure why I came to see you. I''m sorry to have wasted your time."'
+			'"No, don''t worry, child. I was glad to have spoken you, even it was for such a short time. Please come again, and if you feel unsure, simply pray to God and He will hear you."'
+			'"Thank you, Father." you say as you leave.'
 		end
+
+		act 'Return to Narthex': gt 'ParChurch', 'Narthex'
 	end
 	act 'Don''t confess':
 		cls
