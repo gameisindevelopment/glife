@@ -595,9 +595,9 @@ if $ARGS[0] = 'answerrin':
 		if pokvnirand = 0:
 			pokpay = rand(1000, 1200)
 		elseif pokvnirand = 1:
-			pokpay = rand(1200, 1500)
+			pokpay = rand(1100, 1300)
 		elseif pokvnirand = 2:
-			pokpay = rand(1500, 2000)
+			pokpay = rand(1300, 1500)
 		end
 		'<<$poktip>> asks you for a price'
 		gs 'rinwork', 'tellprice'
