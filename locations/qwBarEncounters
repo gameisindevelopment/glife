@@ -252,7 +252,7 @@ if $ARGS[0] = '':
 							*nl
 							'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/sex/pool/pool2.jpg"></center>'
 							billiard_ev_var = 2
-							$OpenInnerThought+'I can take him,'+$CloseInnerThought+' you think to yourself, '+$OpenInnerThought'and even if he beats me, it''s just a blowjob.'+$CloseInnerThought 
+							$OpenInnerThought+'I can take him,'+$CloseInnerThought+' you think to yourself, '+$OpenInnerThought+'and even if he beats me, it''s just a blowjob.' +$CloseInnerThought 
 							'With that in mind, you nod your head and tell him he''s got himself a deal.'
 							gs 'qwBarBilliard', 'billiard_engine'
 							gs 'qwBarBilliard', 'billiard_ev1'
