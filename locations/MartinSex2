@@ -123,7 +123,7 @@ if $ARGS[0] = 'MartinSexPrep':
 	end
 end
 	
-if $ARGS[0] = 'MartinSexDyn'
+if $ARGS[0] = 'MartinSexDyn':
 	cls
 	gs 'boyStat', 'A216'
 	if $martinpos ! 'sideways':
@@ -223,7 +223,7 @@ if $ARGS[0] = 'MartinSexDyn'
 	*nl	
 	if $martinpos = 'cowgirl':
 		'Feeling Martin''s <<dick>>cm <<$dick_girth>> cock slowly move inside you as you lift yourself up and fall back down is incredible; the control you have over the situation makes it even more satisfying. You moan softly as you ever so slightly speed up your movements, looking at Martin from under hooded eyes and enjoying the sight of his slightly parted lips, or the intense look with which he focuses on your swaying breasts - he is completely under your spell.'
-	elseif $martinpos = 'rev_cowgirl'
+	elseif $martinpos = 'rev_cowgirl':
 		'Feeling Martin''s <<dick>>cm <<$dick_girth>> cock slowly move inside you as you lift yourself up and fall back down is incredible; the control you have over the situation makes it even more satisfying. You moan softly as you ever so slightly speed up your movements. You look back over your shoulder and he seems completely focused on where the two of you are connected, watching with lustful intensity as your ass sways before him and you take his cock inside your wet hole again and again.'
 	elseif $martinpos = 'doggystyle':
 		'Feeling Martin''s <<dick>>cm <<$dick_girth>> cock move inside you as he enters you and withdraws is wonderful. You have little control over the situation, now that everything''s said and done and the barkeeper is balls-deep inside you, and that is exactly what makes you moan so loud. You look back over your shoulder and he seems completely focused on where the two of you are connected, watching with lustful intensity as he shoves his cock inside your wet hole again and again, kneading your ass as he goes.'
