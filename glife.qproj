@@ -1083,30 +1083,37 @@
       <Location name="koncepod1"/>
     </Folder>
     <Folder name="CumManage">
-		<Location name="Cum_Manage"/>
-		<Location name="cum_arrcheat"/>
-		<Location name="cum_cleanup"/>
-		<Location name="cum_call"/>
-		<Location name="pregriskeval"/>
-		<Location name="cuminsidereact"/>
+  		<Location name="Cum_Manage"/>
+  		<Location name="cum_arrcheat"/>
+  		<Location name="cum_cleanup"/>
+  		<Location name="cum_call"/>
+  		<Location name="pregriskeval"/>
+  		<Location name="cuminsidereact"/>
     </Folder>
     <Folder name="Ibiza">
-		<Location name="IbizaStart"/>
-		<Location name="IbizaDay2"/>
-		<Location name="IbizaDay3"/>
-		<Location name="IbizaDay4"/>
-		<Location name="IbizaDay5"/>
-		<Location name="IbizaDay6"/>
-		<Location name="IbizaDay7"/>
-		<Location name="IbizaToilet"/>
-		<Location name="IbizaDance"/>
-		<Location name="IbizaBar"/>
-		<Location name="IbizaGuard"/>
+  		<Location name="IbizaStart"/>
+  		<Location name="IbizaDay2"/>
+  		<Location name="IbizaDay3"/>
+  		<Location name="IbizaDay4"/>
+  		<Location name="IbizaDay5"/>
+  		<Location name="IbizaDay6"/>
+  		<Location name="IbizaDay7"/>
+  		<Location name="IbizaToilet"/>
+  		<Location name="IbizaDance"/>
+  		<Location name="IbizaBar"/>
+  		<Location name="IbizaGuard"/>
     </Folder>
-	<Location name="LBZhouse"/>
+	  <Location name="LBZhouse"/>
     <Location name="femcyc"/>
-	<Location name="show_table"/>
-	<Location name="exercise"/>
+  	<Location name="show_table"/>
+  	<Location name="exercise"/>
     <Location name="BanSexType"/>
+
+    <Folder name="crossfit_sever">
+      <Location name="crossfit_sever_box"/>
+      <Location name="crossfit_sever_wod"/>
+      <Location name="crossfit_sever_record"/>
+      <Location name="crossfit_sever_girlmeet"/>
+    </Folder>
   </Structure>
 </QGen-project>
