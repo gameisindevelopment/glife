@@ -92,8 +92,8 @@ else
 end
 
 if $ARGS[1] = 'extras':
-	
-	if streetrand < streetev_bf and pcs_lover < 3 and streetbfhour ! hour:
+
+	if rand(0, 100) < streetev_bf and pcs_lover < 3 and streetbfhour ! hour:
 		streetbfhour = hour
 		vnerand = rand(0, 1200)
 		!! 5% chance to meet a girl if no previous lesbian experience, up to a max of 25% with lots of experience
