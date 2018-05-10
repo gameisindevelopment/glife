@@ -716,7 +716,7 @@ if $ARGS[0] = 'MartinTease':
 						if pcs_dom > 20 and cycle ! 0:
 							act 'Tell Martin to go down on you':gt 'MartinSex3','MartinPussyLick'
 						elseif temp = 1 and cycle ! 0:
-							act 'Martin wants to go down on you':
+							act 'Martin wants to go down on you':gt 'MartinSex3','MartinPussyLick'
 						end
 						
 						act 'Take care of Martin (Blowjob)':gt 'MartinSex3', 'MartinBlowTease'
@@ -863,7 +863,7 @@ if $ARGS[0] = 'MartinTease':
 							if pcs_dom > 20 and cycle ! 0:
 								act 'Tell Martin to go down on you':gt 'MartinSex3','MartinPussyLick'
 							elseif temp = 1 and cycle ! 0:
-								act 'Martin wants to go down on you':
+								act 'Martin wants to go down on you':gt 'MartinSex3','MartinPussyLick'
 							end
 							
 							act 'Take care of Martin (Blowjob)':gt 'MartinSex3', 'MartinBlowTease'
@@ -957,7 +957,7 @@ if $ARGS[0] = 'MartinTeaseDildo':
 			if pcs_dom > 20 and cycle ! 0:
 				act 'Tell Martin to go down on you':gt 'MartinSex3','MartinPussyLick'
 			elseif temp = 1 and cycle ! 0:
-				act 'Martin wants to go down on you':
+				act 'Martin wants to go down on you':gt 'MartinSex3','MartinPussyLick'
 			end
 			
 			act 'Take care of Martin (Blowjob)':gt 'MartinSex3', 'MartinBlowTease'
