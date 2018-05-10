@@ -147,8 +147,8 @@ if $ARGS[0] = '':
 			BillHour = hour
 			:bill_loop
 				bill_rand = rand(1,6)
-				if bill_rand = 0 and VicArt_BillDay = 1:jump 'pic_loop'
-				if bill_rand = 1 and PBB_BillDay = 1:jump 'pic_loop'
+				if bill_rand = 0 and VicArt_BillDay = 1:jump 'bill_loop'
+				if bill_rand = 1 and PBB_BillDay = 1:jump 'bill_loop'
 			end
 		end
 		*nl
