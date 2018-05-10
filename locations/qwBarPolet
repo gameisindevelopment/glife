@@ -267,7 +267,7 @@ if $ARGS[0] = 'DrinkingBooze':
 	
 	else
 		if MartinTalkDay = 0:
-			act 'Order a drink and chat with Martin (150 <b>₽</b>)':
+			act 'Order the drink and chat with Martin':
 				MartinTalkDay = 1
 				npc_rel['A216'] += rand(1,2)
 				gt 'MartinTalk'
@@ -510,7 +510,7 @@ if $ARGS[0] = 'RandomDrinkEvents':
 		'The third one raises his glass. "To sluts!" The other two join in, down their drinks and order another round while the first describes another public exposure he has witnessed.'
 		*nl
 		'Only now that their storytime is over do you notice how enthralled you were by it, how you pictured that woman being molested in public... and that the thought aroused you a little.'
-		$OpenInnerThough+'Maybe I should ride the metro more often.'+$CloseInnerThough
+		$OpenInnerThought+'Maybe I should ride the metro more often.'+$CloseInnerThought
 		
 		act 'Finish your drink': gt 'qwBarPolet'
 	
@@ -570,7 +570,7 @@ if $ARGS[0] = 'RandomDrinkEvents':
 		'He talks about how the world has gone to shit and how a man can no longer be a man without someone stepping on him... then more or less starts over, apparently not remembering that he already told you about his "bitch wife".' 
 		'You are feeling genuinely sympathetic towards him... but you are quite happy nonetheless when he finally falls unconscious right in the middle of the sentence and starts drooling on the counter.'
 		*nl
-		$OpenInnerThough+'They can take his job, but they can never take his dignity,'+$CloseInnerThough+' you think to yourself with a smirk.'
+		$OpenInnerThought+'They can take his job, but they can never take his dignity,'+$CloseInnerThought+' you think to yourself with a smirk.'
 		
 		act 'Finish your drink': gt 'qwBarPolet'
 		

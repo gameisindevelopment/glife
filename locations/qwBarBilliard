@@ -67,7 +67,7 @@ if $ARGS[0] = 'billiard_ev1':
 				'He laughs and says you almost had him, pointing out how lucky he got there at the end to beat you, though you''re not quite sure it was as close as he makes it sound.' 
 				'Still, he offers to play you again for the same amount, so you get a chance to "win your money back."'
 				
-				if money > 2500:
+				if money >= 2500:
 					act 'Play again':
 						cla
 						*nl
@@ -159,7 +159,6 @@ if $ARGS[0] = 'billiard_ev1':
 			act 'Lose':
 				cls
 				pool_exp += rand(2,5)
-				money -= 2500
 				killvar 'billiard_ev_var'
 				minut += 30
 				gs 'stat'
@@ -519,11 +518,11 @@ if $ARGS[0] = 'billiard_ev2':
 		*nl
 		'As they set up a new one, they invite you to play with them.'
 		
-		if money >= 300:
-			act 'Suggest playing for money (300 <b>?</b>)':
+		if money >= 250:
+			act 'Suggest playing for money (250 <b>?</b>)':
 				cla
 				*nl
-				'"How about we make this more interesting?" You suggest. "We could play for money. Maybe like 300 rubles each?"'
+				'"How about we make this more interesting?" You suggest. "We could play for money. Maybe like 250 rubles each?"'
 				
 				if bill_rand > 3:
 					if pcs_pool >= 60: temp = rand(1,4)
@@ -616,14 +615,14 @@ if $ARGS[0] = 'billiard_money':
 		money += 500
 		'Lady Luck seems to be smiling on you tonight - you end up ' + iif(pcs_pool>50,'comfortably','closely') + ' winning the game.'
 		'Your opponents look disappointed but remain friendly as they hand over your winnings.'
-		'Understandably, they don''t feel like playing another round, so you all return to the main room together. Still, 900 rubles isn''t a bad turnout for half an hour''s work.'
+		'Understandably, they don''t feel like playing another round, so you all return to the main room together. Still, 500 rubles isn''t a bad turnout for half an hour''s work.'
 							
 	else
 		pcs_mood -= rand(1,4)
 		money -= 250
 		'Luck really wasn''t on your side this time: You ' + iif(pcs_pool>50,'give them a run for their money but end up fumbling several critical shots','are getting absolutely destroyed by them') + ' and have to admit defeat.'
 		'You commend them for their skill as you hand over the cash, since you don''t wanna be a sore loser, but you don''t really feel like playing another round with them.'
-		'Since they also have to leave, you return to the main room with them where you part ways, 300 rubles poorer than half an hour ago.'
+		'Since they also have to leave, you return to the main room with them where you part ways, 250 rubles poorer than half an hour ago.'
 	end
 						
 	act 'Return to the bar': gt 'qwbarPolet'
