@@ -449,7 +449,7 @@ if $ARGS[0] = 'MartinSexDyn':
 			else
 				if $martinpos = 'cowgirl':
 					'<center><video src="images/locations/city/industrial/bar/sex/bar/martin/cumshot/cum_cowgirl.mp4"></center>'
-				elseif $martinpos = 'rev_cowgirl'
+				elseif $martinpos = 'rev_cowgirl':
 					'<center><video src="images/locations/city/industrial/bar/sex/bar/martin/cumshot/cum_rev_cowgirl.mp4"></center>'
 				elseif $martinpos = 'doggystyle':
 					'<center><video src="images/locations/city/industrial/bar/sex/bar/martin/cumshot/cum_doggy.mp4"></center>'
@@ -965,7 +965,7 @@ if $ARGS[0] = 'MartinCumshot_Mouth':
 	cls
 	gs 'boyStat', 'A216'
 	'<center><video src="images/locations/city/industrial/bar/martin/cumshot/cum_mouth.mp4"></center>'
-	if $martinpos ! ('MartinBlowjob_dressed' or 'MartinBlowjob_undressed'): 'You quickly move off Martin''s cock and get on your knees in front of him, taking his dick into your mouth and savoring the taste of yourself on your man as you get him off.'
+	if $martinpos ! 'MartinBlowjob_dressed' or $martinpos ! 'MartinBlowjob_undressed': 'You quickly move off Martin''s cock and get on your knees in front of him, taking his dick into your mouth and savoring the taste of yourself on your man as you get him off.'
 	'For a moment, you think about saying something dirty, like verbally asking him to cum in your mouth, but by the time this thought has manifested, Martin has already pulled out and complied with it, shooting his hot sperm into your open, waiting mouth.'
 	'You wait like this for the second and third spurt, but then you take him right back into your mouth, sucking and licking him through his orgasm.'
 	*nl
@@ -985,7 +985,7 @@ if $ARGS[0] = 'MartinCumshot_Face':
 	'<center><video src="images/locations/city/industrial/bar/martin/cumshot/cum_facial.mp4"></center>'
 	
 	!Variation for pic and text sticking out your tongue for the cumshot
-	if $martinpos ! ('MartinBlowjob_dressed' or 'MartinBlowjob_undressed'): 'You quickly move off Martin''s cock and get on your knees in front of him, taking his dick into your mouth and savoring the taste of yourself on your man as you help him finish.'
+	if $martinpos ! 'MartinBlowjob_dressed' or $martinpos ! 'MartinBlowjob_undressed': 'You quickly move off Martin''s cock and get on your knees in front of him, taking his dick into your mouth and savoring the taste of yourself on your man as you help him finish.'
 	'He pulls out, about ready for the moneyshot.' 
 	*nl
 	'For a moment, you think about saying something dirty, like asking him to cum all over your face, but by the time this thought has manifested, Martin has already complied with it, shooting his hot sperm all over your cheek and forehead. You flinch a little, screwing your eyes shut as you feel his spurt hit you right at the corner of one of them, but you are acutely aware of how hot it feels, literally and figuratively, to have Martin''s sperm run down your face.'
@@ -1000,7 +1000,7 @@ if $ARGS[0] = 'MartinCumshot_Tits':
 	cls
 	gs 'boyStat', 'A216'
 	'<center><video src="images/locations/city/industrial/bar/martin/cumshot/cum_tits.mp4"></center>'
-	if $martinpos ! ('MartinBlowjob_dressed' or 'MartinBlowjob_undressed'): 'You quickly move off Martin''s cock and get on your knees in front of him, stroking his dick as you point it at your bust and savoring the expression of bliss on your man''s face.'
+	if $martinpos ! 'MartinBlowjob_dressed' or $martinpos ! 'MartinBlowjob_undressed': 'You quickly move off Martin''s cock and get on your knees in front of him, stroking his dick as you point it at your bust and savoring the expression of bliss on your man''s face.'
 	'"Go ahead", you whisper in your sultriest voice, "Cum all over my tits, baby."'
 	'That''s all the invitation Martin needs: With a final moan, the first hot jet of cum hits your breasts, soon followed by another, and another. By the time his cock stops twitching, your breast and chin are covered in sperm. Cleaning up is gonna take a while, but with a single look at Martin and the satisfied boyish grin the sight of you puts on his face, you know that it''s worth it.'
 	gs 'cum_call', 'breasts', $boy, 1
