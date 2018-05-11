@@ -531,7 +531,7 @@ if $ARGS[0] = 'ndSuckBellowTable':
 		end
 		gs 'arousal', 'end'
 		gs 'stat'
-		act 'Leave':gt 'pavSharedApt', 'payService'
+		act 'Leave':$loc = 'pavSharedApt' & $metka = 'ndRoom' & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 	end
 end
 
@@ -759,7 +759,7 @@ if $ARGS[0] = 'ndSuck':
 		end
 		gs 'arousal', 'end'
 		gs 'stat'
-		act 'Get up and leave':gt 'pavSharedApt', 'payService'
+		act 'Get up and leave':$loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 	end
 end
 
@@ -969,7 +969,7 @@ if $ARGS[0] = 'ndSexVaginal':
 			gs 'arousal', 'vaginal', 2
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!stomach
 		elseif subStep = 2:
@@ -982,7 +982,7 @@ if $ARGS[0] = 'ndSexVaginal':
 			gs 'cum_call', 'stomach', $boy, 1, 0, nd_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!ass
 		elseif subStep = 3:
@@ -995,7 +995,7 @@ if $ARGS[0] = 'ndSexVaginal':
 			gs 'cum_call', 'butt', $boy, 1, 0, nd_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!face
 		elseif subStep = 4:
@@ -1008,7 +1008,7 @@ if $ARGS[0] = 'ndSexVaginal':
 			gs 'cum_call', 'face', $boy, 1, 0, nd_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!takeout fail
 		elseif subStep = 5:
@@ -1032,7 +1032,7 @@ if $ARGS[0] = 'ndSexVaginal':
 			gs 'arousal', 'vaginal', 5, 'sub'
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 
 		!will you swallow?
@@ -1057,7 +1057,7 @@ if $ARGS[0] = 'ndSexVaginal':
 			gs 'cum_call', 'mouth', $boy, 1, 0, nd_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!swallow NO
 		elseif subStep = 30:
@@ -1309,7 +1309,7 @@ if $ARGS[0] = 'ndSexAnal':
 			gs 'arousal', 'anal', 2
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!stomach
 		elseif subStep = 2:
@@ -1322,7 +1322,7 @@ if $ARGS[0] = 'ndSexAnal':
 			gs 'cum_call', 'stomach', $boy, 1, 0, nd_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!ass
 		elseif subStep = 3:
@@ -1335,7 +1335,7 @@ if $ARGS[0] = 'ndSexAnal':
 			gs 'cum_call', 'butt', $boy, 1, 0, nd_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!face
 		elseif subStep = 4:
@@ -1348,7 +1348,7 @@ if $ARGS[0] = 'ndSexAnal':
 			gs 'cum_call', 'face', $nd_name, 1, 0, nd_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!takeout fail
 		elseif subStep = 5:
@@ -1369,7 +1369,7 @@ if $ARGS[0] = 'ndSexAnal':
 			gs 'arousal', 'anal', 5, 'sub'
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 
 		!will you swallow?
@@ -1394,7 +1394,7 @@ if $ARGS[0] = 'ndSexAnal':
 			gs 'cum_call', 'mouth', $boy, 1, 0, nd_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':nd_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':nd_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 
 		!swallow NO
 		elseif subStep = 30:
@@ -1579,7 +1579,7 @@ if $ARGS[0] = 'ndSexPiss':
 			act 'Definitely!':nd_piss = -2 & step = 110 & gt 'pavShared_nd', 'ndSexPiss'
 		elseif pissLike = 1:
 			'<font color=#<<$nd_font>>>"Does that mean that you will be willing to do it sometime again?"</font>'
-			act 'Yes':nd_piss = 1 & step = 110 & gt 'pavSharedApt', 'payService'
+			act 'Yes':nd_piss = 1 & step = 110 & $loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 			act 'Rather not':nd_piss = -1 & step = 110 & gt 'pavShared_nd', 'ndSexPiss'
 		elseif pissLike = 2:
 			'<font color=#<<$nd_font>>>"Awesome! And I thought I am the only one who likes this kinda stuff!"</font>'
@@ -1594,7 +1594,7 @@ if $ARGS[0] = 'ndSexPiss':
 		gs 'stat'
 		nd_piss += 1
 		step = 0
-		gt 'pavSharedApt', 'payService'
+		$loc = 'pavSharedApt' & $metka = 'ndRoom' & gt 'pavSharedApt', 'payService'
 	end
 end
 
