@@ -35,8 +35,6 @@ end
 
 'modern <a href="exec:GT ''stol'',''start''">curbstones</a>'
 
-
-
 if obruch > 0:'In the corner stands a hoop.'
 if skak > 0:'On a shelf is a jump rope.'
 if bookYog > 0:'The cabinet has a book on yoga and a yoga mat'
@@ -68,7 +66,6 @@ end
 
 gs'subkid'
 
-
 if student > 0 and kursovik < 100:
 	act 'Write kursovik 1 h':
 		cla
@@ -85,9 +82,7 @@ if student > 0 and kursovik < 100:
 	end
 end
 
-gs 'events', 'read'
-
-act 'Go out to the balcony': gt 'balkon','start'
+act 'Go out on the balcony': gt 'balkon','start'
 if zoo >= 6 and sobaka ! 0:
 	if husband > 0 and husbandrink ! 10:
 		if week > 5 or week < 6 and hour > 17:
@@ -301,6 +296,8 @@ if zoo >= 6 and sobaka ! 0:
 		act 'Call <<$namesob>>':gt 'soba', 'zoof30'
 	end
 end
+
+gs 'events', 'read'
 
 if dildo > 0 and pcs_horny >= 50:
 	act 'Masturbate':
