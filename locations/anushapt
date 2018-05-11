@@ -96,7 +96,7 @@ if $ARGS[0] = 'home':
 			end
 		elseif nushdoor <= 3:
 			*clr & cla
-			AnushkaLoc = 2:
+			AnushkaLoc = 2
 			'You stand outside the Konstantinov household, waiting for Anushka to come open the door.'
 			'Maksim answers the door instead, he looks you over from head to toe, obviously still trying to imagine you naked. "What?" He asks.'
 			'You ignore his look. "Is Anushka home?"'
