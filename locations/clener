@@ -236,7 +236,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if clener > 1 and clenday ! daystart:
-		act 'Mop the floor in the office (1:00)':
+		act 'Mop the floor in the office for 65 <b>₽</b> (1:00)':
 			cla
 			*clr
 			clenday = daystart
@@ -303,7 +303,7 @@ if $ARGS[0] = 'start':
 	end
 
 	if clenerT >= 1 and clendayT ! daystart:
-		act 'Clean toilets (1:00)':
+		act 'Clean toilets for 65 <b>₽</b> (1:00)':
 			cla
 			*clr
 			clendayT = daystart
