@@ -296,7 +296,7 @@ end
 if $ARGS[0] = 'spSuck':
 	'<b><font color=#<<$sp_font>>><<$sp_name>> - blowjob</font></b>'
 	if step = 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
-	if step > 0 and cockHard = 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/spjpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"></left>'
+	if step > 0 and cockHard = 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"></left>'
 	if step > 0 and cockHard = 1:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></left>'
 	$metka = 'spSuck'
 	price = price_blowjob
