@@ -1030,6 +1030,7 @@ if $ARGS[0] = 'ndRoom':
 	minut += 2
 	'<center><h3><font color=#<<$nd_font>>><<$nd_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/nd/room.jpg"></center>'
+	''
 	'The room is surprisingly not as messy as one would expect, given that <<$nd_name>> is an IT guy.'
 	'There is one large window with bed bellow it, but the whole room is dominated by a large table with several computers and monitors.'
 	'Looking at it one would say that this must be a den of a hacker.'
@@ -1054,6 +1055,7 @@ if $ARGS[0] = 'gpRoom':
 	minut += 2
 	'<center><h3><font color=#<<$gp_font>>><<$gp_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/gp/room.jpg"></center>'
+	''
 	'Messy room. Clothes everywhere.'
 
 	if hour >= gp_wakes and hour < gp_leaves:
@@ -1077,6 +1079,7 @@ if $ARGS[0] = 'spRoom':
 	minut += 2
 	'<center><h3><font color=#<<$sp_font>>><<$sp_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/room.jpg"></center>'
+	''
 	'Tidy room full of sporting stuff like dresses, equipment and trophys. On the walls hang several posters of famous sport guys.'
 
 	if hour >= sp_wakes and hour < sp_leaves:
