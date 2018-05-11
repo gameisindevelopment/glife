@@ -1021,14 +1021,14 @@ if day = 25:
 
 	if workKafe = 1 and paydayKafe = 0:
 		paydayKafe = 1
-		pay = smenaKafe * 1500
+		pay = smenaKafe * 600
 		karta += pay
 		smenaKafe = 0
 		'<b><font color="green">Your salary of <<pay>> <b>₽</b> has been paid into your bank account for your job as a waitress in a cafe.</font></b>'
 	end
 
 	if workhosp = 1 and nopaypoly = 0:
-		pay = smena * 1500
+		pay = smena * 1000
 		karta += pay
 		smena = 0
 		nopaypoly = 1
@@ -1036,9 +1036,9 @@ if day = 25:
 	end
 
 	if worksalon = 1 and nopaysalon = 0:
-		pay = smena * 1560
+		pay = smenaSalon * 1560
 		karta += pay
-		smena = 0
+		smenaSalon = 0
 		nopaysalon = 1
 		'<b><font color="green">Your salary of <<pay>> <b>₽</b> has been paid into your bank account for your work in a beauty salon.</font></b>'
 	end
