@@ -1012,7 +1012,7 @@ if day = 25:
 	end
 
 	if PersSecWork = 1 and PersSecWorkTimes > 0 and paydaybistrosec = 0:
-		Pay = PersSecWorkTimes * 2500
+		Pay = PersSecWorkTimes * 1250
 		PersSecWorkTimes = 0
 		karta += Pay
 		paydaybistrosec = 1
@@ -1051,7 +1051,7 @@ if day = 25:
 
 	if workSec = 1 and paydaySec = 0:
 		paydaySec = 1
-		pay = sekDay * 1200
+		pay = sekDay * 800
 
 		if officebestslut >= 3:pay += 10000
 		karta += pay
