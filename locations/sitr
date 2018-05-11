@@ -94,9 +94,9 @@ if student > 0 and kursovik < 100:
 	end
 end
 
-gs 'events', 'read'
+act 'Go out on the balcony': gt 'balkon','start'
 
-act 'Go out to the balcony': gt 'balkon','start'
+gs 'events', 'read'
 
 if zoo >= 6 and sobaka ! 0:
 	if husband > 0 and husbandrink ! 10:

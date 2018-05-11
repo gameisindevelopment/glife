@@ -39,14 +39,6 @@ if $ARGS[0] = 'start':
 		end
 	end
 
-	if siga >= 1:act 'Light a cigarette':gt 'balkon2', 'kurit'
-
-	!!!Probably CV edition
-	if pcs_horny >= 50 and pcs_exhibition > 20:
-		act 'Masturbate':gt 'balkon2', 'masopt'
-	end
-
-	act 'Approach the railing':gt 'balkon2', 'niz'
 	act 'Return to the living room':
 		if $loc = 'sitr': 
 			gt 'sitr'
@@ -54,6 +46,15 @@ if $ARGS[0] = 'start':
 			gt 'sitr2x'
 		end
 	end
+	
+	act 'Approach the railing':gt 'balkon2', 'niz'
+	
+	if siga >= 1:act 'Light a cigarette':gt 'balkon2', 'kurit'
+	
+	!!!Probably CV edition
+	if pcs_horny >= 50 and pcs_exhibition > 20:
+		act 'Masturbate':gt 'balkon2', 'masopt'
+	end	
 end
 
 --- balkon ---------------------------------
