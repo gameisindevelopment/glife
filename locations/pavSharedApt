@@ -331,7 +331,7 @@ if $ARGS[0] = 'payService':
 	minut += 1
 	'The amount '+price+' <b>₽</b> was taken in account of your weekly rent.'
 	servicePaid += price
-	act 'Continue':gt 'pavSharedApt', 'start'
+	act 'Continue':gt $loc, $metka
 end
 
 if $ARGS[0] = 'rentSetup':
@@ -775,6 +775,8 @@ end
 if $ARGS[0] = 'cookForGuys':
 	cla
 	*clr
+	$loc = 'pavSharedApt'
+	$metka = 'kitchen'
 	minut += 90
 	eda -= 3
 	kuhdrova = 0
@@ -977,12 +979,16 @@ if $ARGS[0] = 'pcsRoom':
 	dynamic $removepan
 	!gs 'subkid'
 	if pcs_sleep <= 80:
-		if succubusQW = 2:
+		if succubusQW = 2 and $clothingworntype ! 'nude':
 			act 'Undress and go to sleep':
-				if $clothingworntype ! 'nude': gs 'clothing', 'strip'
+				gs 'clothing', 'strip'
 				gt 'bed2', 'succhoice'
 			end
-		else
+		elseif succubusQW = 2 and $clothingworntype = 'nude':
+			act 'Go to sleep':
+				gt 'bed2', 'succhoice'
+			end
+		elseif $clothingworntype ! 'nude':
 			act 'Undress and go to sleep':
 				if disable_autosave = 0:
 					if StoryLine = 0:
@@ -991,7 +997,22 @@ if $ARGS[0] = 'pcsRoom':
 						savegame 'autosave_alt.sav'
 					end
 				end
-				if $clothingworntype ! 'nude': gs 'clothing', 'strip'
+				gs 'clothing', 'strip'
+				if magf2bdo = 2:
+					gt 'bed2', 'magbstchoice'
+				else
+					gt 'bed2', 'sleep'
+				end
+			end
+		elseif $clothingworntype = 'nude':
+			act 'Go to sleep':
+				if disable_autosave = 0:
+					if StoryLine = 0:
+						savegame 'autosave.sav'
+					else
+						savegame 'autosave_alt.sav'
+					end
+				end
 				if magf2bdo = 2:
 					gt 'bed2', 'magbstchoice'
 				else
@@ -1004,9 +1025,12 @@ if $ARGS[0] = 'pcsRoom':
 end
 
 if $ARGS[0] = 'ndRoom':
+	$loc = 'pavSharedApt'
+	$metka = 'ndRoom'
 	minut += 2
 	'<center><h3><font color=#<<$nd_font>>><<$nd_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/nd/room.jpg"></center>'
+	''
 	'The room is surprisingly not as messy as one would expect, given that <<$nd_name>> is an IT guy.'
 	'There is one large window with bed bellow it, but the whole room is dominated by a large table with several computers and monitors.'
 	'Looking at it one would say that this must be a den of a hacker.'
@@ -1026,9 +1050,12 @@ if $ARGS[0] = 'ndRoom':
 end
 
 if $ARGS[0] = 'gpRoom':
+	$loc = 'pavSharedApt'
+	$metka = 'gpRoom'
 	minut += 2
 	'<center><h3><font color=#<<$gp_font>>><<$gp_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/gp/room.jpg"></center>'
+	''
 	'Messy room. Clothes everywhere.'
 
 	if hour >= gp_wakes and hour < gp_leaves:
@@ -1047,9 +1074,12 @@ if $ARGS[0] = 'gpRoom':
 end
 
 if $ARGS[0] = 'spRoom':
+	$loc = 'pavSharedApt'
+	$metka = 'spRoom'
 	minut += 2
 	'<center><h3><font color=#<<$sp_font>>><<$sp_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/room.jpg"></center>'
+	''
 	'Tidy room full of sporting stuff like dresses, equipment and trophys. On the walls hang several posters of famous sport guys.'
 
 	if hour >= sp_wakes and hour < sp_leaves:

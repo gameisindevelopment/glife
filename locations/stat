@@ -853,7 +853,7 @@ if pcs_energy < 0:
 end
 
 if pcs_hydra <= 0:
-	pcs_hydra = 0
+	pcs_hydra = 1
 	pcs_health -= 5
 	pcs_willpwr -= 1
 end
