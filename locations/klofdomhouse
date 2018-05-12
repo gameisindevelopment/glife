@@ -130,6 +130,7 @@ if $ARGS[0] = 'ev6':
 	cla
 	*clr
 	klofQW += 1
+	guy += 1
 	cla
 	*clr
 	money += 2000
@@ -147,7 +148,7 @@ if $ARGS[0] = 'ev6':
 	$orgasm_or = 'yes'
 	gs 'stat'
 	if horand > stat['vaginal']:pcs_horny += 10 & 'You are not satisfied'
-	
+
 	'You get dressed and ready to go home.'
 	'You are approached by Jora who hands you money, "Earned yourself a crumb."'
 	gs 'arousal', 'end'
@@ -211,6 +212,7 @@ if $ARGS[0] = 'ev13':
 		dynamic $vagend
 		'You get dressed and get ready to go home.'
 		'Jora hands you money, "Earned yourself a crumb."'
+		guy += 1
 		gs 'arousal', 'end'
 		gs 'stat'
 		act 'Go home':gt 'street'
@@ -246,6 +248,7 @@ if $ARGS[0] = 'ev14':
 		'Jora discharges in your ass, then using a a small toy he plays with your ass. It''s quite pleasant so you don''t think to question his actions.'
 		'You get dressed and get ready to go home.'
 		'Jora hands you money, "Earned yourself a crumb."'
+		guy += 1
 		gs 'arousal', 'end'
 		gs 'stat'
 		act 'Go home':gt 'street'
@@ -317,11 +320,13 @@ if $ARGS[0] = 'ev 16':
 		dynamic $vagend
 		'You get dressed and get ready to go home.'
 		'Seymon hands you money, "Earned yourself a crumb."'
+		guy += 1
 		gs 'arousal', 'end'
 		gs 'stat'
 		act 'Go home':gt 'street'
 	end
 end
+
 if $ARGS[0] = 'ev 17':
 	cla
 	*clr
@@ -351,6 +356,7 @@ if $ARGS[0] = 'ev 17':
 		'Hsien discharges himself in your ass, as your ass is recovering he massages it with a toy.'
 		'You get dressed and get ready to go home.'
 		'Seymon hands you money, "Earned yourself a crumb."'
+		guy += 1
 		gs 'arousal', 'end'
 		gs 'stat'
 		act 'Go home':gt 'street'
@@ -434,6 +440,8 @@ if $ARGS[0] = 'ev19':
 	'Finally they both finished, one in your pussy, the other on your face.'
 	'You get dressed and get ready to go home.'
 	'The boys throw money at you, "Earned yourself a crumb."'
+	guy += 1
+	gang += 1
 	gs 'arousal', 'end'
 	gs 'stat'
 	act 'Go home':gt 'street'
@@ -647,6 +655,7 @@ if $ARGS[0] = 'ev34':
 	'<center><img <<$set_imgh>> src="images/characters/city/jora/sex/klof28.jpg"></center>'
 	'With full force the boss pushes his penis in your vagina.'
 	gs 'arousal', 'vaginal', 30, 'sub', 'rough'
+	guy += 1
 	gs 'stat'
 	horand = rand(1, 100)
 
@@ -756,6 +765,8 @@ if $ARGS[0] = 'ev40':
 	'<center><img <<$set_imgh>> src="images/characters/city/jora/sex/klof33.jpg"></center>'
 	'Jora and Semyon are called in and with no ceremony the two of them hammer you in your pussy.'
 	gs 'arousal', 'vaginal', 30, 'sub', 'group', 'rough'
+	guy += 2
+	gang += 1
 	gs 'stat'
 	horand = rand(1, 100)
 
@@ -1079,6 +1090,7 @@ if $ARGS[0] = 'ev60':
 	dick = 16
 	silavag = 1
 	pose = 3
+	guy += 1
 	dynamic $vagstart2
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/characters/city/jora/sex/bas 27.jpg"></center>'
@@ -1137,6 +1149,8 @@ if $ARGS[0] = 'ev62':
 	gs 'arousal', 'vaginal', 5, 'exhibitionism', 'sub', 'unknown'
 	gs 'arousal', 'anal', 5, 'exhibitionism', 'sub', 'unknown'
 	minut -= 10
+	guy += 5
+	gang += 1
 	gs 'stat'
 	act 'Fuck the crowd':gt 'klofdomhouse', 'ev63'
 end
@@ -1185,6 +1199,7 @@ if $ARGS[0] = 'ev63':
 	gs 'arousal', 'vaginal', 5, 'exhibitionism', 'sub', 'unknown'
 	gs 'arousal', 'anal', 5, 'exhibitionism', 'sub', 'unknown'
 	minut -= 10
+	guy += 3
 	gs 'stat'
 	act 'Fuck the crowd':gt 'klofdomhouse', 'ev64'
 end
@@ -1192,6 +1207,12 @@ end
 if $ARGS[0] = 'ev64':
 	cla
 	*clr
+	gs 'npcgeneratec', 0, 'a random man', rand(18,45)
+	gs 'boyStat', $npclastgenerated
+	spafinloc = 12
+	gs 'cum_manage'
+	gs 'npcgeneratec', 0, 'a random man', rand(18,45)
+	gs 'boyStat', $npclastgenerated
 	spafinloc = 15
 	gs 'cum_manage'
 	gs 'npcgeneratec', 0, 'a random man', rand(18,45)
@@ -1206,6 +1227,7 @@ if $ARGS[0] = 'ev64':
 	gs 'arousal', 'vaginal', 5, 'exhibitionism', 'sub', 'unknown'
 	gs 'arousal', 'anal', 5, 'exhibitionism', 'sub', 'unknown'
 	minut -= 10
+	guy += 3
 	gs 'stat'
 	act 'Get up and dress in your swimsuit':gt 'klofdomhouse', 'ev65'
 end
