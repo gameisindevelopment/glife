@@ -48,7 +48,7 @@ if $ARGS[0] = '':
 				act 'Leave':gt 'gpoli'
 			end
 		elseif gpoliuborka > 1 and hour >= 14 and hour <= 21 and gpolicleanday ! daystart:
-			act 'Work as a cleaner (1:00)':
+			act 'Work as a cleaner for 50 <b>₽</b> (1:00)':
 				cla
 				*clr
 				gpolicleanday = daystart

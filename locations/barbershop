@@ -165,7 +165,7 @@ if barbershop_wrk = 0:
 		end
 	end
 elseif barbershop_wrk = 1 and barbershop_wrk_day ! daystart:
-	act 'Get to work (1h)':
+	act 'Clean the shop for 90 <b>₽</b> (1:00)':
 		cla
 		*clr
 		minut += 60
