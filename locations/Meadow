@@ -70,7 +70,7 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 		end
 	end
 
-	act 'Leave':minut += 30 & MiraLoc = 0 & gt 'Gaddvor'
+	act 'Leave':minut += 20 & MiraLoc = 0 & gt 'Gaddvor'
 end
 
 	!meadow = 1 'You have found the meadow'

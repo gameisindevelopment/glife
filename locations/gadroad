@@ -53,7 +53,7 @@ if $clothingworntype = 'exercise' and $shoeworntype = 'trainers' and hour >= 6 a
 		act 'Further':gt'gadroad'
 	end
 end
-act '<b>Return to the village</b>':minut += 20 & gt'gadukino'
+act 'Go to Gadukino':minut += 20 & gt'gadukino'
 
 --- gadroad ---------------------------------
 

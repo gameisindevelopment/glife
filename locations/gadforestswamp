@@ -38,7 +38,7 @@ if $ARGS[0] = '1':
 		'You entered the swamp and felt your feet starting to sink into the mud...'
 		temp = RAND(1,100)
 		act 'Go further':
-			if swamprand > temp:gt 'swamp_yard'   
+			if swamprand > temp:gt 'swamp_yard'
 			if swamprand < temp and temp >= 90:over = 10 & gt 'gameover'
 			if swamprand < temp and temp < 90:gt 'gadforestswamp', '2'
 		end
@@ -75,7 +75,7 @@ if $ARGS[0] = '2':
 		'You are exhausted and begin to scream for help, suddenly you see people...'
 
 		act 'Wait':
-			if  temp = 1:
+			if temp = 1:
 				*clr & cla
 				minut += 10
 				hanters = 1
@@ -109,7 +109,7 @@ if $ARGS[0] = '2':
 		'You decided not to tempt fate more and turn back...'
 
 		act 'Go':
-			if swamprand > temp:gt 'gadforestswamp','1'   
+			if swamprand > temp:gt 'gadforestswamp','1'
 			if swamprand < temp and temp <= 20:over = 10 & gt'gameover'
 			if swamprand < temp and temp > 20:gt 'gadforestswamp','2'
 		end
@@ -129,12 +129,12 @@ if $ARGS[0] = '2':
 		'You thought more about it and decided against it. You move on from the house...'
 
 		act 'Go':
-			if swamprand > temp:gt 'swamp_yard'   
+			if swamprand > temp:gt 'swamp_yard'
 			if swamprand < temp and temp <= 30:over = 10 & gt'gameover'
 			if swamprand < temp and temp > 30:gt 'gadforestswamp','2'
 		end 
 	end
-end  
+end
 
 $swampclothes = {
 	if ($clothingworntype ! 'nude' and $clothingworntype ! 'swimwear') and CloSkirtShortness = 0:'<center><img <<$set_imgh>> src="images/locations/gadukino/hunters/goswamp1.jpg"></center>'

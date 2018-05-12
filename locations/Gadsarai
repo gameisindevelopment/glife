@@ -13,7 +13,7 @@ if $ARGS[0] = '':
 		'<center><img <<$set_imgh>> src="images/locations/gadukino/village/leghump.jpg"></center>'
 		'Bandit pounces on you and pins your thigh between his front legs. He begins to persistently and significantly put pressure on you, growling menacingly...'
 		if pcs_dom > 0:
-			act 'Push off':gt 'Gaddvor'
+			act 'Push off': minut += 1 & gt 'Gaddvor'
 		else
 			act 'Submit':
 				cls
@@ -119,7 +119,7 @@ if $ARGS[0] = '':
 									gs 'stat'
 								else
 									'<center><img <<$set_imgh>> src="images/beast/bandit/piratvagcum.jpg"></center>'
-									'After a few moments you feel his hot cock sharply penetrate your wet vagina and start flailing wildly and deeply, every thrust pushing at your womb. From your lips come lustful groans, expressing both animal and human lust. You gyrate your hips, trying to build towards orgasm, but Bandit snarls and gets angry.  His teeth are quite noticeable as he grips your neck and you are left with no choice but to obediently endure. He''s so strong, fast, and deep.' 
+									'After a few moments you feel his hot cock sharply penetrate your wet vagina and start flailing wildly and deeply, every thrust pushing at your womb. From your lips come lustful groans, expressing both animal and human lust. You gyrate your hips, trying to build towards orgasm, but Bandit snarls and gets angry. His teeth are quite noticeable as he grips your neck and you are left with no choice but to obediently endure. He''s so strong, fast, and deep.' 
 									'The walls of your vagina stretch, sending a new wave of pleasure through your body, but you dare not move for fear that Bandit will take you by the neck again... But after a couple of minutes, he gets off inside you and turns his back to your ass. All the rest of the time you wait to uncork your dog cum oozing pussy...'
 									gs 'arousal', 'vaginal', 20, 'sub', 'beast', 'rough'
 									gs 'arousal', 'end'
@@ -264,7 +264,7 @@ if $ARGS[0] = '':
 			act 'Leave them alone':minut += 10 & gt 'Gaddvor'
 		else
 			'<center><img <<$set_imgh>> src="images/beast/bandit/piratmira1,<<rand(0,1)>>.jpg"></center>'
-			'Going into the barn, you can see Bandit fucking Miroslava. He frantically plowed into her pussy, and she tried to hold back the moans and screams every time he thrust, crawling centimeter by centimeter forward under his pressure ... She did not even notice you, so you are a little more aroused after watching this scene.  You step forward and slap Mira''s hard, leaving a bright red hand print.  Mira yelps and looks back at you.  She smiles as Bandit continues to plow into her pussy with wild abandon.  You turn away and leave the barn with the door open...'
+			'Going into the barn, you can see Bandit fucking Miroslava. He frantically plowed into her pussy, and she tried to hold back the moans and screams every time he thrust, crawling centimeter by centimeter forward under his pressure ... She did not even notice you, so you are a little more aroused after watching this scene. You step forward and slap Mira''s hard, leaving a bright red hand print. Mira yelps and looks back at you. She smiles as Bandit continues to plow into her pussy with wild abandon. You turn away and leave the barn with the door open...'
 			gs 'arousal', 'voyeur', 10, 'beast'
 			gs 'arousal', 'end'
 			gs 'stat'
@@ -292,14 +292,14 @@ if $ARGS[0] = '':
 		if month > 4 and month < 10:
 			if hour > 9 and hour < 20:
 				'On your right is a cattle barn.'
-			else    
+			else
 				'On your right is a <a href="exec: gt ''Gadsarai'',''cow'' ">cattle</a> barn.'
 			end
-			if hour > 9 and hour < 20 and week < 6 or horse_river = 2:    
+			if hour > 9 and hour < 20 and week < 6 or horse_river = 2:
 				'On your left is a a horse stable.'
 			else
 				'On your left is a <a href="exec: gt ''Gadsarai'',''horse'' ">horse</a> stable.'
-			end  
+			end
 		else 
 			'On your right is a <a href="exec: gt ''Gadsarai'',''cow'' ">cattle</a> barn.'
 			'On your left is a <a href="exec: gt ''Gadsarai'',''horse'' ">horse</a> stable.'
@@ -310,7 +310,7 @@ if $ARGS[0] = '':
 		clr
 		gs 'stat'
 		
-		act 'Go outside':minut += 5 & gt 'Gaddvor'
+		act 'Go outside':minut += 1 & gt 'Gaddvor'
 		
 		act 'Poke around in the barn':
 			if grigoryEV > 0 and grigory_barn ! daystart and hour > 8 and hour < 12: gt 'grigory', 'barn'
@@ -383,7 +383,7 @@ if $ARGS[0] = '':
 						gs 'stat'					
 						'<center><img <<$set_imgh>> src="images/locations/gadukino/village/necklace.jpg"></center>'
 						if altQS = 1:
-							'While looking through the barn your foot goes through a rotten floorboard. You suddenly feel the presence of something magical under the floor. You get on your belly and look through the hole in the floor. You find a small box made of a black wood. You pick up the box and see the box is covered in a strange writing and glyphs that look like serpents. The feeling of power is coming from within the box. You lift the lid of the box and see a black metal necklace that looks like a coiled snake with ruby eyes.  You feel the power coming from the necklace, but it doesn''t feel like any power you have ever felt.'
+							'While looking through the barn your foot goes through a rotten floorboard. You suddenly feel the presence of something magical under the floor. You get on your belly and look through the hole in the floor. You find a small box made of a black wood. You pick up the box and see the box is covered in a strange writing and glyphs that look like serpents. The feeling of power is coming from within the box. You lift the lid of the box and see a black metal necklace that looks like a coiled snake with ruby eyes. You feel the power coming from the necklace, but it doesn''t feel like any power you have ever felt.'
 						else
 							'While looking through the barn your foot goes through a rotten floorboard and gets stuck. As you work your foot free, you glimpse something underneath the floor - a box or something. You get on your belly and look through the hole in the floor. You find a small box made of a black wood. You pick up the box and see the box is covered in a strange writing and glyphs that look like serpents. The exotic look of the box gives you gooseflesh and you find yourself holding your breath as you prepare to open the box. You lift the lid of the box and see a black metal necklace that looks like a coiled snake with ruby eyes. You let your breath out slowly as you tilt the necklace from side to side, watching the light sparkle as it is reflected by the facets on the deep red rubies. You cannot begin to guess what this necklace must be worth.'
 						end
@@ -393,7 +393,7 @@ if $ARGS[0] = '':
 						cls
 						gs 'stat'				
 						'<center><img <<$set_imgh>> src="images/locations/gadukino/village/junk_barn.jpg"></center>'
-						'In the barn you find old many muldy magazines and rusty tools and equipment, toys and many dusty yellowed books.  The entire barn reeks of mold and decay.'
+						'In the barn you find old many muldy magazines and rusty tools and equipment, toys and many dusty yellowed books. The entire barn reeks of mold and decay.'
 					end
 					act 'Leave and get some fresh air':gt 'Gadsarai'
 				end
@@ -431,7 +431,7 @@ if $ARGS[0] = 'boar':
 	gs 'stat'
 	
 	'<center><H4>The barn</H4></center>'
-    '<center><img <<$set_imgh>> src="images/locations/gadukino/village/boar.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/gadukino/village/boar.jpg"></center>'
 	'One of your grandparents dearest possessions, the boar Nickle.'
 
 	if feed_boar = 1:
@@ -459,7 +459,7 @@ if $ARGS[0] = 'cow':
 	gs 'stat'
 	
 	'<center><H4>The barn</H4></center>'
-    '<center><img <<$set_imgh>> src="images/locations/gadukino/village/cow.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/gadukino/village/cow.jpg"></center>'
 	'Grandma''s favorite animal, the cow Dawn.'
 	
 	if milk_cow = 1:
@@ -508,7 +508,7 @@ if $ARGS[0] = 'cow':
 			if cow_field = 1:'You lead Dawn to the field, where you let the shepherds take over.'
 			if graze_cow = 1:'You lead Dawn to the field, where you grandfather awaits you. It''s his turn to keep an eye on the cows.'
 
-			act 'Further':gt'gadfield','cow'   
+			act 'Further':gt'gadfield','cow'
 		end
 	end		
 
@@ -521,7 +521,7 @@ if $ARGS[0] = 'horse':
 	gs 'stat'
 	
 	'<center><H4>The barn</H4></center>'
-    '<center><img <<$set_imgh>> src="images/locations/gadukino/village/horse.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/gadukino/village/horse.jpg"></center>'
 	'Grandfather trusted assistant, the horse Desperado.'
 
 	
@@ -554,7 +554,7 @@ if $ARGS[0] = 'horse':
 			'<center><img <<$set_imgh>> src="images/locations/gadukino/village/horse_field.jpg"></center>'
 			'You took Desperado by the bridle and led it to the field. There, you let it run free in the paddock area, and went on with your business.'
 
-			act 'Further':gt'gadfield','field'   
+			act 'Further':gt'gadfield','field'
 		end
 	end
 	if horse_river = 1 and sunWeather = 1 and temper >= 15:
@@ -569,7 +569,7 @@ if $ARGS[0] = 'horse':
 			'<center><img <<$set_imgh>> src="images/locations/gadukino/village/horse_field.jpg"></center>'
 			'You took Desperado by the bridle and led it to the river.'
 
-			act 'Further':gt'Gadriver', 'Gadbitch'   
+			act 'Further':gt'Gadriver', 'Gadbitch'
 		end
 	end
 	if comb_horse = 1:
@@ -598,10 +598,10 @@ if $ARGS[0] = 'mira_dog':
 	gs 'stat'
 	
 	'<center><H4>The barn</H4></center>'
-    '<center><img <<$set_imgh>> src="images/characters/village/mira/mira_kennel2.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_kennel2.jpg"></center>'
 	'You see Mira in chains, naked, in Bandit''s dog house depicting a dog.'
 
-    act 'Release':
+	act 'Release':
 		cla
 		*clr
 		minut += 5
@@ -610,10 +610,10 @@ if $ARGS[0] = 'mira_dog':
 		npc_QW['A60'] = 32 & !back to mira questline by illume
 		'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_kennel3.jpg"></center>'
 		'Taking pity, you decide to let go the Mira ahead of time.'
-	    '"Okay Mira, I''m feeling mercyfull today. You can consider yourself forgiven." you say, removing Mira''s collar.'
+		'"Okay Mira, I''m feeling mercyfull today. You can consider yourself forgiven." you say, removing Mira''s collar.'
 		'The girl looks nervously at you for a few moments, then quickly gets dressed and runs home.'		
 
-		act 'Further':gt'Gadsarai'   
+		act 'Further':gt'Gadsarai'
 	end
 	act 'Go':gt'Gadsarai'
 end
@@ -622,15 +622,14 @@ end
 ! this is in memory of the untimely deceased Bandit(((
 !{
 if know_no_bandit = 0:
-    cls
-    minut += 60
-    know_no_bandit = 1
-    gs'stat'
-    
-    '<center><img <<$set_imgh>> src="images/locations/gadukino/village/know_no_pirat.jpg"></center>'
-    '"Where''s Bandit? The bastard probably ran away, you sadly thought, looking at an empty dog house, remembering the beloved dog fondly.'
-    act 'Further':gt $loc, $metka
-end  
+	cls
+	minut += 60
+	know_no_bandit = 1
+	gs'stat'
+	'<center><img <<$set_imgh>> src="images/locations/gadukino/village/know_no_pirat.jpg"></center>'
+	'"Where''s Bandit? The bastard probably ran away, you sadly thought, looking at an empty dog house, remembering the beloved dog fondly.'
+	act 'Further':gt $loc, $metka
+end
 }
 !125e
 

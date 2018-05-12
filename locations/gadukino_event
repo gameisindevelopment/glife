@@ -47,7 +47,7 @@ if $ARGS[0] = 'mira_apologise':
 			'"Ok, I agree to a truce," you say smiling, genuinely filled with joy that all the drama has come to an end. "I forgive you."'
 			'"And...?" Mira asks you.'
 			'"No, Mira, I don''t want anything more from you," you reply. "I''m not sexually interested in girls."'
-			'"Well, if you ever change your mind..." said Mira.  "Let''s get back to the village."'
+			'"Well, if you ever change your mind..." said Mira. "Let''s get back to the village."'
 			'You walk back to the village, gossiping about the boys in the village.'
 			act 'Go':gt 'gadukino'
 		end
@@ -186,7 +186,7 @@ if $ARGS[0] = 'gadriver_gang':
 		*clr & cla
 		gs 'underwear', 'wear'
 		gs 'clothing', 'strip'
-  		gs 'npcgeneratec', 0, 'drunk man', rand(19,45)
+		gs 'npcgeneratec', 0, 'drunk man', rand(19,45)
 		gs 'boyStat', $npclastgenerated
 		guy += 1
 
@@ -318,7 +318,7 @@ if $ARGS[0] = 'gadriver_gang':
 
 										act 'Further':
 											*clr & cla
-										  	gs 'npcgeneratec', 0, 'village man', rand(19,45)
+											gs 'npcgeneratec', 0, 'village man', rand(19,45)
 											gs 'boyStat', $npclastgenerated
 											guy += 1
 
@@ -499,7 +499,7 @@ if $ARGS[0] = 'gadriver_gang':
 
 																					act 'Further':
 																						*clr & cla
-																				   		gs 'npcgeneratec', 0, 'stranger', rand(19,45)
+																						gs 'npcgeneratec', 0, 'stranger', rand(19,45)
 																						gs 'boyStat', $npclastgenerated
 																						guy += 1
 
@@ -516,7 +516,7 @@ if $ARGS[0] = 'gadriver_gang':
 
 																						act 'Further':
 																							*clr & cla
-																					   		gs 'npcgeneratec', 0, 'drunk guy', rand(19,45)
+																							gs 'npcgeneratec', 0, 'drunk guy', rand(19,45)
 																							gs 'boyStat', $npclastgenerated
 																							guy += 1
 
@@ -536,7 +536,7 @@ if $ARGS[0] = 'gadriver_gang':
 
 																							act 'Further':
 																								*clr & cla
-																						   		gs 'npcgeneratec', 0, 'a man', rand(19,45)
+																								gs 'npcgeneratec', 0, 'a man', rand(19,45)
 																								gs 'boyStat', $npclastgenerated
 																								guy += 1
 
@@ -555,7 +555,7 @@ if $ARGS[0] = 'gadriver_gang':
 
 																								act 'Further':
 																									*clr & cla
-																							   		gs 'npcgeneratec', 0, 'unknown man', rand(19,45)
+																									gs 'npcgeneratec', 0, 'unknown man', rand(19,45)
 																									gs 'boyStat', $npclastgenerated
 																									guy += 1
 																									gs 'boyStat', 'A61', 2
