@@ -1852,8 +1852,8 @@ if $ARGS[0] = 'exit':
 
 	cla
 	if StoryLine = 1:act 'Go to Pavlovsk':gt 'pavResidential'
-	act 'Go to the street':gt 'street'
-	act 'Cancel':gt $loc
+	act 'Go to City Residental':gt 'street'
+	act 'Cancel':gt $curloc
 end
 
 if $ARGS[0] = 'new':
