@@ -185,7 +185,7 @@ if $loc = 'bedrPar':
 				'You spasm and have an intense orgasm with the dildo in your ass and as you recover, Anya moves from under you to stand in front of you, the strap-on held to your lips.'
 				gs 'arousal', 'anal_strap', 5, 'incest'
 				
-				act 'Suck Strap':
+				act 'Suck Strap-on':
 					cls
 					pcs_throat += 1
 					sisterLesbScene += 1	
