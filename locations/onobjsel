@@ -30,11 +30,11 @@ $menu_view[3] = 'Refresh:$menu_obnovit'
 
 killvar 'menu_other'
 $menu_other[0] = 'Notebook:$menu_bloknot'
-$menu_other[1] = 'Exigent:$menu_avariya'
+$menu_other[1] = 'Emergency exit:$menu_avariya'
 if disable_autosave = 1:
-	$menu_other[2] = '[Autosave]:$menu_autosave'
+	$menu_other[2] = 'Enable autosave:$menu_autosave'
 else
-	$menu_other[2] = '[Autosave]:$menu_autosave'
+	$menu_other[2] = 'Disable autosave:$menu_autosave'
 end
 if mobila > 0:$menu_other[3] = 'Phone:$menu_mobila'
 

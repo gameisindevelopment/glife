@@ -1,6 +1,7 @@
 # mirror
 if $ARGS[0] = 'start':
 	*clr & cla
+	$mirrorloc = 'mirror'
 	gs 'stat' &! It should be here, because some of the strigs have to be initialized
 	if player_avatar = 1:
 		'<center><img <<$set_imgh>> src="images/avatar.jpg"></center>'
@@ -410,7 +411,11 @@ if $ARGS[0] = 'brush':
 	pcs_hairbsh = 1
 	'You brush your hair.'
 	wait 500
-	gt 'mirror', 'start'
+	if $mirrorloc = 'mirror':
+		gt 'mirror', 'start'
+	else
+		gt 'mirror', 'fin'
+	end
 end &! --- brush ----
 
 if $routine1 ! '' and pcs_makeup < 2:
@@ -531,6 +536,7 @@ if $ARGS[0] = 'fin':
 	killvar '$makeupNatural'
 	killvar '$makeupHeavy'
 	killvar '$routine'
+	killvar '$mirrorloc'
 	gt $locM, $metkaM
 end &! --- fin ----
 
