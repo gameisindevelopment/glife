@@ -23,7 +23,7 @@ if $ARGS[0] = 'garden':
     end
 
     'A large vegetable garden that your grandparents are very proud of.'
-    if month >= 4 and month <= 10:'A small land plot is dedicated to a <a href="exec: gt ''Gadgarden'',''strawberry'' ">strawberry plot</a> and a <a href="exec: gt ''Gadgarden'',''fruit_garden'' "> fruit orchard</a>.'
+    if month >= 4 and month <= 10:'A small land plot is dedicated to a <a href="exec: gt ''Gadgarden'',''strawberry'' ">strawberry plot</a> and a <a href="exec: gt ''Gadgarden'',''fruit_garden'' ">fruit orchard</a>.'
    
     !job Granny
     if work_garden = 1:

@@ -39,11 +39,12 @@ if $ARGS[0] = 'wash':
 	if PCloBimbo = 1 or PCloStyle = 4:
 		i = rand(1, 4)
 		'<center><img <<$set_imgh>> src="images/locations/shared/carwash/bimboclean<<i>>.jpg"></center>'
+		'You washed the windows of several cars and earned 100 <b>₽</b>.'
 	else
 		i = rand(1, 4)
 		'<center><img <<$set_imgh>> src="images/locations/shared/carwash/regular<<i>>.jpg"></center>'
+		'You washed the windows of several cars and earned 80 <b>₽</b>.'
 	end
-	'You washed the windows of several cars and earned some cash.'
 	act 'Continue':gt 'zaprF', 'start'
 end
 
