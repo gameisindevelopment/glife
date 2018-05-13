@@ -35,6 +35,10 @@ gs 'stat'
 	if money >= 100:
 		act'Order room service (0:30) (100 <b>₽</b>)':gs 'food', 'h_food'
 	end
+	act 'Drink some water (0:05)': gs 'beverage', 'bev_wat'
+	dynamic $fatdel
+	dynamic $lekarstvo
+	dynamic $vitamin
 end
 
 
@@ -74,6 +78,11 @@ gs 'stat'
 	if money >= 100:
 		act'Order room service (0:30) (100 <b>₽</b>)':gs 'food', 'h_food'
 	end
+	act 'Drink some water (0:05)': gs 'beverage', 'bev_wat'
+	act 'Have a coffee (0:05)': gs 'beverage', 'bev_cof'
+	dynamic $fatdel
+	dynamic $lekarstvo
+	dynamic $vitamin
 end
 
 if $ARGS[0] = 'best':
@@ -111,6 +120,12 @@ gs 'stat'
 	if money >= 100:
 		act'Order room service (0:30) (100 <b>₽</b>)':gs 'food', 'h_food'
 	end
+	act 'Drink some water (0:05)': gs 'beverage', 'bev_wat'
+	act 'Have a coffee (0:05)': gs 'beverage', 'bev_cof'
+	act 'Make some tea (0:05)': gs 'beverage', 'bev_tea'
+	dynamic $fatdel
+	dynamic $lekarstvo
+	dynamic $vitamin
 end
 
 if $args[0] = 'shower1':
