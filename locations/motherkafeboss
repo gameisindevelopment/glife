@@ -18,13 +18,15 @@ gs 'boyStat', 'A119'
 '<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/borislav.jpg"></center>'
 'The owner of the cafe, called Borislav. He is a tall, thin man in his forties. Most people call him Slava.'
 
-!!{if pcafejob = 2 and cloth_pick < 1:'"<<$pcs_firstname>>! Are you here to pick up your uniform?"'
+act 'Leave':gt $loc, $metka
+
+!!{
+
+!!if pcafejob = 2 and cloth_pick < 1:'"<<$pcs_firstname>>! Are you here to pick up your uniform?"'
 
 if pcafejob = 2:'"<<$pcs_firstname>>," he greets you. "Are you here to work a shift?"'
 
 if pcafejob = 1:'"<<$pcs_firstname>>," he greets you. "Are you here for another interview to discuss that ''job offer?'' he says with the faintest hint of a smile at the corners of his lips.'
-
-act 'Leave':gt $loc, $metka
 
 if pcafejob = 2:act'Work a shift':gt'motherkafeboss','work_shift'
 
@@ -1219,5 +1221,6 @@ if $ARGS[0] = 'slut_cowgirl':
 			gs 'clothing', 'wear_last_worn'
 			gs 'arousal','end'
 			gs 'stat'}
+
 --- motherkafeboss ---------------------------------
 
