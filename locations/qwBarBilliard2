@@ -21,19 +21,19 @@ if $ARGS[0] = 'VicArt_Ev1_Cash':
 	'Victor and Artyom smile and put their own cash on top of yours before setting up a new game.'
 	*nl
 	gs 'qwBarBilliard', 'billiard_engine'
-					
+
 	if billwin > 12:
 		money += 2000
 		pcs_mood += rand(3,5)
-		'The game goes well for you. Granted, you are missing a shot here and there, but overall, you are playing fairly well and end up deciding the match for yourself.' 
+		'The game goes well for you. Granted, you are missing a shot here and there, but overall, you are playing fairly well and end up deciding the match for yourself.'
 		'Artyom seems miffed by the fact that they lost and even Victor looks somewhat surprised at how well you are playing this time, but he congratulates you on your success and hands you your winnings.'
 		*nl
 		'"How about another round?" You ask teasingly.'
 		'Victor laughs. "No thanks, I think you''ve proven that luck is on your side tonight. We''ll play more next time we''re here."'
 		'You grin. "Sure thing." Cheerfully waving the handful of bills around, you bid them farewell and return to the main room, 2000 rubles richer for it.'
-					
+
 		act 'Return to the bar': gt 'qwbarPolet'
-							
+
 	else
 		money -= 1000
 		pcs_mood -= rand(1,5)
@@ -41,18 +41,18 @@ if $ARGS[0] = 'VicArt_Ev1_Cash':
 		'Two or three missed shots later, you begrudgingly concede defeat.'
 		*nl
 		'"You gave us a good run for our money," Victor says conciliatorily and Artyom agrees. "Our luck could run out any moment. You could play again and win your money back."'
-					
+
 		act 'No thanks':
 			cla
 			'"No, I think I''ve lost enough for one day," you decline.'
 			'"Well, you know where to find us," Artyom says with an uncharacteristic smile.'
 			'"Take care, <<$pcs_firstname>>," Victor bids you farewell and you return to the main room.'
-							
+
 			act 'Return to the bar': gt 'qwbarPolet'
 		end
-		
-		act 'Maybe I could... I''m almost broke though': gt 'qwBarBilliard2', 'VicArt_Ev1_Broke'			
-		
+
+		act 'Maybe I could... I''m almost broke though': gt 'qwBarBilliard2', 'VicArt_Ev1_Broke'
+
 		if money >= 1000:
 			act 'Maybe I could... (Play for cash)': gt 'qwBarBilliard2', 'VicArt_Ev1_Cash'
 		end
@@ -79,15 +79,15 @@ if $ARGS[0] = 'VicArt_Ev1_Broke':
 		'Victor''s eyes widen slightly at the suggestion. "That... sounds fair. Right?" He looks at Artyom who nods in agreement. "Yeah, a striptease, right here in this room."'
 		'"Wait, here?! What about the bartender? What if he caught us?"'
 		'"We wouldn''t insist if we hadn''t made the experience that even the best people might run off when it comes to paying up. But unfortunately, that''s how it is. It''s better to pay your dues right away anyway, isn''t it? Plus," Victor smiles, "Martin''s not gonna catch us as long as you stay quiet..."'
-		*nl							
+		*nl
 		'Running away... You gotta admit that the thought of running away if you lost has crossed your mind.'
 		if PBB_Met = 2:
 			'Getting out of giving a blowjob to a lecherous trickster can be that easy.'
 		end
 		'Nobody''s forcing you to take this bet. But it''s clear that, if you take it, you will have to make good on it - however friendly they appear, Victor and Artyom don''t look like the kind of guys you wanna have trouble with.'
 		'So, are you willing to take that bet? Would you be willing to strip naked for two guys you barely know in the backroom of a bar, only one thin curtain away from dozens of patrons?'
-	
-	else 	
+
+	else
 		'"I''d like to but I don''t think I can afford to play for that much," you admit.'
 		'"Well, our offer still stands," Artyom reminds you. "You could bet doing a striptease instead.' + iif(Jaska_Friend_Bill>=2,'.. maybe even more than that."','') + '"'
 		'"Right," you say pensively. "That. And I would have to do it..."'
@@ -96,7 +96,7 @@ if $ARGS[0] = 'VicArt_Ev1_Broke':
 		'Are you willing to take that bet? Would you be willing to strip naked for two guys you barely know in the backroom of a bar, only one thin curtain away from dozens of patrons?'
 		if Jaska_Friend_Bill >= 2: 'Or would you be willing to do even more than that? Maybe in exchange for a higher wager?'
 	end
-	
+
 	act 'No way':
 		cla
 		*nl
@@ -105,10 +105,10 @@ if $ARGS[0] = 'VicArt_Ev1_Broke':
 		'"I, um... I think I should get going," you say eventually.'
 		'"Yeah, we''ll see you next time."'
 		'With a few more parting words, you return to the main room.'
-		
+
 		act 'Return to the bar': gt 'qwbarPolet'
 	end
-	
+
 	if pcs_exhibition >= 20:
 		act 'Deal - If I lose, I strip':
 			cls
@@ -121,21 +121,21 @@ if $ARGS[0] = 'VicArt_Ev1_Broke':
 			'"Okay what?" Victor asks. "We need to hear what you are betting."'
 			'You take a deep breath. "If I lose, I''ll do a striptease. Here," you add when they keep looking at you expectantly.'
 			'"Great," Artyom exclaims. "Let''s play."'
-			
+
 			gs 'qwBarBilliard', 'billiard_engine'
-										
+
 			if billwin > 12:
 				money += 2000
 				pcs_mood += rand(3,5)
-				'The game goes well for you. Granted, you are missing a shot here and there, but overall, you are playing fairly well and end up deciding the match for yourself.' 
+				'The game goes well for you. Granted, you are missing a shot here and there, but overall, you are playing fairly well and end up deciding the match for yourself.'
 				'Artyom seems miffed by the fact that you''ve won and even Victor looks somewhat surprised at how well you are playing this time, but he congratulates you on your success and hands you your winnings.'
 				*nl
 				'"How about another round?" You ask teasingly.'
 				'Victor laughs. "No thanks, I think you''ve proven that luck is on your side tonight. We''ll play more next time we''re here."'
 				'You grin. "Sure thing." Cheerfully waving the handful of bills around, you bid them farewell and return to the main room, 2000 rubles richer for it - not a bad turnout for a bet like yours.'
-							
+
 				act 'Return to the bar': gt 'qwbarPolet'
-								
+
 			else
 				pcs_mood -= rand(1,5)
 				'The game starts off in your favor. Artyom misses several easy shots early on and allows you to get a comfortable headstart, but as Victor places his shots with surgical precision, your advantage melts away.'
@@ -143,84 +143,69 @@ if $ARGS[0] = 'VicArt_Ev1_Broke':
 				*nl
 				'"Good game."'
 				'All of you know what''s coming next and there is no way around it for you.'
-				
+
 				act 'Pay your dues':
 					!Link to argument
-					
+
 					cls
 					if Jaska_Friend_Bill = 1: Jaska_Friend_Bill = 2
 					pic_rand = rand(1,3)
 					!!A few strip variants? How many max?
-					
+
 					if pic_rand = 1:
 					!Variant pic and text 1
-					
-					elseif pic_rand = 2:
-					
-					...
-					
 
-					
+					elseif pic_rand = 2:
+					'...'
+					end
+
 					act 'part 2':
 						!Same here - variants for different pic sets
-						
-						
+
 						act 'Return to the bar': gt 'qwbarPolet'
-								
+
 					end
 				end
 			end
 		end
 	end
-	
+
 	if pcs_exhibition >= 25 and Jaska_Friend_Bill >= 2:
 		act 'Okay - If I lose, I masturbate':
 			![More Money!]
-		
-		
-		
+
 			!When she loses
 			if Jaska_Friend_Bill = 2: Jaska_Friend_Bill = 3
-		
-		
-		
+
 		end
 	end
-	
+
 	if pcs_exhibition >= 30 and Jaska_Friend_Bill >= 3:
 		act 'Alright - If I lose, I blow you':
 			![More Money!]
 			!GETTING CAUGHT BY MARTIN!!!
-			
-			
-			
-			
+
 			if Jaska_Friend_Bill = 3:
 				!Also requires pcs_exhibition and maybe something else - blowjob experience?
-				
+
 				!Sveta offers giving both of them a blowjob as a wager
-				
-				if billwin > ???:
-					
-					
-					
-					
-				else
+
+				!if billwin > ???:
+
+				!else
 					'Artyom looks at you triumphantly and Victor also seems quite pleased with this outcome.'
 					'"Well, it looks like it''s time to make good on your wager," he says as he unzips his pants.'
-				
+
 					act 'Start blowing them':
 						Jaska_Friend_Bill = 4
 						'bla bla bla'
-						
-						
+
 						act 'Continue':
-							!BLOWJOB SCENE - MARTIN CATCHES THEM!!! 
+							!BLOWJOB SCENE - MARTIN CATCHES THEM!!!
 							!relationship penalty
 							!mood penalty
 							!slut fame [people outside can hear you]
-							
-												
+
 							!picture
 							'"What the hell is going on here?!"'
 							'The voice of Martin breaks your erotic reverie like a bucket of ice water. He''s standing in the door frame, having quickly closed the curtain behind himself to bar other people from looking inside.'
@@ -249,25 +234,22 @@ if $ARGS[0] = 'VicArt_Ev1_Broke':
 							'"Because that''s how you keep your partners happy. He didn''t demand anything we weren''t going to give him anyway and 10 percent of a blowjob isn''t anything, really, is it, <<$pcs_firstname>>?"'
 							'You remain silent, your face and stomach burning with... Could it be shame?'
 							'"Now, where were we?" Victor muses and slaps his cock against your face.'
-							
+
 							act 'Finish them':
-						
-								
-								
+
 								'As you ready yourself to walk out, you realize that the other patrons must have heard the argument between Martin and the guys, must have heard your name...'
-								
+
 								act 'Return to the bar': gt 'qwbarPolet'
 							end
 						end
 					end
-				end
+				!end
 			end
 		end
 	end
 end
 
 	!!Different blowjob scene (with small variants after the one with Martin fired - no conditional change to Jaska_Friend_Bill necessary)
-
 
 	!Sex progression? first strip teases, masturbation, then handjobs/blowjobs, sex, anal, DP - dependent on pcs_exhibition - caught in a specific act (blowjob? sex?) - each act is worth more
 	!Small scene variants where she only blows one of them, only has sex with one of them etc.
