@@ -180,7 +180,8 @@ if $ARGS[0] = 'start':
 			nextbaby = arrsize('yearkid')
 			if broodcurse > 0: over = 13 & gt'gameover'
 			:poliabortloop
-			if Babyptype[nextbaby] < 200:
+			!!Changed to check if baby has a birth year instead, if it doesn''t, do abortion
+			if yearkid[nextbaby-1] = 0:
 				KILLVAR 'polkid',nextbaby-1
 				KILLVAR '$kidname',nextbaby-1
 				KILLVAR 'kidage',nextbaby-1
@@ -195,12 +196,12 @@ if $ARGS[0] = 'start':
 				KILLVAR 'cumarrcon',nextbaby-1
 				KILLVAR '$wombpotfath',nextbaby-1
 				BabyEmbryo -= 1
-				nextbaby -= 1
 			end
 			nextbaby -= 1
 			if nextbaby > 0:
 				jump 'poliabortloop'
 			end
+
 
 			act 'Return to the entrance':gt 'poli', 'start'
 		end
@@ -1385,7 +1386,7 @@ if $ARGS[0] = 'cosmetic1':
 	if money >= 90000 and pcs_eyesize ! 0:
 		'<a href="exec:gt ''poli'', ''eyeMin''">Eye reduction surgery</a> - 90,000 <b>₽</b>'
 		else
-		'Eye enlargement surgery - 90,000 <b>₽</b>' 
+		'Eye reduction surgery - 90,000 <b>₽</b>' 
 	end
 	if money >= 75000 and salo > 40:
 		'<a href="exec:gt ''poli'', ''lyposuction''">Liposuction</a> - 75,000 <b>₽</b>'

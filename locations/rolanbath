@@ -23,10 +23,10 @@ if $ARGS[0] = 'start':
 
 	'<center><b><font color = maroon>Bathroom</font></b></center>'
 	if newbath ! 1:
-		'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroom.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroom.jpg"></center>'
 		'The bathroom has seen better days. There''s some mold in the corners of the walls and floors with a big crack in the wall. This place probably hasn''t been cleaned for quite some time. The toilet sits along the far wall. There''s also a bathtub, with an old plastic shower curtain hanging from a rod above it. It also seems that the latch on the door is broken.'
 	elseif newbath = 1:
-		'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroomnew.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroomnew.jpg"></center>'
 		'Newbath'
 	end
 	
@@ -39,7 +39,7 @@ if $ARGS[0] = 'start':
 		elseif workertool = 2:
 			cla
 			*clr
-			'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/girlpow.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/girlpow.jpg"></center>'
 			'"I will show to Rolan the girl power."'
 			act 'to the work': gt 'rolanapt', 'worker'
 		end
@@ -58,7 +58,7 @@ if $ARGS[0] = 'start':
 		
 		if frost > 0:frost = 0
 
-		'<center><img src="images/shared/home/bathroom/wash3.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/shared/home/bathroom/wash3.jpg"></center>'
 		*nl
 		'You undress and turn on the water in the shower. When it hits the right temperature you enter the shower and let the warm water rain down on you. You carefully soap yourself trying not to miss any spot and then wash off.'
 		*nl
@@ -88,7 +88,7 @@ if $ARGS[0] = 'start':
 					cla
 					*clr
 					minut += 1
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathsing'+rand(0,1)+'.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathsing'+rand(0,1)+'.jpg"></center>'
 					*nl
 					'The warm water begins to caress you."Ohh...that''s what i need!". You forget for a moment that Rolan could enter the bath in any moment, that was so relaxing that you start to sing under the water flow; you imagine yourself on a stage as a rockstar singing for her fans.'
 					pcs_mood += 10
@@ -106,7 +106,7 @@ if $ARGS[0] = 'start':
 					cla
 					*clr
 					minut += 1
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathpeek.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathpeek.jpg"></center>'
 					*nl
 					'As the jet of warm water begins to caress you, you hear a noise..."Rolan is that you?"...baf probably i''m oversuspicious....'
 					cumspclnt = 8
@@ -120,7 +120,7 @@ if $ARGS[0] = 'start':
 					act 'return the shower': 
 						cla
 						*clr
-						'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathcold.jpg"></center>'
+						'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathcold.jpg"></center>'
 						*nl
 						'"whaaa... i must have finished hot water"'
 						act 'Dry yourself':
@@ -128,7 +128,7 @@ if $ARGS[0] = 'start':
 							*clr
 							minut += 5	
 !							gs 'rolanbath', 'rolansteal'	
-							'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathtowel1.jpg"></center>'
+							'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathtowel1.jpg"></center>'
 							*nl
 							'you exit the shower with your towel on, knowing that is better to be fast.'
 							if hypnoAddict ! 0:
@@ -146,14 +146,14 @@ if $ARGS[0] = 'start':
 					cla
 					*clr
 					minut += 1
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathaware'+rand(0,2)+'.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathaware'+rand(0,2)+'.jpg"></center>'
 					*nl
 					'"Rolan is that you?".'
 					act 'What the f...?':
 						cla
 						*clr
 						minut += 10
-						'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathwhat.jpg"></center>'
+						'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathwhat.jpg"></center>'
 						*nl
 						'shit rolan is here masturbating'
 						act 'look':
@@ -169,7 +169,7 @@ if $ARGS[0] = 'start':
 								minut += 5
 								dynamic $showerdin
 								pcs_horny += rand(0,2)
-								'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathhide0.jpg"></center>'
+								'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathhide0.jpg"></center>'
 								*nl
 								'It would be very embarrassing if Rolan enters now ... Better wait till he''s done.'	
 								act 'wait': gt 'rolanbath','dryOff'
@@ -294,7 +294,7 @@ if $ARGS[0] = 'start':
 					cla
 					*clr
 					minut += 1
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathsing1.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathsing1.jpg"></center>'
 					*nl
 					'The warm water begins to caress you."Ohh...that''s what i need!". You forget for a moment that Rolan could enter the bath in any moment, that was so relaxing that you start to sing under the water flow; you imagine yourself on a stage as a rockstar singing for her fans.'
 					pcs_mood += 10
@@ -306,7 +306,7 @@ if $ARGS[0] = 'start':
 					cla
 					*clr
 					minut += 1
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathpeek.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathpeek.jpg"></center>'
 					*nl
 					'As the jet of warm water begins to caress you, you hear a noise..."Rolan is that you?"...baf probably i''m oversuspicious....'
 					gs 'cum_cleanup'
@@ -321,14 +321,14 @@ if $ARGS[0] = 'start':
 					act 'return to bathtub': 
 						cla
 						*clr
-						'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathcold.jpg"></center>'
+						'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathcold.jpg"></center>'
 						*nl
 						'"whaaa... i must have finished hot water"'
 						act 'Dry yourself':
 							cla
 							*clr
 							minut += 5
-							'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathtowel1.jpg"></center>'
+							'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathtowel1.jpg"></center>'
 							*nl
 							'you exit the shower with your towel on, knowing that is better to be fast.'
 							act'Quick dressing': gt 'rolanbath','dryOff'
@@ -340,14 +340,14 @@ if $ARGS[0] = 'start':
 					cla
 					*clr
 					minut += 1
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathaware'+rand(3,5)+'.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathaware'+rand(3,5)+'.jpg"></center>'
 					*nl
 					'"Rolan is that you?".'
 					act 'What the f...?':
 						cla
 						*clr
 						minut += 10
-						'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathwhat.jpg"></center>'
+						'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathwhat.jpg"></center>'
 						*nl
 						'shit rolan is here masturbating'
 						act 'look':
@@ -363,7 +363,7 @@ if $ARGS[0] = 'start':
 								minut += 5
 								dynamic $showerdin
 								pcs_horny += rand(0,2)
-								'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathhide0.jpg"></center>'
+								'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathhide0.jpg"></center>'
 								*nl
 								'It would be very embarrassing if Rolan enters now ... Better wait till he''s done.'	
 								act 'wait': gt 'rolanbath','dryOff'
@@ -719,7 +719,7 @@ if $ARGS[0] = 'pervshower':
 		
 		if frost > 0:frost = 0
 
-		'<center><img src="images/shared/home/bathroom/wash3.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/shared/home/bathroom/wash3.jpg"></center>'
 		*nl
 		'You carefuly undress behind the curtain and open the water. When it hits the right temperature you enter the shower and let the warm water rain down on you. You carefully soap yourself trying not to miss any spot and then wash off.'
 		*nl
@@ -782,7 +782,7 @@ if $ARGS[0] = 'pervshower':
 					cla
 					*clr
 					minut += 1
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathsing'+rand(0,1)+'.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathsing'+rand(0,1)+'.jpg"></center>'
 					*nl
 					'The warm water begins to caress you."Ohh...that''s what i need!". You forget for a moment that Rolan could enter any moment, that was so relaxing that you start to sing under the water flow; you imagine yourself on a stage as a rockstar singing for her fans.'
 					pcs_mood += 10
@@ -918,7 +918,7 @@ if $ARGS[0] = 'dryOff':
 	if RolanLoc[hour] = 0:	
 		cla
 		*clr
-		'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathtowel'+rand(0,1)+'.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathtowel'+rand(0,1)+'.jpg"></center>'
 		*nl	
 		'you know rolan cannot be there'
 		act 'Get out and dry off': gt $loc, 'start'
@@ -926,7 +926,7 @@ if $ARGS[0] = 'dryOff':
 		if rand (0,3) = 3:
 			cla
 			*clr
-			'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbusy1.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbusy1.jpg"></center>'
 			'shit rolan is here ...when did he enter?'
 			act 'Close curtain (0:5)':
 				cla
@@ -934,7 +934,7 @@ if $ARGS[0] = 'dryOff':
 				minut += 5
 				dynamic $showerdin
 				pcs_horny += rand(0,2)
-				'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathhide0.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathhide0.jpg"></center>'
 				*nl
 				'It would be very embarrassing if Rolan enters now ... Better wait till he''s done.'	
 				act 'wait': gt 'rolanbath','dryOff'
@@ -944,10 +944,10 @@ if $ARGS[0] = 'dryOff':
 			*clr		
 			'<center><b><font color = maroon>Bathroom</font></b></center>'
 			if newbath ! 1:
-				'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroom.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroom.jpg"></center>'
 				'The bathroom has seen better days. There''s some mold in the corners of the walls and floors with a big crack in the wall. This place probably hasn''t been cleaned for quite some time. The toilet sits along the far wall. There''s also a bathtub, with an old plastic shower curtain hanging from a rod above it. It also seems that the latch on the door is broken.'
 			elseif newbath = 1:
-				'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroomnew.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroomnew.jpg"></center>'
 				'Newbath'
 			end
 			*nl
@@ -959,7 +959,7 @@ if $ARGS[0] = 'dryOff':
 					minut += 1
 					rolan_steal_count +=1
 					rolan_steal_day = daystart
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/headrol.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/headrol.jpg"></center>'
 					if rolanpantyQW =< 1:
 						rolanpantyQW += 1
 						*nl
@@ -974,7 +974,7 @@ if $ARGS[0] = 'dryOff':
 					cla
 					*clr
 					minut += 1
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathdry'+rand(0,1)+'.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanbathdry'+rand(0,1)+'.jpg"></center>'
 					*nl
 					'better be careful you never know.....'	
 					act 'exit': gt $loc, 'start'
@@ -999,35 +999,35 @@ if $ARGS[0] = 'tools':
 			*clr
 			minut += 1
 			'<center><b><font color = maroon>Tools</font></b></center>'
-			'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker0.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker0.jpg"></center>'
 			'"Trowel.."'
 			act 'continue':
 				cla
 				*clr
 				minut += 1
 				'<center><b><font color = maroon>Tools</font></b></center>'
-				'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker1.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker1.jpg"></center>'
 				'"...where''s the paintbrush?...oh i see it from here..."'
 				act 'continue':
 					cla
 					*clr
 					minut += 1
 					'<center><b><font color = maroon>Tools</font></b></center>'
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker2.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker2.jpg"></center>'
 					'"...ladder..."'
 					act 'continue':
 						cla
 						*clr
 						minut += 1
 						'<center><b><font color = maroon>Tools</font></b></center>'
-						'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker3.jpg"></center>'
+						'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker3.jpg"></center>'
 						'"....mmmhh...i should be faster with pneumatic hammer...."'
 						act 'continue':
 							cla
 							*clr
 							minut += 1
 							'<center><b><font color = maroon>Tools</font></b></center>'
-							'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker4.jpg"></center>'
+							'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker4.jpg"></center>'
 							'"...noise stop...."'
 							act 'continue':
 								cla
@@ -1035,7 +1035,7 @@ if $ARGS[0] = 'tools':
 								minut += 1
 								workertool += 1
 								'<center><b><font color = maroon>Tools</font></b></center>'
-								'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker5.jpg"></center>'
+								'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker5.jpg"></center>'
 								'"Crap ...Vladimir doesn''t have concrete....Rolan should have the paint, my last hope is he have some concrete too; i should check..."'
 								act 'continue': gt 'rolanbath', 'tools'
 							end
@@ -1106,7 +1106,7 @@ if $ARGS[0] = 'surprise':
 		*clr
 		minut += 1
 		'<center><b><font color = maroon>Surprise</font></b></center>'
-		'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroomnew.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathroomnew.jpg"></center>'
 		'"Miss <<$pcs_lastname>> ...the light and there''s no more mold''s smell...how ...how ... i''ve bought the paint but ...." '
 		*nl
 		'"As a matter of fact it was your paint, but there''s some left if you have to make some adjustment..."'
@@ -1117,7 +1117,7 @@ if $ARGS[0] = 'surprise':
 			*clr
 			minut += 1
 			'<center><b><font color = maroon>Surprise</font></b></center>'
-			'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanheadbath0.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanheadbath0.jpg"></center>'
 			'..."How much did it cost to you? I-i don''t have much...but i have to repay...."'
 			*nl
 			'"Do not worry Rolan i didn''t do it for money, and it cost me nothing...i did it by myself...!"'
@@ -1132,7 +1132,7 @@ if $ARGS[0] = 'surprise':
 				rolanknow = 1
 				RolanLoc[hour] = 6
 				'<center><b><font color = maroon>Surprise</font></b></center>'
-				'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanheadbath1.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanheadbath1.jpg"></center>'
 				'"Oh sure ...your stepdad...he should be a man who take cares of his property...but i don''t have concrete...how did you managed with the crack on the wall? did you ask also for concrete to Vladimir? "'
 				*nl
 				'"Oh no he didn''t have....but i found some in the room you usually clean ..."'

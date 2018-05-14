@@ -487,29 +487,30 @@ killvar 'stat_extra_msg'
 
 
 !!----------------Extra messages, End--------------------------
+!! double with payment in cikl
 
-if home_owned[1] = 1 and ArendHouseSL <= 0:
-	$stat_msg += '<br><font color="red"><b>The rent on your apartment is due today.</b></font>'
-	if money >= 6000 or stolmoney >= 6000 or money + stolmoney >= 6000 or karta + bankDebtLimit >= 6000:
-		$stat_msg += ' Renew with '
-		if money >= 6000:
-			$stat_msg += ' <a href="exec:money -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash</a>'
-		elseif stolmoney >= 6000:
-			$stat_msg += ' <a href="exec:stolmoney -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from drawer</a>'
-		elseif money + stolmoney >= 6000:
-			!both < 6000, so money = money - 6000 + stolmoney
-			$stat_msg += ' <a href="exec:money -= 6000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from purse and drawer</a>'
-		end
-		!from purse, drawer or both
-		if karta >= 6000: 
-			$stat_msg += ' <a href="exec:karta -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account</a>'
-		elseif karta + bankDebtLimit >= 6000: 
-			$stat_msg += ' <a href="exec:karta -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account, but you will be overdrawn.</a>'
-		end	
-	else
-		$stat_msg += ' But you can''t afford to pay the rent.'
-	end
-end
+!! if home_owned[1] = 1 and ArendHouseSL <= 0:
+!! 	$stat_msg += '<br><font color="red"><b>The rent on your apartment is due today.</b></font>'
+!! 	if money >= 6000 or stolmoney >= 6000 or money + stolmoney >= 6000 or karta + bankDebtLimit >= 6000:
+!! 		$stat_msg += ' Renew with '
+!! 		if money >= 6000:
+!! 			$stat_msg += ' <a href="exec:money -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash</a>'
+!! 		elseif stolmoney >= 6000:
+!! 			$stat_msg += ' <a href="exec:stolmoney -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from drawer</a>'
+!! 		elseif money + stolmoney >= 6000:
+!! 			!both < 6000, so money = money - 6000 + stolmoney
+!! 			$stat_msg += ' <a href="exec:money -= 6000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from purse and drawer</a>'
+!! 		end
+!! 		!from purse, drawer or both
+!! 		if karta >= 6000: 
+!! 			$stat_msg += ' <a href="exec:karta -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account</a>'
+!! 		elseif karta + bankDebtLimit >= 6000: 
+!! 			$stat_msg += ' <a href="exec:karta -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account, but you will be overdrawn.</a>'
+!! 		end	
+!! 	else
+!! 		$stat_msg += ' But you can''t afford to pay the rent.'
+!! 	end
+!! end
 
 if opPRE = 0: $stat_msg += '<BR><<$pcs_makeup>> and your hair is <<$pcs_hairbsh>>.' & !$stat_msg += '<BR>'
 
