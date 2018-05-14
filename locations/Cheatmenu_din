@@ -911,16 +911,16 @@ $cheatmenu['reputation'] = {
 	if pcs_lovers[0] = 1:
 		nl
 		pl'You are dating <<$loverdesc[0]>>.'
-		if pcs_lovers_rel[0] < 0: pcs_lovers_rel[0] = 0
+		if loverrelation[0] < 0: loverrelation[0] = 0
 		if loverdays[0] < 0: loverdays[0] = 0
 		if haraklover[0] > 2: haraklover[0] = 0
 		if loverizvrat[0] > 1: loverizvrat[0] = 0
 		pl'Change lover''s personality: <a href="exec:haraklover[0] += 1 & dynamic $cheatmenu[''reputation'']"><<haraklover[0]>></a>'
 		pl'Change lover''s perversion: <a href="exec:loverizvrat[0] += 1 & dynamic $cheatmenu[''reputation'']"><<loverizvrat[0]>></a>'
-		pl'Relationship: <<pcs_lovers_rel[0]>> <a href="exec:pcs_lovers_rel[0] += 10 & dynamic $cheatmenu[''reputation'']">+10</a> <a href="exec:loverrelation[0] -= 10 & dynamic $cheatmenu[''reputation'']">-10</a>'
+		pl'Relationship: <<loverrelation[0]>> <a href="exec:loverrelation[0] += 10 & dynamic $cheatmenu[''reputation'']">+10</a> <a href="exec:loverrelation[0] -= 10 & dynamic $cheatmenu[''reputation'']">-10</a>'
 		pl'You''ve been dating for <<loverdays[0]>> days. <a href="exec:loverdays[0] += 5 & dynamic $cheatmenu[''reputation'']">+5</a> <a href="exec:loverdays[0] -= 5 & dynamic $cheatmenu[''reputation'']">-5</a>'
 	end
-		if pcs_lovers[1] = 1:
+	if pcs_lovers[1] = 1:
 		nl
 		pl'You are dating <<$loverdesc[1]>>.'
 		if loverrelation[1] < 0: loverrelation[1] = 0
@@ -932,7 +932,7 @@ $cheatmenu['reputation'] = {
 		pl'Relationship: <<loverrelation[1]>> <a href="exec:loverrelation[1] += 10 & dynamic $cheatmenu[''reputation'']">+10</a> <a href="exec:loverrelation[1] -= 10 & dynamic $cheatmenu[''reputation'']">-10</a>'
 		pl'You''ve been dating for <<loverdays[1]>> days. <a href="exec:loverdays[1] += 5 & dynamic $cheatmenu[''reputation'']">+5</a> <a href="exec:loverdays[1] -= 5 & dynamic $cheatmenu[''reputation'']">-5</a>'
 	end
-		if pcs_lovers[2] = 1:
+	if pcs_lovers[2] = 1:
 		nl
 		pl'You are dating <<$loverdesc[2]>>.'
 		if loverrelation[2] < 0: loverrelation[2] = 0
@@ -1373,6 +1373,11 @@ $cheatmenu['display'] = {
 		pl'Full morning routine enabled: Currently ON - <a href="exec:enfullmorrout = 0 & dynamic $cheatmenu[''display'']">Turn OFF</a>'
 	else
 		pl'Full morning routine enabled: Currently OFF - <a href="exec:enfullmorrout = 1 & dynamic $cheatmenu[''display'']">Turn ON</a>'
+	end
+	if editpornname = 1:
+		pl'Editing of the names of the porn movies you stared enabled: Currently ON - <a href="exec:editpornname = 0 & dynamic $cheatmenu[''display'']">Turn OFF</a>'
+	else
+		pl'Editing of the names of the porn movies you stared disabled: Currently OFF - <a href="exec:editpornname = 1 & dynamic $cheatmenu[''display'']">Turn ON</a>'
 	end
 	nl
 	pl '<center><B>Display Setting</B></center>'

@@ -1385,7 +1385,7 @@ if $ARGS[0] = 'cosmetic1':
 	if money >= 90000 and pcs_eyesize ! 0:
 		'<a href="exec:gt ''poli'', ''eyeMin''">Eye reduction surgery</a> - 90,000 <b>₽</b>'
 		else
-		'Eye enlargement surgery - 90,000 <b>₽</b>' 
+		'Eye reduction surgery - 90,000 <b>₽</b>' 
 	end
 	if money >= 75000 and salo > 40:
 		'<a href="exec:gt ''poli'', ''lyposuction''">Liposuction</a> - 75,000 <b>₽</b>'

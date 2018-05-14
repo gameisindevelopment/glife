@@ -835,6 +835,7 @@ end
 
 if $ARGS[0] = 'Lips':
 	act 'Enter clinic':
+		cla
 		'As you arrive at the clinic, <<$loverdesc[lover_number]>> walks up to the front desc and asks to speak with the plastic surgeon. After a couple of minutes the plastic surgeon comes out with a clipboard.'
 		'<<$loverdesc[lover_number]>> talks to the surgeon and after a brief exchange of words, <<$tXe>> hands the surgeon a respectable stack of bills. The surgeon discreetly puts the bills into his jacket and starts to walk toward you.'
 		'Even though you don''t know what <<$loverdesc[lover_number]>> said to the surgeon, you still jump when he starts to speak to you.'
@@ -947,6 +948,7 @@ if $ARGS[0] = 'Tits':
 					*nl
 					*nl
 					act 'Wake up':
+						cla
 						minut += 120
 						silicone += titAmount
 						gs 'stat'
