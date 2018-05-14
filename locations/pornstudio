@@ -875,12 +875,14 @@ if $ARGS[0] = 'postvideo':
 		$porntitle[film] = 'Girls Jerk Guys #36 - '
 		$pornfilmstory[film] = '<<$pfname>>''s introduction to the world of porn, where she jerk off <<$pakter[1]>> on her tits.'
 	else
-		if $pstory = '':
+		if $pstory = '' and editpornname = 1:
 			$pornfilmstory[film] = input('You can enter the story of the porn movie. This action can be done only once, but you can choose to do it later! (Just hit Enter/Esc when blank)<br>Tags of the current movie: <font color=#541717 size=2><<$pfilmtags>></font>')
 		else
 			$pornfilmstory[film] = $pstory
 		end
-		$porntitle[film] = input("Enter the name of the porn movie. <i>This action can be done only once, but you can choose to do it later! (Just hit Enter/Esc when blank)</i>")
+		if editpornname = 1:
+			$porntitle[film] = input("Enter the name of the porn movie. <i>This action can be done only once, but you can choose to do it later! (Just hit Enter/Esc when blank)</i>")
+		end
 	end
 	
 	if pfilmNOPAY = 0:
