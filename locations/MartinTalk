@@ -755,7 +755,39 @@ if $ARGS[0] = '':
 		end
 		
 	elseif MartinTalkVar = 10 and MartinSex = 1:
-		MartinTalkVar = 11
+		MartinTalkVar = 11	
+		'"Sure, <<$pcs_firstname>>." Martin prepares a drink for you and puts it down in front of you.'
+		*nl
+		'You smile gratefully and take a gulp. Now that you are sitting here, right in front of him, it hits you all over again: You had sex with Martin!'
+		'Your lips curl into a grin as a cheesy line crosses your mind and you can''t help but say it, just loud enough for the bartender to hear you: "Did you miss me, stud?"'
+		'Martin doesn''t smile back. He doesn''t look embarrassed either. "<<$pcs_firstname>>... We should talk."'
+		$OpenInnerThought+'Uh oh... Sounds like he''s particularly grumpy today.'+$CloseInnerThought+' Not that you could tell - It''s only through his smiles and flirts that you can tell if Martin is in a good mood. Maybe you can still cheer him up, though:'
+		'"About what? Did one of the guys slip on..." You stop. There''s a pensiveness in his eyes that confuses you. "About what?" You repeat.'
+		'"About this situation we''re in, you and me," he almost whispers. "I wanted to make sure we''re... how does that saying go? ''On the same page.''"'
+		*nl
+		'"And what page would that be?" This conversation is starting to make you uncomfortable.'
+		'"That what happened between us was... amazing. And honestly, I would like to do it again, often. But it can''t be more than casual sex."'
+		'That was unexpected. You honestly didn''t put much thought into what ''this'' was, beyond the fact that you felt physically attracted to Martin, but it''s in the nature of talks like this that they make you wonder...'
+		'"I don''t get you, Martin," you say after mustering him for a few seconds. "Did some weird flirt guru in Colombia teach you that this is the best thing to say to a woman after you-"'
+		'"Shhh!" Martin makes, probably to make you talk more quietly, but all it does is irritate you more.'
+		'"And why would you even bring this up? Do I come off as clingy, cheap, as a gold digger or-"'
+		'"No." This time, Martin cuts you off, calm but insistent - it works significantly better than ''Shhh.'' "That''s not why I wanted to talk. I''ve been in situations before where it all began as good fun but my partners eventually wanted more than I could give them. And I don''t want to make the mistake of giving you false hope, should you have any."'
+		*nl
+		'"So, just casual sex, no strings attached, and that''s it." You feel stupid just repeating what he said, but you''re not sure how to react.'
+		'"Yes," the bartender confirms. "It''s up to you if you wanna continue or walk out and never see me again. I''ll be here regardless, and my decision stands. I just thought I''d tell you so it didn''t come as a surprise someday."'
+		'"And when I have a boyfriend or something like that?"'
+		'"Then you go and be happy with that man. Or woman. Whichever you prefer. You are a good friend, <<$pcs_firstname>>, and a beautiful, passionate woman. But I can''t play a bigger role in your life than I already am."'
+		*nl
+		'He leaves you to think about this conversation some more. You''re not entirely sure how much this really hit you. Were you angrier about him bringing this up here, in public, and then trying to silence you, or about his ''rejection''?'
+		'Do you have feelings for Martin beyond physical attraction?'
+		'Well, it doesn''t really matter now. It''s probably the best you could have hoped for: You have friend and experienced lover you can hook up with whenever you feel like it and who just told you that neither of you have to worry about the other''s feelings too much.'
+		'After all, you weren''t actually looking for a serious relationship with a man old enough to be your father, were you?'
+		
+		act 'Finish your drink': gt 'qwBarPolet'
+		
+		
+	elseif MartinTalkVar = 11 and MartinSex = 1 and npc_rel['A216'] >= 64:
+		MartinTalkVar = 12
 		'"Of course, <<$pcs_firstname>>," Martin says and hands you your poison of choice.'
 		'"Thanks, Martin", you say with a smile and take a sip.'
 		*nl
@@ -781,10 +813,10 @@ if $ARGS[0] = '':
 		*nl
 		'You cannot outright see the effect of your words, but the telltale hints of it alone somehow make your drink taste better.'
 		
-		act 'Finish your drink': gt 'qwBarPolet'	
+		act 'Finish your drink': gt 'qwBarPolet'
 	
-	elseif MartinTalkVar = 11 and MartinSex = 1 and npc_rel['A216'] >= 65:
-		MartinTalkVar = 12
+	elseif MartinTalkVar = 12 and MartinSex = 1 and npc_rel['A216'] >= 70:
+		MartinTalkVar = 13
 		'Martin nods and a few seconds later, a drink sits in front of you.'
 		*nl
 		'"Thank you," you say. You already know what you want to ask Martin today, a topic you had brushed before: "Do you have a big family?"'
@@ -868,78 +900,6 @@ if $ARGS[0] = '':
 		act 'Finish your drink': gt 'qwBarPolet'
 	end
 end
-		
-		
-		
-if $ARGS[0] = 'NotInUseRightNow':
-	if MartinTalkVar = 12 and MartinSex = 1 and  and npc_rel['A216'] >= 70:
-		MartinTalkVar = 13
-		'"Sure, <<$pcs_firstname>>." Martin prepares a drink for you and puts it down in front of you.'
-		*nl
-		'You smile gratefully and take a gulp. You really wanna know more about Martin''s family, but you remember how strange he got when you mentioned his brothers, so you have to choose your approach carefully.'
-		'"So, any other family, besides your siblings?" You ask casually.'
-		*nl
-		'Martin raises an eyebrow. "You wanna hear about all my nephews and nieces?"'
-		'"What do you mean, ''all of them''? How many do you have?"'
-		'"I hope you have a few hours. First, there''s the children of my sister Maria: Miguel, Flora and..." Martin trails off with a smile, very much aware of your terrified expression.'
-		*nl
-		'"I... I was just wondering if..."'
-		'"If I had any children?"'
-		'"...yeah," you admit. "The first time I ordered a drink, you talked to me like you had experience with giving speeches like that."'
-		*nl
-		'"You''re not the first young person to walk into this bar, you know." He sighs. Martin hesitates for a moment, then continues: "I have a few children. But that''s all in the old country."'
-		'"You don''t have contact with them?"'
-		'"No. Me and their mothers aren''t exactly on friendly terms."'
-		'"Bad break-ups, huh?" You probe against your better judgment.'
-		'"I wouldn''t call it that."'
-		*nl
-		'Martin''s playfulness has vanished and it''s pretty obvious that he doesn''t want to talk about this anymore. In fact, he excuses himself after a few more moments of silence and returns to work.'
-
-		act 'Finish your drink': gt 'qwBarPolet'
-
-	elseif MartinTalkVar = 13 and MartinSex = 1 and  and npc_rel['A216'] >= 80:
-		MartinTalkVar = 14
-		'The barman gives you nod and before you know it, your drink sits on the counter.'
-		*nl
-		'Since you started having sex with Martin, you''ve been living in the moment, enjoying the time you spend with him and not really thinking beyond that. Truth be told, you''re not sure what you want out of life.'
-		'But it''s been crossing your mind that, maybe, Martin might remain a part of that, which leads you to the question: "How do you feel about family?"'
-		*nl
-		'"I already told you, I have three siblings and I love them," Martin says and shrugs.'
-		'"No, I mean..." You bite your <<$pcdesc_lowerliprandom>> nervously - less because of your possible involvement in that than due to the strange turns family-related topics have taken with him lately. "I mean a family of your own."'
-		*nl
-		'Martin almost drops the beer bottle he had in his hand in surprise, just barely catching it before it smashesy into the counter. "A family?"'
-		'"Yeah, you know? A wife, kids, a family cat or dog, all of that."'	
-		'He looks slightly panicked. "Is that something you want?"'
-		'"I don''t know. The question just kinda popped into my head. Maybe because you are fucking me."'
-		*nl
-		'The barman looks around nervously when you blurt that out. That one chat about sex aside, you''ve been keeping the fact that you were having sex on the down-low.'
-		'But when nobody turns their head, he responds quietly. "Okay, I don''t know if you think you love me, <<$pcs_firstname>>. And-"'
-		'"I-" You try to interrupt him, but he silences you right away.'
-		'"And I don''t want to know. I don''t want to hear it. I... What we do when we''re together is amazing, but the simple truth is that I am in my fifties and you are barely 20. I have most of my life behind me, you have most of yours ahead of you."'
-		*nl
-		'"Don''t start with the age again," you groan, annoyed that he would bring this up.'
-		'"I have to, this time, because I want to make one thing clear: I don''t want a family. Certainly not with you."'
-		'It hurts. You always kinda knew that he felt this way, and it''s not like you were pushing for a proposal or a baby, but to hear it still hurts.'
-		*nl
-		'He continues: "Maybe with a woman my age, one day, but not with a girl who..." He hesitates.' 
-		$OpenInnerThought+'Who is young enough to be my daughter?'+$CloseInnerThought+' You think.' 
-		'"Who would outlive me by many years," he finishes the thought. "I want you to look for a man your age, a man you can have a future with."'
-		'"Maybe I want you," you say sulkily, "a future with you."'
-		'"Mi amor, you know how much I want you, and you can have me for as long as you wish... but a future?" He shakes his head, a sad look on his face. "That''s not in the cards for us."'
-		*nl
-		'His words still ring in your ears long after he''s returned to work.'
-
-		act 'Finish your drink': gt 'qwBarPolet'
-
-	!elseif MartinTalkVar = ??? and npc_rel['A216'] >= 90:
-		!-The Reason why Martin lives in Russia (on the run from a Cartel? Did somebody murder two of his brothers? Did he have something to do with their deaths? Drug traffickers?)
-		
-	!!!CONVERSATION WHERE SVETA TELLS MARTIN THAT SHE HAS A BOYFRIEND?
-	!Threesome opportunity?
-
-	!Tell Martin you are pregnant?
-	end
-end
 
 if $ARGS[0] = 'MartinTalkHobby':
 	cls
@@ -1013,38 +973,13 @@ if $ARGS[0] = 'MartinTalkApartment':
 end
 
 
-!!NOT SVETA BUT MARTIN brings up relationships - he makes it clear that he doesn''t want more, not with a woman as young as her
-!!SHOULD TAKE PLACE RIGHT AFTER FIRST SEX
-!Sveta (cheery):																	"Hello stud. Miss me?"
-!Martin (pensive):																	"Sveta... We should talk."
-!Sveta (jokingly):																	"Uh oh... About what? Did one of the guys slip on something we left behind or..." *stops, seeing that he remains serious, and changes her tone to match his* "What about?"
-!Martin (very quiet):																"About this situation we''re in, you and me." *waits for a response but Sveta remains silent* "I wanted to make sure we''re on the same page."
-!Sveta (uncomfortable):																"And what page would that be?"
-!Martin:																			"That it''s fun, amazing even... but with no strings attached."
-!Sveta (pensive):																	"I don''t get you, Martin. Did some weird flirt guru in Colombia teach you that this is the best thing to say to a woman after you-"
-!Martin (trying to silence you):													"Shhhh..."
-!Sveta (slightly irritated - more at his silencing than anything else):				"And why would you even bring this up? Do you think I''m clingy, cheap, a gold digger or-"
-!Martin (calm, but insistent, cutting her off):										"No. That''s not why I said it. I''ve been in situations before where the woman I was with got hurt because she wanted and expected more than me."
-!Sveta (after a short pause, unsure what to say): 									"And how do you know I''m not going to just turn around and never come back?"
-!Martin (shrugs and tries to sound indifferent, but his eyes give him away):		"I don''t. If you don''t wanna see me or talk to me again, that''s up to you. I''ll be here regardless, and my decision stands."
-!Sveta:																				"And if I get a boyfriend or something like that?"
-!Martin:																			"Then we simply don''t do it anymore and you go and be happy. I''m not saying that I don''t want you around me. I just wanted to make sure you know how I feel about this between us."
-
-!He leaves you to think about this conversation again. You''re not entirely sure how much this really hit you. Were you angrier about him bringing this up here, in public, and then trying to silence you, or about his ''rejection''?
-!You hadn''t really thought about it too much. Do you have feelings for Martin beyond physical attraction and just a general compatibility?
-!Well, it doesn''t really matter now. It''s probably the best you could have hoped for: You have friend and experienced lover you can hook up with whenever you feel like it and who just told you that neither of you have to worry about the other''s feelings too much.
-!After all, you weren''t actually looking for a serious relationship with a man old enough to be your father, were you?
-
-
 !!CONVERSATION WITH MARTIN IF SVETA GOT PREGNANT FROM HIM??
-!!How would that change sex between them?
+!How would that change sex between them?
 !He would probably pay alimony - how much?
 
-
-!!Option to talk with Martin about relationship - he shoots her down, "no strings attached" - doesn''t want to make a big deal out of it or even hear when she gets a boyfriend - "come see me when you can and want to"
-!He might act distant; Sveta: "But you like me! I know you do."
-!"Just because I do, it doesn''t mean I want something serious. I would have never even started this if you hadn''t been so insistent. I gave in, and I''m not complaining - you are an incredible woman - but this is where I draw the line."
+!!!CONVERSATION WHERE SVETA TELLS MARTIN THAT SHE HAS A BOYFRIEND?
+!Threesome opportunity?
 
 
---- MartinTalk ----------------------------------
+--- MartinSex ----------------------------------
 

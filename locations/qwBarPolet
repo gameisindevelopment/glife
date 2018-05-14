@@ -421,7 +421,7 @@ end
 if $ARGS[0] = 'RandomDrinkEvents':
 	*nl
 	!DrinkingRand ALWAYS NEEDS TO BE ADJUSTED FOR NEW EVENTS!!!
-	DrinkingRand = RAND(1,13)
+	DrinkingRand = RAND(1,14)
 	pic_rand = RAND(1,6)
 	observ_exp += rand(0,2)
 	
@@ -697,11 +697,33 @@ if $ARGS[0] = 'RandomDrinkEvents':
 		'"<b>No, you idiot!</b> I don''t have a fucking clue why you can''t buy a second car. How am I supposed to know? I can''t even afford <b>one</b>!"'
 		
 		act 'Finish your drink': gt 'qwBarPolet'
+
+	elseif DrinkingRand = 14:
+		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bartalk<<pic_rand>>.jpg"></center>'
+		'"Of course." With practiced ease, Martin prepares your beverage and puts down a full glass in front of you before another patron draws his attention.'
+		'While you enjoy your drink in solitude, you pick up a nearby conversation.'
+		*nl
+		'"... Speaking of which, I heard somebody got hurt at your plant last week."'
+		'The other man nods gravely. "Last Wednesday was a complete mess. Vanya got his hand stuck in the conveyor belt."'
+		'"Really, Vanya? Fuck... Is he alright?"'
+		'The man shrugs. "He''s probably gonna lose the hand, but the paramedics said he got lucky we shut it down when we did. Anyway, after that, the militia showed up and shut down the entire plant. By the time we were free to leave, there were photographers everywhere."'
+		'"They''re gonna tear your boss a new one over work safety."'
+		'"Meh, maybe. You know how things are: They talk about it for a week or two, somebody gets a ''small donation'' and it''s all back to normal."'
+		'"Yeah, I guess you''re right. Poor Vanya."'
+		'"No kidding. We came over to the bar to drink to his health, but Martin had it closed."'
+		'"Yeah, he always closes the bar on Wednesdays. Everyone needs a day off, even him."'
+		'"Why Wednesdays of all days, though?"'
+		'"I asked him that once, actually. He said: ''If you''ve made it through Monday and Tuesday, you can make it to Thursday, with or without a drink.''"'
+		'"Easy for him to say. He''d probably change his mind if he had been there with us..."'
+		*nl
+		'Whoever this Vanya is, his fate makes you think that you should probably aim higher than assembly-line work.'
 		
-		
+		act 'Finish your drink': gt 'qwBarPolet'
+
+	
 !Template for infos	the NPCs give on events, stories and other points of interest in the game
 !	!!DrinkingRand ALWAYS HAS TO BE ADJUSTED AT THE TOP OF THE ARGUMENT
-!	elseif DrinkingRand = 14:
+!	elseif DrinkingRand = 15:
 !		'<center><img <<$set_imgh>> src="images/locations/city/industrial/bar/bartalk<<pic_rand>>.jpg"></center>'
 !		'"Coming right up." Only seconds later, Martin puts down a full glass in front of you before directing his attention elsewhere.'
 !		'As you forlornly muster the liquid, one of the many conversations in the bar piques your interest.'
