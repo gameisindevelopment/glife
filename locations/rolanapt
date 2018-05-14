@@ -19,7 +19,7 @@ if $ARGS[0] = 'home':
 
 	cla
 	*clr
-	'<center><img src="images/locations/pavlovsk/resident/apartment/aptdoor.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptdoor.jpg"></center>'
 	'You walk up to the front door and knock.'
 	if hour >= 23:
 		'It''s too late in the day to visit Mr. Matveev'
@@ -32,7 +32,7 @@ if $ARGS[0] = 'home':
 		act 'ring the bell':gt 'rolanbath', 'surprise'	
 	elseif hour >= 15 and hour < 23 and RolanLoc[hour] >= 2 and RolanLoc[hour] =< 8:
 		*clr & cla
-		'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanwelcome.jpg"></center>'		
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/rolanwelcome.jpg"></center>'		
 		'The door open: "Welcome Mrs <<$pcs_lastname>>, here take a seat".'
 		act 'Enter': gt 'rolanapt','hallway' 
 	else
@@ -51,7 +51,7 @@ if $ARGS[0] = 'hallway':
 	gs 'stat'
 	!gs 'rolanapt' , 'rolanroute'	
 	'<center><h4><font color="maroon">Entrance hall</font></h4></center>'
-	'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/hallway.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/hallway.jpg"></center>'
 	if RolanLoc[hour] = 0: 
 		'Rolan should be at work'
 	!RolanLoc = 0 (Rolan not home school)
@@ -119,7 +119,7 @@ if $ARGS[0] = 'room':
 	minut += 1
 	gs 'stat'
 	'<center><h4><font color="maroon">Rolan''s bedroom</font></h4></center>'
-	'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bedroom.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bedroom.jpg"></center>'
 	'This is Rolan''s bedroom, it''s quite the mess. A clock on the wall marks the time, and you see what seems to be an old bedpans under the bed "...is he really so lazy?" you wonder...'
 	if RolanLoc[hour] = 3: 'Rolan is here'
 	if RolanLoc[hour] ! 3 and rolanpantyQW >= 5: 
@@ -1920,70 +1920,70 @@ if $ARGS[0] = 'worker':
 		rolanworker += 1
 		gs 'stat'
 		'<center><h4><font color="maroon">Worker</font></h4></center>'
-		'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker6.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker6.jpg"></center>'
 		'"First i''ll prepare the concrete, i do not need a lot, the crack is not too much big afterall..."'
 		act 'continue':
 		    cla
 			*clr
 			minut += 5
 			'<center><b><font color = maroon>Worker</font></b></center>'
-			'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker7.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker7.jpg"></center>'
 			'"Let''s search for some tube...i don''t want to break them...and sign their path"'
 			act 'continue':
 				cla
 				*clr
 				minut += 5
 				'<center><b><font color = maroon>Worker</font></b></center>'
-				'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker8.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker8.jpg"></center>'
 				'"...i hope his neighboor are away...."'
 				act 'continue':
 					cla
 					*clr
 					minut += 10
 					'<center><b><font color = maroon>Worker</font></b></center>'
-					'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker9.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker9.jpg"></center>'
 					'"...ok that''s enough...uff, i''m start sweating..."'
 					act 'continue':
 						cla
 						*clr
 						minut += 5
 						'<center><b><font color = maroon>Worker</font></b></center>'
-						'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker10.jpg"></center>'
+						'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker10.jpg"></center>'
 						'"...now i''ll cover the hole with the concrete..."'
 						act 'continue':
 							cla
 							*clr
 							minut += 5
 							'<center><b><font color = maroon>Worker</font></b></center>'
-							'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker11.jpg"></center>'
+							'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker11.jpg"></center>'
 							'...it''s harder than i thought...i''m completely wet in my own sweat...'
 							act 'continue':
 								cla
 								*clr
 								minut += 10
 								'<center><b><font color = maroon>Worker</font></b></center>'
-								'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker12.jpg"></center>'
+								'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker12.jpg"></center>'
 								'"that''s better. Rolan isn''t at home i think i can stay naked...i''ve had a good idea to bring some beer and put it in the fridge...it seems i can drink a whole can in a shot..."'
 								act 'continue':
 									cla
 									*clr
 									minut += 5
 									'<center><b><font color = maroon>Worker</font></b></center>'
-									'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker13.jpg"></center>'
+									'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker13.jpg"></center>'
 									'"Good work. Now the paint. I should left the concrete as the last part so it can dry properly...it wasn''t a big hole, it shouldn''t take too much to dry."'
 									act 'continue':
 										cla
 										*clr
 										minut += 10
 										'<center><b><font color = maroon>Worker</font></b></center>'
-										'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker14.jpg"></center>'
+										'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker14.jpg"></center>'
 										'"Uff, it''s a relief to be naked, i couldn''t wear clothes for any longer...Ok the upper is done.."'
 										act 'continue':
 											cla
 											*clr
 											minut += 5
 											'<center><b><font color = maroon>Worker</font></b></center>'
-											'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker15.jpg"></center>'
+											'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker15.jpg"></center>'
 											'"...time for the lower walls.."'
 											act 'continue':
 												cla
@@ -1999,7 +1999,7 @@ if $ARGS[0] = 'worker':
 													minut += 5
 													newbath = 1
 													'<center><b><font color = maroon>Worker</font></b></center>'
-													'<center><img src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker16.jpg"></center>'
+													'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/aptrolan/bathchat/builder/worker16.jpg"></center>'
 													'"I think i earned a beer...oh my...that''s the sweetest beer i''ve evre drunk...no wonder why builder drink so much at work!"'
 													act 'Continue': gt 'rolanapt','hallway'				
 												end
