@@ -40,6 +40,8 @@ if $ARGS[0] = 'start':
 	act 'Have a snack (0:05)':gs 'food', 'snack'
 	
 	act 'Eat a light meal (0:20)':gs 'food', 's_meal'
+	
+	act 'Drink some water (0:05)':gs 'beverage', 'bev_wat'
 
 	if masha > 0:
 		act 'Chat with Masha':

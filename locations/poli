@@ -194,7 +194,7 @@ if $ARGS[0] = 'start':
 				KILLVAR 'hairkid',nextbaby-1
 				KILLVAR 'eyeskid',nextbaby-1
 				KILLVAR 'cumarrcon',nextbaby-1
-				KILLVAR '$wombpotfath',nextbaby-1
+				KILLVAR '$wombpotfath'
 				BabyEmbryo -= 1
 			end
 			nextbaby -= 1

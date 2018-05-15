@@ -106,6 +106,8 @@ if $ARGS[0] = 'lobby:toilet':
 	dynamic $tampon
 	dynamic $quickwash
 	dynamic $basin
+	gs 'din_van', 'pblc_pee'
+	
 	act 'Leave':gt 'brothel', 'lobby'
 end
 
@@ -499,43 +501,45 @@ if $ARGS[0] = 'brothel:section1:girlroom':
 	act 'Have a snack (0:05)': gs 'food', 'snack'
 	act 'Change your clothes':gt 'wardrobe', 'start'
 	act 'Look in the mirror': gt 'mirror', 'start'
-    act 'Have a shower':
+	act 'Have a shower':
 		cls
 		dynamic $showerdin
 		gs 'stat'
 		'<h3>Girl room</h3>'
 		'<h5>Shower</h5>'
-	    '<center><img <<$set_imgh>> src="images/locations/shared/brothel/brothelShower.jpg"></center>'
-	    'After taking off all of your clothes, you gather up your towel, washcloth and soap, then head to the shower. You wash yourself thoroughly to be as clean as possible to potential clients.'
+		'<center><img <<$set_imgh>> src="images/locations/shared/brothel/brothelShower.jpg"></center>'
+		''
+		'After taking off all of your clothes, you gather up your towel, washcloth and soap, then head to the shower. You wash yourself thoroughly to be as clean as possible to potential clients.'
 		dynamic $brit
 		dynamic $dryOff
 	end
+	gs 'din_van', 'prvt_pee'
 	if klismaday < daystart:
-        act 'Give yourself an enema (0:05)':
-        	'<h3>Girl room</h3>'
+		act 'Give yourself an enema (0:05)':
+			'<h3>Girl room</h3>'
 			'<h5>Enema</h5>'
-            cla
-            *clr
-            cumspclnt = 7
-            gs 'cum_cleanup'
-            minut += 5
-            klismaday = daystart
-            klismaday1 = 1
+			cla
+			*clr
+			cumspclnt = 7
+			gs 'cum_cleanup'
+			minut += 5
+			klismaday = daystart
+			klismaday1 = 1
 
-            '<center><img <<$set_imgh>> src="images/shared/home/bathroom/klisma.jpg"></center>'
-            *nl
-            'You give yourself an enema, feeling clean down there. Your ass is now ready for anal sex without any awkward surprises.'
+			'<center><img <<$set_imgh>> src="images/shared/home/bathroom/klisma.jpg"></center>'
+			*nl
+			'You give yourself an enema, feeling clean down there. Your ass is now ready for anal sex without any awkward surprises.'
 
-            act 'Finish':gt 'brothel', $metka
-        end
-    end
-    dynamic $tampon
+			act 'Finish':gt 'brothel', $metka
+		end
+	end
+	dynamic $tampon
 	dynamic $quickwash
 	dynamic $basin
 	if painkiller > 0 and pain['total'] >0 and pain['killer'] = 0:
 		act 'Take a painkiller': pain['killer'] += 1 && painkiller -= 1 && gt 'brothel', $this
 	end
-    act 'Go back to lobby': gt 'brothel', 'brothel:section1:lobby'
+	act 'Go back to lobby': gt 'brothel', 'brothel:section1:lobby'
 end
 
 if $ARGS[0] = 'brothel:section1:lobby:cage':
