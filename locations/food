@@ -1,5 +1,5 @@
 # food
-! Snacks: +20 pcs_energy +10 pcs_hydra,+6 fat
+! Snacks: +20 pcs_energy, +6 fat (most cases has water available separately)
 ! Fast Food: +70 pcs_energy +70 pcs_hydra, +12 fat (hamburgers, fried food, like the downtown diner)
 ! Small Meal: +40 pcs_energy +40 pcs_hydra, +3 fat (soup and sandwiches, cafe light lunches, etc)
 ! Medium Meal and Hotel Food: +60 pcs_energy +60 pcs_hydra, +6 fat (home cooked dinners and room service equivalent)
@@ -457,11 +457,6 @@ if $ARGS[0] = 'snack':
 	pcs_mood += 20
 	fat += 6
 	pcs_energy += 20
-	if pcs_hydra >= 100:
-		pcs_hydra += 10
-	else
-		pcs_hydra += 20
-	end
 	cumspclnt = 2
 	gs 'cum_cleanup'
 	pcs_breath = 0
