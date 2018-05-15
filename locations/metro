@@ -143,16 +143,16 @@ if $ARGS[0] = 'vagon':
 	end
 
 	if metro_busy = 0:
-		'<center><img src="images/locations/city/shared/metro/metroempty.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/shared/metro/metroempty.jpg"></center>'
 		'The car is almost completely empty, one or two other passengers are in the car with you. It seems a bit odd and a little creepy seeing the car this empty. You have practically the whole car to yourself and pick the cleanest spot to sit.'
 	elseif metro_busy = 1:
-		'<center><img src="images/locations/city/shared/metro/metro.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/shared/metro/metro.jpg"></center>'
 		'The car is mostly empty, leaving you a choice of seats. You easily find a place for yourself, leaving you plenty of room to get comfortable. The few other people on the car, mind their own business, leaving you to your own thoughts.'
 	elseif metro_busy = 2:
-		'<center><img src="images/locations/city/shared/metro/metrofull<<rand(1,5)>>.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/shared/metro/metrofull<<rand(1,5)>>.jpg"></center>'
 		'The car is full of people, all of the seats are taken, but only a few people are forced to stand. You easily find a place for yourself, at least it is not packed, leaving you plenty of room to get comfortable.'
 	else
-		'<center><img src="images/locations/city/shared/metro/metropacked.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/city/shared/metro/metropacked.jpg"></center>'
 		'The car is packed with people, most of them are forced to stand, as there is not enough seats. It is so tightly packed that people are crammed tight up against each other either in the seats or standing up. You manage to squeeze yourself in among the people, you can feel other bodies pressed up tightly against yours, it is very uncomfortable and hot.'
 	end
 
