@@ -34,7 +34,7 @@ if pcs_magik >= 6 and spellbefshild = 1 and tobiQW = 0:gt 'tobiQW', 'start'
 
 if rembedr = 0:
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/bedr.jpg"></center>'
-	'A tight, little room with a <a href="exec:gt ''bed'', ''start''">double bed</a> and an <a href="exec:gt ''budilnik'', ''start''">alarm clock</a>.' 
+	'A tight, little room with a <a href="exec:gt ''bed'', ''start''">double bed</a> and an <a href="exec:gt ''budilnik'', ''start''">alarm clock</a>.'
 	'An old wooden <a href="exec:gt ''wardrobe'', ''start''">wardrobe</a> (where you can <a href="exec:gt ''clothing'', ''view_clothing_list'', ''wardrobe''">organize your clothes</a>) stands near the door to the corridor, on top of it there''s a <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcase</a> you can store some clothes in. The windows are closed with faded, heavy curtains.'
 else
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/bedr2.jpg"></center>'
@@ -159,7 +159,7 @@ if husbandrink = 10 and hour > 20 and hour < 23 and husbanstrapon = 0:
 					minut -= 20
 					gs 'arousal', 'end'
 					gs 'stat'
-			
+
 					act 'Finish':gt 'bedr'
 				end
 			end
@@ -182,7 +182,7 @@ if husbandrink = 10 and hour > 20 and hour < 23 and husbanstrapon = 0:
 					minut -= 20
 					gs 'arousal', 'end'
 					gs 'stat'
-					
+
 					act 'Finish':gt 'bedr'
 				end
 			end
@@ -242,13 +242,18 @@ gs 'events', 'read_porn'
 gs 'subkid'
 
 if pcs_sleep <= 80:
+	if $clothingworntype = 'nude':
+		$sleep_txt = 'Go to sleep'
+	else
+		$sleep_txt = 'Undress and go to sleep'
+	end
 	if succubusQW = 2:
-		act 'Undress and go to sleep':
+		act '<<$sleep_txt>>':
 			if $clothingworntype ! 'nude': gs 'clothing', 'strip'
 			gt 'bed2', 'succhoice'
 		end
 	else
-		act 'Undress and go to sleep':
+		act '<<$sleep_txt>>':
 			if disable_autosave = 0:
 				if StoryLine = 0:
 					savegame 'autosave.sav'
@@ -263,6 +268,7 @@ if pcs_sleep <= 80:
 				gt 'bed2', 'sleep'
 			end
 		end
+		killvar '$sleep_txt'
 	end
 end
 

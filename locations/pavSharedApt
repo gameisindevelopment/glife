@@ -286,7 +286,7 @@ if $ARGS[0] = 'start':
 		pavIntroStep = 0
 		introDone = 0
 		minut = 5
-		!Need to have some actual story to this with NPC reactions. 
+		!Need to have some actual story to this with NPC reactions.
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/dimka/revenge/crying.jpg"></center>'
 		'You''ve been kicked out of the apartment due to having children.'
 		pavSharedAptEnabled = 0
@@ -625,7 +625,7 @@ if $ARGS[0] = 'kitchen':
 			pcs_mood += rand(3, 6)
 			'You make a refreshing cup of tea and everything seems a little better.'
 		end
-		
+
 		gs 'stat'
 
 		act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
@@ -831,7 +831,7 @@ if $ARGS[0] = 'pcsRoom':
 		'Your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> is set for <<timer>> hours <<timerM>> minutes and currently turned <a href="exec: budilnikOn = 1 & GT ''pavSharedApt'',''pcsRoom''">off</a>.'
 	else
 		'Your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> is set for <<timer>> hours <<timerM>> minutes and currently turned <a href="exec: budilnikOn = 0 & GT ''pavSharedApt'',''pcsRoom''">on</a>.'
-	end 
+	end
 	''
 	if TV = 0:$TV = 'a great place for a TV, if you had one.'
 	if TV = 1:$TV = 'an old CRT <a href="exec:gt ''TV'', ''start''">TV</a> sits on the shelf'
@@ -841,43 +841,14 @@ if $ARGS[0] = 'pcsRoom':
 	''
 	'There is no door to the living room, instead there''s <a href="exec:view''images/shared/sharedapt/bedroom/curtain.jpg''">curtain</a> covering entry to the room, which gives you a modicum of privacy; not much better than the state of the non-existant window curtains'
 
-	act 'Sit on the sofabed':
-		*clr & cla
-		gs 'stat'
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/shulginhome/sdivan.jpg"></center>'
-		'<center>A small sofabed, when not unfolded, is just big enough for you to curl up on and take a nap./center>'
-		
-		if pornMagazine > 0:'<br>There is a porn magazine under the sofa cushions'
-		
-		gs 'events', 'read_porn'
-		gs 'events', 'read'
-
-		if pcs_horny >= 50:
-			act 'Masturbate':gt 'selfplay', 'start'
-		end
-
-		act 'Take a nap (1:00)':
-			if pcs_sleep < 90:
-				pcs_sleep += 10
-				pcs_health += 5
-				minut += 60
-				gs 'stat'
-				'You sleep about an hour.'
-			else
-				minut += 5
-				gs 'stat'
-				'You are not tired enough to sleep, even for a short nap.'
-			end
-		end
-	act 'Get up':gt 'pavSharedApt', 'pcsRoom'
-	end
+	act 'Sit on the sofabed':gt 'pavSharedApt', 'sofabed'
 
 	if obruch > 0: '<br>A hula hoop stands in corner of the room. '
 	if skak > 0: 'A jump rope is on a shelf. '
 	if bookYog > 0: 'A yoga mat is rolled up in a corner. '
 	gs 'exercise', 'start'
 	''
-	
+
 	if komp = 1:'Your <a href="exec:gorodokKomp = 1 & GT ''Komp'',''start''">laptop</a> is sitting on small table.'
 
 	if student > 0 and kursovik < 100:
@@ -972,24 +943,25 @@ if $ARGS[0] = 'pcsRoom':
 	if sewing_kit = 1:
 		'Your <a href="exec:gt ''sewing'',''start''">sewing kit</a> is stored on a shelf.'
 	end
-	
+
 	if tovarL > 0:'You currently have <<tovarL>> trinkets to sell at the station. The maximum you can carry with you is 30.'
 
 	dynamic $wearpan
 	dynamic $removepan
 	!gs 'subkid'
 	if pcs_sleep <= 80:
-		if succubusQW = 2 and $clothingworntype ! 'nude':
-			act 'Undress and go to sleep':
-				gs 'clothing', 'strip'
+		if $clothingworntype = 'nude':
+			$sleep_txt = 'Go to sleep'
+		else
+			$sleep_txt = 'Undress and go to sleep'
+		end
+		if succubusQW = 2:
+			act '<<$sleep_txt>>':
+				if $clothingworntype ! 'nude': gs 'clothing', 'strip'
 				gt 'bed2', 'succhoice'
 			end
-		elseif succubusQW = 2 and $clothingworntype = 'nude':
-			act 'Go to sleep':
-				gt 'bed2', 'succhoice'
-			end
-		elseif $clothingworntype ! 'nude':
-			act 'Undress and go to sleep':
+		else
+			act '<<$sleep_txt>>':
 				if disable_autosave = 0:
 					if StoryLine = 0:
 						savegame 'autosave.sav'
@@ -997,31 +969,50 @@ if $ARGS[0] = 'pcsRoom':
 						savegame 'autosave_alt.sav'
 					end
 				end
-				gs 'clothing', 'strip'
+				if $clothingworntype ! 'nude': gs 'clothing', 'strip'
 				if magf2bdo = 2:
 					gt 'bed2', 'magbstchoice'
 				else
 					gt 'bed2', 'sleep'
 				end
 			end
-		elseif $clothingworntype = 'nude':
-			act 'Go to sleep':
-				if disable_autosave = 0:
-					if StoryLine = 0:
-						savegame 'autosave.sav'
-					else
-						savegame 'autosave_alt.sav'
-					end
-				end
-				if magf2bdo = 2:
-					gt 'bed2', 'magbstchoice'
-				else
-					gt 'bed2', 'sleep'
-				end
-			end
+			killvar '$sleep_txt'
 		end
 	end
 	act 'Leave the room':gt 'pavSharedApt', 'start'
+end
+
+if $ARGS[0] = 'sofabed':
+	$loc = 'pavSharedApt'
+	$metka = 'sofabed'
+	*clr & cla
+	gs 'stat'
+	'<center><img <<$set_imgh>> src="images/shared/sharedapt/bedroom/sofabed.jpg"></center>'
+	'<center>A small sofabed, when not unfolded, is just big enough for you to curl up on and take a nap.</center>'
+
+	if pornMagazine > 0:'<br>There is a porn magazine under the sofa cushions'
+
+	gs 'events', 'read_porn'
+	gs 'events', 'read'
+
+	if pcs_horny >= 50:
+		act 'Masturbate':gt 'selfplay', 'start'
+	end
+
+	act 'Take a nap (1:00)':
+		if pcs_sleep < 90:
+			pcs_sleep += 10
+			pcs_health += 5
+			minut += 60
+			gs 'stat'
+			'You sleep about an hour.'
+		else
+			minut += 5
+			gs 'stat'
+			'You are not tired enough to sleep, even for a short nap.'
+		end
+	end
+	act 'Get up':gt 'pavSharedApt', 'pcsRoom'
 end
 
 if $ARGS[0] = 'ndRoom':
