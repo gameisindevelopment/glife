@@ -2319,7 +2319,7 @@ if $ARGS[0] = 'brother_shower_fuck_end':
 	dynamic $showerdin
 	minut += 2
 	gs 'arousal','end'
-	if brotherfuck = 1 and brother_knows_not_virgin = 1:
+	if brotherfuck = 1 and brother_knows_not_virgin >= 1:
 		pcs_horny = 0
 		gs'stat'
 		'<center><img <<$set_imgh>> src="images/shared/home/bathroom/broshowersex2.jpg"></center>'
@@ -2404,6 +2404,43 @@ if $ARGS[0] = 'brother_shower_fuck_end':
 				'	"Well, uhh, I''m definitely a virgin! I mean, I was until you fucked me for the first time, uhh, today!" you stammer, hoping your furious blush is covered up by the heat of the shower. "You definitely tore my hymen! It, uhh, it really hurt! Maybe you just didn''t notice when you did! I sure noticed! Ahaha, haha, ha..."'
 				'	"Hmm. Well, you <i>were</i> pretty tight. You''re probably right and I just didn''t feel it."'
 				'	You sigh quietly in relief, your hasty lies about your chastity bought by your brother. That was a close one...'
+				act'Finish showering':
+					pcs_horny = 0
+					cla & *clr
+					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
+					'	Stepping out of the shower, you grab a towel to personally help your brother dry off, paying special attention to his cock and balls. Once finished, you stand back to smirk at him, you yourself still naked and dripping wet.'
+					'	"Well? Did you have fun showering with your sister??"'
+					'	Kolka does nothing but grin at you in response.'
+					*nl
+					act'Ruffle his hair and send him on his way':
+						cla
+						'	"Well, glad you enjoyed yourself," you say, ruffling his hair, smiling when he cringes back in response to the child-like treatment. "See you later bro."'
+						'	He nods back at you, picking up his clothes before peeking into the hallway to make sure no one is there and slipping out the door.'
+						brother_knows_not_virgin = 1
+						brothervirginlie = 0
+						act'Finish drying off':mirror_steam = hour & gt $loc
+					end
+						
+					act'Kiss him goodbye':
+						cla
+						'	You lean in to give your brother an intimate kiss, then stepping back to meet his eyes.'
+						'	"See you later," you whisper.'
+						'	He smiles back at you and picks up his clothes before peeking into the hallway to make sure no one is there and slipping out the door.'
+						brother_knows_not_virgin = 1
+						brothervirginlie = 0
+						act'Finish drying off':mirror_steam = hour & gt $loc
+					end
+					
+					act'Until next time (grab his cock)':
+						cla
+						'	A sly smile on your face, you step forward to grab him by the cock.'
+						'	"Until next time little brother," you murmur into his ear, giving his dick a hard squeeze. Then, you slap his ass and push him towards the door. "Now, shoo! Before someone catches us in here together."'
+						'	Startled, he does as you say, picking up his clothes and peeking into the hallway to make sure no one is there before slipping out the door.'
+						brotherSex += 1
+						brothervirginlie = 0
+						act'Finish drying off':mirror_steam = hour & gt $loc
+					end
+				end
 			end
 		elseif brotherfuck = 1 and brothervirginlie <= 2 and brothervirginlie >= 1:
 			cla
@@ -2452,6 +2489,7 @@ if $ARGS[0] = 'brother_shower_fuck_end':
 						'	"Even if I have a boyfriend," you insist. "After all, my relationship with my brother is special. He took my virginity!"'
 						*nl
 						'	The conversation winding down, the two of you remember that you have to get your brother out of here, lest the rest of your family grow suspicious of his absence. Leaving the shower running, you quickly help him towel off. Afterwards, he collects his clothes, gives you another quick kiss on the cheek, and slips out the door into the hallway. Your brother gone, now there''s nothing left to do but turn off the water and dry yourself off.'
+						brothervirginlie = 0
 						act'Finish drying off':mirror_steam = hour & gt $loc
 					end
 				end
@@ -2490,7 +2528,7 @@ if $ARGS[0] = 'brother_shower_fuck_end':
 					'	A sly smile on your face, you step forward to grab him by the cock.'
 					'	"Until next time little brother," you murmur into his ear, giving his dick a hard squeeze. Then, you slap his ass and push him towards the door. "Now, shoo! Before someone catches us in here together."'
 					'	Startled, he does as you say, picking up his clothes and peeking into the hallway to make sure no one is there before slipping out the door.'
-					brother_knows_not_virgin = 1
+					brotherSex += 1
 					brothervirginlie = 0
 					act'Finish drying off':mirror_steam = hour & gt $loc
 				end
