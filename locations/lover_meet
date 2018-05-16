@@ -33,8 +33,6 @@ if $ARGS[0] = 'start':
 	lipsDay = 9
 	titsDay = 12
 	figureDay = 15
-	
-	gs 'lover_love'
 		
 	!! This is the start of the usual talk
 	!!character 0 - soft, 1 -norm 2 - aggressor
@@ -105,7 +103,7 @@ if $ARGS[0] = 'start':
 		end
 	end
 	
-	
+	gs 'lover_love'
 	
 	!! QUEST VARIABLES!!! WOOOT ALMOST TIME!
 	didPushAway = 0
