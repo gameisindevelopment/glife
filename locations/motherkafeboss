@@ -298,7 +298,7 @@ end
 
 if $ARGS[0] = 'work_shift':
 	cla & *clr
-	'<center><img <<$set_imgh>> src="images/shared/home/kitchen/dirt.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/locations/city/residential/cafe/waitress_client.jpg"></center>'
 	'Placeholder'
 	pcafetip = rand(40,140)
 	money += 300 + pcafetip
