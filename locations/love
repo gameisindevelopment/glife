@@ -237,8 +237,6 @@ if $ARGS[0] = '2':
 	cla
 	*clr
 	'(Further actions are available.)'
-	!! if some writer would volunteer...
-	loverlove[lover_number] = 2
 
 	act 'To invite':
 		cla
