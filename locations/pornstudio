@@ -629,6 +629,27 @@ if $ARGS[0] = 'options':
 										$pornofday += '<font color="green"><b><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></b> - <i>Already contracted</i></font><br>'
 									elseif pfilmday[counter] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
 										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 1] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 2] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 3] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 4] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 5] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 1] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 2] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 3] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 4] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 5] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
 									elseif porntaken['<<counter>>,<<porns>>'] = 1:
 										$pornofday += '<font color="red"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>> - <i>Taken by someone else</i></font><br>'
 									elseif pornstack < 10:
