@@ -407,10 +407,16 @@ if $ARGS[0] = 'steam':
 end &! --- steam ----
 
 if $ARGS[0] = 'brush':
+	*clr & cla
 	minut += 3
 	pcs_hairbsh = 1
+	if player_avatar = 1:
+		'<center><img <<$set_imgh>> src="images/avatar.jpg"></center>'
+	else
+		'<center><img <<$set_imgh>> src="<<FUNC(''$face_image'')>>"></center>'
+	end
 	'You brush your hair.'
-	wait 500
+	wait 1500
 	if $mirrorloc = 'mirror':
 		gt 'mirror', 'start'
 	else

@@ -566,7 +566,7 @@ if $ARGS[0] = 'bathroom':
 
 	'<center><h3>Bathroom</h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
-	'Modest bathroom, containing all that young people need for their daily life, such as a Shower, toilet, <a href="exec:GT ''mirror'',''start''">mirror</a>, where you can <a href="exec:GT ''mirror'',''brush''">brush</a> your hair, a sink and even a bath tub.'
+	'Modest bathroom, containing all that young people need for their daily life, such as a Shower, toilet, <a href="exec:GT ''mirror'',''start''">mirror</a>, where you can ' + iif(pcs_hairbsh = 0,'<a href="exec:GT ''mirror'',''brush''">brush</a>','brush') + ' your hair, a sink and even a bath tub.'
 
 	gs 'din_van', 'private'
 	act 'Leave':gt 'pavSharedApt', 'start'
