@@ -7,6 +7,17 @@
 	ARGS[4]: knowledge of person (-2 not known sex act; -1 not known deposit (precum); 0 unknown/nameless person; 1 known person)
 	ARGS[5]: [not necessary to set] age of cum deposit
 }
+
+!!	Cum Array indices:
+!!
+!!	cumarrnam : Sperm Owner
+!!	cumarrppt : Sperm Potential Potency (max sperm delivery)
+!!	cumarrcpt : Sperm Current Potency	(current amount of sperm)
+!!	cumarrdel : Sperm "Delivery" (method of *VAGINAL ONLY* acquisition)
+!!	cumarrcon :	Contraception typ used
+!!	cumarrage : Sperm age in hours
+!!	cumarrkno : Did you know/realize who did it?
+
 argc = arrsize('ARGS')
 if argc < 5:
 	'ERROR: cumarrput called incorrectly. report this to the maintainers'
@@ -41,9 +52,9 @@ if cumarrppt[i] < ARGS[2] or ARGS[2] = -1:
 	cumarrppt[i] = ARGS[2]
 end
 if ARGS[3] < cumarrppt[i] or cumarrcpt[i] = 0:
-	c = ARGS[3]
-	if c < 0: c *= -1
-	cumarrcpt[i] += ARGS[3]
+	cur_ptl = ARGS[3]
+	if cur_ptl < 0: cur_ptl = cur_ptl * -1
+	cumarrcpt[i] += cur_ptl
 end
 if ARGS[4]:
 	cumarrkno[i] = ARGS[4]

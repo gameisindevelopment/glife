@@ -566,7 +566,7 @@ if $ARGS[0] = 'bathroom':
 
 	'<center><h3>Bathroom</h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
-	'Modest bathroom, containing all that young people need for their daily life, such as a Shower, toilet, <a href="exec:GT ''mirror'',''start''">mirror</a>, sink and even a bath tub.'
+	'Modest bathroom, containing all that young people need for their daily life, such as a Shower, toilet, <a href="exec:GT ''mirror'',''start''">mirror</a>, where you can ' + iif(pcs_hairbsh = 0,'<a href="exec:GT ''mirror'',''brush''">brush</a>','brush') + ' your hair, a sink and even a bath tub.'
 
 	gs 'din_van', 'private'
 	act 'Leave':gt 'pavSharedApt', 'start'
@@ -989,6 +989,10 @@ if $ARGS[0] = 'sofabed':
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/shared/sharedapt/bedroom/sofabed.jpg"></center>'
 	'<center>A small sofa bed, when not unfolded, is just big enough for you to curl up on and take a nap.</center>'
+
+	if TV = 1:
+		act 'Watch some TV':gt 'TV', 'start'
+	end
 
 	if pornMagazine > 0:'<br>There is a porn magazine under the sofa cushions'
 
