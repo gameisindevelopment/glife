@@ -1,4 +1,5 @@
 # pornschedule
+
 if $ARGS[0] = 'pornmiss':
 	pornmiss = 1
 	missedshoot = 0
