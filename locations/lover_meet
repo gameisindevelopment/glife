@@ -33,8 +33,6 @@ if $ARGS[0] = 'start':
 	lipsDay = 9
 	titsDay = 12
 	figureDay = 15
-	
-	gs 'lover_love'
 		
 	!! This is the start of the usual talk
 	!!character 0 - soft, 1 -norm 2 - aggressor
@@ -105,7 +103,7 @@ if $ARGS[0] = 'start':
 		end
 	end
 	
-	
+	gs 'lover_love'
 	
 	!! QUEST VARIABLES!!! WOOOT ALMOST TIME!
 	didPushAway = 0
@@ -168,7 +166,7 @@ if $ARGS[0] = 'start':
 			loverrelation[lover_number] += 0
 			'<<$loverdesc[lover_number]>> gets close to you, and you can tell by <<$tXyr>> body movements <<$tXe>> wants to kiss you.'
 			act 'Kiss with tongue':
-				*clr 
+				!! *clr 
 				'You take the initiative and when <<$tXe>> opens <<$tXyr>> mouth you thrust your tongue into <<$tXyr>> mouth.'
 				gs 'arousal', 'kiss', 5
 				pcs_dom += 1
@@ -252,7 +250,7 @@ if $ARGS[0] = 'start':
 				exit
 			end
 			act 'Kiss with lips':
-				*clr 
+				!! *clr 
 				'You press your <<$meetlip>> softly against <<$tXyr>>, and for a split second time seems to stop.'
 				pcs_mood += 10
 				if cumloc[11] = 0 and (cumloc[6] = 0 and cumloc[7] = 0):
@@ -353,7 +351,7 @@ if $ARGS[0] = 'start':
 				exit
 			end
 			act 'Hint for a kiss on the cheek':
-				*clr 
+				!! *clr 
 				'You make a cute pouty face and turn your cheek toward <<$loverdesc[lover_number]>>. <<$tXec>> understands and though <<$tXe>> wanted to kiss you, <<$tXe>> settles with giving you a peck on the cheek'
 				pcs_mood += 10
 				if cumloc[11] = 0 and (cumloc[6] = 0 and cumloc[7] = 0):
@@ -425,7 +423,7 @@ if $ARGS[0] = 'start':
 						exit
 					elseif (cumloc[6] = 1 or cumloc[7] = 1):
 						gs 'lover', 'remove', lover_number
-						'<<$tXec>> realizes your mouth smells like sperm, "H-Hey- <<$pcs_firstname>>! What the...?! You dirty whore!", <<$tXe>> then pushes you away. "We are through, I don''t want to see your face again!'
+						'<<$tXec>> realizes your mouth smells like sperm, "H-Hey- <<$pcs_firstname>>! What the...?! You dirty whore!", <<$tXe>> then pushes you away. "We are through, I don''t want to see your face again!"'
 						pcs_mood -= 20
 						dynamic $go_home
 						exit
@@ -439,7 +437,7 @@ if $ARGS[0] = 'start':
 				exit
 			end
 			act 'Push <<$tXyr>> face away':
-				*clr 
+				!! *clr 
 				didPushAway = 1
 				'Maybe you had a bad day, maybe you don''t want a kiss, you rudely push <<$tXyr>> face away, and by the looks of it, hurting <<$tXyr>> feelings in the process.'
 
@@ -482,7 +480,7 @@ if $ARGS[0] = 'likes':
 end
 	
 if $ARGS[0] = 'actions':
-	cls 
+	!! cls 
 
 	act 'Can I ask you how you think I look?':
 		'<<$loverdesc[lover_number]>> says "If you insist" and tells you exactly how <<$tXe>> thinks you look based on what <<$tXe>> likes:'
@@ -815,7 +813,7 @@ if $ARGS[0] = 'actions':
 					end
 					
 				else
-					'Erm... Nothing..."'
+					'Erm... Nothing...'
 					act 'Well then...':
 						xgt 'lover_meet', 'actions'
 						exit

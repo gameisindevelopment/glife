@@ -79,7 +79,7 @@ if $ARGS[0] = 'gopforest_mitka':
 								'After a couple of minutes Mira lays down on a blanket in front of Mitka spreading her legs invitingly. He doesn''t waste a second before he is on her. He takes his place between her legs and starts slamming his cock into her eager vagina roughly. In no time Mira starts moaning and begging for more.'
 								gs 'arousal', 'voyeur', 5
 								gs 'stat'
-							   act 'Watch':
+								act 'Watch':
 									cla
 									*clr
 									if npc_QW['A60'] = 2:npc_QW['A60'] = 3
@@ -116,7 +116,7 @@ if $ARGS[0] = 'gopforest_mitka':
 								'After a couple of minutes Mitka strongly slaps her ass and Mira quickly turns around, gets on her knees before him and sucks his cock for a few seconds before he spill his warm cum all over her face.'
 								gs 'arousal', 'voyeur', 10
 								gs 'stat'
-							   act 'Further':gt 'gadforest','1'
+								act 'Further':gt 'gadforest','1'
 							end
 						end
 					end
@@ -377,7 +377,7 @@ if $ARGS[0] = 'gopforest_mitka':
 							!gs 'time'
 
 							'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/gopforestnude.jpg"></center>'
-							'You yelp in surprise, and  you and Mira rush to your clothes. Running away you barely catch with the corner of your eye, Mitka grabbing Mira''s hand and dragging her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
+							'You yelp in surprise, and you and Mira rush to your clothes. Running away you barely catch with the corner of your eye, Mitka grabbing Mira''s hand and dragging her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
 
 							act 'Go':gt 'gadforest','1'
 							act 'Spy':
@@ -746,7 +746,7 @@ if $ARGS[0] = 'gopforest_kolyamba':
 							!gs 'time'
 
 							'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/gopforestnude.jpg"></center>'
-							'You yelp in surprise, and  you and Mira rush to your clothes. Running away you barely catch with the corner of your eye Kolambu grabbing Mira''s hand and dragging her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
+							'You yelp in surprise, and you and Mira rush to your clothes. Running away you barely catch with the corner of your eye Kolambu grabbing Mira''s hand and dragging her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
 
 							act 'Go':gt 'gadforest','1'
 							act 'Spy':
@@ -1102,7 +1102,7 @@ if $ARGS[0] = 'gopforest_vasyan':
 							!gs 'time'
 
 							'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/gopforestnude.jpg"></center>'
-							'You yelp in surprise, and  you and Mira rush to your clothes. Running away you barely catch with the corner of your eye, Vasyan grabbing Mira''s hand and dragging her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
+							'You yelp in surprise, and you and Mira rush to your clothes. Running away you barely catch with the corner of your eye, Vasyan grabbing Mira''s hand and dragging her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
 
 							act 'Go':gt 'gadforest','1'
 							act 'Spy':
@@ -1499,7 +1499,7 @@ if $ARGS[0] = 'gopforest_2boys':
 							!gs 'time'
 
 							'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/gopforestnude.jpg"></center>'
-							'You yelp in surprise, and  you and Mira rush to your clothes. Running away you barely catch with the corner of your eye as the guys grabbed Mira by the arms, and dragged her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
+							'You yelp in surprise, and you and Mira rush to your clothes. Running away you barely catch with the corner of your eye as the guys grabbed Mira by the arms, and dragged her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
 
 							act 'Go':gt 'gadforest','1'
 							act 'Spy':
@@ -1875,7 +1875,7 @@ if $ARGS[0] = 'gopforest_3boys':
 							!gs 'time'
 
 							'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/gopforestnude.jpg"></center>'
-							'You yelp in surprise, and  you and Mira rush to your clothes. Running away you barely catch with the corner of your eye as the guys grabbed Mira by the arms, and dragged her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
+							'You yelp in surprise, and you and Mira rush to your clothes. Running away you barely catch with the corner of your eye as the guys grabbed Mira by the arms, and dragged her into the nearest bush. Seeing that Mira is not resisting, you decide not to intervene. Dressed and calm you decide...'
 
 							act 'Go':gt 'gadforest','1'
 							act 'Spy':
@@ -2258,7 +2258,7 @@ if $ARGS[0] = 'forest_hanters':
 					'Then you went for derevaun clearing.'
 				else
 					'You froze, not knowing what to do, whether to hide, or to ask for help. But hiding it was too late, the men noticed you and you are safely moved to meet them. Yet you went to him, men did not take his eyes off you. You were uncomfortable under these studies the views, but there was no other way.'
-					'- What happened? -  started single, older, when you came closer. -  And why are you in such... hmmm... the?'
+					'- What happened? - started single, older, when you came closer. - And why are you in such... hmmm... the?'
 					'- I was lost - you said with tears in his eyes. And began to carry all sorts of nonsense about killers, rapists, car chases and other absurdities, explaining its is not suitable for walks in the forest view.'
 					'- Okay, okay, calm down, " he interrupted you. - It`s all over now. It`s good that you met us and not a pack of wolves what.'
 					if wolf_know = 0:'- And here they are? - terrified opened you eyes.'
@@ -2376,7 +2376,7 @@ if $ARGS[0] = 'forest_hanters':
 						else
 							forest_hantersex = 3 & gt 'hanters', 'start'
 						end
-				   end
+					end
 				end
 			end
 		end
@@ -2495,8 +2495,8 @@ if $ARGS[0] = 'forest_road':
 				lostrand = rand(0,100)
 				gs 'stat'
 
-			   '<center><img <<$set_imgh>> src="images/locations/gadukino/forest/run.jpg"></center>'
-			   'You don''t hesitate and start running.'
+				'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/run.jpg"></center>'
+				'You don''t hesitate and start running.'
 
 				act 'Further':
 					if goforest > lostrand:
@@ -2537,8 +2537,8 @@ if $ARGS[0] = 'forest_road':
 				minut += 1
 				gs 'stat'
 
-			   '<center><img <<$set_imgh>> src="images/locations/gadukino/forest/horror.jpg"></center>'
-			   'You froze from fear, staring into the darkness which had already noticeable shadows in it. You were attacked in your stupor.'
+				'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/horror.jpg"></center>'
+				'You froze from fear, staring into the darkness which had already noticeable shadows in it. You were attacked in your stupor.'
 
 				act 'Further': over = 11 & gt 'gameover'
 			end
@@ -2571,8 +2571,8 @@ if $ARGS[0] = 'swamp_road':
 				lostrand = rand(0,100)
 				gs 'stat'
 
-			   '<center><img <<$set_imgh>> src="images/locations/gadukino/forest/run.jpg"></center>'
-			   'You don''t hesitate and start running.'
+				'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/run.jpg"></center>'
+				'You don''t hesitate and start running.'
 
 				act 'Further':
 					if goforest > lostrand:
@@ -2613,8 +2613,8 @@ if $ARGS[0] = 'swamp_road':
 				minut += 1
 				gs 'stat'
 
-			   '<center><img <<$set_imgh>> src="images/locations/gadukino/forest/horror.jpg"></center>'
-			   'You froze from fear, staring into the darkness which had already noticeable shadows in it. You were attacked in your stupor.'
+				'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/horror.jpg"></center>'
+				'You froze from fear, staring into the darkness which had already noticeable shadows in it. You were attacked in your stupor.'
 
 				act 'Further': over = 11 & gt 'gameover'
 			end

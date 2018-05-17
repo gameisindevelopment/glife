@@ -354,7 +354,7 @@ if $ARGS[0] = 'cow3':
 	'<center><H4>Field near the forest</H4></center>'
 	'<center><img <<$set_imgh>> src="images/locations/gadukino/village/cow_forest.jpg"></center>'
 	'The cow herd is standing on a field near the forest.'
-	if mira = 1:  MiraLoc = 43 & '<a href="exec: gt ''Miroslava'', ''Start''">Mira</a> is sitting next to you.'
+	if mira = 1: MiraLoc = 43 & '<a href="exec: gt ''Miroslava'', ''Start''">Mira</a> is sitting next to you.'
 
 	if graze_cow = 1:
 		if hour < 19:

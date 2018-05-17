@@ -48,7 +48,7 @@ if $ARGS[0] = '':
 				act 'Leave':gt 'gpoli'
 			end
 		elseif gpoliuborka > 1 and hour >= 14 and hour <= 21 and gpolicleanday ! daystart:
-			act 'Work as a cleaner (1:00)':
+			act 'Work as a cleaner for 50 <b>₽</b> (1:00)':
 				cla
 				*clr
 				gpolicleanday = daystart
@@ -185,7 +185,7 @@ if $ARGS[0] = '':
 				if polkid[nextbaby] = 1:$polreb[nextbaby] = 'boy' & '"Congratulations it''s a boy. What is his name?"'
 
 				wait 350
-				$kidname[nextbaby] = input("Enter your <<$polreb[nextbaby]>>'s name")
+				$kidname[nextbaby] = input("Enter your <<$polreb[nextbaby]>>''s name")
 				'The doctors clean up <<$kidname[nextbaby]>>.'
 				if $kidname[nextbaby] = '':
 					if polkid[nextbaby] = 0:$kidname[nextbaby] = 'Masha'

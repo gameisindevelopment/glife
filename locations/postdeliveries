@@ -1351,8 +1351,8 @@ if $ARGS[0] = 'finishround':
 !! possible responses to what happened during your round
 	if posteventQW4 = 1:posteventQW4 = 2 & '"One missing signatu- oh never mind, it''s him!" the postmaster remarks dryly when he notices the missing signature of the pervert who tried to to blackmail you. "No need to explain. I hope you didn''t listen to him? He tries that with every girl we hire. I''ve reported him to captain Katalkin several times, but nothing ever happens..."'
 	if postjobQW ! 999:
-		money += 750
-		'You receive your pay for the day, 750 rubles.'
+		money += 450
+		'You receive your pay for the day, 450 rubles.'
 	end
 	if postjobQW = 999: '"I better let Aleksiy know he needs to come in again on Saturdays, from now on. I knew I shouldn''t have trusted you!" he sighs, shaking his head in disappointment as he walks off. Guess you''re not getting paid for the day...'
 !! actions after your round is finished, default plus options if a long scene was triggered during your round

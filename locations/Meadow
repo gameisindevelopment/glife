@@ -28,7 +28,7 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 	!125e
 
 	if MiraLoc = 2:
-		' <a href="exec: gt ''Meadow'', ''Mira''">Mira</a> is in the meadow and is spinning with a delightful smile and laughing.'
+		'<a href="exec: gt ''Meadow'', ''Mira''">Mira</a> is in the meadow and is spinning with a delightful smile and laughing.'
 	elseif Mira_no = 0:
 		temp_md = 20
 		if (meadow = 3 or meadow = 6) and sunWeather = 1:temp_md = RAND(0,20)
@@ -70,7 +70,7 @@ if $ARGS[0] = 'start' or $ARGS[0] = '':
 		end
 	end
 
-	act 'Leave':minut += 30 & MiraLoc = 0 & gt 'Gaddvor'
+	act 'Leave':minut += 20 & MiraLoc = 0 & gt 'Gaddvor'
 end
 
 	!meadow = 1 'You have found the meadow'

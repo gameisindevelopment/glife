@@ -24,7 +24,7 @@ act 'Kneel down':
 		
 		act 'Continue':
 			cls
-			$artbef = 'Arthur suddenly grabs you by the hair and tries to force his cock deep into your throat.'
+			'Arthur suddenly grabs you by the hair and tries to force his cock deep into your throat.'
 			gs 'arousal', 'bj', 5, 'rough', 'sub'
 			gs 'stat'
 			act 'Continue': gt 'arturdin', 'facefuck'
@@ -33,7 +33,7 @@ act 'Kneel down':
 
 	act 'Masturbate him':
 		cls
-		$artbef = 'You began to slowly stroke his large member, but as you look up at Arthur, you see him roll his eyes with impatience before reaching for you.'
+		'You began to slowly stroke his large member, but as you look up at Arthur, you see him roll his eyes with impatience before reaching for you.'
 		gs 'arousal', 'hj', 5
 		gs 'stat'
 		act 'Continue': gt 'arturdin', 'facefuck'

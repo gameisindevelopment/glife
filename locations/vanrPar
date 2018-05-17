@@ -31,7 +31,7 @@ if $ARGS[0] = '':
 	end
 	'<center><b><font color="maroon">Bathroom</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
-	'The bathroom is very small and unimpressive. Nevertheless, it has everything you need: a shower, toilet, <a href="exec:GT ''mirror'',''start''">mirror</a>, sink and even a bath tub.'
+	'The bathroom is very small and unimpressive. Nevertheless, it has everything you need: a shower, toilet, sink, <a href="exec:GT ''mirror'',''start''">mirror</a>, where you can ' + iif(pcs_hairbsh = 0,'<a href="exec:GT ''mirror'',''brush''">brush</a>','brush') + ' your hair, and even a bath tub.'
 
 	gs 'din_van', 'private'
 end
@@ -71,6 +71,7 @@ if $ARGS[0] = 'peek':
 		if sub < 30: act 'Scream': gt 'brother', 'brother_go_away'
 		act 'Let him look': gt 'brother', 'brother_voyeur_ev1'
 		act 'Invite him in for a chat':gt 'brother_voyeur','showertalk1'
+		if brother_shower_times > 0:act'Invite him into the shower with you':gt'brother_voyeur','brother_shower_together'
 		if brothershowertalk > 0:act'Tell him you''re too busy to talk':gt'brother_voyeur','showertalkbusy'
 		exit
 	end

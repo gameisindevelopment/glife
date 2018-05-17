@@ -39,7 +39,7 @@ if dbg = 1:
 	'step: '+step
 	'bonus '+bonus
 	'custTime '+custTime
-	'caneFeetCount '+caneFeetCount  
+	'caneFeetCount '+caneFeetCount
 end
 
 if orgasmMeter > 100:
@@ -106,6 +106,8 @@ if $ARGS[0] = 'lobby:toilet':
 	dynamic $tampon
 	dynamic $quickwash
 	dynamic $basin
+	gs 'din_van', 'pblc_pee'
+	
 	act 'Leave':gt 'brothel', 'lobby'
 end
 
@@ -187,10 +189,10 @@ if $ARGS[0] = 'abducted':
 		'The barman dropped you on the bed face down, stripped you and tied your hands and feet to the corners of the bed.'
 		'You are barely able to resist, giving minimal resistance to your aggressor.'
 		'<font color=#<<$mas_font>>>"Ha slut! Now you will get another drink from me, the freshest one!"</font>'
-		gs 'pain', 1, 'armL', 'bind'
-		gs 'pain', 1, 'armR', 'bind'
-		gs 'pain', 1, 'legL', 'bind'
-		gs 'pain', 1, 'legR', 'bind'
+		gs 'pain', 2, 'armL', 'bind'
+		gs 'pain', 2, 'armR', 'bind'
+		gs 'pain', 2, 'legL', 'bind'
+		gs 'pain', 2, 'legR', 'bind'
 		gs 'stat'
 		stage = 1
 		act 'Continue':gt 'brothel', $this
@@ -204,10 +206,11 @@ if $ARGS[0] = 'abducted':
 		'<font color=#<<$mas_font>>>"What a whore! She''s already wet!"</font>'
 		'He uses the juiced fingers and thrusts them into your anus, once again forcing you back to a living world.'
 		'<font color=#<<$pcs_font>>>"Auuuuuuu!"</font> you wriggle in a cramp, feeling the sharp pain in your anus.'
-		gs 'pain', 3, 'asscheeks', 'pinch'
+		gs 'pain', 3, 'asshole', 'pinch'
 		$orgasm_or = 'no'
 		gs 'arousal', 'vaginal_finger', 5
 		gs 'arousal', 'anal_finger', 5
+		gs 'arousal', 'end'
 		gs 'stat'
 		stage = 2
 		act 'Continue':gt 'brothel', $this
@@ -220,8 +223,9 @@ if $ARGS[0] = 'abducted':
 		'All you can hear in that moment is a popping sound as the bottle plug shoots out.. The barman covers the neck of the bottle with his thumb and shakes it to build up a pressure..'
 		'..and then he forces it into you anus as far as it goes, while the sparkling wine gushes out deep into your intestines.'
 		'<font color=#<<$mas_font>>>"Ayyyieeee!"</font> Again you scream aloud shaking both in surprise and pain.'
-		gs 'pain', 7, 'asshole', 'stretch'
+		gs 'pain', 6, 'asshole', 'stretch'
 		gs 'arousal', 'anal_dildo', 5
+		gs 'arousal', 'end'
 		gs 'stat'
 		stage = 3
 		act 'Continue':gt 'brothel', $this
@@ -236,7 +240,7 @@ if $ARGS[0] = 'abducted':
 		'His dick is not the biggest one, but it is quite thick.'
 		'Your pussy is a first victim of the phallus, and after short while he moves to your anus.'
 		'Another jolt of pain runs through your bottom, but this time you fade away for sure..'
-		gs 'pain', 7, 'asshole', 'stretch'
+		gs 'pain', 6, 'asshole', 'stretch'
 		guy += 4
 		temp = 4
 		sexpartkno = 0
@@ -245,6 +249,7 @@ if $ARGS[0] = 'abducted':
 		gs 'boyStat', $npclastgenerated
 		gs 'arousal', 'vaginal', 5
 		gs 'arousal', 'anal', 10
+		gs 'arousal', 'end'
 		cumarrcon = 0
 		gs 'cum_call', 'anus', 'Rapist', 2
 		temp -= 1
@@ -253,7 +258,6 @@ if $ARGS[0] = 'abducted':
 		end
 		rape += 1
 		gang += 1
-		gs 'arousal', 'end'
 		$orgasm_or = ''
 		gs 'stat'
 		stage = 4
@@ -291,10 +295,10 @@ if $ARGS[0] = 'abducted':
 		'You feel strange fullness in your abdomen and your pussy and anus itch.'
 		'As you try to struggle out of the bounds you realize what has happened.. and what is left as a reminder..'
 		'You desperately try to push the plug out of your ass, but its rim is too wide and it rests well inside you.'
-		gs 'pain', 1, 'armL', 'bind'
-		gs 'pain', 1, 'armR', 'bind'
-		gs 'pain', 1, 'legL', 'bind'
-		gs 'pain', 1, 'legR', 'bind'
+		gs 'pain', 2, 'armL', 'bind'
+		gs 'pain', 2, 'armR', 'bind'
+		gs 'pain', 2, 'legL', 'bind'
+		gs 'pain', 2, 'legR', 'bind'
 		gs 'stat'
 		stage = 5
 		act 'Desperately wait':gt 'brothel', $this
@@ -323,7 +327,7 @@ if $ARGS[0] = 'abducted':
 		'<font color=#<<$pcs_font>>>"What?! No, don''t touch it!"</font>'
 		'<font color=#<<$mas_font>>>"Haha, they say do it swift, it hurts less! Let''s try it!"</font>'
 		'With those words he pulls the plug out, leaving your anus with huge gape..'
-		gs 'pain', 2, 'asshole', 'stretch'
+		gs 'pain', 3, 'asshole', 'stretch'
 		gs 'stat'
 		stage= 7
 		act 'Sob from pain':gt 'brothel', $this
@@ -334,8 +338,8 @@ if $ARGS[0] = 'abducted':
 		'<font color=#<<$mas_font>>>"Now tell me how did you like all of this. Answer me honestly and you will be free to go."</font>'
 		'<font color=#<<$pcs_font>>>"Well..."</font>'
 		stage = 8
-		act 'Admit that you somehow liked it as you fancy to be dominated':abdLike = 1 && gt 'brothel', $this
-		act 'Yell at him that it was horrible':abdLike = 0 && gt 'brothel', $this
+		act 'Admit that you somehow liked it as you fancy to be dominated':abdLike = 1 & gt 'brothel', $this
+		act 'Yell at him that it was horrible':abdLike = 0 & gt 'brothel', $this
 	elseif stage = 8:
 		if abdLike = 1:
 			'<center><img <<$set_imgh>> src="images/locations/shared/brothel/abusedFace.jpg"></center>'
@@ -463,7 +467,8 @@ if $ARGS[0] = 'brothel:section1:lobby':
 		if $pantyworntype ! 'none': '- remove your panties'
 		if $clothingworntype ! 'nude': '- strip down your clothes'
 	end
-	act 'Go back to reception': gt 'brothel', 'brothel:reception'
+	act 'Go to the girl''s room':gt 'brothel', 'brothel:section1:girlroom'
+	act 'Go to the reception': gt 'brothel', 'brothel:reception'
 end
 
 if $ARGS[0] = 'brothel:section1:girlroom':
@@ -489,7 +494,7 @@ if $ARGS[0] = 'brothel:section1:girlroom':
 	' 3) The Slave will not be injured in such way that requires hospitalisation or leaves a lasting injury, unless the Slave agrees to such practice voluntarily.'
 	' 4) Each session is for safety purposes recorded on a camera. The record is ownership of the Organization.'
 	' 5) The Master can hide his/her identity by wearing a mask.'
-	' 6) The Slave earns a pay of '+payRate+' RUB for every started hour of a session.' 
+	' 6) The Slave earns a pay of '+payRate+' RUB for every started hour of a session.'
 	*nl
 	'To begin your work, clean yourself, put on at least vibrant makeup, lip balm, brush your hair and strip of all clothes, then go to the lobby and lock yourself in a cage.'
 	*nl
@@ -497,45 +502,52 @@ if $ARGS[0] = 'brothel:section1:girlroom':
 	*nl
 	act 'Have a glass of water (0:05)':gs 'beverage', 'bev_wat'
 	act 'Have a snack (0:05)': gs 'food', 'snack'
-	act 'Change your clothes':gt 'wardrobe', 'start'	
+	act 'Change your clothes':gt 'wardrobe', 'start'
 	act 'Look in the mirror': gt 'mirror', 'start'
-    act 'Have a shower':
+	act 'Have a shower':
 		cls
 		dynamic $showerdin
 		gs 'stat'
 		'<h3>Girl room</h3>'
 		'<h5>Shower</h5>'
-	    '<center><img <<$set_imgh>> src="images/locations/shared/brothel/brothelShower.jpg"></center>'
-	    'After taking off all of your clothes, you gather up your towel, washcloth and soap, then head to the shower. You wash yourself thoroughly to be as clean as possible to potential clients.'
+		'<center><img <<$set_imgh>> src="images/locations/shared/brothel/brothelShower.jpg"></center>'
+		''
+		'After taking off all of your clothes, you gather up your towel, washcloth and soap, then head to the shower. You wash yourself thoroughly to be as clean as possible to potential clients.'
 		dynamic $brit
 		dynamic $dryOff
 	end
+	gs 'din_van', 'prvt_pee'
 	if klismaday < daystart:
-        act 'Give yourself an enema (0:05)':
-        	'<h3>Girl room</h3>'
+		act 'Give yourself an enema (0:05)':
+			'<h3>Girl room</h3>'
 			'<h5>Enema</h5>'
-            cla
-            *clr
-            cumspclnt = 7
-            gs 'cum_cleanup'
-            minut += 5
-            klismaday = daystart
-            klismaday1 = 1
+			cla
+			*clr
+			cumspclnt = 7
+			gs 'cum_cleanup'
+			minut += 5
+			klismaday = daystart
+			klismaday1 = 1
 
-            '<center><img <<$set_imgh>> src="images/shared/home/bathroom/klisma.jpg"></center>'
-            *nl
-            'You give yourself an enema, feeling clean down there. Your ass is now ready for anal sex without any awkward surprises.'
+			'<center><img <<$set_imgh>> src="images/shared/home/bathroom/klisma.jpg"></center>'
+			*nl
+			'You give yourself an enema, feeling clean down there. Your ass is now ready for anal sex without any awkward surprises.'
 
-            act 'Finish':gt 'brothel', $metka
-        end
-    end
-    dynamic $tampon
+			act 'Finish':gt 'brothel', $metka
+		end
+	end
+	dynamic $tampon
 	dynamic $quickwash
 	dynamic $basin
 	if painkiller > 0 and pain['total'] >0 and pain['killer'] = 0:
-		act 'Take a painkiller': pain['killer'] += 1 && painkiller -= 1 && gt 'brothel', $this
+		act 'Take a painkiller':
+			pain['killer'] += 1
+			painkiller -= 1
+			pcs_hydra += 20
+			gt 'brothel', $this
+		end
 	end
-    act 'Go back to lobby': gt 'brothel', 'brothel:section1:lobby'
+	act 'Go back to lobby': gt 'brothel', 'brothel:section1:lobby'
 end
 
 if $ARGS[0] = 'brothel:section1:lobby:cage':
@@ -602,7 +614,7 @@ if $ARGS[0] = 'brothel:section1:session:start':
 		!act 'Suggest an action': gt 'brothel', 'brothel:section1:session:slaveChooses'
 	else
 		'Without a word Master leads you to a device..'
-		act 'Continue': gt 'brothel', "brothel:section1:session:masterChooses"
+		act 'Continue': gt 'brothel', 'brothel:section1:session:masterChooses'
 	end
 end
 
@@ -713,9 +725,9 @@ if $ARGS[0] = 'brothel:section1:session:play':
 			elseif Pkind = 2:
 				$subloc = '<<$base>>:canetits'
 			elseif Pkind = 3:
-				$subloc = '<<$base>>:pinchtits'	
+				$subloc = '<<$base>>:pinchtits'
 			elseif Pkind = 4:
-				$subloc = '<<$base>>:punchtits'						
+				$subloc = '<<$base>>:punchtits'
 			end
 			stage = 3
 			gt 'brothel', $subloc
@@ -735,7 +747,7 @@ if $ARGS[0] = 'brothel:section1:session:play':
 			$subloc = '<<$base>>:hangbytits'
 			stage = 7
 			gt 'brothel', $subloc
-		elseif stage = 7:	
+		elseif stage = 7:
 			hardCh = rand (0, 100)
 			if hardCh < prob_hardCh:
 				$subloc = '<<$base>>:nailsandneedlestits'
@@ -851,6 +863,7 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 	if $finType = 'behind:vaginal':
 		custTime += 15
 		gs 'arousal', 'vaginal', 15, 'bound', 'sub', 'prostitution', 'humiliation', 'rough'
+		gs 'arousal', 'end'
 		gs 'stat'
 
 		'<h3>Playroom</h3>'
@@ -868,7 +881,7 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 			step = 1
 			act 'Continue':gt 'brothel', $this
 		elseif step = 1:
-			! pls not in anus 
+			! pls not in anus
 			if th = 1:
 				if analplugIN = 1:
 					'Both your pussy and your anus are too well on display.. You say to yourself: <font color=#<<$pcs_font>>>(At least he won''t put it in my anus.. the plug is already there..)</font>'
@@ -890,6 +903,8 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 					'<font color=#<<$pcs_font>>>"Owwwwuuch! Pleaaase no no take it ouuuut! Maaaster pleaaase!"</font>'
 					'Just as you say that the next pound of Client''s dick pushes out the plug, which falls out down between your bound legs.'
 					analplugIN = 0
+					gs 'pain', 2, 'pussy', 'stretch'
+					gs 'stat'
 				else
 					'<center><video autoplay loop src="images/locations/shared/brothel/insertVaginalFromBehind.mp4"></video></center>'
 				end
@@ -915,6 +930,7 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 	elseif $finType = 'behind:anal':
 		custTime += 15
 		gs 'arousal', 'anal', 15, 'bound', 'sub', 'prostitution', 'humiliation', 'rough'
+		gs 'arousal', 'end'
 		gs 'stat'
 
 		'<h3>Playroom</h3>'
@@ -932,7 +948,7 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 			step = 1
 			act 'Continue':gt 'brothel', $this
 		elseif step = 1:
-			! pls not in anus 
+			! pls not in anus
 			if th = 1:
 				if analplugIN = 1:
 					'Both your pussy and your anus are too well on display.. You say to yourself: <font color=#<<$pcs_font>>>(At least he won''t put it in my anus.. the plug is already there..)</font>'
@@ -942,6 +958,8 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 					'Just as you say that the next pound of Client''s dick pushes out the plug, which falls out down between your bound legs.'
 					'The Client seems to disregard that, as he stretches your anus even more with his fallus.. Or maybe he does it on purpose!'
 					analplugIN = 0
+					gs 'pain', 2, 'anus', 'stretch'
+					gs 'stat'
 				else
 					'Both your pussy and your anus are too well on display.. You say to yourself: <font color=#<<$pcs_font>>>(Oh just please just don''t put it in my poor anus!)</font>'
 					'But as if you said your thought aloud, in precisely that moment the Client sticks a warm hard pole right in your ass.. up to his rim!'
@@ -960,6 +978,8 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 					'<font color=#<<$pcs_font>>>"Owwwwuuch! Pleaaase no no take it ouuuut! Maaaster pleaaase!"</font>'
 					'Just as you say that the next pound of Client''s dick pushes out the plug, which falls out down between your bound legs.'
 					analplugIN = 0
+					gs 'pain', 4, 'anus', 'stretch'
+					gs 'stat'
 				else
 					'<center><video autoplay loop src="images/locations/shared/brothel/fuckAnalFromBehind.mp4"></video></center>'
 				end
@@ -984,6 +1004,8 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 	elseif $finType = 'missionary:vaginal':
 		custTime += 5
 		gs 'arousal', 'vaginal', 5, 'bound', 'sub', 'prostitution', 'humiliation', 'rough'
+		gs 'arousal', 'end'
+		gs 'pain', 2, 'cervix', 'ache'
 		gs 'stat'
 
 		'<h3>Playroom</h3>'
@@ -997,6 +1019,8 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 	elseif $finType = 'missionary:anal':
 		custTime += 5
 		gs 'arousal', 'anal', 5, 'bound', 'sub', 'prostitution', 'humiliation', 'rough'
+		gs 'arousal', 'end'
+		gs 'pain', 1, 'anus', 'stretch'
 		gs 'stat'
 
 		'<h3>Playroom</h3>'
@@ -1010,6 +1034,8 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 	elseif $finType = 'face:mouth':
 		custTime += 5
 		gs 'arousal', 'bj', 5, 'bound', 'sub', 'prostitution', 'humiliation', 'rough'
+		gs 'arousal', 'end'
+		gs 'pain', 2, 'throat', 'stretch'
 		gs 'stat'
 
 		'<h3>Playroom</h3>'
@@ -1042,6 +1068,7 @@ if $ARGS[0] = 'brothel:section1:session:play:finish':
 	elseif $finType = 'face:face':
 		custTime += 15
 		gs 'arousal', 'bj', 15, 'bound', 'sub', 'prostitution', 'humiliation', 'rough'
+		gs 'arousal', 'end'
 		gs 'stat'
 
 		'<h3>Playroom</h3>'
@@ -1089,8 +1116,10 @@ if $ARGS[0] = 'brothel:section1:session:play:tiedOnBackFuckMouth':
 	'<font color=#<<$pcs_font>>>"Fucking indeed, but neither of those. Open your mouth!"</font>'
 	'You have no option but to do as he wants, opening your lips for his thick phallus.'
 	'You choke, saliva everywhere, but it seems he won''t stop until you either suffocate or until he cums!'
-	
+
 	gs 'arousal', 'bj', 10, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
+	gs 'pain', 2, 'throat', 'stretch'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1115,8 +1144,10 @@ if $ARGS[0] = 'brothel:section1:session:play:tiedOnBackFuckAnal':
 	'But again you are unable to answer, because he starts to pound you so fast and deep, that even an attempt to get a sound out of your mouth is futile.'
 	'You can just helplessly endure the hard fucking he''s giving you..'
 	'As it wasn''t enough, he slaps your tits every now and then, making the whole experience even more hopeless.'
-	
+
 	gs 'arousal', 'anal', 10, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
+	gs 'pain', 2, 'breasts', 'slap'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1141,8 +1172,9 @@ if $ARGS[0] = 'brothel:section1:session:play:tiedOnBackFuckVaginal':
 	'But again you are unable to answer, because he starts to pound you so fast and deep, that even an attempt to get a sound out of your mouth is futile.'
 	'You can just helplessly endure the hard fucking he''s giving you..'
 	'As it wasn''t enough, he slaps your tits every now and then, making the whole experience even more hopeless.'
-	
+
 	gs 'arousal', 'vaginal', 10, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1163,8 +1195,10 @@ if $ARGS[0] = 'brothel:section1:session:play:tiedOnBackTease':
 	'Then he twists your nipples around, waiting for you to make an uncomfortable sound.'
 	'After a while he seems to be done, likely looking content with his explorations.'
 	'You notice a large bulge rising from his (still worn) pants.'
-	
-	gs 'arousal', '', 10, 'bound', 'sub', 'prostitution', 'humiliation'
+
+	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
+	gs 'pain', 2, 'nipples', 'stretch'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1193,8 +1227,9 @@ if $ARGS[0] = 'brothel:section1:session:play:tiedOnBackFistAnal':
 	'He pushes his hand even more inside, almost the whole elbow is in your intestines now!'
 	'He turns his fist from side to side, making your thin stomach bulge!'
 	gs 'arousal', 'anal_fist', 15, 'bound', 'sub', 'prostitution', 'humiliation'
-	gs 'pain', 1, 'asshole', ''
-	gs 'pain', 1, 'tummy', ''
+	gs 'arousal', 'end'
+	gs 'pain', 3, 'asshole', 'stretch'
+	gs 'pain', 2, 'tummy', 'cramp'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1217,10 +1252,11 @@ if $ARGS[0] = 'brothel:section1:session:play:tiedOnBackVibroPussy':
 	'Your fears come true in few seconds - he takes out a giant vibration device!'
 	'He puts the top of the device right on your exposed pussy lips, also spreading them to get right onto your clitoris.'
 	'Then he slowly reaches for the button with big red ON.'
-	gs 'pain', 1, 'clitoris', ''
+	gs 'pain', 3, 'clitoris', 'bind'
 	$orgasm_or = 'What comes next is too intesive for you, forcing you into an orgasm mixed with pain and loud screams!'
 	$orgasm_or = 'yes'
 	gs 'arousal', 'vaginal_vibe', 15, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1243,9 +1279,10 @@ if $ARGS[0] = 'brothel:section1:session:play:tiedOnBackWhipPussy':
 	'Your fears come true in few seconds - he takes out a whip!'
 	'He puts the top of the whip right on your exposed pussy lips, enjoying the frightened face you are giving him.'
 	'Then suddenly he starts to punish the most sensitive part of your young body, giving you no mercy.'
-	
+
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
-	gs 'pain', 1, 'labia', 'spank'
+	gs 'arousal', 'end'
+	gs 'pain', 2, 'labia', 'spank'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1264,6 +1301,8 @@ if $ARGS[0] = 'brothel:section1:session:play:tiedOnBack':
 	'He brings some ropes and wooden sticks. <font color=#<<$pcs_font>>>(What does he need those for?)</font>'
 	'Soon you get to know what for - your titties! Not that he ties you, that would be expected, but he secures your tender tits with the wooden sticks, forcing them to get fuller and fuller..'
 	'You end up bound so securely, that all you can do is stare at him in expectation of what is coming next..'
+	gs 'pain', 2, 'breasts', 'bind'
+	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
 
@@ -1279,7 +1318,7 @@ if $ARGS[0] = 'brothel:section1:session:play:lieOnBack':
 	*nl
 	'The client reaches for your neck, forcefully leading you to one of the beds.'
 	'You know what''s coming..he throws you on the soft pillows: <font color=#<<$mas_font>>>"Lie on your back and put your knees as close to your head as you can!"</font>'
-	'You do as ordered..'	
+	'You do as ordered..'
 	act 'Continue': gt 'brothel', $sessionB
 end
 
@@ -1290,7 +1329,7 @@ if $ARGS[0] = 'brothel:section1:session:play:nailsandneedlestits':
 	'<h3>Playroom</h3>'
 	'<b>Orgasm meter: <<orgasmMeter>> / 100</b>'
 	'<b>Rage meter: <<rageMeter>> / 100</b>'
-	
+
 	if step = 0:
 		'The Client is obviously aroused beyond his expectation: <font color=#<<$mas_font>>>"I have these beautiful nails and needles here with me.."</font>'
 		'<font color=#<<$pcs_font>>>"What the..?"</font>'
@@ -1304,9 +1343,9 @@ if $ARGS[0] = 'brothel:section1:session:play:nailsandneedlestits':
 		'<font color=#<<$mas_font>>>"Would a bonus to your pay change your mind?"</font>'
 		'<font color=#<<$mas_font>>>"Wh..what bonus?"</font>'
 		'<font color=#<<$mas_font>>>"Ah, let''s say 50% more?"</font>'
-		act 'Say you''ll do it': step = 2 && bonus = 50 && gt 'brothel', $this
-		act 'Say you''ll do it fot 100% more': step = 3 && gt 'brothel', $this
-		act 'No way, you''ll never do that': step = 10 && gt 'brothel', $this
+		act 'Say you''ll do it': step = 2 & bonus = 50 & gt 'brothel', $this
+		act 'Say you''ll do it fot 100% more': step = 3 & gt 'brothel', $this
+		act 'No way, you''ll never do that': step = 10 & gt 'brothel', $this
 	elseif step = 2:
 		'<font color=#<<$mas_font>>>"A whore is a whore I see. Now let us begin!"</font>'
 		step = 4
@@ -1325,9 +1364,9 @@ if $ARGS[0] = 'brothel:section1:session:play:nailsandneedlestits':
 			step = 10
 			act 'Continue': gt 'brothel', $this
 		end
-		
+
 	elseif step = 4:
-		gs 'pain', 1, 'nipples', 'pierce'
+		gs 'pain', 3, 'nipples', 'pierce'
 		gs 'stat'
 		'He comes with a set of needles of various sizes. Judging by the fancy bag he carries them in, he is not doing this to a first girl..'
 		'One by one he takes them out of the bag and slowly penetrates your aearola.'
@@ -1345,7 +1384,7 @@ if $ARGS[0] = 'brothel:section1:session:play:nailsandneedlestits':
 		step = 5
 		act 'Continue': gt 'brothel', $this
 	elseif step = 5:
-		gs 'pain', 2, 'breasts', 'pierce'
+		gs 'pain', 4, 'breasts', 'pierce'
 		gs 'stat'
 		'He pulls out the needles, fast and not caring about the further pain it cuases.'
 		'He let''s you down, lies you on a wooden plank with your tits touching it.'
@@ -1360,6 +1399,8 @@ if $ARGS[0] = 'brothel:section1:session:play:nailsandneedlestits':
 		step = 6
 		act 'Endure': gt 'brothel', $this
 	elseif step = 6:
+		gs 'pain', 5, 'breasts', 'pierce'
+		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/shared/brothel/nailedbytitstotheground.jpg"></center>'
 		'At the end of the session, you lie on the wooden ground with your nipples being nailed to it, hanging by your hair and barely staying awake.'
 		'<font color=#<<$mas_font>>>"So slut, how did you like it?"</font>'
@@ -1368,29 +1409,29 @@ if $ARGS[0] = 'brothel:section1:session:play:nailsandneedlestits':
 		*nl
 		'<font color=#<<$mas_font>>>"Now beg me to fuck you!"</font>'
 		step = 0
-		act 'Beg him to fuck you': orgasmMeter = 100 && gt 'brothel', $sessionB
+		act 'Beg him to fuck you': orgasmMeter = 100 & gt 'brothel', $sessionB
 	elseif step = 10:
 		if caneFeetCount >= 3:
 			step = 20
 			gt 'brothel', $this
 		elseif caneFeetCount = 0:
 			caneFeetCount += 1
-			gs 'pain', 1, 'feet', 'spank'
+			gs 'pain', 2, 'feet', 'spank'
 			'<center><video autoplay loop src="images/locations/shared/brothel/canefeet.mp4"></video></center>'
 			'<font color=#<<$mas_font>>>"I think you need more motivation, slut."</font>'
 			'With that he takes your feet and starts to cane your sensitive feet, increasing the pace with every stroke!'
 			'<font color=#<<$pcs_font>>>"Oww! Oww! Oww! Oww! Oww!"</font>'
 			'<font color=#<<$mas_font>>>"So slave, what do you say now? Should I Continue with this, or do you agree with my offer?"</font>'
-			act 'Say you agree': step = 4 && gt 'brothel', $this
+			act 'Say you agree': step = 4 & gt 'brothel', $this
 			act 'Say you still don''t agree': gt 'brothel', $this
 		else
 			caneFeetCount += 1
-			gs 'pain', 1, 'feet', 'spank'
+			gs 'pain', 2, 'feet', 'spank'
 			'<center><video autoplay loop src="images/locations/shared/brothel/canefeet.mp4"></video></center>'
 			'<font color=#<<$mas_font>>>"Think about it slut! Think about your poor feet right now!"</font>'
 			'<font color=#<<$pcs_font>>>"Oww! Oww! Oww! Oww! Oww!"</font>'
 			'<font color=#<<$mas_font>>>"So slave, what do you say now? Should I Continue with this, or do you agree with my offer?"</font>'
-			act 'Say you agree': step = 4 && gt 'brothel', $this
+			act 'Say you agree': step = 4 & gt 'brothel', $this
 			act 'Say you still don''t agree': gt 'brothel', $this
 		end
 	elseif step = 20:
@@ -1411,7 +1452,8 @@ if $ARGS[0] = 'brothel:section1:session:play:whiptits':
 	'As you hang with hands tied, you can just watch as the Client takes a whip and repeatedly punishes your tender tities..'
 	'<font color=#<<$pcs_font>>>"Oww! Oww! Nooo! Owww! Not.. Any.. More.. Please... Oww.."</font> with each stroke you try to beg him to stop it but it seems to arouse him even more.'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
-	gs 'pain', 1, 'breasts', 'spank'
+	gs 'arousal', 'end'
+	gs 'pain', 2, 'breasts', 'slap'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1425,7 +1467,8 @@ if $ARGS[0] = 'brothel:section1:session:play:canetits':
 	'As you hang with hands tied, you can just watch as the Client takes a wooden cane and repeatedly punishes your tender tities..'
 	'<font color=#<<$pcs_font>>>"Oww! Oww! Nooo! Owww! Not.. Any.. More.. Please... Oww.."</font> with each stroke you try to beg him to stop it but it seems to arouse him even more.'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
-	gs 'pain', 1, 'breasts', 'hit'
+	gs 'arousal', 'end'
+	gs 'pain', 2, 'breasts', 'spank'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1440,7 +1483,8 @@ if $ARGS[0] = 'brothel:section1:session:play:pinchtits':
 	'First it is just unpleasenat but the repeated attacks on your tits make it worse with each attempt..'
 	'<font color=#<<$pcs_font>>>"Oww! Oww! Nooo! Owww!"</font> with each pinch you try to beg him to stop it but it seems to arouse him even more.'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
-	gs 'pain', 1, 'breasts', 'pinch'
+	gs 'arousal', 'end'
+	gs 'pain', 3, 'breasts', 'pinch'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1455,7 +1499,8 @@ if $ARGS[0] = 'brothel:section1:session:play:punchtits':
 	'Your tender tities are but punchbags for as if this was a boxing session!'
 	'<font color=#<<$pcs_font>>>"Oww! Oww! Nooo! Owww!"</font> with each punch you try to beg him to stop it but it seems to arouse him even more.'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
-	gs 'pain', 1, 'breasts', 'hit'
+	gs 'arousal', 'end'
+	gs 'pain', 3, 'breasts', 'hit'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1470,9 +1515,10 @@ if $ARGS[0] = 'brothel:section1:session:play:bindtits':
 	'First you do not know what is his purpose, but as soon as he circles your breasts with the ropes, you know it well.'
 	'He ties the strings around your tits very tight, making them even more sensitive and as an addition turning more purple with each minute.'
 	'<font color=#<<$pcs_font>>>"Not so tight Master please!"</font>'
-	'<font color=#<<$mas_font>>>"Shut up slut!"</font> he obviously wants you to suffer..'	
+	'<font color=#<<$mas_font>>>"Shut up slut!"</font> he obviously wants you to suffer..'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
-	gs 'pain', 1, 'breasts', 'bind'
+	gs 'arousal', 'end'
+	gs 'pain', 3, 'breasts', 'bind'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1485,9 +1531,10 @@ if $ARGS[0] = 'brothel:section1:session:play:pinchboundtits':
 	'<center><video autoplay loop src="images/locations/shared/brothel/pinchboundtits.mp4"></video></center>'
 	'Your tits are already squeezed by the ropes, but the Client wants to unleash additional suffering upon them.'
 	'He uses his fingers to pinch your nipples, stretching them as far as they go.'
-	'Your tits are already so full that you feel as they should rupture any second, and by trying to catch the nipples, Client causes you extremely unpleasant sensations!'	
+	'Your tits are already so full that you feel as they should rupture any second, and by trying to catch the nipples, Client causes you extremely unpleasant sensations!'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
-	gs 'pain', 1, 'nipples', 'stretch'
+	gs 'arousal', 'end'
+	gs 'pain', 3, 'nipples', 'stretch'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1502,9 +1549,10 @@ if $ARGS[0] = 'brothel:section1:session:play:pullnipples':
 	'Client takes a piece of rope and attaches it to your nipples.'
 	'As soon as both strings are on place, he pulls them hard, as if he was trying to tear off your nipples!'
 	'<font color=#<<$pcs_font>>>"Owwwwuuch!!!"</font> you gasp both in surprise and pain, trying to endure the continuous pull.'
-	'<font color=#<<$mas_font>>>"Nice! Do you think this will make your nipples longer, slut? Or will those shrink again? Let''s see!"</font>'	
+	'<font color=#<<$mas_font>>>"Nice! Do you think this will make your nipples longer, slut? Or will those shrink again? Let''s see!"</font>'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
-	gs 'pain', 1, 'nipples', 'stretch'
+	gs 'arousal', 'end'
+	gs 'pain', 2, 'nipples', 'stretch'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1521,6 +1569,7 @@ if $ARGS[0] = 'brothel:section1:session:play:hangbyneck':
 	'The Client comes with another rope, attaching it to already prepared hook hanging from the ceiling.'
 	'To your horror he snaps the rope around your neck as if he''s going to hang you dead!'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1538,6 +1587,8 @@ if $ARGS[0] = 'brothel:section1:session:play:hangbytits':
 	'<font color=#<<$mas_font>>>"NO, it''s not against the rules. They won''t tear off, you''ll see!"</font> with those words he starts to pull the rope up, leveling you from the ground just by your tits.'
 	'<font color=#<<$pcs_font>>>"AYYYEEEEEEEEEEEE!</font> you yell more from horror than actual pain, as you slowly realize..'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
+	gs 'pain', 3, 'breasts', 'bind'
 	gs 'stat'
 	act 'Continue': gt 'brothel', $sessionB
 end
@@ -1551,14 +1602,14 @@ if $ARGS[0] = 'brothel:section1:session:play:asshigh':
 	'<center><video autoplay loop src="images/locations/shared/brothel/asshigh.mp4"></video></center>'
 	'You are bound lying on your chest, Master raises your ass high in the air, forcing you to awkward position with both your holes on display, while tying you so you cannot move at all.'
 	gs 'arousal', 'foreplay', 10, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
 	act 'Continue': gt 'brothel', $sessionB
 end
 
 if $ARGS[0] = 'brothel:section1:session:play:buttplug':
 	!stage += 1
 	custTime += 2
-	gs 'pain', 1, 'asshole', 'stretch'
-
+	gs 'pain', 5, 'asshole', 'stretch'
 	'<h3>Playroom</h3>'
 	'<b>Orgasm meter: <<orgasmMeter>> / 100</b>'
 	'<b>Rage meter: <<rageMeter>> / 100</b>'
@@ -1568,6 +1619,7 @@ if $ARGS[0] = 'brothel:section1:session:play:buttplug':
 	'Disregarding your plea, Master says half for himself, obviously entertained <font color=#'+$mas_font+'>"It fits just nice, what a surprise! It looked quite thick!"</font>"'
 	'You can but guess what as you don''t see what happens behind you, however you feel cold, probably metallic plug in your anus.'
 	gs 'arousal', 'anal_dildo', 2, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
 	gs 'stat'
 	analplugIN = 1
 	act 'Continue': gt 'brothel', $sessionB
@@ -1583,6 +1635,7 @@ if $ARGS[0] = 'brothel:section1:session:play:electrodesAss':
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/electrodesAss.jpg"></center>'
 	'You feel slightly cold sensation, as if something wet was put on and near your private areas.'
 	gs 'arousal', 'foreplay', 5, 'bound', 'sub', 'prostitution', 'humiliation'
+	gs 'arousal', 'end'
 	gs 'stat'
 	'The sensation fades away in a few seconds, leaving a feeling of something being sticked to your bottom parts.'
 	act 'Continue': gt 'brothel', $sessionB
@@ -1590,9 +1643,9 @@ end
 
 if $ARGS[0] = 'brothel:section1:session:play:electrocuteAss':
 	!stage += 1
-	custTime += 5	
-	gs 'pain', 1, 'asscheeks', 'shock'
-	gs 'pain', 1, 'thighs', 'shock'
+	custTime += 5
+	gs 'pain', 2, 'asscheeks', 'shock'
+	gs 'pain', 2, 'thighs', 'shock'
 
 	'<h3>Playroom</h3>'
 	'<h5>Electricity</h5>'
@@ -1601,6 +1654,7 @@ if $ARGS[0] = 'brothel:section1:session:play:electrocuteAss':
 	'<center><video autoplay loop src="images/locations/shared/brothel/electrocuteAss.mp4"></video></center>'
 	'Your body trembles in cramps as the electric discharge flows through your sensitive parts.'
 	gs 'arousal', 'anal', 5, 'sub', 'rough', 'maso', 'bound'
+	gs 'arousal', 'end'
 	gs 'stat'
 	'<font color=#<<$pcs_font>>>"Owwchhh! It hurts!"</font>'
 	'<font color=#'+$mas_font+'>"That''s the point slut! How do you like it? Tell me now!"</font>'
@@ -1611,10 +1665,10 @@ end
 
 if $ARGS[0] = 'brothel:section1:session:play:electrocuteAssMore':
 	!stage += 1
-	custTime += 5	
+	custTime += 5
 	gs 'pain', 2, 'asscheeks', 'shock'
 	gs 'pain', 2, 'thighs', 'shock'
-	
+
 	'<h3>Playroom</h3>'
 	'<h5>Electricity</h5>'
 	'<b>Orgasm meter: <<orgasmMeter>> / 100</b>'
@@ -1623,6 +1677,7 @@ if $ARGS[0] = 'brothel:section1:session:play:electrocuteAssMore':
 	'Your body trembles in cramps to a limit as the electric discharge set on high settings flows through your sensitive parts.'
 	'You feel as your skin should peel away and your anus would tear apart any second.'
 	gs 'arousal', 'anal', 5, 'sub', 'rough', 'maso', 'bound'
+	gs 'arousal', 'end'
 	gs 'stat'
 	'<font color=#<<$pcs_font>>>"Owwchhh! It hurts so much! STOPP ITT!"</font>'
 	'<font color=#'+$mas_font+'>"You should''ve subdue at the first point, dumb slut. How do you like it now?"</font>'
@@ -1633,7 +1688,7 @@ end
 
 if $ARGS[0] = 'brothel:section1:session:play:electrocuteAssMax':
 	!stage += 1
-	custTime += 5		
+	custTime += 5
 	gs 'pain', 3, 'asscheeks', 'shock'
 	gs 'pain', 3, 'thighs', 'shock'
 
@@ -1645,6 +1700,7 @@ if $ARGS[0] = 'brothel:section1:session:play:electrocuteAssMax':
 	'Your body trembles in cramps beyond a limit as the electric discharge set on highest settings flows through your sensitive parts and spreads throughout the whole body.'
 	'You feel as your skin should turn upside down and your anus would explode together with the stomach.'
 	gs 'arousal', 'anal', 5, 'sub', 'rough', 'maso', 'bound'
+	gs 'arousal', 'end'
 	gs 'stat'
 	'<font color=#<<$pcs_font>>>"Owwchhh! AAARHHHGHHGHGH!!!"</font> You are unable to even get out a senseless moan anymore..'
 	'<font color=#'+$mas_font+'>"Now this is what I call a barbecue party!"</font>'
@@ -1656,8 +1712,8 @@ end
 if $ARGS[0] = 'brothel:section1:session:play:shockAnus':
 	!stage += 1
 	minut += 5
-	custTime += 5		
-	gs 'pain', 1, 'asshole', 'shock'
+	custTime += 5
+	gs 'pain', 3, 'asshole', 'shock'
 	gs 'stat'
 
 	'<h3>Playroom</h3>'
@@ -1678,6 +1734,7 @@ if $ARGS[0] = 'brothel:section1:session:play:pushplugout':
 	minut += 1
 	custTime += 1
 	analplugIN = 0
+	gs 'pain', 3, 'asshole', 'cramp'
 	gs 'stat'
 
 	'<h3>Playroom</h3>'
@@ -1728,6 +1785,8 @@ if $ARGS[0] = 'brothel:section1:session:play:end':
 			'With one hard pull he rips the plug out of your anus, causing your already weared anus additional pain!'
 			'<font color=#<<$pcs_font>>>"Ouuuuchhhhh! You moron, you didn''t even pay for this!"</font>'
 			analplugIN = 0
+			gs 'pain', 3, 'asshole', 'stretch'
+			gs 'stat'
 			act 'Yell at him to untie you': gt 'brothel', $this
 		else
 			'<center><img <<$set_imgh>> src="images/locations/shared/brothel/receptionistGaze.jpg"></center>'
@@ -1751,6 +1810,8 @@ if $ARGS[0] = 'brothel:section1:session:play:end':
 		'<font color=#<<$pcs_font>>>Oww.. Oww.. Owwwch!</font> with loud wet "plop" the plug finally goes out!'
 		step = 0
 		analplugIN = 0
+		gs 'pain', 4, 'asshole', 'stretch'
+		gs 'stat'
 		act 'Throw it away and leave': gt 'brothel', 'brothel:section1:girlroom'
 	else
 		'<center><img <<$set_imgh>> src="images/locations/shared/brothel/sessionend.jpg"></center>'
@@ -1762,6 +1823,8 @@ if $ARGS[0] = 'brothel:section1:session:play:end':
 		*nl
 		'Finally in a few minutes the receptionist enters the playroom.'
 		step = 1
+		gs 'pain', 2, 'asscheeks', 'slap'
+		gs 'stat'
 		act 'Ask him to release you': gt 'brothel', $this
 	end
 end

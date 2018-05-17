@@ -286,7 +286,7 @@ if $ARGS[0] = 'start':
 		pavIntroStep = 0
 		introDone = 0
 		minut = 5
-		!Need to have some actual story to this with NPC reactions. 
+		!Need to have some actual story to this with NPC reactions.
 		'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/dimka/revenge/crying.jpg"></center>'
 		'You''ve been kicked out of the apartment due to having children.'
 		pavSharedAptEnabled = 0
@@ -331,7 +331,7 @@ if $ARGS[0] = 'payService':
 	minut += 1
 	'The amount '+price+' <b>₽</b> was taken in account of your weekly rent.'
 	servicePaid += price
-	act 'Continue':gt 'pavSharedApt', 'start'
+	act 'Continue':gt $loc, $metka
 end
 
 if $ARGS[0] = 'rentSetup':
@@ -566,7 +566,7 @@ if $ARGS[0] = 'bathroom':
 
 	'<center><h3>Bathroom</h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/vanrpar.jpg"></center>'
-	'Modest bathroom, containing all that young people need for their daily life, such as a Shower, toilet, <a href="exec:GT ''mirror'',''start''">mirror</a>, sink and even a bath tub.'
+	'Modest bathroom, containing all that young people need for their daily life, such as a Shower, toilet, <a href="exec:GT ''mirror'',''start''">mirror</a>, where you can ' + iif(pcs_hairbsh = 0,'<a href="exec:GT ''mirror'',''brush''">brush</a>','brush') + ' your hair, a sink and even a bath tub.'
 
 	gs 'din_van', 'private'
 	act 'Leave':gt 'pavSharedApt', 'start'
@@ -625,7 +625,7 @@ if $ARGS[0] = 'kitchen':
 			pcs_mood += rand(3, 6)
 			'You make a refreshing cup of tea and everything seems a little better.'
 		end
-		
+
 		gs 'stat'
 
 		act 'Get up from the table':gt 'pavSharedApt', 'kitchen'
@@ -775,6 +775,8 @@ end
 if $ARGS[0] = 'cookForGuys':
 	cla
 	*clr
+	$loc = 'pavSharedApt'
+	$metka = 'kitchen'
 	minut += 90
 	eda -= 3
 	kuhdrova = 0
@@ -820,62 +822,33 @@ if $ARGS[0] = 'pcsRoom':
 	gs 'pavSharedApt', 'update'
 
 	'<center><b><font color="maroon">Living Room</font></b></center>'
-	'<center><img <<$set_imgh>> src="images/shared/home/bedroom/sofabed.jpg"></center>'
+	'<center><img <<$set_imgh>> src="images/shared/sharedapt/bedroom/sofabed.jpg"></center>'
 	''
-	'The living room wasn''t in use by the other apartment occupants, so it is now rented to use as a bedroom. It''s sparsly decorated, with, a <a href="exec:gt ''bed'', ''start''">sofabed</a>, against the back wall.'
+	'The living room wasn''t in use by the other apartment occupants, so it is now rented to use as a bedroom. It''s sparsly decorated, with, a <a href="exec:gt ''bed'', ''start''">sofa bed</a>, against the back wall.'
 	''
-	'Beside the sofabed, is an old cabinet, with your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> on top.'
+	'Beside the sofa bed, is an old cabinet, with your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> on top.'
 	if budilnikOn = 0:
 		'Your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> is set for <<timer>> hours <<timerM>> minutes and currently turned <a href="exec: budilnikOn = 1 & GT ''pavSharedApt'',''pcsRoom''">off</a>.'
 	else
 		'Your <a href="exec:gt ''budilnik'', ''start''">alarm clock</a> is set for <<timer>> hours <<timerM>> minutes and currently turned <a href="exec: budilnikOn = 0 & GT ''pavSharedApt'',''pcsRoom''">on</a>.'
-	end 
+	end
 	''
 	if TV = 0:$TV = 'a great place for a TV, if you had one.'
 	if TV = 1:$TV = 'an old CRT <a href="exec:gt ''TV'', ''start''">TV</a> sits on the shelf'
 	'There is an wall unit at the other side of the room, <<$TV>>. Everyone in the household spends their time in their own rooms, so there was never a reason to use the living room for its intended purpose.'
 	''
-	'On the other side of the sofabed are your old <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcases</a>, which you could use to store the clothes you don''t often wear.'
+	'On the other side of the sofa bed are your old <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcases</a>, which you could use to store the clothes you don''t often wear.'
 	''
-	'There is no door to the living room, instead there''s <a href="exec:view''images/shared/home/bedroom/curtain.jpg''">curtain</a> covering entry to the room, which gives you a modicum of privacy; not much better than the state of the non-existant window curtains'
+	'There is no door to the living room, instead there''s <a href="exec:view''images/shared/sharedapt/bedroom/curtain.jpg''">curtain</a> covering entry to the room, which gives you a modicum of privacy; not much better than the state of the non-existant window curtains'
 
-	act 'Sit on the sofabed':
-		*clr & cla
-		gs 'stat'
-		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/shulginhome/sdivan.jpg"></center>'
-		'<center>A small sofabed, when not unfolded, is just big enough for you to curl up on and take a nap./center>'
-		
-		if pornMagazine > 0:'<br>There is a porn magazine under the sofa cushions'
-		
-		gs 'events', 'read_porn'
-		gs 'events', 'read'
-
-		if pcs_horny >= 50:
-			act 'Masturbate':gt 'selfplay', 'start'
-		end
-
-		act 'Take a nap (1:00)':
-			if pcs_sleep < 90:
-				pcs_sleep += 10
-				pcs_health += 5
-				minut += 60
-				gs 'stat'
-				'You sleep about an hour.'
-			else
-				minut += 5
-				gs 'stat'
-				'You are not tired enough to sleep, even for a short nap.'
-			end
-		end
-	act 'Get up':gt 'pavSharedApt', 'pcsRoom'
-	end
+	act 'Sit on the sofa bed':gt 'pavSharedApt', 'sofabed'
 
 	if obruch > 0: '<br>A hula hoop stands in corner of the room. '
 	if skak > 0: 'A jump rope is on a shelf. '
 	if bookYog > 0: 'A yoga mat is rolled up in a corner. '
 	gs 'exercise', 'start'
 	''
-	
+
 	if komp = 1:'Your <a href="exec:gorodokKomp = 1 & GT ''Komp'',''start''">laptop</a> is sitting on small table.'
 
 	if student > 0 and kursovik < 100:
@@ -889,7 +862,7 @@ if $ARGS[0] = 'pcsRoom':
 
 			pcs_mood -= 10
 			'<center><img <<$set_imgh>> src="images/pc/activities/study.jpg"></center>'
-			'You sit down on the sofabed and do your coursework, you''ve finished <<kursovik>> percent of it.'
+			'You sit down on the sofa bed and do your coursework, you''ve finished <<kursovik>> percent of it.'
 
 			act 'Stand up':gt 'pavSharedApt', 'pcsRoom'
 		end
@@ -970,20 +943,25 @@ if $ARGS[0] = 'pcsRoom':
 	if sewing_kit = 1:
 		'Your <a href="exec:gt ''sewing'',''start''">sewing kit</a> is stored on a shelf.'
 	end
-	
+
 	if tovarL > 0:'You currently have <<tovarL>> trinkets to sell at the station. The maximum you can carry with you is 30.'
 
 	dynamic $wearpan
 	dynamic $removepan
 	!gs 'subkid'
 	if pcs_sleep <= 80:
+		if $clothingworntype = 'nude':
+			$sleep_txt = 'Go to sleep'
+		else
+			$sleep_txt = 'Undress and go to sleep'
+		end
 		if succubusQW = 2:
-			act 'Undress and go to sleep':
+			act '<<$sleep_txt>>':
 				if $clothingworntype ! 'nude': gs 'clothing', 'strip'
 				gt 'bed2', 'succhoice'
 			end
 		else
-			act 'Undress and go to sleep':
+			act '<<$sleep_txt>>':
 				if disable_autosave = 0:
 					if StoryLine = 0:
 						savegame 'autosave.sav'
@@ -998,15 +976,56 @@ if $ARGS[0] = 'pcsRoom':
 					gt 'bed2', 'sleep'
 				end
 			end
+			killvar '$sleep_txt'
 		end
 	end
 	act 'Leave the room':gt 'pavSharedApt', 'start'
 end
 
+if $ARGS[0] = 'sofabed':
+	$loc = 'pavSharedApt'
+	$metka = 'sofabed'
+	*clr & cla
+	gs 'stat'
+	'<center><img <<$set_imgh>> src="images/shared/sharedapt/bedroom/sofabed.jpg"></center>'
+	'<center>A small sofa bed, when not unfolded, is just big enough for you to curl up on and take a nap.</center>'
+
+	if TV = 1:
+		act 'Watch some TV':gt 'TV', 'start'
+	end
+
+	if pornMagazine > 0:'<br>There is a porn magazine under the sofa cushions'
+
+	gs 'events', 'read_porn'
+	gs 'events', 'read'
+
+	if pcs_horny >= 50:
+		act 'Masturbate':gt 'selfplay', 'start'
+	end
+
+	act 'Take a nap (1:00)':
+		if pcs_sleep < 90:
+			pcs_sleep += 10
+			pcs_health += 5
+			minut += 60
+			gs 'stat'
+			'You sleep about an hour.'
+		else
+			minut += 5
+			gs 'stat'
+			'You are not tired enough to sleep, even for a short nap.'
+		end
+	end
+	act 'Get up':gt 'pavSharedApt', 'pcsRoom'
+end
+
 if $ARGS[0] = 'ndRoom':
+	$loc = 'pavSharedApt'
+	$metka = 'ndRoom'
 	minut += 2
 	'<center><h3><font color=#<<$nd_font>>><<$nd_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/nd/room.jpg"></center>'
+	''
 	'The room is surprisingly not as messy as one would expect, given that <<$nd_name>> is an IT guy.'
 	'There is one large window with bed bellow it, but the whole room is dominated by a large table with several computers and monitors.'
 	'Looking at it one would say that this must be a den of a hacker.'
@@ -1026,9 +1045,12 @@ if $ARGS[0] = 'ndRoom':
 end
 
 if $ARGS[0] = 'gpRoom':
+	$loc = 'pavSharedApt'
+	$metka = 'gpRoom'
 	minut += 2
 	'<center><h3><font color=#<<$gp_font>>><<$gp_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/gp/room.jpg"></center>'
+	''
 	'Messy room. Clothes everywhere.'
 
 	if hour >= gp_wakes and hour < gp_leaves:
@@ -1047,9 +1069,12 @@ if $ARGS[0] = 'gpRoom':
 end
 
 if $ARGS[0] = 'spRoom':
+	$loc = 'pavSharedApt'
+	$metka = 'spRoom'
 	minut += 2
 	'<center><h3><font color=#<<$sp_font>>><<$sp_name>>''s room</font></h3></center>'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/room.jpg"></center>'
+	''
 	'Tidy room full of sporting stuff like dresses, equipment and trophys. On the walls hang several posters of famous sport guys.'
 
 	if hour >= sp_wakes and hour < sp_leaves:

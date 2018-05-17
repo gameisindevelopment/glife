@@ -2,7 +2,7 @@
 
 !make this trigger after 2 days in swamp house, minus a countdown per hour
 if $ARGS[0] = 'forestrescue':
-	!rescue in forest by illume.  I think we need good texts.
+	!rescue in forest by illume. I think we need good texts.
 	cls
 	minut += 150
 	lost_girl = 0
@@ -43,8 +43,8 @@ if $ARGS[0] = '1':
 	if wolfrand = 1 and (hour = 23 or hour >= 0 and hour < 6):gt 'gadforest_event', 'lost'
 
 	act 'Look for the road':
-   		cla
-   		*clr
+		cla
+		*clr
 		minut += 60
 		pcs_mood -= 5
 		goforest += rand(0,1)
@@ -78,8 +78,8 @@ if $ARGS[0] = '2':
 	if hantrand = 1 and hour > 8 and hour < 20 :forest_lost = 1 & gt 'gadforest_event', 'forest_hanters'
 
 	act 'Look for the road':
-   		cla
-   		*clr
+		cla
+		*clr
 		minut += 60
 		pcs_mood -= 5
 		goforest += rand(0,1)
@@ -91,7 +91,7 @@ if $ARGS[0] = '2':
 			act 'Look for the road on ':gs 'gadforestlost', 'gadforestlostfinish2'
 		else
 			act 'Look for the road on':gt 'gadforestlost','2'
-   		end
+		end
 		act 'To take a break':gt 'gadforestrelax'
 	end
 	if rand(1,10)> 7: gs 'gadforest', 'torncloth'
@@ -112,8 +112,8 @@ if $ARGS[0] = '3':
 	if hantrand = 1 and hour > 8 and hour < 20 :forest_lost = 1 & gt 'gadforest_event', 'forest_hanters'
 
 	act 'Look for the road':
-   		cla
-   		*clr
+		cla
+		*clr
 		minut += 60
 		pcs_mood -= 5
 		goforest += rand(0,1)
@@ -125,7 +125,7 @@ if $ARGS[0] = '3':
 			act 'Look for the road on ':gs 'gadforestlost', 'gadforestlostfinish3'
 		else
 			act 'Look for the road on':gt 'gadforestlost','3'
-   		end
+		end
 		act 'To take a break':gt 'gadforestrelax'
 	end
 	if rand(1,10)> 6: gs 'gadforest', 'torncloth'
@@ -147,8 +147,8 @@ if $ARGS[0] = '4':
 	if hantrand = 1 and hour > 8 and hour < 20 :forest_lost = 1 & gt 'gadforest_event', 'forest_hanters'
 
 	act 'Look for the road':
-   		cla
-   		*clr
+		cla
+		*clr
 		minut += 60
 		pcs_mood -= 5
 		goforest += rand(0,1)
@@ -295,8 +295,8 @@ if $ARGS[0] = 'gadforestlostfinish4':
 end
 if $ARGS[0] = 'searchfood':
 	if hour >= 6 and hour <= 20 and month >= 6 and month <= 9 and boletus + bilberry < 10:
-   		act 'To look for mushrooms and berries':
-   			cla
+		act 'To look for mushrooms and berries':
+			cla
 			*clr
 			minut += 30
 			new_boletus += rand(1,2)

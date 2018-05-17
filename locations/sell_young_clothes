@@ -13,7 +13,7 @@ if $ARGS[0] = 'start':
 	act 'Return':
 		cla
 		minut += 5
-		gt 'young_shop'
+		gt 'young_shop', 'start'
 	end
 
 		i = Clothingstock + 1
@@ -42,7 +42,7 @@ if $ARGS[0] = 'shoes':
 	act 'Return':
 		cla
 		minut += 5
-		gt 'young_shop'
+		gt 'young_shop', 'start'
 	end
 
 	if Clothingstock > 11:
@@ -68,7 +68,7 @@ if $ARGS[0] = 'panties':
 	act 'Return':
 		cla
 		minut += 5
-		gt 'young_shop'
+		gt 'young_shop', 'start'
 	end
 
 	i = 1
@@ -100,7 +100,7 @@ if $ARGS[0] = 'bras':
 	act 'Return':
 		cla
 		minut += 5
-		gt 'young_shop'
+		gt 'young_shop', 'start'
 	end
 
 	i = 1
@@ -132,7 +132,7 @@ if $ARGS[0] = 'purses':
 	act 'Return':
 		cla
 		minut += 5
-		gt 'young_shop'
+		gt 'young_shop', 'start'
 	end
 
 	i = 1

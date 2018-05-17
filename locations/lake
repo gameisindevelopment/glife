@@ -24,9 +24,9 @@ if $ARGS[0] = 'start':
 
 	'A large lake close to the city, it is a favorite destination of residents in the summer.'
 	if $clothingworntype ! 'swimwear':
-		'There is a winding <a href="exec:GT ''dort'',''start''">path</a> leading to the railway station.'
+		'There is a winding <a href="exec:GT ''dort'',''start''">path</a> leading to the railway station in the city industrial region.'
 	else
-		'You can see the winding path to the railway station, you should get properly dressed if you want to go there.'
+		'You can see the winding path to the railway station in the city industrial region, you should get properly dressed if you want to go there.'
 	end
 
 	if car > 0 and cardrive = 4:
@@ -48,6 +48,7 @@ if $ARGS[0] = 'start':
 			act 'Walk on the beach':
 				cls
 				minut += 60
+				pcs_mood += 5
 				gs 'stat'
 				'<center><img <<$set_imgh>> src="images/locations/city/residential/lake/lake.jpg"></center>'
 				'You walk along the shore.'

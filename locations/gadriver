@@ -67,8 +67,8 @@ if $ARGS[0] = 'start':
 				act 'Finish':minut += 10 & gt'gadukino'
 			end
 		else
-			act 'To the beach':minut += 5 & gt 'Gadriver', 'Gadbitch'
-			act 'To the village':minut += 20 & MiraLoc ! 1 & gt 'gadukino'
+			act 'Go to the beach':minut += 5 & gt 'Gadriver', 'Gadbitch'
+			act 'Go to Gadukino':minut += 20 & MiraLoc ! 1 & gt 'gadukino'
 		end
 	elseif temp_gr = 5 and MiraLoc ! 1 and npc_QW['A63'] >= 13 and hour >= 5 and sub > 0:
 		if mitkaguysriver ! daystart:
@@ -99,7 +99,7 @@ if $ARGS[0] = 'start':
 			end
 		else
 			act 'Go to the beach':minut += 5 & gt 'Gadriver', 'Gadbitch'
-			act 'Go to the village':minut += 20 & MiraLoc ! 1 & gt 'gadukino'
+			act 'Go to Gadukino':minut += 20 & MiraLoc ! 1 & gt 'gadukino'
 		end
 	elseif temp_gr = 6 and MiraLoc ! 1 and npc_QW['A63'] >= 13 and hour >= 5 and sub > 0:
 		if mitkaguysriver ! daystart:
@@ -119,7 +119,7 @@ if $ARGS[0] = 'start':
 					gs 'cum_call','butt',$boy,1
 				else
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/sex/mitka/mitkaguysriversex21.jpg"></center>'
-					'As soon as you open the door, Vasya pushes you inside and starts pulling your clothes off crudely. He then throws you onto his bed. Noticing, that you are slightly bleeding he asks if it is that time of the month. You whimper, "Yes."  He curses angrily, turns you over and begins roughly fucking your ass...'
+					'As soon as you open the door, Vasya pushes you inside and starts pulling your clothes off crudely. He then throws you onto his bed. Noticing, that you are slightly bleeding he asks if it is that time of the month. You whimper, "Yes." He curses angrily, turns you over and begins roughly fucking your ass...'
 					gs 'arousal', 'anal', 20, 'sub'
 					gs 'cum_call','butt',$boy,1
 				end
@@ -130,11 +130,11 @@ if $ARGS[0] = 'start':
 			end
 		else
 			act 'Go to the beach':minut += 5 & gt 'Gadriver', 'Gadbitch'
-			act 'Go to the village':minut += 20 & MiraLoc ! 1 & gt 'gadukino'
+			act 'Go to Gadukino':minut += 20 & MiraLoc ! 1 & gt 'gadukino'
 		end
 	else
 		act 'Go to the beach':minut += 5 & gt 'Gadriver', 'Gadbitch'
-		act 'Go to the village':minut += 20 & MiraLoc ! 1 & gt 'gadukino'
+		act 'Go to Gadukino':minut += 20 & MiraLoc ! 1 & gt 'gadukino'
 	end
 end
 
@@ -166,7 +166,6 @@ if $ARGS[0] = 'Gadbitch':
 	end
 
 	'A small country beach, where you can sunbathe and swim.'
-
 
 	mira_temp = rand(1,10)
 	if MiraLoc = 1:temp_gr = RAND(0,20)
@@ -487,7 +486,7 @@ if $ARGS[0] = 'Gadbitch':
 							elseif MiraLoc = 1 and npc_QW['A60'] >= 15 and temp_gr = 1 and hour >= 8 and hour < 20:
 								*clr & cla
 								'<center><img <<$set_imgh>> src="images/locations/gadukino/sex/mitka/mitkaguysriversex16.jpg"></center>'
-								'After a while, you hear voices rapidly approaching from the village, in a couple of minutes you see the village boys emerge from the bushes.  Seeing Miroslava they smile obscenely, and without hesitation they quickly surround her as she lays on the sand. You sit up and watch as they fuck her in all her holes...'
+								'After a while, you hear voices rapidly approaching from the village, in a couple of minutes you see the village boys emerge from the bushes. Seeing Miroslava they smile obscenely, and without hesitation they quickly surround her as she lays on the sand. You sit up and watch as they fuck her in all her holes...'
 
 								gs 'arousal', 'voyeur', 30, 'gangbang', 'dom'
 								gs 'arousal', 'end'
@@ -543,7 +542,7 @@ if $ARGS[0] = 'Gadbitch':
 		else
 			'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home.jpg"></center>'
 		end
-		'"<<$pcs_nickname>>, I have to go home, "  Mira said to you and began to gather her stuff.'
+		'"<<$pcs_nickname>>, I have to go home, " Mira said to you and began to gather her stuff.'
 
 		act 'Further': gt'Gadriver', 'Gadbitch'
 	elseif Mira_no = 0 and MiraLoc ! 1 and rand(1,10) < 3 and hour > 8 and hour < 20 and sunWeather = 1 and temper >= 15 and PC_arrive = 1:
@@ -702,7 +701,7 @@ if $ARGS[0] = 'mirapunish':
 
 	'<center><img <<$set_imgh>> src="images/characters/village/mira/mirapunish.jpg"></center>'
 	'You approach Mira, she is looking distressed and embarrassingly smiles as you start asking what happened. She pleads you to release her. As you untie her, she explains that Kolyamba punished her for barely biting his cock as she sucked it...'
-	'"Thank God you showed up." she says with a sigh of relief as you untie her. "I''m glad it was you who found me and not one of those old hags from the village. They would be calling me a whore and I would get scolded about being promiscuous. Those old hags hate us you know. We''re young and beautiful and they are just mean old wrenches." said the naked Mira, revealing her true feelings about the villagers. She continues quietly, "Or it could have been even worse, someone could have abused me, raped me or even killed m..."  All of a sudden she stops and lunges herself in your arms weeping. "Thank you," she tells you. "You saved my life!"'
+	'"Thank God you showed up." she says with a sigh of relief as you untie her. "I''m glad it was you who found me and not one of those old hags from the village. They would be calling me a whore and I would get scolded about being promiscuous. Those old hags hate us you know. We''re young and beautiful and they are just mean old wrenches." said the naked Mira, revealing her true feelings about the villagers. She continues quietly, "Or it could have been even worse, someone could have abused me, raped me or even killed m..." All of a sudden she stops and lunges herself in your arms weeping. "Thank you," she tells you. "You saved my life!"'
 
 	act 'Leave':minut += 5 & gt 'Gadriver', 'Gadbitch'
 end

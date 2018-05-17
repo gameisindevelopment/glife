@@ -5,7 +5,8 @@ if $ARGS[0] = 'sp':
 	$metka = 'sp'
 	minut += 2
 	'<h3><font color=#<<$sp_font>>><<$sp_name>></font></h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+	''
 	'He is a sportsman, with fine toned abs and arms, big shoulders..'
 	if sp_hadSex = 1:'As you know very well, <<$sp_name>> has <<spDick>> cm long <a href="exec:gt ''pavShared_sp'', ''spDick''">dick</a> with always smoothly shaved pubic hair.'
 	''
@@ -36,7 +37,7 @@ end
 if $ARGS[0] = 'spChat':
 	$metka = 'spChat'
 	'<h3><font color=#<<$sp_font>>><<$sp_name>></font></h3>'
-	'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
 	
 	! basic chat
 	if chatLvl = 0:
@@ -168,7 +169,7 @@ if $ARGS[0] = 'spChat':
 
 	! anal plug
 	elseif chatLvl = 10:
-		'<left><video autoplay loop src="images/locations/pavlovsk/resident/sharedApt/sex/buttPlugPlay.mp4"></video></left>'
+		'<center><video autoplay loop src="images/locations/pavlovsk/resident/sharedApt/sex/buttPlugPlay.mp4"></video></center>'
 		''
 		'<font color=#<<$sp_font>>>"Let''s see what you have in there.."</font>'
 		'<<$sp_name>> takes the plug and slowly pulls it halfway out, gazing and how big it is.'
@@ -178,17 +179,20 @@ if $ARGS[0] = 'spChat':
 		act 'Continue':chatLvl = 0 & gt 'pavShared_sp', 'spChat'
 	
 	! strapon kink
-	elseif chatLvl = 20:
-
+	!elseif chatLvl = 20:
 	end
 end
 
 if $ARGS[0] = 'spDick':
 	minut += 2
 	'<h3><font color=#<<$sp_font>>><<$sp_name>></font></h3>'
-	'<left><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
-	''
-	'<left><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"> <img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></left>'
+	if set_imgh < 250:
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"> <img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	else
+		'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"> <img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	end
 	''
 	'Your relation with him is <<sp_rel>> / 100.'
 	'His dick is <<spDick>> cm long with always smoothly shaved pubic hair.'
@@ -221,7 +225,6 @@ if $ARGS[0] = 'spDick':
 		if sp_dildo = 1 and dildoLike = 2:'- once made him a show with giant dildo, you do find it somewhat arousing and he knows you are willing to do it repeatedly'
 			if sp_dildo > 1 and dildoLike = 2:'- made him a show with giant dildo <<sp_dildo>> times, you do find it somewhat arousing and he knows you are willing to do it repeatedly'
 
-
 	if $metka = 'sp':
 		act 'Continue':gt 'pavShared_sp', 'sp'
 	else
@@ -236,13 +239,10 @@ if $ARGS[0] = 'spServe':
 	minut += 2
 	$metka = 'spServe'
 	'<h3><font color=#<<$sp_font>>><<$sp_name>></font></h3>'
-	'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
 	step = 0
 	subStep = 0
-
 	sexCh = rand (0, 30) + sp_horny
-
-	
 	! very bad mood
 	if sp_mood >= 5:
 		'<font color=#<<$sp_font>>>"Not now <<$pcs_firstname>>, I am exhausted."</font>'
@@ -295,9 +295,15 @@ end
 
 if $ARGS[0] = 'spSuck':
 	'<b><font color=#<<$sp_font>>><<$sp_name>> - blowjob</font></b>'
-	if step = 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
-	if step > 0 and cockHard = 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/spjpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"></left>'
-	if step > 0 and cockHard = 1:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></left>'
+	if set_imgh < 250:
+		if step = 0:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		if step > 0 and cockHard = 0:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"></center>'
+		if step > 0 and cockHard = 1:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	else
+		if step = 0:'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		if step > 0 and cockHard = 0:'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"></center>'
+		if step > 0 and cockHard = 1:'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	end
 	$metka = 'spSuck'
 	price = price_blowjob
 	if step > 0:'<<$sp_name>> orgasm build-up: '+orgB+'/100'
@@ -307,7 +313,7 @@ if $ARGS[0] = 'spSuck':
 		orgB = 0
 		cockHard = 0
 		failC = 0
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/cockFlaccid.jpg"></center>'
 		''
 		'<<$sp_name>> takes down his pants, revealing his flaccid cock. He relaxes on his bed, expecting you to do the service.'
 		'You drop on your knees and crawl to him, trying to move as sexy as possible.'
@@ -318,7 +324,7 @@ if $ARGS[0] = 'spSuck':
 
 	!lick balls
 	elseif step = 1:
-		'<left><video autoplay loop src="images/shared/sex/blowjob/kotovbjbonus7.mp4"></video></left>'
+		'<center><video autoplay loop src="images/shared/sex/blowjob/kotovbjbonus7.mp4"></video></center>'
 		''
 		'You decide that the best approach is to arouse him first.'
 		'Kneeling between his legs, you show him the whole length of your tongue, looking as lusty as you can.'
@@ -334,7 +340,7 @@ if $ARGS[0] = 'spSuck':
 
 	!Lick the tip
 	elseif step = 2:
-		'<left><video autoplay loop src="images/shared/sex/blowjob/kotovbjbonus3.mp4"></video></left>'
+		'<center><video autoplay loop src="images/shared/sex/blowjob/kotovbjbonus3.mp4"></video></center>'
 		''
 		'You take <<$sp_name>> cock in your hand, pointing the tip in front of your mouth.'
 		'As it was your favourity puppy, you start to gently lick the tip all around, slowly making the cock to get harder and harder, finally reaching his full <<spDick>> cm length.'
@@ -349,7 +355,7 @@ if $ARGS[0] = 'spSuck':
 
 	!suck the tip
 	elseif step = 3:
-		'<left><video autoplay loop src="images/shared/sex/blowjob/kotovbj114.mp4"></video></left>'
+		'<center><video autoplay loop src="images/shared/sex/blowjob/kotovbj114.mp4"></video></center>'
 		if cockHard = 0:
 			orgB += rand(5, 15)
 			'<<$sp_name>>''s cock is not hard yet, but you start to suck the yet soft tip as if it was, slurping aloud.'
@@ -372,7 +378,7 @@ if $ARGS[0] = 'spSuck':
 
 	!sucking dick
 	elseif step = 4:
-		'<left><video autoplay loop src="images/shared/sex/blowjob/kotovbj111.mp4"></video></left>'
+		'<center><video autoplay loop src="images/shared/sex/blowjob/kotovbj111.mp4"></video></center>'
 		''
 		if cockHard = 0:
 			orgB += rand(15, 35)
@@ -396,7 +402,7 @@ if $ARGS[0] = 'spSuck':
 	
 	!deepthroat
 	elseif step = 5:
-		'<left><video autoplay loop src="images/shared/sex/blowjob/shower7.mp4"></video></left>'
+		'<center><video autoplay loop src="images/shared/sex/blowjob/shower7.mp4"></video></center>'
 		''
 		orgB += rand(40, 60)
 		'You decide to take <<$sp_name>>''s hard, <<spDick>> cm long cock all the way your throat.'
@@ -432,7 +438,7 @@ if $ARGS[0] = 'spSuck':
 		gs 'arousal', 'bj', 5
 		cumCh = rand(0, 100)
 		if cumCh <= 70:
-			'<left><video autoplay loop src="images/characters/pavlovsk/resident/leonid/sex/cummouth1.mp4"></video></left>'
+			'<center><video autoplay loop src="images/characters/pavlovsk/resident/leonid/sex/cummouth1.mp4"></video></center>'
 			''
 			'Your attempt is successful, as <<$sp_name>> cums right into your mouth and on your face.'
 			sp_lastCum = daystart
@@ -444,13 +450,13 @@ if $ARGS[0] = 'spSuck':
 			failC += 1
 			if failC >= 3:
 				''
-				'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/bjFail.jpg"></left>'
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/bjFail.jpg"></center>'
 				''
 				'<font color=#<<$sp_font>>>"Sweetie if you can''t suck a cock don''t do it. Leave me be!"</font>'
 				act 'Get up':step = 7 & gt 'pavShared_sp', 'spSuck'
 			else
 				''
-				'<left><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/bjFailTryAgain.mp4"></video></left>'
+				'<center><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/bjFailTryAgain.mp4"></video></center>'
 				''
 				'<font color=#<<$sp_font>>>"<<$pcs_firstname>>, sweetie, what are you doing down there?"</font>'
 				if failC = 1:'He is getting nervous..'
@@ -464,7 +470,7 @@ if $ARGS[0] = 'spSuck':
 
 	!END cum fail
 	elseif step = 7:
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/leave.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/leave.jpg"></center>'
 		''
 		'You get up from your knees, looking at <<$sp_name>>:<font color=#<<$pcs_font>>>"I''m sorry I was unable to satisfy you."</font>.'
 		'He looks annoyed:<font color=#<<$sp_font>>>"Try better next time."</font>'
@@ -475,7 +481,7 @@ if $ARGS[0] = 'spSuck':
 
 	!END deepthroat fail
 	elseif step = 8:
-		'<left><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/bjDeepthroatPuke.mp4"></video></left>'
+		'<center><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/bjDeepthroatPuke.mp4"></video></center>'
 		''
 		'<font color=#<<$sp_font>>>"Oh my god <<$pcs_firstname>>, have you just puked into my crotch??!!"</font>'
 		'Cleaning your face and mouth with your clothes, all you can say is <font color=#<<$pcs_font>>>"I''m sorry..."</font>.'
@@ -488,7 +494,7 @@ if $ARGS[0] = 'spSuck':
 
 	!END deepthroat fade out
 	elseif step = 9:
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/faint.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/faint.jpg"></center>'
 		''
 		'You wake up being slapped in your face: <font color=#<<$sp_font>>>"<<$pcs_firstname>>! <<$pcs_firstname>>! Wake up!"</font>'
 		'Slowly normal sight goes back to you, but still you are very confused.  <font color=#<<$pcs_font>>>"Wh..what happened?</font>'
@@ -503,14 +509,14 @@ if $ARGS[0] = 'spSuck':
 	elseif step = 10:
 		nd_bj += 1
 		if sp_mood <= 3:
-			'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/leave.jpg"></left>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/leave.jpg"></center>'
 			''
 			'<font color=#<<$sp_font>>>"Thank you my sweetie."</font>'
 			'Cleaning your face and mouth off the cum: <font color=#<<$pcs_font>>>"You are always welcome. Seeya!"</font>.'
 			sp_rel += 1
 			step = 0
 		else
-			'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/leave.jpg"></left>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/leave.jpg"></center>'
 			''
 			'<<$sp_name>> doesn''t pay anymore attention to you, getting back to reading his sports magazine.'
 			'You just pack your things and quietly leave through the door.'
@@ -518,14 +524,19 @@ if $ARGS[0] = 'spSuck':
 		end
 		gs 'arousal', 'end'
 		gs 'stat'
-		act 'Get up and leave':gt 'pavSharedApt', 'payService'
+		act 'Get up and leave':$loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 	end
 end
 
 if $ARGS[0] = 'spSexVaginal':
 	'<b><font color=#<<$sp_font>>><<$sp_name>> - vaginal sex</font></b>'
-	if step = 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
-	if step > 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></left>'
+	if set_imgh < 250:
+		if step = 0:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		if step > 0:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	else
+		if step = 0:'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		if step > 0:'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	end
 	''
 	$metka = 'spSexVaginal'
 	price = price_vaginal
@@ -538,7 +549,7 @@ if $ARGS[0] = 'spSexVaginal':
 		cockHard = 0
 		failC = 0
 		$clothingworntype = 'nude'
-		'<left><video autoplay loop src="images/locations/city/residential/sauna/sex/simplystrip1.mp4"></video></left>'
+		'<center><video autoplay loop src="images/locations/city/residential/sauna/sex/simplystrip1.mp4"></video></center>'
 		''
 		'<<$sp_name>> begins to undress and you follow his example, stripping the few clothes you are currently wearing.'
 		'His hairless, muscular body has a bronze tan. He moves towards you, lubing his <<spDick>> cm long cock and stroking it on the way.'
@@ -567,7 +578,7 @@ if $ARGS[0] = 'spSexVaginal':
 	!missionary
 	elseif step = 1:
 		if subStep = 0:
-			'<left><video autoplay loop src="images/shared/sex/vag/miss/pussyhump.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/vag/miss/pussyhump.mp4"></video></center>'
 			''
 			'You lie on the bed, spreading your legs for easy access.'
 			'<<$sp_name>> kneels between those, gently spreading them a bit wider with his hands.'
@@ -580,7 +591,7 @@ if $ARGS[0] = 'spSexVaginal':
 			orgB += rand(5, 20) 
 			act 'Let him continue':subStep = 1 & gt 'pavShared_sp', 'spSexVaginal'
 		elseif subStep = 1:
-			'<left><video autoplay loop src="images/shared/sex/vag/miss/kotovsexbonus3.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/vag/miss/kotovsexbonus3.mp4"></video></center>'
 			''
 			'As he continuously fucks your pussy, you rub his hairless ass, making him even hornier.'
 			'As you move your hands around his smooth asscheeks, it seems to arouse him even more.'
@@ -595,7 +606,7 @@ if $ARGS[0] = 'spSexVaginal':
 	!doggy
 	elseif step = 2:
 		if subStep = 0:
-			'<left><video autoplay loop src="images/shared/sex/vag/doggy/kotovsex10.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/vag/doggy/kotovsex10.mp4"></video></center>'
 			''
 			'You kneel on the bed, bending your back as much as you can, putting your nice round ass ass high as possible.'
 			'<<$sp_name>> kneels behind you, rubbing your asscheeks. He starts probing your pussy with his lubed fingers, sensitively stimulating your labia and clitoris.'
@@ -606,7 +617,7 @@ if $ARGS[0] = 'spSexVaginal':
 			orgB += rand(5, 20)
 			act 'Let him continue':subStep = 1 & gt 'pavShared_sp', 'spSexVaginal'
 		elseif subStep = 1:
-			'<left><video autoplay loop src="images/shared/sex/vag/facedown/kotovsexbonus20.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/vag/facedown/kotovsexbonus20.mp4"></video></center>'
 			''
 			'As he continuously fucks your pussy, you reach for his smooth balls bashing your clitoris from behind and rub it, making his slow movements even more passionate.'
 			'He often plays with your anus with his fingers during the sex, using the doggystyle position to his advantage.'
@@ -621,7 +632,7 @@ if $ARGS[0] = 'spSexVaginal':
 	!sidefuck
 	elseif step = 3:
 		if subStep = 0:
-			'<left><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/vagSidefuck1.jpg"></video></left>'
+			'<center><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/vagSidefuck1.jpg"></video></center>'
 			''
 			'You lie on the bed, raising the upper leg in the air, exposing your tender pussy.'
 			'He takes this as a invitation, lying behind you.'
@@ -633,7 +644,7 @@ if $ARGS[0] = 'spSexVaginal':
 			orgB += rand(5, 20) 
 			act 'Let him continue':subStep = 1 & gt 'pavShared_sp', 'spSexVaginal'
 		elseif subStep = 1:
-			'<left><video autoplay loop src="images/locations/pavlovsk/resident/sharedApt/sex/vagSidefuck2.mp4"></video></left>'
+			'<center><video autoplay loop src="images/locations/pavlovsk/resident/sharedApt/sex/vagSidefuck2.mp4"></video></center>'
 			''
 			'As he continuously fucks your pussy, you reach for his smooth balls and rub them, making his slow movements even more passionate.'
 			'<<$sp_name>> fucks you slowly and sensitively.'
@@ -659,7 +670,7 @@ if $ARGS[0] = 'spSexVaginal':
 
 		!inside
 		elseif subStep = 1:
-			'<left><video autoplay loop src="images/locations/shared/abduction/sex/slavewhoreCumPussy3.mp4"></video></left>'
+			'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhoreCumPussy3.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the happy end, pumping his load <<spDick>> cm deep inside your pussy.'
 			sp_vagCumInside += 1
@@ -669,11 +680,11 @@ if $ARGS[0] = 'spSexVaginal':
 			gs 'arousal', 'vaginal', 2
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!stomach
 		elseif subStep = 2:
-			'<left><video autoplay loop src="images/locations/city/residential/sauna/sex/cumBelly2.mp4"></video></left>'
+			'<center><video autoplay loop src="images/locations/city/residential/sauna/sex/cumBelly2.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the happy end and in the moment he starts spouting his seed, he takes his dick out and points it on your stomach.'
 			'An extensive pool of cum lands on your abdomen, feeling warm but sticky.'
@@ -682,11 +693,11 @@ if $ARGS[0] = 'spSexVaginal':
 			gs 'cum_call', 'stomach', $boy, 1, 0, sp_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!ass
 		elseif subStep = 3:
-			'<left><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/cumOnAss.mp4"></video></left>'
+			'<center><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/cumOnAss.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the happy end and in the moment he starts spouting his seed, he takes his dick out and points it on your ass.'
 			'Both your asscheeks are covered in sticky, warm seed.'
@@ -695,11 +706,11 @@ if $ARGS[0] = 'spSexVaginal':
 			gs 'cum_call', 'butt', $boy, 1, 0, sp_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!face
 		elseif subStep = 4:
-			'<left><video autoplay loop src="images/characters/pavlovsk/resident/leonid/sex/cumface1.mp4"></video></left>'
+			'<center><video autoplay loop src="images/characters/pavlovsk/resident/leonid/sex/cumface1.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the happy end and in the moment he starts spouting his seed, he gently pushes you on your knees and points his tip in front of your face.'
 			'The seed starts squirting, splashing your face with surprisingly strong force, leaking to your nose and eyes and hair..'
@@ -708,11 +719,11 @@ if $ARGS[0] = 'spSexVaginal':
 			gs 'cum_call', 'face', $boy, 1, 0, sp_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!takeout fail
 		elseif subStep = 5:
-			'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/vagCumTakoutFail.jpg"></left>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/vagCumTakoutFail.jpg"></center>'
 			''
 			'You expect <<$sp_name>> to take his cock out of you any moment, but instead you hear his groans becoming louder.'
 			'<font color=#<<$pcs_font>>>"What are you doing? You aren''t coming inside me, are you?"</font>'
@@ -732,7 +743,7 @@ if $ARGS[0] = 'spSexVaginal':
 			gs 'arousal', 'vaginal', 5, 'sub'
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 
 		!will you swallow?
@@ -743,7 +754,7 @@ if $ARGS[0] = 'spSexVaginal':
 
 		!swallow YES
 		elseif subStep = 20:
-			'<left><video autoplay loop src="images/locations/shared/abduction/sex/slavewhoreCumMouth5.mp4"></video></left>'
+			'<center><video autoplay loop src="images/locations/shared/abduction/sex/slavewhoreCumMouth5.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the end and in the moment he is about the come, you get on your knees and open your mouth for his delivery.'
 			'The seed starts squirting, landing in your mouth and some even around it.'
@@ -757,7 +768,7 @@ if $ARGS[0] = 'spSexVaginal':
 			gs 'cum_call', 'mouth', $boy, 1, 0, sp_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!swallow NO
 		elseif subStep = 30:
@@ -771,8 +782,13 @@ end
 
 if $ARGS[0] = 'spSexAnal':
 	'<b><font color=#<<$sp_font>>><<$sp_name>> - anal sex</font></b>'
-	if step = 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
-	if step > 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></left>'
+	if set_imgh < 250:
+		if step = 0:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		if step > 0:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	else
+		if step = 0:'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		if step > 0:'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	end
 	''
 	$metka = 'spSexAnal'
 	price = price_anal
@@ -785,7 +801,7 @@ if $ARGS[0] = 'spSexAnal':
 		cockHard = 0
 		failC = 0
 		$clothingworntype = 'nude'
-		'<left><video autoplay loop src="images/locations/city/residential/sauna/sex/simplystrip1.mp4"></video></left>'
+		'<center><video autoplay loop src="images/locations/city/residential/sauna/sex/simplystrip1.mp4"></video></center>'
 		''
 		'<<$sp_name>> begins to undress and you follow his example, stripping the few clothes you are currently wearing.'
 		'His hairless, muscular body has a bronze tan. He moves towards you, lubing his <<spDick>> cm long cock and stroking it on the way.'
@@ -814,7 +830,7 @@ if $ARGS[0] = 'spSexAnal':
 	!missionary
 	elseif step = 1:
 		if subStep = 0:
-			'<left><video autoplay loop src="images/shared/sex/anal/mis/analenter.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/anal/mis/analenter.mp4"></video></center>'
 			''
 			'You lie on the bed, spreading your legs for easy access.'
 			'<<$sp_name>> kneels between those, gently spreading them a bit wider with his hands.'
@@ -827,7 +843,7 @@ if $ARGS[0] = 'spSexAnal':
 			orgB += rand(5, 20) 
 			act 'Let him continue':subStep = 1 & gt 'pavShared_sp', 'spSexAnal'
 		elseif subStep = 1:
-			'<left><video autoplay loop src="images/shared/sex/anal/mis/kotovsexanal0.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/anal/mis/kotovsexanal0.mp4"></video></center>'
 			''
 			'As he continuously fucks your anus, you rub his hairless ass, making him even hornier.'
 			'As you move your hands around his smooth asscheeks, it seems to arouse him even more.'
@@ -842,7 +858,7 @@ if $ARGS[0] = 'spSexAnal':
 	!behind
 	elseif step = 2:
 		if subStep = 0:
-			'<left><video autoplay loop src="images/shared/sex/anal/doggy/anal4.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/anal/doggy/anal4.mp4"></video></center>'
 			''
 			'You kneel on the bed, bending your back as much as you can, putting your nice round ass as high as possible.'
 			'<<$sp_name>> kneels behind you, rubbing your asscheeks. He starts probing your anus with his lubed fingers, penetrating in and out, playing with the nice round sphincter..'
@@ -853,7 +869,7 @@ if $ARGS[0] = 'spSexAnal':
 			orgB += rand(5, 20)
 			act 'Let him continue':subStep = 1 & gt 'pavShared_sp', 'spSexAnal'
 		elseif subStep = 1:
-			'<left><video autoplay loop src="images/shared/sex/anal/doggy/kotovsexanal11.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/anal/doggy/kotovsexanal11.mp4"></video></center>'
 			''
 			'As he continuously fucks your anus, you reach for his smooth balls and rub them, making his slow movements even more passionate.'
 			'<<$sp_name>> fucks you slowly and sensitively.'
@@ -867,7 +883,7 @@ if $ARGS[0] = 'spSexAnal':
 	!sidefuck
 	elseif step = 3:
 		if subStep = 0:
-			'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/analSidefuck1.jpg"></left>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/analSidefuck1.jpg"></center>'
 			''
 			'You lie on the bed, raising the upper leg in the air, exposing your lustful anus.'
 			'He takes this as a invitation, lying behind you.'
@@ -879,7 +895,7 @@ if $ARGS[0] = 'spSexAnal':
 			orgB += rand(5, 20) 
 			act 'Let him continue':subStep = 1 & gt 'pavShared_sp', 'spSexAnal'
 		elseif subStep = 1:
-			'<left><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/analSidefuck2.mp4"></video></left>'
+			'<center><video autoplay loop src="images/locations/pavlovsk/resident/sharedapt/sex/analSidefuck2.mp4"></video></center>'
 			''
 			'As he continuously fucks your anus, you reach for his smooth balls and rub them, making his slow movements even more passionate.'
 			'<<$sp_name>> fucks you slowly and sensitively.'
@@ -905,7 +921,7 @@ if $ARGS[0] = 'spSexAnal':
 
 		!inside
 		elseif subStep = 1:
-			'<left><video autoplay loop src="images/shared/sex/cum/analcreampie/cumAnal2.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/cum/analcreampie/cumAnal2.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the happy end, pumping his load <<ndDick>> cm deep inside your anus.'
 			sp_analCumInside += 1
@@ -915,11 +931,11 @@ if $ARGS[0] = 'spSexAnal':
 			gs 'arousal', 'anal', 2
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!stomach
 		elseif subStep = 2:
-			'<left><video autoplay loop src="images/shared/sex/cum/stomach/cumBelly2.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/cum/stomach/cumBelly2.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the happy end and in the moment he starts spouting his seed, he takes his dick out and points it on your stomach.'
 			'A small pool of cum lands on your abdomen, feeling warm but sticky.'
@@ -928,11 +944,11 @@ if $ARGS[0] = 'spSexAnal':
 			gs 'cum_call', 'stomach', $boy, 1, 0, sp_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!ass
 		elseif subStep = 3:
-			'<left><video autoplay loop src="images/shared/sex/cum/cum3.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/cum/cum3.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the happy end and in the moment he starts spouting his seed, he takes his dick out and points it on your ass.'
 			'Both your asscheeks are covered in sticky, warm seed.'
@@ -941,11 +957,11 @@ if $ARGS[0] = 'spSexAnal':
 			gs 'cum_call', 'butt', $boy, 1, 0, sp_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!face
 		elseif subStep = 4:
-			'<left><video autoplay loop src="images/shared/sex/cum/cumf10.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/cum/cumf10.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the happy end and in the moment he starts spouting his seed, he pushes you on your knees and and points his tip in front of your face.'
 			'The seed starts squirting, splashing your face with surprisingly strong force, leaking to your nose and eyes and hair..'
@@ -954,11 +970,11 @@ if $ARGS[0] = 'spSexAnal':
 			gs 'cum_call', 'face', $sp_name, 1, 0, sp_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!takeout fail
 		elseif subStep = 5:
-			'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/vagCumTakoutFail.jpg"></left>'
+			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sex/vagCumTakoutFail.jpg"></center>'
 			''
 			'You expect <<$sp_name>> to take his cock out of you any moment, but instead you hear his groans becoming louder.'
 			'<font color=#<<$pcs_font>>>"What are you doing? You aren''t coming inside me, are you?"</font>'
@@ -976,7 +992,7 @@ if $ARGS[0] = 'spSexAnal':
 			gs 'arousal', 'anal', 5, 'sub'
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!will you swallow?
 		elseif subStep = 6:
@@ -986,7 +1002,7 @@ if $ARGS[0] = 'spSexAnal':
 
 		!swallow YES
 		elseif subStep = 20:
-			'<left><video autoplay loop src="images/shared/sex/cum/mouth/Yum.mp4"></video></left>'
+			'<center><video autoplay loop src="images/shared/sex/cum/mouth/Yum.mp4"></video></center>'
 			''
 			'<<$sp_name>> finally reaches the end and in the moment he is about the come, you get on your knees and open your mouth for his delivery.'
 			'The seed starts squirting, landing in your mouth and some even around it.'
@@ -1000,7 +1016,7 @@ if $ARGS[0] = 'spSexAnal':
 			gs 'cum_call', 'mouth', $boy, 1, 0, sp_cumVol
 			gs 'arousal', 'end'
 			gs 'stat'
-			act 'Leave':sp_cumVol = 0 & gt 'pavSharedApt', 'payService'
+			act 'Leave':sp_cumVol = 0 & $loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 
 		!swallow NO
 		elseif subStep = 30:
@@ -1014,8 +1030,13 @@ end
 
 if $ARGS[0] = 'spSexGiantdildo':
 	'<b><font color=#<<$sp_font>>><<$sp_name>> - giant dildo</font></b>'
-	if step = 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></left>'
-	if step > 0:'<left><img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="150" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></left>'
+	if set_imgh < 250:
+		if step = 0:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		if step > 0:'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	else
+		if step = 0:'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"></center>'
+		if step > 0:'<center><img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/sp.jpg"> <img height="250" src="images/locations/pavlovsk/resident/sharedapt/sp/cockErect.jpg"></center>'
+	end
 	''
 	$metka = 'spSexGiantdildo'
 	price = price_special
@@ -1027,7 +1048,7 @@ if $ARGS[0] = 'spSexGiantdildo':
 		cockHard = 0
 		failC = 0
 		$clothingworntype = 'nude'
-		'<left><video autoplay loop src="images/locations/city/residential/sauna/sex/simplystrip1.mp4"></video></left>'
+		'<center><video autoplay loop src="images/locations/city/residential/sauna/sex/simplystrip1.mp4"></video></center>'
 		''
 		'<<$sp_name>> begins to undress and you follow his example, stripping the few clothes you are currently wearing.'
 		'His hairless, muscular body has a bronze tan. He sits on a bed next to you, caressing his own <<spDick>> cm long cock.'
@@ -1054,31 +1075,31 @@ if $ARGS[0] = 'spSexGiantdildo':
 
 	! make it wet	
 	elseif step = 10:
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo1.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo1.jpg"></center>'
 		''
 		act 'Continue':step = 20 & gt 'pavShared_sp', 'spSexGiantdildo'
 
 	! insert tip	
 	elseif step = 20:
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo2.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo2.jpg"></center>'
 		''
 		act 'Continue':step = 30 & gt 'pavShared_sp', 'spSexGiantdildo'
 
 	! insert half	
 	elseif step = 30:
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo3.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo3.jpg"></center>'
 		''
 		act 'Continue':step = 40 & gt 'pavShared_sp', 'spSexGiantdildo'
 
 	! impale on it	
 	elseif step = 40:
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo4.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo4.jpg"></center>'
 		''
 		act 'Continue':step = 50 & gt 'pavShared_sp', 'spSexGiantdildo'
 
 	! suck while impaled
 	elseif step = 50:
-		'<left><video autoplay loop src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo5.mp4"></video></left>'
+		'<center><video autoplay loop src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo5.mp4"></video></center>'
 		''
 		'The whole mass of the Big boy is now inside of you, not just stretching the entry to your sweet litte pussy, but also oppressing your intestines from the other side and pusing on your cervix.'
 		'Your struggle and the idea of this makes <<$sp_name>> very aroused. He gets up from the bed where he watched you from until now.'
@@ -1091,7 +1112,7 @@ if $ARGS[0] = 'spSexGiantdildo':
 
 	! he ejaculates on you
 	elseif step = 70:
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo6.jpg"> <video autoplay loop src="images/shared/sex/cum/chest/CumBreats.mp4"></video></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo6.jpg"> <video autoplay loop src="images/shared/sex/cum/chest/CumBreats.mp4"></video></center>'
 		''
 		'Being helplessly impaled on the thick rubber rod, <<$sp_name>> seems to be at his maximum arousal.'
 		'He is now standing in front of you, masturbating himself furiously while holding your head by the hair next to the tip of his cock.'
@@ -1101,7 +1122,7 @@ if $ARGS[0] = 'spSexGiantdildo':
 
 	! end
 	elseif step = 80:
-		'<left><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo7.jpg"></left>'
+		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/sharedApt/sex/sp/dildo7.jpg"></center>'
 		''
 		'You sit there, impaled to the edge of this giant, thick dildo, covered in <<$sp_name>>''s sperm from your head all the way down the belly.'
 		'The experience has exhausted you so much that you cannot even lift yourself up the take out the monster.'
@@ -1169,7 +1190,7 @@ if $ARGS[0] = 'spSexGiantdildo':
 		step = 0
 		gs 'arousal', 'end'
 		gs 'stat'
-		gt 'pavSharedApt', 'payService'
+		$loc = 'pavSharedApt' & $metka = 'start' & gt 'pavSharedApt', 'payService'
 	end
 end
 

@@ -21,9 +21,9 @@ gs 'boyStat','A2'
 if $ARGS[0] = 'bj':
 	'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/artem/sex/artombj.jpg"></center>'
 	npc_sex[$boy] += 1
-	gs 'dinsex','dinrandbj'
+	gs 'dinSex','dinrandbj'
 	gs 'arousal','bj',5,'sub'
-	gs 'dinsex','dinrandswallow'
+	gs 'dinSex','dinrandswallow'
 	gs 'cum_call','mouth',$boy,1
 	artemBJQW += 1
 	swallow += 1
@@ -179,6 +179,7 @@ if $ARGS[0] = 'learn':
 				gs 'stat'
 
 				act 'Get naked for him':
+					*clr & cla
 					gs 'shortgs','undress'
 					minut += 5
 					'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/artem/sex/anatomy2.jpg"></center>'
@@ -191,6 +192,7 @@ if $ARGS[0] = 'learn':
 					act 'Suck him off': gt 'artemEv','bj'
 				end
 			else
+				*clr & cla
 				'Artem unbuttons his pants and looks at you expectantly: "Our previous deal still stands, <<$pcs_nickname>>. If you want my help, I want your mouth."'
 				gs 'stat'
 
@@ -539,7 +541,7 @@ if $ARGS[0] = 'learn':
 				'You quickly walk back to Artem''s apartment with him, and give yourself an enema in the bathroom.'
 				'When you return to the garage, you get down on your hand and feet on the couch and wiggle your ass at them. You ask Artem: "So, now that I''m clean... do you have something we can use as lubricant? Maybe some petroleum jelly, or vegetable oil?"'
 				'Artem comes back with a jar of Vaseline. You smile at him and say: "That will do just fine. Now put some on your finger and slowly put it in my ass... don''t be stingy, use lots of it. It''ll feel much better for both of us."'
-				gs 'dinsex','boy_wants_anal',$boydesc[1],'lubri'
+				gs 'dinSex','boy_wants_anal',$boydesc[1],'lubri'
 				'He does as you say, and testily slides his finger inside your ass a few times. When he''s satisfied it''s going smooth enough, he adds a second finger and fucks your ass carefully.'
 				'"Very good, Artem... now take some more and smear it all over your cock". When you see he''s using good amounts, you nod: "Alright, now put it in slowly."'
 				'Artem slowly guides his dick into your tight asshole. Once the head is in, he groans: "Wow... it''s so tight, and so warm! I feel like I''m going to cum already!"'
@@ -565,7 +567,7 @@ if $ARGS[0] = 'learn':
 					gs 'shortgs','dress'
 					gs 'stat'
 					'After they take a moment to catch their breath, you tell him: "You see why I had you wait so long to fuck my ass? It''s much more intense back there, for both of us... you had to build up some stamina before you could handle it. I guess that''s it for today."'
-					if pain['asshole'] + (agape * 10) > 40: gs 'dinsex','after_anal','no_plug' else gs 'dinsex', 'after_anal','pc'
+					if pain['asshole'] + (agape * 10) > 40: gs 'dinSex','after_anal','no_plug' else gs 'dinSex', 'after_anal','pc'
 					'The guys definitely liked today''s lesson, and Artem thanks you heartily when he gives you the 1000 <b>₽</b>. The boys are staying around in the garage for a while, talking enthusiastically as they wave you goodbye. You hear your name a lot in their conversation, and you wonder what they could be talking about.'
 
 					artemAndPetja = 14
@@ -625,7 +627,7 @@ if $ARGS[0] = 'learn':
 					*clr & cla
 					'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/artem/sex/ap_anatomy6_3.jpg"></center>'
 					'You obediently swallow their sperm, and then drink the glass of urine the guys offered you without even wincing. Artem makes sure he films all of that too.'
-					gs 'dinsex', 'after_anal','boy',$boydesc[1]
+					gs 'dinSex', 'after_anal','boy',$boydesc[1]
 					'Both the boys have an evil grin on their faces, and you slowly realize they had been planning this for some time.'
 					'Artem arrogantly tells you: "So... <<$pcs_nickname>>. As you probably realize, there are going to be some changes now. I won''t have time to help you with your homework any more, next time we will go to the garage immediately after school. We have lots of plans with you. As long as you do what we say, no one will see the video of you getting drilled in all of your holes by the biggest nerds in school."'
 					'You quietly get dressed, and quietly leave the garage, You know this is probably just the beginning.'
@@ -761,13 +763,13 @@ if $ARGS[0] = 'kiss':
 							'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/boy/artem/sex/anal.jpg"></center>'
 							'You grin despite yourself... there''s no way he would''ve ever dared to say that, if you hadn''t introduced him to it yourself.'
 							'You smile and tell him: "Alright, you perv... I just need an enema real quick in that case, give me a minute."'
-							gs 'dinsex','enema','You quickly go to the bathroom and give yourself an enema, and walk back to his room.'
+							gs 'dinSex','enema','You quickly go to the bathroom and give yourself an enema, and walk back to his room.'
 							'When you get back, you drop to your knees on the couch and put up your ass without saying another word, simply giving him a lewd wink to let him know you''re ready for him.'
-							gs 'dinsex','boy_wants_anal','lubri'
+							gs 'dinSex','boy_wants_anal','lubri'
 							anala += 1
 							artemanal += 1
-							gs 'dinsex','analsex'
-							if pain['asshole'] + (agape * 10) > 40: gs 'dinsex','after_anal','no_plug' else gs 'dinsex', 'after_anal','pc'
+							gs 'dinSex','analsex'
+							if pain['asshole'] + (agape * 10) > 40: gs 'dinSex','after_anal','no_plug' else gs 'dinSex', 'after_anal','pc'
 							gs 'arousal','end'
 							gs 'stat'
 
@@ -806,14 +808,14 @@ if $ARGS[0] = 'kiss':
 								'You give him your best surprised look, and ask: "My ass, Artem? Really!?"'
 								'When you see him panic, you grin and say: "Just kidding, you pervert... alright, we can try. I''ll need to clean myself first though... do you have anything for that?"'
 								'Artem nods as he hands you something: "I have an enema kit... here."'
-								gs 'dinsex','enema','You quickly go to the bathroom and give yourself an enema.'
+								gs 'dinSex','enema','You quickly go to the bathroom and give yourself an enema.'
 								'When you return to his room, you get down on the couch and offer him your bare ass with a smile.'
 								'You ask him: "We need some lubricant also... do you have any? Maybe some petroleum jelly, or oil? Check the medicine cabinet, there might be something in there."'
-								gs 'dinsex','boy_wants_anal','lubri'
+								gs 'dinSex','boy_wants_anal','lubri'
 								anala += 1
 								artemanal += 1
-								gs 'dinsex','analsex'
-								if pain['asshole'] + (agape * 10) > 40: gs 'dinsex','after_anal','no_plug' else gs 'dinsex', 'after_anal','boy',$boydesc
+								gs 'dinSex','analsex'
+								if pain['asshole'] + (agape * 10) > 40: gs 'dinSex','after_anal','no_plug' else gs 'dinSex', 'after_anal','boy',$boydesc
 								gs 'arousal','end'
 								gs 'stat'
 
@@ -831,9 +833,9 @@ if $ARGS[0] = 'kiss':
 						sexa += 1
 						pose = 0
 						if artemsex >= 1:artemsex += 1
-						gs 'dinsex', 'boy_puts_his_condom'
-						gs 'dinsex','vaginal_sex',10
-						gs 'dinsex','sexcum'
+						gs 'dinSex', 'boy_puts_his_condom'
+						gs 'dinSex','vaginal_sex',10
+						gs 'dinSex','sexcum'
 						gs 'arousal','end'
 						gs 'stat'
 						if artemsex = 0:
@@ -899,7 +901,7 @@ if $ARGS[0] = 'artemSkver':
 	'After a while you end up near the movie theater. When Artem sees it, he suggests: "Hey, let''s go see a movie!"'
 	minut += 15
 	gs 'stat'
-	gs 'dinsex','artemGopSkver'
+	gs 'artemEv','artemGopSkver'
 
 	act '"A movie sounds like fun!"':
 		*clr & cla

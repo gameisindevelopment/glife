@@ -285,68 +285,69 @@ $d_sister[2]={
 $d_sister[3]={
 	!good relationship
 	'You start a conversation with your sister.'
-	sisterTalk = rand (1,19)
-	if sisterTalk = 1:
-		'As you chat with your sister, she says it is possible to rent an apartment in the city and live and work there, but she is happy living in Pavlovsk.'
-	end
-	if sisterTalk = 2 and trfatherQW = 0:
+	
+	if trfatherQW = 0 and rand(0,2) = 0:
 		trfatherQW = 1
 		'You ask about your real father, Anya grins, "<<$pcs_nickname>>, I was 4 years old when they broke up. I don''t even remember what he looks like. Mom does not like to talk about him, but as you know, our real father went to live in another town. I also remember, he worked as a long-distance truck driver, maybe sometimes he passes through Pavlovsk."'
-	elseif sisterTalk = 2 and trfatherQW >= 1:
-		sisterTalk += 1
-	end
-	if sisterTalk = 3:
-		'You ask Anya about University. She grins, "I almost went, passed the entrance exam. However, I started working in the summer and got used to having cash. What can I buy with a diploma?"'
-	end
-	if sisterTalk = 4:
-		'You ask Anya about her boyfriend. She smiles, "Well, I have a boyfriend. Although nothing serious. It''s more of a friends with benefits."'
-	end
-	if sisterTalk = 5:
-		'You start talking with Anya, she tells you about the boys she met, parties she''s been to and cosmetics.'
-	end
-	if sisterTalk = 6:
-		'You chat with your sister, she tells you about the new dress she brought at the store today.'
-	end
-	if sisterTalk = 7:
-		'You chat with your sister about movie stars, discussing and sharing fantasies about them, and arguing about which ones are sexier.'
-	end
-	if sisterTalk = 8:
-		'Anna talks about sports clubs in the community center, and how sport is very good for the figure, but she is too lazy to go there.'
-	end
-	if sisterTalk = 9:
-		'Anya says, that one of her friends had a kid, but the father denies it and she''s left looking after her kid alone. She says, that if you are smart, you will buy the pill from the pharmacy.'
-	end
-	if sisterTalk = 10:
-		'Anya says, one winter she went out without a coat and caught a bad cold. You remind her that she spend the whole time complaining about it to you.'
-	end
-	if sisterTalk = 11:
-		'You chat with your sister, discussing the latest trends in fashion.'
-	end
-	if sisterTalk = 12:
-		'Anya recognized, that before she was fond of diets, but they are deteriorated skin and went pryshi, and the start of this match, so now it cracks for three and it only gets more beautiful.'
-	end
-	if sisterTalk = 13:
-		'You chat with your sister and she tells you that she went dancing before, but she quickly got tired.'
-	end
-	if sisterTalk = 14:
-		'You chat with your sister and she advises you where you can earn some money.'
-	end
-	if sisterTalk = 15:
-		'You chat with your sister and she tells you that you can find a lot of interesting bargins if you wander through the market.'
-	end
-	if sisterTalk = 16:
-		'Anya tells you horror stories about a pretty girl who didn''t wash or shave her legs, and how it became so terrible, that she looked like a bum and had no friends. She advises you to take care of your body.'
-	end
-	if sisterTalk = 17:
-		'You chat with your sister, she says that her ex-boyfriend was a weirdo, "He told me, pier, I love you as much, I just a shit in the sea. Both out on the sea, but we do not go together..."'
-	end
-	if sisterTalk = 18:
-		'You chat with your sister, Anya, she asks you how you feel about womens sexual rights. You spend some time having a very frank and quite revealing conversation.'
-	end
-	if sisterTalk = 19:
-		'You chat with your sister, Anya, she tells you the tailor at the Garment factory is a creep who makes his customers wait around in their underwear.'
+	else 
+		sisterTalk = rand (1,18)
+		if sisterTalk = 1:
+			'As you chat with your sister, she says it is possible to rent an apartment in the city and live and work there, but she is happy living in Pavlovsk.'	
+		end
+		if sisterTalk = 2:
+			'You chat with your sister, Anya, she tells you the tailor at the Garment factory is a creep who makes his customers wait around in their underwear.'
+		end
+		if sisterTalk = 3:
+			'You ask Anya about University. She grins, "I almost went, passed the entrance exam. However, I started working in the summer and got used to having cash. What can I buy with a diploma?"'
+		end
+		if sisterTalk = 4:
+			'You ask Anya about her boyfriend. She smiles, "Well, I have a boyfriend. Although nothing serious. It''s more of a friends with benefits."'
+		end
+		if sisterTalk = 5:
+			'You start talking with Anya, she tells you about the boys she met, parties she''s been to and cosmetics.'
+		end
+		if sisterTalk = 6:
+			'You chat with your sister, she tells you about the new dress she brought at the store today.'
+		end
+		if sisterTalk = 7:
+			'You chat with your sister about movie stars, discussing and sharing fantasies about them, and arguing about which ones are sexier.'
+		end
+		if sisterTalk = 8:
+			'Anna talks about sports clubs in the community center, and how sport is very good for the figure, but she is too lazy to go there.'
+		end
+		if sisterTalk = 9:
+			'Anya says, that one of her friends had a kid, but the father denies it and she''s left looking after her kid alone. She says, that if you are smart, you will buy the pill from the pharmacy.'
+		end
+		if sisterTalk = 10:
+			'Anya says, one winter she went out without a coat and caught a bad cold. You remind her that she spend the whole time complaining about it to you.'
+		end
+		if sisterTalk = 11:
+			'You chat with your sister, discussing the latest trends in fashion.'
+		end
+		if sisterTalk = 12:
+			'Anya recognized, that before she was fond of diets, but they are deteriorated skin and went pryshi, and the start of this match, so now it cracks for three and it only gets more beautiful.'
+		end
+		if sisterTalk = 13:
+			'You chat with your sister and she tells you that she went dancing before, but she quickly got tired.'
+		end
+		if sisterTalk = 14:
+			'You chat with your sister and she advises you where you can earn some money.'
+		end
+		if sisterTalk = 15:
+			'You chat with your sister and she tells you that you can find a lot of interesting bargins if you wander through the market.'
+		end
+		if sisterTalk = 16:
+			'Anya tells you horror stories about a pretty girl who didn''t wash or shave her legs, and how it became so terrible, that she looked like a bum and had no friends. She advises you to take care of your body.'
+		end
+		if sisterTalk = 17:
+			'You chat with your sister, she says that her ex-boyfriend was a weirdo, "He told me, pier, I love you as much, I just a shit in the sea. Both out on the sea, but we do not go together..."'
+		end
+		if sisterTalk = 18:
+			'You chat with your sister, Anya, she asks you how you feel about womens sexual rights. You spend some time having a very frank and quite revealing conversation.'
+		end
 	end
 }
+
 $d_sistersexstories[1]={
 gs'stat'
 sisterStories = rand (1,8)

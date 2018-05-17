@@ -367,9 +367,9 @@ $cheatmenu['status'] = {
 	pl'<a href="exec:pcs_horny = 0 & dynamic $cheatmenu[''status'']">Min arousal</a>'
 	pl'<a href="exec:dynamic $cheatmenu[''bodyMod'']">Body Modification</a>'
 	nl
-	pl'<a href="exec:pcs_health = pcs_vital*10 + pcs_stren*5+1000 & pcs_willpwr = pcs_intel*5 + will*5+1000 & pcs_manna = (pcs_intel*pcs_magik) + pcs_magik*100 + pcs_vital*10 + rikudo & vgape = 0 & agape = 0 & nippain = 0 & dynamic $cheatmenu">Full restoration of health, manna, Reason.</a>'
-	pl'<a href="exec:pcs_sleep = 100 & pcs_stam = stammax & dynamic $cheatmenu">Full restoration of sleep and stamina.</a>'
-	pl'<a href="exec:pcs_energy = 200 & pcs_hydra = 200 & dynamic $cheatmenu">Full restoration of hunger and water.</a>'
+	pl'<a href="exec:pcs_health = pcs_vital*10 + pcs_stren*5+1000 & pcs_willpwr = pcs_intel*5 + will*5+1000 & pcs_manna = (pcs_intel*pcs_magik) + pcs_magik*100 + pcs_vital*10 + rikudo & vgape = 0 & agape = 0 & nippain = 0 & dynamic $cheatmenu">Full restoration of Health, Manna, Reason.</a>'
+	pl'<a href="exec:pcs_sleep = 100 & pcs_stam = stammax & pcs_mood = 100 & dynamic $cheatmenu">Full restoration of Sleep, Stamina, Mood.</a>'
+	pl'<a href="exec:pcs_energy = 200 & pcs_hydra = 200 & dynamic $cheatmenu">Full restoration of Hunger and Water.</a>'
 	pl'<a href="exec:dynamic $cheatmenu[''money'']">Change money</a>'
 	pl'<a href="exec:money = 0 & dynamic $cheatmenu">Zero money</a>'
 	pl'<a href="exec:dynamic $cheatmenu[''std_cure'']">Cure all stds</a>'
@@ -911,16 +911,16 @@ $cheatmenu['reputation'] = {
 	if pcs_lovers[0] = 1:
 		nl
 		pl'You are dating <<$loverdesc[0]>>.'
-		if pcs_lovers_rel[0] < 0: pcs_lovers_rel[0] = 0
+		if loverrelation[0] < 0: loverrelation[0] = 0
 		if loverdays[0] < 0: loverdays[0] = 0
 		if haraklover[0] > 2: haraklover[0] = 0
 		if loverizvrat[0] > 1: loverizvrat[0] = 0
 		pl'Change lover''s personality: <a href="exec:haraklover[0] += 1 & dynamic $cheatmenu[''reputation'']"><<haraklover[0]>></a>'
 		pl'Change lover''s perversion: <a href="exec:loverizvrat[0] += 1 & dynamic $cheatmenu[''reputation'']"><<loverizvrat[0]>></a>'
-		pl'Relationship: <<pcs_lovers_rel[0]>> <a href="exec:pcs_lovers_rel[0] += 10 & dynamic $cheatmenu[''reputation'']">+10</a> <a href="exec:loverrelation[0] -= 10 & dynamic $cheatmenu[''reputation'']">-10</a>'
+		pl'Relationship: <<loverrelation[0]>> <a href="exec:loverrelation[0] += 10 & dynamic $cheatmenu[''reputation'']">+10</a> <a href="exec:loverrelation[0] -= 10 & dynamic $cheatmenu[''reputation'']">-10</a>'
 		pl'You''ve been dating for <<loverdays[0]>> days. <a href="exec:loverdays[0] += 5 & dynamic $cheatmenu[''reputation'']">+5</a> <a href="exec:loverdays[0] -= 5 & dynamic $cheatmenu[''reputation'']">-5</a>'
 	end
-		if pcs_lovers[1] = 1:
+	if pcs_lovers[1] = 1:
 		nl
 		pl'You are dating <<$loverdesc[1]>>.'
 		if loverrelation[1] < 0: loverrelation[1] = 0
@@ -932,7 +932,7 @@ $cheatmenu['reputation'] = {
 		pl'Relationship: <<loverrelation[1]>> <a href="exec:loverrelation[1] += 10 & dynamic $cheatmenu[''reputation'']">+10</a> <a href="exec:loverrelation[1] -= 10 & dynamic $cheatmenu[''reputation'']">-10</a>'
 		pl'You''ve been dating for <<loverdays[1]>> days. <a href="exec:loverdays[1] += 5 & dynamic $cheatmenu[''reputation'']">+5</a> <a href="exec:loverdays[1] -= 5 & dynamic $cheatmenu[''reputation'']">-5</a>'
 	end
-		if pcs_lovers[2] = 1:
+	if pcs_lovers[2] = 1:
 		nl
 		pl'You are dating <<$loverdesc[2]>>.'
 		if loverrelation[2] < 0: loverrelation[2] = 0
@@ -1278,33 +1278,38 @@ $cheatmenu['force_preg'] = {
 }
 
 $cheatmenu['remove_preg'] = {
-	FertEgg = 0
-	killvar 'polkid'
-	killvar '$kidname'
-	killvar 'kidage'
-	killvar 'daykid'
-	killvar 'monthkid'
-	killvar 'yearkid'
-	killvar 'Babyptype'
-	killvar '$ChildFath'
-	killvar '$ChildThFath'
-	killvar 'hairkid'
-	killvar 'eyeskid'
-	killvar 'ChildConType'
-	killvar 'Babyptype'
-	killvar '$WombpotFath'
-	babyembryo = 0
-	if preg > 0 or cycle = 5:
-		mesec = 48
-		FocH = 0
-		EggRH = 0
-		Ovulate = 0
-		UnfertEgg = 0
-		PregChem = 0
-		preg = 0
-		LutH = 0
-		RecovH = 0
-		cycle = 0
+	pregtime = 0
+	pregtalk = 0
+	preg = 0
+	thinkpreg = 0
+	knowpreg = 0
+	cycle = 4
+	RecovH = rand(7,70)
+	RecovH += pregchem
+	knowpregloss = 2
+	!! I am not sure, why is it here this cycle, but I leave it so (rachels)
+	nextbaby = arrsize('yearkid')
+	:poliabortloop
+	!!Changed to check if baby has a birth year instead, if it doesn''t, do abortion
+	if yearkid[nextbaby-1] = 0:
+		KILLVAR 'polkid',nextbaby-1
+		KILLVAR '$kidname',nextbaby-1
+		KILLVAR 'kidage',nextbaby-1
+		KILLVAR 'daykid',nextbaby-1
+		KILLVAR 'monthkid',nextbaby-1
+		KILLVAR 'yearkid',nextbaby-1
+		KILLVAR 'Babyptype',nextbaby-1
+		KILLVAR '$ChildFath',nextbaby-1
+		KILLVAR '$ChildThFath',nextbaby-1
+		KILLVAR 'hairkid',nextbaby-1
+		KILLVAR 'eyeskid',nextbaby-1
+		KILLVAR 'cumarrcon',nextbaby-1
+		KILLVAR '$wombpotfath'
+		BabyEmbryo -= 1
+	end
+	nextbaby -= 1
+	if nextbaby > 0:
+		jump 'poliabortloop'
 	end
 }
 
@@ -1373,6 +1378,11 @@ $cheatmenu['display'] = {
 		pl'Full morning routine enabled: Currently ON - <a href="exec:enfullmorrout = 0 & dynamic $cheatmenu[''display'']">Turn OFF</a>'
 	else
 		pl'Full morning routine enabled: Currently OFF - <a href="exec:enfullmorrout = 1 & dynamic $cheatmenu[''display'']">Turn ON</a>'
+	end
+	if editpornname = 1:
+		pl'Editing of the names of the porn movies you stared enabled: Currently ON - <a href="exec:editpornname = 0 & dynamic $cheatmenu[''display'']">Turn OFF</a>'
+	else
+		pl'Editing of the names of the porn movies you stared disabled: Currently OFF - <a href="exec:editpornname = 1 & dynamic $cheatmenu[''display'']">Turn ON</a>'
 	end
 	nl
 	pl '<center><B>Display Setting</B></center>'

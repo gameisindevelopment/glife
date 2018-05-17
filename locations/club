@@ -744,11 +744,11 @@ if $ARGS[0] = 'bar':
 		act 'Buy a drink (300 <b>₽</b>)':
 			cla
 			*clr
-			minut += 30
+			minut += 15
 			fat += 1
 			pcs_mood += 10
 			pcs_willpwr += 10
-			alko += 2
+			alko += 3
 			pcs_breath = 0
 			cumspclnt = 2
 			gs 'cum_cleanup'

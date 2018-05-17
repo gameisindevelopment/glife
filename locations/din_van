@@ -140,14 +140,6 @@ $shower = {
 		dynamic $dryOff
 	end
 
-	act 'Check weight on the scales':
-		cla
-		*clr
-		msg 'Your body fat is = (<<salo>>)'
-		gt $loc, $metka
-	end
-
-	gs 'din_van', 'prvt_pee'
 }
 
 $bath = {
@@ -642,6 +634,7 @@ $pirManage = {
 
 if $ARGS[0] = 'private':
     if stanok > 0:'Your razor will last for <b><<stanok>></b> more shavings.'
+	
     !WD: heal chafe
     if mosolmaz>0:'On a shelf is a tube of ointment for chafing, which will be enough for <b><<mosolmaz>></b> applications.'
     
@@ -710,6 +703,14 @@ if $ARGS[0] = 'private':
     dynamic $tampon
 
     dynamic $wearpan
+	act 'Check weight on the scales':
+		cla
+		*clr
+		msg 'Your body fat is = (<<salo>>)'
+		gt $loc, $metka
+	end
+	gs 'din_van', 'prvt_pee'
+
     dynamic $basin
 
 	if bcream_have > 0:

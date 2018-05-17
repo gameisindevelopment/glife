@@ -234,7 +234,7 @@ if $ARGS[0] = 'Main':
 
 	act 'Go outside':
 		if $clothingworntype ! 'nude':
-			minut += 5 & gt 'Gaddvor'
+			minut += 1 & gt 'Gaddvor'
 		else
 			msg'<b><font color = red>You can''t leave the house naked! You need to get dressed first.</font></b>'
 			gt 'Gadhouse', 'Main'
@@ -243,9 +243,9 @@ if $ARGS[0] = 'Main':
 
 	act 'Prepare a full meal (0:30)':gs 'food', 'm_meal'
 
-	act 'Prepare a light meal (0:20)':gs 'food', 's_meal'
+	act 'Prepare a light meal (0:25)':gs 'food', 's_meal'
 
-	act 'Have a snack (0:05)':gs 'food', 'snack'
+	act 'Have a snack (0:15)':gs 'food', 'snack'
 	
 	act 'Drink some water (0:05)':gs 'beverage', 'bev_wat'
 
@@ -506,7 +506,7 @@ if $ARGS[0]='grandma':
 					'You look at her perplexed, questioning what she''s talking about. "We do have matches in the kitchen or if you want I can run over to the store to buy some."'
 					'"You don''t get it, <<$pcs_nickname>>. The matches today are not as good as those made long time ago. I miss those matches we had during the Great Patriotic War, before they had to move the factory to the far east... Those matches were magical, not like this crap we have now... Ugh..."'
 		
-				!Keep the word brigade if you want to change the text. It''s what the people working on the kolkhoz were called.  
+				!Keep the word brigade if you want to change the text. It''s what the people working on the kolkhoz were called.
 				elseif temp = 7:
 					'"One day my mother, rest her soul, sent us four siblings out to the forest for berry gathering", your grandma begins. "We took our berry collectors and headed out. We reached the entrance of the forest pretty quickly and decided that it would be best to split up to complete the task faster. Since we were familiar with the area we all dispersed to our cherished spots and began gathering berries."'
 					'"My favorite spot was a plot surrounded by dense bushes and in the middle of the plot there was a huge stump. It’’s was really a great spot and as I approached I noticed very large number of ripe strawberries. I was rejoicing over the thought that I would gather more than my brothers, slowly gathering the berries and putting them in my berry collector. All of a sudden I hear some rustling behind the bushes. I turn towards the sound, but I''m met with silence. I didn''t notice anyone but I still couldn''t get rid of the eerie feeling."'
@@ -575,7 +575,7 @@ if $ARGS[0]='grandpa':
 				gs 'stat'
 		
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/grandparents/grandpa1.jpg"></center>'
-				'Your grandfather stops complaining and smiles at you, he loves telling stories.  He has lived a rich and eventful life, and you enjoy listening to his stories and talking to him. He mostly reminisces about his past, and reflects on his earlier life.'
+				'Your grandfather stops complaining and smiles at you, he loves telling stories. He has lived a rich and eventful life, and you enjoy listening to his stories and talking to him. He mostly reminisces about his past, and reflects on his earlier life.'
 		
 				act 'Continue':gt 'Gadhouse', 'Start'
 			end
@@ -591,7 +591,7 @@ if $ARGS[0]='villagecat':
 	gs 'stat'
 
 	'<center><img <<$set_imgh>> src="images/locations/gadukino/village/villcat.jpg"></center>'
-	'Your grandparents'' fat tomcat, Boniface, is aware of you approaching him, even though his eyes are closed.  He tracks you with his ears and simply ignores you.'
+	'Your grandparents'' fat tomcat, Boniface, is aware of you approaching him, even though his eyes are closed. He tracks you with his ears and simply ignores you.'
 	
 	act 'Pet Boniface':
 		cla
@@ -601,7 +601,7 @@ if $ARGS[0]='villagecat':
 		gs 'stat'
 
 		'<center><img <<$set_imgh>> src="images/locations/gadukino/village/villcat1.jpg"></center>'
-		'You gently pet Boniface, giving him a good scratch behind the ears.  You hear him start to purr.  As soon as you stop scratching him, the purring stops too. That lazy bastard... he''s living the good life!'
+		'You gently pet Boniface, giving him a good scratch behind the ears. You hear him start to purr. As soon as you stop scratching him, the purring stops too. That lazy bastard... he''s living the good life!'
 
 		act 'Continue':minut += 2 & gt 'Gadhouse', 'Start'
 	end

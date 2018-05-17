@@ -54,6 +54,9 @@ if (film > 0 or pornstack = 1) and pfilmNO = 0 and pfilmSTOP = 0:
 	gs 'pornschedule', 'schedule'
 end
 
+!!modelling job check
+if model_week ! (daystart - week) / 7:model_job_week = 0
+
 !!acting strings to set available jobs
 if casting = 1:
 	acting_string1 = rand(10000000000,199999999999)
@@ -907,7 +910,12 @@ end
 
 if husband > 0 and husbandrink ! 11:husbandrink = rand(0, 10)
 
+!!Pussy_Kats job settings
 inWorkYoungShop = 0
+if day = 1 and young_shop_work = 100: young_shop_work = 1
+if day = 5 and young_shop_work1 = 100: young_shop_work1 = 1
+if day = 1 and young_shop_work2 = 100: young_shop_work2 = 1
+
 husbandsexday = 0
 borsexkol = 0
 givisexday = 0
@@ -1009,7 +1017,7 @@ if day = 25:
 	end
 
 	if PersSecWork = 1 and PersSecWorkTimes > 0 and paydaybistrosec = 0:
-		Pay = PersSecWorkTimes * 2500
+		Pay = PersSecWorkTimes * 1250
 		PersSecWorkTimes = 0
 		karta += Pay
 		paydaybistrosec = 1
@@ -1018,14 +1026,14 @@ if day = 25:
 
 	if workKafe = 1 and paydayKafe = 0:
 		paydayKafe = 1
-		pay = smenaKafe * 1500
+		pay = smenaKafe * 600
 		karta += pay
 		smenaKafe = 0
 		'<b><font color="green">Your salary of <<pay>> <b>₽</b> has been paid into your bank account for your job as a waitress in a cafe.</font></b>'
 	end
 
 	if workhosp = 1 and nopaypoly = 0:
-		pay = smena * 1500
+		pay = smena * 1000
 		karta += pay
 		smena = 0
 		nopaypoly = 1
@@ -1033,9 +1041,9 @@ if day = 25:
 	end
 
 	if worksalon = 1 and nopaysalon = 0:
-		pay = smena * 1560
+		pay = smenaSalon * 1560
 		karta += pay
-		smena = 0
+		smenaSalon = 0
 		nopaysalon = 1
 		'<b><font color="green">Your salary of <<pay>> <b>₽</b> has been paid into your bank account for your work in a beauty salon.</font></b>'
 	end
@@ -1048,7 +1056,7 @@ if day = 25:
 
 	if workSec = 1 and paydaySec = 0:
 		paydaySec = 1
-		pay = sekDay * 1200
+		pay = sekDay * 800
 
 		if officebestslut >= 3:pay += 10000
 		karta += pay
@@ -1079,10 +1087,10 @@ if day = 25:
 
 	if home_owned[1] > 0 and electroday = 0:
 		electroday = 1
-		if elektro >= 800:elektro = 800 + rand(0, 100)
+		if elektro >= 2000:elektro = 2000 + rand(0, 100)
 
 		money -= elektro
-		'<b><font color="red">You paid <<elektro>> for electricity.</font></b>'
+		'<b><font color="red">You paid <<elektro>> for utilities.</font></b>'
 	end
 
 	if home_owned[1] > 0 and kabel > 0 and kabelday = 0:kabelday = 1 & money -= 300 & '<b><font color="red">You have paid 300 <b>₽</b> for cable TV.</font></b>'

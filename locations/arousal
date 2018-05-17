@@ -267,6 +267,9 @@ if $ARGS[0] ! 'end' and $ARGS[0] ! 'checks' and $ARGS[0] ! 'count' and $ARGS[0] 
 	elseif $ARGS[0] = 'vaginal_strap':
 		count['vaginal_strap'] = 1
 		stim['mag'] += 1
+		!! virginal capacity increase
+		if pcs_vag < dick:pcs_vag += 1
+		if pcs_vag*2 < dick:pcs_vag += 1
 		!! the same as for 'vaginal'
 		vgrdif = grange - pcs_vag
 		vltdif = temp_dick - pcs_vag

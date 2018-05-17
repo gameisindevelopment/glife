@@ -629,6 +629,27 @@ if $ARGS[0] = 'options':
 										$pornofday += '<font color="green"><b><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></b> - <i>Already contracted</i></font><br>'
 									elseif pfilmday[counter] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
 										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 1] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 2] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 3] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 4] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter - 5] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 1] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 2] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 3] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 4] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
+									elseif pfilmday[counter + 5] > 0 and porntaken['<<counter>>,<<porns>>'] = 0:
+										$pornofday += '<font color="grey"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>></font><br>'
 									elseif porntaken['<<counter>>,<<porns>>'] = 1:
 										$pornofday += '<font color="red"><<$porndesc[pornplan[''<<counter>>,<<porns>>'']]>> - <i>Taken by someone else</i></font><br>'
 									elseif pornstack < 10:
@@ -875,12 +896,14 @@ if $ARGS[0] = 'postvideo':
 		$porntitle[film] = 'Girls Jerk Guys #36 - '
 		$pornfilmstory[film] = '<<$pfname>>''s introduction to the world of porn, where she jerk off <<$pakter[1]>> on her tits.'
 	else
-		if $pstory = '':
+		if $pstory = '' and editpornname = 1:
 			$pornfilmstory[film] = input('You can enter the story of the porn movie. This action can be done only once, but you can choose to do it later! (Just hit Enter/Esc when blank)<br>Tags of the current movie: <font color=#541717 size=2><<$pfilmtags>></font>')
 		else
 			$pornfilmstory[film] = $pstory
 		end
-		$porntitle[film] = input("Enter the name of the porn movie. <i>This action can be done only once, but you can choose to do it later! (Just hit Enter/Esc when blank)</i>")
+		if editpornname = 1:
+			$porntitle[film] = input("Enter the name of the porn movie. <i>This action can be done only once, but you can choose to do it later! (Just hit Enter/Esc when blank)</i>")
+		end
 	end
 	
 	if pfilmNOPAY = 0:

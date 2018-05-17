@@ -426,7 +426,7 @@ if $ARGS[0] = 'beginwork':
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/mall/salon/salon.jpg"></center>'
 	'You go to your workstation and prepare it as you wait for your first customer.'
 	act 'Start work':
-		smena += 1
+		smenaSalon += 1
 		gt 'worksalon', 'start'
 	end
 	act 'Resign':gt 'salon', 'discharge'
@@ -437,9 +437,9 @@ if $ARGS[0] = 'discharge':
 	minut += 10
 	worksalon = 0
 	work = 0
-	pay = smena * 1560
+	pay = smenaSalon * 1560
 	money += pay
-	smena = 0
+	smenaSalon = 0
 	'You tell your boss you have had enough and that you quit. He looks at you a moment and then says. "Here is your paycheck <<pay>> <b>₽</b> and employment history. Goodbye."'
 	act 'Leave':gt 'salon', 'start'
 end

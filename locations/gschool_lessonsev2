@@ -1,8 +1,8 @@
 # gschool_lessonsev2
 
 if $ARGS[0] = 'geography':
+	*clr & cla
 	if RAND(0,5) > 0:
-		*clr & cla
 		school_event_hour = 1
 		scooltiperand = RAND(1,14)
 		if scooltiperand = 1:
@@ -10,6 +10,7 @@ if $ARGS[0] = 'geography':
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/scoolrand_3.jpg"></center>'
 			'As you walk to class, you see some guys have drawn a goofy scene on the blackboard, making it look like they''re characters in a computer game. You share a laugh with them as you sit down; that certainly brightened your mood.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 2:
 			pcs_mood -= 10
 			gs'stat'
@@ -22,9 +23,11 @@ if $ARGS[0] = 'geography':
 				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/scoolrand_4_2.jpg"></center>'
 				'Before you can answer the question your teacher poses you, you have to clean the blackboard. You accidentally drop the cloth used to wipe it clean with, and totally forgot you are not wearing panties. The whistling and shouting from the boys and murmurs of disapproval from most of the girls behind you tell you that everyone has a clear view of your bare ass, and both of your holes are on display for everyone to see. Everyone but the teacher, who has no clue why your class is so riled up and desperately tries to calm them down.'
 			end
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 3:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/urok7.jpg"></center>'
 			'As you wait for the end of the lesson, you notice you''re not the only one being a bit drowsy; a girl from another grade is very close to falling asleep on her desk.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 4:
 			'<center><video autoplay loop src="images/locations/pavlovsk/school/classroom/boobg.mp4"></video></center>'
 			'During class, you feel a hand slide around your side and grab one of your boobs. You squeak loudly and try to smack Lazar''s hand away, but he jerked it away as soon as you squeaked and all you manage to do is smack your own boob.'
@@ -96,19 +99,24 @@ if $ARGS[0] = 'geography':
 			'<center><video autoplay loop src="images/locations/pavlovsk/school/classroom/crash.mp4"></video></center>'
 			'During class there is a loud crashing sound from the back of the class, you along with everyone else in the class turn to look, in the back Mefodiy is still sitting at his desk, but now the desk is laying on its side on the floor. The whole class bursts out laughing at him.'
 			'Mefodiy blushing quickly gets out of the desk and gets it back upright and sits back down in it. After making sure he is ok, the teacher gets the class back under control and finishes the lesson.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 6:
 			'<center><video autoplay loop src="images/locations/pavlovsk/school/classroom/boobg.mp4"></video></center>'
 			'Glancing over you notice Vitek reaching around and grabbing the boob of the girl in front of him. At first she tries to fend him off and tell him to stop, but after a few looks from the teacher at her making noise she just gives up and tries to ignore his groping hands.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 7:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/dickpic.jpg"></center>'
 			'You get a alert on your phone, you pull it out of your purse and put it in your lap. You glance down and see someone has sent you an image, opening the image you see a picture of someones dick. You hear some snickering and look up to see who it was, but you can''t tell where it came from. Unsure what to do, you don''t want to be caught looking at it, so you delete the image.'
 			gs 'arousal', 'voyeur', 2, 'unknown'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 8:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/flick.jpg"></center>'
 			'You notice Valentin keeps flicking Artem''s ear who is sitting in front of him, when the teacher looks away. Poor Artem''s ear is already bright red from all the flicking and he looks like he is on the verge of tears.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 9:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/wedgieb.jpg"></center>'
 			'You hear a pained grasp, as did several others. You glance over just in time to see Valentin letting go of Artem''s underwear sitting in front of him. He pulled the underwear half way up the kids back. You wince slightly, that looks like a painful wedgie'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 10:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/talk.jpg"></center>'
 			'As you arrive in class you look around and decided to sit next to.'
@@ -266,15 +274,14 @@ if $ARGS[0] = 'geography':
 				act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 			end
 		end
-		act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 	else
 		gt 'gschool_lessons', 'short_break'
 	end
 end
 
 if $ARGS[0] = 'math':
+	*clr & cla
 	if RAND(0,5) > 0:
-		*clr & cla
 		school_event_hour = 1
 		scooltiperand = RAND(1,10)
 		if scooltiperand = 1:
@@ -349,10 +356,14 @@ if $ARGS[0] = 'math':
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/flick.jpg"></center>'
 			'You notice Arkadi continuously flicking Artem''s ear, whenever the teacher is not looking. Artem''s ear is already bright red from all the flicking and he looks like he is on the verge of tears.'
 			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
-		elseif scooltiperand = 7 and grupTipe[61] = 4:
-			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/wedgieb.jpg"></center>'
-			'You suddenly hear a pained groan. You glance over to see Niko letting go of Evgeny''s underwear sitting in front of him. He pulled the underwear half way up Evgeny''s back. You wince slightly, as you think of how painful that wedgie must have been.'
-			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
+		elseif scooltiperand = 7:
+			if grupTipe[61] = 4:
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/wedgieb.jpg"></center>'
+				'You suddenly hear a pained groan. You glance over to see Niko letting go of Evgeny''s underwear sitting in front of him. He pulled the underwear half way up Evgeny''s back. You wince slightly, as you think of how painful that wedgie must have been.'
+				act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
+			else
+				gs 'gschool_lessonsev1', 'math'
+			end
 		elseif scooltiperand = 8:
 			exhibition_exp +=2
 			'<center><b><font color=#FFC600><<"Igor Kruglov">></font></b></center>'
@@ -401,6 +412,7 @@ if $ARGS[0] = 'math':
 			act 'Ignore his stares and wait for the break': gt 'gschool_lessons', 'short_break'
 			act 'Straighten your skirt':
 				*clr & cla
+				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/teachdis.jpg"></center>'
 				'Feeling a little creeped out at having your teacher checking out your legs, you inconspicuously try to straighten your skirt, attempting to make it look like a random afterthought and not because he''s staring. Mr. Tsarev slowly turns away and continues his lesson as if nothing has happened.'
 				act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 			end
@@ -438,7 +450,6 @@ if $ARGS[0] = 'math':
 				act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 			end
 		end
-		act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 	else
 		gt 'gschool_lessons', 'short_break'
 	end
@@ -498,8 +509,8 @@ if $ARGS[0] = 'help':
 end
 
 if $ARGS[0] = 'history':
+	*clr & cla
 	if RAND(0,5) > 0:
-		*clr & cla
 		school_event_hour = 1
 		scooltiperand = RAND(1,13)
 		if scooltiperand = 1:
@@ -507,6 +518,7 @@ if $ARGS[0] = 'history':
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/scoolrand_3.jpg"></center>'
 			'As you walk to class, you see some guys have drawn a goofy scene on the blackboard, making it look like they''re characters in a computer game. You share a laugh with them as you sit down; that certainly brightened your mood.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 2:
 			pcs_mood -= 10
 			gs'stat'
@@ -519,9 +531,11 @@ if $ARGS[0] = 'history':
 				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/scoolrand_4_2.jpg"></center>'
 				'Before you can answer the question your teacher poses you, you have to clean the blackboard. You accidentally drop the cloth used to wipe it clean with, and totally forgot you are not wearing panties. The whistling and shouting from the boys and murmurs of disapproval from most of the girls behind you tell you that everyone has a clear view of your bare ass, and both of your holes are on display for everyone to see. Everyone but the teacher, who has no clue why your class is so riled up and desperately tries to calm them down.'
 			end
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 3:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/urok7.jpg"></center>'
 			'As you wait for the end of the lesson, you notice you''re not the only one being a bit drowsy; Lena is very close to falling asleep on her desk.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 4:
 			'<center><video autoplay loop src="images/locations/pavlovsk/school/classroom/boobg.mp4"></video></center>'
 			'During class, you feel a hand slide around your side and grab one of your boobs. You squeak loudly and try to smack Roman''s hand away, but he jerked it away as soon as you squeaked and all you manage to do is smack your own boob.'
@@ -589,7 +603,6 @@ if $ARGS[0] = 'history':
 					end
 				end
 			end
-
 		elseif scooltiperand = 5:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/brasnap.jpg"></center>'
 			'During class, you feel a hand grab and pull your bra strap away from your body and before you can turn or protest they let go, causing it to snap back painfully. You let out a little yelp and turn to glare at Roman behind you.'
@@ -613,19 +626,24 @@ if $ARGS[0] = 'history':
 			'<center><video autoplay loop src="images/locations/pavlovsk/school/classroom/crash.mp4"></video></center>'
 			'During class there is a loud crashing sound from the back of the class, you along with everyone else in the class turn to look, in the back Petka is still sitting at his desk, but now the desk is laying on its side on the floor. The whole class bursts out laughing at him.'
 			'Petka blushing quickly gets out of the desk and gets it back upright and sits back down in it. After making sure he is ok, the teacher gets the class back under control and finishes the lesson.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 7:
 			'<center><video autoplay loop src="images/locations/pavlovsk/school/classroom/boobg.mp4"></video></center>'
 			'Glancing over you notice Niko reaching around and grabbing the boob of the girl in front of him. At first she tries to fend him off and tell him to stop, but after a few looks from the teacher at her making noise she just gives up and tries to ignore his groping hands.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 8:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/dickpic.jpg"></center>'
 			'You get a alert on your phone, you pull it out of your purse and put it in your lap. You glance down and see someone has sent you an image, opening the image you see a picture of someones dick. You hear some snickering and look up to see who it was, but you can''t tell where it came from. Unsure what to do, you don''t want to be caught looking at it, so you delete the image.'
 			gs 'arousal', 'voyeur', 2, 'unknown'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 9:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/flick.jpg"></center>'
 			'You notice Roman keeps flicking Petka''s ear who is sitting in front of him, when the teacher looks away. Poor Petka''s ear is already bright red from all the flicking and he looks like he is on the verge of tears.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 10:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/wedgieb.jpg"></center>'
 			'You hear a pained grasp, as did several others. You glance over just in time to see Roman letting go of Igor underwear sitting in front of him. He pulled the underwear half way up the kids back. You wince slightly, that looks like a painful wedgie'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 11:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/talk.jpg"></center>'
 			'As you arrive in class you look around and decided to sit next to.'
@@ -719,15 +737,14 @@ if $ARGS[0] = 'history':
 			end
 			act 'Ignore them and wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		end
-		act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 	else
 		gt 'gschool_lessons', 'short_break'
 	end
 end
 
 if $ARGS[0] = 'shop':
+	*clr & cla
 	if RAND(0,5) > 0:
-		*clr & cla
 		school_event_hour = 1
 		scooltiperand = RAND(1,11)
 		if scooltiperand = 1:
@@ -735,6 +752,7 @@ if $ARGS[0] = 'shop':
 			gs'stat'
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/scoolrand_3.jpg"></center>'
 			'As you walk to class, you see some Vitek, Dan, and Vasily have drawn a goofy scene on the blackboard, making it look like they''re characters in a computer game. You share a laugh with them as you sit down; that certainly brightened your mood.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 2:
 			pcs_mood -= 10
 			gs'stat'
@@ -747,12 +765,15 @@ if $ARGS[0] = 'shop':
 				'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/scoolrand_4_2.jpg"></center>'
 				'Before you can answer the question your teacher poses you, you have to clean the blackboard. You accidentally drop the cloth used to wipe it clean with, and totally forgot you are not wearing panties. The whistling and shouting from the boys and murmurs of disapproval from most of the girls behind you tell you that everyone has a clear view of your bare ass, and both of your holes are on display for everyone to see. Everyone but the teacher, who has no clue why your class is so riled up and desperately tries to calm them down.'
 			end
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 3:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/scoolrand_9.jpg"></center>'
 			'As you sit in class waiting for the lesson to begin, you can''t help but admire the expensive looking stockings Viktoria is wearing. With a tinge of jealousy you wonder where you could buy yourself some of those stockings, and if you can afford them.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 4:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/events/urok7.jpg"></center>'
 			'As you wait for the end of the lesson, you notice you''re not the only one being a bit drowsy; Paulina is very close to falling asleep on her desk.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 5:
 			'<center><video autoplay loop src="images/locations/pavlovsk/school/classroom/boobg.mp4"></video></center>'
 			'During class, you feel a hand slide around your side and grab one of your boobs. You squeak loudly and try to smack Dan''s hand away, but he jerked it away as soon as you squeaked and all you manage to do is smack your own boob.'
@@ -842,10 +863,12 @@ if $ARGS[0] = 'shop':
 		elseif scooltiperand = 7:
 			'<center><video autoplay loop src="images/locations/pavlovsk/school/classroom/boobg.mp4"></video></center>'
 			'Glancing over you notice Vitek reaching around and grabbing the boob of the girl in front of him. At first she tries to fend him off and tell him to stop, but after a few looks from the teacher at her making noise she just gives up and tries to ignore his groping hands.'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 8:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/dickpic.jpg"></center>'
 			'You get a alert on your phone, you pull it out of your purse and put it in your lap. You glance down and see someone has sent you an image, opening the image you see a picture of someones dick. You hear some snickering and look up to see who it was, but you can''t tell where it came from. Unsure what to do, you don''t want to be caught looking at it, so you delete the image.'
 			gs 'arousal', 'voyeur', 2, 'unknown'
+			act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		elseif scooltiperand = 9:
 			'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/talk.jpg"></center>'
 			'As you arrive in class you look around and decided to sit next to.'
@@ -938,7 +961,6 @@ if $ARGS[0] = 'shop':
 			end
 			act 'Ignore them and wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 		end
-		act 'Wait for the end of the lesson': gt 'gschool_lessons', 'short_break'
 	else
 		gt 'gschool_lessons', 'short_break'
 	end

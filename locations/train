@@ -366,6 +366,7 @@ if $ARGS[0] = 'oldtown_tickets':
 			'You don''t have enough money for this ticket.'	
 		end
 	end
+	act 'Return': gt 'train', 'oldtown'
 end
 
 if $ARGS[0] = 'oldtown_trains':

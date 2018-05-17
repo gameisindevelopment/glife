@@ -83,6 +83,7 @@ if $ARGS[0] = 'list':
 !!	if specialjob7 >= 95:'<a href="exec:gt ''foto_events'',''designer_wedding''">	Designer Wedding Dress</a>'
 !!		if specialjob8 >= 95:'<a href="exec:gt ''foto_events'',''model_portraits''">photo albums</a>'
 !!		if specialjob9 >= 95:'<a href="exec:gt ''foto_events'',''model_portraits''">photo albums</a>'
+end
 
 if $ARGS[0] = 'high_fasion':
 	cla & *clr
@@ -319,7 +320,7 @@ if $ARGS[0] = 'fine_art2':
 			'	Alexander pushes himself inside you. You exhale slowly, relaxing to accommodate the enormous 32 cm cock sliding your <<$pcdesc_pussy>> pussy. You give yourself a moment to adjust to his sizable length and girth before settling back into the exact posture you were instructed to hold. The woman clicks a button and cameras flash all around you and the red line of scanners begin to slowly ascend your body from bottom to top. As the scanner moves, you see her sit down in front of an easel from the corner of your eye and begin to draw.'
 			*nl
 			'	90 minutes pass before she is finished sketching, your pussy snuggly filled by Alexander''s cock for the duration. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Clapping her hands, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles and sliding off of Alexander''s cock. Its absence leaves you feeling quite empty.'
-		elseif pcs_vag > 15 and <= 25:
+		elseif pcs_vag > 15 and pcs_vag <= 25:
 			'	Alexander pushes himself inside you. You relax, letting the enormous 32 cm cock slide into your <<$pcdesc_pussy>> pussy with relative ease. You check your position, making sure you can feel his balls against your clit and that he''s all the way inside before settling back into the exact posture you were instructed to hold. The woman clicks a button and cameras flash all around you and the red line of scanners begin to slowly ascend your body from bottom to top. As the scanner moves, you see her sit down in front of an easel from the corner of your eye and begin to draw.'
 			*nl
 			'	90 minutes pass before she is finished sketching, your pussy comfortably filled by Alexander''s cock for the duration. When she is finished, she compares her sketch to a nearby computer screen, still trying to decide which form she wants her art to take. Clapping her hands, she calls an end to the shoot and you are allowed to break from your position, stretching your stiff muscles and sliding off of Alexander''s cock. Its absence leaves you feeling quite empty.'
@@ -332,7 +333,7 @@ if $ARGS[0] = 'fine_art2':
 		*nl
 		if pcs_vag <= 10:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy is a bit sore.'
 		if pcs_vag > 10 and pcs_vag <= 15:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit stretched now.'
-		if pcs_vag > 15 and <= 25:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit empty now.'
+		if pcs_vag > 15 and pcs_vag <= 25:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit empty now.'
 		if pcs_vag > 25:'	You watch them leave, the money from the job in hand, feeling good about the day''s work. Though your pussy does feel a bit empty now. It''s not often you get filled by such a magnificent cock.'
 		act'Leave':
 			fine_art_deal = 0
