@@ -6,7 +6,7 @@ $sexloc = 'crossfit_north_box'
 $location_type = 'public_indoors'
 $metka = 'box'
 $metkaM = 'box'
-$crossfit_north_image_dir = 'mod/crossfit_north/'
+$crossfit_north_image_dir = 'images/locations/city/citycenter/gym/crossfit/'
 
 if $ARGS[0] = 'box':
 	if crossfit_random_choice < daystart OR $todays_crossfit_wod = '':
