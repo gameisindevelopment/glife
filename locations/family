@@ -168,12 +168,6 @@ if StoryLine = 1:
 			end
 		end
 
-		if $loc = 'sitrPar' and ocpd_room = 0:
-			'No one else is here right now, so I''m free to use the room how I like.'
-			act 'Sit on the sofa bed':gt 'sitrPar', 'sofa'
-			gs 'exercise','start'
-		end
-
 		if $loc = 'kuhrPar':
 			gs 'dinmother'
 
@@ -202,6 +196,12 @@ if StoryLine = 1:
 			end
 		end
 	end
+end
+
+if $loc = 'sitrPar' and ocpd_room = 0:
+	'No one else is here right now, so I''m free to use the room how I like.'
+	act 'Sit on the sofa bed':gt 'sitrPar', 'sofa'
+	gs 'exercise','start'
 end
 
 --- family ---------------------------------
