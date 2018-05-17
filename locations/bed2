@@ -47,35 +47,35 @@ if $args[0] = '':
 
 	if pcs_makeup ! 1:'<b><font color="red">You need to wash off your makeup before going to bed.</font></b>'
 
-	if pcs_sleep > 80:
-		'You are not tired.'
+	if pcs_sleep <= 80:
 		if $clothingworntype = 'nude':
 			$sleep_txt = 'Go to sleep'
 		else
 			$sleep_txt = 'Undress and go to sleep'
 		end
-	elseif succubusQW = 2:
-		act '<<$sleep_txt>>':
-			if $clothingworntype ! 'nude': gs 'clothing', 'strip'
-			gt 'bed2', 'succhoice'
-		end
-	else
-		act '<<$sleep_txt>>':
-			if disable_autosave = 0:
-				if StoryLine = 0:
-					savegame 'autosave.sav'
+		if succubusQW = 2:
+			act '<<$sleep_txt>>':
+				if $clothingworntype ! 'nude': gs 'clothing', 'strip'
+				gt 'bed2', 'succhoice'
+			end
+		else
+			act '<<$sleep_txt>>':
+				if disable_autosave = 0:
+					if StoryLine = 0:
+						savegame 'autosave.sav'
+					else
+						savegame 'autosave_alt.sav'
+					end
+				end
+				if $clothingworntype ! 'nude': gs 'clothing', 'strip'
+				if magf2bdo = 2:
+					gt 'bed2', 'magbstchoice'
 				else
-					savegame 'autosave_alt.sav'
+					gt 'bed2', 'sleep'
 				end
 			end
-			if $clothingworntype ! 'nude': gs 'clothing', 'strip'
-			if magf2bdo = 2:
-				gt 'bed2', 'magbstchoice'
-			else
-				gt 'bed2', 'sleep'
-			end
+			killvar '$sleep_txt'
 		end
-		killvar '$sleep_txt'
 	end
 
 	act 'Options':gt 'bed2', 'options'
@@ -102,8 +102,7 @@ if $args[0] = '':
 		end
 	end
 
-
-	act 'Get out of bed':gt $loc, $metka
+	act 'Get out of bed':killvar '$sleep_txt' & gt $loc, $metka
 end
 
 if $args[0] = 'sleep':
