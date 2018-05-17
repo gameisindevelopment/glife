@@ -78,6 +78,8 @@ if $ARGS[0]='sofa':
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/sofa.jpg"></center>'
 	'<center>A small sofa bed, when not unfolded, is just big enough for you to curl up on and take a nap.</center>'
 
+	act 'Watch TV':gt 'TV','pav'
+
 	if pornMagazine > 0:'<br>There is a porn magazine under the sofa cushions'
 
 	gs 'events', 'read_porn'
