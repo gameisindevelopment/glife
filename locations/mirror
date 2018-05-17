@@ -416,7 +416,7 @@ if $ARGS[0] = 'brush':
 		'<center><img <<$set_imgh>> src="<<FUNC(''$face_image'')>>"></center>'
 	end
 	'You brush your hair.'
-	wait 1500
+	wait 1000
 	if $mirrorloc = 'mirror':
 		gt 'mirror', 'start'
 	else
