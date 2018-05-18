@@ -55,6 +55,12 @@ if succubusflag = 1 and sucskill >= 4:
 	if agape > 0: agape = 0 & agapetime = 0 & sucexcess -= 1
 end
 
+!!mouth cleaning for drinks
+if pcs_hydra > hydra_check:
+	cumspclnt = 2
+	gs 'cum_cleanup'
+end
+
 !!!CHEATS!!!
 if cheatWork = 1:work = 0
 if cheatWorkKiskis = 1:young_shop_miss = 0
@@ -857,6 +863,9 @@ if pcs_hydra <= 0:
 	pcs_health -= 5
 	pcs_willpwr -= 1
 end
+
+!!Set hydra_check value
+hydra_check = pcs_hydra
 
 if pcs_mood <= 0:
 	pcs_mood = 1
