@@ -73,7 +73,7 @@ if $ARGS[0] = 'shmotmag':
 		gt 'NewCloShop', 'clothes'
 	end
 
-	gt 'clothing', 'view_clothing_item', 'shop', 'expensive',i, 10000
+	gt 'clothing', 'view_clothing_item', 'shop', 'expensive',i, 8000
 end
 
 if $ARGS[0] = 'panties':
@@ -159,7 +159,7 @@ if $ARGS[0] = 'purses':
 	if i <= 15:jump 'loopfashionista_purses'
 end
 
-if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'fashionista',i, 8000
+if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'fashionista',i, 3000
 
 --- NewCloShop ---------------------------------
 
