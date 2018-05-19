@@ -363,7 +363,7 @@ if $ARGS[0] = 'Start' or $ARGS[0] = '':
 			end
 		end
 
-		if npc_rel['A60'] >= 19 and hour >= 21 and npc_QW['A60'] > 0 and sunWeather = 1 and MiraLoc ! 3:
+		if npc_rel['A60'] >= 16 and hour >= 21 and npc_QW['A60'] > 0 and sunWeather = 1 and MiraLoc ! 3:
 
 			act 'Suggest catching up with the local guys and having a drink or three':
 				if Mira_no = 0:
@@ -1135,6 +1135,7 @@ if $ARGS[0] = 'miratalk':
 			'You coldly tell Mira that you saw her when she fucked Mitka in your meadow. You remind her that she swore not to tell anyone about your secret place. Mira turns red and flutters her eyes at you trying to look innocent as she mumbles that she''s sorry about breaking her promise. Mira asks if there is any way to make amends. You smile and remind her that she promised you three wishes if she ever revealed the meadow to anyone. Mira meekly nods her head confirming that she does indeed remember making that promise and is ready to fullfil them.'
 
 			act 'She deserves some punishment':
+				cla
 				if pcs_dom >= 25:
 					*clr & cla
 					minut += 5
@@ -1171,7 +1172,6 @@ if $ARGS[0] = 'miratalk':
 						end
 					end
 				else
-
 					act 'Tell her that you want to watch as Mitka fucks her in the ass':
 						*clr & cla
 						minut += 5

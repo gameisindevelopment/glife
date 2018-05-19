@@ -487,7 +487,7 @@ if $ARGS[0] = 'Puppeteer':
 	act 'Wake up':
 		*clr & cla
 		gs 'stat'
-		'<center><img src="images/shared/home/bedroom/dream/class/1.jpg"></center>'
+		'<center><img <<$set_imgh>> src="images/shared/home/bedroom/dream/class/1.jpg"></center>'
 		'You awake then slowly lift your head, looking around the room, but immediately recoil in shock when you notice how dark the classroom is. You quickly think to yourself, <font color=#FF00CC>Whoa, how long did I sleep? Ohh shit, I must have slept through the whole day. I should probably get home before the school doors are locked up for the day.</font> You quickly shove your books into your bag then quickly walk for the door.'
 
 		act 'Go to the hallway':
@@ -504,21 +504,21 @@ if $ARGS[0] = 'Puppeteer':
 			end
 			PLAY 'sound/happyhome/puppet.mp3', 25
 			gs 'stat'
-			'<center><img src="images/shared/home/bedroom/dream/class/2.jpg"></center>'
+			'<center><img <<$set_imgh>> src="images/shared/home/bedroom/dream/class/2.jpg"></center>'
 			'As soon as you reach the hallway, you hear a strange muffled laugh in the distance, along with a strange melody which sounds very far away. <font color=#FF00CC>Who could that be? Maybe someone is flooding one of the bathrooms again, but that music though. Where is it coming from? Maybe outside?</font>'
 
 			act 'Head downstairs':
 				*clr & cla
 				PLAY 'sound/happyhome/puppet.mp3', 50
 				gs 'stat'
-				'<center><img src="images/shared/home/bedroom/dream/class/3.jpg"></center>'
+				'<center><img <<$set_imgh>> src="images/shared/home/bedroom/dream/class/3.jpg"></center>'
 				'You reach the bottom of the stairs to hear the laughing getting louder. <font color=#FF00CC>Hmm I must be getting closer to whoever is laughing.</font> The hallway is so dark but you can see a light at the end.'
 
 				act 'Continue down the hallway':
 					*clr & cla
 					PLAY 'sound/happyhome/puppet.mp3',75
 					gs 'stat'
-					'<center><img src="images/shared/home/bedroom/dream/class/4.jpg"></center>'
+					'<center><img <<$set_imgh>> src="images/shared/home/bedroom/dream/class/4.jpg"></center>'
 					'You continue walking down the hallway until you reach a strange puddle on the floor, coming from one of the lockers. <font color=#FF00CC>What is this stuff? Did someone have a drink in their locker which spilled?</font> When you look closer, you notice that the locker is slightly open, leaking with the strange liquid.'
 
 					act 'Open the locker':
@@ -543,7 +543,7 @@ if $ARGS[0] = 'Puppeteer':
 								close all
 								gs'stat'
 								'<center><b><h4><font color=#FF00CC><<"<<$pcs_firstname>> [<<$pcs_nickname>>] <<$pcs_lastname>>">></font></h4></b></center>'
-								*pl '<center><img src="<<FUNC(''$face_image'')>>"></center>'
+								*pl '<center><img <<$set_imgh>> src="<<FUNC(''$face_image'')>>"></center>'
 								'You quickly jump up screaming to then notice that you are still in class. The whole class is staring at you in shock. Mr. Tsarev asks; in a concerned voice, "Miss <<$pcs_lastname>> what''s wrong?" You stand, completely speechless for a few seconds before hearing the bell sound. You use this time to quickly pack up your things then head for the door, as some of your classmates whisper to each other.'
 								*nl
 								'Arkadi: "Whoa, what is her problem?"'
