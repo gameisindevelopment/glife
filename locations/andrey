@@ -200,7 +200,6 @@ if $ARGS[0] = 'punish':
 				gt 'young_shop', 'start'
 			end
 			act 'Accept his offer': gt 'andrey', 'fired1'
-			end
 		end
 !!this happens if Sveta misses 3 days of work but kept her job already once by sucking his dick.
 	elseif young_shop_fired >= 5:
