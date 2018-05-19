@@ -108,6 +108,8 @@ if $ARGS[0] = 'high_fasion':
 			city_modelling += rand(5,25)
 			pav_modelling += rand(0,city_modelling)/6
 			exhibition_exp += rand(0,1)
+			money += modelpayfin
+			modelfotomoney += modelpayfin
 			'	You spend the duration of the shoot changing in and out of designer bodices, corsets, and other tops, all of which conspicuously lack any kind of bottom, leaving your pussy exposed.'
 			*nl
 			'	Your manager was right. <i>Definitely</i> not suited for every day use.'
