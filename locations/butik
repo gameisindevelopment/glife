@@ -119,7 +119,7 @@ if $ARGS[0] = 'formal':
 		gt 'butik', 'clothes'
 	end
 
-	gt 'clothing', 'view_clothing_item', 'shop', 'formal',i, 25000
+	gt 'clothing', 'view_clothing_item', 'shop', 'formal',i, 20000
 
 end
 
@@ -233,7 +233,7 @@ if $ARGS[0] = 'purses':
 	if i <= 17:jump 'loopboutique_purses'
 end
 
-if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'boutique',i, 10000
+if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'boutique',i, 4000
 
 if $ARGS[0] = 'rima':
 	cls

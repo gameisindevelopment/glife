@@ -142,7 +142,7 @@ if $ARGS[0] = 'cheapclo':
 		gt 'budgetclothes', 'clothes'
 	end
 
-	gt 'clothing', 'view_clothing_item', 'shop', 'cheap',i, 2000
+	gt 'clothing', 'view_clothing_item', 'shop', 'cheap',i, 1000
 end
 
 if $ARGS[0] = 'office':
@@ -188,7 +188,7 @@ if $ARGS[0] = 'officeclo':
 		gt 'budgetclothes', 'office'
 	end
 
-	gt 'clothing', 'view_clothing_item', 'shop', 'office',i, 4000
+	gt 'clothing', 'view_clothing_item', 'shop', 'office',i, 2000
 end
 
 if $ARGS[0] = 'uniform':
@@ -234,7 +234,7 @@ if $ARGS[0] = 'uniformclo':
 		gt 'budgetclothes', 'uniform'
 	end
 
-	gt 'clothing', 'view_clothing_item', 'shop', 'uniform',i, 3000
+	gt 'clothing', 'view_clothing_item', 'shop', 'uniform',i, 2000
 end
 
 if $ARGS[0] = 'school':
@@ -281,7 +281,7 @@ if $ARGS[0] = 'schoolclo':
 		gt 'budgetclothes', 'school'
 	end
 
-	gt 'clothing', 'view_clothing_item', 'shop', 'school',i, 3000
+	gt 'clothing', 'view_clothing_item', 'shop', 'school',i, 1500
 end
 
 if $ARGS[0] = 'shoes':
@@ -311,7 +311,7 @@ if $ARGS[0] = 'shoes':
 	if i <= 51:jump 'loopgandm_shoes'
 end
 
-if $ARGS[0] = 'budget_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'gandm',i, 1500
+if $ARGS[0] = 'budget_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'gandm',i, 700
 
 if $ARGS[0] = 'trainers':
 	$metka = 'trainers'
@@ -338,7 +338,7 @@ if $ARGS[0] = 'trainers':
 	if i <= 29:jump 'looptrainers_shoes'
 end
 
-if $ARGS[0] = 'training_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'trainers',i, 2500
+if $ARGS[0] = 'training_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'trainers',i, 800
 
 if $ARGS[0] = 'coats':
 	$metka = $ARGS[0]
@@ -370,7 +370,7 @@ if $ARGS[0] = 'coatsclo':
 		gt 'budgetclothes', 'coats'
 	end
 
-	gt 'clothing', 'view_clothing_item', 'shop', 'coat',i, 8000
+	gt 'clothing', 'view_clothing_item', 'shop', 'coat',i, 1000
 end
 
 if $ARGS[0] = 'purses':
@@ -392,7 +392,7 @@ if $ARGS[0] = 'purses':
 	if i <= 14:jump 'looppurses'
 end
 
-if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'cheap',i, 5000
+if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'cheap',i, 1500
 
 if $ARGS[0] = 'panties':
 	$metka = 'panties'

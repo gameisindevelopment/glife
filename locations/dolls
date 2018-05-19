@@ -108,7 +108,7 @@ if $ARGS[0] = 'alternative':
 		gt 'dolls', 'clothing'
 	end
 
-	gt 'clothing', 'view_clothing_item', 'shop', 'alternative',i, 10000
+	gt 'clothing', 'view_clothing_item', 'shop', 'alternative',i, 3500
 
 end
 
@@ -137,7 +137,7 @@ if $ARGS[0] = 'shoes':
 	if i <= 27:jump 'loopdolls_shoes'
 end
 
-if $ARGS[0] = 'dolls_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'dolls',i, 5000
+if $ARGS[0] = 'dolls_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'dolls',i, 2000
 
 if $ARGS[0] = 'purses':
 	$metka = 'purses'
@@ -160,7 +160,7 @@ if $ARGS[0] = 'purses':
 	if i <= 22:jump 'loopdolls_purses'
 end
 
-if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'dolls',i, 7000
+if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'dolls',i, 2000
 
 if $ARGS[0] = 'savva':
 	*clr

@@ -31,7 +31,7 @@ if $ARGS[0] = 'start':
 	if i <= 522:jump 'loopaverage'
 end
 
-if $ARGS[0] = 'yshopclo': gt 'clothing', 'view_clothing_item', 'shop', 'average',i, 7500
+if $ARGS[0] = 'yshopclo': gt 'clothing', 'view_clothing_item', 'shop', 'average',i, 3000
 
 if $ARGS[0] = 'shoes':
 	$metka = 'shoes'
@@ -57,7 +57,7 @@ if $ARGS[0] = 'shoes':
 	if i <= 38:jump 'loopcats_shoes'
 end
 
-if $ARGS[0] = 'young_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'pussy',i, 2500
+if $ARGS[0] = 'young_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'pussy',i, 1750
 
 if $ARGS[0] = 'panties':
 	$metka = 'panties'
@@ -143,7 +143,7 @@ if $ARGS[0] = 'purses':
 	if i <= 14:jump 'loopkats_purses'
 end
 
-if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'kats',i, 6000
+if $ARGS[0] = 'purses2': gt 'purses', 'view_purse_item', 'shop', 'kats',i, 2000
 
 --- sell_young_clothes ---------------------------------
 

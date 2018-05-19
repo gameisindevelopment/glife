@@ -198,6 +198,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop', 'start'
 		end
+	else
+		'You cannot afford lubricant.'
 	end
 
 	if pornMagazine <= 1 and money >= 400:
@@ -211,6 +213,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
+	elseif pornMagazine <= 1:
+		'You cannot afford the porn magazine.'
 	end
 
 	if money >= 800 and dildo = 0:
@@ -225,6 +229,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop', 'start'
 		end
+	elseif dildo = 0:
+		'You cannot afford the 10cm dildo.'
 	end
 
 	if money >= 850 and middildo = 0:
@@ -239,6 +245,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
+	elseif middildo = 0:
+		'You cannot afford the 15cm long dildo.'
 	end
 
 	if money >= 900 and largedildo = 0:
@@ -253,6 +261,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
+	elseif largedildo = 0:
+		'You cannot afford the 20cm long dildo.'
 	end
 
 	if money >= 950 and bigdildo = 0:
@@ -267,6 +277,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
+	elseif bigdildo = 0:
+		'You cannot afford the 25cm long dildo.'
 	end
 
 	if money >= 1000 and extradildo = 0:
@@ -281,6 +293,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
+	elseif extradildo = 0:
+		'You cannot afford the 30cm long dildo.'
 	end
 
 	if money >= 1100 and superdildo = 0:
@@ -295,6 +309,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
+	elseif superdildo = 0:
+		'You cannot afford the 35cm long dildo.'
 	end
 
 	if money >= 1200 and maddildo = 0:
@@ -309,6 +325,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop','start'
 		end
+	elseif maddildo = 0:
+		'You cannot afford the 40cm long dildo.'
 	end
 
 	if money >= 800 and vibrator = 0:
@@ -323,9 +341,11 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop', 'start'
 		end
+	elseif vibrator = 0:
+		'You cannot afford the vibrator.'
 	end
 
-	if money >= 1200 and strapon = 0:
+	if money >= 1200 and strapon = 0 and dildo = 0:
 		act 'Buy a strapon with a 15cm dildo (1,200 <b>₽</b>)':
 			cla
 			*clr
@@ -337,75 +357,20 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop', 'start'
 		end
-	end
-	if money >= 1300 and largestrapon = 0:
-		act 'Buy a strapon with a 20cm dildo (1,300 <b>₽</b>)':
+	elseif money >= 500 and strapon = 0:
+		act 'Buy a strapon harness (500 <b>₽</b>)':
 			cla
 			*clr
 			minut += 5
-			largestrapon = 1
-			money -= 1300
+			strapon = 1
+			money -= 500
 			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
 			'You bought a strapon and paid the cashier.'
 
 			act 'Move away from the counter':gt 'sexshop', 'start'
 		end
-	end
-
-	if money >= 1400 and bigstrapon = 0:
-		act 'Buy a strapon with a 25cm dildo (1,400 <b>₽</b>)':
-			cla
-			*clr
-			minut += 5
-			bigstrapon = 1
-			money -= 1400
-			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
-			'You bought a strapon and paid the cashier.'
-
-			act 'Move away from the counter':gt 'sexshop', 'start'
-		end
-	end
-
-	if money >= 1500 and extrastrapon = 0:
-		act 'Buy a strapon with a 30cm dildo (1,500 <b>₽</b>)':
-			cla
-			*clr
-			minut += 5
-			extrastrapon = 1
-			money -= 1500
-			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
-			'You bought a strapon and paid the cashier.'
-
-			act 'Move away from the counter':gt 'sexshop', 'start'
-		end
-	end
-
-	if money >= 1600 and superstrapon = 0:
-		act 'Buy a strapon with a 35cm dildo (1,600 <b>₽</b>)':
-			cla
-			*clr
-			minut += 5
-			superstrapon = 1
-			money -= 1600
-			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
-			'You bought a strapon and paid the cashier.'
-
-			act 'Move away from the counter':gt 'sexshop', 'start'
-		end
-	end
-
-	if money >= 1700 and madstrapon = 0:
-		act 'Buy a strapon with a 40cm dildo (1,700 <b>₽</b>)':
-			cla
-			*clr
-			minut += 5
-			madstrapon = 1
-			money -= 1700
-			'<center><img <<$set_imgh>> src="images/locations/city/citycenter/sexshop.jpg"></center>'
-			'You bought a strapon and paid the cashier.'
-
-			act 'Move away from the counter':gt 'sexshop', 'start'
-		end
+	elseif strapon = 0:
+		'You cannot afford a strap on.'
 	end
 
 	if money >= 800 and analplug = 0:
@@ -420,6 +385,8 @@ if $ARGS[0] = 'start':
 
 			act 'Move away from the counter':gt 'sexshop', 'start'
 		end
+	elseif analplug = 0:
+		'You cannot afford the butt plug.'
 	end
 end
 
@@ -582,7 +549,7 @@ if $ARGS[0] = 'shoes':
 	if i <= 27:jump 'loopfetish_shoes'
 end
 
-if $ARGS[0] = 'fetish_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'fetish',i, 3500
+if $ARGS[0] = 'fetish_shoes': gt 'shoes', 'view_shoe_item', 'shop', 'fetish',i, 2500
 
 if $ARGS[0] = 'panties':
 	$metka = 'panties'
