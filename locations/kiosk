@@ -197,11 +197,11 @@ if $ARGS[0] =  'themes':
 
 	i = 1
 	:phonethemeloop
-	if phonetheme[i] = 0: '<a href="exec: money -= 500 & phonetheme[<<i>>] = 1 & gt ''kiosk''">Buy the <<$phonetheme_name[i]>> theme.</a>'
+	if phonetheme[i] = 0: '<a href="exec: money -= 500 & phonetheme[<<i>>] = 1 & gt ''kiosk'', ''themes''">Buy the <<$phonetheme_name[i]>> theme.</a>'
 	i += 1
 	if i < 13: jump 'phonethemeloop'
 
-	act 'Return': $kioskloc = 'counter' & gt 'kiosk', 'counter'
+	act 'Return': gt 'kiosk', 'counter'
 end
 
 --- kiosk ---------------------------------
