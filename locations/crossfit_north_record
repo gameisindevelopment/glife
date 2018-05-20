@@ -60,7 +60,7 @@ end
 
 if $ARGS[0] = 'box_records':
 	crossfit_record_it = 0
-	:recordloop
+	:recordgeneratorloop
 	if crossfit_record_it < ARRSIZE('$crossfit_wods'):
 
 		$crossfit_wod = $crossfit_wods[crossfit_record_it]
@@ -75,7 +75,7 @@ if $ARGS[0] = 'box_records':
 			end
 		end
 		crossfit_record_it += 1
-		jump 'recordloop'
+		jump 'recordgeneratorloop'
 	end
 	killvar 'crossfit_record_it'
 	killvar 'new_record_wod_time'
