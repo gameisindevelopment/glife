@@ -812,7 +812,7 @@ end
 if succubusflag = 1:
 	if pcs_energy < 0:
 		if salo >= 1:
-			salo -= 2
+			if cheatNoFat = 0: salo -= 2
 			pcs_energy += 8 + succublvl
 		else
 			pcs_energy += 8 + succublvl
@@ -853,7 +853,7 @@ if pcs_energy < 0:
 			salo = 1
 		end
 	elseif salo > 0:
-		salo -= 1
+		if cheatNoFat = 0: salo -= 1
 		pcs_energy += 8
 	end
 end
