@@ -874,7 +874,7 @@ if $ARGS[0] = 'dzoof1':
 																	act 'Lick Sonia':
 																		cla
 																		*clr
-																		gs 'cum_call', '', A166', 1, 0, -1, 60
+																		gs 'cum_call', '', 'A166', 1, 0, -1, 60
 																		money += RAND(30,60)
 																		gs 'stat'
 																		'<center><img <<$set_imgh>> src="images/beast/zoo/dzoof15.jpg"></center>'
