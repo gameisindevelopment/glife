@@ -542,7 +542,7 @@ if $ARGS[0] = 'stats_sex':
 		pl 'You had sex with <<guy+temp>> guys.'
 	elseif guy+temp = 0 and hidden_guy > 0:
 		pl 'You had sex with <<hidden_guy>> guys, but you do not have any recollection of it. You still think of yourself as a virgin.'
-	else
+	elseif guy+temp > 0 and hidden_guy > 0:
 		pl 'You had sex with <<guy+hidden_guy+temp>> guys, but you know only about <<guy+temp>> of them.'
 	end
 	temp = func('shortgs','girl') 
@@ -550,7 +550,7 @@ if $ARGS[0] = 'stats_sex':
 		pl 'You had sex with <<girl+temp>> girls.'
 	elseif girl+temp = 0 and hidden_girl > 0:
 		pl 'You had sex with <<hidden_girl>> girls, but you do not have any recollection of any of it.'
-	else
+	elseif girl+temp > 0 and hidden_girl > 0:
 		pl 'You had sex with <<girl+temp+hidden_girl>> girls, but you know only about <<girl+temp>> of them.'
 	end
 	if divorced > 0:pl 'You were married <<divorced>> times.'

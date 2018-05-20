@@ -334,7 +334,7 @@ $cheatmenu['permanent'] = {
 	end
 	nl
 	if Enable_nodream > 0:
-		pl'No dream chance: <a href="exec:Enable_nodream=input(''Enter no dream chance (%)'') & dynamic $cheatmenu[''permanent'']"><<din_cheat_nodream>>%</a>, <a href="exec:din_cheat_nodream=0 & dynamic $cheatmenu[''permanent'']">ON</a>'
+		pl'No dream chance: <a href="exec:Enable_nodream=input(''Enter no dream chance (%)'') & dynamic $cheatmenu[''permanent'']"><<Enable_nodream>>%</a>, <a href="exec:Enable_nodream=0 & dynamic $cheatmenu[''permanent'']">ON</a>'
 	else
 		pl'No dream chance: <a href="exec:Enable_nodream=input(''Enter no dream chance (%)'') & dynamic $cheatmenu[''permanent'']">OFF</a>'
 	end & !1.2.3 new function

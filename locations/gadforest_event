@@ -94,9 +94,9 @@ if $ARGS[0] = 'gopforest_mitka':
 						else
 							cla
 							*clr
-							temp = RAND(0,1)
+							temp_gadf = RAND(0,1)
 							gs 'stat'
-							if temp = 0:
+							if temp_gadf = 0:
 								'<center><img <<$set_imgh>> src="images/characters/village/mira/sex/mirameadowanal.jpg"></center>'
 								'Mira is working her ass up and down on Mitka''s hard member, every time she goes down her buttocks slap loudly on his thighs.'
 								gs 'arousal', 'voyeur', 2
@@ -137,9 +137,9 @@ if $ARGS[0] = 'gopforest_mitka':
 					act 'Spy':
 						cla
 						*clr
-						temp = RAND(0,1)
+						temp_gadf = RAND(0,1)
 						gs 'stat'
-						if temp = 0:
+						if temp_gadf = 0:
 							'<center><img <<$set_imgh>> src="images/characters/village/mira/sex/mirameadowanal.jpg"></center>'
 							'Mira is working her ass up and down on Mitka''s hard member, every time she goes down her buttocks slap loudly on his thighs.'
 							gs 'arousal', 'voyeur', 2
@@ -225,17 +225,17 @@ if $ARGS[0] = 'gopforest_mitka':
 				cla
 				*clr
 				minut += 5
-				temp = rand (1,2)
-				if temp = 1:gadboyday = daystart
+				temp_gadf = rand (1,2)
+				if temp_gadf = 1:gadboyday = daystart
 				gs 'stat'
 				!gs 'time'
 
 				'<center><b><font color = maroon>Mitka Pin</font></b></center>'
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/village/mitka.jpg"></center>'
-				if temp = 1:'Walking through the forest you come face-to-face with Mitka. He stared longingly at your naked body, and you decide...'
-				if temp = 2:'Walking through the forest you saw Mitka. Realizing that he hasn''t noticed you yet, you decide...'
+				if temp_gadf = 1:'Walking through the forest you come face-to-face with Mitka. He stared longingly at your naked body, and you decide...'
+				if temp_gadf = 2:'Walking through the forest you saw Mitka. Realizing that he hasn''t noticed you yet, you decide...'
 				*pl
-				if temp = 1:
+				if temp_gadf = 1:
 					act 'To run away and dress':
 						cla
 						*clr
@@ -305,15 +305,15 @@ if $ARGS[0] = 'gopforest_mitka':
 					*clr
 					minut += 15
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><b><font color = maroon>Mitka Pin</font></b></center>'
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/village/mitka.jpg"></center>'
-					if temp = 1:'Walking through the forest with Mira, you come face-to-face with Mitka. He stared longingly at your naked body...'
-					if temp = 2:'Walking through the forest you saw Mitka. Realizing that he hasn''t noticed you yet, you decide...'
-					if temp = 1:
+					if temp_gadf = 1:'Walking through the forest with Mira, you come face-to-face with Mitka. He stared longingly at your naked body...'
+					if temp_gadf = 2:'Walking through the forest you saw Mitka. Realizing that he hasn''t noticed you yet, you decide...'
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -351,16 +351,16 @@ if $ARGS[0] = 'gopforest_mitka':
 					*clr
 					minut += 5
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><b><font color = maroon>Mitka Pin</font></b></center>'
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/village/mitka.jpg"></center>'
-					if temp = 1:'Walking through the forest with Mira, you come face-to-face with Mitka. He stared longingly your naked body...'
-					if temp = 2:'Walking through the forest you saw Mitka. Realizing that he hasn''t noticed you yet, you decide...'
+					if temp_gadf = 1:'Walking through the forest with Mira, you come face-to-face with Mitka. He stared longingly your naked body...'
+					if temp_gadf = 2:'Walking through the forest you saw Mitka. Realizing that he hasn''t noticed you yet, you decide...'
 
-					if temp = 1:
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -383,9 +383,9 @@ if $ARGS[0] = 'gopforest_mitka':
 							act 'Spy':
 								cla
 								*clr
-								temp = RAND(0,1)
+								temp_gadf = RAND(0,1)
 								gs 'stat'
-								if temp = 0:
+								if temp_gadf = 0:
 									'<center><img <<$set_imgh>> src="images/characters/village/mira/sex/mirameadowanal.jpg"></center>'
 									'Mira is working her ass up and down on Mitka''s hard member, every time she goes down her buttocks slap loudly on his thighs.'
 									gs 'arousal', 'voyeur', 2
@@ -430,17 +430,17 @@ if $ARGS[0] = 'gopforest_mitka':
 				*clr
 				minut += 5
 				gadboyday = daystart
-				temp = rand (1,2)
+				temp_gadf = rand (1,2)
 				gs 'stat'
 				!gs 'time'
 
 				'<center><b><font color = maroon>Mitka Pin</font></b></center>'
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/village/mitka.jpg"></center>'
-				if temp = 1:'Walking through the forest with Mira, you come face-to-face with Mitka. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far Mitka grabs you in his arms and drags you with him into the nearest bush.'
-				if temp = 2:'Walking through the forest you saw Mitka. Realizing that he hasn''t noticed you yet, you decide...'
+				if temp_gadf = 1:'Walking through the forest with Mira, you come face-to-face with Mitka. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far Mitka grabs you in his arms and drags you with him into the nearest bush.'
+				if temp_gadf = 2:'Walking through the forest you saw Mitka. Realizing that he hasn''t noticed you yet, you decide...'
 
-				if temp = 1:act 'Further':MiraLoc = 0 & forest_gopsex = 1 & temphant = 4 & gt 'hanters', 'start'
-				if temp = 2:
+				if temp_gadf = 1:act 'Further':MiraLoc = 0 & forest_gopsex = 1 & temphant = 4 & gt 'hanters', 'start'
+				if temp_gadf = 2:
 					act 'Hide':
 						cla
 						*clr
@@ -611,16 +611,16 @@ if $ARGS[0] = 'gopforest_kolyamba':
 				cla
 				*clr
 				minut += 5
-				temp = rand (1,2)
+				temp_gadf = rand (1,2)
 				gadboyday = daystart
 				gs 'stat'
 
 				'<center><b><font color = maroon>Calamba</font></b></center>'
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/village/kolyamba.jpg"></center>'
-				if temp = 1:'Walking through the forest you come face-to-face with Kolambu. He stared longingly at your naked body, and you decide...'
-				if temp = 2:'Walking through the forest you saw Kolambu. Realizing that he hasn''t noticed you yet, you decide...'
+				if temp_gadf = 1:'Walking through the forest you come face-to-face with Kolambu. He stared longingly at your naked body, and you decide...'
+				if temp_gadf = 2:'Walking through the forest you saw Kolambu. Realizing that he hasn''t noticed you yet, you decide...'
 				*pl
-				if temp = 1:
+				if temp_gadf = 1:
 					act 'To run away and dress':
 						cla
 						*clr
@@ -675,15 +675,15 @@ if $ARGS[0] = 'gopforest_kolyamba':
 					*clr
 					minut += 15
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><b><font color = maroon>Calamba</font></b></center>'
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/village/kolyamba.jpg"></center>'
-					if temp = 1:'Walking through the forest you come face-to-face with Kolambu. He stared longingly at your naked body, and you decide...'
-					if temp = 2:'Walking through the forest you saw Kolambu. Realizing that he hasn''t noticed you yet, you decide...'
-					if temp = 1:
+					if temp_gadf = 1:'Walking through the forest you come face-to-face with Kolambu. He stared longingly at your naked body, and you decide...'
+					if temp_gadf = 2:'Walking through the forest you saw Kolambu. Realizing that he hasn''t noticed you yet, you decide...'
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -721,16 +721,16 @@ if $ARGS[0] = 'gopforest_kolyamba':
 					*clr
 					minut += 5
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><b><font color = maroon>Calamba</font></b></center>'
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/village/kolyamba.jpg"></center>'
-					if temp = 1:'Walking through the forest you come face-to-face with Kolambu. He stared longingly at your naked body, and you decide...'
-					if temp = 2:'Walking through the forest you saw Kolambu. Realizing that he hasn''t noticed you yet, you decide...'
+					if temp_gadf = 1:'Walking through the forest you come face-to-face with Kolambu. He stared longingly at your naked body, and you decide...'
+					if temp_gadf = 2:'Walking through the forest you saw Kolambu. Realizing that he hasn''t noticed you yet, you decide...'
 
-					if temp = 1:
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -782,17 +782,17 @@ if $ARGS[0] = 'gopforest_kolyamba':
 				*clr
 				minut += 5
 				gadboyday = daystart
-				temp = rand (1,2)
+				temp_gadf = rand (1,2)
 				gs 'stat'
 				!gs 'time'
 
 				'<center><b><font color = maroon>Calamba</font></b></center>'
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/village/kolyamba.jpg"></center>'
-				 if temp = 1:'Walking through the forest with Mira, you come face-to-face with Kolambu. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far Kolambu grabs you in his arms and drags you with him into the nearest bush.'
-				 if temp = 2:'Walking through the forest you saw Kolambu. Realizing that he hasn''t noticed you yet, you decide...'
+				 if temp_gadf = 1:'Walking through the forest with Mira, you come face-to-face with Kolambu. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far Kolambu grabs you in his arms and drags you with him into the nearest bush.'
+				 if temp_gadf = 2:'Walking through the forest you saw Kolambu. Realizing that he hasn''t noticed you yet, you decide...'
 
-				if temp = 1:act 'Further':Miraloc = 0 & forest_gopsex = 1 & temphant = 5 & gt 'hanters', 'start'
-				if temp = 2:
+				if temp_gadf = 1:act 'Further':Miraloc = 0 & forest_gopsex = 1 & temphant = 5 & gt 'hanters', 'start'
+				if temp_gadf = 2:
 					act 'Hide':
 						cla
 						*clr
@@ -965,17 +965,17 @@ if $ARGS[0] = 'gopforest_vasyan':
 				cla
 				*clr
 				minut += 5
-				temp = rand (1,2)
+				temp_gadf = rand (1,2)
 				gadboyday = daystart
 				gs 'stat'
 				!gs 'time'
 
 				'<center><b><font color = maroon>Vasan Package</font></b></center>'
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/village/vasyan.jpg"></center>'
-				if temp = 1:'Walking through the forest you come face-to-face with Vasyan. He stared longingly at your naked body, and you decide...'
-				if temp = 2:'Walking through the forest you saw Vasyan. Realizing that he hasn''t noticed you yet, you decide...'
+				if temp_gadf = 1:'Walking through the forest you come face-to-face with Vasyan. He stared longingly at your naked body, and you decide...'
+				if temp_gadf = 2:'Walking through the forest you saw Vasyan. Realizing that he hasn''t noticed you yet, you decide...'
 				*pl
-				if temp = 1:
+				if temp_gadf = 1:
 					act 'To run away and dress':
 						cla
 						*clr
@@ -1030,15 +1030,15 @@ if $ARGS[0] = 'gopforest_vasyan':
 					*clr
 					minut += 15
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><b><font color = maroon>Vasan Package</font></b></center>'
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/village/vasyan.jpg"></center>'
-					if temp = 1:'Walking through the forest you come face-to-face with Vasyan. He stared longingly at your naked body, and you decide...'
-					if temp = 2:'Walking through the forest you saw Vasyan. Realizing that he hasn''t noticed you yet, you decide...'
-					if temp = 1:
+					if temp_gadf = 1:'Walking through the forest you come face-to-face with Vasyan. He stared longingly at your naked body, and you decide...'
+					if temp_gadf = 2:'Walking through the forest you saw Vasyan. Realizing that he hasn''t noticed you yet, you decide...'
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -1077,16 +1077,16 @@ if $ARGS[0] = 'gopforest_vasyan':
 					*clr
 					minut += 5
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><b><font color = maroon>Vasan Package</font></b></center>'
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/village/vasyan.jpg"></center>'
-					if temp = 1:'Walking through the forest you come face-to-face with Vasyan. He stared longingly at your naked body, and you decide...'
-					if temp = 2:'Walking through the forest you saw Vasyan. Realizing that he hasn''t noticed you yet, you decide...'
+					if temp_gadf = 1:'Walking through the forest you come face-to-face with Vasyan. He stared longingly at your naked body, and you decide...'
+					if temp_gadf = 2:'Walking through the forest you saw Vasyan. Realizing that he hasn''t noticed you yet, you decide...'
 
-					if temp = 1:
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -1138,17 +1138,17 @@ if $ARGS[0] = 'gopforest_vasyan':
 				*clr
 				minut += 5
 				gadboyday = daystart
-				temp = rand (1,2)
+				temp_gadf = rand (1,2)
 				gs 'stat'
 				!gs 'time'
 
 				'<center><b><font color = maroon>Vasan Package</font></b></center>'
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/village/vasyan.jpg"></center>'
-				if temp = 1:'Walking through the forest with Mira, you come face-to-face with Vasyan. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far Vasyan grabs you in his arms and drags you with him into the nearest bush.'
-				if temp = 2:'Walking through the forest you saw Vasyan. Realizing that he hasn''t noticed you yet, you decide...'
+				if temp_gadf = 1:'Walking through the forest with Mira, you come face-to-face with Vasyan. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far Vasyan grabs you in his arms and drags you with him into the nearest bush.'
+				if temp_gadf = 2:'Walking through the forest you saw Vasyan. Realizing that he hasn''t noticed you yet, you decide...'
 
-				if temp = 1:act 'Further':Miraloc = 0 & forest_gopsex = 1 & temphant = 6 & gt 'hanters', 'start'
-				if temp = 2:
+				if temp_gadf = 1:act 'Further':Miraloc = 0 & forest_gopsex = 1 & temphant = 6 & gt 'hanters', 'start'
+				if temp_gadf = 2:
 					act 'Hide':
 						cla
 						*clr
@@ -1344,13 +1344,13 @@ if $ARGS[0] = 'gopforest_2boys':
 				cla
 				*clr
 				minut += 5
-				temp = rand (1,2)
+				temp_gadf = rand (1,2)
 				gadboyday = daystart
 				gs 'stat'
 				!gs 'time'
 
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/2boys.'+rand(1,2)+'.jpg"></center>'
-				if temp = 1:
+				if temp_gadf = 1:
 					if temphant = 1:'Walking through the forest you come face-to-face with Mitka and Kolambu. They stared longingly at your naked body, and you decide...'
 					if temphant = 2:'Walking through the forest you come face-to-face with Mitka and Vasyan. They stared longingly at your naked body, and you decide...'
 					if temphant = 3:'Walking through the forest you come face-to-face with Kolambu and Vasyan. They stared longingly at your naked body, and you decide...'
@@ -1360,7 +1360,7 @@ if $ARGS[0] = 'gopforest_2boys':
 					if temphant = 3:'Walking through the woods you saw Kolambu and Vasyan. Realizing that they haven''t noticed you yet, you decide...'
 				end
 				*pl
-				if temp = 1:
+				if temp_gadf = 1:
 					act 'To run away and dress':
 						cla
 						*clr
@@ -1414,12 +1414,12 @@ if $ARGS[0] = 'gopforest_2boys':
 					*clr
 					minut += 15
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/2boys.'+rand(1,2)+'.jpg"></center>'
-					if temp = 1:
+					if temp_gadf = 1:
 						if mitboyrand = 1:'Walking through the forest with Mira, you come face-to-face with Mitka and Kolambu. They stared longingly at your naked body, and you decide...'
 						if mitboyrand = 2:'Walking through the forest with Mira, you come face-to-face with Mitka and Vasyan. They stared longingly at your naked body, and you decide...'
 						if mitboyrand = 3:'Walking through the forest with Mira, you come face-to-face with Kolambu and Vasyan. They stared longingly at your naked body, and you decide...'
@@ -1428,7 +1428,7 @@ if $ARGS[0] = 'gopforest_2boys':
 						if mitboyrand = 2:'Walking through the forest with Mira you saw Mitka and Vasyan. Realizing that they haven''t noticed you yet, you decide...'
 						if mitboyrand = 3:'Walking through the forest with Mira you saw Kolambu and Vasyan. Realizing that they haven''t noticed you yet, you decide...'
 					end
-					if temp = 1:
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -1468,12 +1468,12 @@ if $ARGS[0] = 'gopforest_2boys':
 					*clr
 					minut += 5
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/2boys.'+rand(1,2)+'.jpg"></center>'
-					if temp = 1:
+					if temp_gadf = 1:
 						if mitboyrand = 1:'Walking through the forest with Mira, you come face-to-face with Mitka and Kolambu. They stared longingly at your naked body, and you decide...'
 						if mitboyrand = 2:'Walking through the forest with Mira, you come face-to-face with Mitka and Vasyan. They stared longingly at your naked body, and you decide...'
 						if mitboyrand = 3:'Walking through the forest with Mira, you come face-to-face with Kolambu and Vasyan. They stared longingly at your naked body, and you decide...'
@@ -1483,7 +1483,7 @@ if $ARGS[0] = 'gopforest_2boys':
 						if mitboyrand = 3:'Walking through the forest with Mira you saw Kolambu and Vasyan. Realizing that they haven''t noticed you yet, you decide...'
 					end
 
-					if temp = 1:
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -1547,12 +1547,12 @@ if $ARGS[0] = 'gopforest_2boys':
 				*clr
 				minut += 5
 				gadboyday = daystart
-				temp = rand (1,2)
+				temp_gadf = rand (1,2)
 				gs 'stat'
 				!gs 'time'
 
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/2boys.'+rand(1,2)+'.jpg"></center>'
-				if temp = 1:
+				if temp_gadf = 1:
 					if mitboyrand = 1:'Walking through the forest with Mira, you come face-to-face with Mitka and Kolambu. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far the guys grab you by the arms and drag you with them into the nearest bush.'
 					if mitboyrand = 2:'Walking through the forest with Mira, you come face-to-face with Mitka and Vasyan. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far the guys grab you by the arms and drag you with them into the nearest bush.'
 					if mitboyrand = 3:'Walking through the forest with Mira, you come face-to-face with Kolambu and Vasyan. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far the guys grab you by the arms and drag you with them into the nearest bush.'
@@ -1562,8 +1562,8 @@ if $ARGS[0] = 'gopforest_2boys':
 					if mitboyrand = 3:'Walking through the forest with Mira you saw Kolambu and Vasyan. Realizing that they haven''t noticed you yet, you decide...'
 				end
 
-				if temp = 1:act 'Further':Miraloc = 0 & forest_gopsex = 2 & gt 'hantersex', 'doublelovesex'
-				if temp = 2:
+				if temp_gadf = 1:act 'Further':Miraloc = 0 & forest_gopsex = 2 & gt 'hantersex', 'doublelovesex'
+				if temp_gadf = 2:
 					act 'Hide':
 						cla
 						*clr
@@ -1732,19 +1732,19 @@ if $ARGS[0] = 'gopforest_3boys':
 				cla
 				*clr
 				minut += 5
-				temp = rand (1,2)
+				temp_gadf = rand (1,2)
 				gadboyday = daystart
 				gs 'stat'
 				!gs 'time'
 
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/3boys.'+rand(1,2)+'.jpg"></center>'
-				if temp = 1:
+				if temp_gadf = 1:
 					'Walking through the forest you come face-to-face with Mitka, Kolambu and Vasyan. They stared longingly at your naked body, and you decide...'
 				else
 					'Walking through the forest you saw Mitka, Kolambu and Vasyan. Realizing that they haven''t noticed you yet, you decide...'
 				end
 				*pl
-				if temp = 1:
+				if temp_gadf = 1:
 					act 'To run away and dress':
 						cla
 						*clr
@@ -1798,17 +1798,17 @@ if $ARGS[0] = 'gopforest_3boys':
 					*clr
 					minut += 15
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/3boys.'+rand(1,2)+'.jpg"></center>'
-					if temp = 1:
+					if temp_gadf = 1:
 						'Walking through the forest with Mira, you come face-to-face with Mitka, Kolambu and Vasyan. They stared longingly at your naked body, and you decide...'
 					else
 						'Walking through the forest with Mira you saw Mitka, Kolambu and Vasyan. Realizing that they haven''t noticed you yet, you decide...'
 					end
-					if temp = 1:
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -1848,18 +1848,18 @@ if $ARGS[0] = 'gopforest_3boys':
 					*clr
 					minut += 5
 					gadboyday = daystart
-					temp = rand (1,2)
+					temp_gadf = rand (1,2)
 					gs 'stat'
 					!gs 'time'
 
 					'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/3boys.'+rand(1,2)+'.jpg"></center>'
-					if temp = 1:
+					if temp_gadf = 1:
 						'Walking through the forest with Mira, you come face-to-face with Mitka, Kolambu and Vasyan. They stared longingly at your naked body, and you decide...'
 					else
 						'Walking through the forest with Mira you saw Mitka, Kolambu and Vasyan. Realizing that they haven''t noticed you yet, you decide...'
 					end
 
-					if temp = 1:
+					if temp_gadf = 1:
 						act 'To run away and dress':
 							cla
 							*clr
@@ -1911,19 +1911,19 @@ if $ARGS[0] = 'gopforest_3boys':
 				*clr
 				minut += 5
 				gadboyday = daystart
-				temp = rand (1,2)
+				temp_gadf = rand (1,2)
 				gs 'stat'
 				!gs 'time'
 
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/3boys.'+rand(1,2)+'.jpg"></center>'
-				if temp = 1:
+				if temp_gadf = 1:
 					'Walking through the forest with Mira, you come face-to-face with Mitka, Kolambu and Vasyan. You yelp in surprise, and rush to your clothing. You are running away with Mira, but before you get too far the guys grab you by the arms and drag you with them into the nearest bush..'
 				else
 					'Walking through the forest with Mira you saw Mitka, Kolambu and Vasyan. Realizing that they haven''t noticed you yet, you decide...'
 				end
 
-				if temp = 1:act 'Further':Miraloc = 0 & forest_gopsex = 3 & gt 'hanters', 'start'
-				if temp = 2:
+				if temp_gadf = 1:act 'Further':Miraloc = 0 & forest_gopsex = 3 & gt 'hanters', 'start'
+				if temp_gadf = 2:
 					act 'Hide':
 						cla
 						*clr
@@ -2069,10 +2069,10 @@ if $ARGS[0] = 'mushroom_pickers2':
 
 	act 'Stay here':gt 'gadforest','1'
 	act 'Go for the mushroom':
-		temp = rand(1,3)
-		if temp = 1: gt 'gadforest','2'
-		if temp = 2: gt 'gadforest','3'
-		if temp = 3: gt 'gadforest','4'
+		temp_gadf = rand(1,3)
+		if temp_gadf = 1: gt 'gadforest','2'
+		if temp_gadf = 2: gt 'gadforest','3'
+		if temp_gadf = 3: gt 'gadforest','4'
 	end
 end
 if $ARGS[0] = 'mushroom_pickers3':
@@ -2172,18 +2172,18 @@ if $ARGS[0] = 'basket':
 	cla
 	*clr
 	minut += 5
-	temp = rand(1,2)
+	temp_gadf = rand(1,2)
 	foresteventday = daystart
 	gs 'stat'
 	!gs 'time'
 
-	if temp = 1:
+	if temp_gadf = 1:
 		'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/basket_boletus.jpg"></center>'
 		'Wandering in the forest you find a basket full of mushrooms. Strange, someone must have left it here or just lost it.'
 
 		act 'Take':boletus += 10 & gt $loc, $metka
 	end
-	if temp = 2:
+	if temp_gadf = 2:
 		'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/basket_bilberry.jpg"></center>'
 		'Wandering in the forest you find a basket full of berries. Strange, someone must have left it here or just lost it.'
 
@@ -2366,12 +2366,12 @@ if $ARGS[0] = 'forest_hanters':
 					act 'Further':hanters = 1 & wolf_know = 1 & minut += 60 & gt 'swamp_yard'
 				else
 					act 'Further':
-						temp = rand(1,3)
+						temp_gadf = rand(1,3)
 						temphant = rand(1,3)
 						hanters = 1
-						if temp = 1:
+						if temp_gadf = 1:
 							forest_hantersex = 1 & gt 'hanters', 'start'
-						elseif temp = 2:
+						elseif temp_gadf = 2:
 							forest_hantersex = 2 & gt 'hantersex', 'doublelovesex'
 						else
 							forest_hantersex = 3 & gt 'hanters', 'start'
@@ -2445,11 +2445,11 @@ if $ARGS[0] = 'forest_hanters':
 						act 'To go with the hunters':hanters = 1 & minut += 60 & gt 'swamp_yard'
 						act 'Stay here':gt $loc, $metka
 					else
-						temp = rand(1,3)
+						temp_gadf = rand(1,3)
 						temphant = rand(1,3)
-						if temp = 1:hanters = 1 & forest_hantersex = 1 & gt 'hanters', 'start'
-						if temp = 2:hanters = 1 & forest_hantersex = 2 & gt 'hantersex', 'doublelovesex'
-						if temp = 3:hanters = 1 & forest_hantersex = 3 & gt 'hanters', 'start'
+						if temp_gadf = 1:hanters = 1 & forest_hantersex = 1 & gt 'hanters', 'start'
+						if temp_gadf = 2:hanters = 1 & forest_hantersex = 2 & gt 'hantersex', 'doublelovesex'
+						if temp_gadf = 3:hanters = 1 & forest_hantersex = 3 & gt 'hanters', 'start'
 					end
 				end
 			end
@@ -2474,12 +2474,12 @@ end
 if $ARGS[0] = 'forest_road':
 	cla
 	*clr
-	temp = rand(1,10)
+	temp_gadf = rand(1,10)
 	gs 'stat'
 	!gs 'time'
 	'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/forest_road.jpg"></center>'
 	'You`re off, on the road towards the village, humming happily to yourself.'
-	if temp > 3:
+	if temp_gadf > 3:
 		act 'Further':
 			cla
 			*clr
@@ -2514,7 +2514,7 @@ if $ARGS[0] = 'forest_road':
 						cla
 						*clr
 						minut += 25
-						temp = rand(1,4)
+						temp_gadf = rand(1,4)
 						pcs_sweat += 20
 						gs 'stat'
 
@@ -2522,15 +2522,15 @@ if $ARGS[0] = 'forest_road':
 						'You`ve been running up hill and down hill, too afraid to even to look behind you. In the end the exhaustion made you stop, after a quick look around you realize that no one is behind you, chasing you, but now you have no idea where you are.'
 
 						act 'Further':
-							if temp = 1: gt 'gadforestlost','1'
-							if temp = 2: gt 'gadforestlost','2'
-							if temp = 3: gt 'gadforestlost','3'
-							if temp = 4: gt 'gadforestlost','4'
+							if temp_gadf = 1: gt 'gadforestlost','1'
+							if temp_gadf = 2: gt 'gadforestlost','2'
+							if temp_gadf = 3: gt 'gadforestlost','3'
+							if temp_gadf = 4: gt 'gadforestlost','4'
 						end
 					end
 				end
 			end
-							
+
 			act 'Freeze in terror':
 				cla
 				*clr
@@ -2550,12 +2550,12 @@ end
 if $ARGS[0] = 'swamp_road':
 	cla
 	*clr
-	temp = rand(1,10)
+	temp_gadf = rand(1,10)
 	gs 'stat'
 	!gs 'time'
 	'<center><img <<$set_imgh>> src="images/locations/gadukino/forest/forest_road.jpg"></center>'
 	'You went on the road in the direction of the swamp, merrily humming to yourself.'
-	if temp > 3:
+	if temp_gadf > 3:
 		act 'Further':
 			cla
 			*clr
@@ -2590,7 +2590,7 @@ if $ARGS[0] = 'swamp_road':
 						cla
 						*clr
 						minut += 25
-						temp = rand(1,4)
+						temp_gadf = rand(1,4)
 						pcs_sweat += 20
 						gs 'stat'
 
@@ -2598,10 +2598,10 @@ if $ARGS[0] = 'swamp_road':
 						'You`ve been running up hill and down hill, too afraid to even to look behind you. In the end the exhaustion made you stop, after a quick look around you realize that no one is behind you, chasing you, but now you have no idea where you are.'
 
 						act 'Further':
-							if temp = 1: gt 'gadforestlost','1'
-							if temp = 2: gt 'gadforestlost','2'
-							if temp = 3: gt 'gadforestlost','3'
-							if temp = 4: gt 'gadforestlost','4'
+							if temp_gadf = 1: gt 'gadforestlost','1'
+							if temp_gadf = 2: gt 'gadforestlost','2'
+							if temp_gadf = 3: gt 'gadforestlost','3'
+							if temp_gadf = 4: gt 'gadforestlost','4'
 						end
 					end
 				end
@@ -2651,7 +2651,7 @@ if $ARGS[0] = 'lost':
 			cla
 			*clr
 			minut += 25
-			temp = rand(1,4)
+			temp_gadf = rand(1,4)
 			pcs_sweat += 20
 			gs 'stat'
 
@@ -2659,10 +2659,10 @@ if $ARGS[0] = 'lost':
 			'You`ve been running up hill and down hill, too afraid to even to look behind you. In the end the exhaustion made you stop, after a quick look around you realize that no one is behind you, chasing you, but now you have no idea where you are.'
 
 			act 'Further':
-				if temp = 1: gt 'gadforestlost','1'
-				if temp = 2: gt 'gadforestlost','2'
-				if temp = 3: gt 'gadforestlost','3'
-				if temp = 4: gt 'gadforestlost','4'
+				if temp_gadf = 1: gt 'gadforestlost','1'
+				if temp_gadf = 2: gt 'gadforestlost','2'
+				if temp_gadf = 3: gt 'gadforestlost','3'
+				if temp_gadf = 4: gt 'gadforestlost','4'
 			end
 		end
 
@@ -2718,7 +2718,7 @@ if $ARGS[0] = 'relax':
 			cla
 			*clr
 			minut += 25
-			temp = rand(1,4)
+			temp_gadf = rand(1,4)
 			pcs_sweat += 20
 			gs 'stat'
 
@@ -2726,10 +2726,10 @@ if $ARGS[0] = 'relax':
 			'You`ve been running up hill and down hill, too afraid to even to look behind you. In the end the exhaustion made you stop, after a quick look around you realize that no one is behind you, chasing you, but now you have no idea where you are.'
 
 			act 'Further':
-				if temp = 1: gt 'gadforestlost','1'
-				if temp = 2: gt 'gadforestlost','2'
-				if temp = 3: gt 'gadforestlost','3'
-				if temp = 4: gt 'gadforestlost','4'
+				if temp_gadf = 1: gt 'gadforestlost','1'
+				if temp_gadf = 2: gt 'gadforestlost','2'
+				if temp_gadf = 3: gt 'gadforestlost','3'
+				if temp_gadf = 4: gt 'gadforestlost','4'
 			end
 		end
 
