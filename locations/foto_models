@@ -110,7 +110,7 @@ if $ARGS[0] = 'model_chatter':
 		'	"But-!"'
 		'	"Listen, I get it. The first time I came home to my boyfriend after I fucked someone for a role I felt bad too. But I learned pretty quickly that fucking guys for roles is like getting naked here. It''s not cheating if another guy sees your tits in a magazine right? Just like it''s not cheating to blow a casting director to land a role. It''s just part of the job. Other than this, the only audition advice I have is not to wear panties and make sure you''re on birth control."'
 	end
-	act'. . .':gt'foto','bathroom'
+	act'Continue':gt'foto','bathroom'
 end
 
 if $ARGS[0] = 'mari_1':
@@ -551,7 +551,7 @@ if $ARGS[0] = 'mari_chat':
 		'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading16.jpg"></center>'
 		'	"How come you''re always reading the same book Mari?"'
 		'	"Oh this old thing? I don''t know, it''s just one of my favorite stories. I fell in love with it back when I still lived in Gadyukino. It''s about a girl who moves away from her home and experiences all kinds of stuff. Love, and adventure, and new things she never even dreamed existed... I guess it''s comforting to me because I feel like the girl in this story. And I suppose it also reminds me a bit of home and how it''s never far away..."'
-		act'. . .':
+		act'Continue':
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading7.jpg"></center>'
 			'	She says her last sentence with a smile. No sadness. No regret. Just happy to be living her life the way she is and happy she had parents who let her strike out on her own at such a young age.'
@@ -629,7 +629,7 @@ if $ARGS[0] = 'mari_chat':
 										'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading19.jpg"></center>'
 										'	She looks a little confused and picks up her book again.'
 										'	Mari blushes intensely and says,"N-no... I like boys..." You see her whisper the words again quietly to herself, "I like boys..."'
-										act'. . .':
+										act'Continue':
 											*clr & cla
 											'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading10.jpg"></center>'
 											'	She shakes her head and snaps out of it, sitting back down and picking up her book again.'
@@ -684,7 +684,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 			'	She stands up and gives you a tight hug. Once again you feel her soft breasts molding into yours and her hot skin rubbing against you. Her hug is so tight that your hips are being pressed together and you can feel her bush between your legs.'
 			'	Pulling back with a smile she says, "Always make friends with your co-workers. Especially girls. We have to stick together you know!"'
 			'	You can''t help but smile back, saying, "We sure do Mari!"'
-			act'. . .':gt 'foto_models','mari_modelling_chat'
+			act'Continue':gt 'foto_models','mari_modelling_chat'
 		end
 	end
 
@@ -706,7 +706,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 				'	"Mari!" you cry out with a laugh. "We''re nude models!"'
 				'	Laughing with you she looks down and says, "I know! I know! But at the diner the all the employees and the customers were constantly trying to get into my pants and I once walked in on the manager jerking off into a condom! At least as a model I can assume people are getting off by jerking it to pictures of me instead of trying to reach up my skirt. Then they''re happy and I don''t have to see it!"'
 				'	After thinking about it a bit, you can''t help but be inclined to agree.'
-				act'. . .':
+				act'Continue':
 					*clr & cla
 					'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading7.jpg"></center>'
 					'	"So then how <i>did</i> you get hired here?"' 
@@ -784,7 +784,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 						'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading3.jpg"></center>'
 						'	"Oh no, I''ve never bought a fake passport. I''m <<age>> and I''ve always been legal to work here, I just know about the guy. It was where the Gopniks in my school would go to get their fakes so they could buy booze," you say with a laugh.'
 						'	"Oh! I didn''t realize he was that well known."'
-						act'. . .':
+						act'Continue':
 							*clr & cla
 							'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading8.jpg"></center>'
 							'	You decide to tease her a bit. "You know Mari, for a girl who went out of her way to start nude modelling before she was legal, you''re kind of innocent."'
@@ -807,7 +807,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 						'	"I can''t believe you went through so much to start nude modelling while you were underage!" you say in astonishment. "Couldn''t you have just waited a year?"'
 						'	She looks down in embarrassment. "Well... I guess... But I <i>really</i> love this job <<$pcs_nickname>>. Wasn''t it all worth it?"'
 						'	As you look at her, you relent a bit. You can''t really fault her for chasing so hard after something she loves doing.'
-						act'. . .':
+						act'Continue':
 							*clr & cla
 							'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading8.jpg"></center>'
 							'	Still, you decide the opportunity to tease her is too good to pass up. "You know Mari, for a girl who went out of her way to start nude modelling before she was legal, you''re kind of innocent."'
@@ -976,7 +976,7 @@ if $ARGS[0] = 'anastasia_chat':
 		'	"Oh, this story could take a little while for an old gal like me," she says, sitting down. "It all began when I graduated high school. I grew up in this city you know, surrounded by the business and the glamour, and the rush. Naturally, I needed a job. I was 18, I was inexperienced, and I had no qualifications other than my diploma and that I was pretty. I found that I could get a job as a secretary for quite a bit of money, but I needed a secretarial diploma to get hired. They have courses at the community center in the industrial area, but it cost more money than I had. So to get that, I did nude modelling here."'
 		'	"But-" she interrupts you by holding up her hand, telling you to wait for her to finish.'
 		'	"It was a real spur of the moment thing. One second I was thinking how much money I needed for the course, the next thing I realized I was handed a flyer that said, <b>"Big money for nude models! Audition inquiry here!"</b> So I came."'
-		act'. . .':
+		act'Continue':
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/4.jpg"></center>'
 			'	She gushes a bit as she remembers her origins. "Oh, I was such a silly girl back then. Didn''t know what I was doing, photographers had to come up and re-arrange me all the time because I couldn''t get into the right poses. Oh, to be young... Anyways, after a few weeks I had enough money to take the secretarial course. I continued shooting here at the studio between classes to support myself and 10 short classes later, I was issued my diploma!"'
@@ -1064,7 +1064,7 @@ if $ARGS[0] = 'anastasia_chat':
 						'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/5.jpg"></center>'
 						'	Anastasia sits up a bit. "Yes, financially. I need money to live don''t I?"'
 						'	"No, wait! That''s not what I meant! Who were those men?"'
-						act'. . .':
+						act'Continue':
 							*clr & cla
 							'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/4.jpg"></center>'
 							'	She leans back again and closes her eyes as if she were tired. "My clients of course. I''m the number one model in the city, it makes it easy to do some escorting on the side. It''s a good deal for everyone. They get to live their dream, the studio makes more money on set rental, and in the end I get to supplement my sexual and financial needs. Men will pay a lot of money to have sex with a model like me."'
@@ -1078,7 +1078,7 @@ if $ARGS[0] = 'anastasia_chat':
 									'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/9.jpg"></center>'
 									'	"<<$pcs_nickname>>," she says, "if you''re going to have a career in this industry you can''t be naive about how it works. This is just another way to use your fame."'
 									'	She sounds vaguely disappointed in you, like a mother trying to teach her child manners.'
-									act'. . .':
+									act'Continue':
 										*clr & cla
 										'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/1.jpg"></center>'
 										'	She picks up her panties and gets up again. "Listen <<$pcs_nickname>>, you''re great at this job, and one day you might be as famous or even more famous a model than I am. And I want you to be ready when it happens. So just in case, my advice to you is to make sure you''re on birth control, make sure you enjoy yourself, and <i>always</i> charge extra for creampies and swallowing."'
@@ -1198,7 +1198,7 @@ end
 !	act'Change your mind':
 !		'	"Uhmm... You know what? It''s not actually that important right now. I''ll ask you about it later." You can tell that Anastasia still wants to know, especially after your initial prompting but doesn''t pressure you at all.'
 !		'	"That''s alright <<$pcs_firstname>>. Whenever you''re ready okay?"'
-!		act'. . .':gt'foto_models','anastasia_chat'
+!		act'Continue':gt'foto_models','anastasia_chat'
 !	end
 !	
 !	act'Ask her confidently':
@@ -1208,7 +1208,7 @@ end
 !		'	"I want to know more about using my fame to make more money like you do. About using my fame to sell myself."'
 !		'	Her face lights up with a smile that looks like she''s delighted that you asked. "Yes! Of course <<$pcs_firstname>>! Ever since you broke the barrier into the studio''s top ten I''ve been waiting for you to take this next step! I''m <i>very</i> proud of you for doing it and so happy that you came to me to find out more!"'
 !		'	She leads you over to a nearby set and gestures for you to sit down across from her.'
-!		act'. . .':gt'anastasia_escort','ana_pro_talk':
+!		act'Continue':gt'anastasia_escort','ana_pro_talk':
 !	end
 !	
 !	act'Ask embarrassedly':
@@ -1464,14 +1464,14 @@ if $ARGS[0] = 'krystal_chat':
 				'	"Oh." When you say this, you let a bit too much surprise slip into your voice.'
 				'	Krystal raises and eyebrow, saying, "Expecting something different?"'
 				'	"No! No! I-!" You stop yourself mid sentence as you realize you''re too deep to back out now. "Well... It''s just that Anastasia told me that she uses- er, that sex is a good way of staying in shape. I just thought you know... with your other job at the porn studio and your boyfriend and all that..."'
-				act'. . .':
+				act'Continue':
 					*clr & cla
 					'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/7.jpg"></center>'
 					'	"Ohhh, I get it now. Because of what Anastasia said, you thought that I stayed this thin just because I''m fucking constantly. Well, she''s is half right. Sex <i>is</i> good for burning calories and I definitely prefer to get my aerobic exercise in the bedroom with Ben instead of on a treadmill, but a body like this takes more maintenance than that just fucking."'
 					'	"How so?" you ask.'
 					'	"Well, if you look at me," she says, getting up on her knees and straightening her posture. "You''ll see my tummy isn''t just flat, it''s tight. And the same goes for the rest of my body. You can only get muscle tone like this by lifting weights and stuff." You nod understandingly.'
 					'	"Oh, okay. I think I get it now. Thanks Krystal!" You''re pretty surprised. A conversation you thought was going to be all about Krystal having sex with her boyfriend actually turned out to have some pretty decent advice for health and fitness.'
-					act'. . .':
+					act'Continue':
 						*clr & cla
 						'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/10.jpg"></center>'
 						'	Suddenly you realize Krystal is giving you a weird look.'
@@ -1735,7 +1735,7 @@ if $ARGS[0] = 'jeff_chat':
 		'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/9.jpg"></center>'
 		'	"How to be a better model? Oh that''s easy! Just have fun!" she says.'
 		'	<i>Typical answer from her... Couldn''t have expected more I guess...</i>'
-		act'. . .':
+		act'Continue':
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/10.jpg"></center>'
 			'	"Oh, and also, don''t forget to get sexy with it! They love it when cute girls like us... <i>mmm-mmm-!</i> act like... <i>pfft-!</i> dirty sluts!" It seems like she''s legitimately holding back laughter.'
@@ -1752,7 +1752,7 @@ if $ARGS[0] = 'jeff_chat':
 			'	"Hey Jeff... You know how whenever you see me you come up behind me and grab my breasts?"'
 			'	"Yeah?" she says, smiling and completely oblivious to your awkward tone.'
 			'	"Yeah... Could you <i>not</i> do that? It makes me kind of uncomfortable..."'
-			act'. . .':
+			act'Continue':
 				*clr & cla
 				'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/13.jpg"></center>'
 				'	She laughs and says, "Of course not silly! Boobies are meant to be grabbed!" she says kneading her own to make her point.'
@@ -1768,7 +1768,7 @@ if $ARGS[0] = 'jeff_model':
 	'<center><img src="images/locations/city/citycenter/photo/foto.jpg"></center>'
 	'You''re looking for Jeff when you hear her voice coming from one of the sets.'
 	jeff = rand(3,4)
-	act'. . .':
+	act'Continue':
 		*clr & cla
 		'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/19.jpg"></center>'
 		'	"Whooo! Yipee!"'

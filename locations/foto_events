@@ -189,7 +189,7 @@ if $ARGS[0] = 'fine_art':
 										'	"No," you say, standing firm. "I''m not about to lose my virginity just for a modelling job. You''ll have to make do with that, or get another model who''s willing to <b>whore herself</b> out for your art."'
 										'	"Ugh," she rolls her eyes and waves her hand dismissively. "Vine, vine. I vill not take your virginity. Ve are vasting too much time. But Alexhandar, maintain your erection. I cannot have a flaccid penis in a piece that iz zat iz zupposed to exude <i>lust</i> and <i>eroticism!</i>"'
 										'	You breathe out a sigh of relief and resume the pose she wants, waiting for further instruction.'
-										act'. . .':gt'foto_events','fine_art2'
+										act'Continue':gt'foto_events','fine_art2'
 									end
 									act'Take the deal':
 										cla & *clr
@@ -226,7 +226,7 @@ if $ARGS[0] = 'fine_art':
 							'	"I don''t care who he is, he''s not putting his dick inside me! Either deal with that or get yourself a new model."'
 							'	"Ugh," she rolls her eyes and waves her hand dismissively. "Vine, vine. Ve are vasting too much time. But Alexhandar, maintain your erection. I cannot have a flaccid penis in a piece that iz zat iz zupposed to exude <i>lust</i> and <i><eroticism!</i>"'
 							'	You huff in annoyance, but the matter resolved, you resume the pose she wants and wait for further instruction.'
-							act'. . .':gt'foto_events','fine_art2'
+							act'Continue':gt'foto_events','fine_art2'
 						end
 					end
 				end
@@ -262,7 +262,7 @@ if $ARGS[0] = 'fine_art2':
 		'	"No, no, Alexhandar. It iz no good like zat. All ze way inside." He immediately does as instructed, gripping your shoulder and he pulling you back while simultaneously pushing his hips forward. You gasp for breath, eyes watering, as he slowly drives the entire length of his cock inside your pussy centimeter by centimeter, stretching you to a breaking point. When his cock is fully enveloped and balls are brushing up against your clit, you hear the woman again.'
 		'	"Yez! Yez! Just like zat! Now hold zat pozition just like zat!" In the corner of your tear-blurred vision, you see her click the remote and a ring of cameras flash around you, snapping simultaneously. Then, a red laser begin to scan you from bottom to top. The scanner works at an excruciatingly slow pace. It takes all of your willpower not to cry out, quiver, or scream in pain. You bite down hard on your lip, tears streaming down your face as it the only facial expression you can bear to maintain without moving.'
 		'	The scan continues but at the edge of your hearing you can perceive a faint scratching sound. After a few minutes, you sink into despair when you realize that it''s the sound of drawing. She expects you to hold this position, hold this monstrously huge cock in your pussy without flinching. You want to whimper but fearing retribution you just bite down on your lip harder.'
-		act'. . .':
+		act'Continue':
 			modelfoto += 1
 			if fine_art_deal = 1:money += modelpayfin + 30000
 			if art_resign = 1:money += modelpayfin
@@ -279,7 +279,7 @@ if $ARGS[0] = 'fine_art2':
 			'	"I think I shall make zis into a sculpture. This piece must be chiseled from marble to truly encapsulate ze glory of zis zubject!" She snaps her fingers twice and staff come out to begin collecting the equipment and putting it away. The woman herself walks over and reaches into her purse.'
 			if fine_art_deal = 1:'	"Zis is for ze job," she says, placing wad of <<modelpayfin>> <b>₽</b> into your hand. "And zis, is for your contribution to art!" she says, placing in your other hand a large stack of bills equaling to 30,000 <b>₽</b>. "Zis vill be a famous piece to go down in the history of ze world! Do not forget and take pride in your part of what began here today!"'
 			if fine_art_deal = 2:'	"Zis is for ze job," she says, placing wad of <<modelpayfin>> <b>₽</b> into your hand. "And be proud," she says, placing her other hand on your shoulder. "Zis vill be a famous piece to go down in the history of ze world! One day, vhen you see ze statue, remember and be proud of ze young woman whose loss of virtue vas immortalized in stone. Remember and <i>be proud.</i>"'
-			act'. . .':
+			act'Continue':
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
 				'	As the people around you pack up the equipment and depart, the artist and Alexander disappearing with them, you stand there, feeling the throbbing ache between your legs and the blood still dripping down your thighs. While you stand, all you can do is stare at the stacks of cash you have been given; the money that bought your virginity. And while you stand and stare, you think to yourself...'
 				*nl
