@@ -36,7 +36,7 @@ if $ARGS[0] = 'inside':
 		'You have <<Trainpass_day - daystart>> days left on your train pass.'
 		act 'Go to platforms': gt 'cityTrain', 'platform'
 	else
-		act 'Buy a ticket': gt 'cityTrain', 'tickets'
+		act 'Go to the ticket office': gt 'cityTrain', 'tickets'
 	end
 	act 'Leave the station': minut += 1 & gt 'cityTrain', 'start'
 end
