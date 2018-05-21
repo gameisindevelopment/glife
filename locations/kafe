@@ -15,7 +15,7 @@ if $ARGS[0] = 'start':
 	*nl
 	'They serve American style meals'
 	if QWdogReiq = 3 and week = 7 and hour >= 12:
-		act 'Sit down at the table and wait for a Margarita':gt 'kafe2', 'margo'
+		act 'Sit down at the table and wait for Margaret':gt 'kafe2', 'margo'
 	end
 
 	!!act 'Agree':gt 'cafe3', 'wc'
