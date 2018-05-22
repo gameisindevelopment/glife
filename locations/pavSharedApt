@@ -781,8 +781,6 @@ if $ARGS[0] = 'cookForGuys':
 	minut += 90
 	eda -= 3
 	kuhdrova = 0
-	!musor += 1
-	cltarelka -= 1
 	pcs_mood -= 10
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/shared/home/kitchen/cook.jpg"></center>'
@@ -796,9 +794,7 @@ if $ARGS[0] = 'cleanForGuys':
 	cla
 	*clr
 	minut += 60
-	suhbelo += dirtbelo
 	poroshok -= 3
-	dirtbelo = 0
 	pcs_mood -= 10
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/stir.jpg"></center>'
@@ -838,7 +834,7 @@ if $ARGS[0] = 'pcsRoom':
 	if TV = 1:$TV = 'an old CRT <a href="exec:gt ''TV'', ''start''">TV</a> sits on the shelf'
 	'There is an wall unit at the other side of the room, <<$TV>>. Everyone in the household spends their time in their own rooms, so there was never a reason to use the living room for its intended purpose.'
 	''
-	'On the other side of the sofa bed are your old <a href="exec:gt ''clothing'', ''view_clothing_list'', ''store''">suitcases</a>, which you could use to store the clothes you don''t often wear.'
+	'On the other side of the sofa bed are your old <a href="exec:gt ''wardrobe'', ''start''">suitcases</a>, serving as a makeshift wardrobe.'
 	''
 	'There is no door to the living room, instead there''s <a href="exec:view''images/shared/sharedapt/bedroom/curtain.jpg''">curtain</a> covering entry to the room, which gives you a modicum of privacy; not much better than the state of the non-existant window curtains'
 
