@@ -983,8 +983,7 @@ if $args[0] = '5b':
 								gs 'cum_manage'
 								'You extend one of your arms between your legs and carefully guide Bandit''s penis to your twat, as soon as he feels how wet you are, the dog powerfully thrusts forwards and fills your main fuckhole with his canine boner. You grit your teeth as your grandparents dog mercilessly uses your snatch for what it''s worth, bestially having his way with you without any care for your own pleasure, which is still a thrilling enough experience. Soon you can feel his panting and the relentless pounding intensify and you feel him ejaculating deep inside your twat...'
 								gs 'arousal', 'vaginal', 10, 'sub', 'beast'
-								
-					gs 'arousal', 'end'gs 'arousal', 'end'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
 							gs 'arousal', 'end'
