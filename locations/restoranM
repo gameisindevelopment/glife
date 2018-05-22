@@ -35,7 +35,7 @@ end
 
 if $ARGS[0] = 'a':
 	minut += 30
-	alko += 1
+	alko += 2
 	if pcs_hydra >= 100:
 		pcs_hydra -= 5
 	else
@@ -50,8 +50,8 @@ if $ARGS[0] = 'a':
 end
 
 if $ARGS[0] = 'b':
-	$metka = $ARGS[0]
-	$loc = $CURLOC
+	$metka = 'b'
+	$loc = 'restoranM'
 
 
 	gs 'food', 'm_meal'
