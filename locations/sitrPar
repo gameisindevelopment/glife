@@ -21,7 +21,8 @@ end
 '<center><b><font color="maroon">Living Room</font></b></center>'
 ! WD: Correct Image path ~ "images/qwest/alter/<<$loc>>.jpg"
 '<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/sitrpar.jpg"></center>'
-'The living room has a <a href="exec:gt ''TV'',''pav''">TV</a>, which is near the window. In front of the TV is a sofa bed, on which your brother sleeps at night. A large tapestry covers one wall, while the other wall has several shelves on it, stocked with books and other things.'
+''
+'The living room has a <a href="exec:gt ''TV'',''pav''">TV</a>, which is near the window. In front of the TV is a <a href="exec:gt ''family'',''sofa''">sofa bed</a>, on which your brother sleeps at night. A large tapestry covers one wall, while the other wall has several shelves on it, stocked with books and other things.'
 gs 'family'
 gs 'subkid'
 
@@ -68,41 +69,6 @@ elseif month = 1 and day = 1:
 	act 'Get up from the table':gt $loc, $metka
 
 	end
-end
-
-if $ARGS[0]='sofa':
-	$metka = 'sofa'
-	$loc = 'sitrPar'
-	*clr & cla
-	gs 'stat'
-	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/apartment/home/sofa.jpg"></center>'
-	'<center>A small sofa bed, when not unfolded, is just big enough for you to curl up on and take a nap.</center>'
-
-	act 'Watch TV':gt 'TV','pav'
-
-	if pornMagazine > 0:'<br>There is a porn magazine under the sofa cushions'
-
-	gs 'events', 'read_porn'
-	gs 'events', 'read'
-
-	if pcs_horny >= 50:
-		act 'Masturbate':gt 'selfplay', 'start'
-	end
-
-	act 'Take a nap (1:00)':
-		if pcs_sleep < 90:
-			pcs_sleep += 10
-			pcs_health += 5
-			minut += 60
-			gs 'stat'
-			'You sleep about an hour.'
-		else
-			minut += 5
-			gs 'stat'
-			'You are not tired enough to sleep, even for a short nap.'
-		end
-	end
-	act 'Get up':gt 'sitrPar'
 end
 
 --- sitrPar ---------------------------------
