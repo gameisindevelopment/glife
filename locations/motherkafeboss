@@ -60,7 +60,7 @@ if $ARGS[0] = 'confrontation':
 	'Ignoring his question you bluntly say, "I know you''ve been fucking mom." He pauses briefly at your words and glances around the room at the customers.'
 	'"Why don''t we talk about this in the back?" he says calmly. "We don''t want to cause trouble for your mother do we?" You give him a hard look and follow him as he escorts you into a back room of the cafe.'
 
-	act'OK. . .':
+	act'Continue':
 		cla & *clr
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/cafe/borislav.jpg"></center>'
 		'Once both inside, he shuts the door behind you and sits down casually in a desk chair.'
@@ -117,7 +117,7 @@ if $ARGS[0] = 'confrontation':
 					end
 				end
 
-				act'You don''t want to do this':
+				act'You don''t want to do this, ever!':
 					cla & *clr
 					pcs_mood -= 10
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/trainstation/cafe/gkafe2.jpg"></center>'
@@ -128,7 +128,7 @@ if $ARGS[0] = 'confrontation':
 				end
 			end
 
-			act'Accept defeat':
+			act'Accept defeat - for now.':
 				cla & *clr
 				pcs_mood -= 10
 				slavatalk = 0
