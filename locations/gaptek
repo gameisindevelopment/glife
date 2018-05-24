@@ -12,7 +12,7 @@ if $ARGS[0] = 'start' or gaptek_loc = 1 or $message ! '':
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/pharmacy/apteka_worker_1.jpg"></center>'
 
 	act 'Leave the pharmacy':gt 'pavCommercial'
-	
+
 	if Olu_pay > 0:
 		minut += RAND(5,10)
 		money += Olu_pay * RAND(500,700)
@@ -42,8 +42,8 @@ if $ARGS[0] = 'start' or gaptek_loc = 1 or $message ! '':
 		end
 	end
 	'</center>'
-	*pl '<center><table align="center" width=80%>' 
-	*P FUNC ('$stock_item', 5, 'condoms', 500, 'prezik', $CURLOC, $ARGS[0], StoryLine, 'Aunt will tell mom!')
+	*pl '<center><table align="center" width=80%>'
+	*P FUNC ('$stock_item', 5, 'condoms', 500, 'prezikcount', $CURLOC, $ARGS[0], StoryLine, 'Aunt will tell mom!')
 	*P FUNC ('$stock_item', 1, 'pregnancy test', 530, 'pregtest', $CURLOC, $ARGS[0], StoryLine, 'Aunt will tell mom!')
 	*P FUNC ('$stock_item', 1, 'birth control pills', 1870, 'tabletki', $CURLOC, $ARGS[0], StoryLine, 'Aunt will tell mom!')
 	*P FUNC ('$stock_item', 10, 'antibiotics', 580, 'lekarstvo', $CURLOC, $ARGS[0])
@@ -134,7 +134,7 @@ if $ARGS[0] = 'start' or gaptek_loc = 1 or $message ! '':
 					'You wait for your turn and move up to the counter, discretely nodding at the counter with the contraceptives. She apologizes: "I''m sorry <<$pcs_nickname>>, those are all sold out." With some malice in her voice, she whispers: "Your stud will have to wait until tomorrow, unless you plan on entertaining him in some other way." Giving you a lewd grin, she ushers you away from the counter so she can help the next customer.'
 				end
 			end
-			
+
 			act 'Move away from the counter':gt 'gaptek', 'start'
 		end
 
@@ -150,7 +150,7 @@ if $ARGS[0] = 'start' or gaptek_loc = 1 or $message ! '':
 						'You change your mind and feel flustered,'
 						act 'Move away from the counter':gt 'gaptek', 'start'
 					exit
-						
+
 					elseif portion > 1 and npc_QW['A29'] < 3:
 						portion = 1
 						'You quietly think to yourself, while you put most of the packages back on the shelf: "Just the one should be enough. It''s probably better if I don''t buy too many at once, otherwise aunt Luda might become suspicious."'
@@ -202,12 +202,13 @@ if $ARGS[0] = 'start' or gaptek_loc = 1 or $message ! '':
 end
 
 if $ARGS[0] = 'garden':
-	'Condoms - 500 ₽'
-	'Pregnancy test - 530 ₽'
-	if npc_QW['A29'] >= 2: 'Lubricant - 145 ₽'
+	*nl
+	'<center>Condoms: 500 ₽ per pack - You currently have <b><<prezikcount>></b></center>'
+	'<center>Pregnancy test: 530 ₽ per pack - You currently have <b><<pregtest>></b></center>'
+	if money >= 145 and galubri = 1 and npc_QW['A29'] >= 2 and gaptekfirst = 1 and galubriday ! daystart:'<center>Lubricant: 145 ₽ each - You currently have <b><<lubri>></b></center>'
 	if money >= 500 and npc_QW['A29'] >= 2 and gaptekfirst = 1 and gaprezikday ! daystart:
-		act 'Buy condoms (500 <b>₽</b>) <<iif(prezik > 0, ''[left:<b>'' + prezik + ''</b>]'', '''')>>':
-!!Apostrope fix for notepad display'''' 
+		act 'Buy condoms (500 <b>₽</b>) <<iif(prezikcount > 0, ''[left:<b>'' + prezikcount + ''</b>]'', '''')>>':
+!!Apostrope fix for notepad display''''
 			cla
 			*clr
 			portion = input("How many packages you want to buy? (One package contains 5 condoms)")
@@ -242,7 +243,7 @@ if $ARGS[0] = 'garden':
 
 	if money >= 530 and npc_QW['A29'] >= 2 and gaptekfirst = 1:
 		act 'Buy  pregnancy tests (530 <b>₽</b>) <<iif(pregtest > 0, ''[left:<b>'' + pregtest + ''</b>]'', '''')>>':
-!!Apostrope fix for notepad display'''' 
+!!Apostrope fix for notepad display''''
 			cla
 			*clr
 			portion = input("How many packages do you want to buy? (One package contains two testers)")
@@ -274,7 +275,7 @@ if $ARGS[0] = 'garden':
 	!! you can only buy lube here if your aunt arranged for it and you haven''t bought any today yet
 	if money >= 145 and galubri = 1 and npc_QW['A29'] >= 2 and gaptekfirst = 1 and galubriday ! daystart:
 		act 'Buy <b>lubricant</b> (145 <b>₽</b>) <<iif(lubri > 0, ''[left:<b>'' + lubri + ''</b>]'', '''')>>':
-!!Apostrope fix for notepad display'''' 
+!!Apostrope fix for notepad display''''
 			cla
 			*clr
 			portion = input ("How many tubes do you want to buy? (One tube lasts for 5 uses)")

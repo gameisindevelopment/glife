@@ -5,7 +5,7 @@
 
 
 !medical item
-$item_info['prezik'] = '<center><b>Condoms</b></center><br>Condoms prevent the exchange of body fluids during sexual activity, thereby preventing infection and conception. Condoms cannot be used again.'
+$item_info['prezikcount'] = '<center><b>Condoms</b></center><br>Condoms prevent the exchange of body fluids during sexual activity, thereby preventing infection and conception. Condoms cannot be used again.'
 $item_info['pregtest'] = '<center><b>Pregnancy test</b></center><br>Pregnancy test is strip that you hold in the urine stream or dip into a sample of urine. An area on the end of the test strip changes color if hCG is present, meaning you are pregnant. The test strip can only be used once.'
 $item_info['tabletki'] = '<center><b>Birth control pills</b></center><br>Combination pills contain synthetic forms of the hormones estrogen and progestin. Most pills in each cycle are active, which means they contain hormones. The remaining pills are inactive, which means they don’t contain hormones<br>Application: one pill a day.'
 $item_info['vitamin'] = '<center><b>Vitamin drinks</b></center><br>A complete multivitamin in a fun-to-chew gummy, specially formulated to provide nutritional support for growing teenage girls.<br>Application: one pill a day.'
@@ -18,6 +18,7 @@ $item_info['lubri'] = '<center><b>Lubricant</b></center><br>A specialized gel us
 $item_info['painkiller'] = '<center><b>Painkillers</b></center><br>A pack of pills containing drugs used to relieve pain. Some are taken recreationally for their mind-altering effects. Can be addictive.'
 $item_info['tampon'] = '<center><b>Tampons</b></center><br>A pack of cyliner-shape cotton swabs with a string that is capable absorb menstrual fluids during your period.'
 $item_info['sanpad'] = '<center><b>Sanitary napkins</b></center><br>A pack of absorbent towels that provide protection during your period. They attach to the inside of panties to avoid any leakage onto your clothes'
+$item_info['breastpump'] = '<center><b>Breast Pump</b></center><br>A breast pump is a mechanical device that lactating women use to extract milk from their breasts.'
 
 if $item_info[$ARGS[0]]!'':
 	$RESULT = '<a href="exec: MSG ''<<$item_info[$ARGS[0]]>>''"><img src="images/system/icon/anptekainfo.jpg"></a>'
