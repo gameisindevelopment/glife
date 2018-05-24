@@ -627,13 +627,13 @@ if $ARGS[0] = 'agent':
 	'<center><b>Real estate agency</b></center>'
 	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/agent.jpg"></center>'
 	'You''re currently at the website of the largest real estate agency in the area.'
-	'They have apartments available in the residential district. Renting one would cost you 6000 <b>₽</b> for 30 days.'
+	'They have apartments available in the residential district. Renting one would cost you 10000 <b>₽</b> for 30 days.'
 	''
 	if ArendHouseSL > 0:'You have <B><<ArendHouseSL>> days</B> remaining on the rental of your apartment.'
-	if karta + bankDebtLimit >= 6000 and home_owned[1] ! 1:
+	if karta + bankDebtLimit >= 10000 and home_owned[1] ! 1:
 		act 'Rent an apartment online':
 			cla
-			karta -= 6000
+			karta -= 10000
 			home_owned[1] = 1
 			BuyHous = 2
 			ArendHouseSL += 30
