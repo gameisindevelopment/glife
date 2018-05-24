@@ -518,6 +518,7 @@ if $ARGS[0] = 'abdFood':
 	'There are some water bottles and dried food beneath your bed.'
 	'A half broken, dirty mirror provides some means to inspect your appearance.'
 	'In the corner there is something remotely similar to a shower, with cold water only, though.'
+	'There''s enough space to do some basic <a href="exec:gt ''abduction'', ''abdpushup''">exercise</a>.'
 	chainChance = rand(1, 100)
 	if chainChance <= 20 and (rapeCount > 5 or tortureCount > 5):
 		'Suddenly you spot a loose chainlink on your leash. You try to manipulate it and you manage to free yourself from the wall.'
@@ -621,6 +622,29 @@ if $ARGS[0] = 'abdFood':
 		act 'Get back':gt 'abduction', 'abdFood'
 	end
 	act 'Get back to your bed':gt 'abduction', 'abdRoom'
+end
+
+if $ARGS[0] = 'abdpushup':
+	$loc = 'abduction'
+	$metka = 'abdFood'
+	cla
+	*clr
+	'<center><video autoplay loop src="images/pc/activities/push_naked.mp4"></video></center>'
+	gs 'exercise', 'tier2', 30, 'stren_exp', 'exhibition_exp'
+	'You do push-ups for <<$timestring>> minutes, improving your strength.'
+
+	randpushfact = rand(-5,5)
+	if pcs_energy < 40: randpushfact -= RAND(1,10)
+
+	pushnum = (pcs_stren * pcs_sleep * pcs_health)  / ( 1 * 67 *  healthmax) + randpushfact
+
+	if pushnum < 1: pushnum = rand(1,5)
+	KILLVAR 'randpushfact'
+	'<br>You managed to do <<pushnum>> push-ups. Your previous record is <<pushrecord>>.'
+
+	if pushrecord < pushnum:pushrecord = pushnum & 'This is a new record!'
+	gs 'stat'
+	act 'Finish': gt $loc, $metka
 end
 
 if $ARGS[0] = 'abdRape':
