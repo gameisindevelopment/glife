@@ -122,7 +122,7 @@ if $ARGS[0] = 'default_entry_wear':
 	default_entry = ARGS[1]
 	
 	gs 'clothing_attributes', $defclothingtype[default_entry], defclothingnumber[default_entry]
-	if StoryLine = 1 and SchoolAtestat = 0 and SchoolBlock = 0 and dynamic '$defclothingtype[default_entry]' = 'school' and dynamic 'defclothingnumber[default_entry]' = 6:
+	if StoryLine = 1 and SchoolAtestat = 0 and SchoolBlock = 0 and $defclothingtype[default_entry] = 'school' and defclothingnumber[default_entry] = 6:
 		' '
 	elseif dyneval('RESULT = <<$defclothingtype[default_entry]>>[<<defclothingnumber[default_entry]>>]') = 0:
 		$defclothingtype[default_entry] = 'none' & defclothingnumber[default_entry] = 0
