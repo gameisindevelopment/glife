@@ -1134,20 +1134,20 @@ if analplugIN = 1:$stat_msg += '<BR><b><font color="red">You have a butt plug in
 if vibratorin = 1:$stat_msg += '<BR><b><font color="red">You have a vibrator inserted in your vagina.</font></b>'
 !$stat_msg += '<BR>'
 if young_shop_work = 1:
-	if hour = 15 and minut <= 5 and week < 6 and inWorkYoungShop = 0:
+	if hour = 15 and minut >= 50 and week < 6 and inWorkYoungShop = 0:
 		'You are late for work at Pussy-Cats.'
-	elseif hour = 15 and week < 6 and inWorkYoungShop = 0 and misscheck ! daystart:
+	elseif hour = 16 and minut > 5 and week < 6 and inWorkYoungShop = 0 and misscheck ! daystart:
 		misscheck = daystart
 		young_shop_miss += 1
-		$stat_msg += '<BR><b><font color="red">You missed work.</font></b>'
-	elseif (hour = 14 or hour = 13) and week < 6:
-		$stat_msg += '<BR><b><font color="red">By 15:00 you have to be at work in the shop Pussy-Cats.</font></b>'
+		$stat_msg += '<BR><b><font color="red">You missed work at Pussy-Cats.</font></b>'
+	elseif hour = 15 and minut >= 30 and week < 6:
+		$stat_msg += '<BR><b><font color="red">By 16:00 you have to be at work in the shop Pussy-Cats.</font></b>'
 	end
 end
 
 if workrin = 1:
 	if week = 2 or week = 4 or week = 6:
-		if hour = 7:$stat_msg += '<BR><b><font color="red">At 8 c''clock you start work on the market.</font></b>'
+		if hour = 7:$stat_msg += '<BR><b><font color="red">At 8 o''clock you start work on the market.</font></b>'
 		if hour = 8:$stat_msg += '<BR><b><font color="red">You need to work on the market now.</font></b>'
 	end
 end

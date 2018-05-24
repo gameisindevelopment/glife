@@ -53,15 +53,15 @@ if $ARGS[0] = 'apply':
 				work = 1
 				young_shop_work = 100
 				minut += 5
-				'You got a job in the youth clothing store ''Pussy-Cats''. Your first workday is on Monday at 15:00.'
+				'You got a job in the youth clothing store ''Pussy-Cats''. Your first workday is on Monday at 16:00.'
 				gt 'young_shop', 'start'
 			end
-			act 'Take the weekend job':
-				young_shop_work2 = 100
-				minut += 5
-				'You got a job in the youth clothing store ''Pussy-Cats''. Your first workday is on Saturday at 09:00.'
-				gt 'young_shop', 'start'
-			end
+			! act 'Take the weekend job':
+				! young_shop_work2 = 100
+				! minut += 5
+				! 'You got a job in the youth clothing store ''Pussy-Cats''. Your first workday is on Saturday at 09:00.'
+				! gt 'young_shop', 'start'
+			! end
 !!			act 'Take the full time job':
 !!				work = 1
 !!				young_shop_work3 = 100

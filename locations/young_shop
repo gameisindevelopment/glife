@@ -46,17 +46,6 @@ if $ARGS[0] = 'start':
 			'You spend 4 hours cleaning the department, folding and rehanging clothes and serving customers. The store now looks clean and pretty organized.'
 			gs 'young_shop', 'events'
 		end
-	elseif ((hour = 9 and minut <= 5) or (hour = 8 and minut >= 30)) and young_shop_work1 = 1 and week = 6:
-		act '<b>Work</b>':
-			cla
-			inWorkYoungShop = 1
-			young_shop_salary += 6
-			if hour < 9: minut += 60-minut
-			minut += 360
-			gs 'stat'
-			'You spend 6 hours cleaning the department, folding and rehanging clothes and serving customers. The store now looks clean and pretty organized.'
-			gs 'young_shop', 'events'
-		end
 !!	elseif ((hour = 9 and minut <= 5) or (hour = 8 and minut >= 30)) and young_shop_work1 = 1 and week > 6:
 !!		act '<b>Work</b>':
 !!			cla
@@ -116,43 +105,43 @@ if $ARGS[0] = 'start':
 end
 
 if $ARGS[0] = 'events':
-	random = rand(1, 80)
+	random = rand(1, 95)
 
-	if random < 75:
+	if random < 90:
 		gs 'young_shop', '0'
-	elseif random < 70:
+	elseif random < 85:
 		gs 'young_shop', '1'
-	elseif random < 65:
+	elseif random < 80:
 		gs 'young_shop', '2'
-	elseif random < 60:
+	elseif random < 75:
 		gs 'young_shop', '3'
-	elseif random < 55:
+	elseif random < 70:
 		gs 'young_shop', '4'
-	elseif random < 55:
+	elseif random < 65:
 		gs 'young_shop', '5'
-	elseif random < 45:
+	elseif random < 60:
 		gs 'young_shop', '6'
-	elseif random < 40:
+	elseif random < 55:
 		gs 'young_shop', '7'
-	elseif random < 35:
+	elseif random < 50:
 		gs 'young_shop', '8'
-	elseif random < 30:
+	elseif random < 45:
 		gs 'young_shop', '9'
-	elseif random < 27:
+	elseif random < 40:
 		gs 'young_shop', '10'
-	elseif random = 27:
+	elseif random < 35:
 		gs 'young_shop', '11'
-	elseif random = 26:
+	elseif random < 30:
 		gs 'young_shop', '12'
-	elseif random = 25:
+	elseif random < 25:
 		gs 'young_shop', '13'
-	elseif random = 24:
+	elseif random < 20:
 		gs 'young_shop', '14'
-	elseif random = 23:
+	elseif random < 15:
 		gs 'young_shop', '15'
-	elseif random = 22:
+	elseif random < 10:
 		gs 'young_shop', '16'
-	elseif random = 21:
+	elseif random < 5:
 		gs 'young_shop', '17'
 	elseif kira = 0:
 		gs 'young_shop', '18'
