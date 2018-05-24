@@ -298,21 +298,21 @@ if $ARGS[0] = 'stats_gen':
 	nl
 	if BuyHous = 2 and ArendHouseSL > 0:
 		pl 'You have rented an apartment in the residential area for <<ArendHouseSL>> days.'
-		if money >= 10000 or stolmoney >= 10000 or money + stolmoney >= 10000 or karta + bankDebtLimit >= 10000:
+		if money >= 15000 or stolmoney >= 15000 or money + stolmoney >= 15000 or karta + bankDebtLimit >= 15000:
 			*P ' Renew with '
-			if money >= 10000:
-				*P ' <a href="exec:money -= 10000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash</a>'
-			elseif stolmoney >= 10000:
-				*P ' <a href="exec:stolmoney -= 10000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from drawer</a>'
-			elseif money + stolmoney >= 10000:
-				!both < 10000, so money = money - 10000 + stolmoney
-				*P ' <a href="exec:money -= 10000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from purse and drawer</a>'
+			if money >= 15000:
+				*P ' <a href="exec:money -= 15000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash</a>'
+			elseif stolmoney >= 15000:
+				*P ' <a href="exec:stolmoney -= 15000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from drawer</a>'
+			elseif money + stolmoney >= 15000:
+				!both < 15000, so money = money - 15000 + stolmoney
+				*P ' <a href="exec:money -= 15000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from purse and drawer</a>'
 			end
 			!from purse, drawer or both
-			if karta >= 10000: 
-				*P ' <a href="exec:karta -= 10000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account</a>'
-			elseif karta + bankDebtLimit >= 10000: 
-				*P ' <a href="exec:karta -= 10000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account, but you will be overdrawn.</a>'
+			if karta >= 15000: 
+				*P ' <a href="exec:karta -= 15000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account</a>'
+			elseif karta + bankDebtLimit >= 15000: 
+				*P ' <a href="exec:karta -= 15000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account, but you will be overdrawn.</a>'
 			end
 		else
 			*P ' But you can''t afford to pay the rent right now.'
@@ -1721,7 +1721,7 @@ end
 
 if $ARGS[0] = 'records':
 	clr
-	if home_owned[1] > 0:pl'You live in a two-room apartment, in the city residential area. Rent for the apartment is subtracted automatically, in sum of 3000 <b>₽</b> plus electric bill on 25th of each month.'
+	if home_owned[1] > 0:pl'You live in a two-room apartment, in the city residential area. Rent for the apartment is subtracted automatically, in sum of 10000 <b>₽</b> plus electric bill on 25th of each month.'
 	nl
 	if workPTU > 2:pl'You work as a teacher at the Lycée. Working days Mon-Sat, with 14.00 to 16.00. Salary 300r/day. Dress code - office clothes, Strict. The road from the apartment to the Lyceum takes 2 hours 10 minutes.'
 	nl

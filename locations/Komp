@@ -99,10 +99,10 @@ if $ARGS[0] = 'sale':
 			if obkvsdam = 1:
 				'No one has responded to your offer to rent out your apartment just yet.'
 			elseif obkvsdam > 1:
-				if obkvsdam = 2:predsumm = 7000
-				if obkvsdam = 3:predsumm = 8000
-				if obkvsdam = 4:predsumm = 9000
-				if obkvsdam = 5:predsumm = 10000
+				if obkvsdam = 2:predsumm = 16000
+				if obkvsdam = 3:predsumm = 17000
+				if obkvsdam = 4:predsumm = 18000
+				if obkvsdam = 5:predsumm = 19000
 				'Someone wants to stay in your apartment for a month! They''re offering you <<predsumm>> <b>₽</b> in cash.'
 
 				act 'Accept the offer':
@@ -627,13 +627,13 @@ if $ARGS[0] = 'agent':
 	'<center><b>Real estate agency</b></center>'
 	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/agent.jpg"></center>'
 	'You''re currently at the website of the largest real estate agency in the area.'
-	'They have apartments available in the residential district. Renting one would cost you 10000 <b>₽</b> for 30 days.'
+	'They have apartments available in the residential district. Renting one would cost you 15000 <b>₽</b> for 30 days.'
 	''
 	if ArendHouseSL > 0:'You have <B><<ArendHouseSL>> days</B> remaining on the rental of your apartment.'
-	if karta + bankDebtLimit >= 10000 and home_owned[1] ! 1:
+	if karta + bankDebtLimit >= 15000 and home_owned[1] ! 1:
 		act 'Rent an apartment online':
 			cla
-			karta -= 10000
+			karta -= 15000
 			home_owned[1] = 1
 			BuyHous = 2
 			ArendHouseSL += 30
