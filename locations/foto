@@ -827,7 +827,7 @@ if $ARGS[0] = 'practicemodel':
 	gs 'stat'
 	'<center><b><font color="maroon">Photographer</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
-	'	"Hello <<$pcs_firstname>>. We''ve already done a paid shoot with you this week, so we can''t do another one.'
+	'	"Hello <<$pcs_firstname>>. We''ve already done a paid shoot with you this week, so we can''t do another one. '
 	'	But would you like to get some practice in?"'
 	act '"Maybe not today"' :gt 'foto','studio'
 	act '"Yes, please."':
