@@ -122,21 +122,6 @@ if $ARGS[0] = 'default_entry_wear':
 	default_entry = ARGS[1]
 	
 	gs 'clothing_attributes', $defclothingtype[default_entry], defclothingnumber[default_entry]
-	if StoryLine = 1 and SchoolAtestat = 0 and SchoolBlock = 0 and $defclothingtype[default_entry] = 'school' and defclothingnumber[default_entry] = 6:
-		' '
-	elseif dyneval('RESULT = <<$defclothingtype[default_entry]>>[<<defclothingnumber[default_entry]>>]') = 0:
-		$defclothingtype[default_entry] = 'none' & defclothingnumber[default_entry] = 0
-	elseif dyneval('RESULT = <<$defclothingtype[default_entry]>>H[<<defclothingnumber[default_entry]>>]') <= 0 or CloExhibit > pcs_exhibition:
-		$defclothingtype[default_entry] = 'none' & defclothingnumber[default_entry] = 0
-	elseif $defclothingtype[default_entry] ! 'exercise' and $defclothingtype[default_entry] ! 'coat' and CloStyle ! 5:
-		!! if the hipsize is too far from your hipsize
-		dynamic 'RESULT = <<$defclothingtype[default_entry]>>B[<<defclothingnumber[default_entry]>>]'
-		if RESULT < pcs_hips - 8 or RESULT > pcs_hips + 8:
-			$defclothingtype[default_entry] = 'none' & defclothingnumber[default_entry] = 0
-		else
-			gs 'clothing', 'wear', $defclothingtype[default_entry], defclothingnumber[default_entry]
-		end
-	end
 	gs 'clothing', 'wear', $defclothingtype[default_entry], defclothingnumber[default_entry]
 
 	if dyneval('RESULT = <<$defbratype[default_entry]>>_bras[<<defbranumber[default_entry]>>]') = 0: $defbratype[default_entry] = 'none' & defbranumber[default_entry] = 0
@@ -163,9 +148,79 @@ if $ARGS[0] = 'default_entry_wear':
 
 	if dyneval('RESULT = coat[<<defcoat[default_entry]>>]') = 0: defcoat[default_entry] = 0
 	defaultcoat = defcoat[default_entry]
-
-	killvar 'default_entry'
-	gs 'stat'
+	
+	!! default school girl uniform is always allowed to be worn if still in school
+	if StoryLine = 1 and SchoolAtestat = 0 and SchoolBlock = 0 and $defclothingtype[default_entry] = 'school' and defclothingnumber[default_entry] = 6:	
+		cls
+		'Your put on your <<$def_clothing_name[default_entry]>> outfit without any problems.'
+		act 'Return to wardrobe':
+			killvar 'default_entry'
+			gs 'stat'
+			gt 'wardrobe', 'start'
+		end
+	!! do not own this clothing anymore
+	elseif dyneval('RESULT = <<$defclothingtype[default_entry]>>[<<defclothingnumber[default_entry]>>]') = 0:
+		cls
+		'As you go to pull your <<$def_clothing_name[default_entry]>> outfit out of your wardrobe you remember you don''t own that piece of clothing anymore. Maybe you should buy it again? Guess you will have to find something else to wear.'
+		act 'Return to wardrobe':
+			gs 'clothing', 'strip'
+			killvar 'default_entry'
+			gs 'stat'
+			gt 'wardrobe', 'start'
+		end
+	!! strength of clothing is less than or equal to 0
+	elseif dyneval('RESULT = <<$defclothingtype[default_entry]>>H[<<defclothingnumber[default_entry]>>]') <= 0:
+		cls
+		'Your <<$def_clothing_name[default_entry]>> outfit has worn out and can''t be used anymore. Guess you will have to find something else to wear.'
+		act 'Strip out of worn out clothing':
+			gs 'clothing', 'strip'
+			killvar 'default_entry'
+			gs 'stat'
+			gt 'wardrobe', 'start'
+		end
+	!! clothing exhibition is greater than player exhibition
+	elseif CloExhibit > pcs_exhibition:
+		cls
+		'You don''t feel daring enough to wear your <<$def_clothing_name[default_entry]>> outfit. Maybe you will be confident enough in the future? Guess you will have to find something else to wear.'
+		act 'Strip out of revealing clothing':
+			gs 'clothing', 'strip'
+			killvar 'default_entry'
+			gs 'stat'
+			gt 'wardrobe', 'start'
+		end
+	!! not exercise clothing, not coat, and not loose fitting
+	elseif $defclothingtype[default_entry] ! 'exercise' and $defclothingtype[default_entry] ! 'coat' and CloStyle ! 5:
+		!! check for if the hipsize is too far from your hipsize
+		dynamic 'RESULT = <<$defclothingtype[default_entry]>>B[<<defclothingnumber[default_entry]>>]'
+		if RESULT < pcs_hips - 8 or RESULT > pcs_hips + 8:
+			cls
+			'As you put on your <<$def_clothing_name[default_entry]>> outfit you notice it doesn''t fit correctly anymore. It''s ' + iif(RESULT < pcs_hips - 8,'unbearably tight and uncomfortable to wear.','extremely loose and won''t stay in place no matter how hard you try.') + ' You must have ' + iif(RESULT < pcs_hips - 8,'gained','lost') + ' some weight since this was purchased or last tailored. You will have to get this clothing resized before you can wear it again.'
+			act 'Strip out of ill-fitting clothing':
+				gs 'clothing', 'strip'
+				killvar 'default_entry'
+				gs 'stat'
+				gt 'wardrobe', 'start'
+			end
+		!! clothing ok to wear after passing hip check
+		else
+			cls
+			'Your put on your <<$def_clothing_name[default_entry]>> outfit without any problems.'
+			act 'Return to wardrobe':
+				killvar 'default_entry'
+				gs 'stat'
+				gt 'wardrobe', 'start'
+			end
+		end
+	!! clothing ok to wear without needing hip check and passing all other checks
+	else
+		cls
+		'Your put on your <<$def_clothing_name[default_entry]>> outfit without any problems.'
+		act 'Return to wardrobe':
+			killvar 'default_entry'
+			gs 'stat'
+			gt 'wardrobe', 'start'
+		end
+	end
 end
 
 if $ARGS[0] = 'default_set':
