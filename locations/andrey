@@ -395,7 +395,7 @@ if $ARGS[0] = 'fired1':
 					act 'Finish':
 						cla
 						*clr
-						gs 'cum_call', 'mouth', 'Mr. Sobulyagin', 1
+						gs 'cum_call', 'mouth', 'A101', 1
 						'<center><img <<$set_imgh>> src="images\locations\city\citycenter\mall\cats\sex\bj5.jpg"></center>'
 						'He starts grunting louder. "Open your mouth and stick out your tongue." You do as he commands and he takes over jerking his cock. Suddenly he is shooting ropes of his hot cum in your mouth and all over your tongue. After a few moments, his cock stops twitching and spurting cum in your mouth. He lets go of his cock as it starts to go limp. "Now swallow." You do as you''re told and swallow his whole load.'
 						*nl
@@ -474,9 +474,9 @@ if $ARGS[0] = 'fired2':
 						act 'Finish':
 							cla
 							*clr
-							gs 'cum_call', 'mouth', 'Mr. Sobulyagin', 1
-							gs 'cum_call', 'breasts', 'Mr. Sobulyagin', 1
-							gs 'cum_call', 'face', 'Mr. Sobulyagin', 1
+							gs 'cum_call', 'mouth', 'A101', 1
+							gs 'cum_call', 'breasts', 'A101', 1
+							gs 'cum_call', 'face', 'A101', 1
 							'<center><img <<$set_imgh>> src="images\locations\city\citycenter\mall\cats\sex\fired6.jpg"></center>'
 							'He starts grunting louder, finally he pulls his cock out of your ass and you sigh in relief. He takes a step back from you. "Get on your knees and finish me off." You do as he says and turn around, dropping to your knees. You take his dick in your mouth and start sucking it. You try not to think about where it just was, but at least the pain has stopped. Suddenly he pulls his cock out of your mouth and starts shooting ropes of his hot cum all over your face and tits. After a few moments, his cock stops twitching and spurting cum on you. He lets go of his cock as it starts to go limp.'
 							*nl
@@ -559,9 +559,9 @@ if $ARGS[0] = 'rehired':
 						act 'Finish':
 							cla
 							*clr
-							gs 'cum_call', 'mouth', 'Mr. Sobulyagin', 1
-							gs 'cum_call', 'breasts', 'Mr. Sobulyagin', 1
-							gs 'cum_call', 'face', 'Mr. Sobulyagin', 1
+							gs 'cum_call', 'mouth', 'A101', 1
+							gs 'cum_call', 'breasts', 'A101', 1
+							gs 'cum_call', 'face', 'A101', 1
 							'<center><img <<$set_imgh>> src="images\locations\city\citycenter\mall\cats\sex\fired6.jpg"></center>'
 							'He starts grunting louder, finally he pulls his cock out of your ass and you sigh in relief. He takes a step back from you. "Get on your knees and finish me off." You do as he says and turn around, dropping to your knees. You take his dick in your mouth and start sucking it. You try not to think about where it just was, but at least the pain has stopped. Suddenly he pulls his cock out of your mouth and starts shooting ropes of his hot cum all over your face and tits. After a few moments, his cock stops twitching and spurting cum on you. He lets go of his cock as it starts to go limp.'
 							*nl
