@@ -487,30 +487,6 @@ killvar 'stat_extra_msg'
 
 
 !!----------------Extra messages, End--------------------------
-!! double with payment in cikl
-
-!! if home_owned[1] = 1 and ArendHouseSL <= 0:
-!! 	$stat_msg += '<br><font color="red"><b>The rent on your apartment is due today.</b></font>'
-!! 	if money >= 6000 or stolmoney >= 6000 or money + stolmoney >= 6000 or karta + bankDebtLimit >= 6000:
-!! 		$stat_msg += ' Renew with '
-!! 		if money >= 6000:
-!! 			$stat_msg += ' <a href="exec:money -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash</a>'
-!! 		elseif stolmoney >= 6000:
-!! 			$stat_msg += ' <a href="exec:stolmoney -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from drawer</a>'
-!! 		elseif money + stolmoney >= 6000:
-!! 			!both < 6000, so money = money - 6000 + stolmoney
-!! 			$stat_msg += ' <a href="exec:money -= 6000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">cash from purse and drawer</a>'
-!! 		end
-!! 		!from purse, drawer or both
-!! 		if karta >= 6000: 
-!! 			$stat_msg += ' <a href="exec:karta -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account</a>'
-!! 		elseif karta + bankDebtLimit >= 6000: 
-!! 			$stat_msg += ' <a href="exec:karta -= 6000 & home_owned[1] = 1 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account, but you will be overdrawn.</a>'
-!! 		end	
-!! 	else
-!! 		$stat_msg += ' But you can''t afford to pay the rent.'
-!! 	end
-!! end
 
 if opPRE = 0: $stat_msg += '<BR><<$pcs_makeup>> and your hair is <<$pcs_hairbsh>>.' & !$stat_msg += '<BR>'
 
@@ -1134,14 +1110,14 @@ if analplugIN = 1:$stat_msg += '<BR><b><font color="red">You have a butt plug in
 if vibratorin = 1:$stat_msg += '<BR><b><font color="red">You have a vibrator inserted in your vagina.</font></b>'
 !$stat_msg += '<BR>'
 if young_shop_work = 1:
-	if hour = 15 and minut >= 50 and week < 6 and inWorkYoungShop = 0:
+	if hour = 15 and minut <= 5 and week < 6 and inWorkYoungShop = 0:
 		'You are late for work at Pussy-Cats.'
-	elseif hour = 16 and minut > 5 and week < 6 and inWorkYoungShop = 0 and misscheck ! daystart:
+	elseif hour = 15 and week < 6 and inWorkYoungShop = 0 and misscheck ! daystart:
 		misscheck = daystart
 		young_shop_miss += 1
-		$stat_msg += '<BR><b><font color="red">You missed work at Pussy-Cats.</font></b>'
-	elseif hour = 15 and minut >= 30 and week < 6:
-		$stat_msg += '<BR><b><font color="red">By 16:00 you have to be at work in the shop Pussy-Cats.</font></b>'
+		$stat_msg += '<BR><b><font color="red">You missed work.</font></b>'
+	elseif (hour = 14 or hour = 13) and week < 6:
+		$stat_msg += '<BR><b><font color="red">By 15:00 you have to be at work in the shop Pussy-Cats.</font></b>'
 	end
 end
 
