@@ -169,7 +169,9 @@ if kotovLoveQW > 0:
 				'It''s evening, and the boys are getting ready to go to the disco like they do every night. You could call it a night and leave them alone, or tag along.'
 
 				act 'Leave':gt 'gkafe'
-				act 'Go to the disco with the boys':minut += 15 & gt 'gdkin'
+				if week = 5 or week = 6:
+					act 'Go to the disco with the boys':minut += 15 & gt 'gdkin'
+				end
 				exit
 			end
 			act 'Continue':
@@ -198,7 +200,9 @@ if kotovLoveQW > 0:
 		'It''s evening, and the boys are getting ready to go to the disco like they do every night. You could call it a night and leave them alone, or tag along.'
 
 		act 'Leave':gt 'gskver'
-		act 'Go to the disco with the boys':minut += 15 & gt 'gdkin'
+		if week = 5 or week = 6:
+			act 'Go to the disco with the boys':minut += 15 & gt 'gdkin'
+		end
 	end
 else
 	if hour >= 20:
@@ -206,7 +210,9 @@ else
 			'It''s evening, and the boys are getting ready to go to the disco like they do every night. You could call it a night and leave them alone, or tag along.'
 
 			act 'Leave':gt 'gskver'
-			act 'Go to the disco with boys':minut += 15 & gt 'gdkin'
+			if week = 5 or week = 6:
+				act 'Go to the disco with the boys':minut += 15 & gt 'gdkin'
+			end
 		elseif alko >= 3 and alko < 6 and DansOralSlut = 1:
 			'You''re quite drunk, and before going to the disco Dan offers to walk you home.'
 

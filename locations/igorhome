@@ -150,10 +150,16 @@ if $ARGS[0] = 'igorroom':
 		else
 			'<center><img <<$set_imgh>>  src="images/characters/pavlovsk/school/boy/igor/talk.jpg"></center>'
 		end
-		'Igor looks at his watch and asks you "I want to have fun tonight. Let''s go to the disco!"'
-		act 'Agree': & minut += 20 & gt 'gdkin' & !!if they are dating I will add a new version but have not written it yet.
-		act 'Decline and go home': gt 'pavResidential'
-		act 'Decline and chat instead':gt 'igorhome','Chat'
+		if week = 5 or week = 6:
+			'Igor looks at his watch and asks you "I want to have fun tonight. Let''s go to the disco!"'
+			act 'Agree': & minut += 20 & gt 'gdkin' & !!if they are dating I will add a new version but have not written it yet.
+			act 'Decline and go home': gt 'pavResidential'
+			act 'Decline and chat instead':gt 'igorhome','Chat'
+		else
+			'Igor tells you its getting late, you could take the hint and leave or maybe chat just a little longer.'
+			act 'Take the hint and go home': gt 'pavResidential'
+			act 'Chat just a little longer':gt 'igorhome','Chat'
+		end			
 	end
 	act 'Leave Igor''s room': gt 'igorhome','hallway'
 end
