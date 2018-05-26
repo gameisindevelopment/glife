@@ -421,7 +421,7 @@ if $ARGS[0] = 'math':
 				end
 				act 'Give him an attitude':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[1] +=3
 					grupvalue[4] +=3
 					grupvalue[3] -=3
@@ -431,7 +431,7 @@ if $ARGS[0] = 'math':
 					'"Of course. Please continue your super-fascinating lesson. Just keep it a bit up-beat please. If you talk any slower, I might fall asleep!" You answer boldly. The whole class bursts into laughter, and Anatoly has a rough time getting everyone to quiet down. "Miss <<$pcs_lastname>>, do you find this kind of behavior amusing? or are you just seeking attention? Try to answer this question for yourself while to head off to the principal''s office." Anatoly then points to the door.'
 					act 'Don''t leave the classroom':
 						*clr & cla
-						demerits +=5
+						demerit +=5
 						grupvalue[4] +=5
 						grupvalue[3] -=5
 						gs'stat'
@@ -604,7 +604,7 @@ if $ARGS[0] = 'russian':
 			'"Now that I''ve got you attention once again <<$pcs_nickname>>, please pay attention, you don''t want to miss today''s topic, it''s going to be on the exam for sure."'
 			act 'Be a smart ass':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
@@ -614,7 +614,7 @@ if $ARGS[0] = 'russian':
 				'"Now you''ve done it <<$pcs_lastname>>, you probably want a reaction from me, but don''t worry I already have a punishment in mind."'
 				act 'What''s the worst you could do?':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[4] +=5
 					grupvalue[3] -=5
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/bitchflip.jpg"></center>'
@@ -798,7 +798,7 @@ if $ARGS[0] = 'literature':
 			'"I''ve called your name three times now, if you want to sleep you can do it during detention." She points to the door.'
 			act 'Be a smart ass':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
@@ -811,7 +811,7 @@ if $ARGS[0] = 'literature':
 				'Ms. Braakman''s face turns red and her expression darkens, a mixture of rage and embarrassment. "Get out and report to Headmistress Aleksandrina''s office right now!" She barks.'
 				act 'Go to the principal''s office':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[1] +=5
 					grupvalue[4] +=5
 					grupvalue[3] -=5
@@ -1077,7 +1077,7 @@ if $ARGS[0] = 'english':
 				'"I''ve called your name three times now, if you want to sleep you can do it during detention." She points to the door.'
 				act 'Be a smart ass':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[1] +=3
 					grupvalue[4] +=3
 					grupvalue[3] -=3
@@ -1090,7 +1090,7 @@ if $ARGS[0] = 'english':
 					'Ms. Braakman''s face turns red and her expression darkens, a mixture of rage and embarrassment. "Get out and report to Headmistress Aleksandrina''s office right now!" She barks.'
 					act 'Go to the principal''s office':
 						*clr & cla
-						demerits +=5
+						demerit +=5
 						grupvalue[1] +=5
 						grupvalue[4] +=5
 						grupvalue[3] -=5
@@ -1268,7 +1268,7 @@ if $ARGS[0] = 'geography':
 			'Mrs. Sokoloff tries to convince you of the importance of todays lesson, "<<$pcs_nickname>>, please pay attention, this is very important. Today''s topic is going to be on the exam for sure."'
 			act 'Be a smart ass.':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
@@ -1278,7 +1278,7 @@ if $ARGS[0] = 'geography':
 				'"Miss <<$pcs_lastname>>, get out of class! Report to the Principal now!"'
 				act 'Don''t leave the classroom':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[4] +=5
 					grupvalue[3] -=5
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/bitchflip.jpg"></center>'
@@ -1432,7 +1432,7 @@ if $ARGS[0] = 'history':
 			'Mrs. Sokoloff tries to convince you of the importance of todays lesson, "<<$pcs_nickname>>, please pay attention, this is very important. Today''s topic is going to be on the exam for sure."'
 			act 'Be a smart ass.':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
@@ -1442,7 +1442,7 @@ if $ARGS[0] = 'history':
 				'"Miss <<$pcs_lastname>>, get out of class! Report to the Principal now!"'
 				act 'Don''t leave the classroom':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[4] +=5
 					grupvalue[3] -=5
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/bitchflip.jpg"></center>'
@@ -1593,7 +1593,7 @@ if $ARGS[0] = 'biology':
 			'"<<pcs_nickname>>, please pay attention, this is very important. Today''s topic is going to be on the exam for sure."'
 			act 'Be a smart ass':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
@@ -1602,7 +1602,7 @@ if $ARGS[0] = 'biology':
 				'The whole class bursts into loud laughter, Miss Orlov seems a bit stunned by your comment, after a moment to regain her composure she quietly asks you "Miss <<$pcs_lastname>>, please leave class and report to the principal."'
 				act 'Don''t leave the classroom':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[4] +=5
 					grupvalue[3] -=5
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/bitchflip.jpg"></center>'
@@ -1754,7 +1754,7 @@ if $ARGS[0] = 'computer':
 			end
 			act 'Be a smart ass.':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
@@ -1764,7 +1764,7 @@ if $ARGS[0] = 'computer':
 				'"Miss <<$pcs_lastname>>, get out of class! Report to the Principal now!"'
 				act 'Don''t leave the classroom':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[4] +=5
 					grupvalue[3] -=5
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/bathroom/eartwist.jpg"></center>'
@@ -1917,7 +1917,7 @@ if $ARGS[0] = 'science':
 			'"<<pcs_nickname>>, please pay attention, this is very important. Today''s topic is going to be on the exam for sure."'
 			act 'Be a smart ass.':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
@@ -1926,7 +1926,7 @@ if $ARGS[0] = 'science':
 				'The whole class bursts into loud laughter, Miss Orlov seems a bit stunned by your comment, after a moment to regain her composure she quietly asks you "Miss <<$pcs_lastname>>, please leave class and report to the principal."'
 				act 'Don''t leave the classroom':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[4] +=5
 					grupvalue[3] -=5
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/bitchflip.jpg"></center>'
@@ -2068,7 +2068,7 @@ if $ARGS[0] = 'music':
 			'Mr. Vasilyev tries to convince you of the importance of todays lesson, "<<$pcs_nickname>>, please pay attention, this is very important. Today''s topic is going to be on the exam for sure."'
 			act 'Be a smart ass':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
@@ -2078,7 +2078,7 @@ if $ARGS[0] = 'music':
 				'"Miss <<$pcs_lastname>>, get out of class! Report to the Principal now!"'
 				act 'Don''t leave the classroom':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[4] +=5
 					grupvalue[3] -=5
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/bitchflip.jpg"></center>'
@@ -2248,7 +2248,7 @@ if $ARGS[0] = 'art':
 			'Mr. Vasilyev tries to convince you of the importance of todays lesson, "<<$pcs_nickname>>, please pay attention, this is very important. Today''s topic is going to be on the exam for sure."'
 			act 'Be a smart ass.':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
@@ -2258,7 +2258,7 @@ if $ARGS[0] = 'art':
 				'"Miss <<$pcs_lastname>>, get out of class! Report to the Principal now!"'
 				act 'Don''t leave the classroom':
 					*clr & cla
-					demerits +=5
+					demerit +=5
 					grupvalue[4] +=5
 					grupvalue[3] -=5
 					'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/bitchflip.jpg"></center>'
@@ -2404,7 +2404,7 @@ if $ARGS[0] = 'shop':
 			'Mr. Kuznetsov tries to convince you of the importance of todays lesson, "<<$pcs_nickname>>, please pay attention, this is very important. Today''s topic is going to be on the exam for sure."'
 			act 'Be a smart ass':
 				*clr & cla
-				demerits +=5
+				demerit +=5
 				grupvalue[1] +=3
 				grupvalue[4] +=3
 				grupvalue[3] -=3
