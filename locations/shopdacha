@@ -12,8 +12,7 @@ else
 end
 '<center><b><font color="maroon">Ilyich and Biryukov construction</font></b></center>'
 '<center><img <<$set_imgh>> src="images/locations/shared/store/shopdacha.jpg"></center>'
-'In this storefront office you can buy a cottage in a cooperative and upgrade it.'
-'You can also buy land for mansion for 1.5 million and all the many construction projects required to build and upgrade it.'
+'In this storefront office you can upgrade your existing properties, or start a new construction project upon any land you may own.'
 'All payments must be made from you bank account. Current balance - <<karta>> <b>₽</b>.'
 
 act 'Leave': minut += 3 & gt 'torgcentr'
@@ -21,20 +20,82 @@ act 'Leave': minut += 3 & gt 'torgcentr'
 if hour < 8 or hour > 20:
 	'Shop closed.'
 else
-	if karta + bankDebtLimit >= 150000 and home_owned[3] = 0:
-		act 'Buy a cottage (150,000 <b>₽</b>)':
-			cls
-			karta -= 150000
-			home_owned[3] = 1
-			minut += 15
-			etoexhib = 0
-			gs 'stat'
-			'You bought a house with a garden in the dacha cooperative 5km from the city on highway to Pavlovsk.'
+	if karta + bankDebtLimit >= 50000 and home_owned[1] = 2:
+		if rembedr = 0:
+			act 'Renovate city apartment bedroom (50,000 <b>₽</b>)':
+				cla
+				if karta + bankDebtLimit >= 50000:
+					rembedr = 1
+					karta -= 50000
+					'You have upgraded your apartment bedroom'
+				else
+					'Unfortunately, you do not have enough money in your bank account.'
+				end
 
-			act 'Return': gt 'shopdacha'
+				act 'Return':gt 'shopdacha'
+			end
+		end
+
+		if remsitr = 0:
+			act 'Renovate city apartment living room (50,000 <b>₽</b>)':
+				cla
+				if karta + bankDebtLimit >= 50000:
+					remsitr = 1
+					karta -= 50000
+					'You have upgraded your apartment living room'
+				else
+					'Unfortunately, you do not have enough money in your bank account.'
+				end
+
+				act 'Return':gt 'shopdacha'
+			end
+		end
+
+		if remkorr = 0:
+			act 'Renovate city apartment hallway (50,000 <b>₽</b>)':
+				cla
+				if karta + bankDebtLimit >= 50000:
+					remkorr = 1
+					karta -= 50000
+					'You have upgraded your apartment hallway'
+				else
+					'Unfortunately, you do not have enough money in your bank account.'
+				end
+
+				act 'Return':gt 'shopdacha'
+			end
+		end
+
+		if remvanr = 0:
+			act 'Renovate city apartment bathroom (50,000 <b>₽</b>)':
+				cla
+				if karta + bankDebtLimit >= 50000:
+					remvanr = 1
+					karta -= 50000
+					'You have upgraded your apartment bathroom'
+				else
+					'Unfortunately, you do not have enough money in your bank account.'
+				end
+
+				act 'Return':gt 'shopdacha'
+			end
+		end
+
+		if remkuhr = 0:
+			act 'Renovate city apartment kitchen (50,000 <b>₽</b>)':
+				cla
+				if karta + bankDebtLimit >= 50000:
+					remkuhr = 1
+					karta -= 50000
+					'You have upgraded your apartment kitchen'
+				else
+					'Unfortunately, you do not have enough money in your bank account.'
+				end
+
+				act 'Return':gt 'shopdacha'
+			end
 		end
 	end
-
 	if karta + bankDebtLimit >= 200000 and home_owned[3] = 1:
 		act 'Upgrade your cottage (200,000 <b>₽</b>)':
 			cls
@@ -43,19 +104,6 @@ else
 			minut += 15
 			gs 'stat'
 			'You upgraded you dacha in the cooperative.'
-			act 'Return': gt 'shopdacha'
-		end
-	end
-
-	if karta + bankDebtLimit >= 1500000 and home_owned[5] = 0:
-		act 'Buy land for Mansion (1,500,000 <b>₽</b>)':
-			cls
-			karta -= 1500000
-			home_owned[5] = 1
-			minut += 5
-			gs 'stat'
-			'You have bought land for Mansion.'
-
 			act 'Return': gt 'shopdacha'
 		end
 	end
