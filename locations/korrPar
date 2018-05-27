@@ -52,15 +52,15 @@ act '<font color = maroon>Leave the apartment and go to the stairwell</font>':
 	end
 end
 
-
 act '<font color = maroon><b>Leave the apartment and go outside</b></font>':
 	if $clothingworntype ! 'nude':
 		if hour < 4 and motherWorry = 0 and age < 18:
 			'<font color=red>Are you sure? Your mother will worry if you go out at this time.</font>'
 			cla
-			act '<font color=red>Yes, go outside</font>':gt'pavResidential'
+			act '<font color=red>Yes, go outside</font>': minut += 5 & gt'pavResidential'
 			act 'No, stay inside':gt 'korrPar'
 		else
+			minut += 5
 			gt'pavResidential'
 		end
 	else

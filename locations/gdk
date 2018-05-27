@@ -27,6 +27,9 @@ elseif hour >= 20 and hour <= 23 and week >= 5 and week < 7:
 			gt 'gdkin'
 		end
 	end
+elseif hour >= 20 and hour <= 23 and (week < 5 or week = 7):
+	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/community/dk_night.jpg"></center>'
+	'The entrance to the Community Centre is empty.'
 end
 
 if hour >= 14 and hour < 20:act 'Go to the sports section':gt 'gdksport', 'start'
@@ -39,7 +42,7 @@ if nerd_night_game = 1 and nerd_night_game_day = daystart and hour = 20: act 'Go
 
 if hour >= 8:act 'Go to the toilets': gt 'gdktoilet', 'start'
 
-act 'Leave':gt 'pavResidential'
+act 'Leave': minut += 2 & gt 'pavResidential'
 
 gs'family'
 

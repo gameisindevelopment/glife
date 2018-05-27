@@ -3,6 +3,7 @@
 !!From here down they happen before first class
 if $ARGS[0] = 'teacher_greet':
 	!!meet teacher, from 1.2.4
+	'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/26.jpg"></center>'
 	'You walk down the corridor, past countless classrooms. On the next corner, you meet your teacher Anatoly Evgenievich.'
 	act 'Hello':
 		*clr & cla
@@ -98,9 +99,11 @@ if $ARGS[0] = 'teacher_greet':
 			act 'Continue': gt 'gschool_lessons', 'morning'
 		else
 			*clr & cla
+			'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/26.jpg"></center>'
 			'"Good morning, <<$pcs_lastname>>. Why not say Hello? A teacher can''t punish or reward such actions. But still you''ve got this year''s exam. Should behave more kindly." your teacher jokes.'
 			act 'Apologize':
 				*clr & cla
+				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/26.jpg"></center>'
 				'"Oh, Anatoly Evgenievich, I''m sorry, I didn''t see you. Of course, good day to you. Looking forward to our lessons." you say smiling.'
 				npc_rel['A26'] += 1
 
@@ -108,6 +111,7 @@ if $ARGS[0] = 'teacher_greet':
 			end
 			act 'Touch and apologize':
 				*clr & cla
+				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/26.jpg"></center>'
 				'"Oh, Anatoly Evgenievich, I''m sorry, I didn''t see you." You say happily, coming closer and as if by accident, touch his arm.'
 				'He either doesn''t notice the touch or pretends not to notice it.'
 				if hotcat >= 5: npc_rel['A26'] += 1
@@ -116,6 +120,7 @@ if $ARGS[0] = 'teacher_greet':
 			end
 			act 'Ignore the comment':
 				*clr & cla
+				'<center><img <<$set_imgh>> src="images/characters/pavlovsk/school/head/26.jpg"></center>'
 				'You pretend not to hear the teacher''s remark and go on about your business.'
 				pcs_dom += 1
 				npc_rel['A26'] -= 1

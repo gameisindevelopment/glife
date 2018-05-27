@@ -46,7 +46,7 @@ if $ARGS[0] = 'main':
 			gs 'stat'
 			'Everyone from your year is assembled in the classroom. Your teachers have gathered in front of the class, and congratulate all of you on completing high school. As they hand everyone their well-earned diplomas, they wish you luck for the future.'
 
-			act 'Return to town':gt 'pavResidential'
+			act 'Return to town': minut += 1 & gt 'pavResidential'
 
 			act 'Go to the prom party':
 				*clr & cla
