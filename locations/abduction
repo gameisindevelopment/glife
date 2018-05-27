@@ -1002,7 +1002,7 @@ if $ARGS[0] = 'abdSoldSauna':
 	kosmetica = kosmetica_bak
 	lipbalm = lipbalm_bak
 
-	act 'Continue':gt 'saunaroom'
+	act 'Continue':gt 'sauna', 'saunaroom'
 end
 
 if $ARGS[0] = 'abdFailedCustomer':
