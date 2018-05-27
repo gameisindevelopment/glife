@@ -33,7 +33,6 @@ if $ARGS[0] = 'main':
 		act 'Follow Dimka to his home at the New Year party':  minut += 30 & gt 'sny', '3'
 	end
 	
-
 	if hour <= 8 and kanikuli = 6:
 		'Today is graduation day! The school prom is tonight as well.'
 
@@ -625,19 +624,6 @@ if $ARGS[0] = 'change_room':
 
 	act 'Look in the mirror': gt 'mirror', 'start'
 	if pcs_hairbsh = 0: act 'Brush your hair': gt 'mirror', 'brush'
-
-	if (cumloc[6] = 1 or cumloc[7] = 1):
-		act 'Wipe the cum off your clothes (0:10)':
-			*clr & cla
-			cumspclnt = 6
-			gs 'cum_cleanup'
-			minut += 10
-			'<center><img <<$set_imgh>> src="images/pc/body/cum/cumclothes/cumclothes12.jpg"></center>'
-			'You remove traces of cum from your clothes.'
-
-			act 'Leave':gt 'gschool_grounds', 'change_room'
-		end
-	end
 
 	dynamic $tampon
 	dynamic $quickwash

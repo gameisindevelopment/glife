@@ -246,23 +246,9 @@ if $ARGS[0] = 'tou':
 	''
 
 	act 'Leave the toilet':gt 'club', 'inside'
-
-	act 'Look into the mirror': gt 'mirror', 'start'
+	
+	act 'Look in the mirror': gt 'mirror', 'start'
 	if pcs_hairbsh = 0: act 'Brush your hair': gt 'mirror', 'brush'
-
-	if (cumloc[6] = 1 or cumloc[7] = 1):
-		act 'Wipe the cum off your clothes (0:10)':
-			cla
-			*clr
-			cumspclnt = 6
-			gs 'cum_cleanup'
-			minut += 10
-			'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center>'
-			'You use a tissue and a bit of water to remove cum stains in your clothes. '
-
-			act 'Finish':gt 'club', 'tou'
-		end
-	end
 
 	dynamic $tampon
 	dynamic $quickwash

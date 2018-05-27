@@ -28,28 +28,14 @@ if $ARGS[0] = 'main':
 		'<center><img <<$set_imgh>> src="images/locations/shared/bathroom/toilet.jpg"></center>'
 		'The diner has a single unisex restroom. From the dirt and smell, you don''t think this toilet has ever been cleaned before. Ugh.'
 
+		act 'Leave the restroom':gt 'lakecafe', 'main'
+		
 		act 'Look in the mirror': gt 'mirror', 'start'
 		if pcs_hairbsh = 0: act 'Brush your hair': gt 'mirror', 'brush'
-
-		if (cumloc[6] = 1 or cumloc[7] = 1):
-			act 'Wipe the cum off your clothes (0:10)':
-				cla
-				*clr
-				cumspclnt = 6
-				gs 'cum_cleanup'
-				minut += 10
-				'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center>'
-				'You spend ten minutes wiping and rinsing the cum stains out of your clothes. By the end, all that remain of them are some damp spots that should dry up in a few minutes.'
-
-				act 'Continue':gt 'laketoilet', 'main'
-			end
-		end
 
 		dynamic $tampon
 		dynamic $quickwash
 		dynamic $basin
-
-		act 'Leave the restroom':gt 'lakecafe', 'main'
 	end
 end
 

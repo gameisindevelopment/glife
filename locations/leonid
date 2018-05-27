@@ -80,7 +80,7 @@ if $ARGS[0] = 'hall':
 	leoStress = rand (0, 30)
 	leoCoffee = rand (80, 100)
 	leoComfort = rand (0, 30)
-	paperwork  = rand (40, 60)
+	paperwork = rand (40, 60)
 	act 'Get back':gt 'pavCommercialOffices'
 end
 
@@ -132,7 +132,7 @@ end
 
 if $ARGS[0] = 'secretaryGate':
 	if $clothingworntype ! 'office':
-		gt 'leonid',  'toilet'
+		gt 'leonid', 'toilet'
 	end
 
 	if hour	>= 19:
@@ -410,9 +410,9 @@ if $ARGS[0] = 'secretRoom':
 		'In fear you step through the secret door and look around on all the stuff that is prepared for you.'
 		'<<$bName>> closes the door behind you and grabs you by the arm.'
 		slaveEventCount += 1
-        leonidVisit = 0
-        if leonidVisitMissed > 0:leonidVisitMissed -= 1
-        leonidSlaveDay = (daystart + rand(1, 5))
+		leonidVisit = 0
+		if leonidVisitMissed > 0:leonidVisitMissed -= 1
+		leonidSlaveDay = (daystart + rand(1, 5))
 		act 'Continue':gt 'leonid', 'bdsmGate'
 	elseif slaveEventCount > 0 and leonidVisit = 1 and leonidVisitMissed <= 3:
 		leoHorny = rand (30, 100)
@@ -849,30 +849,17 @@ if $ARGS[0] = 'toilet':
 	if $clothingworntype ! 'office':
 		'<b style="color: #FF00000">You are at work, so you need to be dressed as a secretary!</b>'
 	end
+
+	act 'Leave the restroom':gt 'leonid', 'office'
+	
 	act 'Change your clothes':gt 'wardrobe', 'start'
 
 	act 'Look in the mirror': gt 'mirror', 'start'
 	if pcs_hairbsh = 0: act 'Brush your hair': gt 'mirror', 'brush'
 
-	if (cumloc[6] = 1 or cumloc[7] = 1):
-		act 'Wipe the cum off your clothes (0:10)':
-			cla
-			*clr
-			cumspclnt = 6
-			gs 'cum_cleanup'
-			minut += 10
-			'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center>'
-			'You spend ten minutes wiping and rinsing the cum stains out of your clothes. By the end, all that remain of them are some damp spots that should dry up in a few minutes.'
-
-			act 'Continue':gt 'leonid', 'toilet'
-		end
-	end
-
 	dynamic $tampon
 	dynamic $quickwash
 	dynamic $basin
-
-	act 'Leave the restroom':gt 'leonid', 'office'
 end
 
 --- leonid ---------------------------------
