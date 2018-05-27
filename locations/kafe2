@@ -46,8 +46,8 @@ if $ARGS[0] = 'toilet':
 	if pcs_hairbsh = 0: act 'Brush your hair': gt 'mirror', 'brush'
 
 	dynamic $tampon
-	dynamic $basin
 	dynamic $quickwash
+	dynamic $basin
 end
 
 if $ARGS[0] = 'givi':
@@ -188,7 +188,7 @@ if $ARGS[0] = 'ashot':
 		end
 
 		act 'Drink some water (0:05)':gs 'beverage', 'bev_wat'
-		
+
 		act 'Chat with Ashot':
 			cla
 			minut += 30
