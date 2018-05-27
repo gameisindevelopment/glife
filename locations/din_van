@@ -446,10 +446,11 @@ $basin = {
 			cumspclnt = 6
 			gs 'cum_cleanup'
 			minut += 10
+			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center>'
 			'You spend ten minutes wiping and rinsing the cum stains out of your clothes. In the end, all that remains of the stains are some damp spots that should dry up in a few minutes.'
 
-			act 'Continue':gt 'zaprF', 'toilet'
+			act 'Finish':gt $loc, $metka
 		end
 	end
 	
