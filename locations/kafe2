@@ -198,7 +198,7 @@ if $ARGS[0] = 'ashot':
 	'You go into the kitchen where trainee chef Ashot is cooking. Dishwasher <a href="exec:gt ''kafe2'', ''tamdin''">Tamara</a> as always stands near the sink and washes the dishes.'
 
 	if hour < 22:
-		act 'Eat and drink in the kitchen (0:30)':
+		act 'Eat some food (0:30)':
 			gs 'food', 'm_meal'
 		end
 
