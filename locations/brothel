@@ -157,7 +157,13 @@ if $ARGS[0] = 'bar:order':
 	'<h3>Hotel Bar</h3>'
 	'<h5>Ordering a drink</h5>'
 	*nl
-	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorder.jpg"></center>'
+	if alko <= 3:
+		'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barorder.jpg"></center>'
+	elseif alko > 3 and alko < 6:
+		'<center><img <<$set_imgh>> src="images/locations/shared/brothel/bardrunk.jpg"></center>'
+	elseif alko >= 6:
+		'<center><img <<$set_imgh>> src="images/locations/shared/brothel/barwasted.jpg"></center>'
+	end
 	*nl
 	'You signal to the barman that you want something.'
 	'"What would you like miss?"'
