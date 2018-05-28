@@ -555,7 +555,7 @@ if $ARGS[0] = 'Phone_megafon':
 	clr
 	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
 	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
-	pl'<center><font size=6>Bullhorn</font></center>'
+	pl'<center><font size=6>MegaFon</font></center>'
 	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_megafon.png" height="80" width="80"><br></center>'
 	pl'<center><b>The balance in the account:</b>'
 	pl'<center><font size=5><<balans>> ₽.</font></center>'
