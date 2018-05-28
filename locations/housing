@@ -35,8 +35,8 @@ if $ARGS[0] = 'rent':
 		ArendHouseSL_due = 31
 	end
 
-	home_rent[1] = 00000
-	!home_rent[3] = 15000
+	home_rent[1] = 15000
+	!home_rent[3] = 0000
 	home_rent[4] = 10000
 	!home_rent[5] = 00000
 end

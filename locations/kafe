@@ -814,9 +814,6 @@ if $ARGS[0] = 'workPred':
 				end
 			end
 		end
-
-		act 'Drink some water (0:05)':gs 'beverage', 'bev_wat'
-
 	elseif hour >= 22:
 		act 'Finish shift and go home':
 			cla
