@@ -685,7 +685,7 @@ end
 if $ARGS[0] = 'dogmissionarystyle':
 	cla
 	*clr
-	gs 'cum_call', '', 'A191' 1, 0, -1, 60
+	gs 'cum_call', '', 'A191', 1, 0, -1, 60
 	'<center><img <<$set_imgh>> src="images/beast/zoo/zal2.jpg"></center>'
 	'You push yourself up on ti your feet, from this better angle <<$namesob>> easily finds his way into your pussy.'
 	'It doesn''t take for <<$namesob>> to cum inside you.'

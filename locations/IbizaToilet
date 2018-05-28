@@ -27,27 +27,17 @@ if $ARGS[0] = 'tou':
 
 	minut += 5
 	gs 'stat'
+
 	act 'Leave the toilet': gt 'restoreposition'
+	
 	act 'Look into the mirror': gt 'mirror', 'start'
-	act 'Go into booth': gt 'IbizaToilet', 'booth'
 	if pcs_hairbsh = 0: act 'Brush your hair': gt 'mirror', 'brush'
 
-	if (cumloc[6] = 1 or cumloc[7] = 1):
-		act 'Wipe the cum off your clothes (0:10)':
-			cla
-			*clr
-			cumspclnt = 6
-			gs 'cum_cleanup'
-			minut += 10
-			'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center><br>'
-			'You use a tissue and a bit of water to remove cum stains in your clothes. '
-
-			act 'Finish': gt 'restoreposition'
-		end
-	end
+	act 'Go into booth': gt 'IbizaToilet', 'booth'
+	
 	dynamic $tampon
+	dynamic $basin
 	dynamic $quickwash
-!!	dynamic $basin
 end
 
 

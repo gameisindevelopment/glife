@@ -591,7 +591,7 @@ if $ARGS[0] = 'mari_chat':
 			'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading3.jpg"></center>'
 			'	"Sex?? You want to ask me for advice on sex???" she says, seemingly surprised.'
 			'	"Yeah, I just wanted to ask you about it since you always have such good advice about everything."'
-			act '. . .':
+			act 'Continue':
 				*clr & cla
 				'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading5.jpg"></center>'
 				'	"Well... That''s... I..." Mari is blushing heavily, her face turning dramatically red. You think this is the first time you''ve ever seen her embarrassed about something. "I might not be the best person to ask <<$pcs_nickname>>..."'
@@ -600,7 +600,7 @@ if $ARGS[0] = 'mari_chat':
 					'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading4.jpg"></center>'
 					'	The realization dawns on you slowly as her face grows more and more red. "Wait... don''t tell me you''ve..."'
 					'	"Never had sex?" she says shyly. "No... I haven''t..."'
-					act '. . .':
+					act 'Continue':
 						*clr & cla
 						'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading5.jpg"></center>'
 						'	Your mouth is agape as she wriggles in embarrassment. She doesn''t seem upset by any means, she''s still clearly smiling. It kind of reminds you of when you were younger and when girls asked each other if they had ever kissed a boy.'
@@ -624,7 +624,7 @@ if $ARGS[0] = 'mari_chat':
 									'	"Are you bi Mari?" you say, breaking her from her stupor.'
 									'	She looks at you a little shocked. "What? No! I-... I like boys! Why would you ask... that...?" she says trailing off at the end.'
 									'	"Oh, sorry. I didn''t mean to offend you. It''s just that I wasn''t sure and all, you never said ''he'' once while you were talking. I wasn''t sure if you went both ways."'
-									act '. . .':
+									act 'Continue':
 										*clr & cla
 										'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading19.jpg"></center>'
 										'	She looks a little confused and picks up her book again.'
@@ -935,7 +935,7 @@ if $ARGS[0] = 'anastasia6':
 	'	One of the men grins and pulls hard on her nipples, eliciting a sound from Anastasia that leaves you undecided on whether it was pain or pleasure.'
 	'	"You''re such a fucking slut Anastasia. I bet you''ll do anything for money. What would happen to you if all your fans saw you like this right now?"'
 	'	Unfazed by his insults she retorts without hesitation, "Then I''d stand to make a lot more money off of dirty old men like you!"'
-	act '. . .':
+	act 'Continue':
 		*clr & cla
 		'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/sex/1.jpg"></center>'
 		'	You''re admittedly impressed by Anastasia''s ability to remain in control of the situation despite the fact that she is literally being fucked in the ass.'
@@ -1047,7 +1047,7 @@ if $ARGS[0] = 'anastasia_chat':
 		act 'Tell her you saw her having sex in the empty set':
 			cla
 			'	"Oh you saw that?" She barely even reacts to what you said. She doesn''t appear to be surprised or embarrassed at all.'
-			act '. . .':
+			act 'Continue':
 				*clr & cla
 				'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/2.jpg"></center>'
 				'	"Just one of the perks of being the top model in Russia." She pauses for a moment to run her hands through her hair, almost like she''s stretching...'
@@ -1169,7 +1169,7 @@ if $ARGS[0] = 'anastasiasex':
 		'	Embarrassed that you even considered asking her, you blush fiercely and mumble, "I wanted to know if you had any suggestions for having sex with more than one boy..."'
 		'	"Do you mean only two? Or did you mean three to five?" she says glibly. "I guess it doesn''t matter very much. Like I told you before, this position is exceptionally versatile," she says as she gets on a nearby sofa and points her ass towards you.'
 		'	"The beauty of this position is that it can be used for all situations! Whether you''re sucking and fucking or doing some double penetration or sucking while being doubly penetrated or even taking on five boys at once!" she says while moving her hands to jerk off two imaginary cocks, "this position will cover it all."'
-		act '. . .':
+		act 'Continue':
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/14.jpg"></center>'
 			'	"It''s also the most comfortable one," she says while turning over and spreading her legs. You''re starting to get even more embarrassed. This explanation is taking longer than you thought and several people have passed by while Anastasia continues to talk about the intricacies of being gangbanged at an educational volume. You''re once again reminded of a mother, loudly talking about her daughter''s embarrassing hobbies so everyone can hear. You''re legitimately worried that people around the studio will think you''re a slut.'
@@ -1225,11 +1225,11 @@ if $ARGS[0] = 'krystal1':
 	'<center><img src="images/locations/city/citycenter/photo/foto.jpg"></center>'
 	'	Walking by one of the sets you hear the photographer exclaim, "Yeah, that''s exactly what I was looking for. It''s always a pleasure working with you Katherine. You always seem to outdo yourself with every shoot."'
 	'	By hearing that you''re too excited and can''t miss the opportunity to find out what the fuss is about.'
-	act '. . .':
+	act 'Continue':
 		*clr & cla
 		'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/meeting/1.jpg"></center>'
 		'	As you peek in you see a girl posing in several exposing poses. You are spellbound by how flexible she is and you don''t even realize that you''re now standing in the open with your mouth open.'
-		act '. . .':
+		act 'Continue':
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/meeting/2.jpg"></center>'
 			'	Katherine looking teasingly your way says, "Looks like we have a little voyeur here."'
@@ -1253,7 +1253,7 @@ if $ARGS[0] = 'krystal1':
 						'	"Hmm? Oh yeah. I work a lot of places, use a lot of aliases, but you can call me Krystal. That''s my real name."'
 						'	You hear the photographer yell out that the break is over and he wants Katherine, er- Krystal back on the set.'
 						'	"Alright, gotta go babe. Hope to see you later!" she says going back to set.'
-						act '. . .':
+						act 'Continue':
 							*clr & cla
 							'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/meeting/6.jpg"></center>'
 							'	You say your farewells and watch her work for a few more mintues. If nothing else, she certainly has no shame.'
@@ -1299,7 +1299,7 @@ if $ARGS[0] = 'krystal2':
 					'	"Oh yeah. That good fucking I was talking about? I just came from the porn studio. It was gangbang! My favorite kind of scene because I don''t have to choose one way to get fucked. Gangbangs are <i>soooooo good...</i>" she closes her eyes and starts to zone out a bit.'
 					'	You stand there awkwardly, unsure of what to say.'
 					'	"That''s... good for you...? I guess...?" you finally manage.'
-					act '. . .':
+					act 'Continue':
 						*clr & cla
 						'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/meeting2/5.jpg"></center>'
 						'	"It really is! My boyfriend does a lot of scenes with me. He''s a porn star too. I love the idea that all over the world, people are watching us make love. Cumming on and in each other, fucking each other like animals, swallowing him whole... oh shit- I''m getting wet..."'
@@ -1327,7 +1327,7 @@ if $ARGS[0] = 'krystal3':
 		'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/meeting3/2.jpg"></center>'
 		'	"Hey Krys-"'
 		'	You stop suddenly as the guy starts to reachs up her skirt and down her dress.'
-		act '. . .':
+		act 'Continue':
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/meeting3/3.jpg"></center>'
 			'	As he pulls down her strap and bares one of her breasts, Krystal looks up and notices you.'

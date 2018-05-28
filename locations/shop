@@ -28,7 +28,7 @@ if $shoplocation = 'main':
 	end
 
 	'In the hall stands an <a href="exec:$shoplocation = ''ATM'' & gt ''shop'', ''move''">ATM</a>, from which you can withdraw money from your bank account.'
-	'There is a branch of communication giants <a href="exec:$shoplocation = ''megafon'' & gt ''shop'', ''move''">Bullhorn</a>.'
+	'There is a branch of communication giants <a href="exec:$shoplocation = ''megafon'' & gt ''shop'', ''move''">MegaFon</a>.'
 	'On the other side is on the wall <a href="exec: gs ''noticeboard'',''start''">Public notice board</a>, where you can check various private and official advertisement.'
 	'<br>Most of the space in the supermarket is taken up by the <a href="exec:$shoplocation = ''grocery'' & gt ''shop'', ''move''">grocery department</a>, but the store has many smaller departments as well. <a href="exec:$shoplocation=''cosmetics'' & gt ''shop'', ''move''">Cosmetics</a>, <a href="exec:$shoplocation = ''hardware'' & gt ''shop'', ''move''">hardware</a>, <a href="exec:$shoplocation = ''clothing'' & gt ''shop'', ''move''">clothing</a> and the department of <a href="exec:$shoplocation = ''tech'' & gt ''shop'', ''move''">household appliances</a>. Not far from the entrance is a <a href="exec:$shoplocation = ''icecream'' & gt ''shop'', ''move''">counter selling ice cream</a>.'
 	clr
@@ -632,7 +632,7 @@ if $shoplocation = 'megafon':
 	minut+=3
 	gs'stat'
 	i = 0
-	'<center><b><font color = maroon>Salon connection Megaphone</font></B></center>'
+	'<center><b><font color = maroon>MegaFon shop</font></B></center>'
 	'<center><img src="images/system/phone/megafon2.jpg" ></center>'
 
 	*pl '<center><table align="center">'
@@ -668,7 +668,7 @@ if $shoplocation = 'megafon':
 	'</table></center>'
 
 
-	act 'Exit Department':gt'shop','start'
+	act 'Return to the Supermarket':gt'shop','start'
 
 	if money > 0:
 		act 'Put the money on the phone':

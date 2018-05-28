@@ -619,11 +619,12 @@ if $ARGS[0] = 'womens':
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/community/bathroom/womens/bathroom_women.jpg"></center>'
 	'You walk in to the women''s restroom. You see some sinks and <a href="exec:gt ''mirror'', ''start''">mirrors</a>. You notice the last stall has its door wide open.'
 
-	dynamic $basin
-	dynamic $quickwash
-
-	act 'Go to the last stall': gt'gdktoilet', 'emptystall'
 	act 'Leave': gt'gdktoilet', 'start'
+	act 'Go to the last stall': gt'gdktoilet', 'emptystall'
+	
+	dynamic $tampon
+	dynamic $quickwash
+	dynamic $basin		
 end
 
 if $ARGS[0] = 'emptystall':
