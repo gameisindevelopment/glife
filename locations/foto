@@ -708,7 +708,7 @@ if $ARGS[0] = 'krystalshower':
 				*nl
 				'	Her boyfriend pushes her against the wall and pulls her leg up to get deep inside her. Krystal''s moans and the sound of cock slamming into her pussy are too much for you and you can''t stop yourself from placing the shower head between your legs, massaging your pussy with powerful jets of warm water and fingers.'
 				'	Your voices start to sync together, echoing out of the stalls in perfect time with each other.'
-				act '. . .':
+				act 'Continue':
 					cla & *clr
 					stat['mast'] += 1
 					if pcs_exhibition < 50:

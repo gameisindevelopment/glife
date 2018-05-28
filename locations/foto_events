@@ -11,9 +11,9 @@ if $ARGS[0] = 'fame':
 	if mdlng_fame_event = 2:gt'foto_events','pool1'
 	if mdlng_fame_event = 3 and pcs_agil < 40:mdlng_fame_event = rand(1,2)
 	if mdlng_fame_event = 3 and pcs_agil >= 40:gt'foto_events','tennis'
-	
-	
-	
+
+
+
 end
 
 if $ARGS[0] = 'skill':
@@ -27,7 +27,7 @@ if $ARGS[0] = 'skill':
 	if mdlng_skill_event = 3:gt'foto_events','pool2'
 	if mdlng_skill_event = 4:gt'foto_events','runway2'
 	if mdlng_skill_event = 5:gt'foto_events','wet'
-	
+
 
 end
 
@@ -204,7 +204,7 @@ if $ARGS[0] = 'fine_art':
 										act'"AHH!!"':gt'foto_events','fine_art2'
 									end
 								end
-										
+
 								act'Resign yourself to your fate':
 									fine_art_deal = 2
 									cla & *clr
@@ -343,7 +343,7 @@ if $ARGS[0] = 'fine_art2':
 		end
 	end
 end
-		
+
 if $ARGS[0] = 'modern_art':
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -391,7 +391,7 @@ if $ARGS[0] = 'modern_art':
 		end
 	end
 end
-	
+
 if $ARGS[0] = 'aphrodite_advert':
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -427,7 +427,7 @@ if $ARGS[0] = 'aphrodite_advert':
 		end
 	end
 end
-	
+
 if $ARGS[0] = 'independent_art':
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -474,7 +474,7 @@ end
 !!		cla
 !!		*nl
 !!		specialjob6 = 0
-!!		
+!!
 !!end
 
 !!if $ARGS[0] = 'designer_wedding':
@@ -487,7 +487,7 @@ end
 !!		cla
 !!		*nl
 !!		specialjob7 = 0
-!!		
+!!
 !!end
 
 !!------------------------------------------------------------------------ Fame events ------------------------------------------------------------------------
@@ -516,15 +516,15 @@ if $ARGS[0] = 'topless1':
 					'	"That''s a shame. Well, maybe some other time then. I''ll tell the producer you said no."'
 					act'Back to the studio':gt'foto','studio'
 				end
-				
+
 				act'"Yeah! Let''s do it!"':
 					first_fame_event = 2
 					*clr & cla
 					'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
 					'	"Yeah! Let''s do it!" you say excitedly.'
 					'	"Great! Do your makeup and put your clothes back on, we''ll leave as soon as you''re ready.'
-					act'. . .':gt'foto_events','topless1.1'
-				end		
+					act'Continue':gt'foto_events','topless1.1'
+				end
 			else
 				'	"What kind of offer?"'
 				'	We''ve been getting a lot of positive feedback from subscribers about your work so a producer asked us to put out a special issue that features exclusively you. We wanted to do something special so the plan is to do it outside the studio in a place with more natural light. It''ll just be a topless shoot and will take a bit longer than usual to get there and set up, but we''ll pay you for it in addition to your normal once a week contract. What do you say? Are you in?"'
@@ -535,14 +535,14 @@ if $ARGS[0] = 'topless1':
 					'	"That''s a shame. Well, maybe some other time then. I''ll tell the producer you said no."'
 					act'Back to the studio':gt'foto','studio'
 				end
-				
+
 				act'"Yeah! Let''s do it!"':
 					*clr & cla
 					first_fame_event = 2
 					'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
 					'	"Yeah! Let''s do it!" you say excitedly.'
 					'	"Great! Do your makeup and put your clothes back on, we''ll leave as soon as you''re ready.'
-					act'. . .':gt'foto_events','topless1.1'
+					act'Continue':gt'foto_events','topless1.1'
 				end
 			end
 		end
@@ -559,31 +559,31 @@ if $ARGS[0] = 'topless1.1':
 	gs 'clothing', 'wear_last_worn'
 	'<center><video autoplay loop src="images/locations/city/citycenter/photo/dress.mp4"></video></center>'
 	'	You run to your makeup station and get your makeup straighted out before running back to the dressing room and throwing your clothes on.'
-	act'. . .':
+	act'Continue':
 		*clr & cla
 		'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
 		minut += 60
 		'	You hop in the van they have prepared and drive to a house with large windows. You get in the clothes they want you to and begin the photo shoot.'
-		act'. . .':
+		act'Continue':
 			*clr & cla
 			gs 'clothing', 'strip'
 			gs 'underwear', 'remove'
 			gs 'stat'
 			'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless1.mp4"></video></center>'
 			'	They have you start in an oversized hoodie, teasing the camera with your breasts until you finally pull it all the way off and bare your shoulders.'
-			act'. . .':
+			act'Continue':
 				*clr & cla
 				'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless2.mp4"></video></center>'
 				'	The photographer has you play with some of the pillows on the furniture and then in a moment of spontaneous glee you drop kick it across the room.'
-				act'. . .':
+				act'Continue':
 					*clr & cla
 					'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless3.mp4"></video></center>'
 					'	Afterwards, you drop back down on the sofa, basking in the warmth of the sun.'
-					act'. . .':
+					act'Continue':
 						*clr & cla
 						'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless4.mp4"></video></center>'
 						'	To end the shoot, you wiggle around on your back, letting gravity do the work as your breasts jiggle enticingly.'
-						act'. . .':
+						act'Continue':
 							*clr & cla
 							'<center><video autoplay loop src="images/locations/city/citycenter/photo/fametopless5.mp4"></video></center>'
 							minut += 120
@@ -648,7 +648,7 @@ if $ARGS[0] = 'pool1':
 					act'Back to the studio':gt'foto','studio'
 				end
 			end
-			
+
 			act'"Sorry, I had other plans"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -656,13 +656,13 @@ if $ARGS[0] = 'pool1':
 				'	"Okay, I understand. Maybe next time."'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"I''d be happy to help"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
 				'	"I''d be happy to feature in the special issue."'
 				'	"Okay, great! I''ll be going ahead to set up but when you''re ready you can get in the shuttle that''s taking the other girls. I suspect when you get there we''ll start shooting immediately so put your makeup on now."'
-				act'. . .':
+				act'Continue':
 					*clr & cla
 					'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/mirrors.jpg"></center>'
 					pcs_hairbsh = 1
@@ -670,7 +670,7 @@ if $ARGS[0] = 'pool1':
 					pcs_lipbalm += 8
 					'	You go over to your station and touch up your makeup, make sure it''s perfect. You see a few of the other girls who are participating in the shoot doing the same. Soon, everyone is ready and you all pile into a shuttle and drive to the shooting location.'
 					'	As promised, as soon as you all arrive, they''re ready to start.'
-					act'. . .':
+					act'Continue':
 						*clr & cla
 						minut += 180
 						modelpayfin = 3000 + (modelpay * 2) + (50*rand(0,7))
@@ -683,7 +683,7 @@ if $ARGS[0] = 'pool1':
 						pcs_mood += 5
 						'<center><video autoplay loop src="images/locations/city/citycenter/photo/fame_pool.mp4"></video></center>'
 						'	You spend various portions of the next few hours in and around the pool. Sometimes by yourself, sometimes with the other girls in the background. Eventually your portion of the shoot is over and you spend the rest of the time lazing on a chaise lounge while the other girls finish up. It''s so comfortable, you couldn''t care less when the photographers decide to snap a few more pictures of you and your invitingly exposed ass.'
-						act'. . .':
+						act'Continue':
 							*clr & cla
 							money += modelpayfin
 							modelfotomoney += modelpayfin
@@ -719,7 +719,7 @@ if $ARGS[0] = 'tennis':
 			if city_modelling < 100:'	"What would I be doing? What sport?"'
 			if city_modelling < 100:'	"Tennis. We''re doing a bit of video for this shoot and you''d be doing tennis swings in slow motion. The thing is, we really do want someone who looks like they know what they''re doing, so that''s why we''d like to have you over someone else. Think you''re up for it? I think it would really increase your exposure and your profile."'
 			if city_modelling >= 100:'	"You like tennis right? Some other magazines were talking about how much you liked the sport so we thought it''d be good put out some special material featuring you doing some tennis swings. We''re talking photography and video here. We think it''d be good publicity for you. What do you think? Want to do it?"'
-			
+
 			act'"I''m not actually that into tennis..."':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -728,7 +728,7 @@ if $ARGS[0] = 'tennis':
 				'	"Yeah. Maybe something else," you say as you walk into the main part of the studio with him.'
 				act'Back to the studio':gt'foto','studio'
 			end
-			
+
 			act'"Not today"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -737,14 +737,14 @@ if $ARGS[0] = 'tennis':
 				'	He seems really disappointed. You honestly feel kind of bad about it.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Sure, that sounds like fun"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
 				'	"Sure, that sounds like fun!"'
 				'	"Great!" he says. "If you go to your makeup station, we left you the stuff you need for the shoot. Meet at the white screen?"'
 				'	"Okay! See you there!"'
-				act'. . .':
+				act'Continue':
 					*clr & cla
 					'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/mirrors.jpg"></center>'
 					pcs_hairbsh = 1
@@ -753,13 +753,13 @@ if $ARGS[0] = 'tennis':
 					'	You go over to your station and see what they left for you. You see sneakers and a skirt, a visor and a sweat band, and a racket. There is a noticable lack of top or underwear. They didn''t tell you this was going to be a topless shoot, but you guess you shouldn''t be that surprised.'
 					'	You pull up the skirt and put on your makeup before heading over to the set.'
 					'	You do some practice swings while they''re setting up a high speed camera to capture you in slow motion. Soon enough, they''re ready to begin.'
-					act'. . .':
+					act'Continue':
 						*clr & cla
 						'<center><video autoplay loop src="images/locations/city/citycenter/photo/fame_tennis.mp4"></video></center>'
 						'	You give it your all and put in some vicious swings while one camera records and the other rapidly clicks.'
 						'	As you make your strokes, you feel your fluid and free-moving breasts follow through with them, reminding you why you usually wear a sports bra for this kind of thing.'
 						'	<i>And why they didn''t give me one for this shoot...</i> you think to yourself.'
-						act'. . .':
+						act'Continue':
 							*clr & cla
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/foto.jpg"></center>'
 							minut += 120
@@ -780,7 +780,7 @@ if $ARGS[0] = 'tennis':
 		end
 	end
 end
-			
+
 !!------------------------------------------------------------------------ Skill Events ------------------------------------------------------------------------
 if $ARGS[0] = 'topless2':
 	*clr & cla
@@ -804,7 +804,7 @@ if $ARGS[0] = 'topless2':
 				'	You wave goodbye as he goes off to find another girl.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Sure, why not?"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -824,7 +824,7 @@ if $ARGS[0] = 'topless2':
 						 minut += 120
 						'<center><video autoplay loop src="images/locations/city/citycenter/photo/skill_topless.mp4"></video></center>'
 						'	You spend two hours walking around, posing, and generally looking sexy for the camera on the sunny penthouse pool balcony.'
-						act'. . .':
+						act'Continue':
 							*clr & cla
 							minut += 30
 							modelpayfin = 2000 + (modelpay * 2) + (35*rand(0,5))
@@ -846,7 +846,7 @@ if $ARGS[0] = 'topless2':
 				end
 			end
 		end
-	end	
+	end
 end
 
 if $ARGS[0] = 'beach2':
@@ -870,7 +870,7 @@ if $ARGS[0] = 'beach2':
 				'	You wave goodbye as he goes off to find another girl.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Sure, sounds fun!"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -887,7 +887,7 @@ if $ARGS[0] = 'beach2':
 					gs 'clothing', 'wear_last_worn'
 					'<center><img <<$set_imgh>> src="images/locations/city/residential/lake/lake2.jpg"></center>'
 					'	You do the works at your makeup station throw your clothes on and jump in the car which immediately speeds off to the lake.'
-					act'. . .':
+					act'Continue':
 						cla
 						minut += 30
 						gs 'clothing', 'strip'
@@ -899,7 +899,7 @@ if $ARGS[0] = 'beach2':
 							'<center><video autoplay loop src="images/locations/city/citycenter/photo/skill_beach.mp4"></video></center>'
 							'	You have a great time spending the next three hours posing and playing in the water with your breasts exposed. There''s one moment when a particularly big wave almost knocks your bottoms off and you end up mooning the crew for a couple seconds.'
 							'	As the sun is setting, the shoot is finally finished and you all get ready to pack up and leave.'
-							act'. . .':
+							act'Continue':
 								*clr & cla
 								minut += 60
 								modelpayfin = 2500 + (modelpay * 2) + (50*rand(0,7))
@@ -946,7 +946,7 @@ if $ARGS[0] = 'pool2':
 				'	You point him in the direction of the last place you saw her.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Sure"':
 				*clr & cla
 				pcs_hairbsh = 1
@@ -961,12 +961,12 @@ if $ARGS[0] = 'pool2':
 					*clr & cla
 					'<center><video autoplay loop src="images/locations/city/citycenter/photo/skill_pool.mp4"></video></center>'
 					'	You spend two hours in and around the pool, dealing with and laughing about the struggles of water physics.'
-					act'. . .':
+					act'Continue':
 						*clr & cla
 						minut += 30
 						modelpayfin = 2500 + (modelpay * 2) + (50*rand(0,7))
 						money += modelpayfin
-						modelfotomoney += modelpayfin						
+						modelfotomoney += modelpayfin
 						city_modelling += 15
 						mdlng_exp += rand(8,10)
 						modelfoto_topless += 1
@@ -981,7 +981,7 @@ if $ARGS[0] = 'pool2':
 					end
 				end
 			end
-		end	
+		end
 	end
 end
 
@@ -1009,7 +1009,7 @@ if $ARGS[0] = 'runway2':
 				'	"Of course darling! What do you need?" As they frantically chatter away, you leave them be and go back to the main studio.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"I''m sorry, I can''t be out that late"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -1018,18 +1018,18 @@ if $ARGS[0] = 'runway2':
 				'	"Of course darling! What do you need?" As they frantically chatter away, you leave them be and go back to the main studio.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Yes! Of course!"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
 				'	"Yes of course I can be there! If the studio need me to be there, I''m there."'
 				'	<i>The money doesn''t hurt either...</i> you think to yourself.'
 				'	The photographer heaves a sigh of relief and says, "Great! Okay, stick around, I''m going to see who else is around for me to round up, okay?" With that, he rushes off and you find a place to hang out until it all starts.'
-				act'. . .':
+				act'Continue':
 					*clr & cla
 					'<center><video autoplay loop src="images/locations/city/citycenter/photo/runway_waiting.mp4"></video></center>'
 					'Eventually the photographer succeeds in rounding up as many models including one really new girl who looks like it might have been her first day here when the photographer found her. You''re all sat down on a line of chairs and told to wait for the company to do your makeup and wardrobe.'
-					act'. . .':
+					act'Continue':
 						*clr & cla
 						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/mirrors.jpg"></center>'
 						pcs_hairbsh = 1
@@ -1038,7 +1038,7 @@ if $ARGS[0] = 'runway2':
 						hour = 19
 						'	The runway crew shows up and immediately moves you to the makeup station to get your hair and everything done. They really shovel it on for this. A bit different to the subtle makeup you normally put on for modelling.'
 						'	They put you into the clothes that they''ve decided you''re going to be modelling and you wait for the show to begin.'
-						act'. . .':
+						act'Continue':
 							hour = 20
 							modelpayfin = 6000 + (modelpay * 3) + (50*rand(0,7))
 							city_modelling += 30
@@ -1049,7 +1049,7 @@ if $ARGS[0] = 'runway2':
 							'<center><video autoplay loop src="images/locations/city/citycenter/photo/skill_runway.mp4"></video></center>'
 							'	As soon as they send you down the runway you realize something''s gone wrong. The loose cleavage of the dress you''re wearing is too loose. With the kind of purposeful steps you''re taking and your breasts jiggling underneath, the fabric falls to the sides and your breasts are left completely exposed. You try your best to recover but the dress is just too loose and skimpy and no matter what you do your breasts end up coming loose.'
 							'	With nothing left to it and not wanting to make a big deal out of it and ruin the show, you put on your best model smile and just get through the rest of your walk.'
-							act'. . .':
+							act'Continue':
 								*clr & cla
 								hour = 22
 								money += modelpayfin
@@ -1067,7 +1067,7 @@ if $ARGS[0] = 'runway2':
 					end
 				end
 			end
-		end	
+		end
 	end
 end
 
@@ -1097,13 +1097,13 @@ if $ARGS[0] = 'wet':
 					'	"Yeah..." he sighs. "That''s what I thought you''d say. Dammit! Why won''t any of the girls agree to this anymore?!"'
 					act'Back to the studio':gt'foto','studio'
 				end
-					
+
 				act'"Sure! Why not?"':
 					*clr & cla
 					'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
 					'	"Sure! Why not? I don''t mind getting a little wet."'
 					'	"Really?" he pipes up. "Wow! I didn''t think you''d actually say yes. Alright! Let''s do it then!"'
-					act'. . .':
+					act'Continue':
 						*clr & cla
 						minut += 120
 						pcs_hairbsh = 1
@@ -1112,7 +1112,7 @@ if $ARGS[0] = 'wet':
 						'<center><video autoplay loop src="images/locations/city/citycenter/photo/wet.mp4"></video></center>'
 						'	You put on your makeup and follow him over to the water proof set in the studio and spend the next two hours shrieking and giggling as you get blasted with water while photographed nude.'
 						'	He wasn''t kidding! That water is cold!'
-						act'. . .':
+						act'Continue':
 							cla
 							modelpayfin = 3000 + (modelpay * 2) + (50*rand(0,7))
 							modelfoto_nip += 1
@@ -1128,9 +1128,9 @@ if $ARGS[0] = 'wet':
 							act'Back to the studio':gt'foto','studio'
 						end
 					end
-				end	
-			end		
-		end			
+				end
+			end
+		end
 	end
 end
 
