@@ -11,7 +11,7 @@ if $ARGS[0] = 'morning':
 	lernSkill += 1
 	lernHome += 1
 	if schoolSorev = 1: schoolSorev = 0
-	
+
 	gs 'gschool_socialchg', 'test'
 
 	if detention_set = 1 and week = 1:
@@ -1711,7 +1711,7 @@ if $ARGS[0] = 'computer':
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/school/classroom/classcomputer.jpg"></center>'
 	'You go to your computer class and find a seat at one of the computer stations. Before long all of your fellow students file in and takes their seats as well. Once the bell rings Mr. Ivanov takes roll call, you say here when your name is called. With that done, he gets up and starts walking around the room explaining todays lessons. Occasionally stopping to look at the screen of varies students to make sure they are doing it right.'
 	*nl
-	'If he has to correct one of the nerds he will take his time and quietly explain it to them, giving them lots of encouragement. For everyone else he loudly proclaims what you did wrong, drawing attention to how easy this is. He makes sure the whole class knows about their mistake and he does it in such a condescending manner, like he is trying to prove to everyone how much smarter he is than you are, or maybe he just wants the others students to make fun of them. With Mr. Ivanov it is hard to tell. He doesn''t to approve of anyone but the nerds and harshly grades everyone else.'
+	'If he has to correct one of the nerds he will take his time and quietly explain it to them, giving them lots of encouragement. For everyone else he loudly proclaims what you did wrong, drawing attention to how easy this is. He makes sure the whole class knows about their mistake and he does it in such a condescending manner, like he is trying to prove to everyone how much smarter he is than you are, or maybe he just wants the others students to make fun of them. With Mr. Ivanov it is hard to tell. He doesn''t seem to approve of anyone but the nerds and harshly grades everyone else.'
 	act 'Listen attentively to Mr. Ivanov':
 		*clr & cla
 		compskl_exp += rand(1,2)
