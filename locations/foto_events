@@ -204,7 +204,7 @@ if $ARGS[0] = 'fine_art':
 										act'"AHH!!"':gt'foto_events','fine_art2'
 									end
 								end
-										
+
 								act'Resign yourself to your fate':
 									fine_art_deal = 2
 									cla & *clr
@@ -343,7 +343,7 @@ if $ARGS[0] = 'fine_art2':
 		end
 	end
 end
-		
+
 if $ARGS[0] = 'modern_art':
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -391,7 +391,7 @@ if $ARGS[0] = 'modern_art':
 		end
 	end
 end
-	
+
 if $ARGS[0] = 'aphrodite_advert':
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -427,7 +427,7 @@ if $ARGS[0] = 'aphrodite_advert':
 		end
 	end
 end
-	
+
 if $ARGS[0] = 'independent_art':
 	cla & *clr
 	'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -676,7 +676,7 @@ if $ARGS[0] = 'topless1':
 					'	"That''s a shame. Well, maybe some other time then. I''ll tell the producer you said no."'
 					act'Back to the studio':gt'foto','studio'
 				end
-				
+
 				act'"Yeah! Let''s do it!"':
 					first_fame_event = 2
 					*clr & cla
@@ -695,7 +695,7 @@ if $ARGS[0] = 'topless1':
 					'	"That''s a shame. Well, maybe some other time then. I''ll tell the producer you said no."'
 					act'Back to the studio':gt'foto','studio'
 				end
-				
+
 				act'"Yeah! Let''s do it!"':
 					*clr & cla
 					first_fame_event = 2
@@ -808,7 +808,7 @@ if $ARGS[0] = 'pool1':
 					act'Back to the studio':gt'foto','studio'
 				end
 			end
-			
+
 			act'"Sorry, I had other plans"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -816,7 +816,7 @@ if $ARGS[0] = 'pool1':
 				'	"Okay, I understand. Maybe next time."'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"I''d be happy to help"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -879,7 +879,7 @@ if $ARGS[0] = 'tennis':
 			if city_modelling < 100:'	"What would I be doing? What sport?"'
 			if city_modelling < 100:'	"Tennis. We''re doing a bit of video for this shoot and you''d be doing tennis swings in slow motion. The thing is, we really do want someone who looks like they know what they''re doing, so that''s why we''d like to have you over someone else. Think you''re up for it? I think it would really increase your exposure and your profile."'
 			if city_modelling >= 100:'	"You like tennis right? Some other magazines were talking about how much you liked the sport so we thought it''d be good put out some special material featuring you doing some tennis swings. We''re talking photography and video here. We think it''d be good publicity for you. What do you think? Want to do it?"'
-			
+
 			act'"I''m not actually that into tennis..."':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -888,7 +888,7 @@ if $ARGS[0] = 'tennis':
 				'	"Yeah. Maybe something else," you say as you walk into the main part of the studio with him.'
 				act'Back to the studio':gt'foto','studio'
 			end
-			
+
 			act'"Not today"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -897,7 +897,7 @@ if $ARGS[0] = 'tennis':
 				'	He seems really disappointed. You honestly feel kind of bad about it.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Sure, that sounds like fun"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -940,7 +940,7 @@ if $ARGS[0] = 'tennis':
 		end
 	end
 end
-			
+
 !!------------------------------------------------------------------------ Skill Events ------------------------------------------------------------------------
 if $ARGS[0] = 'topless2':
 	*clr & cla
@@ -964,7 +964,7 @@ if $ARGS[0] = 'topless2':
 				'	You wave goodbye as he goes off to find another girl.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Sure, why not?"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -1006,7 +1006,7 @@ if $ARGS[0] = 'topless2':
 				end
 			end
 		end
-	end	
+	end
 end
 
 if $ARGS[0] = 'beach2':
@@ -1030,7 +1030,7 @@ if $ARGS[0] = 'beach2':
 				'	You wave goodbye as he goes off to find another girl.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Sure, sounds fun!"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -1106,7 +1106,7 @@ if $ARGS[0] = 'pool2':
 				'	You point him in the direction of the last place you saw her.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Sure"':
 				*clr & cla
 				pcs_hairbsh = 1
@@ -1126,7 +1126,7 @@ if $ARGS[0] = 'pool2':
 						minut += 30
 						modelpayfin = 2500 + (modelpay * 2) + (50*rand(0,7))
 						money += modelpayfin
-						modelfotomoney += modelpayfin						
+						modelfotomoney += modelpayfin
 						city_modelling += 15
 						mdlng_exp += rand(8,10)
 						modelfoto_topless += 1
@@ -1141,7 +1141,7 @@ if $ARGS[0] = 'pool2':
 					end
 				end
 			end
-		end	
+		end
 	end
 end
 
@@ -1169,7 +1169,7 @@ if $ARGS[0] = 'runway2':
 				'	"Of course darling! What do you need?" As they frantically chatter away, you leave them be and go back to the main studio.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"I''m sorry, I can''t be out that late"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -1178,7 +1178,7 @@ if $ARGS[0] = 'runway2':
 				'	"Of course darling! What do you need?" As they frantically chatter away, you leave them be and go back to the main studio.'
 				act'Back to the studio':gt'foto','studio'
 			end
-				
+
 			act'"Yes! Of course!"':
 				*clr & cla
 				'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -1227,7 +1227,7 @@ if $ARGS[0] = 'runway2':
 					end
 				end
 			end
-		end	
+		end
 	end
 end
 
@@ -1257,7 +1257,7 @@ if $ARGS[0] = 'wet':
 					'	"Yeah..." he sighs. "That''s what I thought you''d say. Dammit! Why won''t any of the girls agree to this anymore?!"'
 					act'Back to the studio':gt'foto','studio'
 				end
-					
+
 				act'"Sure! Why not?"':
 					*clr & cla
 					'<center><img <<$set_imgh>> src="images/locations/city/citycenter/photo/fotograph.jpg"></center>'
@@ -1288,9 +1288,9 @@ if $ARGS[0] = 'wet':
 							act'Back to the studio':gt'foto','studio'
 						end
 					end
-				end	
-			end		
-		end			
+				end
+			end
+		end
 	end
 end
 
