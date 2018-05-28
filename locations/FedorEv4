@@ -2498,12 +2498,18 @@ if $ARGS[0] =  'Toilet 3':
 end
 
 if $ARGS[0] =  'Kitchen':
+	$loc = 'FedorEv4'
+	$metka = 'Kitchen'
 	cls
 	if hour >= 20 and hour <= 22 and ReginaIntro = 0:gt 'FedorEv4', 'Regina Intro'
 	minut += 5
 	gs'stat'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/resident/fedorhome/kitchen.jpg"></center>'
-	'This kitchen is very clean. Fedor''s parents must be very neat people. There is a sink, a microwave, a stove and a <a href="exec:gt ''FedorEv4'', ''Fridge''">refrigerator</a> stocked with food.'
+	''
+	'This kitchen is very clean. Fedor''s parents must be very neat people.' 
+	''
+	'There is a sink, a microwave, a stove and a <a href="exec:gt ''FedorEv4'', ''Fridge''">refrigerator</a> stocked with food.'
+	'If you''re thirsty, you can pour yourself a glass of <a href="exec:gt ''beverage'', ''bev_wat''">water</a> from the tap.'
 	if week <= 5 and hour >= 19 and hour < 20 or week > 5 and hour >= 12 and hour < 14:
 		'<a href="exec:gt ''FedorEv4'', ''Fedor Kitchen''">Fedor</a> is sitting down, eating dinner.'
 	end
@@ -2707,8 +2713,6 @@ if $ARGS[0] =  'Fedor Sleeping':
 	if pcs_health < 100:
 		'Fedor then looks back at you and frowns. "<<$pcs_firstname>> you''re hurt. My mother works as a nurse. You should have her take a look at you."'
 	end
-
-	act 'Spend the night':gt 'bed2'
 
 	act 'Walk away':gt 'FedorEv4', 'Bedroom'
 end
@@ -3152,6 +3156,9 @@ if $ARGS[0] =  'Fedor Bedroom':
 
 	if FedorLove = 1:
 		act 'Discuss taking relationhip to next level':gt 'FedorEv4', 'Future'
+	end
+	if hour >= 21:
+		act 'Spend the night':gt 'bed2'
 	end
 
 	act 'Walk away':gt 'FedorEv4', 'Bedroom'
