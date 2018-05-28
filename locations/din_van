@@ -139,7 +139,6 @@ $shower = {
 		dynamic $brit
 		dynamic $dryOff
 	end
-
 }
 
 $bath = {
@@ -231,7 +230,6 @@ $bath = {
 $brit = {
 	'Your razor blade looks in good enough shape for <b><<stanok>></b> more shaves.'
 
-
 	if pcs_leghair > 3 and pcs_pubes > 3 and stanok > 1:
 		act 'Shave your legs and pussy (0:15)':
 			cla
@@ -264,7 +262,6 @@ $brit = {
 			dynamic $dryOff
 		end
 	end
-
 
 	if pcs_leghair > 3 and stanok > 0:
 		act 'Shave your legs (0:10)':
@@ -313,7 +310,6 @@ $brit = {
 			dynamic $dryOff
 		end
 	end
-
 }
 
 $tampon = {
@@ -346,7 +342,6 @@ $tampon = {
 		end
 	end
 }
-
 
 $quickwash = {
 	if spdirty > 0:
@@ -408,8 +403,6 @@ $removepan = {
 
 $basin = {
 
-	dynamic $removepan
-
 	if cumloc[11] = 1 or cumloc[12] = 1:
 		act 'Clean the sperm from your face (0:10)':
 			cla
@@ -428,7 +421,7 @@ $basin = {
 			act 'Finish':gt $loc, $metka
 		end
 	end
-
+	
 	if body_write > 0 or face_write > 0:
 		act 'Wash the writings off your body (0:10)':
 			cla
@@ -446,6 +439,21 @@ $basin = {
 		end
 	end
 
+	if (cumloc[6] = 1 or cumloc[7] = 1):
+		act 'Wipe the cum off your clothes (0:10)':
+			cla
+			*clr
+			cumspclnt = 6
+			gs 'cum_cleanup'
+			minut += 10
+			gs 'stat'
+			'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center>'
+			'You spend ten minutes wiping and rinsing the cum stains out of your clothes. In the end, all that remains of the stains are some damp spots that should dry up in a few minutes.'
+
+			act 'Finish':gt $loc, $metka
+		end
+	end
+	
 	if pcs_makeup ! 1:
 		act 'Wash off cosmetics (0:10)':
 			cla
@@ -479,6 +487,8 @@ $basin = {
 			act 'Finish':gt $loc, $metka
 		end
 	end
+	
+	dynamic $removepan
 }
 
 $pirTongue = {
@@ -715,22 +725,6 @@ if $ARGS[0] = 'private':
 
 	if bcream_have > 0:
 		pl'<a href="exec:dynamic $use_bcream & gt $loc, $metka"><b>Apply breast cream.</b></a> Uses left: <<bcream_have>>.'
-	end
-
-	if (cumloc[6] = 1 or cumloc[7] = 1):
-		act 'Wipe the cum off your clothes (0:10)':
-			cla
-			*clr
-			cumspclnt = 6
-			gs 'cum_cleanup'
-			minut += 10
-			gs 'stat'
-			'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center>'
-			*nl
-			'You remove the traces of cum from your clothes.'
-
-			act 'Finish':gt $loc, $metka
-		end
 	end
 
 	if pcs_leghair > 3 and pcs_pubes > 3 and stanok > 1:

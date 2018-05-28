@@ -109,28 +109,14 @@ if $ARGS[0] = 'toilet':
 	'<center><img <<$set_imgh>> src="images/locations/shared/bathroom/toilet.jpg"></center>'
 	'You are in a dirty gas station toilet. At least it provides some privacy.'
 
+	act 'Leave the restroom':gt 'zaprF', 'start'
+	
 	act 'Look in the mirror': gt 'mirror', 'start'
 	if pcs_hairbsh = 0: act 'Brush your hair': gt 'mirror', 'brush'
-
-	if (cumloc[6] = 1 or cumloc[7] = 1):
-		act 'Wipe the cum off your clothes (0:10)':
-			cla
-			*clr
-			cumspclnt = 6
-			gs 'cum_cleanup'
-			minut += 10
-			'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center>'
-			'You spend ten minutes wiping and rinsing the cum stains out of your clothes. In the end, all that remains of the stains are some damp spots that should dry up in a few minutes.'
-
-			act 'Continue':gt 'zaprF', 'toilet'
-		end
-	end
 
 	dynamic $tampon
 	dynamic $quickwash
 	dynamic $basin
-
-	act 'Leave the restroom':gt 'zaprF', 'start'
 end
 
 --- zaprF ---------------------------------

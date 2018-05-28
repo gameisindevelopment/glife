@@ -40,29 +40,14 @@ if $ARGS[0] = 'toilet':
 		exit
 	end
 
+	act 'Leave':gt 'kafe', 'workPred'
+	
 	act 'Look in the mirror': gt 'mirror', 'start'
 	if pcs_hairbsh = 0: act 'Brush your hair': gt 'mirror', 'brush'
 
+	dynamic $tampon
 	dynamic $quickwash
 	dynamic $basin
-
-	if (cumloc[6] = 1 or cumloc[7] = 1):
-		act 'Wipe the cum off your clothes (0:10)':
-			cla
-			*clr
-			cumspclnt = 6
-			gs 'cum_cleanup'
-			minut += 10
-			'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center>'
-			'You remove the traces of cum from your clothes.'
-
-			act 'Finish':gt 'kafe2', 'toilet'
-		end
-	end
-
-	dynamic $tampon
-
-	act 'Leave':gt 'kafe', 'workPred'
 end
 
 if $ARGS[0] = 'givi':

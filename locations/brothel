@@ -80,35 +80,14 @@ if $ARGS[0] = 'lobby:toilet':
 	'<center><img <<$set_imgh>> src="images/locations/shared/brothel/hoteltoilet.jpg"></center>'
 	*nl
 
-	act 'Look in the mirror':
-		cla
-		gt 'mirror', 'start'
-	end
-
-	if pcs_hairbsh = 0:
-		act 'Brush your hair': gt 'mirror', 'brush'
-	end
-
-	if (cumloc[6] = 1 or cumloc[7] = 1):
-		act 'Wipe the cum off your clothes (0:10)':
-			cla
-			*clr
-			cumspclnt = 6
-			gs 'cum_cleanup'
-			minut += 10
-			'<center><img <<$set_imgh>> src="images/shared/sex/cum/frotsp.jpg"></center>'
-			'You spend ten minutes wiping and rinsing the cum stains out of your clothes. In the end, all that remains of the stains are some damp spots that should dry up in a few minutes.'
-
-			act 'Continue':gt 'zaprF', 'toilet'
-		end
-	end
+	act 'Leave':gt 'brothel', 'lobby'
+	
+	act 'Look into the mirror': gt 'mirror', 'start'
+	if pcs_hairbsh = 0: act 'Brush your hair': gt 'mirror', 'brush'
 
 	dynamic $tampon
 	dynamic $quickwash
 	dynamic $basin
-	gs 'din_van', 'pblc_pee'
-	
-	act 'Leave':gt 'brothel', 'lobby'
 end
 
 if $ARGS[0] = 'bar':
