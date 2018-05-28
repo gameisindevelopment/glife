@@ -224,11 +224,7 @@
       <Location name="rinok"/>
       <Location name="rinwork"/>
       <Location name="sauna"/>
-      <Location name="sauna2"/>
-      <Location name="saunabed"/>
-      <Location name="saunaroom"/>
       <Location name="saunawhore"/>
-      <Location name="saunawork"/>
       <Location name="trashplace"/>
       <Location name="musorkaexh"/>
       <Location name="RynokHoz"/>
@@ -982,6 +978,7 @@
     <Folder name="Misc">
       <Location name="beg"/>
       <Location name="beg1"/>
+      <Location name="housing"/>
       <Location name="husb"/>
       <Location name="husbSex"/>
       <Location name="indik"/>

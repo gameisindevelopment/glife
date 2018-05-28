@@ -26,9 +26,11 @@ if $ARGS[0] = 'box':
 	'It consists of:'
 	gs 'crossfit_north_wod', $todays_crossfit_wod
 
-	act 'Check personal records':
-		cla
-		gt 'crossfit_north_record', 'view_records'
+	if crossfit_first = 1:
+		act 'Check personal records':
+			cla
+			gt 'crossfit_north_record', 'view_records'
+		end
 	end
 
 	act 'Start the exercise':
@@ -39,6 +41,7 @@ if $ARGS[0] = 'box':
 			cla
 			*clr
 			last_crossfit_workout = daystart
+			crossfit_first = 1
 			abonement -= 1
 			'You start with the workout.'
 			gs 'crossfit_north_wod', $todays_crossfit_wod

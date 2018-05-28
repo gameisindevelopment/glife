@@ -24,6 +24,7 @@ if $ARGS[0] = 'TGStart':
 
 	home_owned[1] = 1
 	gs 'set_home', 1
+	ArendHouseSL = 21
 
 	if MagikDostup = 1:
 		gt 'preCUST', 'NTStart'
@@ -510,6 +511,7 @@ if $ARGS[0] = 'charselect':
 				falselashesmink = 2
 				$currentpursetype = 'fashionista'
 				currentpursenumber = 9
+				dynamic $currentpursetype + '_purses[' + currentpursenumber + '] = 1'
 				bag = 1
 				if menu_option = 1:dynamic $menu_addoldmenu
 				if menu_option = 0:gs 'obj_din', 'new'

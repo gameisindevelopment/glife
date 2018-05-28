@@ -82,17 +82,18 @@ $skl_name[29] = 'mdlng'
 $skl_name[30] = 'medcn'
 $skl_name[31] = 'heels'
 $skl_name[32] = 'pool'
+$skl_name[33] = 'inhib'
 
 !!Trait Section
 !!This is where Traits that will affect attribute or skill advancement or degradation have those aspects defined.
 !!Always put the trait name, variable name, and skill or attribute variable in a comment
 
-!!Natrual Dancer; Provides a 10% reduction in xp required to level dance skills
+!!Natural Dancer; Provides a 10% reduction in xp required to level dance skills
 nat_dancer[1] = 2 & nat_dancer[2] = 10 & nat_dancer[3] = -6 & nat_dancer[4] = 0
 nat_dancer[11] = 2 & nat_dancer[12] = 11 & nat_dancer[13] = -6 & nat_dancer[14] = 0
 nat_dancer[21] = 2 & nat_dancer[22] = 12 & nat_dancer[23] = -6 & nat_dancer[24] = 0
 
-!!Natrual Athlete; Provides a 10% reduction in xp required to level sports skills
+!!Natural Athlete; Provides a 10% reduction in xp required to level sports skills
 nat_athlete[1] = 2 & nat_athlete[2] = 17 & nat_athlete[3] = -6 & nat_athlete[4] = 0
 nat_athlete[11] = 2 & nat_athlete[12] = 18 & nat_athlete[13] = -6 & nat_athlete[14] = 0
 nat_athlete[21] = 2 & nat_athlete[22] = 19 & nat_athlete[23] = -6 & nat_athlete[24] = 0

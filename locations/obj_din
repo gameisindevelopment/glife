@@ -18,7 +18,7 @@ if $ARGS[0] = 'descrip':
 	!!!
 
 	pl 'Your current home is <a href="exec:gs ''obj_din'', ''cur_home''"><<$home_name>></a>.'
-	
+
 	if succubusflag = 1 and sucpcinfo >= 4: pl 'You are a Succubus.'
 	if age = vidage:
 		pl 'You are <<age>> years old.'
@@ -41,7 +41,7 @@ if $ARGS[0] = 'descrip':
 	pl 'Your breasts would be considered an EU <a href="exec:gs ''obj_din'', ''show_tits''"><<$titsize>></a>.'
 	pl '<<$nipplesize>>'
 	pl '<<$pcs_apprnc>>'
-	
+
 	if preg = 1:
 		if denypreg = 1 and pregtime > 75:
 			pl 'You seem to be putting on a bit of weight, your belly is definitely bigger.'
@@ -61,8 +61,8 @@ if $ARGS[0] = 'descrip':
 			pl 'You''ve noticed that your breasts seem firmer lately and your nipples seem to be sticking out more.'
 		end
 	end
-	nl  
-	
+	nl
+
 	if avatar_hair = 1:
 		pl'Your hair: <<$av_hair>>.'
 	else
@@ -147,7 +147,7 @@ if $ARGS[0] = 'cur_home':
 	if home_owned[12] = 1:pl 'Set current home as <a href="exec:gs ''set_home'', 12 & gs ''obj_din'', ''cur_home''">Hunter''s lodge in Gadukino</a>'
 	if home_owned[13] = 1:pl 'Set current home as <a href="exec:gs ''set_home'', 13 & gs ''obj_din'', ''cur_home''">Shared apartment in Pavlovsk</a>'
 !!Apostrophe colour correction - KS ''''
-end	
+end
 
 if $ARGS[0] = 'skills':
 	clr
@@ -247,7 +247,7 @@ end
 
 if $ARGS[0] = 'husb_cheat_count':
 	if husband > 0:
-		if guy > before_h_guy : 
+		if guy > before_h_guy :
 			guy_cheat += guy - guy_cheat
 			before_h_guy = guy
 		end
@@ -285,42 +285,90 @@ if $ARGS[0] = 'stats':
 	pl'		<a href="exec:gs ''obj_din'', ''stats_beauty''">View Beauty/Modelling skills</a>'
 	pl'		<a href="exec:gs ''obj_din'', ''stats_artistic''">View Artistic skills</a>'
 	pl'		<a href="exec:gs ''obj_din'', ''stats_job''">View Job skills</a>'
-	
-end
 
+end
 
 if $ARGS[0] = 'stats_gen':
 	clr
+	gs 'housing', 'rent'
 	pl'<center><img src="images/system/icon/statistics.png"><br></center>'
 	pl'<a href="exec:gs ''obj_din'', ''stats''">Return to statistics main page</a>'
 	nl
 	if opPRE = 0:pl 'It has been <<daystart>> days since the game started.'
 	nl
-	if BuyHous = 2 and ArendHouseSL >0:
-		pl 'You have rented an apartment in the residential area for <<ArendHouseSL>> days.'
-		if money >= 6000 or stolmoney >= 6000 or money + stolmoney >= 6000 or karta + bankDebtLimit >= 6000:
-			*P ' Renew with '
-			if money >= 6000:
-				*P ' <a href="exec:money -= 6000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash</a>'
-			elseif stolmoney >= 6000:
-				*P ' <a href="exec:stolmoney -= 6000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from drawer</a>'
-			elseif money + stolmoney >= 6000:
-				!both < 6000, so money = money - 6000 + stolmoney
-				*P ' <a href="exec:money -= 6000 - stolmoney & stolmoney = 0 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30" & gs ''$menu_obnovit''>cash from purse and drawer</a>'
-			end
-			!from purse, drawer or both
-			if karta >= 6000: 
-				*P ' <a href="exec:karta -= 6000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account</a>'
-			elseif karta + bankDebtLimit >= 6000: 
-				*P ' <a href="exec:karta -= 6000 & home_owned[1] = 1 & BuyHous = 2 & ArendHouseSL += 30 & gs ''$menu_obnovit''">bank account, but you will be overdrawn.</a>'
-			end
-		else
-			*P ' But you can''t afford to pay the rent right now.'
+
+	if (home_owned[1] = 1 or home_owned[4] > 0) and ArendHouseSL > 0:
+			nl
+		if home_owned[1] = 1 and home_owned[4] > 0:
+			pl 'You have rented an apartment in the city residential area, which is paid up for <b><<ArendHouseSL>></b> days, and you also have an apartment in Pushkin, which is paid up for <b><<ArendHouseSL4>></b> days.'
+		elseif home_owned[1] = 1:
+			pl 'You have rented an apartment in the city residential area, and you are paid up for <<ArendHouseSL>> days.'
+		elseif home_owned[4] > 0:
+			pl 'You have rented an apartment in Pushkin, and you are paid up for <<ArendHouseSL>> days.'
 		end
-		nl
+		if home_owned[1] = 1:
+			if karta >= home_rent[1] or money >= home_rent[1] or money + stolmoney >= home_rent[1] or karta + bankDebtLimit >= home_rent[1]:
+				nl
+				p 'The monthly rent for your city apartment is <<home_rent[1]>> <b>₽</b>. '
+				if karta >= home_rent[1]:
+					!From bank
+					p 'You can make an advance <a href="exec:karta -= home_rent[1] & home_owned[1] = 1 & ArendHouseSL += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from your bank account.'
+				elseif money >= home_rent[1]:
+					!From cash
+					p 'You can make an advance <a href="exec:money -= home_rent[1] & home_owned[1] = 1 & ArendHouseSL += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from your on-hand cash.'
+					nl
+				elseif stolmoney >= home_rent[1]:
+					!From drawer
+					p 'You can make an advance <a href="exec:stolmoney -= home_rent[1] & home_owned[1] = 1 & ArendHouseSL += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from the cash you have in your stash drawer.'
+					nl
+				elseif money + stolmoney >= home_rent[1]:
+					!From cash and drawer
+					p 'You can make an advance <a href="exec:money -= (home_rent[1] - stolmoney) & stolmoney = 0 & home_owned[1] = 1 & ArendHouseSL += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from your on-hand cash and the cash in your stash drawer.'
+					nl
+				elseif karta + bankDebtLimit >= home_rent[1]:
+					!From bank and overdraw
+					p 'You can make an advance <a href="exec:karta -= home_rent[1] & home_owned[1] = 1 & ArendHouseSL += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from your bank account and overdraw facility.'
+					nl
+				else
+					p 'You can''t afford to make an advance payment right now, but you should try to have enough money in your account before the 25th of <<month>>, so you don''t get evicted.'
+					nl
+				end
+			end
+		end
+		if home_owned[4] > 0:
+			if karta >= home_rent[4] or money >= home_rent[4] or money + stolmoney >= home_rent[4] or karta + bankDebtLimit >= home_rent[4]:
+				nl
+				p 'The monthly rent for your Pushkin apartment is <<home_rent[4]>> <b>₽</b>. '
+				if karta >= home_rent[4]:
+					!From bank
+					p 'You can make an advance <a href="exec:karta -= home_rent[4] & home_owned[1] = 1 & ArendHouseSL4 += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from your bank account.'
+					nl
+				elseif money >= home_rent[4]:
+					!From cash
+					p 'You can make an advance <a href="exec:money -= home_rent[4] & home_owned[1] = 1 & ArendHouseSL4 += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from your on-hand cash.'
+					nl
+				elseif stolmoney >= home_rent[4]:
+					!From drawer
+					p 'You can make an advance <a href="exec:stolmoney -= home_rent[4] & home_owned[1] = 1 & ArendHouseSL4 += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from the cash you have in your stash drawer.'
+					nl
+				elseif money + stolmoney >= home_rent[4]:
+					!From cash and drawer
+					p 'You can make an advance <a href="exec:money -= (home_rent[4] - stolmoney) & stolmoney = 0 & home_owned[1] = 1 & ArendHouseSL4 += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from your on-hand cash and the cash in your stash drawer.'
+					nl
+				elseif karta + bankDebtLimit >= home_rent[4]:
+					!From bank and overdraw
+					p 'You can make an advance <a href="exec:karta -= home_rent[4] & home_owned[1] = 1 & ArendHouseSL4 += ArendHouseSL_due & gs ''$menu_obnovit''">payment</a> from your bank account and overdraw facility.'
+					nl
+				else
+					p 'You can''t afford to make an advance payment right now, but you should try to have enough money in your account before 25th of <<month>>, so you don''t get evicted.'
+					nl
+				end
+			end
+		end
 	end
-	
+
 	if kid = 1:
+		nl
 		pl 'You have 1 child:'
 	else
 		pl 'You have <<kid>> children:'
@@ -358,7 +406,7 @@ if $ARGS[0] = 'kidlist':
 	kidnumber = ARGS[1]
 	if kidage[kidnumber] < 1:
 		if (month - monthkid[kidnumber]) < 1 and (day-daykid[kidnumber]) < 7:
-			kiddaycalc[kidnumber] = day - daykid[kidnumber]	
+			kiddaycalc[kidnumber] = day - daykid[kidnumber]
 			if kiddaycalc[kidnumber] = 0:
 				$kidagetext[kidnumber] = 'was born today'
 			elseif kiddaycalc[kidnumber] = 1:
@@ -453,7 +501,7 @@ if $ARGS[0] = 'stats_achievements':
 		nl
 	end
 
-	
+
 	if chess_win > 0 or chess_loss > 0:pl'Chess Record: Win <<chess_win>>, Loss <<chess_loss>>'
 	if chess_rank > 0:
 		if chess_rank = 1:pl'You have mastered the basics of chess'
@@ -485,7 +533,7 @@ if $ARGS[0] = 'stats_achievements':
 		if modelfoto_pussy > 0: pl'<<modelfoto_pussy>> - Number of shoots your vagina has been visible'
 		nl
 	end
-	
+
 	if slavafuck > 0:pl'You have let Borislav fuck you <<slavafuck>> times'
 	if slava_bj > 0:pl'You have given Borislav <<$slava_bj>> blowjobs'
 
@@ -504,7 +552,7 @@ if $ARGS[0] = 'stats_achievements':
 	if teachlevel > 0:pl 'Your credibility as a teacher is <<teachlevel>>'
 	!WD:FORMATING
 	if (maxdamage + stripdancesum + profiDanceTime + SchoolAtestat + diplom + teachlevel) > 0:nl
-	
+
 	if film > 0:
 		gs 'pornhist', 'short'
 		$retired=''
@@ -537,20 +585,20 @@ if $ARGS[0] = 'stats_sex':
 	if stat['flashlite'] > 0 or stat['flash'] > 0:pl 'Times you have flashed: <<stat[''flashlite''] + stat[''flash'']>>'
 	if stat['voyeur'] > 0:pl 'Times you have watched other people fuck: <<stat[''voyeur'']>>'
 	if spank > 0:pl 'You have had your ass spanked <<spank>> times'
-	temp = func('shortgs','guy') 
+	temp = func('shortgs','guy')
 	if guy+temp > 0 and hidden_guy = 0:
 		pl 'You had sex with <<guy+temp>> guys.'
 	elseif guy+temp = 0 and hidden_guy > 0:
 		pl 'You had sex with <<hidden_guy>> guys, but you do not have any recollection of it. You still think of yourself as a virgin.'
-	else
+	elseif guy+temp > 0 and hidden_guy > 0:
 		pl 'You had sex with <<guy+hidden_guy+temp>> guys, but you know only about <<guy+temp>> of them.'
 	end
-	temp = func('shortgs','girl') 
+	temp = func('shortgs','girl')
 	if girl+temp > 0 and hidden_girl = 0:
 		pl 'You had sex with <<girl+temp>> girls.'
 	elseif girl+temp = 0 and hidden_girl > 0:
 		pl 'You had sex with <<hidden_girl>> girls, but you do not have any recollection of any of it.'
-	else
+	elseif girl+temp > 0 and hidden_girl > 0:
 		pl 'You had sex with <<girl+temp+hidden_girl>> girls, but you know only about <<girl+temp>> of them.'
 	end
 	if divorced > 0:pl 'You were married <<divorced>> times.'
@@ -581,13 +629,13 @@ if $ARGS[0] = 'stats_sex':
 
 	if sex > 0 or stat['vaginal'] > 0 or stat['hidden_vaginal'] > 0:pl 'Vaginal sex (known/unknown): <<stat[''vaginal'']>>/<<stat[''hidden_vaginal'']>>'
 	if sexa > 0:pl 'Vaginal sex with your boyfriend: <<sexa>>'
-	if (pcs_cp_safe_known + pcs_cp_notsafe_known + pcs_cp_risky_known) > 0: 
+	if (pcs_cp_safe_known + pcs_cp_notsafe_known + pcs_cp_risky_known) > 0:
 		pl '  Known vaginal creampies:'
 		if pcs_cp_safe_known > 0: pl '    Safe: <<pcs_cp_safe_known>>'
 		if pcs_cp_notsafe_known > 0: pl '    Likely safe: <<pcs_cp_notsafe_known>>'
 		if pcs_cp_risky_known > 0: pl '    Risky: <<pcs_cp_risky_known>>'
 	end
-	if (pcs_cp_safe_unknown + pcs_cp_notsafe_unknown + pcs_cp_risky_unknown) > 0: 
+	if (pcs_cp_safe_unknown + pcs_cp_notsafe_unknown + pcs_cp_risky_unknown) > 0:
 		pl '  Unknown vaginal creampies:'
 		if pcs_cp_safe_unknown > 0: pl '    Safe: <<pcs_cp_safe_unknown>>'
 		if pcs_cp_notsafe_unknown > 0: pl '    Likely safe: <<pcs_cp_notsafe_unknown>>'
@@ -655,7 +703,7 @@ if $ARGS[0] = 'stats_sex':
 	!!!WD:FORMATING
 	if (slutty + pfilmSTOP + film + orgasm + analorgasm + swallow + facial + frot + zoo + pee) > 0:nl
 	!!!
-	
+
 	gs 'obj_din', 'husb_cheat_count'
 
 end
@@ -917,7 +965,7 @@ if $ARGS[0] = 'rep2':
 	if rinslut > 1 and kavslut > 0:pl'In the residential area of ​​you are known as a whore that sleeps with Caucasians.'
 	if afra > 80: pl'In the student hostel, you are known for bedding blacks.'
 	if opusk > 0 or gnewQW >= 5: pl'In the residential area it is well known by all the guys that you are a whore.'
-	if StoryLine = 1:		
+	if StoryLine = 1:
 		nl
 		if motherKnowSpravka > 0 and motherKnowWhore > 0:
 			pl'Your mother knows, that you are sexually active and considers you a slut.'
@@ -941,8 +989,8 @@ if $ARGS[0] = 'rep2':
 		else
 			pl'Your brother has a good opinion of you.'
 		end
-		
-		
+
+
 		if sisterknowslut > 1 and sisboypartyQW = 2:
 			pl'Your sister thinks you are a slut'
 		elseif sisterknowslut > 0:
@@ -950,7 +998,7 @@ if $ARGS[0] = 'rep2':
 		else
 			pl'Your sister has a good opinion of you.'
 		end
-		
+
 		if brothershowertalk > 0:pl'<<brothershowertalk>> - Number of conversations you''ve had with your brother in the shower.'
 		if brothershowerlook = 1:pl'You let your brother look at you when you''re shower'
 		if brothershave > 0:pl'<<brothershave>> - Number of times you''ve let your brother watch you shave your pussy'
@@ -1049,7 +1097,7 @@ if $ARGS[0] = 'magic':
 		if spellwater5 = 1:pl'The Great Flood, It creates a huge sphere that absorbs water and drains opponents mana, passing it to strengthen protection. Cost 500 manna.'
 		nl
 	end
-	
+
 	if succubusflag = 1 and sucpcinfo >= 4 and sucskill >= 1:
 		pl'<center><b>Succubus Stats</b></center>'
 		nl
@@ -1409,24 +1457,24 @@ end
 
 if $ARGS[0] = 'clothes':
 	clr
-	pl'<center><a href="exec:gs''$menu_obnovit''"><b>Clothes</b></a></center>'	
+	pl'<center><a href="exec:gs''$menu_obnovit''"><b>Clothes</b></a></center>'
 	!move image define to $body_image
-	
+
 	!display coat
 	$img_temp = FUNC('$body_image','coat')
 	if $img_temp ! null:  pl '<a href="exec:view ''<<$img_temp>>''"><img <<$set_imgh>> src="<<$img_temp>>"></a>'
 	pl '<<$body_image_msg>>'
 
 	pl ''
-	
+
 	!display cloth
 	$img_temp = FUNC('$body_image','clothes')
-	if $img_temp ! null: pl '<a href="exec:view ''<<$img_temp>>''"><img <<$set_imgh>> src="<<$img_temp>>"></a>'	
+	if $img_temp ! null: pl '<a href="exec:view ''<<$img_temp>>''"><img <<$set_imgh>> src="<<$img_temp>>"></a>'
 	pl '<<$body_image_msg>>'
-	
+
 	killvar 'img_temp'
-	killvar 'body_image_msg'	
-	!{	
+	killvar 'body_image_msg'
+	!{
 	if defaultcoat = 0:
 		pl 'You have no default coat set.'
 
@@ -1486,7 +1534,7 @@ end
 
 if $ARGS[0] = 'panties':
 	clr
-	pl'<center><a href="exec:gs''$menu_obnovit''"><b>Panties</b></a></center>'	
+	pl'<center><a href="exec:gs''$menu_obnovit''"><b>Panties</b></a></center>'
 	$img_temp = FUNC('$body_image','panties')
 	pl '<a href="exec:view ''<<$img_temp>>''"><img <<$set_imgh>> src="<<$img_temp>>"></a>'
 	pl '<<$body_image_msg>>'
@@ -1511,7 +1559,7 @@ end
 
 if $ARGS[0] = 'bra':
 	clr
-	pl'<center><a href="exec:gs''$menu_obnovit''"><b>Bra</b></a></center>'	
+	pl'<center><a href="exec:gs''$menu_obnovit''"><b>Bra</b></a></center>'
 	$img_temp = FUNC('$body_image','bra')
 	pl '<a href="exec:view ''<<$img_temp>>''"><img <<$set_imgh>> src="<<$img_temp>>"></a>'
 	pl '<<$body_image_msg>>'
@@ -1537,8 +1585,8 @@ if $ARGS[0] = 'shoes':
 	end
 	}
 end
-		
-		
+
+
 if $ARGS[0] = 'body':
 !!	This displays the body image; $bodimgsets[x9] is the folder name
 	!some in-game script may call this to display image, so leave it be
@@ -1694,7 +1742,7 @@ if $ARGS[0] = 'tattoos':
 	if tatunder > 0:tatcounter = 1 & pl'<a href="exec: gs ''obj_din'', ''tattoounder''">Tattoo under your breasts</a>'
 	if tatwrist > 0:tatcounter = 1 & pl'<a href="exec: gs ''obj_din'', ''tattoowrist''">Tattoo on your wrist</a>'
 	if tathand > 0:tatcounter = 1 & pl'<a href="exec: gs ''obj_din'', ''tattoohand''">Tattoo on your hand</a>'
-	
+
 	if tatcounter = 0:
 		pl'You have a pristine body. Not in terms of debauchery, but in terms of tattoos.'
 	end
@@ -1721,7 +1769,24 @@ end
 
 if $ARGS[0] = 'records':
 	clr
-	if home_owned[1] > 0:pl'You live in a two-room apartment, in the city residential area. Rent for the apartment is subtracted automatically, in sum of 3000 <b>₽</b> plus electric bill on 25th of each month.'
+	gs 'housing', 'rent'
+	if pavSharedAptEnabled = 1:pl'You share an apartment with three others in Pavlovsk. Bills are paid by the other tennants in exchange for your house services'
+	nl
+	if home_owned[1] = 1:pl'You rent a two-room apartment, in the city residential area. Rent for the apartment is subtracted automatically, in sum of <<home_rent[1]>> <b>₽</b> plus electric bill on 25th of each month. You are currently paid up for <b><<ArendHouseSL>></b> days'
+	nl
+	if home_owned[1] = 2:pl'You own a two-room apartment, in the city residential area. Utility bills are on the 25th of each month.'
+	nl
+	if home_owned[2] > 0:pl'You live in a two-room apartment, in a large apartment complex, with your parents and siblings in Pavlovsk.'
+	nl
+	if home_owned[3] > 0:pl'You own small holiday cottage with an adjacent allotment in the communal village.'
+	nl
+	if home_owned[4] > 0:pl'You rent a two-room apartment, in Pushkin. Rent for the apartment is subtracted automatically, in sum of <<home_rent[4]>> <b>₽</b> plus electric bill on 25th of each month. You are currently paid up for <b><<ArendHouseSL4>></b> days'
+	nl
+	if home_owned[5] = 1:pl'You own a vacant block, in the city suburbs. Utility bills are on the 25th of each month.'
+	nl
+	if home_owned[5] = 2:pl'You own a block in the city suburbs, upon which, you are building a house. Utility bills are on the 25th of each month.'
+	nl
+	if home_owned[5] = 3:pl'You own an impressive manion in the suburbs of St. Petersburg. Utility bills are on the 25th of each month.'
 	nl
 	if workPTU > 2:pl'You work as a teacher at the Lycée. Working days Mon-Sat, with 14.00 to 16.00. Salary 300r/day. Dress code - office clothes, Strict. The road from the apartment to the Lyceum takes 2 hours 10 minutes.'
 	nl
@@ -1735,7 +1800,11 @@ if $ARGS[0] = 'records':
 	nl
 	if (work = 1 or cheatWork = 1) and tanwork > 0:pl'You work as a governess for Tanya, at Nicholas'' luxury city apartment. Salary is automatically transferred on 25th of each month.'
 	nl
-	if (work = 1 or cheatWork = 1) and young_shop_work = 1:pl'You work in the city as a store clerk at Pussy-Cats - youth clothing store. Work starts at 15, every day except Saturday and Sunday. The salary shall be issued once a week on Fridays.'
+	if (work = 1 or cheatWork = 1) and young_shop_work = 1:pl'You work in the city as a store clerk at Pussy-Cats - youth clothing store. Work starts at 15, Monday to Friday. The salary shall be issued once a week on Fridays.'
+	nl
+	if (work = 1 or cheatWork = 1) and young_shop_work1 = 1:pl'You work in the city as a store clerk at Pussy-Cats - youth clothing store. Work starts at 9, Saturday and Sunday. The salary shall be issued once a week on Fridays.'
+	nl
+	if (work = 1 or cheatWork = 1) and young_shop_work2 = 1:pl'You work in the city as a store clerk at Pussy-Cats - youth clothing store. Work starts at 9, Monday to Friday. The salary shall be issued once a week on Fridays.'
 	nl
 	if (work = 1 or cheatWork = 1) and workFabrika = 1:pl'You work as a seamstress in a factory in Pavlovsk. Work is every day except Saturday and Sunday. Salary is automatically transferred on 25th of each month.'
 	nl

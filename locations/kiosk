@@ -194,14 +194,18 @@ if $ARGS[0] =  'themes':
 	'<center><img <<$set_imgh>> src="images/locations/city/shared/kiosk/kiosk123.jpg"></center>'
 	'<center><img WIDTH = 245 HEIGHT = 56 src="images/locations/city/shared/kiosk/ruch.jpg"></center>'
 	'All themes cost 500 <b>₽</b>'
+	
+	if money >= 500:
+		i = 1
+		:phonethemeloop
+		if phonetheme[i] = 0: '<a href="exec: money -= 500 & phonetheme[<<i>>] = 1 & gt ''kiosk'', ''themes''">Buy the <<$phonetheme_name[i]>> theme.</a>'
+		i += 1
+		if i < 13: jump 'phonethemeloop'
+	else
+		'You don''t have enough money to buy a phone theme.'
+	end
 
-	i = 1
-	:phonethemeloop
-	if phonetheme[i] = 0: '<a href="exec: money -= 500 & phonetheme[<<i>>] = 1 & gt ''kiosk''">Buy the <<$phonetheme_name[i]>> theme.</a>'
-	i += 1
-	if i < 13: jump 'phonethemeloop'
-
-	act 'Return': $kioskloc = 'counter' & gt 'kiosk', 'counter'
+	act 'Return': gt 'kiosk', 'counter'
 end
 
 --- kiosk ---------------------------------

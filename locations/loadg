@@ -93,6 +93,7 @@ killvar 'housr'
 killvar 'BuyHous'
 
 if alko < 0: alko = 0
+if pranik < 0: pranik = 0
 
 --- loadg ---------------------------------
 

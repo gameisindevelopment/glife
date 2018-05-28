@@ -42,6 +42,8 @@ if $ARGS[0] = 'start':
 			young_shop_salary += 4
 			if hour < 16: minut += 60-minut
 			minut += 240
+			pcs_energy += 24
+			pcs_hydra += 48
 			gs 'stat'
 			'You spend 4 hours cleaning the department, folding and rehanging clothes and serving customers. The store now looks clean and pretty organized.'
 			gs 'young_shop', 'events'
@@ -53,17 +55,21 @@ if $ARGS[0] = 'start':
 			young_shop_salary += 6
 			if hour < 9: minut += 60-minut
 			minut += 360
+			pcs_energy += 40
+			pcs_hydra += 80
 			gs 'stat'
 			'You spend 6 hours cleaning the department, folding and rehanging clothes and serving customers. The store now looks clean and pretty organized.'
 			gs 'young_shop', 'events'
 		end
-!!	elseif ((hour = 9 and minut <= 5) or (hour = 8 and minut >= 30)) and young_shop_work1 = 1 and week > 6:
+!!	elseif ((hour = 9 and minut <= 5) or (hour = 8 and minut >= 30)) and young_shop_work2 = 1 and week > 6:
 !!		act '<b>Work</b>':
 !!			cla
 !!			inWorkYoungShop = 1
 !!			young_shop_salary += 6
 !!			if hour < 9: minut += 60-minut
 !!			minut += 360
+!!			pcs_energy += 40
+!!			pcs_hydra += 80
 !!			gs 'stat'
 !!			'You spend 6 hours cleaning the department, folding and rehanging clothes and serving customers. The store now looks clean and pretty organized.'
 !!			gs 'young_shop', 'events'

@@ -84,8 +84,16 @@ if $ARGS[0] = 'vigil':
 		gs 'stat'
 		temprand = rand(1,100)
 		if temprand <= 80:
-			if pav_sex > 10: pav_sex -= 10
-			if pav_prostitute > 10: pav_prostitute -= 10
+			if pav_sex > 10: 
+				pav_sex -= 10
+			else
+				pav_sex = 0
+			end
+			if pav_prostitute > 10:
+				pav_prostitute -= 10
+			else
+				pav_prostitute = 0
+			end
 		end
 		hour = 23
 		'<center><img <<$set_imgh>> src="images/locations/pavlovsk/church/church'+ rand(9,10) +'.jpg"></center>'
@@ -115,8 +123,16 @@ if $ARGS[0] = 'liturgy':
 		'You participate fully in the Divine Liturgy. You listen to the preaching and sing along. When going to communion and receiving the ceremonial bread, you lock eyes with Father Kirill. He seems happy to see you participating in the service.'
 	elseif pav_slut >= 50:
 		if rand(1,100) > 20:
-			if pav_sex > 10: pav_sex -= 25
-			if pav_prostitute > 10: pav_prostitute -= 10
+			if pav_sex > 25:
+				pav_sex -= 25
+			else
+				pav_sex = 0
+			end
+			if pav_prostitute > 10:
+				pav_prostitute -= 10
+			else
+				pav_prostitute = 0
+			end
 		end
 		Kirill += 1
 		pcs_mood +=20
@@ -184,8 +200,8 @@ if $ARGS[0] = 'pray':
 	cls
 	randtime = rand(15,60)
 	minut += randtime
-	pav_sex -= 1
-	pav_prostitute -= rand(0,1)
+	if pav_sex > 1: pav_sex -= 1
+	if pav_prostitute > 1: pav_prostitute -= rand(0,1)
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/church/ch_praying.jpg"></center>'
 	if hour >6 and hour < 20 and moral < 30:

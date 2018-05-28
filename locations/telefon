@@ -180,9 +180,9 @@ if $ARGS[0] = 'callingTheLover' and loverGender[ARGS[1]] = 1:
 			gs 'telefon','telotkaz',$telsob
 		end
 	end
-	
+
 	act 'I think we should break up...':
-		cla 
+		cla
 		'She sounds hurt, but you insist it is for the best. You both say goodbye and part ways.'
 		gs 'lover', 'remove', lover_number
 
@@ -259,9 +259,9 @@ if $ARGS[0] = 'callingTheLover' and loverGender[ARGS[1]] = 0:
 			gs 'telefon','telotkaz',$loverdesc[lover_number]
 		end
 	end
-	
+
 	act 'I think we should break up...':
-		cla 
+		cla
 		'He sounds hurt, but you insist it is for the best. You both say goodbye and part ways.'
 		gs 'lover', 'remove', lover_number
 
@@ -400,9 +400,9 @@ if $ARGS[0] = 'lover' and loverGender[ARGS[1]] = 0:
 
 			act 'Hang up': gt 'telefon', 'fin'
 		end
-		
+
 		act 'I think we should break up...':
-			cla 
+			cla
 			'He sounds hurt, but you insist it is for the best. You both say goodbye and part ways.'
 			gs 'lover', 'remove', lover_number
 
@@ -471,9 +471,9 @@ if $ARGS[0] = 'lover' and loverGender[ARGS[1]] = 1:
 			if loverrelation[lover_number] > 0:'(<<$loverdesc[lover_number]>>) -  Okay, I''ll call tomorrow.'
 			act 'Hang up': gt 'telefon', 'fin'
 		end
-		
+
 		act 'I think we should break up...':
-			cla 
+			cla
 			'She sounds hurt, but you insist it is for the best. You both say goodbye and part ways.'
 			gs 'lover', 'remove', lover_number
 
@@ -555,9 +555,10 @@ if $ARGS[0] = 'Phone_megafon':
 	clr
 	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
 	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
-	pl'<center><font size=6>Bullhorn</font></center>'
-	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_megafon.png"><br></center>'
-	pl'<center><b>The balance in the account: </b><font size=5><i><font size=6><<balans>></font></i> <b>₽</b>.</center>.'
+	pl'<center><font size=6>MegaFon</font></center>'
+	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_megafon.png" height="80" width="80"><br></center>'
+	pl'<center><b>The balance in the account:</b>'
+	pl'<center><font size=5><<balans>> ₽.</font></center>'
 	pl'<center><a href="exec:gs ''telefon'', ''Phone_menu'' "><img src="images/system/icon/back.png"></a></center>'
 end &! --- Phone_megafon ---
 
@@ -567,7 +568,7 @@ if $ARGS[0] = 'Phone_contactlist':
 	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
 	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
 	pl '<center><font size=6>Contacts</font></center>'
-	pl '<center><img src="<<FUNC(''$phone_theme'')>>icon_call.png"><br></center>'
+	pl '<center><img src="<<FUNC(''$phone_theme'')>>icon_call.png" height="80" width="80"><br></center>'
 	if StoryLine = 1:pl'<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/phone/icons/icon_npc1.png"></TD><TD>Mum</TD><TD align="right"><a href="exec:gs ''telefon'', ''Phone_call'' "><b>Call</b></a></TD></TR></TABLE></center>'
 	if hour >= 8 and hour <= 19:
 		if telalla > 0:
@@ -605,7 +606,7 @@ if $ARGS[0] = 'Phone_contactlist':
 		if telkat > 0:
 			pl'<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/phone/icons/icon_kat.png"></TD><TD></TD><TD align="right"><a href="exec:$callerid = ''icon_kat'' & gs ''telefon'', ''phone_call_reject'' "><b>Call</b></a></TD></TR></TABLE></center>'
 		end
-		
+
 		!! iterating all lovers
 		lover_number = 0
 		:loverunavailableloop
@@ -623,7 +624,7 @@ if $ARGS[0] = 'Phone_contactlist':
 	dummyas = arrsize('$contact')
 :din_bad_as
 	dummyas -= 1
-	if dummyas >= 0: 
+	if dummyas >= 0:
 		pl '<<$contact[dummyas]>>'
 		jump 'din_bad_as'
 	end
@@ -639,7 +640,7 @@ if $ARGS[0] = 'Edit_Custom_list':
 	dummyas = arrsize('$contact')
 :din_bad_as1
 	dummyas -= 1
-	if dummyas >= 0: 
+	if dummyas >= 0:
 		$dummyedit = $contact[dummyas]
 		$dummyedit1 = dyneval('$result = ''</a><a href="exec:killvar ''''$contact'''',<<dummyas>> & gs ''''telefon'''', ''''Edit_Custom_list'''' "><b>Remove</b>'' ')
 		$dummyedit2 = $replace($dummyedit,'<b>Call</b>',$dummyedit1)
@@ -658,10 +659,15 @@ end &! --- Edit_Custom_list ---
 
 if $ARGS[0] = 'Phone_notebook':
 	clr
+	gs 'housing', 'rent'
+	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
+	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
 	pl'<center><font size=6>Planner</font></center>'
+	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_notebook.png" height="80" width="80"></center>'
 	pl'<center><<year>>-<<$month>>-<<day>>, <<$week[week]>><br></center>'
-	rent = -1
-	if BuyHous = 2 and ArendHouseSL > 0:rent = ArendHouseSL
+	rent1 = -1
+	if home_owned[1] > 0 and ArendHouseSL > 0:rent1 = ArendHouseSL
+	if home_owned[4] > 0 and ArendHouseSL4 > 0:rent4 = ArendHouseSL4
 	preg1 = pregtime
 	d1 = day
 	w1 = week
@@ -686,23 +692,23 @@ if $ARGS[0] = 'Phone_notebook':
 		if m1 = 6 and d1 = 12:$calendarday += $list + 'Russia Day'
 		if m1 = 6 and d1 = 13:$calendarday += $list + 'National holiday'
 		if m1 = 11 and d1 = 4:$calendarday += $list + 'Unity Day'
-		
+
 		if storyline = 1 and SchoolAtestat = 0:
 			if m1 = 1 and d1 = 1:$calendarday += $list + 'First day of Winter break.'
 			if m1 = 1 and d1 = 15:$calendarday += $list + 'Last day of Winter break.'
 			if m1 = 3 and d1 = 20:$calendarday += $list + 'First day of Spring break.'
 			if m1 = 3 and d1 = 26:$calendarday += $list + 'Last day of Spring break.'
-			if school_year = 2000 and y1 = 2017 and m1 = 5 and d1 = 25:$calendarday += $list + 'Graduation Day!'
-			if school_year = 2001 and y1 = 2018 and m1 = 6 and d1 = 1:$calendarday += $list + 'First day of Summer break.'
+			if school_year = 2003 and y1 = 2020 and m1 = 5 and d1 = 25:$calendarday += $list + 'Graduation Day!'
+			if school_year = 2004 and y1 = 2021 and m1 = 6 and d1 = 1:$calendarday += $list + 'First day of Summer break.'
 			if m1 = 8 and d1 = 31:$calendarday += $list + 'Last day of Summer break.'
 			if m1 = 11 and d1 = 4:$calendarday += $list + 'First day of Autumn break.'
 			if m1 = 11 and d1 = 11:$calendarday += $list + 'Last day of Autumn break.'
 		end
-		
+
 		if daynum >= lastmens+28 and daynum < lastmens+31:$calendarday += $list + '<font color=''red''><b>Menstruation!</b></font>'
 		if daynum >= lastmens+12 and daynum < lastmens+14:$calendarday += $list + '<font color=#336600><b>Ovulation!</b></font>'
 		if preg1 = 280:$calendarday += $list + '<font color=''red''><b>Birthing day!</b></font>'
-		
+
 		if w1 < 5 and (workSec >= 1 or PersSecWork = 1):$calendarday += $list + 'Working as a secretary. <i>(9:00 - 17:00)</i>'
 		if w1 < 5 and workFabrika = 1:
 			$calendarday += $list + 'Working as a seamstress. '
@@ -722,7 +728,8 @@ if $ARGS[0] = 'Phone_notebook':
 			end
 		end
 		if sisboyparty = 2 and sisboyparty_day+1 = daynum:$calendarday += $list + '<font color="orange">Party at Rex, gathering before 18:00 at Community Center</font>'
-		if rent = 0:$calendarday += $list + 'Rent on apartment expires!'
+		if rent1 = 0:$calendarday += $list + 'Rent on city apartment expires!'
+		if rent4 = 0:$calendarday += $list + 'Rent on Pushkin apartment expires!'
 		if birthday = d1 and birthmonth = m1:$calendarday += $list + 'My birthday!'
 		if kid > 0:
 			k1 = kid
@@ -730,26 +737,28 @@ if $ARGS[0] = 'Phone_notebook':
 				if daykid[k1] = d1 and monthkid[k1] = m1:$calendarday += $list + 'Birthday of my <<$polreb[k1]>> <<$kidname[k1]>>, my <<kid>>. baby!'
 			if k1 > 1:k1 -= 1 & jump 'kiddieloop'
 		end
-		
+
 		if $calendarday ! '':
 			p '<b><<$monthName[m1]>> <<d1>>, <<$week[w1]>>:</b>'
 			pl $calendarday
 		end
 	if i < 14:
 		preg1 += 1
-		rent -= 1
+		rent1 -= 1
+		rent4 -= 1
 		i += 1
 		w1 += 1
 		if w1 > 7:w1 = 1
 		d1 += 1
-		if monthsend[m1] < d1: 
+		if monthsend[m1] < d1:
 			m1 += 1 & d1 = 1
 			if m1 = 13: m1 = 1 & y1 += 1
 		end
 		jump 'pnotebook'
 	end
 	killvar 'calendarday'
-	killvar 'rent'
+	killvar 'rent1'
+	killvar 'rent4'
 	killvar 'preg1'
 	killvar 'd1'
 	killvar 'w1'
@@ -764,7 +773,7 @@ if $ARGS[0] = 'Phone_pictures':
 	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
 	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
 	pl'<center><font size=6>Gallery</font></center>'
-	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_pictures.png"><br></center>'
+	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_pictures.png" height="80" width="80"><br></center>'
 	if phone_selfie[1] = 1:pl'<a href="exec:view''images/system/phone/selfie/phone_selfie1.jpg''"><b>Selfie number1</b></a>'
 	if phone_selfie[2] = 1:pl'<a href="exec:view''images/system/phone/selfie/phone_selfie2.jpg''"><b>Selfie number2</b></a>'
 	if vanr_selfie[0] = 1:pl'<a href="exec:view''images/system/phone/selfie/bathroom/s (0).jpg''"><b>After shower selfie number1</b></a>'
@@ -839,20 +848,21 @@ if $ARGS[0] = 'Phone_camera':
 	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
 	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
 	pl'<center><font size=6>Camera</font></center>'
-	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_camera.png"><br></center>'
-	pl'<a href="exec:photoskl_exp += 1 & gs ''telefon'', ''Phone_camera_selfie'' "><b>Take a selfie</b></a>' 
+	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_camera.png" height="80" width="80"><br></center>'
+	pl'<a href="exec:photoskl_exp += 1 & gs ''telefon'', ''Phone_camera_selfie'' "><b>Take a selfie</b></a>'
 	pl'<center><a href="exec:gs ''telefon'', ''Phone_menu'' "><img src="images/system/icon/back.png"></a></center>'
 end &! --- Phone_camera ---
- 	 
 
-   
+
+
 if $ARGS[0] = 'Phone_wheather':
 	clr
 	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
 	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
 	pl'<center><font size=6>Weather</font></center>'
-	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_weather.png"><br></center>'
-	pl'<center><font size=6><b>Temperature: <<$temperature>>. <i><<$osadki>></i></b></font></center>'
+	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_weather.png" height="80" width="80"><br></center>'
+	pl'<center><b>Temperature:</b></center>'
+	pl'<center><<$temperature>>. <<$osadki>></center>'
 	pl'<center><a href="exec:gs ''telefon'', ''Phone_menu'' "><img src="images/system/icon/back.png"></a></center>'
 end &! --- Phone_wheather ---
 
@@ -861,27 +871,40 @@ if $ARGS[0] = 'Phone_calendar':
 	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
 	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
 	pl'<center><font size=6>Calendar</font></center>'
-	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_calendar.png"><br></center>'
-	pl'<center><B>Today: </B><font size=5><<$week[week]>>, <i><font size=6><<day>></font></i> <<$month>> <i><font size=6><<year>></font></i> year.</font></center>'
+	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_calendar.png" height="80" width="80"><br></center>'
+	pl'<center><B>Today:</B></center>'
+	pl'<center><<$week[week]>>, <<day>> <<$month>> <<year>></center>'
 	pl'<center><a href="exec:gs ''telefon'', ''Phone_menu'' "><img src="images/system/icon/back.png"></a></center>'
 end &! --- Phone_calendar ---
 
-if $ARGS[0] = 'Phone_noactive':
+if $ARGS[0] = 'Phone_media':
 	clr
 	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
 	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
-	pl'<center><font size=6>This option is not active</font></center>'
+	pl'<center><font size=6>Media</font></center>'
+	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_music.png" height="80" width="80"></center>'
+	pl'<center><b>This option is not active</b></center>'
 	pl'<center><a href="exec:gs ''telefon'', ''Phone_menu'' "><img src="images/system/icon/back.png"></a></center>'
-end &! --- Phone_noactive ---
+end &! --- Phone_media ---
+
+if $ARGS[0] = 'Phone_sms':
+	clr
+	pl '<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
+	pl '<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
+	pl'<center><font size=6>SMS</font></center>'
+	pl'<center><img src="<<FUNC(''$phone_theme'')>>icon_sms.png" height="80" width="80"></center>'
+	pl'<center><b>This option is not active</b></center>'
+	pl'<center><a href="exec:gs ''telefon'', ''Phone_menu'' "><img src="images/system/icon/back.png"></a></center>'
+end &! --- Phone_sms ---
 
 if $ARGS[0] = 'Phone_menu':
 	clr
 	pl'<center><b><<$mid(100+hour,2,2)>>:<<$mid(100+minut,2,2)>></b></center>'
 	pl'<center><TABLE cellspacing="0" width="80%"><TR><TD><img src="images/system/icon/icon_statusbar_left.png"></TD><TD></TD><TD align="right"><img src="images/system/icon/icon_statusbar_right.png"></TD></TR></TABLE></center>'
-	pl'<center><a href="exec:gs ''telefon'', ''Phone_camera'' "><img src="<<FUNC(''$phone_theme'')>>icon_camera.png"></a><a href="exec:gs ''telefon'', ''Phone_calendar'' "><img src="<<FUNC(''$phone_theme'')>>icon_calendar.png"></a><a href="exec:gs ''telefon'', ''Phone_pictures'' "><img src="<<FUNC(''$phone_theme'')>>icon_pictures.png"></a></center>'
-	pl'<center><a href="exec:gs ''telefon'', ''Phone_noactive'' "><img src="<<FUNC(''$phone_theme'')>>icon_music.png"></a><a href="exec:gs ''Cheatmenu_din'' & Enable_settingmode = 1 & dynamic $cheatmenu[''display'']"><img src="<<FUNC(''$phone_theme'')>>icon_settings.png"></a><a href="exec:gs ''telefon'', ''Phone_wheather'' "><img src="<<FUNC(''$phone_theme'')>>icon_weather.png"></a></center>'
-	pl'<center><a href="exec:gs ''telefon'', ''Phone_contactlist'' "><img src="<<FUNC(''$phone_theme'')>>icon_call.png"></a><a href="exec:gs ''telefon'', ''Phone_noactive'' "><img src="<<FUNC(''$phone_theme'')>>icon_sms.png"></a><a href="exec:gs ''telefon'', ''Phone_megafon'' "><img src="<<FUNC(''$phone_theme'')>>icon_megafon.png"></a></center>'
-	pl'<center><a href="exec:gs ''telefon'', ''Phone_notebook'' "><img src="<<FUNC(''$phone_theme'')>>icon_notebook.png"></a></center>'
+	pl'<center><a href="exec:gs ''telefon'', ''Phone_camera'' "><img src="<<FUNC(''$phone_theme'')>>icon_camera.png" height="80" width="80"></a><a href="exec:gs ''telefon'', ''Phone_calendar'' "><img src="<<FUNC(''$phone_theme'')>>icon_calendar.png" height="80" width="80"></a><a href="exec:gs ''telefon'', ''Phone_pictures'' "><img src="<<FUNC(''$phone_theme'')>>icon_pictures.png" height="80" width="80"></a></center>'
+	pl'<center><a href="exec:gs ''telefon'', ''Phone_media'' "><img src="<<FUNC(''$phone_theme'')>>icon_music.png" height="80" width="80"></a><a href="exec:gs ''telefon'', ''Phone_notebook'' "><img src="<<FUNC(''$phone_theme'')>>icon_notebook.png" height="80" width="80"></a><a href="exec:gs ''telefon'', ''Phone_wheather'' "><img src="<<FUNC(''$phone_theme'')>>icon_weather.png" height="80" width="80"></a></center>'
+	pl'<center><a href="exec:gs ''telefon'', ''Phone_contactlist'' "><img src="<<FUNC(''$phone_theme'')>>icon_call.png" height="80" width="80"></a><a href="exec:gs ''telefon'', ''Phone_sms'' "><img src="<<FUNC(''$phone_theme'')>>icon_sms.png" height="80" width="80"></a><a href="exec:gs ''telefon'', ''Phone_megafon'' "><img src="<<FUNC(''$phone_theme'')>>icon_megafon.png" height="80" width="80"></a></center>'
+	pl'<center><a href="exec:gs ''Cheatmenu_din'' & Enable_settingmode = 1 & dynamic $cheatmenu[''display'']"><img src="<<FUNC(''$phone_theme'')>>icon_settings.png" height="80" width="80"></a></center>'
 	pl'<center><a href="exec:gs''stat''"><img src="images/system/icon/back.png"></a></center>'
 end &! --- Phone_menu ---
 
@@ -924,7 +947,7 @@ if $ARGS[0] = 'setup':
 	$phonetheme_name[11] = 'Sports'
 	$phonetheme_name[12] = 'Succubus'
 	$phonetheme_name[13] = 'Woodshop'
-	
+
 	phonetheme[0] = 1
 end
 

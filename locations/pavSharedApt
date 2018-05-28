@@ -781,8 +781,6 @@ if $ARGS[0] = 'cookForGuys':
 	minut += 90
 	eda -= 3
 	kuhdrova = 0
-	!musor += 1
-	cltarelka -= 1
 	pcs_mood -= 10
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/shared/home/kitchen/cook.jpg"></center>'
@@ -796,9 +794,7 @@ if $ARGS[0] = 'cleanForGuys':
 	cla
 	*clr
 	minut += 60
-	suhbelo += dirtbelo
 	poroshok -= 3
-	dirtbelo = 0
 	pcs_mood -= 10
 	gs 'stat'
 	'<center><img <<$set_imgh>> src="images/locations/city/residential/apartment/stir.jpg"></center>'

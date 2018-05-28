@@ -25,7 +25,7 @@ if $ARGS[0] = 'start':
 		act 'Go in the Women''s toilet': gt 'gdktoilet', 'womens'
 	end
 
-	if hour >=20 and hour <=23:
+	if hour >=20 and hour <=23 and week >= 5 and week < 7:
 		if music_on = 1:
 			$track_loop = 'sound/komb.mp3'
 			volume = 50
@@ -619,11 +619,12 @@ if $ARGS[0] = 'womens':
 	'<center><img <<$set_imgh>> src="images/locations/pavlovsk/community/bathroom/womens/bathroom_women.jpg"></center>'
 	'You walk in to the women''s restroom. You see some sinks and <a href="exec:gt ''mirror'', ''start''">mirrors</a>. You notice the last stall has its door wide open.'
 
-	dynamic $basin
-	dynamic $quickwash
-
-	act 'Go to the last stall': gt'gdktoilet', 'emptystall'
 	act 'Leave': gt'gdktoilet', 'start'
+	act 'Go to the last stall': gt'gdktoilet', 'emptystall'
+	
+	dynamic $tampon
+	dynamic $quickwash
+	dynamic $basin		
 end
 
 if $ARGS[0] = 'emptystall':

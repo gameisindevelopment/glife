@@ -28,7 +28,7 @@ if $shoplocation = 'main':
 	end
 
 	'In the hall stands an <a href="exec:$shoplocation = ''ATM'' & gt ''shop'', ''move''">ATM</a>, from which you can withdraw money from your bank account.'
-	'There is a branch of communication giants <a href="exec:$shoplocation = ''megafon'' & gt ''shop'', ''move''">Bullhorn</a>.'
+	'There is a branch of communication giants <a href="exec:$shoplocation = ''megafon'' & gt ''shop'', ''move''">MegaFon</a>.'
 	'On the other side is on the wall <a href="exec: gs ''noticeboard'',''start''">Public notice board</a>, where you can check various private and official advertisement.'
 	'<br>Most of the space in the supermarket is taken up by the <a href="exec:$shoplocation = ''grocery'' & gt ''shop'', ''move''">grocery department</a>, but the store has many smaller departments as well. <a href="exec:$shoplocation=''cosmetics'' & gt ''shop'', ''move''">Cosmetics</a>, <a href="exec:$shoplocation = ''hardware'' & gt ''shop'', ''move''">hardware</a>, <a href="exec:$shoplocation = ''clothing'' & gt ''shop'', ''move''">clothing</a> and the department of <a href="exec:$shoplocation = ''tech'' & gt ''shop'', ''move''">household appliances</a>. Not far from the entrance is a <a href="exec:$shoplocation = ''icecream'' & gt ''shop'', ''move''">counter selling ice cream</a>.'
 	clr
@@ -144,7 +144,7 @@ end
 if $shoplocation = 'ATM':
 	'<center><b><font color="maroon">ATM</font></b></center>'
 	'<center><img <<$set_imgh>> src="images/locations/shared/store/atm.jpg"></center>'
-	
+
 	if bankAccount = 1:
 		if karta >= 0:
 			'You have <<karta>> <b>₽</b> in your account.'
@@ -153,14 +153,14 @@ if $shoplocation = 'ATM':
 			'You are overdrawn by <font color="red"><<-1 * karta>> <b>₽</b></font>.'
 			'You have a remaining credit limit of <font color="blue"><<bankDebtLimit + karta>></font>!'
 		end
-		
+
 		'<br>ATM Deposit Fee: 100 <b>₽</b>'
-		
+
 		if atmDeposit = 0:
 			act 'Deposit money':
 				cla
 				minut += 5
-				
+
 				kartaINATM = input ("How much money you want to deposit into the account? Note: A service charge of 100 <b>₽</b> will be deducted from the amount deposited.")
 				if kartaINATM < 100 or kartaINATM > money:
 					'This is not a valid input.'
@@ -171,19 +171,19 @@ if $shoplocation = 'ATM':
 					'<br>You deposited <<kartaINATM>> <b>₽</b> into your account.'
 					'It will take 2 days for funds to be available. Your new balance will be <<karta+atmDeposit>>  <b>₽</b>.'
 				end
-				
+
 				gs 'stat'
 				act 'Move away': gt 'shop'
 			end
 		else
 			'<br>★ Processing deposit of <<atmDeposit>> <b>₽</b> in <<atmDepositDate - daystart>> days.'
 		end
-		
+
 		if karta + bankDebtLimit > 0:
 			act 'Withdraw money from the ATM':
 				cla
 				minut += 5
-				
+
 				kartaOUT = input ("How much money you want to withdraw?")
 				if kartaOUT <= 0 or kartaOUT > karta + bankDebtLimit:
 					'<br>Invalid operation.'
@@ -198,7 +198,7 @@ if $shoplocation = 'ATM':
 						'<br>You withdraw <<kartaOUT>> <b>₽</b>. <font color="red">Your bank account is overdrawn by <b><<karta>> ₽</b>.</font>'
 					end
 				end
-				
+
 				gs 'stat'
 				act 'Move away': gt 'shop'
 			end
@@ -208,7 +208,7 @@ if $shoplocation = 'ATM':
 	else
 		'You don''t have a bank account yet!'
 	end
-	
+
 	act 'Move away':gt 'shop', 'start'
 end
 
@@ -233,18 +233,18 @@ if $shoplocation = 'grocery':
 		killvar '$message'
 	else
 		''
-	end	
-	*pl '<center><table align="center" width=80%>' 
-	*P FUNC ('$stock_item', 1, 'Regular food', 80, 'eda', $CURLOC) 
-	*P FUNC ('$stock_item', 10, 'Regular food', 800, 'eda', $CURLOC) 
-	*P FUNC ('$stock_item', 1, 'Diet food', 300, 'edaD', $CURLOC) 
-	*P FUNC ('$stock_item', 10, 'Diet food', 3000, 'edaD', $CURLOC) 
+	end
+	*pl '<center><table align="center" width=80%>'
+	*P FUNC ('$stock_item', 1, 'Regular food', 80, 'eda', $CURLOC)
+	*P FUNC ('$stock_item', 10, 'Regular food', 800, 'eda', $CURLOC)
+	*P FUNC ('$stock_item', 1, 'Diet food', 300, 'edaD', $CURLOC)
+	*P FUNC ('$stock_item', 10, 'Diet food', 3000, 'edaD', $CURLOC)
 	*P FUNC ('$stock_item', 10, 'Tea biscuits', 400, 'pranik', $CURLOC)
-	*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Bottle of water', 100, 'bottle', $CURLOC), '<tr><td></td><td>Bottle of water</td><td colspan=2>You need a handbag</td><td>for 50 <b>₽</b></td></tr>') 
-	*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Sandwich', 100, 'buterbrod', $CURLOC), '<tr><td></td><td>Sandwich</td><td colspan=2>You need a handbag</td><td>for 100 <b>₽</b></td></tr>') 
-	*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Cheap Bottle of wine', 200, 'wine', $CURLOC), '<tr><td></td><td>Bottle of wine</td><td colspan=2>You need a handbag</td><td>for 500 <b>₽</b></td></tr>') 
-	!!*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Average Bottle of wine', 500, 'wine', $CURLOC), '<tr><td></td><td>Bottle of wine</td><td colspan=2>You need a handbag</td><td>for 500 <b>₽</b></td></tr>') 
-	!!*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Quality Bottle of wine', 1000, 'wine', $CURLOC), '<tr><td></td><td>Bottle of wine</td><td colspan=2>You need a handbag</td><td>for 500 <b>₽</b></td></tr>') 
+	*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Bottle of water', 100, 'bottle', $CURLOC), '<tr><td></td><td>Bottle of water</td><td colspan=2>You need a handbag</td><td>for 50 <b>₽</b></td></tr>')
+	*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Sandwich', 100, 'buterbrod', $CURLOC), '<tr><td></td><td>Sandwich</td><td colspan=2>You need a handbag</td><td>for 100 <b>₽</b></td></tr>')
+	*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Cheap Bottle of wine', 200, 'wine', $CURLOC), '<tr><td></td><td>Bottle of wine</td><td colspan=2>You need a handbag</td><td>for 500 <b>₽</b></td></tr>')
+	!!*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Average Bottle of wine', 500, 'wine', $CURLOC), '<tr><td></td><td>Bottle of wine</td><td colspan=2>You need a handbag</td><td>for 500 <b>₽</b></td></tr>')
+	!!*P iif(bag > 0, FUNC ('$single_stock_item', 1, 'Quality Bottle of wine', 1000, 'wine', $CURLOC), '<tr><td></td><td>Bottle of wine</td><td colspan=2>You need a handbag</td><td>for 500 <b>₽</b></td></tr>')
 	*P '</table></center>'
 	gs 'stat'
 	if night_mode = 1:
@@ -282,17 +282,17 @@ if $shoplocation= 'cosmetics':
 		killvar '$message'
 	else
 		''
-	end	
-	*pl '<center><table align="center" width=80%>' 
-	*P FUNC ('$stock_item', 50, 'Cosmetics', 1300, 'kosmetica', $CURLOC) 
+	end
+	*pl '<center><table align="center" width=80%>'
+	*P FUNC ('$stock_item', 50, 'Cosmetics', 1300, 'kosmetica', $CURLOC)
 	*P FUNC ('$stock_item', 10, 'Plain false lashes', 1500, 'falselashesplain',$CURLOC)
 	*P FUNC ('$stock_item', 3, 'Mink false lashes', 900, 'falselashesmink',$CURLOC)
-	*P FUNC ('$stock_item', 10, 'Razors', 1000, 'stanok', $CURLOC) 
-	*P FUNC ('$stock_item', 20, 'Sunblock', 500, 'krem', $CURLOC) 
-	*P FUNC ('$stock_item', 20, 'Tampons', 200, 'tampon', $CURLOC) 
-	*P FUNC ('$stock_item', 20, 'Sanitary napkins', 100, 'sanpad', $CURLOC) 
-	*P FUNC ('$stock_item', 30, 'Shampoo', 250, 'shampoo', $CURLOC) 
-	*P FUNC ('$stock_item', 10, 'Hair scrunchies', 80, 'hscrunch', $CURLOC) 
+	*P FUNC ('$stock_item', 10, 'Razors', 1000, 'stanok', $CURLOC)
+	*P FUNC ('$stock_item', 20, 'Sunblock', 500, 'krem', $CURLOC)
+	*P FUNC ('$stock_item', 20, 'Tampons', 200, 'tampon', $CURLOC)
+	*P FUNC ('$stock_item', 20, 'Sanitary napkins', 100, 'sanpad', $CURLOC)
+	*P FUNC ('$stock_item', 30, 'Shampoo', 250, 'shampoo', $CURLOC)
+	*P FUNC ('$stock_item', 10, 'Hair scrunchies', 80, 'hscrunch', $CURLOC)
 	*P FUNC ('$stock_item', 12, 'Hair pins', 100, 'hpingrip', $CURLOC)
 	*P FUNC ('$stock_item', 10, 'Wipes', 50, 'salfetka', $CURLOC, '', iif(bag > 0, 0, 1), 'You need a handbag')
 	*P FUNC ('$stock_item', 10, 'Portable makeup', 700, 'kosmetitka', $CURLOC, '', iif(bag > 0, 0, 1), 'You need a handbag')
@@ -338,14 +338,14 @@ if $shoplocation = 'hardware':
 		killvar '$message'
 	else
 		''
-	end	
-	*pl '<center><table align="center" width=80%>' 
-	*P FUNC ('$stock_item', 20, 'Dishwashing detergent', 500, 'fairy', $CURLOC) 
-	*P FUNC ('$stock_item', 30, 'Clothing detergent', 500, 'poroshok', $CURLOC) 
-	*P FUNC ('$stock_item', 5, 'Plates', 450, 'cltarelka', $CURLOC) 
+	end
+	*pl '<center><table align="center" width=80%>'
+	*P FUNC ('$stock_item', 20, 'Dishwashing detergent', 500, 'fairy', $CURLOC)
+	*P FUNC ('$stock_item', 30, 'Clothing detergent', 500, 'poroshok', $CURLOC)
+	*P FUNC ('$stock_item', 5, 'Plates', 450, 'cltarelka', $CURLOC)
 	*P '</table></center>'
 	*nl
-	
+
 	gs 'stat'
 	if night_mode = 1:
 		fcolor = rgb(255, 255, 255)
@@ -358,8 +358,8 @@ if $shoplocation = 'hardware':
 	end
 
 	act 'Leave the hardware department':gt 'shop', 'start'
-	
-	 if sewing_kit = 0 and money >= 500:
+
+	if sewing_kit = 0 and money >= 500:
 		act'Buy sewing kit for 500 <b>₽</b>':
 		cla & *clr
 		sewing_kit = 1
@@ -368,27 +368,28 @@ if $shoplocation = 'hardware':
 			act'Move away from the counter':gt'shop'
 		end
 	end
-		
-	
- 'On the counter you can see that the fabric is suitable for sewing. It''s sold in large squares with each square costing 50 <b>₽</b>.'
- if tkan <= 0:'You have <<tkan>> squares of fabric.'
- if tkan > 0:'You have <<tkan>> squares of fabric.'
-	 if money >= 50:
-		 act'Buy fabric':
-		 cls
-		 portion = input ("How much do you want to buy?")
-		 if portion <= 0:portion = 1
-		 if portion*50 > money:'You do not have enough money.'
-			 if portion*50 <= money:
+
+
+	'On the counter you can see fabric suitable for sewing. It''s sold in large squares costing 50 <b>₽</b> each.'
+	if tkan <= 0:'You have <<tkan>> squares of fabric.'
+	if tkan > 0:'You have <<tkan>> squares of fabric.'
+
+	if money >= 50:
+		act'Buy fabric':
+		cls
+		portion = input ("How much do you want to buy?")
+		if portion <= 0:portion = 1
+		if portion*50 > money:'You do not have enough money.'
+			if portion*50 <= money:
 				tkan += portion
 				money = money - portion*50
 				'<center><img <<$set_imgh>> src="images/locations/shared/store/kassa.jpg"></center>'
 				'You paid the cashier and bought cloth.'
-			 end
+			end
 			gs'stat'
-		 act 'Move away from the counter':gt'shop'
-		 end
-	 end	
+		act 'Move away from the counter':gt'shop'
+		end
+	end
 end
 
 !! Women''s clothing
@@ -411,7 +412,7 @@ if $shoplocation = 'clothing':
 			killvar '$message'
 		else
 			''
-		end	
+		end
 		'Women''s clothing at unbeatable prices, panties and bras 300<b>₽</b> each'
 		gs 'stat'
 		if night_mode = 1:
@@ -425,9 +426,9 @@ if $shoplocation = 'clothing':
 		end
 
 		act 'Leave the women''s clothing department':gt 'shop', 'start'
-		
+
 		act 'View clothes': $shoplocation = 'clothing1' & gt 'shop'
-		
+
 		act 'View underwear': $shoplocation = 'underwear' & gt 'shop'
 
 		if konki!1:
@@ -574,15 +575,15 @@ if $shoplocation = 'tech':
 		killvar '$message'
 	else
 		''
-	end	
-	*pl '<center><table align="center" width=80%>' 
+	end
+	*pl '<center><table align="center" width=80%>'
 	*P FUNC ('$single_stock_item', 1, 'Small TV', 15000, 'TV', $CURLOC, '', iif(home_owned[1] > 0 or home_owned[3] > 0 or home_owned[4] = 1 or home_owned[5] > 2, 0, 1), 'You need your own home')
 	*P FUNC ('$single_stock_item', 2, 'Large Plasma TV', 30000, 'TV', $CURLOC, '', iif(home_owned[1] > 0 or home_owned[3] > 0 or home_owned[4] = 1 or home_owned[5] > 2, 0, 1), 'You need your own home')
 	*P FUNC ('$single_stock_item', 1, 'Computer', 40000, 'komp', $CURLOC)
 	*p FUNC ('$single_stock_item', 1, 'Computer game Dead Sunset', 800, 'GameCD2', $CURLOC, '', iif(komp > 0, 0, 1), 'You need a computer')
 	*P FUNC ('$single_stock_item', 1, 'Dishwasher', 28000, 'posudomashina', $CURLOC, '', iif(home_owned[1] > 0 or home_owned[3] > 0 or home_owned[4] = 1 or home_owned[5] > 2, 0, 1), 'You need your own home')
 	*P FUNC ('$single_stock_item', 1, 'Washing machine', 30000, 'stiralka', $CURLOC, '', iif(home_owned[1] > 0 or home_owned[3] > 0 or home_owned[4] = 1 or home_owned[5] > 2, 0, 1), 'You need your own home')
-	*P FUNC ('$single_stock_item', 1, 'Camera', 20000, 'zenit', $CURLOC) 
+	*P FUNC ('$single_stock_item', 1, 'Camera', 20000, 'zenit', $CURLOC)
 	*P FUNC ('$single_stock_item', 1, 'Mini camera disguised as a cigarette pack', 100000, 'minifoto', $CURLOC)
 	*P FUNC ('$single_stock_item', 1, 'Webcam', 2000, 'webcamera', $CURLOC, '', iif((npc_rel['A11']>=30 and webcamera = 0) or (camwhore = 1 and webcamera = 0), 0, 1), 'You have no use this')
 	*P '</table></center>'
@@ -631,7 +632,7 @@ if $shoplocation = 'megafon':
 	minut+=3
 	gs'stat'
 	i = 0
-	'<center><b><font color = maroon>Salon connection Megaphone</font></B></center>'
+	'<center><b><font color = maroon>MegaFon shop</font></B></center>'
 	'<center><img src="images/system/phone/megafon2.jpg" ></center>'
 
 	*pl '<center><table align="center">'
@@ -667,7 +668,7 @@ if $shoplocation = 'megafon':
 	'</table></center>'
 
 
-	act 'Exit Department':gt'shop','start'
+	act 'Return to the Supermarket':gt'shop','start'
 
 	if money > 0:
 		act 'Put the money on the phone':

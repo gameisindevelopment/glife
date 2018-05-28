@@ -15,7 +15,7 @@ if $ARGS[0] = 'start':
 	!!act 'SunReview of the Dead':gt 'KGZstart'
 
 	if student > 0 and kursovik < 100:'You should probably do some of your <a href="exec:GT ''Komp'',''kursak''">coursework</a>.'
-	
+
 	if $LOC = 'shulga_room':
 		internet = 100000
 		act 'Browse the internet':gt 'Komp', 'brows'
@@ -49,9 +49,7 @@ if $ARGS[0] = 'brows':
 
 		'A blinking banner for a <a href="exec:GT ''Komp'',''agent''">real estate agency</a> keeps popping up in the corner.'
 
-		act 'Check out an interior design website (1:00)':gt 'Komp', 'remont'
-
-		if home_owned[1] = 1 and husband = 0:act 'Rent your apartment out':gt 'Komp', 'sale'
+		if home_owned[1] = 2 and husband = 0:act 'Rent your apartment out':gt 'Komp', 'sale'
 
 		act 'Search for porn (1:00)':gt 'Komp', 'porno'
 		act 'Browse a dating website (1:00)':gt 'Komp', 'znak'
@@ -99,10 +97,10 @@ if $ARGS[0] = 'sale':
 			if obkvsdam = 1:
 				'No one has responded to your offer to rent out your apartment just yet.'
 			elseif obkvsdam > 1:
-				if obkvsdam = 2:predsumm = 7000
-				if obkvsdam = 3:predsumm = 8000
-				if obkvsdam = 4:predsumm = 9000
-				if obkvsdam = 5:predsumm = 10000
+				if obkvsdam = 2:predsumm = 16000
+				if obkvsdam = 3:predsumm = 17000
+				if obkvsdam = 4:predsumm = 18000
+				if obkvsdam = 5:predsumm = 19000
 				'Someone wants to stay in your apartment for a month! They''re offering you <<predsumm>> <b>₽</b> in cash.'
 
 				act 'Accept the offer':
@@ -123,101 +121,10 @@ if $ARGS[0] = 'sale':
 	act 'Leave this website':gt 'Komp', 'brows'
 end
 
-if $ARGS[0] = 'remont':
-	cla
-	clr
-	*clr
-	minut += 60
-	elektro += 3
-	internet -= 1
-	gs 'stat'
-	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/komp.jpg"></center>'
-	'You''re currently browsing the website of a local interior designer. They claim they can remodel houses so fast, it''s done by the time you leave the computer! Surely a joke...'
-
-	if home_owned[1] > 0:
-		if rembedr = 0:
-			act 'Have them redesign your bedroom (50,000 <b>₽</b>)':
-				cla
-				if karta + bankDebtLimit >= 50000:
-					rembedr = 1
-					karta -= 50000
-					'When you transfer the money, you wait for a second to fill out your contact information somewhere. When you look into the hallway, you notice your new bedroom is finished already! It looks fabulous, but wait... how did they do that!?'
-				else
-					'Unfortunately, you do not have enough money in your bank account.'
-				end
-
-				act 'Go back one step':gt 'Komp', 'remont'
-			end
-		end
-
-		if remsitr = 0:
-			act 'Renovate the living room (50,000 <b>₽</b>)':
-				cla
-				if karta + bankDebtLimit >= 50000:
-					remsitr = 1
-					karta -= 50000
-					'When you transfer the money, you wait for a second to fill out your contact information somewhere. When you look into the hallway, you notice the living room is finished already! It looks fabulous, but wait... how did they do that!?'
-				else
-					'Unfortunately, you do not have enough money in your bank account.'
-				end
-
-				act 'Go back one step':gt 'Komp', 'remont'
-			end
-		end
-
-		if remkorr = 0:
-			act 'Repair hallway (50,000 <b>₽</b>)':
-				cla
-				if karta + bankDebtLimit >= 50000:
-					remkorr = 1
-					karta -= 50000
-					'When you transfer the money, you wait for a second to fill out your contact information somewhere. When you look into the hallway, you notice it is finished already! It looks fabulous, but wait... how did they do that!?'
-				else
-					'Unfortunately, you do not have enough money in your bank account.'
-				end
-
-				act 'Go back one step':gt 'Komp', 'remont'
-			end
-		end
-
-		if remvanr = 0:
-			act 'Renovate the bathroom (50,000 <b>₽</b>)':
-				cla
-				if karta + bankDebtLimit >= 50000:
-					remvanr = 1
-					karta -= 50000
-					'When you transfer the money, you wait for a second to fill out your contact information somewhere. When you look into the hallway, you notice your new bathroom is installed already! It looks fabulous, but wait... how did they do that!?'
-				else
-					'Unfortunately, you do not have enough money in your bank account.'
-				end
-
-				act 'Go back one step':gt 'Komp', 'remont'
-			end
-		end
-
-		if remkuhr = 0:
-			act 'Renovate the kitchen (50,000 <b>₽</b>)':
-				cla
-				if karta + bankDebtLimit >= 50000:
-					remkuhr = 1
-					karta -= 50000
-					'When you transfer the money, you wait for a second to fill out your contact information somewhere. When you look into the hallway, you notice the kitchen you just ordered is already installed and ready to use. It looks fabulous, but wait... how did they do that!?'
-				else
-					'Unfortunately, you do not have enough money in your bank account.'
-				end
-
-				act 'Go back one step':gt 'Komp', 'remont'
-			end
-		end
-	end
-
-	act 'Leave this website':gt 'Komp', 'brows'
-end
-
 if $ARGS[0] = 'porno':
 	cls
 	gs 'stat'
-	
+
 	if internet <= 0:
 		'<center><b>Browser</b></center>'
 		'<center><img <<$set_imgh>> src="images/shared/accessories/computer/eror.jpg"></center>'
@@ -242,10 +149,10 @@ if $ARGS[0] = 'porno':
 			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/shared/accessories/computer/porno.jpg"></center>'
 			'You find a video you think you''d enjoy, and spend some time watching it. Wow, that girl is so lucky...'
-			
+
 			gs 'arousal', 'voyeur', 60
 			gs 'stat'
-			
+
 			act 'The video ends...':gt 'Komp', 'porno'
 		end
 
@@ -271,7 +178,7 @@ if $ARGS[0] = 'masturbate':
 	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/kompmas.jpg"></center>'
 	'You get comfortable in front of your computer and with one hand begin to fondle your breasts, while you click on a link to something really dirty.'
 	'You let go of the mouse and start rubbing your pussy, imagining you''re the woman in the video. The fantasy and your touching are getting you all hot and bothered.'
-	
+
 	gs 'arousal', 'masturbate', 15
 	gs 'stat'
 
@@ -281,10 +188,10 @@ if $ARGS[0] = 'masturbate':
 	end
 
 	act 'Stop masturbating':divanmastr = 0 & gt 'Komp', 'porno'
-	
+
 	gs 'arousal', 'end'
 	gs 'stat'
-	
+
 	if pcs_horny >= 50:act 'Masturbate some more (0:15)':gt 'Komp', 'masturbate'
 end
 
@@ -567,7 +474,7 @@ if $ARGS[0] = 'rabota':
 					gs 'stat'
 					'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore2.jpg"></center>'
 					'You fill out the questionnaire and register yourself as a webcam model. Ten minutes later, you have already been approved and you can now earn money as a webcam girl.'
-					'Of course, you will need a functioning webcam to do this! If you don''t have one yet, they are fairly cheap to buy at most local supermarket chains.' 
+					'Of course, you will need a functioning webcam to do this! If you don''t have one yet, they are fairly cheap to buy at most local supermarket chains.'
 					act 'Leave this website':gt 'Komp','brows'
 				end
 				act 'Leave this website':gt 'Komp','brows'
@@ -591,11 +498,11 @@ if $ARGS[0] = 'study':
 	elektro = elektro + 3
 	internet -= 1
 	intel_exp += 1 + (mentats_dose - rand(0,mentats_dose))
-	compskl_exp += 1 
+	compskl_exp += 1
 	'<center><b>The Institute for Education Measurement</b></center>'
 	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/study.jpg"></center>'
 	'You spend an hour on the IEM website, reading news articles and educational blogs. You feel a bit smarter afterwards.'
-	
+
 	act 'Leave this website':gt'Komp','brows'
 end
 
@@ -606,7 +513,7 @@ if $ARGS[0] = 'kursak':
 	elektro += 3
 	internet -= 1
 	pcs_mood -= 10
-	compskl_exp += 1 
+	compskl_exp += 1
 	kursovik = kursovik + RAND(pcs_intel/20,pcs_intel/10)
 	if kursovik > 100:kursovik = 100
 	'<center><b>Coursework</b></center>'
@@ -624,23 +531,51 @@ if $ARGS[0] = 'agent':
 	elektro += 3
 	internet -= 1
 	gs 'stat'
+	gs 'housing', 'rent'
 	'<center><b>Real estate agency</b></center>'
 	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/agent.jpg"></center>'
 	'You''re currently at the website of the largest real estate agency in the area.'
-	'They have apartments available in the residential district. Renting one would cost you 6000 <b>₽</b> for 30 days.'
+	'They have apartments available in the city residential district and Pushkin. Renting one would cost you as low as 10000 <b>₽</b> for 30 days.'
 	''
-	if ArendHouseSL > 0:'You have <B><<ArendHouseSL>> days</B> remaining on the rental of your apartment.'
-	if karta + bankDebtLimit >= 6000 and home_owned[1] ! 1:
-		act 'Rent an apartment online':
+	if ArendHouseSL > 0:'You have <B><<ArendHouseSL>> days</B> remaining on the rental of your St. Petersburg apartment.'
+	if ArendHouseSL4 > 0:'You have <B><<ArendHouseSL4>> days</B> remaining on the rental of your Pushkin apartment.'
+	if karta + bankDebtLimit >= home_rent[1] and home_owned[1] = 1:
+		act 'Pay rent on St. Petersburg':
 			cla
-			karta -= 6000
+			karta -= home_rent[1]
+			ArendHouseSL += ArendHouseSL_due
+			'After a very simple procedure, you can now call an apartment in the city residential district home for another 30 days. You have <B><<ArendHouseSL>> days</B> remaining on the rental of your apartment.'
+			act 'Leave this website':gt 'Komp','brows'
+		end
+	elseif karta + bankDebtLimit >= home_rent[1] and home_owned[1] = 0:
+		act 'Rent a city apartment':
+			cla
+			karta -= home_rent[1]
+			ArendHouseSL += ArendHouseSL_due
 			home_owned[1] = 1
-			BuyHous = 2
-			ArendHouseSL += 30
-			'After a very simple procedure, you can now call an apartment in the residential district home for another 30 days. You have <B><<ArendHouseSL>> days</B> remaining on the rental of your apartment.'
+			'After a very simple procedure, you can now call an apartment in the city residential district home for 30 days.'
 			act 'Leave this website':gt 'Komp','brows'
 		end
 	end
+	if karta + bankDebtLimit >= home_rent[4] and home_owned[4] > 0:
+		act 'Pay rent on Pushkin':
+			cla
+			karta -= home_rent[4]
+			ArendHouseSL4 += ArendHouseSL_due
+			'After a very simple procedure, you can now call an apartment in Pushkin home for another 30 days. You have <B><<ArendHouseSL4>> days</B> remaining on the rental of your apartment.'
+			act 'Leave this website':gt 'Komp','brows'
+		end
+	elseif karta + bankDebtLimit >= home_rent[4] and home_owned[4] = 0:
+		act 'Rent a Pushkin apartment':
+			cla
+			karta -= home_rent[4]
+			ArendHouseSL4 += ArendHouseSL_due
+			home_owned[4] = 1
+			'After a very simple procedure, you can now call an apartment in Pushkin home for 30 days.'
+			act 'Leave this website':gt 'Komp','brows'
+		end
+	end
+
 	act 'Leave this website':gt 'Komp','brows'
 end
 
@@ -745,9 +680,9 @@ if $ARGS[0] = 'waitclients':
 				end
 			elseif webpopular >= 75:
 				if mfcclients > 3:
-					camclients -= RAND(5,15)   
+					camclients -= RAND(5,15)
 				else
-					camclients += RAND(5,15)   
+					camclients += RAND(5,15)
 				end
 			end
 			chancetips = RAND(0,100)
@@ -765,7 +700,7 @@ if $ARGS[0] = 'waitclients':
 					camclients -= RAND(3,5)
 				else
 					camclients += RAND(3,5)
-				end	
+				end
 			elseif webpopular >= 15 and webpopular < 35:
 				if mfcclients > 3:
 					camclients -= RAND(5,8)
@@ -783,7 +718,7 @@ if $ARGS[0] = 'waitclients':
 					camclients -= RAND(8,15)
 				else
 					camclients += RAND(8,15)
-				end  
+				end
 			end
 			chancetips = RAND(5,100)
 			clientask = RAND(5,100)
@@ -820,7 +755,7 @@ if $ARGS[0] = 'waitclients':
 					camclients -= RAND(6,15)
 				else
 					camclients += RAND(6,15)
-				end   
+				end
 			end
 			chancetips = RAND(5,90)
 			clientask = RAND(5,100)
@@ -852,9 +787,9 @@ if $ARGS[0] = 'waitclients':
 				end
 			elseif webpopular >= 75:
 				if mfcclients > 3:
-					camclients -= RAND(10,15) 
+					camclients -= RAND(10,15)
 				else
-					camclients += RAND(10,15) 
+					camclients += RAND(10,15)
 				end
 			end
 			chancetips = RAND(10,90)
@@ -921,7 +856,7 @@ if $ARGS[0] = 'waitclients':
 					camclients -= RAND(9,15)
 				else
 					camclients += RAND(9,15)
-				end	
+				end
 			elseif webpopular >= 75:
 				if mfcclients > 3:
 					camclients -= RAND(15,20)
@@ -964,7 +899,7 @@ if $ARGS[0] = 'waitclients':
 					camclients -= RAND(10,30)
 				else
 					camclients += RAND(10,30)
-				end	
+				end
 			end
 			chancetips = RAND(15,50)
 			clientask = RAND(15,100)
@@ -999,7 +934,7 @@ if $ARGS[0] = 'waitclients':
 					camclients -= RAND(10,30)
 				else
 					camclients += RAND(10,30)
-				end	
+				end
 			end
 			chancetips = RAND(20,50)
 			clientask = RAND(20,100)
@@ -1024,7 +959,7 @@ if $ARGS[0] = 'waitclients':
 	else
 		'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore6.jpg"></center>'
 	end
-	
+
 	tokenpay = tokens / 2
 	'You take a moment of rest, and just chat casually with your <<camclients>> visitors.'
 	'You have earned <<tokens>> tokens so far this session, which amounts to <<tokenpay>> <b>₽</b>.'
@@ -1053,7 +988,7 @@ if $ARGS[0] = 'waitclients':
 			'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore7.jpg"></center>'
 			'You stand up and lean forward, so your boobs are in full view of the camera. You slowly take off your bra and give the camera a sweet smile.'
 			'While you sit back down and toss your bra to the ground, you hear the donation sound several times. Your visitors enjoyed that!'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'stat'
 
@@ -1087,10 +1022,10 @@ if $ARGS[0] = 'waitclients':
 			'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore8.jpg"></center>'
 			'You make a show of pointing the camera at your groin, and slowly push your panties down your legs. The chat explodes for a moment, with several visitors complimenting your body, and a few more making lewd comments on what they would do to you if they were with you right now.'
 			'As promised, you receive some tokens.'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'stat'
-			
+
 			act 'Continue':gt 'Komp','waitclients'
 		end
 		act 'Refuse to take off your panties':
@@ -1123,7 +1058,7 @@ if $ARGS[0] = 'waitclients':
 
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'stat'
-			
+
 			act 'Continue':gt 'Komp','waitclients'
 		end
 		act 'Refuse to play with your boobs':
@@ -1153,10 +1088,10 @@ if $ARGS[0] = 'waitclients':
 
 			'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore12.jpg"></center>'
 			'You lie down comfortably and put your hand between your legs, gently rubbing your labia with your fingers. You put some effort into showing how wet you are already, which is met with some enthusiastic chatter.'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'stat'
-			
+
 			if pcs_horny >= 100:
 				mfccum += 1
 				pcs_mood = 100
@@ -1211,10 +1146,10 @@ if $ARGS[0] = 'waitclients':
 				'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore17.jpg"></center>'
 			end
 			'Aww, what a sweetheart! You smile at the camera and do what your client wants. He delivers on his promise as well, sending some tokens your way. The rest of the chat is thanking him too, everyone wanted to see that!'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'stat'
-			
+
 			act 'Continue':gt 'Komp','waitclients'
 		end
 		act 'Ignore him':
@@ -1255,29 +1190,29 @@ if $ARGS[0] = 'waitclients':
 					'"I''d love to add my load to that!" a third one laughs.'
 					'Oh no! Your face turns a deep red... you''re so ashamed right now! You try to calm the chat down, but the vulgar comments just keep coming and coming.'
 					'At least the visitor who promised to donate did, so you''re a few tokens richer.'
-					
+
 					gs 'arousal', 'porn', 2, 'exhibitionism'
 					gs 'stat'
-					
+
 				else
 					'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore20,<<rand(0,7)>>.jpg"></center>'
 					'You bite your lip for a second, trying to think of a way to get out of his request. Then, you sigh and show them your rectum. It''s obviously quite used to having objects shoved in, something your audience notices immediately.'
 					'Then your greed overcomes you. They already know... you might as well earn some money by showing them properly, right?'
 					'You pull your ass cheeks aside, giving them a good view of your worn out anus.'
-					
+
 					gs 'arousal', 'porn', 2, 'exhibitionism'
 					gs 'stat'
-					
+
 				end
 			else
 				'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore21.jpg"></center>'
 				'You smile to yourself, he''s going to love what you have in store for him!'
 				'"I''m sorry", you tell him, explicitly mentioning his username as well. "I can''t right now..."'
 				'Then you turn around, and show him the large plug you currently have shoved inside you. You wiggle your ass seductively at the camera, and hear the donation sound mere seconds later.'
-				
+
 				gs 'arousal', 'porn', 2, 'exhibitionism'
 				gs 'stat'
-			
+
 			end
 			act 'Continue':gt 'Komp','waitclients'
 		end
@@ -1357,10 +1292,10 @@ if $ARGS[0] = 'waitclients':
 				'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore5.jpg"></center>'
 			end
 			'Even though no one requested you to do so, you figure showing off your nice boobs might get some more viewers into the channel. You slowly take off your bra and wiggle your breasts seductively at the camera.'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'stat'
-			
+
 			act 'Continue':gt 'Komp','waitclients'
 		end
 	end
@@ -1391,10 +1326,10 @@ if $ARGS[0] = 'waitclients':
 				'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore9.jpg"></center>'
 			end
 			'You chat with your visitors for a little while, but begin to play with your boobs absent-mindedly in a slow moment. It feels quite nice! You knead your boobs and play with them more and more intently, almost completely forgetting about the camera.'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'stat'
-			
+
 			act 'Continue':gt 'Komp','waitclients'
 		end
 	end
@@ -1412,10 +1347,10 @@ if $ARGS[0] = 'waitclients':
 				'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore6.jpg"></center>'
 			end
 			'You know that the fewer clothes you have on, the more visitors will be inclined to check out your channel. You slowly take off your panties in front of the camera, rewarding the viewers already in your channel to a free show when you expose your naked pussy to them.'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'stat'
-			
+
 			act 'Continue':gt 'Komp','waitclients'
 		end
 	end
@@ -1441,12 +1376,12 @@ if $ARGS[0] = 'waitclients':
 			'You get bored during a slow moment in the chat, and begin to play with your pussy without giving it another thought.'
 			'"How does that feel, girl?" one of your visitors asks. "I bet you love fingering yourself, with a bunch of strangers watching you!" another adds.'
 			'Giving them a defensive smile, you shrug and reply with one hand, while you keep rubbing your clit slowly with the other.'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'arousal', 'vaginal_finger', 2, 'exhibitionism'
 			minut -= 2
 			gs 'stat'
-			
+
 			if pcs_horny >= 100:
 				webpopular -= 1
 				mfccum += 1
@@ -1454,7 +1389,7 @@ if $ARGS[0] = 'waitclients':
 				gs 'stat'
 				'Oh crap! You misjudged your endurance, and suddenly squirm and gasp in front of the camera. You''re having an orgasm!'
 				'When it subsides, you look at your current viewer count. Damn... you just came in front of <<camclients>> users, completely free of charge!'
-				
+
 				$orgasm_or = 'yes'
 				gs 'stat'
 			end
@@ -1480,17 +1415,17 @@ if $ARGS[0] = 'waitclients':
 			chancetips = RAND(0,100)
 			if chancetips >= 60:
 				tokens += RAND(10,20)
-			end  
+			end
 			gs 'stat'
 
 			'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore45.jpg"></center>'
 			'You put two fingers in your mouth and generously cover them in saliva, and then turn your back to the camera. Much to the appreciation of your viewers, you give them a short preview of what an anal show would look like from you. You finger your anus for the camera for a little while, giving your viewers a happy smile the whole time.'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'arousal', 'anal_finger', 2, 'exhibitionism'
 			minut -= 2
 			gs 'stat'
-			
+
 			if pcs_horny >= 100:
 				webpopular -= 1
 				mfccum += 1
@@ -1520,16 +1455,16 @@ if $ARGS[0] = 'waitclients':
 			chancetips = RAND(0,100)
 			if chancetips >= 75:
 				tokens += RAND(20,40)
-			end  
+			end
 			gs 'stat'
 
 			'<center><img <<$set_imgh>> src="images/shared/accessories/computer/camwhore80.jpg"></center>'
 			'You''re getting too turned on, and need to slow yourself down a little!'
 			'You tightly pinch your nipples and pull hard on them. It hurts a lot, and the sharp pain lowers your excitement by quite a lot. Nevertheless, your viewers enjoy the free show and have no idea you actually did that for your own good.'
-			
+
 			gs 'arousal', 'porn', 2, 'exhibitionism'
 			gs 'stat'
-			
+
 			act'Continue':gt'Komp','waitclients'
 		end
 	end
@@ -1553,11 +1488,11 @@ if $ARGS[0] = 'bank':
 	'<center><img <<$set_imgh>> src="images/shared/accessories/computer/online_bank.jpg"></center>'
 	if karta + bankDebtLimit >= 10:
 		*pl
-		
+
 		'You can buy prepaid internet access online through your bank account. 1 hour of internet only costs 10 <b>₽</b>! *'
-		
+
 		*pl
-		
+
 		if karta >= 0:
 			'You have <<karta>> <b>₽</b> in your account.'
 			'You have an overdraft limit of <font color="blue"><<bankDebtLimit>></font>!'
@@ -1565,9 +1500,9 @@ if $ARGS[0] = 'bank':
 			'You are overdrawn by <font color="red"><<-1 * karta>> <b>₽</b></font>.'
 			'You have a remaining credit limit of <font color="blue"><<bankDebtLimit + karta>></font>!'
 		end
-		
+
 		*pl
-		
+
 		act 'Buy internet time':
 			cla
 			intinp = input ("How many hours of internet access do you wish to purchase? (1hr = 10 <b>₽</b>)")

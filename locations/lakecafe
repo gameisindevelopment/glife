@@ -62,8 +62,8 @@ if $ARGS[0] = 'main':
 
 		'The diner has a single <a href="exec:gt ''laketoilet'', ''main''">toilet</a> available, for both males and females.'
 
-		act 'Order drinks':gs 'beverage_menu', 'cafe'
 		act 'Order food':gs 'food_menu', 'cafe'
+		act 'Order drinks':gs 'beverage_menu', 'cafe'
 	end
 
 	if LCwork2 >= 1 and LCwork2day ! daystart and hour = 18:
@@ -479,7 +479,7 @@ if $ARGS[0] = 'bandits':
 					'He pinches your cheeks and then slaps your face; not hard enough to be painful, but it certainly drives the message home. You can tell he''s dead serious.'
 					'After looking you in the eyes for a few more seconds to make sure you get the message, he turns around and leaves. You are all alone now.'
 
-					act 'Look around':gt'saunaroom'
+					act 'Look around':gt 'sauna', 'saunaroom'
 				end
 			end
 		end

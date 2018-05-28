@@ -56,63 +56,6 @@ if $ARGS[0] = 'Start' or $ARGS[0] = '':
 		'You and Mira are best friends.'
 	end
 
-	if mira_temp = 0 and mira_go_blok = 0 and meadow > 2 and MiraLoc = 0:
-		*clr & cla
-		minut += 5
-		mira_no_home = 0
-		gs 'stat'
-		if MiraLoc = 1:
-			if $clothingworntype ! 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home.jpg"></center>'
-			if $clothingworntype = 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home_nude.jpg"></center>'
-		end
-		if MiraLoc ! 1:gs 'Miroslava', 'miraclothes'
-		'"<<$pcs_nickname>>, you''re fun to be with, but Dad has chores for me to work on." Mira tells you.'
-
-		act 'Further':mira_guest = 0 & MiraLoc = 0 & gt 'Gadukino'
-	end
-
-	if mira_temp = 0 and mira_go_blok = 0 and meadow > 2 and MiraLoc ! 0:
-		*clr & cla
-		minut += 5
-		mira_no_home = 0
-		gs 'stat'
-		if MiraLoc = 1:
-			if $clothingworntype ! 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home.jpg"></center>'
-			if $clothingworntype = 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home_nude.jpg"></center>'
-		end
-		if MiraLoc ! 1:gs 'Miroslava', 'miraclothes'
-		'"<<$pcs_nickname>>, you''re fun to be with, but I gotta get home. Dad has chores for me to work on.," Mira tells you.'
-
-		act 'Further':mira_guest = 0 & MiraLoc = 0 & gt 'Gadukino'
-	end
-
-	if hour = 23 and MiraLoc = 0:
-		*clr & cla
-		minut += 5
-		mira_no_home = 0
-		gs 'stat'
-		gs 'Miroslava', 'miraclothes'
-		'"<<$pcs_nickname>>, you''re fun to be with, but it''s late. I gotta get to bed. Dad has chores for me to work on tomorrow." Mira tells you.'
-
-		act 'Further':gt 'Gadukino'
-	end
-
-	if hour = 23 and MiraLoc ! 0:
-		*clr & cla
-		minut += 5
-		mira_no_home = 0
-		gs 'stat'
-		if MiraLoc = 1:
-			if $clothingworntype ! 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home.jpg"></center>'
-			if $clothingworntype = 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home_nude.jpg"></center>'
-		end
-		if MiraLoc ! 1:gs 'Miroslava', 'miraclothes'
-		'"<<$pcs_nickname>>, you''re fun to be with, but I gotta get home and get to bed. Dad has chores for me to work on tomorrow." Mira tells you.'
-
-		act 'Further':mira_guest = 0 & MiraLoc = 0 & gt 'Gadukino'
-	end
-
-
 	if graze_cow = 1:
 
 		act 'Talking to Mira':
@@ -572,7 +515,7 @@ if $ARGS[0] = 'Start' or $ARGS[0] = '':
 			end
 		end
 		!125e
-		if npc_QW['A60'] = 30 and hour < 19 and month >= 5 and month <= 9 and MiraLoc ! 3:
+		if npc_QW['A60'] >= 30 and hour < 19 and month >= 5 and month <= 9 and MiraLoc ! 3:
 
 			act '<b>Make your third wish</b>':
 				*clr & cla
@@ -584,7 +527,7 @@ if $ARGS[0] = 'Start' or $ARGS[0] = '':
 				end
 				gs 'stat'
 				gs 'Miroslava', 'miraclothes'
-			   'You remind Mira about the third wish, and she reluctantly nods her head and says that she remembers it. You, act mysterious and with a sinister smile, command her to follow you...'
+				'You remind Mira about the third wish, and she reluctantly nods her head and says that she remembers it. You, act mysterious and with a sinister smile, command her to follow you...'
 				act 'Go to the street (Walk through village naked)':
 					*clr & cla
 					minut += 15
@@ -958,7 +901,6 @@ if $ARGS[0] = 'Start' or $ARGS[0] = '':
 			end
 		end
 
-
 		if hour >= 20 and mira_temp > 10 and sunWeather = 1 and mira_go_blok = 0 and npc_QW['A60'] > 0 and MiraLoc ! 3:
 			*clr & cla
 			minut += 1
@@ -1050,6 +992,62 @@ if $ARGS[0] = 'Start' or $ARGS[0] = '':
 				act 'Further': gt 'Miroslava', 'Start'
 			end
 		end
+	end
+	
+	if mira_temp = 0 and mira_go_blok = 0 and meadow > 2 and MiraLoc = 0:
+		*clr & cla
+		minut += 5
+		mira_no_home = 0
+		gs 'stat'
+		if MiraLoc = 1:
+			if $clothingworntype ! 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home.jpg"></center>'
+			if $clothingworntype = 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home_nude.jpg"></center>'
+		end
+		if MiraLoc ! 1:gs 'Miroslava', 'miraclothes'
+		'"<<$pcs_nickname>>, you''re fun to be with, but Dad has chores for me to work on." Mira tells you.'
+
+		act 'Further':mira_guest = 0 & MiraLoc = 0 & gt 'Gadukino'
+	end
+
+	if mira_temp = 0 and mira_go_blok = 0 and meadow > 2 and MiraLoc ! 0:
+		*clr & cla
+		minut += 5
+		mira_no_home = 0
+		gs 'stat'
+		if MiraLoc = 1:
+			if $clothingworntype ! 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home.jpg"></center>'
+			if $clothingworntype = 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home_nude.jpg"></center>'
+		end
+		if MiraLoc ! 1:gs 'Miroslava', 'miraclothes'
+		'"<<$pcs_nickname>>, you''re fun to be with, but I gotta get home. Dad has chores for me to work on.," Mira tells you.'
+
+		act 'Further':mira_guest = 0 & MiraLoc = 0 & gt 'Gadukino'
+	end
+
+	if hour = 23 and MiraLoc = 0:
+		*clr & cla
+		minut += 5
+		mira_no_home = 0
+		gs 'stat'
+		gs 'Miroslava', 'miraclothes'
+		'"<<$pcs_nickname>>, you''re fun to be with, but it''s late. I gotta get to bed. Dad has chores for me to work on tomorrow." Mira tells you.'
+
+		act 'Further':gt 'Gadukino'
+	end
+
+	if hour = 23 and MiraLoc ! 0:
+		*clr & cla
+		minut += 5
+		mira_no_home = 0
+		gs 'stat'
+		if MiraLoc = 1:
+			if $clothingworntype ! 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home.jpg"></center>'
+			if $clothingworntype = 'nude':'<center><img <<$set_imgh>> src="images/characters/village/mira/mira_go_home_nude.jpg"></center>'
+		end
+		if MiraLoc ! 1:gs 'Miroslava', 'miraclothes'
+		'"<<$pcs_nickname>>, you''re fun to be with, but I gotta get home and get to bed. Dad has chores for me to work on tomorrow." Mira tells you.'
+
+		act 'Further':mira_guest = 0 & MiraLoc = 0 & gt 'Gadukino'
 	end
 end
 

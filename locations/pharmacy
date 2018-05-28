@@ -20,7 +20,7 @@ if $ARGS[0] = 'start' :
 		end
 	else
 		gt 'pharmacy', 'shop'
-	end				
+	end
 	act 'Leave': minut += 5 & gt $loc, $metka
 end
 
@@ -48,7 +48,7 @@ if $ARGS[0] = 'shop' or $ARGS[0] = '':
 	iif($ARGS[1] = '', '', '<center><<$ARGS[1]>></center>')
 
 	*pl '<center><table align="center">'
-	*P FUNC ('$stock_item', 5, 'condoms', 500, 'prezik', $CURLOC, $ARGS[0])
+	*P FUNC ('$stock_item', 5, 'condoms', 500, 'prezikcount', $CURLOC, $ARGS[0])
 	*P FUNC ('$stock_item', 1, 'pregnancy test', 530, 'pregtest', $CURLOC, $ARGS[0])
 	*P FUNC ('$stock_item', 1, 'birth control pills', 1870, 'tabletki', $CURLOC, $ARGS[0])
 	*P FUNC ('$stock_item', 10, 'antibiotics', 580, 'lekarstvo', $CURLOC, $ARGS[0])

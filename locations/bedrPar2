@@ -25,7 +25,7 @@ if $ARGS[0] = '':
 	'The room in which your parents live. Their large bed, <a href="exec: gt ''bedrPar2'',''parents_wardrobe''">wardrobe</a> and other closets take up most of the space.'
 	gs 'family'
 
-	if hour > 6 and hour < 21:
+	if indorf = 1 or (indorf = 0 and hour > 6 and hour < 21):
         if kamasutra_day ! daystart:
             'You notice a <a href="exec: gt ''bedrPar2'',''kamasutra''">book laying on the bed</a>.'
         end

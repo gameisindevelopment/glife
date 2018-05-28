@@ -187,6 +187,7 @@ if $args[0] = '3':
 		'<center><img <<$set_imgh>> src="images/beast/bandit/handcanine.jpg"></center>'
 		'You beckon Bandit to you, and when he confidently approaches, after a brief pause, you touch his dick. Against your palm, his erection feels warmer than human''s, and you, as if spellbound, keep watching the pulsing blood in its veins...'
 		gs 'arousal', 'hj', 1, 'sub', 'beast'
+		gs 'arousal', 'end'
 		gs 'stat'
 		act 'Masturbate':
 			cls
@@ -247,6 +248,7 @@ if $args[0] = '4':
 		'You grab Bandit''s tail and gently hold him in place, with a lustful grin on your face, you lean forwards and plant a tender kiss on his pointed tip, your free hand slowly stroking the remaining of his length through his sheath, making his penis grow bigger under your touch. You then close your eyes and part your lips, allowing the red flesh to slip inside your mouth and begin to bob your head back and forth, your tongue lustfully twirling around Bandit''s girth as his tip drips generous amounts of precum in your mouth. Damn, what a dirty slut you are, you''re fully aware of what you''re doing, giving your grandparents dog a blowjob in the barn, and still, this thought only arouses you further.'
 		'After some time, you feel Bandit''s penis throbbing harder and harder against your tongue, and his panting getting heavier and heavier, as focused as you are on your task, you understand very clearly that the dog is gonna cum soon...'
 		gs 'arousal', 'bj', 10, 'sub', 'beast'
+		gs 'arousal', 'end'
 		gs 'stat'
 		act 'On the face':
 			cls
@@ -321,6 +323,7 @@ if $args[0] = '5a':
 		'You grab Bandit''s tail and gently hold him in place, with a lustful grin on your face, you lean forwards and plant a tender kiss on his pointed tip, your free hand slowly stroking the remaining of his length through his sheath, making his penis grow bigger under your touch. You then close your eyes and part your lips, allowing the red flesh to slip inside your mouth and begin to bob your head back and forth, your tongue lustfully twirling around Bandit''s girth as his tip drips generous amounts of precum in your mouth. Damn, what a dirty slut you are, you''re fully aware of what you''re doing, giving your grandparents dog a blowjob in the barn, and still, this thought only arouses you further.'
 		'After some time, you feel Bandit''s penis throbbing harder and harder against your tongue, and his panting getting heavier and heavier, as focused as you are on your task, you understand very clearly that the dog is gonna cum very soon...'
 		gs 'arousal', 'bj', 5, 'sub', 'beast'
+		gs 'arousal', 'end'
 		gs 'stat'
 		act 'On the face':
 			cls
@@ -359,11 +362,10 @@ if $args[0] = '5a':
 	end
 	act 'Remove panties and get on all fours':
 		cls
-		gs 'stat'
 		'<center><img <<$set_imgh>> src="images/locations/gadukino/village/predoggy.jpg"></center>'
 		'You quickly pull down your panties and get on all fours in front of Bandit, presenting him your bare ass. The dog doesn''t waste time and eagerly plants his front paws on your sides as he starts poking your ass and inner thighs with his pointed tip, desperately looking for a warm hole to penetrate...'
-		gs 'arousal', 'vaginal', 2, 'sub', 'beast'
-		minut -= 2
+		gs 'arousal', 'foreplay', 2, 'sub', 'beast'
+		gs 'arousal', 'end'
 		gs 'stat'
 		act 'Vaginal':
 			cls
@@ -377,11 +379,12 @@ if $args[0] = '5a':
 			gs 'cum_manage'
 			DogVag+=1
 			gs 'stat'
-
 			'<center><img <<$set_imgh>> src="images/beast/bandit/doggyvirgin.jpg"></center>'
 			'You can''t hold it anymore, you want to be Bandit''s bitch. You rise your ass higher to give him better access to your virgin pussy, spreading your legs a bit more and endure a few more pokes. Suddenly you feel a sharp pain hitting your core as his cock powerfully pierces your hymen, smearing his tip and his whole length in your own blood, but Bandit doesn''t seem to care about it at all and furiously starts to use your bloody snatch as his personal fucktoy, simply driven by his primitive needs. "Oh my god, not so hard..." you pant under the horny dog, your pussy clenching tightly around his throbbing girth while he mercilessly mounts you, barely able to realize you just gave your virginity to your grandparents dog. Tears are slowly dripping from your eyes while you grit your teeth and dig your nails on the floor to endure your lover''s wildness, but soon, the pain starts to fade away and is replaced by a strange tingle in your core, your sore pussy must have been accepting its fate and may be trying to turn it into an enjoyable experience. You let out a few moans and try to loosen up for your canine mate who never slowed down his pace, and soon you can feel his swelling knot hitting against your abused petals, you open your eyes in shock and you are about to protest, but it''s already too late. Bandit roughly thrusts forwards and your whole body convulses in a powerful orgasm as his knot makes its way inside of your ravaged fuckhole, tightly sealing itself within you and releasing what feels like an endless amount of sperm straight in your womb. You can feel your animal lover''s breath on your neck and pant heavily under him, you are still shocked from that intense fucking he just gave you, but somewhat enjoying the warmth of his body on your back and the endless flood of spunk filling up your pussy. A few minutes pass and you feel Bandit''s knot shrinking, the drained dog turns around and then pulls it out of you, releasing some unholy mixture of your own blood and Bandit''s sperm on the ground.'
+			$orgasm_or = 'yes'
 			gs 'arousal', 'vaginal', 30, 'rough', 'beast'
 			gs 'arousal', 'end'
+			gs 'pain', 4, 'vaginal', 'stretch'
 			gs 'stat'
 			act 'Leave':gt 'Gadsarai'
 		end
@@ -390,7 +393,6 @@ if $args[0] = '5a':
 				cls
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/village/predoggy.jpg"></center>'
 				'Your ass is already too sore, you should let it recover a bit...'
-				gs 'arousal', 'end'
 				gs 'stat'
 				act 'Close':gt 'Gadsarai'
 			else
@@ -404,6 +406,8 @@ if $args[0] = '5a':
 				'<center><img <<$set_imgh>> src="images/beast/bandit/piratanal.jpg"></center>'
 				'You lower your ass a bit and cover your pussy with one of your hand to make your ass the only possible target for Bandit then blush in shame as you realize how much of a dog slut you''ve become and brace yourself as the dog starts to furiously poke your ass and fingers with his pointed tip, smearing small amount of precum on your skin as he does. After a few attempts, Bandit''s cock savagely makes its way past your anal pucker and roughly starts moving in and out of you, claiming your asshole as his new personal playroom, you crie out both from pain and pleasure, doing your best to relax your backdoor and make it as enjoyable as possible for your canine lover. Bandit continues to use you like the filthy bitch you are for several minutes, you groan under him and feel his warm breath in the back of your neck, the pounding increasing in speed and strenght makes you instinctively clench your ass around his girth, and the feeling of his swollen knot hitting the ravaged ring of your ass with every single thrust makes you very aware of the horny dog''s intentions, he wants to knot your ass !'
 				gs 'arousal', 'anal', 5, 'sub', 'beast'
+				gs 'arousal', 'end'
+				gs 'pain', 2, 'asshole', 'stretch'
 				gs 'stat'
 				act 'Let Bandit knot your ass':
 					cls
@@ -411,13 +415,15 @@ if $args[0] = '5a':
 					gs 'stat'
 
 					'<center><img <<$set_imgh>> src="images/beast/bandit/analknot.jpg"></center>'
-					'You brace yourself and dig your nails in the dirty ground as you prepare yourself to be anally knotted by your grandparents dog. Bandit doesn''t seem to pay attention an casually continues to pound your ass, you grit your teeth in anticipation when you feel the swollen orb hitting your ravaged anal spincher again, it''s gonna slip in soon !! And it finally happens, with one hell of a hard thrust, Bandit mercilessly pushes his knot inside your ass, you cry out in pain and bliss, your legs shaking from the intense orgasm you''re experiencing, and the endless amount of canine spunk he is pouring in your bowels only intensify your shameful orgasm further.'
+					'You brace yourself and dig your nails in the dirty ground as you prepare yourself to be anally knotted by your grandparent''s dog. Bandit doesn''t seem to pay attention an casually continues to pound your ass, you grit your teeth in anticipation when you feel the swollen orb hitting your ravaged anal spincher again, it''s gonna slip in soon !! And it finally happens, with one hell of a hard thrust, Bandit mercilessly pushes his knot inside your ass, you cry out in pain and bliss, your legs shaking from the intense orgasm you''re experiencing, and the endless amount of canine spunk he is pouring in your bowels only intensify your shameful orgasm further.'
+					$orgasm_or = 'yes'
 					gs 'arousal', 'anal', 2, 'sub', 'beast'
+					gs 'arousal', 'end'
+					gs 'pain', 'asshole', 'stretch'
 					gs 'stat'
 					banditboggle = RAND(0,5)
 					if banditboggle <= 4:
 						if pcs_ass < 15:
-							minut += 20
 							pcs_ass += 4
 							agape = 3
 							pcs_horny = 0
@@ -427,12 +433,12 @@ if $args[0] = '5a':
 							gs 'cum_manage'
 							gs 'stat'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
+							gs 'arousal', 'anal', 20, 'sub', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
 						elseif pcs_ass < 25:
-							minut += 20
 							pcs_ass += 3
 							agape = 2
 							pcs_horny -= RAND(15,30)
@@ -442,6 +448,7 @@ if $args[0] = '5a':
 							gs 'cum_manage'
 							gs 'stat'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
+							gs 'arousal', 'anal', 20, 'sub', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
@@ -505,7 +512,6 @@ if $args[0] = '5a':
 					else
 						cls
 						if pcs_ass < 15:
-							minut += 20
 							pcs_ass += 5
 							agape = 3
 							pcs_horny = 0
@@ -516,12 +522,12 @@ if $args[0] = '5a':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/beast/bandit/analpain.jpg"></center>'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
+							gs 'arousal', 'anal', 20, 'sub', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
 						elseif pcs_ass < 25:
-							minut += 20
 							pcs_ass += 5
 							agape = 3
 							pcs_horny = 0
@@ -532,12 +538,12 @@ if $args[0] = '5a':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/beast/bandit/analpain.jpg"></center>'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
+							gs 'arousal', 'anal', 20, 'sub', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
 						elseif pcs_ass < 35:
-							minut += 20
 							pcs_ass += 4
 							agape = 2
 							pcs_horny -= RAND(40,60)
@@ -548,6 +554,7 @@ if $args[0] = '5a':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/beast/bandit/analpain.jpg"></center>'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
+							gs 'arousal', 'anal', 20, 'sub', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
@@ -579,7 +586,6 @@ if $args[0] = '5a':
 					'<center><img <<$set_imgh>> src="images/beast/bandit/piratanal.jpg"></center>'
 					'You grin as you realizee Bandit is trying to knot your ass and decide to stop him, you extend one of your hands between your legs to grab the base of his cock, your fingers carefully placed on each side of the knot, which prevents it from slipping past your well used anal pucker, but still, it doesn''t prevent Bandit from giving you one hell of a messy anal creampie.'
 					if pcs_ass < 15:
-						minut += 10
 						pcs_ass += 1
 						agape = 2
 						pcs_horny -= RAND(15,30)
@@ -587,6 +593,8 @@ if $args[0] = '5a':
 						spafinloc = 4
 						sexvolume = rand(20,590)
 						gs 'cum_manage'
+						gs 'arousal', 'anal', 10, 'sub', 'beast'
+						gs 'arousal', 'end'
 						gs 'stat'
 						'You shudder in pleasure as Bandit furiously pounds away at your butthole without any care about your well being, you moan in bliss when you feel his warm load filling your bowels and groan when he pulls out without knotting you, leaving you panting with his viscous gift dripping out of your freshly used anus.'
 						act 'Leave':gt 'Gadsarai'
@@ -729,19 +737,16 @@ if $args[0] = '5b':
 	end
 	act 'Remove panties and get on all fours':
 		cls
-		gs 'stat'
-
 		'<center><img <<$set_imgh>> src="images/locations/gadukino/village/predoggy.jpg"></center>'
 		'You quickly pull down your panties and get on all fours in front of Bandit, presenting him your bare ass. The dog doesn''t waste time and eagerly plants his front paws on your sides as he starts poking your ass and inner thighs with his pointed tip, desperately looking for a warm hole to penetrate...'
-		gs 'arousal', 'vaginal', 2, 'sub', 'beast'
-		minut -= 2
+		gs 'arousal', 'foreplay', 2, 'sub', 'beast'
+		gs 'arousal', 'end'
 		gs 'stat'
 		act 'Vaginal':
 			if vgape > 1:
 				cls
 				'<center><img <<$set_imgh>> src="images/locations/gadukino/village/predoggy.jpg"></center>'
 				'Your pussy is too sore, let it recover a bit.'
-				gs 'arousal', 'end'
 				gs 'stat'
 				act 'Close':gt 'Gadsarai'
 			else
@@ -755,6 +760,7 @@ if $args[0] = '5b':
 				'<center><img <<$set_imgh>> src="images/beast/bandit/piratvag.jpg"></center>'
 				'You extend one of your arms between your legs and carefully guide Bandit''s penis to your twat, as soon as he feels how wet you are, the dog powerfully thrusts forwards and fills your main fuckhole with his canine boner. You grit your teeth as your grandparents dog mercilessly uses your snatch for what it''s worth, bestially having his way with you without any care for your own pleasure, which is still a thrilling enough experience. Soon you can feel his panting and the relentless pounding intensify...'
 				gs 'arousal', 'vaginal', 2, 'sub', 'beast', 'rough'
+				gs 'arousal', 'end'
 				gs 'stat'
 				act 'Knot me Bandit !':
 					cls
@@ -764,17 +770,19 @@ if $args[0] = '5b':
 					'<center><img <<$set_imgh>> src="images/beast/bandit/piratvagknot.jpg"></center>'
 					'You hands rest against the floor and you arch your ass backwards, literally begging Bandit to give your pussy the knotting it needs so badly. As expected from a dog, he is too focused on fucking that warm fuckhole of yours to understand or simply care about your desires, but without any warning, you feel his pointed tip hitting your cervix with a deep hard thrust from your dog lover, and before you realize it, his knot has slipped past your damp petals like a knife through butter... Which leaves you shocked in bliss, relishing from the warm jets of spunk being poured inside your well fucked cumdump.'
 					gs 'arousal', 'vaginal', 2, 'sub', 'beast', 'rough'
+					gs 'arousal', 'end'
 					gs 'stat'
 					banditboggle = RAND(0,5)
 					if banditboggle <= 3:
 						if pcs_vag < 10:
-							minut += 20
 							pcs_vag += 4
 							vgape = 3
 							pcs_horny = 0
 							gs 'boyStat', 'A66'
 							sexvolume = rand(20,590)
 							gs 'cum_manage'
+							gs 'arousal', 'vaginal', 20, 'sub', 'beast'
+							gs 'arousal', 'end'
 							gs 'stat'
 							'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 							act 'Leave':gt 'Gadsarai'
@@ -798,13 +806,14 @@ if $args[0] = '5b':
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
@@ -826,13 +835,14 @@ if $args[0] = '5b':
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
@@ -854,14 +864,15 @@ if $args[0] = '5b':
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
@@ -898,13 +909,14 @@ if $args[0] = '5b':
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
@@ -964,12 +976,14 @@ if $args[0] = '5b':
 								'You extend one of your arms between your legs and carefully guide Bandit''s penis to your twat, as soon as he feels how wet you are, the dog powerfully thrusts forwards and fills your main fuckhole with his canine boner. You grit your teeth as your grandparents dog mercilessly uses your snatch for what it''s worth, bestially having his way with you without any care for your own pleasure, which is still a thrilling enough experience. Soon you can feel his panting and the relentless pounding intensify and you feel him ejaculating deep inside your twat...'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 10, 'sub', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								sexvolume = rand(20,150)
 								gs 'cum_manage'
 								'You extend one of your arms between your legs and carefully guide Bandit''s penis to your twat, as soon as he feels how wet you are, the dog powerfully thrusts forwards and fills your main fuckhole with his canine boner. You grit your teeth as your grandparents dog mercilessly uses your snatch for what it''s worth, bestially having his way with you without any care for your own pleasure, which is still a thrilling enough experience. Soon you can feel his panting and the relentless pounding intensify and you feel him ejaculating deep inside your twat...'
 								gs 'arousal', 'vaginal', 10, 'sub', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
 							gs 'arousal', 'end'
@@ -993,13 +1007,14 @@ if $args[0] = '5b':
 								'You extend one of your arms between your legs and carefully guide Bandit''s penis to your twat, as soon as he feels how wet you are, the dog powerfully thrusts forwards and fills your main fuckhole with his canine boner. You grit your teeth as your grandparents dog mercilessly uses your snatch for what it''s worth, bestially having his way with you without any care for your own pleasure, which is still a thrilling enough experience. Soon you can feel his panting and the relentless pounding intensify and you feel him ejaculating deep inside your twat...'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'You extend one of your arms between your legs and carefully guide Bandit''s penis to your twat, as soon as he feels how wet you are, the dog powerfully thrusts forwards and fills your main fuckhole with his canine boner. You grit your teeth as your grandparents dog mercilessly uses your snatch for what it''s worth, bestially having his way with you without any care for your own pleasure, which is still a thrilling enough experience. Soon you can feel his panting and the relentless pounding intensify and you feel him ejaculating deep inside your twat...'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
@@ -1020,13 +1035,14 @@ if $args[0] = '5b':
 								'You extend one of your arms between your legs and carefully guide Bandit''s penis to your twat, as soon as he feels how wet you are, the dog powerfully thrusts forwards and fills your main fuckhole with his canine boner. You grit your teeth as your grandparents dog mercilessly uses your snatch for what it''s worth, bestially having his way with you without any care for your own pleasure, which is still a thrilling enough experience. Soon you can feel his panting and the relentless pounding intensify and you feel him ejaculating deep inside your twat...'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'You extend one of your arms between your legs and carefully guide Bandit''s penis to your twat, as soon as he feels how wet you are, the dog powerfully thrusts forwards and fills your main fuckhole with his canine boner. You grit your teeth as your grandparents dog mercilessly uses your snatch for what it''s worth, bestially having his way with you without any care for your own pleasure, which is still a thrilling enough experience. Soon you can feel his panting and the relentless pounding intensify and you feel him ejaculating deep inside your twat...'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
@@ -1041,7 +1057,6 @@ if $args[0] = '5b':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/beast/bandit/piratbreak.jpg"></center>'
 							'Bandit begins to vigorously fuck your vagina, but it is so loose that there is just no way you it can hold the knot, and as soon as Bandit''s cock slips out from your gaping fuckhole he starts moving away from you...'
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Try again':gt 'Gadsarai'
 							exit
@@ -1105,6 +1120,8 @@ if $args[0] = '5b':
 				'<center><img <<$set_imgh>> src="images/beast/bandit/piratanal.jpg"></center>'
 				'You lower your ass a bit and cover your pussy with one of your hand to make your ass the only possible target for Bandit then blush in shame as you realize how much of a dog slut you''ve become and brace yourself as the dog starts to furiously poke your ass and fingers with his pointed tip, smearing small amount of precum on your skin as he does. After a few attempts, Bandit''s cock savagely makes its way past your anal pucker and roughly starts moving in and out of you, claiming your asshole as his new personal playroom, you crie out both from pain and pleasure, doing your best to relax your backdoor and make it as enjoyable as possible for your canine lover. Bandit continues to use you like the filthy bitch you are for several minutes, you groan under him and feel his warm breath in the back of your neck, the pounding increasing in speed and strenght makes you instinctively clench your ass around his girth, and the feeling of his swollen knot hitting the ravaged ring of your ass with every single thrust makes you very aware of the horny dog''s intentions, he wants to knot your ass !'
 				gs 'arousal', 'anal', 5, 'sub', 'beast'
+				gs 'arousal', 'end'
+				gs 'pain', 2, 'asshole', 'stretch'
 				gs 'stat'
 				act 'Let Bandit knot your ass':
 					cls
@@ -1113,11 +1130,12 @@ if $args[0] = '5b':
 					'<center><img <<$set_imgh>> src="images/beast/bandit/analknot.jpg"></center>'
 					'You brace yourself and dig your nails in the dirty ground as you prepare yourself to be anally knotted by your grandparents dog. Bandit doesn''t seem to pay attention an casually continues to pound your ass, you grit your teeth in anticipation when you feel the swollen orb hitting your ravaged anal spincher again, it''s gonna slip in soon !! And it finally happens, with one hell of a hard thrust, Bandit mercilessly pushes his knot inside your ass, you cry out in pain and bliss, your legs shaking from the intense orgasm you''re experiencing, and the endless amount of canine spunk he is pouring in your bowels only intensify your shameful orgasm further.'
 					gs 'arousal', 'anal', 2, 'sub', 'beast'
+					gs 'arousal', 'end'
+					gs 'pain', 2, 'asshole', 'stretch'
 					gs 'stat'
 					banditboggle = RAND(0,5)
 					if banditboggle <= 4:
 						if pcs_ass < 15:
-							minut += 20
 							pcs_ass += 4
 							agape = 3
 							pcs_horny = 0
@@ -1127,12 +1145,12 @@ if $args[0] = '5b':
 							gs 'cum_manage'
 							gs 'stat'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
+							gs 'arousal', 'anal', 20, 'sub', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
 						elseif pcs_ass >= 15 and pcs_ass < 25:
-							minut += 20
 							pcs_ass += 3
 							agape = 2
 							pcs_horny -= RAND(15,30)
@@ -1142,7 +1160,8 @@ if $args[0] = '5b':
 							gs 'cum_manage'
 							gs 'stat'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
-							gs 'arousal', 'stat'
+							gs 'arousal', 'anal', 20, 'sub', 'beast'
+							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
@@ -1162,13 +1181,14 @@ if $args[0] = '5b':
 								'Soon Bandit finishes and you powerfully orgasm, the flow of semen into your rectum driving you over the edge. Still holding the base of his cock in one hand while the other is shakily stroking your clit and getting drenched in your love juices.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'anal', 20, 'sub', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'You shudder in pleasure as Bandit furiously pounds away at your butthole without any care about your well being, you moan in bliss when you feel his warm load filling your bowels and groan when he pulls out without knotting you, leaving you panting with his viscous gift dripping out of your freshly used anus.'
 								gs 'arousal', 'anal', 20, 'sub', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
@@ -1188,13 +1208,14 @@ if $args[0] = '5b':
 								'Soon Bandit finishes and you powerfully orgasm, the flow of semen into your rectum driving you over the edge. Still holding the base of his cock in one hand while the other is shakily stroking your clit and getting drenched in your love juices.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'anal', 20, 'sub', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'You shudder in pleasure as Bandit furiously pounds away at your butthole without any care about your well being, you moan in bliss when you feel his warm load filling your bowels and groan when he pulls out without knotting you, leaving you panting with his viscous gift dripping out of your freshly used anus.'
 								gs 'arousal', 'anal', 20, 'sub', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
@@ -1202,7 +1223,6 @@ if $args[0] = '5b':
 					else
 						cls
 						if pcs_ass < 15:
-							minut += 20
 							pcs_ass += 5
 							agape = 3
 							pcs_horny = 0
@@ -1213,12 +1233,12 @@ if $args[0] = '5b':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/beast/bandit/analpain.jpg"></center>'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
+							gs 'arousal', 'anal', 10, 'sub', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
 						elseif pcs_ass >= 15 and pcs_ass < 25:
-							minut += 20
 							pcs_ass += 5
 							agape = 3
 							pcs_horny = 0
@@ -1229,12 +1249,12 @@ if $args[0] = '5b':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/beast/bandit/analpain.jpg"></center>'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
+							gs 'arousal', 'anal', 10, 'sub', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
 							exit
 						elseif pcs_ass >= 25 and pcs_ass < 35:
-							minut += 20
 							pcs_ass += 4
 							agape = 2
 							pcs_horny -= RAND(40,60)
@@ -1245,6 +1265,7 @@ if $args[0] = '5b':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/beast/bandit/analpain.jpg"></center>'
 							'You can feel Bandit''s cock bathing in its own sperm within your ass now, and you endure the filling he''s giving you like a good bitch, trapped under your canine mate, his huge knot sealed past your puckered asshole for about ten long minutes before the knot starts to deflate and slips out from your well used butthole, followed by a thick torrent of sperm which creates a funny puddle on the floor.'
+							gs 'arousal', 'anal', 10, 'sub', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Leave':gt 'Gadsarai'
@@ -1278,7 +1299,6 @@ if $args[0] = '5b':
 					'You grin as you realizee Bandit is trying to knot your ass and decide to stop him, you extend one of your hands between your legs to grab the base of his cock, your fingers carefully placed on each side of the knot, which prevents it from slipping past your well used anal pucker, but still, it doesn''t prevent Bandit from giving you one hell of a messy anal creampie.'
 
 					if pcs_ass < 15:
-						minut += 10
 						pcs_ass += 1
 						agape = 2
 						pcs_horny -= RAND(15,30)
@@ -1288,6 +1308,7 @@ if $args[0] = '5b':
 						gs 'cum_manage'
 						gs 'stat'
 						'You shudder in pleasure as Bandit furiously pounds away at your butthole without any care about your well being, you moan in bliss when you feel his warm load filling your bowels and groan when he pulls out without knotting you, leaving you panting with his viscous gift dripping out of your freshly used anus.'
+						gs 'arousal', 'anal', 10, 'sub', 'beast'
 						gs 'arousal', 'end'
 						gs 'stat'
 						act 'Leave':gt 'Gadsarai'
@@ -1307,13 +1328,14 @@ if $args[0] = '5b':
 							'Soon Bandit finishes and you powerfully orgasm, the flow of semen into your rectum driving you over the edge. Still holding the base of his cock in one hand while the other is shakily stroking your clit and getting drenched in your love juices.'
 							$orgasm_or = 'yes'
 							gs 'arousal', 'anal', 20, 'sub', 'beast'
+							gs 'arousal', 'end'
 							gs 'stat'
 						else
 							'You shudder in pleasure as Bandit furiously pounds away at your butthole without any care about your well being, you moan in bliss when you feel his warm load filling your bowels and groan when he pulls out without knotting you, leaving you panting with his viscous gift dripping out of your freshly used anus.'
 							gs 'arousal', 'anal', 20, 'sub', 'beast'
+							gs 'arousal', 'end'
 							gs 'stat'
 						end
-						gs 'arousal', 'end'
 						gs 'stat'
 						act 'Leave':gt 'Gadsarai'
 						exit
@@ -1331,13 +1353,14 @@ if $args[0] = '5b':
 							'Soon Bandit finishes and you powerfully orgasm, the flow of semen into your rectum driving you over the edge. Still holding the base of his cock in one hand while the other is shakily stroking your clit and getting drenched in your love juices.'
 							$orgasm_or = 'yes'
 							gs 'arousal', 'anal', 20, 'sub', 'beast'
+							gs 'arousal', 'end'
 							gs 'stat'
 						else
 							'You shudder in pleasure as Bandit furiously pounds away at your butthole without any care about your well being, you moan in bliss when you feel his warm load filling your bowels and groan when he pulls out without knotting you, leaving you panting with his viscous gift dripping out of your freshly used anus.'
 							gs 'arousal', 'anal', 20, 'sub', 'beast'
+							gs 'arousal', 'end'
 							gs 'stat'
 						end
-						gs 'arousal', 'end'
 						gs 'stat'
 						act 'Leave':gt 'Gadsarai'
 						exit
@@ -1355,13 +1378,14 @@ if $args[0] = '5b':
 							'Soon Bandit finishes and you powerfully orgasm, the flow of semen into your rectum driving you over the edge. Still holding the base of his cock in one hand while the other is shakily stroking your clit and getting drenched in your love juices.'
 							$orgasm_or = 'yes'
 							gs 'arousal', 'anal', 20, 'sub', 'beast'
+							gs 'arousal', 'end'
 							gs 'stat'
 						else
 							'You shudder in pleasure as Bandit furiously pounds away at your butthole without any care about your well being, you moan in bliss when you feel his warm load filling your bowels and groan when he pulls out without knotting you, leaving you panting with his viscous gift dripping out of your freshly used anus.'
 							gs 'arousal', 'anal', 20, 'sub', 'beast'
+							gs 'arousal', 'end'
 							gs 'stat'
 						end
-						gs 'arousal', 'end'
 						gs 'stat'
 						act 'Leave':gt 'Gadsarai'
 						exit
@@ -1385,6 +1409,7 @@ if $args[0] = '6':
 		'You grab Bandit''s tail and gently hold him in place, with a lustful grin on your face, you lean forwards and plant a tender kiss on his pointed tip, your free hand slowly stroking the remaining of his length through his sheath, making his penis grow bigger under your touch. You then close your eyes and part your lips, allowing the red flesh to slip inside your mouth and begin to bob your head back and forth, your tongue lustfully twirling around Bandit''s girth as his tip drips generous amounts of precum in your mouth. Damn, what a dirty slut you are, you''re fully aware of what you''re doing, giving your grandparents dog a blowjob in the barn, and still, this thought only arouses you further.'
 		'After some time, you feel Bandit''s penis throbbing harder and harder against your tongue, and his panting getting heavier and heavier, as focused as you are on your task, you understand very clearly that the dog is gonna cum very soon...'
 		gs 'arousal', 'bj', 5, 'sub', 'beast'
+		gs 'arousal', 'end'
 		gs 'stat'
 		act 'On the face':
 			cls
@@ -1426,7 +1451,6 @@ if $args[0] = '6':
 			cls
 			'<center><img <<$set_imgh>> src="images/locations/gadukino/village/predoggy.jpg"></center>'
 			'Your pussy and ass are too sore, give yourself some rest, dumb cunt.'
-			gs 'arousal', 'end'
 			gs 'stat'
 			act 'Close':gt 'Gadsarai'
 		else
@@ -1434,10 +1458,10 @@ if $args[0] = '6':
 			banditknow = RAND(0,1)
 			npc_horny['A66'] = 0
 			npc_QW['A66'] += 1
-			gs 'stat'
 			'<center><img <<$set_imgh>> src="images/locations/gadukino/village/predoggy.jpg"></center>'
 			'You quickly pull down your panties and get on all fours in front of Bandit, presenting him your bare ass. The dog doesn''t waste time and eagerly plants his front paws on your sides as he starts poking your ass and inner thighs with his pointed tip, desperately looking for a warm hole to penetrate...'
-			gs 'arousal', 'vaginal', 2, 'sub', 'beast'
+			gs 'arousal', 'foreplay', 2, 'sub', 'beast'
+			gs 'arousal', 'end'
 			gs 'stat'
 			if banditknow = 1:
 				if pcs_vag = 0:
@@ -1453,8 +1477,10 @@ if $args[0] = '6':
 						gs 'stat'
 						'<center><img <<$set_imgh>> src="images/beast/bandit/doggyvirgin.jpg"></center>'
 						'You can''t hold it anymore, you want to truly be Bandit''s bitch. You rise your ass higher to give him better access to your virgin pussy, spreading your legs a bit more and endure a few more pokes. Suddenly you feel a sharp pain hitting your core as his cock powerfully pierces your hymen, smearing his tip and his whole length in your own blood, but Bandit doesn''t seem to care about it at all and furiously starts to use your bloody snatch as his personal fucktoy, simply driven by his primitive needs. "Oh my god, not so hard..." you pant under the horny dog, your pussy clenching tightly around his throbbing girth while he mercilessly mounts you, barely able to realize you just gave your virginity to your grandparents dog. Tears are slowly dripping from your eyes while you grit your teeth and dig your nails on the floor to endure your lover''s wildness, but soon, the pain starts to fade away and is replaced by a strange tingle in your core, your sore pussy must have been accepting its fate and may be trying to turn it into an enjoyable experience. You let out a few moans and try to loosen up for your canine mate who never slowed down his pace, and soon you can feel his swelling knot hitting against your abused petals, you open your eyes in shock and you are about to protest, but it''s already too late. Bandit roughly thrusts forwards and your whole body convulses in a powerful orgasm as his knot makes its way inside of your ravaged fuckhole, tightly sealing itself within you and releasing what feels like an endless amount of sperm straight in your womb. You can feel your animal lover''s breath on your neck and pant heavily under him, you are still shocked from that intense fucking he just gave you, but somewhat enjoying the warmth of his body on your back and the endless flood of spunk filling up your pussy. A few minutes pass and you feel Bandit''s knot shrinking, the drained dog turns around and then pulls it out of you, releasing some unholy mixture of your own blood and Bandit''s sperm on the ground.'
+						$orgasm_or = 'yes'
 						gs 'arousal', 'vaginal', 30, 'rough', 'beast'
 						gs 'arousal', 'end'
+						gs 'pain', 3, 'vaginal', 'stretch'
 						gs 'stat'
 						act 'Farewell virginity':gt 'Gadsarai'
 					end
@@ -1465,7 +1491,6 @@ if $args[0] = '6':
 					act 'Wait':
 						if pcs_vag < 10:
 							cls
-							minut += 20
 							pcs_vag += 5
 							vgape = 3
 							pcs_horny = 0
@@ -1477,6 +1502,7 @@ if $args[0] = '6':
 							gs 'stat'
 							'<center><img <<$set_imgh>> src="images/beast/bandit/piratvagknot.jpg"></center>'
 							'You hands rest against the floor and you arch your ass backwards, literally begging Bandit to give your pussy the knotting it needs so badly. As expected from a dog, he is too focused on fucking that warm fuckhole of yours to understand or simply care about your desires, but without any warning, you feel his pointed tip hitting your cervix with a deep hard thrust from your dog lover, and before you realize it, his knot has slipped past your damp petals like a knife through butter... Which leaves you shocked in bliss, relishing from the warm jets of spunk being poured inside your well fucked cumdump.'
+							gs 'arousal', 'vaginal', 30, 'rough', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Close':gt 'Gadsarai'
@@ -1501,14 +1527,15 @@ if $args[0] = '6':
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'<center><img <<$set_imgh>> src="images/beast/bandit/piratvagknot.jpg"></center>'
 								'You hands rest against the floor and you arch your ass backwards, literally begging Bandit to give your pussy the knotting it needs so badly. As expected from a dog, he is too focused on fucking that warm fuckhole of yours to understand or simply care about your desires, but without any warning, you feel his pointed tip hitting your cervix with a deep hard thrust from your dog lover, and before you realize it, his knot has slipped past your damp petals like a knife through butter... Which leaves you shocked in bliss, relishing from the warm jets of spunk being poured inside your well fucked cumdump.'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Close':gt 'Gadsarai'
 							exit
@@ -1531,6 +1558,7 @@ if $args[0] = '6':
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 								act 'Close':gt 'Gadsarai'
 								exit
@@ -1538,6 +1566,7 @@ if $args[0] = '6':
 								'<center><img <<$set_imgh>> src="images/beast/bandit/piratvagcum.jpg"></center>'
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 								act 'Close':gt 'Gadsarai'
 								exit
@@ -1561,14 +1590,15 @@ if $args[0] = '6':
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								$orgasm_or = 'yes'
 								gs 'arousal', 'vaginal', 15, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							else
 								'<center><img <<$set_imgh>> src="images/beast/bandit/piratvagcum.jpg"></center>'
 								'The knot continues to grow bigger and bigger as Bandit climaxes, filling your pussy to the brim with his warm load. Too worried of being hurt, you patiently wait for Bandit''s knot to deflate, and twenty minutes later he finally slips out, which leaves you with a feeling of emptiness as a torrent of dog cum flows out from your snatch.'
 								gs 'arousal', 'vaginal', 15, 'rough', 'beast'
+								gs 'arousal', 'end'
 								gs 'stat'
 							end
-							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Close':gt 'Gadsarai'
 						end
@@ -1583,22 +1613,22 @@ if $args[0] = '6':
 					gs 'stat'
 					'<center><img <<$set_imgh>> src="images/beast/bandit/analknot1.jpg"></center>'
 					if pcs_ass < 10:
-						minut += 20
 						pcs_ass += 5
 						agape = 3
-						pcs_horny = 0
 						gs 'boyStat', 'A66'
 						sexvolume = rand(20,590)
 						spafinloc = 3
 						gs 'cum_manage'
 						gs 'stat'
 						'Bandit roughly mounts on top of you and before you can realize it, he has buried his whole length in your anus, you endure his wildness for a while then brace yourself and dig your nails in the dirty ground as you prepare yourself to be anally knotted by your grandparents dog. Bandit doesn''t seem to pay attention an casually continues to pound your ass, you grit your teeth in anticipation when you feel the swollen orb hitting your ravaged anal spincher again, it''s gonna slip in soon !! And it finally happens, with one hell of a hard thrust, Bandit mercilessly pushes his knot inside your ass, you cry out in pain and bliss, your legs shaking from the intense orgasm you''re experiencing, and the endless amount of canine spunk he is pouring in your bowels only intensify your shameful orgasm further.'
+						$orgasm_or = 'yes'
+						gs 'arousal', 'anal', 20, 'rough', 'beast'
 						gs 'arousal', 'end'
+						gs 'pain', 4, 'asshole', 'stretch'
 						gs 'stat'
 						act 'Close':gt 'Gadsarai'
 						exit
 					elseif pcs_ass >= 10 and pcs_ass < 25:
-						minut += 20
 						pcs_ass += 3
 						agape = 2
 						pcs_horny -= RAND(15,30)
@@ -1608,7 +1638,10 @@ if $args[0] = '6':
 						gs 'cum_manage'
 						gs 'stat'
 						'Bandit roughly mounts on top of you and before you can realize it, he has buried his whole length in your anus, you endure his wildness for a while then brace yourself and dig your nails in the dirty ground as you prepare yourself to be anally knotted by your grandparents dog. Bandit doesn''t seem to pay attention an casually continues to pound your ass, you grit your teeth in anticipation when you feel the swollen orb hitting your ravaged anal spincher again, it''s gonna slip in soon !! And it finally happens, with one hell of a hard thrust, Bandit mercilessly pushes his knot inside your ass, you cry out in pain and bliss, your legs shaking from the intense orgasm you''re experiencing, and the endless amount of canine spunk he is pouring in your bowels only intensify your shameful orgasm further.'
+						$orgasm_or = 'yes'
+						gs 'arousal', 'anal', 20, 'rough', 'beast'
 						gs 'arousal', 'end'
+						gs 'pain', 2, 'asshole', 'stretch'
 						gs 'stat'
 						act 'Close':gt 'Gadsarai'
 						exit
@@ -1627,15 +1660,18 @@ if $args[0] = '6':
 							'<center><img <<$set_imgh>> src="images/beast/bandit/analknotcum.jpg"></center>'
 							'Bandit roughly mounts on top of you and before you can realize it, he has buried his whole length in your anus, you endure his wildness for a while then brace yourself and dig your nails in the dirty ground as you prepare yourself to be anally knotted by your grandparents dog. Bandit doesn''t seem to pay attention an casually continues to pound your ass, you grit your teeth in anticipation when you feel the swollen orb hitting your ravaged anal spincher again, it''s gonna slip in soon !! And it finally happens, with one hell of a hard thrust, Bandit mercilessly pushes his knot inside your ass, you cry out in pain and bliss, your legs shaking from the intense orgasm you''re experiencing, and the endless amount of canine spunk he is pouring in your bowels only intensify your shameful orgasm further.'
 							$orgasm_or = 'yes'
-							gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+							gs 'arousal', 'anal', 20, 'rough', 'beast'
 							gs 'arousal', 'end'
+							gs 'pain', 3, 'asshole', 'stretch'
 							gs 'stat'
 							act 'Close':gt 'Gadsarai'
 							exit
 						else
 							'Bandit roughly mounts on top of you and before you can realize it, he has buried his whole length in your anus, you endure his wildness for a while then brace yourself and dig your nails in the dirty ground as you prepare yourself to be anally knotted by your grandparents dog. Bandit doesn''t seem to pay attention an casually continues to pound your ass, you grit your teeth in anticipation when you feel the swollen orb hitting your ravaged anal spincher again, it''s gonna slip in soon !! And it finally happens, with one hell of a hard thrust, Bandit mercilessly pushes his knot inside your ass, you cry out in pain and bliss, your legs shaking from the intense orgasm you''re experiencing, and the endless amount of canine spunk he is pouring in your bowels only intensify your shameful orgasm further.'
-							gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+							$orgasm_or = 'yes'
+							gs 'arousal', 'anal', 20, 'rough', 'beast'
 							gs 'arousal', 'end'
+							gs 'pain', 2, 'asshole', 'stretch'
 							gs 'stat'
 							act 'Close':gt 'Gadsarai'
 						exit
@@ -1654,13 +1690,13 @@ if $args[0] = '6':
 							'<center><img <<$set_imgh>> src="images/beast/bandit/analcum.jpg"></center>'
 							'Soon Bandit finishes and you powerfully orgasm, the flow of semen into your rectum driving you over the edge. Still holding the base of his cock in one hand while the other is shakily stroking your clit and getting drenched in your love juices.'
 							$orgasm_or = 'yes'
-							gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+							gs 'arousal', 'anal', 20, 'rough', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Close':gt 'Gadsarai'
 						else
 							'You shudder in pleasure as Bandit furiously pounds away at your butthole without any care about your well being, you moan in bliss when you feel his warm load filling your bowels and groan when he pulls out without knotting you, leaving you panting with his viscous gift dripping out of your freshly used anus.'
-							gs 'arousal', 'vaginal', 20, 'rough', 'beast'
+							gs 'arousal', 'anal', 20, 'rough', 'beast'
 							gs 'arousal', 'end'
 							gs 'stat'
 							act 'Close':gt 'Gadsarai'

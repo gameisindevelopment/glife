@@ -22,7 +22,7 @@
 
 !!this is the text and chances anyone is at Anushka''s apartment.
 if $ARGS[0] = 'home':
-	music_loop = 0
+	$track_loop = ''
 	CLOSE ALL
 	if sound = 0:PLAY 'sound/korr.mp3',30
 	$metkaM = $ARGS[0]
@@ -255,6 +255,7 @@ end
 
 if $ARGS[0] = 'anushroom':
 	CLOSE ALL
+	$track_loop = ''
 	music_loop = 1
 	cla
 	*clr

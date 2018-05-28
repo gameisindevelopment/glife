@@ -84,6 +84,7 @@ if $ARGS[0] = '1-1':
 	spafinloc = 14
 	gs 'cum_manage'
 	pcs_throat += 1
+	slutty += 1
 
 	if pcs_vag < dick:pcs_vag += 1
 

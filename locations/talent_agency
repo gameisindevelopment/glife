@@ -148,7 +148,7 @@ if $ARGS[0] = 'SMTV':
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
 							'"Move out?" you ask, trying to stay away from the windows as much as possible. "Where are we going?"'
 							'Mr. Yanovich starts the car and says to you, "This is not an ideal location to shoot. We have a particular street in mind so we''re going to go there."'
-							act'. . .':
+							act'Continue':
 								minut += 45
 								*clr
 								cla
@@ -236,7 +236,7 @@ if $ARGS[0] = 'SMTV':
 							'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
 							'"Move out?" you ask. "Where are we going?"'
 							'Mr. Yanovich starts the car and says to you, "This is not an ideal location to shoot. We have a particular street in mind so we''re going to go there."'
-							act'. . .':
+							act'Continue':
 								minut += 45
 								*clr
 								cla
@@ -334,7 +334,7 @@ if $ARGS[0] = 'SMTV':
 						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
 						'"Move out?" you ask, trying to stay away from the windows as much as possible. "Where are we going?"'
 						'Mr. Yanovich starts the car and says to you, "This is not an ideal location to shoot. We have a particular street in mind so we''re going to go there."'
-						act'. . .':
+						act'Continue':
 							minut += 45
 							*clr
 							cla
@@ -422,7 +422,7 @@ if $ARGS[0] = 'SMTV':
 						'<center><img <<$set_imgh>> src="images/locations/city/citycenter/down.jpg"></center>'
 						'"Move out?" you ask. "Where are we going?"'
 						'Mr. Yanovich starts the car and says to you, "This is not an ideal location to shoot. We have a particular street in mind so we''re going to go there."'
-						act'. . .':
+						act'Continue':
 							minut += 45
 							*clr
 							cla

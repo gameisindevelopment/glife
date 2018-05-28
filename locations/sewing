@@ -29,7 +29,7 @@ if $ARGS[0] = 'start':
 		cla & *clr
 		if tkan < 1:
 			'	You do not have any material to sew anything. You should buy some from the supermarket.'
-			act'. . .':gt 'sewing','start'
+			act'Continue':gt 'sewing','start'
 		else
 			sew_trinket_success = rand(1,240)
 			tkan -= 1
