@@ -990,6 +990,8 @@ if $ARGS[0] = 'bathroom':
 	'You enter the staff bathroom, which is usually cleaned by the girls that have only just started work here, voluntary or otherwise.'
 	'There is a <a href="exec:gt ''mirror'', ''start''">mirror</a>, where you can ' + iif(pcs_hairbsh = 0,'<a href="exec:GT ''mirror'',''brush''">brush</a>','brush') + ' your hair, a shower, toilet, and basin.'
 
+	act 'Return to foyer': gt 'saunawhore', 'saunawork'
+
 	act 'Take a shower (0:15)':
 		cls
 		dynamic $showerdin
@@ -1074,26 +1076,29 @@ if $ARGS[0] = 'bathroom':
 		end
 	end
 
-	if mesec > 0 or (placebopart > 2 and pillcon < 40000) and isprok = 0 and isprokp = 0 and workdolg > 0:
-		act 'Use a tampon (0:05)':
-			cla
-			*clr
-			isprok = 1
-			minut += 5
-			pcs_mood -= 5
-			if SaunaWhore = 0:workDolg += 10
-
-			'<center><img <<$set_imgh>> src="images/shared/home/bathroom/wash3.jpg"></center>'
-			'You use a tampon, it will add another 10 <b>₽</b> to your debt, but the alternative is unpleasant.'
-
-			act 'Finish':gt $locM, $metkaM
+	if workdolg > 0:
+		if (mesec > 0 or (placebopart > 2 and pillcon < 40000)) and isprok = 0 and isprokp = 0:
+			act 'Buy and use a tampon (0:05)':
+				cla
+				*clr
+				isprok = 1
+				minut += 5
+				pcs_mood -= 5
+				workDolg += 10
+	
+				'<center><img <<$set_imgh>> src="images/shared/home/bathroom/wash3.jpg"></center>'
+				'You use a tampon, it will add another 10 <b>₽</b> to your debt, but the alternative is unpleasant.'
+	
+				act 'Finish':gt $locM, $metkaM
+			end
 		end
+	elseif workdolg = 0:
+		dynamic $tampon
 	end
+	
 	dynamic $quickwash
 	dynamic $bteeth
 	dynamic $basin
-
-	act 'Return to foyer': gt 'saunawhore', 'saunawork'
 end
 
 --- saunaWhore ---------------------------------
