@@ -138,7 +138,7 @@ if $ARGS[0] = 'mari_1':
 			'	"I''ve been working for this agency for about a year. Ever since I moved to the city really."'
 			'	Something piques an interest in you as Mari mentions she''s from out of town, "If you don''t mind me asking where do you come from?"'
 			'	"Oh, just some place called Gadyukino. You''ve probably never heard of it. It''s a small village outside the city. Too small too be honest, same boring ins and outs every day. I wanted more excitement in my life! More than a simple farm girl would ever have. So I moved here."'
-			
+
 			if storyline = 1:
 				act '"You''re from Gadyukino?"':
 					cla
@@ -170,7 +170,7 @@ if $ARGS[0] = 'mari_1':
 									cla
 									*clr
 									'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/7.jpg"></center>'
-									'	You watch her pull off her top next with a smile and a laugh and you realize that she''s genuinely happy right now.' 
+									'	You watch her pull off her top next with a smile and a laugh and you realize that she''s genuinely happy right now.'
 									act'...':
 										cla
 										*clr
@@ -186,7 +186,7 @@ if $ARGS[0] = 'mari_1':
 					end
 				end
 			end
-			
+
 			act 'Ask for modelling advice':
 				cla
 				*clr
@@ -215,7 +215,7 @@ if $ARGS[0] = 'mari_1':
 								cla
 								*clr
 								'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/meeting/7.jpg"></center>'
-								'	You watch her pull off her top next with a smile and a laugh and you realize that she''s genuinely happy right now.' 
+								'	You watch her pull off her top next with a smile and a laugh and you realize that she''s genuinely happy right now.'
 								act'...':
 									cla
 									*clr
@@ -373,7 +373,7 @@ if $ARGS[0] = 'mari_4':
 			'	<i>Stuck playing the farm girl again, huh Mari? They really are slave drivers for this kind of thing aren''t they? I guess I''ll find you some other time.</i>'
 			act 'Leave':gt'foto','studio'
 		end
-		
+
 	elseif mari_busy = 3:
 		'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/busy3.jpg"></center>'
 		'	You''re looking for Mari when you find her in the middle of a shoot.'
@@ -521,16 +521,16 @@ if $ARGS[0] = 'mari_chat':
 		!		cla & *clr
 		!		'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading3.jpg"></center>'
 		!		'	"I just really wanted the extra cash so I could buy more stuff. Clothes, makeup, whatever. It''s not like I really <i>need</i> to be doing this. I''m just in it for the money."'
-		!		
+		!
 		!	act'To make money because I needed it':
 		!		cla & *clr
 		!		'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading3.jpg"></center>'
 		!		'	"Oh, I just needed the money. Things to buy, bills to pay, you know."'
-		!	
+		!
 		!	act'To build confidence':
 		!		cla & *clr
 		!		'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading3.jpg"></center>'
-		!		
+		!
 		!	act'Because it turns me on':
 		!		cla & *clr
 		!		'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading3.jpg"></center>'
@@ -558,7 +558,7 @@ if $ARGS[0] = 'mari_chat':
 			act 'Keep chatting':gt 'foto_models','mari_chat'
 		end
 	end
-	
+
 	act 'Ask about food':
 		*clr & cla
 		'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading3.jpg"></center>'
@@ -567,7 +567,7 @@ if $ARGS[0] = 'mari_chat':
 		'	You laugh about it together.'
 		act'Keep chatting':gt 'foto_models','mari_chat'
 	end
-	
+
 	act 'Ask how she stays in shape':
 		*clr & cla
 		'	<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading6.jpg"></center>'
@@ -575,15 +575,15 @@ if $ARGS[0] = 'mari_chat':
 		'	"I know right? It''s so hard!" The nice thing though is that there''s a fitness center nearby so I can always work out there on my way home from work. Good prices <i>and</i> conveniently placed! There''s a few perverts there though, so watch out!"'
 		'	"Haha, okay Mari!"'
 		act'Keep chatting':gt 'foto_models','mari_chat'
-	end	
+	end
 
 	act 'Talk about modelling':gt'foto_models','mari_modelling_chat'
-	
-	!!if week = 6: 
+
+	!!if week = 6:
 	!!	act 'Ask about her weekend plans':
-			
-		
-			
+
+
+
 	if mari_sex = 0:
 		act 'Ask for sex advice':
 			*clr & cla
@@ -670,7 +670,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 	'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading2.jpg"></center>'
 	'	"You want to talk about modelling? What about it?"'
 	act'Talk about something else':gt'foto_models','mari_chat'
-	
+
 	act 'Ask for modelling advice':
 		*clr & cla
 		mdlng_exp += 1
@@ -709,7 +709,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 				act'Continue':
 					*clr & cla
 					'<center><img src="images/locations/city/citycenter/photo/portraits/mari_e/talking/reading7.jpg"></center>'
-					'	"So then how <i>did</i> you get hired here?"' 
+					'	"So then how <i>did</i> you get hired here?"'
 					'	Mari looks down at her book smiling in a way that looks like she''s slightly embarrassed. "I just... kind of... walked in... I saw some of the albums they have by the entrance, thought, ''Hey, maybe I can do this?'' and asked if I could get hired here."'
 					'	"And they hired you just like that?" you ask.'
 					'	"Well... There were a couple hoops I had to jump through. I wasn''t exactly legal yet, so I had to buy a fake passport that said I was just to get started. But as you can see, it was well worth it!"'
@@ -719,7 +719,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 			end
 		end
 	end
-	
+
 	if mari_fakepassport = 1:
 		act 'Ask about her fake passport':
 			*clr & cla
@@ -753,7 +753,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 					end
 				end
 			end
-						
+
 			if age >=18 and fakepassport = 1:
 				act '"Did you buy it from that suspicious guy at the train station?"':
 					*clr & cla
@@ -772,7 +772,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 					end
 				end
 			end
-			
+
 			if fakepassport = 2:
 				act '"Did you buy it from that suspicious guy at the train station?"':
 					cla
@@ -795,7 +795,7 @@ if $ARGS[0] = 'mari_modelling_chat':
 					end
 				end
 			end
-			
+
 			if fakepassport = 0:
 				act '"Where did you even get it?"':
 					cla
@@ -843,9 +843,9 @@ if $ARGS[0] = 'anastasia1':
 		'	You thank her for the welcome and watch on as she goes onto one of the sets...'
 		anastasia = 2
 		act 'Leave':gt 'foto','studio'
-	end 
+	end
 end
-	
+
 if $ARGS[0] = 'anastasia2':
 	*clr & cla
 	'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/11.jpg"></center>'
@@ -967,8 +967,8 @@ if $ARGS[0] = 'anastasia_chat':
 		'	"Okay, have a nice day <<$pcs_nickname>>. Don''t be a stranger!"'
 		act 'Leave':gt 'foto','studio'
 	end
-	
-		
+
+
 	act 'Ask her how she became a model':
 		*clr & cla
 		'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/9.jpg"></center>'
@@ -990,7 +990,7 @@ if $ARGS[0] = 'anastasia_chat':
 			end
 		end
 	end
-		
+
 	act 'Ask for modelling advice':
 		*clr & cla
 		mdlng_exp += 3
@@ -1000,7 +1000,7 @@ if $ARGS[0] = 'anastasia_chat':
 		mdlng_exp += 1
 		act 'Keep chatting':gt 'foto_models','anastasia_chat'
 	end
-	
+
 	act 'Ask about food':
 		*clr & cla
 		'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/1.jpg"></center>'
@@ -1010,7 +1010,7 @@ if $ARGS[0] = 'anastasia_chat':
 		'	"Young Mari hasn''t been telling you to go to that burger joint has she?" she says in an admonishing tone.'
 		act'Keep chatting':gt 'foto_models','anastasia_chat'
 	end
-	
+
 	if anastasiasex = 0:
 		act 'Ask how she stays in shape':
 			*clr & cla
@@ -1024,7 +1024,7 @@ if $ARGS[0] = 'anastasia_chat':
 				act'Keep chatting':gt 'foto_models','anastasia_chat'
 			end
 		end
-	end	
+	end
 	if anastasiasex = 1:
 		act 'Ask how she stays in shape':
 			*clr & cla
@@ -1042,7 +1042,7 @@ if $ARGS[0] = 'anastasia_chat':
 			end
 		end
 	end
-	
+
 	if anastasiasex = 0:
 		act 'Tell her you saw her having sex in the empty set':
 			cla
@@ -1050,7 +1050,7 @@ if $ARGS[0] = 'anastasia_chat':
 			act '. . .':
 				*clr & cla
 				'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/2.jpg"></center>'
-				'	"Just one of the perks of being the top model in Russia." She pauses for a moment to run her hands through her hair, almost like she''s stretching...' 
+				'	"Just one of the perks of being the top model in Russia." She pauses for a moment to run her hands through her hair, almost like she''s stretching...'
 				'	"All the men end up wanting to fuck you."'
 				act 'Uh...':
 					*clr & cla
@@ -1101,13 +1101,13 @@ if $ARGS[0] = 'anastasia_chat':
 !		act'Ask Anastasia how to start selling yourself like she does':gt'foto_models','anastasia_ask'
 !	end
 end
-		
+
 if $ARGS[0] = 'anastasiasex':
 	cla
 	'<center><img src="images/locations/city/citycenter/photo/portraits/anastasia_p/talking/face.jpg"></center>'
 	'	"Sure <<$pcs_nickname>>, what would you like help with?"'
 	'	If you''re being honest, her reaction is still a little strange to you. She''s as nonchalant about this as if you asked her for advice about knitting.'
-	
+
 	act 'Thank her and leave':
 		*clr & cla
 		'<center><video autoplay loop src="images/locations/city/citycenter/studio/sex/pornwalk1.mp4"></video></center>'
@@ -1116,7 +1116,7 @@ if $ARGS[0] = 'anastasiasex':
 
 		act 'Leave':gt 'foto','studio'
 	end
-	
+
 	act 'Ask about blowjobs':
 		*clr
 		pcs_horny += 5
@@ -1128,7 +1128,7 @@ if $ARGS[0] = 'anastasiasex':
 		*nl
 		'	"Is there anything else you wanted to ask about?"'
 	end
-		
+
 	act 'Ask about sex':
 		*clr
 		pcs_horny += 5
@@ -1141,7 +1141,7 @@ if $ARGS[0] = 'anastasiasex':
 		'	"Is there anything else you wanted to ask about?"'
 
 	end
-		
+
 	act 'Ask about anal':
 		*clr
 		pcs_horny += 5
@@ -1151,7 +1151,7 @@ if $ARGS[0] = 'anastasiasex':
 		*nl
 		'	"Is there anything else you wanted to ask about?"'
 	end
-		
+
 	act 'Ask about cunnilingus':
 		*clr
 		pcs_horny += 5
@@ -1161,7 +1161,7 @@ if $ARGS[0] = 'anastasiasex':
 		*nl
 		'	"Is there anything else you wanted to ask about?"'
 	end
-		
+
 	act 'Having sex with multiple men at once':
 		*clr & cla
 		pcs_horny += 10
@@ -1200,7 +1200,7 @@ end
 !		'	"That''s alright <<$pcs_firstname>>. Whenever you''re ready okay?"'
 !		act'Continue':gt'foto_models','anastasia_chat'
 !	end
-!	
+!
 !	act'Ask her confidently':
 !		anastasia_ask = 1
 !		*clr & cla
@@ -1210,7 +1210,7 @@ end
 !		'	She leads you over to a nearby set and gestures for you to sit down across from her.'
 !		act'Continue':gt'anastasia_escort','ana_pro_talk':
 !	end
-!	
+!
 !	act'Ask embarrassedly':
 !		anastasia_ask = 1
 !
@@ -1313,7 +1313,7 @@ if $ARGS[0] = 'krystal2':
 				end
 			end
 		end
-	end 
+	end
 end
 
 
@@ -1348,7 +1348,7 @@ if $ARGS[0] = 'krystal3':
 				act 'Leave':gt 'foto','studio'
 			end
 		end
-	end 
+	end
 end
 
 if $ARGS[0] = 'krystal4':
@@ -1366,7 +1366,7 @@ if $ARGS[0] = 'krystal4':
 		'	"Don''t worry about it. Catch you later beautiful!"'
 		act'Leave':gt'foto','studio'
 	end
-	
+
 	act'"Sure"':gt'foto_models','krystal_chat'
 end
 
@@ -1385,7 +1385,7 @@ end
 if $ARGS[0] = 'krystal_chat':
 	*clr & cla
 	'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/1.jpg"></center>'
-	
+
 	act 'Leave':
 		*clr & cla
 		'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/1.jpg"></center>'
@@ -1393,11 +1393,11 @@ if $ARGS[0] = 'krystal_chat':
 		'	"Okay. See you later babe!"'
 		act 'Leave':gt 'foto','studio'
 	end
-	
+
 	act'Discuss random topics':
-		
+
 		krystal_convo = rand(1,4)
-		
+
 		if krystal_convo = 1:
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/' + rand(4,5) + '.jpg"></center>'
@@ -1407,7 +1407,7 @@ if $ARGS[0] = 'krystal_chat':
 			'	"Oh yeah, they love it. As far as they''re concerned, it''s free publicity to sell more magazines of me. How else do you think I got so popular?"'
 			act'Keep chatting':gt'foto_models','krystal_chat'
 		end
-		
+
 		if krystal_convo = 2:
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/2.jpg"></center>'
@@ -1417,8 +1417,8 @@ if $ARGS[0] = 'krystal_chat':
 			'	"Well, it was his idea to start making home videos. I was already a model at the time so he thought videos would be a step up. At first it was just being around the house together, but then we''d start to get frisky with each other and the camera would keep rolling. Soon, we''d start fucking while watching videos of ourselves fucking. It was so hot taking a creampie watching him give me a cumshot at the same time... I couldn''t get enough so I signed us up for our first porn audition! A few dozen films later, here we are!"'
 			act'Keep chatting':gt'foto_models','krystal_chat'
 		end
-		
-		
+
+
 		if krystal_convo = 3:
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/2.jpg"></center>'
@@ -1426,8 +1426,8 @@ if $ARGS[0] = 'krystal_chat':
 			'	"You could try the diner I used to work at before I became a porn star and modelling was only part time. It''s American themed in the residential area. If you need another job, you could probably be a waitress there. And if you ever want better tips as a waitress, you need to use your head. No, seriously, give the customers blowjobs. There''s always at least an extra 50<b>₽</b> in it. And you get to swallow some cum!"'
 			act'Keep chatting':gt'foto_models','krystal_chat'
 		end
-		
-		
+
+
 		if krystal_convo = 4:
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/6.jpg"></center>'
@@ -1437,10 +1437,10 @@ if $ARGS[0] = 'krystal_chat':
 			'	"Uhm... yeah... great story..."'
 			act'Keep chatting':gt'foto_models','krystal_chat'
 		end
-		
+
 	end
-	
-	
+
+
 	act 'Ask for modelling advice':
 		*clr & cla
 		mdlng_exp += 2
@@ -1450,7 +1450,7 @@ if $ARGS[0] = 'krystal_chat':
 		'	She smirks and says, "Exactly. No point in being a nude model if you''re not gonna show off the goods right? No matter what position, it''s all about your breasts, your pussy, or your ass. That''s what you want to be showing off!"'
 		act'Keep chatting':gt'foto_models','krystal_chat'
 	end
-	
+
 	act 'Ask how she stays in shape':
 		*clr & cla
 		'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/11.jpg"></center>'
@@ -1491,12 +1491,12 @@ if $ARGS[0] = 'krystal_chat':
 			end
 		end
 	end
-	
+
 	act 'Ask about movies':
 			*clr & cla
 			*nl
 			krys_movie = rand(1,4)
-			
+
 			if krys_movie = 1:
 				'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/6.jpg"></center>'
 				'	"See any good movies lately Krystal?"'
@@ -1505,7 +1505,7 @@ if $ARGS[0] = 'krystal_chat':
 				'	"Yeah! Er... Not really...? Uhmm... Honestly, I don''t remember. I got distracted sucking Ben''s cock..."'
 				act'Keep chatting':gt'foto_models','krystal_chat'
 			end
-			
+
 			if krys_movie = 2:
 				'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/6.jpg"></center>'
 				'	"See any good movies lately Krystal?"'
@@ -1514,7 +1514,7 @@ if $ARGS[0] = 'krystal_chat':
 				'	"I love going to see horror movies! With all the screaming going on, Ben can get rough and I can cum as loud as I like and people just think it''s part of the movie!"'
 				act'Keep chatting':gt'foto_models','krystal_chat'
 			end
-			
+
 			if krys_movie = 3:
 				'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/11.jpg"></center>'
 				'	"See any good movies lately Krystal?"'
@@ -1523,7 +1523,7 @@ if $ARGS[0] = 'krystal_chat':
 				'	"Not really. But it was hard to concentrate on any of the jokes with Ben''s cock up my ass and my nipples being pulled through my shirt."'
 				act'Keep chatting':gt'foto_models','krystal_chat'
 			end
-			
+
 			if krys_movie = 4:
 				'<center><img src="images/locations/city/citycenter/photo/portraits/krystal_b/talking/8.jpg"></center>'
 				'	"See any good movies lately Krystal?"'
@@ -1533,7 +1533,7 @@ if $ARGS[0] = 'krystal_chat':
 				act'Keep chatting':gt'foto_models','krystal_chat'
 			end
 		end
-	
+
 end
 
 
@@ -1565,7 +1565,7 @@ if jeff = 4:gt 'foto_models','jeff_model'
 				'	"I''m <<$pcs_firstname>>."'
 				'	"What a cute name!"'
 				'	<i>She''s got quite a bubbly personality doesn''t she?</i> you think to yourself before you realize she''s still standing in silence, continuing to smile at you.'
-				'	"And your name is...?" you say awkwardly.' 
+				'	"And your name is...?" you say awkwardly.'
 				'	"Oh! You can call me Jeff!" she says.'
 				act '"Jeff...?"':
 					*clr & cla
@@ -1583,7 +1583,7 @@ if jeff = 4:gt 'foto_models','jeff_model'
 			end
 		end
 	end
-end 
+end
 !!
 if $ARGS[0] = 'jeff_2':
 '<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/4.jpg"></center>'
@@ -1613,7 +1613,7 @@ if $ARGS[0] = 'jeff_2':
 					'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/8.jpg"></center>'
 					'	"Yup! Being a model is a lot more fun."'
 					'	"What is it you said you were studying in university?"'
-					'	"Economy and management!" she says proudly.' 
+					'	"Economy and management!" she says proudly.'
 					'	<i>This airhead? Economy and management?!</i>'
 					'	"Well, I guess I should go now. Gotta get paid! Bye <<$pcs_nickname>>!" she says and then runs off.'
 					jeff = 3
@@ -1622,7 +1622,7 @@ if $ARGS[0] = 'jeff_2':
 			end
 		end
 	end
-end 
+end
 
 !!
 
@@ -1634,7 +1634,7 @@ if $ARGS[0] = 'jeff_3':
 	'	While walking through the studio, you suddenly feel someone''s arms wrap around your waist and two soft breasts press into your back.'
 	'	Before you can say anything you jump in surprise as you feel the person''s hands fly up your body and slap against your breasts to give them a firm squeeze.'
 	'	"Hiiiii cutie!" you hear a voice squeak out.'
-	
+
 	act '"Oh-! Hi!!"':
 		*clr & cla
 		'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/face.jpg"></center>'
@@ -1647,7 +1647,7 @@ if $ARGS[0] = 'jeff_3':
 			'	"Sure! Sure! Catch you later cutie!" she says, changing her tune immediately. "Gotta work to earn! Gotta earn to eat! Gotta eat to live! Have fun!" she says before startling you again with a firm squeeze of your ass and skipping off.'
 			act 'Leave':gt 'foto','studio'
 		end
-		
+
 		act '"Sure"':
 			cla
 			*nl
@@ -1658,7 +1658,7 @@ if $ARGS[0] = 'jeff_3':
 		end
 	end
 end
-		
+
 if $ARGS[0] = 'jeff_chat':
 	*clr & cla
 	'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/face.jpg"></center>'
@@ -1668,11 +1668,11 @@ if $ARGS[0] = 'jeff_chat':
 		'	"Okay! Okay! See you later hot stuff!" she says, giving you a big hug so your breasts mush together before skipping off on her own.'
 		act 'Leave':gt 'foto','studio'
 	end
-	
+
 	act 'Chat':
 		*clr
 		jeff_convo = rand(1,5)
-		
+
 		if jeff_convo = 1:
 			*clr
 			'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/15.jpg"></center>'
@@ -1680,7 +1680,7 @@ if $ARGS[0] = 'jeff_chat':
 			'	"Oh no! I don''t go to the movies. I hate them! They''re so loud and unpleasant! My poor ears can''t handle them!" she whines while putting her hands over her ears even though it is perfectly quiet right now.'
 			jeff_movies = 1
 		end
-		
+
 		if jeff_convo = 2:
 			*clr
 			'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/16.jpg"></center>'
@@ -1688,7 +1688,7 @@ if $ARGS[0] = 'jeff_chat':
 			'	"Hmmmm nooooo, not reaaaally. I mostly eat at the university''s cafeteria. They won''t let you in unless you''re a student though."'
 			'<i>Well, enrolling in a university just for food doesn''t seem like a viable option...</i>'
 		end
-		
+
 		if jeff_convo = 3:
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/9.jpg"></center>'
@@ -1703,10 +1703,10 @@ if $ARGS[0] = 'jeff_chat':
 				'	". . ."'
 				act 'Keep chatting':gt 'foto_models','jeff_chat'
 			end
-				
-				
+
+
 		end
-		
+
 		if jeff_convo = 4:
 			*clr
 			'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/14.jpg"></center>'
@@ -1717,7 +1717,7 @@ if $ARGS[0] = 'jeff_chat':
 			'	". . ."'
 			if jeff_movies = 1:'	Wait, didn''t she say that she hates going to the movies because they''re loud? How can she go to a nightclub with pounding music then???'
 		end
-		
+
 		if jeff_convo = 5:
 			*clr & cla
 			'<center><img src="images/locations/city/citycenter/photo/portraits/jeff_m/talking/18.jpg"></center>'
@@ -1727,8 +1727,8 @@ if $ARGS[0] = 'jeff_chat':
 			'	"Oh! So these <i>are</i> your reset buttons!"'
 			act 'Keep chatting':gt 'foto_models','jeff_chat'
 		end
-	end		
-	
+	end
+
 	act 'Ask for modelling advice':
 		mdlng_exp += 1
 		*clr & cla
@@ -1743,8 +1743,8 @@ if $ARGS[0] = 'jeff_chat':
 			act 'Keep chatting':gt 'foto_models','jeff_chat'
 		end
 	end
-	
-	
+
+
 	if jeff_grope > 3:
 		act 'Ask her to stop groping you':
 			*clr & cla
