@@ -667,7 +667,7 @@ if $ARGS[0] = 'brothel:section1:session:play':
 			stage = 3
 			gt 'brothel', $subloc
 		elseif stage = 3:
-			actionRand = rand (1, 8)
+			actionRand = rand (1, 7)
 			if actionRand = 1:$sl = 'tiedOnBackFuckMouth'
 			if actionRand = 2:$sl = 'tiedOnBackFuckAnal'
 			if actionRand = 3:$sl = 'tiedOnBackFuckVaginal'
